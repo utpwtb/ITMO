@@ -871,7 +871,7 @@ x^2 + px + q = \left(x + \frac{p}{2}\right)^2 + \frac{4q - p^2}{4}.
 计算第一个积分：
 
 \[
-\int \frac{t \, dt}{(t^2 + a^2)^k} = \frac{A}{2} \int \frac{d(t^2 + a^2)}{(t^2 + a^2)^k} = \frac{A}{2} \ln(t^2 + a^2) + C, \quad k = 1,
+\int \frac{At \, dt}{(t^2 + a^2)^k} = \frac{A}{2} \int \frac{d(t^2 + a^2)}{(t^2 + a^2)^k} = \frac{A}{2} \ln(t^2 + a^2) + C, \quad k = 1,
 \]
 
 或者
