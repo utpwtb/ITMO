@@ -84,6 +84,19 @@ public enum Color {
 }
 ```
 
+---
+
+1. 集合。集合元素的排序。接口 java.util.Comparable 和 java.util.Comparator。  
+2. 集合类别——列表、集合。接口 java.util.Map 及其实现。  
+3. 参数化类型。创建参数化类。通配符参数。  
+4. 包装类。用途、应用领域、优缺点。自动装箱和自动拆箱。  
+5. Java 中的输入输出流。字节流和字符流。流链（Stream Chains）。  
+6. Java 中的文件操作。类 java.io.File。  
+7. 包 java.nio——用途、主要类和接口。  
+8. 工具 javadoc。Java 代码自动文档化的特点。
+
+---
+
 1. 切换到你想克隆仓库的目录（例如：Desktop/random_folder）
 2. 执行命令：`git clone 仓库链接`
 3. 将你项目的所有类文件移动到 `src/main/java/itmo/programming` 目录中
