@@ -1,42 +1,44 @@
-CREATE TABLE IF NOT EXISTS Profession_type(
-	Profession_id SERIAL PRIMARY KEY,
-	Name TEXT UNIQUE NOT NULL
+CREATE TABLE IF NOT EXISTS ProfessionType(
+	ProfessionId SERIAL PRIMARY KEY,
+	Name VARCHAR(25) UNIQUE NOT NULL
 );
 CREATE TABLE IF NOT EXISTS Status (
-	Status_id SERIAL PRIMARY KEY,
-	Name TEXT UNIQUE NOT NULL
+	StatusId SERIAL PRIMARY KEY,
+	Name VARCHAR(20) UNIQUE NOT NULL
 );
 CREATE TABLE IF NOT EXISTS Person(
-	Person_id SERIAL PRIMARY KEY,
-	Name TEXT UNIQUE NOT NULL,
-	Profession INTEGER REFERENCES Profession_type(Profession_id),
-	Status INTEGER REFERENCES Status(Status_id)
+	PersonId SERIAL PRIMARY KEY,
+	Name VARCHAR(50) UNIQUE NOT NULL,
+	Profession INTEGER REFERENCES ProfessionType(ProfessionId),
+	Status INTEGER REFERENCES Status(StatusId)
 );
 CREATE TABLE IF NOT EXISTS Location(
-	Location_id SERIAL PRIMARY KEY,
-	Name TEXT UNIQUE NOT NULL
+	LocationId SERIAL PRIMARY KEY,
+	Name VARCHAR(25) UNIQUE NOT NULL
 );
-CREATE TABLE IF NOT EXISTS Move_type(
-	MoveType_id SERIAL PRIMARY KEY,
-	Name TEXT UNIQUE NOT NULL
+CREATE TABLE IF NOT EXISTS MoveType(
+	MoveTypeId SERIAL PRIMARY KEY,
+	Name VARCHAR(50) UNIQUE NOT NULL
 );
 CREATE TABLE IF NOT EXISTS Move(
-	Moved_person INTEGER REFERENCES Person(Person_id),
-	MoveType INTEGER REFERENCES Move_type(MoveType_id),
-	Start_location INTEGER REFERENCES Location(Location_id),
-    End_location INTEGER REFERENCES Location(Location_id)
+	MovedPerson INTEGER REFERENCES Person(PersonId),
+	MoveType INTEGER REFERENCES MoveType(MoveTypeId),
+	StartLocation INTEGER REFERENCES Location(LocationId),
+    EndLocation INTEGER REFERENCES Location(LocationId),
+    MoveDate TIMESTAMP NOT NULL
 );
-CREATE TABLE IF NOT EXISTS Action_type(
-    ActionType_id SERIAL PRIMARY KEY,
-    Name TEXT UNIQUE NOT NULL
+CREATE TABLE IF NOT EXISTS ActionType(
+    ActionTypeId SERIAL PRIMARY KEY,
+    Name VARCHAR(25) UNIQUE NOT NULL
 );
 CREATE TABLE IF NOT EXISTS Action(
-    Action_id SERIAL PRIMARY KEY,
-    Actioned_person INTEGER REFERENCES Person(Person_id),
-    ActionType INTEGER REFERENCES Action_type(ActionType_id)
+    ActionId SERIAL PRIMARY KEY,
+    ActionedPerson INTEGER REFERENCES Person(PersonId),
+    ActionType INTEGER REFERENCES ActionType(ActionTypeId),
+    ActionDate TIMESTAMP NOT NULL
 );
 
-INSERT INTO Profession_type(
+INSERT INTO ProfessionType(
     Name
 )
 VALUES
@@ -55,14 +57,14 @@ VALUES
 ('медотсек'),
 ('Д-6'),
 ('Д-4');
-INSERT INTO Move_type(
+INSERT INTO MoveType(
     Name
 )
 VALUES
 ('выплыть'),
 ('бегать'),
 ('Ходить');
-INSERT INTO Action_type(
+INSERT INTO ActionType(
     Name
 )
 VALUES
@@ -80,20 +82,34 @@ VALUES
 ('Чандра',1,1),
 ('Курноу',1,1);
 INSERT INTO Action(
-    Actioned_person,
-    ActionType
+    ActionedPerson,
+    ActionType,
+    ActionDate
 )
 VALUES
-(1,3),
-(2,1),
-(3,1);
+(1,3,'2012-05-12 12:08:25'),
+(2,1,'2012-05-12 12:06:16'),
+(3,1,'2012-05-12 12:04:31');
 INSERT INTO Move(
-    Moved_person,
+    MovedPerson,
     MoveType,
-    Start_location,
-    End_location
+    StartLocation,
+    EndLocation,
+    MoveDate
 )
 VALUES
-(1,1,1,2),
-(2,2,2,1),
-(3,3,2,3);
+(1,1,1,2,'2012-05-12 12:05:11'),
+(2,2,2,1,'2012-05-12 13:09:54'),
+(3,3,2,3,'2012-05-12 13:16:33');
+
+SELECT 
+    p.Name AS "name",
+    mt.Name AS "moveType",
+    l_start.Name AS "startLocation",
+    l_end.Name AS "endLocation",
+    m.MoveDate AS "time"
+FROM Person p
+JOIN Move m ON p.PersonId = m.MovedPerson
+JOIN MoveType mt ON m.MoveType = mt.MoveTypeId
+JOIN Location l_start ON m.StartLocation = l_start.LocationId
+JOIN Location l_end ON m.EndLocation = l_end.LocationId
