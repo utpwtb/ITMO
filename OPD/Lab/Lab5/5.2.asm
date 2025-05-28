@@ -179,7 +179,7 @@ SHOW_DIGITS:
     LD DIGIT3
     ADD #0x30
     OUT 0x14
-     
+    
     RET
 
 CONVERT_DECIMAL:         ; 十进制转换
