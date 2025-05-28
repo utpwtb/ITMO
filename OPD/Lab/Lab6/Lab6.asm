@@ -39,24 +39,21 @@ main:       DI
             ST  X
             EI
             JUMP  main
-int1:       DI
+int1:       
             LD  X
             NOP
             ASL
-            ASL
-            SUB X
+            ADD X
             ADD #3
-            NOP
             OUT 2
+            NOP
             EI
             IRET
-int3:       DI
+int3:       
             IN  6
             NOP
             AND $X
-            ST  X
-            LD  #0x1F
-            AND $X
+            AND #0x1F
             ST  X
             NOP
             EI
