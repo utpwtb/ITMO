@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //1.自定义对象
+        let user = {
+            name : 'Tom',
+            age : 18,
+            gender : '男',
+
+            /* 
+            sing: function() {
+                window.alert(this.name + '正在唱歌');
+            }
+            */
+            sing (){
+                window.alert(this.name + '正在唱歌');
+            }
+
+            /* 
+
+            //箭头函数中的this指向外部作用域的this
+            //在这里this指向当前对象的父级，而不是user对象
+
+            sing: () => {
+                window.alert(this.name + '正在唱歌');
+                }
+             */
+        }
+
+        //2. 调用对象属性/方法
+        //alert(user.name); // 输出: Tom
+        //user.sing(); // 调用sing方法，输出: Tom正在唱歌
+
+        alert(JSON.stringify(user)); // 将对象转换为JSON字符串并输出
+
+        let personJson = '{"name" : "Alice", "age" : 25}';
+        alert(JSON.parse(personJson).name); // 将JSON字符串转换为对象并输出
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-DOM</title>
+</head>
+<body>
+
+    <h1 id="title1">11111</h1>
+    <h1>22222</h1>
+    <h1>33333</h1>
+
+    <script>
+
+        let h1 = document.querySelector('#title1');
+        //h1.innerHTML = 'Hello, World!';
+
+        //获得DOM对象
+        let hs = document.querySelectorAll('h1');
+
+        //调用DOM对象里面的属性/方法
+        hs[0].innerHTML = 'Hello, World!';
+        hs[1].innerHTML = 'Hello, Vue!';
+
+    </script>
+
+</body>
+</html>

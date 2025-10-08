@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单项标签</title>
+</head>
+<body>
+    <form action="/save" method="post">
+        <!-- for可以和下面的id=name的表单项绑定，直接点击Name:可以直接将光标放在输入框中 -->
+        <label for="name">Name: </label>
+        <input id="name" type="text" name="name" placeholder="请输入姓名"><br><br>
+        Password: <input type="password" name="password"><br><br>
+        <!-- label标签将文本与按钮关联，使得点击文本也可以选中按钮 -->
+        Gender: <label><input type="radio" name="gender" value="1">M</label>
+                <label><input type="radio" name="gender" value="2">F</label><br><br>
+        Hobby: <label><input type="checkbox" name="hobby" value="Java">Java</label>
+               <label><input type="checkbox" name="hobby" value="Game">Game</label>
+               <label><input type="checkbox" name="hobby" value="Sing">Sing</label><br><br>
+        Image: <input type="file" name="image"><br><br>
+        Date birthday: <input type="date" name="birthday"><br><br>
+        Time: <input type="time" name="time"><br><br>
+        Datetime: <input type="datetime-local" value="datetime"><br><br>
+        Degree: <select name="degree">
+                <option value="">--------Select--------</option>
+                <option value="1">大专</option>
+                <option value="2">学士</option>
+                <option value="3">硕士</option>
+                <option value="4">博士</option>
+        </select><br><br>
+        Description: <textarea name="description" cols="30" rows="3"></textarea>
+        <input type="hidden" name="id" value="1"><br><br>
+        <input type="button" value="Button">
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS事件</title>
+</head>
+<body>
+    
+    <input type="button" id="btn1" value="按钮1">
+    <input type="button" id="btn2" value="按钮2">
+
+    <script>
+
+        //获取DOM对象
+        let btn2 = document.querySelector('#btn2');
+
+        //添加事件监听
+        //使用addEventListener添加事件监听，可以添加多个同类型的事件
+        document.querySelector('#btn1').addEventListener('click', function() {
+            console.log('按钮1被点击了！');
+        });
+        document.querySelector('#btn1').addEventListener('click', function() {
+            console.log('按钮1被点击了-2！');
+        });
+
+        //直接设置onclick事件,第二次设置会覆盖第一次
+        document.querySelector('#btn2').onclick = function() {
+            console.log('按钮2被点击了！');
+        };
+        btn2.onclick = function() {
+            console.log('按钮2被点击了-2！');
+        };
+    </script>
+
+</body>
+</html>
