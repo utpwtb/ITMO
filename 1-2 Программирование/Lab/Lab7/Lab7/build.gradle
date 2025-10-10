@@ -1,0 +1,84 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'com.diffplug.spotless' version '6.25.0'
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.github.johnrengelman.shadow'
+    
+    group = 'itmo.programming'
+    version = '1.0-SNAPSHOT'
+    
+    repositories {
+        mavenCentral()
+    }
+    
+    dependencies {
+        testImplementation platform('org.junit:junit-bom:5.10.0')
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.2'
+        implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2'
+        implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+    
+    tasks.withType(Test) {
+        systemProperty("file.encoding", "UTF-8")
+    }
+}
+
+project(':common') {
+    dependencies {
+    }
+}
+
+project(':client') {
+    dependencies {
+        implementation project(':common')
+    }
+    
+    jar {
+        manifest {
+            attributes 'Main-Class': 'itmo.programming.client.Client'
+        }
+    }
+    
+    shadowJar {
+        archiveBaseName.set('client')
+        archiveClassifier.set('')
+        manifest {
+            attributes 'Main-Class': 'itmo.programming.client.Client'
+        }
+        mergeServiceFiles()
+    }
+}
+
+project(':server') {
+    dependencies {
+        implementation project(':common')
+    }
+    
+    jar {
+        manifest {
+            attributes 'Main-Class': 'itmo.programming.server.Server'
+        }
+    }
+    
+    shadowJar {
+        archiveBaseName.set('server')
+        archiveClassifier.set('')
+        manifest {
+            attributes 'Main-Class': 'itmo.programming.server.Server'
+        }
+        mergeServiceFiles()
+    }
+}
+
+test {
+    useJUnitPlatform()
+} 

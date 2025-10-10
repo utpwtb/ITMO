@@ -1,0 +1,14 @@
+// client/build.gradle
+
+dependencies {
+    implementation project(':common')
+}
+
+shadowJar {
+    archiveBaseName.set('client')
+    archiveClassifier.set('')  // 不使用分类器
+    manifest {
+        attributes 'Main-Class': 'itmo.programming.client.Client'  // Главная точка входа
+    }
+    mergeServiceFiles()  // Если нужно объединить сервисные файлы
+}

@@ -1,0 +1,253 @@
+@startuml
+
+' 设置图的主题和样式
+skinparam backgroundColor #F8F9FA
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #4A6785
+skinparam classArrowColor #4A6785
+skinparam packageBackgroundColor #E8EDF2
+skinparam packageBorderColor #4A6785
+skinparam packageFontColor #4A6785
+skinparam arrowThickness 0.7
+skinparam linetype ortho
+
+' 公共模块
+package "common" as common {
+    class Person << (S, #FFAAAA) Serializable >> {
+        - id: long
+        - name: String
+        - coordinates: Coordinates
+        - creationDate: Date
+        - height: long
+        - birthday: LocalDateTime
+        - eyeColor: EyeColor
+        - hairColor: HairColor
+        - location: Location
+        + Person(...)
+    }
+    
+    class Request << (S, #FFAAAA) Serializable >> {
+        - commandStr: String
+        - commandArgs: List<String>
+        - person: Person
+        + Request(...)
+    }
+    
+    class Response << (S, #FFAAAA) Serializable >> {
+        - message: String
+        - collectionToStr: String
+        + Response(...)
+    }
+    
+    class CommandMode {
+        << (E, #AAAAFF) enum >>
+        CONSOLE_MODE
+        SCRIPT_MODE
+    }
+    
+    interface ValidateArgs {
+        + validateConsoleArgs(args: String[])
+        + validateScriptArgs(args: String[])
+    }
+}
+
+' 客户端模块
+package "client" as client {
+    class Client {
+        + main(args: String[])
+        - runCommandLoop(scanner: Scanner, commandClientManager: CommandClientManager, netWorkManager: NetWorkManager)
+    }
+    
+    abstract class CommandClient implements ValidateArgs {
+        + execute(args: String[], mode: CommandMode): Request
+        + getFollowUpLines(): int
+        - validateArgs(args: String[], mode: CommandMode)
+    }
+    
+    class CommandClientManager {
+        - commandsClient: Map<String, CommandClient>
+        + register(commandName: String, commandClient: CommandClient)
+        + getCommands(): Map<String, CommandClient>
+    }
+    
+    class NetWorkManager {
+        + init(host: String, port: int): boolean
+        + close()
+        + sendRequest(request: Request): Response
+        + serializer(object: Serializable): byte[]
+        + deserialize(data: byte[]): Object
+    }
+    
+    class CommandClientUtils {
+        + commandClientInt(manager: CommandClientManager, netWorkManager: NetWorkManager)
+    }
+    
+    class GetResponseUtils {
+        + getResponse(netWorkManager: NetWorkManager, request: Request): Response
+    }
+    
+    class CreatPerson {
+        - personFactory: PersonFactory
+        + create(args: String[], mode: CommandMode): Person
+    }
+    
+    ' 具体客户端命令类
+    class AddClient extends CommandClient
+    class InsertClient extends CommandClient {
+        - netWorkManager: NetWorkManager
+    }
+    class UpdateClient extends CommandClient {
+        - netWorkManager: NetWorkManager
+    }
+    class RemoveKeyClient extends CommandClient {
+        - netWorkManager: NetWorkManager
+    }
+    class ClearClient extends CommandClient
+    class SaveClient extends CommandClient
+    class ExecuteScriptClient extends CommandClient
+    class ExitClient extends CommandClient
+    class RemoveGreaterClient extends CommandClient {
+        - netWorkManager: NetWorkManager
+    }
+    class RemoveLowerClient extends CommandClient {
+        - netWorkManager: NetWorkManager
+    }
+    class RemoveGreaterKeyClient extends CommandClient {
+        - netWorkManager: NetWorkManager
+    }
+    class HelpClient extends CommandClient
+    class InfoClient extends CommandClient
+    class ShowClient extends CommandClient
+    class MinByCreationDateClient extends CommandClient
+    class FilterContainsNameClient extends CommandClient
+    class FilterLessThanHairColorClient extends CommandClient
+}
+
+' 服务端模块
+package "server" as server {
+    class Server {
+        + main(args: String[])
+        - processRequest(requestData: NetWorkManager.RequestData, runner: Runner, netWorkManager: NetWorkManager)
+    }
+    
+    abstract class Command {
+        - name: String
+        - description: String
+        + execute(args: String[], person: Person): Response
+    }
+    
+    class CommandManager {
+        - commands: Map<String, Command>
+        + register(name: String, command: Command)
+        + getCommand(name: String): Command
+    }
+    
+    class CollectionManager {
+        - collection: LinkedHashMap<Long, Person>
+        - initializationTime: LocalDate
+        - key: long
+        + CollectionManager()
+        + getCollection(): LinkedHashMap<Long, Person>
+        + addPerson(key: Long, person: Person)
+        + removePerson(key: Long)
+        + updatePerson(id: Long, person: Person)
+        + getSize(): int
+    }
+    
+    class NetWorkManager {
+        - serverSocket: ServerSocket
+        - currentClientSocket: Socket
+        - port: int
+        + start()
+        + acceptConnection(): RequestData
+        + serializer(object: Serializable): byte[]
+        + deserialize(data: byte[]): Request
+        + close()
+        
+        class RequestData {
+            + data: byte[]
+        }
+    }
+    
+    class ResponseSender {
+        - netWorkManager: NetWorkManager
+        + sendResponse(response: Response)
+    }
+    
+    class FileUtils {
+        - documentManager: DocumentManager
+        - collectionManager: CollectionManager
+        - filePath: String
+        + loadCollection()
+        + saveCollection()
+    }
+    
+    class DocumentManager {
+        - collectionManager: CollectionManager
+        + parseDocument(filePath: String)
+        + createDocument(collection: LinkedHashMap<Long, Person>): Document
+    }
+    
+    class CommandUtils {
+        + commandInitialization(manager: CommandManager, collectionManager: CollectionManager)
+    }
+    
+    class Runner {
+        - commandManager: CommandManager
+        + runCommand(request: Request): Response
+    }
+}
+
+' 关系连接
+' 客户端关系
+Client --> CommandClientManager
+Client --> NetWorkManager
+Client --> CommandClientUtils
+Client --> GetResponseUtils
+CommandClientManager --> CommandClient
+CommandClientUtils --> CommandClientManager
+CommandClientUtils --> NetWorkManager
+CommandClient --> ValidateArgs
+CommandClient --> Request
+CommandClient --> CommandMode
+AddClient --> CreatPerson
+InsertClient --> NetWorkManager
+UpdateClient --> NetWorkManager
+RemoveKeyClient --> NetWorkManager
+RemoveGreaterClient --> NetWorkManager
+RemoveLowerClient --> NetWorkManager
+RemoveGreaterKeyClient --> NetWorkManager
+
+' 服务端关系
+Server --> NetWorkManager
+Server --> CommandManager
+Server --> CollectionManager
+Server --> DocumentManager
+Server --> FileUtils
+Server --> Runner
+CommandManager --> Command
+CollectionManager --> Person
+NetWorkManager --> Request
+NetWorkManager --> Response
+ResponseSender --> NetWorkManager
+ResponseSender --> Response
+FileUtils --> DocumentManager
+FileUtils --> CollectionManager
+DocumentManager --> CollectionManager
+CommandUtils --> CommandManager
+CommandUtils --> CollectionManager
+Runner --> CommandManager
+Runner --> Request
+Runner --> Response
+
+' 模块间关系
+client.NetWorkManager --> common.Request
+client.NetWorkManager --> common.Response
+server.NetWorkManager --> common.Request
+server.NetWorkManager --> common.Response
+client.CommandClient --> common.Request
+client.CommandClient --> common.CommandMode
+server.Command --> common.Response
+server.Command --> common.CommandMode
+
+@enduml

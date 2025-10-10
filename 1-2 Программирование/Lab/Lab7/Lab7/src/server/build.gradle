@@ -1,0 +1,13 @@
+// server/build.gradle
+
+dependencies {
+    implementation project(':common')  // Включаем зависимости из общего модуля
+}
+
+shadowJar {
+    archiveBaseName.set('server')
+    archiveClassifier.set('')  // 不使用分类器
+    manifest {
+        attributes 'Main-Class': 'itmo.programming.server.Server'  // Главная точка входа
+    }
+}

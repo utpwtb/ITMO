@@ -1,0 +1,10 @@
+// common/build.gradle
+
+dependencies {
+    // 完全删除对server的依赖，不要只是注释掉
+}
+
+jar {
+    archiveBaseName.set('common')
+    archiveVersion.set('1.0-SNAPSHOT')
+}

@@ -1,0 +1,5 @@
+rootProject.name = 'labs-utpwtb'
+include ':common', ':client', ':server'
+project(':common').projectDir = file('src/common')
+project(':client').projectDir = file('src/client')
+project(':server').projectDir = file('src/server') 
