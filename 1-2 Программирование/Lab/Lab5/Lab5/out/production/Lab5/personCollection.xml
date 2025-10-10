@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Persons>
+    <Person id="1">
+        <name>zhangsan</name>
+        <coordinates>{x = 123.0, y = 13}</coordinates>
+        <creationDate>Mon Mar 17 00:24:23 MSK 2025</creationDate>
+        <height>173</height>
+        <birthday>2002-12-12T12:12</birthday>
+        <eyeColor>RED</eyeColor>
+        <hairColor>BLUE</hairColor>
+        <location>{x = 213.0, y = 13, z = 123}</location>
+    </Person>
+    <Person id="2">
+        <name>lisi</name>
+        <coordinates>{x = 132.0, y = 123}</coordinates>
+        <creationDate>Mon Mar 17 00:26:49 MSK 2025</creationDate>
+        <height>183</height>
+        <birthday>2003-12-12T12:12</birthday>
+        <eyeColor>RED</eyeColor>
+        <hairColor>BLUE</hairColor>
+        <location>{x = 312.0, y = 123, z = 132}</location>
+    </Person>
+</Persons>
