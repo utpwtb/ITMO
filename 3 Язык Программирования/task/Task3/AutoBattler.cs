@@ -54,13 +54,15 @@ public class AutoBattler
                 ConsoleUtils.Logger($"{defender.Name} HP is now {defender.HP}", ConsoleColor.Magenta);
                 File.AppendAllText(logFile, $"{attacker.Name} attacked {defender.Name} for {attacker.Attack} damage.\n");
             }
+
+            ConsoleUtils.Beep();
         }
 
         Hero winner = hero1.HP > 0 ? hero1 : hero2;
         ConsoleUtils.Logger($"{winner.Name} wins!", ConsoleColor.Yellow);
         File.AppendAllText(logFile, $"{winner.Name} wins!\n");
 
-        ConsoleUtils.Beep();
+        
     }
 
 }

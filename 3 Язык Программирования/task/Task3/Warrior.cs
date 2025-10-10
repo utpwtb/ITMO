@@ -2,7 +2,7 @@ public class Warrior : Hero
 {
     private static Random random = new Random();
 
-    public Warrior(string name, int attack, int defense, int hp) :
+    public Warrior(string name) :
         base(name,
             random.Next(25, 40),
             random.Next(10, 15),

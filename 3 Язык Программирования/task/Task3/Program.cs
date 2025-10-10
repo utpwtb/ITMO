@@ -1,5 +1,5 @@
-﻿Warrior warrior = new Warrior("warrior", 0, 0, 0);
-Wizard wizard = new Wizard("wizard", 0, 0, 0);
+﻿Warrior warrior = new Warrior("warrior");
+Wizard wizard = new Wizard("wizard");
 AutoBattler autoBattler = new AutoBattler(warrior, wizard);
 autoBattler.StartBattle();
 
