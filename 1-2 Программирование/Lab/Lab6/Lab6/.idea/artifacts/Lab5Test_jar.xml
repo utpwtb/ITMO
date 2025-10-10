@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Lab5Test:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Lab5Test_jar</output-path>
+    <root id="archive" name="Lab5Test.jar">
+      <element id="module-output" name="Lab6" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/stax2-api-4.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jackson-core-2.15.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/woodstox-core-6.5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jackson-databind-2.15.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jackson-annotations-2.15.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jackson-dataformat-xml-2.15.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jackson-datatype-jsr310-2.15.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
