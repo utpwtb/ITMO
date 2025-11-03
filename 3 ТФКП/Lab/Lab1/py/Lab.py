@@ -3,30 +3,57 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('TkAgg')
 
-plt.ion()
-iter_func = lambda z, c: (z ** 2 + c)
+julia_C = -0 + 0j
 
-def calc_steps(c, max_iter_num=128):
-    z = complex(0, 0)
-    num = 0
-    while num < max_iter_num and abs(z) < 2:
-        z = iter_func(z,c)
-        num += 1
-    return num
+def julia_set(x, y):
+    z = np.array(x + 1j * y)
+    r = np.zeros(z.shape)
+    m = np.ones(z.shape, dtype=bool)
+    for i in range(24):
+        z[m] = z[m] ** 2 + julia_C
+        m = np.abs(z) < 2
+        r += m
+    return r
 
-def display_mandelbrot(x_num = 1000, y_num = 1000):
-    X, Y = np.meshgrid(np.linspace(-2, 2, x_num + 1), np.linspace(-2, 2, y_num + 1))
-    C = X + Y *1j
-    result = np.zeros((y_num + 1, x_num + 1))
-    for i in range(y_num + 1):
-        for j in range(x_num + 1):
-            result[i, j] = calc_steps(C[i, j])
+def mandelbrot_set(x, y):
+    c = np.array(x + 1j * y)
+    z = np.zeros(c.shape, dtype=complex)
+    r = np.ones(c.shape)
+    m = np.ones(c.shape, dtype=bool)
+    for i in range(50):
+        z[m] = z[m] ** 2 + c[m]
+        m = np.abs(z) < 2
+        r += m
+    return r
 
-    plt.imshow(result, interpolation="bilinear", cmap = plt.cm.hot,
-               vmax = abs(result).max(), vmin = abs(result).min(),
-               extent = [-2, 2, -2, 2])
-    plt.tight_layout()
-    plt.show()
+def complex_str(c):
+    return np.array_str(np.array([julia_C]), suppress_small=True, precision=3)
 
-if __name__ == '__main__':
-    display_mandelbrot(2000, 2000)
+def grid(width, offset, n):
+    x = np.linspace(-width + offset, width + offset,n)
+    y = np.linspace(-width, width, n)
+    return np.meshgrid(x,y), (x.min(), x.max(), y.min(), y.max())
+
+fig, (ax, bx) = plt.subplots(1, 2)
+ax.set_title("Mandelbrot Set(Mirror to Julia Set)")
+bx.set_title("Julia Set c=" + complex_str(julia_C))
+
+(X, Y), extent = grid(2, 0, 1000)
+cf = ax.imshow(mandelbrot_set(X,Y), extent=extent)
+
+(X, Y), extent = grid(2, 0, 1000)
+julia = julia_set(X, Y)
+img = bx.imshow(julia, extent=extent, cmap="gray")
+
+def onclick(event):
+    if event.inaxes != ax: return
+    global X, Y, julia_C
+    julia_C = event.xdata + 1j * event.ydata
+    julia = julia_set(X, Y)
+    img.set_data(julia)
+    bx.set_title("Julia Set c=" + complex_str(julia_C))
+    fig.canvas.draw_idle()
+
+fig.canvas.mpl_connect('button_press_event', onclick)
+plt.tight_layout()
+plt.show()
