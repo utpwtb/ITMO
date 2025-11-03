@@ -1,0 +1,49 @@
+\section{Найдите угол между градиентами функций $u(x, y, z)$ и $v(x, y, z)$
+в точке $M_0$}
+\[
+v = 6\sqrt{6}x^3 - 6\sqrt{6}y^3 + 2z^3
+\]
+\[
+u = \frac{y}{xz^2},\quad M_0(\frac{1}{\sqrt{6}}; \frac{1}{\sqrt{6}}; 1)
+\]
+
+\subsection{Нахождение градиентов}
+
+\[
+\nabla v = (\frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}, \frac{\partial v}{\partial z}) = (18\sqrt{6}x^2, -18\sqrt{6}y^2, 6z^2),
+\]
+
+\[
+\nabla u = (\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z}) = (-\frac{y}{x^2z^2}, \frac{1}{xz^2}, -\frac{2y}{xz^3}).
+\]
+
+\subsection{Градиенты в точке \(M_0\)}
+
+\[
+\nabla v(M_0) = (3\sqrt{6}, -3\sqrt{6}, 6), \quad \nabla u(M_0) = (-\sqrt{6}, \sqrt{6}, -2).
+\]
+
+\subsection{Скалярное произведение и нормы}
+
+\[
+\nabla v \cdot \nabla u \bigg|_{M_0} = (3\sqrt{6})(-\sqrt{6}) + (-3\sqrt{6})(\sqrt{6}) + 6(-2) = -48,
+\]
+
+\[
+\|\nabla v(M_0)\| = \sqrt{(3\sqrt{6})^2 + (-3\sqrt{6})^2 + 6^2} = \sqrt{54 + 54 + 36} = 12,
+\]
+
+\[
+\|\nabla u(M_0)\| = \sqrt{(-\sqrt{6})^2 + (\sqrt{6})^2 + (-2)^2} = \sqrt{6 + 6 + 4} = \sqrt{16} = 4.
+\]
+
+\subsection{Косинус угла}
+
+\[
+\cos\theta=\frac{\nabla v\cdot\nabla u}{\|\nabla v\|\,\|\nabla u\|} = \frac{-48}{12 \times 4} = -1,
+\]
+получаем \(\theta = \pi\).
+
+\subsection{Итоговый результат}
+
+\[\boxed{\theta = \pi}\]

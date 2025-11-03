@@ -1,0 +1,167 @@
+\section{Заменяя приращение функции дифференциалом, приближённо вычислить}
+
+Тело взвесили в воздухе (4.1±0.1 H) и в воде (1.8±0.2 Н). Найти плотность
+тела и указать погрешность подсчета.
+
+\subsection*{Дано:}
+\begin{itemize}
+    \item Вес тела в воздухе: $P_{\text{возд}} = 4.1 \pm 0.1$ Н
+    \item Вес тела в воде: $P_{\text{воды}} = 1.8 \pm 0.2$ Н
+    \item Плотность воды: $\rho_{\text{воды}} = 1000$ кг/1м$^3$
+    \item Плотность воздуха: $\rho_{\text{возд}} = 1.225$ кг/м$^3$
+    \item Ускорение свободного падения: $g \approx 9.8$ м/с$^2$
+\end{itemize}
+
+\subsection{Вывод формулы для плотности тела}
+
+Учтём выталкивающую силу воздуха при взвешивании:
+
+\begin{itemize}
+    \item \textbf{В воздухе:} $P_{\text{возд}} = mg - F_{\text{возд}}$, где $F_{\text{возд}} = \rho_{\text{возд}} \cdot g \cdot V$
+    \item \textbf{В воде:} $P_{\text{воды}} = mg - F_{\text{воды}}$, где $F_{\text{воды}} = \rho_{\text{воды}} \cdot g \cdot V$
+\end{itemize}
+
+Выразим массу тела из веса в воздухе:
+\[
+P_{\text{возд}} = mg - \rho_{\text{возд}} \cdot g \cdot V \quad \Rightarrow \quad mg = P_{\text{возд}} + \rho_{\text{возд}} \cdot g \cdot V
+\]
+
+Подставим в выражение для веса в воде:
+\[
+P_{\text{воды}} = (P_{\text{возд}} + \rho_{\text{возд}} \cdot g \cdot V) - \rho_{\text{воды}} \cdot g \cdot V
+\]
+
+Упростим:
+\[
+P_{\text{воды}} = P_{\text{возд}} - (\rho_{\text{воды}} - \rho_{\text{возд}}) \cdot g \cdot V
+\]
+
+Выразим объём тела:
+\[
+(\rho_{\text{воды}} - \rho_{\text{возд}}) \cdot g \cdot V = P_{\text{возд}} - P_{\text{воды}}
+\]
+\[
+V = \frac{P_{\text{возд}} - P_{\text{воды}}}{(\rho_{\text{воды}} - \rho_{\text{возд}}) \cdot g}
+\]
+
+Масса тела:
+\[
+m = \frac{P_{\text{возд}} + \rho_{\text{возд}} \cdot g \cdot V}{g} = \frac{P_{\text{возд}}}{g} + \rho_{\text{возд}} \cdot V
+\]
+
+Плотность тела:
+\[
+\rho = \frac{m}{V} = \frac{\frac{P_{\text{возд}}}{g} + \rho_{\text{возд}} \cdot V}{V} = \frac{P_{\text{возд}}}{g \cdot V} + \rho_{\text{возд}}
+\]
+
+Подставим выражение для объёма:
+\[
+\rho = \frac{P_{\text{возд}}}{g \cdot \frac{P_{\text{возд}} - P_{\text{воды}}}{(\rho_{\text{воды}} - \rho_{\text{возд}}) \cdot g}} + \rho_{\text{возд}} = \frac{P_{\text{возд}} \cdot (\rho_{\text{воды}} - \rho_{\text{возд}})}{P_{\text{возд}} - P_{\text{воды}}} + \rho_{\text{возд}}
+\]
+
+Условие задачи состоит в том чтобы найти значение без сложных вычислений,
+поэтому отбросим плотность воздуха т.к. она почти не влияет на результат, но усложняет
+рассчёты
+
+\[
+\rho = \frac{P_{\text{возд}} \cdot \rho_{\text{воды}}}{P_{\text{возд}} - P_{\text{воды}}}
+\]
+
+\subsection{Вычисление $f_0$}
+Пусть:
+\[
+x = P_{\text{возд}}, \quad y = P_{\text{воды}}, \quad \rho = f(x,y)
+\]
+Запишем формулу и вычислим
+\[
+f(x, y) = 1000 \cdot \frac{x}{x - y}
+\]
+\[
+f_0(4, 2) = 1000 \cdot \frac{4}{4 - 2} = 1000 \cdot 2 = 2000
+\]
+
+\subsection{Поиск дифференциала функции}
+
+\[
+f_x' = -\,1000 \cdot \frac{y}{(x - y)^2}, 
+\quad
+f_y' = 1000 \cdot \frac{x}{(x - y)^2}
+\]
+
+\[
+df = f_x'\,dx + f_y'\,dy
+\]
+
+\[
+df = 1000 \cdot \frac{-y\,dx + x\,dy}{(x - y)^2}
+\]
+
+\subsection{Итоговое значение}
+
+\[
+f(x_0 + \Delta x,\, y_0 + \Delta y)
+\approx
+f_0(x_0, y_0) + df
+\]
+
+\[
+f(x_0 + \Delta x,\, y_0 + \Delta y)
+\approx
+1000 \cdot \frac{x_0}{x_0 - y_0}
++ 1000 \cdot \frac{-y_0\,\Delta x + x_0\,\Delta y}{(x_0 - y_0)^2}
+\]
+
+\[
+f(4 + 0.1,\, 2 - 0.2)
+\approx
+2000
++ 1000 \cdot \frac{-2 \cdot 0.1 + 4 \cdot (-0.2)}{(4 - 2)^2}
+\]
+
+\[
+f(4.1, 1.8) \approx 2000 + 1000 \cdot \frac{-1}{4} = 2000 - 250 = 1750
+\]
+
+\[
+\boxed{f(4.1, 1.8) \approx 1750}
+\]
+
+\subsection{Оценка погрешности подсчёта}
+
+При использовании дифференциала максимальная погрешность функции $\rho = f(x,y)$ оценивается так:
+
+\[
+\Delta \rho \approx |df| = \left| f_x' \, \Delta x + f_y' \, \Delta y \right|
+\]
+
+Для более надёжной оценки берём сумму модулей:
+
+\[
+\Delta \rho \lesssim |f_x'| \, |\Delta x| + |f_y'| \, |\Delta y|
+\]
+
+Подставим значения измерений: $x_0 = 4$, $y_0 = 2$, $\Delta x = 0.1$, $\Delta y = 0.2$.
+
+\[
+|f_x'| = 1000 \cdot \frac{2}{(4 - 2)^2} = 1000 \cdot \frac{2}{4} = 500
+\]
+
+\[
+|f_y'| = 1000 \cdot \frac{4}{(4 - 2)^2} = 1000 \cdot \frac{4}{4} = 1000
+\]
+
+Расчёт погрешности
+
+\[
+\Delta \rho \approx |f_x'| \, \Delta x + |f_y'| \, \Delta y = 500 \cdot 0.1 + 1000 \cdot 0.2
+\]
+
+\[
+\Delta \rho = 50 + 200 = 250
+\]
+
+Итоговое значение плотности тела с погрешностью:
+
+\[
+\boxed{\rho \approx 1750 \pm 250 \text{ кг/м}^3}
+\]

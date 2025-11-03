@@ -1,0 +1,71 @@
+\section{Найти наибольшее и наименьшее значения функции $z = z(x, y)$ в области $D$,
+ограниченной заданными линиями}
+\[
+z = 3x^2 + 3y^2 -x -y + 1,
+\]
+\[
+D:\ x = 5,\ y = 0,\ x - y - 1 = 0
+\]
+
+\subsection{Нахождение границы}
+
+\[
+D :
+\begin{cases}
+x = 5,\\
+y = 0,\\
+x - y - 1 = 0.
+\end{cases}
+\Rightarrow (1;0),\ (5;0),\ (5;4)
+\]
+Получим 
+\[
+D:
+\begin{cases}
+1 \leq x \leq 5, \\
+0 \leq y \leq x-1.
+\end{cases}
+\]
+
+\subsection{Нахождение критических точек}
+
+\[
+\begin{cases}
+{z_x}^{\prime} = 6x - 1,\\
+{z_y}^{\prime} = 6y - 1.
+\end{cases}
+\]
+
+Получим 
+
+\[
+x = y = \frac{1}{6}.
+\]
+
+Так что точка не придналежит области \(D\).
+
+\subsection{Иследование фнукции \(z\) на границе области}
+
+\begin{itemize}
+\item На отрезке \(y = 0, x \in [1;5]:\)
+\[z(x,0) = 3x^2 - x + 1, \quad \frac{\partial z}{\partial x} = 6x - 1,\]
+Минимум на отрезке в \(x = 1 \Rightarrow z(1;0) = 3,\)
+максимум в \(x = 5 \Rightarrow z(5;0) = 71.\)
+\item На отрезке \(x = 5, y \in [0;4]:\)
+\[z(5,y) = 71 + 3y^2 - y, \quad \frac{\partial z}{\partial y} = 6y - 1,\]
+критическая точка \(y = \frac{1}{6} \in [0;4]\) даёт минимум
+\[z(5,\frac{1}{6}) = 71 + 3\cdot \frac{1}{36} - \frac{1}{6} = 71 - \frac{1}{12} = \frac{851}{12}.\]
+Максимум на \(y = 4 \Rightarrow z(5;4) = 115.\)
+\item На отрезке \(y = x - 1, x \in [1;5]:\)
+Пусть \(x = t:\)
+\[z(t,t-1) = 6t^2 -8t +5 \]
+\[{z_t}^{\prime} = 12t - 8 = 0 \Rightarrow t = \frac{2}{3} \notin [1;5].\]
+Минимум на отрезке в \(t = 1 \Rightarrow z(1;0) = 3,\)
+максимум в \(t = 5 \Rightarrow z(5;4) = 115.\)
+\end{itemize}
+
+\subsection{Итоговый результат}
+
+\[
+\boxed{ \min\limits_{D} z = 3 \quad \text{при} (1,0), \quad \max\limits_{D} z = 115 \quad \text{при} (5,4).}
+\]

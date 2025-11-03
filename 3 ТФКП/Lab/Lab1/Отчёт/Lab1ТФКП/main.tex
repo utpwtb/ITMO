@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+
+% --- 数学与图形支持 ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{placeins} 
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, intersections}
+
+% --- 字体与多语言支持 ---
+\usepackage{fontspec}
+\usepackage{polyglossia}          % 多语言支持
+\setdefaultlanguage{russian}      % 主语言：俄语
+\setotherlanguage{english}        % 副语言：英语
+\setmainfont{CMU Serif}           % 主字体
+
+% --- 页面布局 ---
+\usepackage[
+    a4paper,
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=3cm
+]{geometry}
+
+% --- 常用宏包 ---
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{setspace}
+\setlength{\parskip}{0.2\baselineskip}
+\setlength{\parindent}{0cm}
+\setmainfont[Ligatures=TeX]{CMU Serif}
+
+\usepackage[
+    a4paper,
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=3cm
+]{geometry}
+    
+\usepackage{lipsum}
+\usepackage{setspace}
+
+\setlength{\parskip}{0.2\baselineskip} % Отступ после абзаца
+\setlength{\parindent}{0cm} % Отступ красной строки
+
+\begin{document}
+\include{title}
+\setstretch{0.95}
+\tableofcontents
+\newpage
+\setstretch{1}
+
+\include{1}
+\include{2}
+\include{3}
+\include{4}
+
+\end{document}
