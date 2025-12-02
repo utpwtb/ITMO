@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Веб-программирование Лабораторная работа #1</title>
+
+    <script src="js/script.js" defer></script>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        --border-width: calc(0.1% + 0.5px);
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      header {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 25px;
+        background-color: #333;
+        color: white;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: cursive;
+        color: white;
+        margin: 0;
+      }
+
+      .graph-container,
+      .form-container {
+        background-color: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .form-section {
+        padding: 20px;
+        background-color: #f8f8f8;
+      }
+
+      .section-title {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 1.1rem;
+      }
+
+      .form-container > p{
+          min-height: 1.2em;
+          margin: 4px 0;
+      }
+
+      .section-title::before{
+          content: ">";
+      }
+
+      /* X值按钮部分 */
+      .button-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2%;
+      }
+
+      .button-X input[type="button"] {
+        width: 100%;
+        padding: 1.5% 0.5%;
+        margin: 1% 0;
+        background-color: #666;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .button-X input[type="button"]:hover {
+        background-color: #444;
+      }
+
+      .button-X input[type="button"]:active {
+        background-color: #333;
+      }
+
+      .button-X input[type="button"].selected {
+        background-color: #333;
+      }
+
+      /* Y值输入部分 */
+      .text-Y input[type="text"] {
+        width: 95%;
+        padding: 1.5% 2%;
+        margin: 2% 2.5%;
+        border: var(--border-width) solid #ddd;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+        background-color: white;
+      }
+
+      /* R值复选框部分 */
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2%;
+      }
+
+      .checkbok-Z label {
+        display: flex;
+        align-items: center;
+        padding: 1.25% 2%;
+        margin: 1% 0;
+        background-color: white;
+        border: var(--border-width) solid #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .checkbok-Z label:hover {
+        border-color: #666;
+        background-color: #f5f5f5;
+      }
+
+      .checkbok-Z input[type="checkbox"] {
+        margin-right: 8px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .submit-btn {
+        text-align: center;
+        margin-top: 3%;
+      }
+
+      .submit-btn input[type="submit"] {
+        padding: 1.75% 2.5%;
+        margin: 1%;
+        background-color: #333;
+        color: white;
+        border: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit-btn input[type="submit"]:hover {
+        background-color: #555;
+      }
+
+      .submit-btn input[type="submit"]:active {
+        background-color: #222;
+      }
+
+      .submit-btn input[type="button"]#reset-button, .submit-btn input[type="button"]#clear-results-button {
+        padding: 1.75% 3%;
+        background-color: #333;
+        color: white;
+        border: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit-btn input[type="button"]#reset-button {
+        margin-left: 10px;
+      }
+
+      .submit-btn input[type="button"]#clear-results-button {
+        margin-left: 10px;
+      }
+
+      .submit-btn input[type="button"]#reset-button:hover,
+      .submit-btn input[type="button"]#clear-results-button:hover {
+        background-color: #555;
+      }
+
+      .submit-btn input[type="button"]#reset-button:active,
+      .submit-btn input[type="button"]#clear-results-button:active {
+        background-color: #222;
+      }
+
+      .axis {
+        stroke: #333;
+        stroke-width: 1.5;
+      }
+
+      .shape {
+        fill: rgba(100, 100, 100, 0.2);
+        stroke: #666;
+        stroke-width: 1.5;
+      }
+
+      .label {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        fill: #555;
+      }
+
+      .axis-label {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        fill: #333;
+      }
+
+      #errorX,
+      #errorY,
+      #errorR {
+        color: rgba(255, 99, 71, 0.8);
+      }
+
+      .result-container {
+        background-color: white;
+        padding: 25px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-top: 25px;
+      }
+
+      .result-container h2 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .result-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      .result-table th,
+      .result-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        font-size: 0.95rem;
+        color: #333;
+      }
+
+      .result-table th {
+        background-color: #f5f5f5;
+        font-weight: bold;
+      }
+
+      .result-table tbody tr:nth-child(even) {
+        background-color: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Чень Хаолинь Р3216 Вариант:407960</h1>
+      </header>
+
+      <div class="graph-container">
+        <svg
+          width="100%"
+          height="500"
+          viewBox="0 0 600 600"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <style>
+            .axis {
+              stroke: #333;
+              stroke-width: 1.5;
+            }
+            .shape {
+              fill: rgba(100, 100, 100, 0.2);
+              stroke: #666;
+              stroke-width: 1.5;
+            }
+            .label {
+              font-family: Arial, sans-serif;
+              font-size: 14px;
+              fill: #555;
+            }
+            .axis-label {
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              font-weight: bold;
+              fill: #333;
+            }
+          </style>
+
+          <!-- Центр координат -->
+          <defs>
+            <marker
+              id="arrowhead"
+              markerWidth="10"
+              markerHeight="7"
+              refX="9"
+              refY="3.5"
+              orient="auto"
+            >
+              <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
+            </marker>
+          </defs>
+
+          <!-- Ось X -->
+          <line
+            x1="50"
+            y1="300"
+            x2="550"
+            y2="300"
+            class="axis"
+            marker-end="url(#arrowhead)"
+          />
+          <text x="560" y="290" class="axis-label">X</text>
+          <!-- насечки и метки оси X -->
+          <line x1="100" y1="295" x2="100" y2="305" class="axis" />
+          <text x="95" y="325" class="label">-R</text>
+
+          <line x1="200" y1="295" x2="200" y2="305" class="axis" />
+          <text x="195" y="325" class="label">-R/2</text>
+
+          <line x1="400" y1="295" x2="400" y2="305" class="axis" />
+          <text x="395" y="325" class="label">R/2</text>
+
+          <line x1="500" y1="295" x2="500" y2="305" class="axis" />
+          <text x="495" y="325" class="label">R</text>
+
+          <!-- Ось Y -->
+          <line
+            x1="300"
+            y1="550"
+            x2="300"
+            y2="50"
+            class="axis"
+            marker-end="url(#arrowhead)"
+          />
+          <text x="310" y="40" class="axis-label">Y</text>
+          <!-- насечки и метки оси Y -->
+          <line x1="295" y1="100" x2="305" y2="100" class="axis" />
+          <text x="315" y="105" class="label">R</text>
+
+          <line x1="295" y1="200" x2="305" y2="200" class="axis" />
+          <text x="315" y="205" class="label">R/2</text>
+
+          <line x1="295" y1="400" x2="305" y2="400" class="axis" />
+          <text x="315" y="405" class="label">-R/2</text>
+
+          <line x1="295" y1="500" x2="305" y2="500" class="axis" />
+          <text x="315" y="505" class="label">-R</text>
+
+          <!-- Прямоугольная часть -->
+          <polygon points="300,300 500,300 500,100 300,100" class="shape" />
+
+          <!-- Треугольная часть -->
+          <polygon points="300,300 100,300 300,100" class="shape" />
+
+          <!-- Четверть круга -->
+          <path
+            d="M 400,300 A 100,100 0 0 1 300,400 L 300,300 Z"
+            class="shape"
+          />
+        </svg>
+      </div>
+
+      <div class="form-container">
+        <form method="get" onsubmit="return false">
+          <p id="errorX" style="color: #f41c52"></p>
+          <!-- Значение X -->
+          <div class="form-section button-X">
+            <span class="section-title">Выберите значение X:</span>
+            <div class="button-grid">
+              <input type="button" name="X" value="-5" />
+              <input type="button" name="X" value="-4" />
+              <input type="button" name="X" value="-3" />
+              <input type="button" name="X" value="-2" />
+              <input type="button" name="X" value="-1" />
+              <input type="button" name="X" value="0" />
+              <input type="button" name="X" value="1" />
+              <input type="button" name="X" value="2" />
+              <input type="button" name="X" value="3" />
+            </div>
+          </div>
+
+          <p id="errorY" style="color: #f41c52"></p>
+          <!-- Значение Y -->
+          <div class="form-section text-Y">
+            <span class="section-title">Введите значение Y:</span>
+            <input
+              type="text"
+              name="Y"
+              placeholder="Введите число от -5 до 3"
+            />
+          </div>
+
+          <p id="errorR" style="color: #f41c52"></p>
+          <!-- Значение R -->
+          <div class="form-section checkbok-Z">
+            <span class="section-title">Выберите значение R:</span>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="R" value="1" />1</label>
+              <label><input type="checkbox" name="R" value="1.5" />1.5</label>
+              <label><input type="checkbox" name="R" value="2" />2</label>
+              <label><input type="checkbox" name="R" value="2.5" />2.5</label>
+              <label><input type="checkbox" name="R" value="3" />3</label>
+            </div>
+          </div>
+
+          <div class="submit-btn">
+            <input type="submit" id="check-button" value="Отправить" />
+            <input type="button" id="reset-button" value="Отменить" />
+            <input
+              type="button"
+              id="clear-results-button"
+              value="Очистить результаты"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="result-container">
+      <h2>Результаты</h2>
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>R</th>
+            <th>Результат</th>
+            <th>Текущее время</th>
+            <th>Время выполнения (мс)</th>
+          </tr>
+        </thead>
+        <tbody id="result-body"></tbody>
+      </table>
+    </div>
+
+    <script>
+      function checkFrom() {
+        let valid = true;
+
+        document.getElementById("errorX").textContent = "";
+        document.getElementById("errorY").textContent = "";
+        document.getElementById("errorR").textContent = "";
+
+        if (!validateX()) valid = false;
+        if (!validateY()) valid = false;
+        if (!validateR()) valid = false;
+
+        return valid;
+      }
+
+      function validateX() {
+        if (x !== undefined) {
+          return true;
+        }
+
+        document.getElementById("errorX").textContent = "X не выбрано";
+        return false;
+      }
+
+      function validateY() {
+        let y = document.querySelector("input[name=Y]").value.replace(",", ".");
+        if (y.trim() === "") {
+          document.getElementById("errorY").textContent = "Y не введено";
+          return false;
+        }
+        if (!isNumeric(y)) {
+          document.getElementById("errorY").textContent = "Y не число";
+          return false;
+        }
+        if (!(yNum >= -5 && yNum <= 3)) {
+          document.getElementById("errorY").textContent =
+            "Y не входит в область допустимых значений (-5, 3)";
+          return false;
+        }
+        return true;
+      }
+
+      function validateR() {
+        let checkedBoxes = document.querySelectorAll("input[name=R]:checked");
+        if (checkedBoxes.length === 0) {
+          document.getElementById("errorR").textContent = "R не выбрано";
+          return false;
+        }
+
+        //r = checkedBoxes[0].value;
+        rArray = [];
+        for (let i = 0; i < checkedBoxes.length; i++) {
+          rArray.push(checkedBoxes[i].value);
+        }
+        return true;
+      }
+
+      function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+      }
+    </script>
+  </body>
+</html>
