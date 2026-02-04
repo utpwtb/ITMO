@@ -1,65 +1,92 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-e = np.e
+E = np.e
 
-# ===== 显示窗口 =====
-ZLIM = 20
-Z1LIM = 8
-WLIM = 8
-
-# ===== 生成笛卡尔网格（点数适中）=====
-N = 500
-x = np.linspace(-ZLIM, ZLIM, N)
-y = np.linspace(-ZLIM, ZLIM, N)
-X, Y = np.meshgrid(x, y)
-Z = X + 1j*Y
-
-# ===== D1 =====
-mask_D1 = np.abs(Z) > e
-Z_D1 = Z[mask_D1]
+def sample_area(e=E, n_theta=1200, n_r=900, r_max=5_000.0):
+    theta = np.linspace(0, 2 * np.pi, n_theta, endpoint=False)
+    r = e * np.exp(np.linspace(np.log(1.0001), np.log(r_max / e), n_r))
+    R, T = np.meshgrid(r, theta, indexing="ij")
+    return (R * np.exp(1j * T)).ravel()
 
 
-Z1 = Z_D1 / e
+def sample_boundary(e=E, n=2400):
+    theta = np.linspace(0, 2 * np.pi, n, endpoint=False) + 1e-4
+    return e * np.exp(1j * theta)
 
 
-Z2 = Z1**2
+def step1(z):
+    return z / E
 
-W = np.log(Z2) / np.pi
-W1 = (-2) / W
 
-# ===== Step 4 =====
-#Wf = W[(W.real > 0) & (np.abs(W-1) > 1)]
-Wf = W1
+def step2(z1):
+    return 1.0 / z1
 
-# ===== 作图 =====
-fig, axs = plt.subplots(2, 2, figsize=(12, 12))
-s = 0.6
 
-axs[0,0].scatter(Z_D1.real, Z_D1.imag, s=s)
-axs[0,0].set_title(r"$D_1:\ |z|>e$")
-axs[0,0].set_xlim(-ZLIM, ZLIM)
-axs[0,0].set_ylim(-ZLIM, ZLIM)
+def step3(z2):
+    return 1j * (1 + z2) / (1 - z2)
 
-axs[0,1].scatter(Z1.real, Z1.imag, s=s)
-axs[0,1].set_title(r"$z_1=z/e$")
-axs[0,1].set_xlim(-Z1LIM, Z1LIM)
-axs[0,1].set_ylim(-Z1LIM, Z1LIM)
 
-axs[1,0].scatter(Z2.real, Z2.imag, s=s)
-axs[1,0].set_title(r"$z_2:\ {z_1}^2$")
-axs[1,0].set_xlim(-Z1LIM, Z1LIM)
-axs[1,0].set_ylim(0, Z1LIM)
+def step4(z3):
+    root = np.sqrt(z3 * z3 - 1)
+    z4a = z3 + root
+    z4b = z3 - root
+    return np.where(np.abs(z4a) >= np.abs(z4b), z4a, z4b)
 
-axs[1,1].scatter(Wf.real, Wf.imag, s=s)
-axs[1,1].set_title(r"$D_2$")
-axs[1,1].set_xlim(0, WLIM)
-axs[1,1].set_ylim(0, WLIM)
 
-for ax in axs.flat:
-    ax.set_aspect("equal")
-    ax.axhline(0, linewidth=0.4, color='black')
-    ax.axvline(0, linewidth=0.4, color='black')
+def step5(z4):
+    return 1 + z4
 
-plt.tight_layout()
+
+def step6(z5):
+    return np.sqrt(z5)
+
+
+def transform_chain(z):
+    z1 = step1(z)
+    z2 = step2(z1)
+    z3 = step3(z2)
+    z4 = step4(z3)
+    z5 = step5(z4)
+    w = step6(z5)
+    return [z, z1, z2, z3, z4, z5, w]
+
+
+def build_chain(samples, pole_tol=1e-8):
+    chain = transform_chain(samples)
+    clean_chain = []
+    for stage in chain:
+        m = np.isfinite(stage.real) & np.isfinite(stage.imag)
+        clean_chain.append(stage[m])
+    return clean_chain
+
+
+area_chain = build_chain(sample_area())
+boundary_chain = build_chain(sample_boundary())
+
+titles = [
+    r"$D_1:\ |z|>e$",
+    r"$z_1 = z/e$",
+    r"$z_2 = 1/z_1$",
+    r"$z_3 = i\frac{1+z_2}{1-z_2}$",
+    r"$z_4 = z_3 + \sqrt{z_3^2-1}$",
+    r"$z_5 = 1 + z_4$",
+    r"$w = \sqrt{z_5}$ (D2)",
+]
+
+def plot_stage(ax, area_pts, boundary_pts, title):
+    ax.scatter(area_pts.real, area_pts.imag, s=0.1, alpha=0.35, color="#3B82F6")
+    ax.plot(boundary_pts.real, boundary_pts.imag, color="white", linewidth=0.8, alpha=1.0)
+    ax.axhline(0, color="black", linewidth=0.5)
+    ax.axvline(0, color="black", linewidth=0.5)
+    ax.set_aspect("equal", "box")
+    ax.set_xlim(-5, 5)
+    ax.set_ylim(-5, 5)
+    ax.set_title(title)
+
+for area_pts, boundary_pts, title in zip(area_chain, boundary_chain, titles):
+    fig, ax = plt.subplots(figsize=(5, 5))
+    plot_stage(ax, area_pts, boundary_pts, title)
+    plt.tight_layout()
+
 plt.show()

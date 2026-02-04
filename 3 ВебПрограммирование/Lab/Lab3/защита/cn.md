@@ -259,6 +259,16 @@ __faces-config.xml__
 
 `UIViewRoot`对象表示JSF视图，它与活动的FacesContext相关联。JSF实现在首次访问（请求）时创建视图，或者恢复已创建的视图。当客户端提交表单（回发）时，JSF转换提交的数据，验证它们，保存到managed bean，为导航查找视图，从managed bean恢复组件值，根据视图生成响应。所有这些JSF操作都通过6个有序过程来描述。
 
+
+`UIViewRoot` 是JSF框架的核心类，它代表了服务器端页面（视图）的完整结构。
+
+### **主要特点：**
+
+1. **视图的根组件** - 每个JSF页面对应一个UIViewRoot实例
+2. **组件树的根** - 包含页面上所有UI组件的层级结构
+3. **视图状态管理** - 负责保存和恢复视图状态
+4. **生命周期管理** - 参与JSF请求处理生命周期
+
 ## 6. 托管Bean - 目的，配置方式。托管Bean的上下文。
 
 __托管Bean__ – 包含用于处理组件数据的参数和方法的类。必须具有 `get`和 `set`方法。用于处理UI和验证数据。生命周期由JSF运行时环境管理。从JSP页面的访问通过表达式语言（EL）实现。配置在faces-config.xml中设置或通过注解完成。
@@ -341,7 +351,17 @@ __faces-config.xml__ — JavaServer Faces的配置文件，必须位于项目的
 - 处理来自浏览器的请求。
 - 形成事件对象并调用监听器方法。
 
+**FacesServlet** 是JSF（JavaServer Faces）框架的 **前端控制器** ，负责处理所有JSF页面请求。
+
+### **核心作用：**
+
+1. **请求入口** ：拦截所有JSF请求（如：*.xhtml）
+2. **生命周期管理** ：控制JSF的6个阶段处理流程
+3. **上下文创建** ：为每个请求创建FacesContext环境
+
 ## 8. JSF应用程序中的导航。
+
+JSF导航控制页面之间的跳转逻辑，决定用户操作后显示哪个页面。
 
 JSF的导航机制允许定义逻辑结果标志与下一个视图之间的关联。由 `NavigationHandler`对象实现。导航通过转换规则完成。
 
@@ -369,6 +389,21 @@ JSF的导航机制允许定义逻辑结果标志与下一个视图之间的关�
 
 ## 9. 从Java应用程序访问数据库。JDBC协议，查询形成，与数据库驱动程序的配合。
 
+#### **1. JDBC (Java Database Connectivity)**
+
+ **定义** ：Java数据库连接，是Java语言中用来规范客户端程序如何访问数据库的应用程序接口
+
+ **关键特性** ：
+
+* 提供与数据库无关的标准API
+* 允许执行SQL语句
+* 支持事务处理
+* 提供数据库元数据访问
+
+#### **2. JDBC驱动程序 (JDBC Driver)**
+
+ **定义** ：实现JDBC接口的具体类库，用于连接特定数据库
+
 ### JDBC协议：
 
 JDBC（Java Database Connectivity）不是协议，而是基于SQL访问组调用级别的接口。
@@ -381,6 +416,30 @@ JDBC本身不能工作，并使用ODBC的主要抽象和方法。尽管JDBC API�
 ### 数据库驱动程序：
 
 有传递给查询的参数，最重要的是查询执行结果。驱动程序的任务是将查询、参数和结果打包成通过网络传输的数据包。打包格式在任何语言中都没有规定，每个DBMS都以自己的方式实现它。更何况，许多DBMS中不仅有不同的数据类型，还有复杂类型，例如PostgreSQL的数组，这在SQL标准中根本不存在，因此为了与DBMS配合工作，程序会与特定DBMS的库链接，这些库知道如何与特定的数据库通信。
+
+// 1. 加载驱动程序
+Class.forName("com.mysql.cj.jdbc.Driver");
+
+// 2. 建立连接
+Connection conn = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/mydb", "user", "password");
+
+// 3. 创建语句
+Statement stmt = conn.createStatement();
+
+// 4. 执行查询
+ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+
+// 5. 处理结果
+while(rs.next()) {
+    String name = rs.getString("name");
+    int age = rs.getInt("age");
+}
+
+// 6. 关闭资源
+rs.close();
+stmt.close();
+conn.close();
 
 ## 10. ORM概念。Java应用程序中的ORM库。主要API。ORM提供者与JDBC驱动程序的集成。
 
