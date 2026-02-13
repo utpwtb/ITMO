@@ -19,7 +19,7 @@
 ### 2. **挂载阶段 (Mounting)**
 
 - **beforeMount()**: 模板编译完成，但还未挂载到 DOM
-- **mounted()**: 实例已挂载到 DOM，可以操作 DOM 元素
+- **mounted()**: 实例已挂载到 DOM，可以操作 DOM 元素																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
 
 ### 3. **更新阶段 (Updating)**
 
@@ -46,7 +46,7 @@ created() {
 }
 ```
 
-### **mounted()** - DOM 操作
+### **mounted()** - DOM 操作																										
 
 ```javascript
 mounted() {
