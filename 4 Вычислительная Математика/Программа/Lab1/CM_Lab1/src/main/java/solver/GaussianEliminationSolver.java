@@ -76,10 +76,10 @@ public class GaussianEliminationSolver {
         return maxRow;
     }
 
-    private void swapRows(Double[][] augment, int row1, int row2) {
-        Double[] temp = augment[row1];
-        augment[row1] = augment[row2];
-        augment[row2] = temp;
+    private void swapRows(Double[][] augmented, int row1, int row2) {
+        Double[] temp = augmented[row1];
+        augmented[row1] = augmented[row2];
+        augmented[row2] = temp;
     }
 
     private void eliminateColumn(Double[][] augmented, int n, int currentRow) {
