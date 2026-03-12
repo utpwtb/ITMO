@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.5.5">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.1">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="6660" dy="1803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+    <mxGraphModel dx="1586" dy="-461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -213,7 +213,7 @@
         <mxCell id="rpxhHG8mNxqE_rTdErqr-10" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rpxhHG8mNxqE_rTdErqr-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="rpxhHG8mNxqE_rTdErqr-9" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rpxhHG8mNxqE_rTdErqr-6" parent="WIyWlLk6GJQsqaUBKTNV-1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;factor = augmented[i][currentRow] / augmented[currentRow][currentRow];&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; augmented[i][currentRow] = 0.0;&lt;/div&gt;" vertex="1">
+        <mxCell id="rpxhHG8mNxqE_rTdErqr-6" parent="WIyWlLk6GJQsqaUBKTNV-1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;factor = augmented&lt;sub&gt;i,currentRow&lt;/sub&gt;&amp;nbsp;/ augmented&lt;sub&gt;currentRow,currentRow&lt;/sub&gt;;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; augmented&lt;sub&gt;i,currentRow&amp;nbsp;&lt;/sub&gt;= 0.0;&lt;/div&gt;" vertex="1">
           <mxGeometry height="50" width="470" x="3395" y="3403" as="geometry" />
         </mxCell>
         <mxCell id="rpxhHG8mNxqE_rTdErqr-12" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rpxhHG8mNxqE_rTdErqr-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="rpxhHG8mNxqE_rTdErqr-11" value="">
@@ -225,7 +225,7 @@
         <mxCell id="rpxhHG8mNxqE_rTdErqr-16" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rpxhHG8mNxqE_rTdErqr-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="rpxhHG8mNxqE_rTdErqr-15" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rpxhHG8mNxqE_rTdErqr-11" parent="WIyWlLk6GJQsqaUBKTNV-1" style="rounded=0;whiteSpace=wrap;html=1;" value="augmented[i][j] -= factor * augmented[currentRow][j];" vertex="1">
+        <mxCell id="rpxhHG8mNxqE_rTdErqr-11" parent="WIyWlLk6GJQsqaUBKTNV-1" style="rounded=0;whiteSpace=wrap;html=1;" value="augmented&lt;sub&gt;i,j&lt;/sub&gt;&amp;nbsp;-= factor * augmented&lt;sub&gt;currentRow,j&lt;/sub&gt;;" vertex="1">
           <mxGeometry height="40" width="290" x="3485" y="3575" as="geometry" />
         </mxCell>
         <mxCell id="rpxhHG8mNxqE_rTdErqr-13" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rpxhHG8mNxqE_rTdErqr-11" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="rpxhHG8mNxqE_rTdErqr-9" value="">
