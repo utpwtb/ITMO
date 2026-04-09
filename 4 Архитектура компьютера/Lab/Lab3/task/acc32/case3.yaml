@@ -1,0 +1,22 @@
+name: "assert upper_case_cstr('Hello World!\n') == ('HELLO WORLD!', '')"
+limit: 1000
+memory_size: 0x1000
+memory_mapped_io:
+  0x80: [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33, 10]  
+  0x84: []                                 
+reports:
+  - name: Step-by-step
+    slice: all
+    view: |
+      {pc}: {instruction} {pc:label} {Acc:hex}
+  
+  - name: Result
+    slice: last
+    view: |
+      numio[0x80]: {io:0x80:sym}
+      numio[0x84]: {io:0x84:sym}
+      {memory:0:31}
+    assert: |
+      numio[0x80]: "" >>> ""
+      numio[0x84]: "" >>> "HELLO WORLD!"
+      mem[0..31]: 	48 45 4c 4c 4f 20 57 4f 52 4c 44 21 00 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f
