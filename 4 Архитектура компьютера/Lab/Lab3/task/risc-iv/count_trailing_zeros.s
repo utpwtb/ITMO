@@ -10,8 +10,10 @@ _start:
     addi     t0, t0, %lo(input_addr)
     lw       t0, 0(t0)                 
     lw       t1, 0(t0)                   
+
     addi     t2, zero, 32              
     beqz     t1, store_result          
+    
     addi     t2, zero, 0                
     addi     t3, zero, 1                 
 

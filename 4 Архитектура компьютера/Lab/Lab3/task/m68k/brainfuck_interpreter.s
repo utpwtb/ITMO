@@ -31,7 +31,7 @@ read_loop:
     cmp.b   0x0A, D0
     beq     read_done
     cmp.l   63, D5
-    bge     line_overflow_error
+    bge     overflow_error
     move.b  D0, 0(A4,D5)
     add.l   1, D5
     jmp     read_loop
@@ -55,7 +55,7 @@ val_check_close:
     cmp.b   ']', D0
     bne     val_adv_index
     sub.l   1, D6
-    blt     error_unmatched_close
+    blt     error
 
 val_adv_index:
     add.l   1, D4
@@ -63,7 +63,7 @@ val_adv_index:
 
 val_brackets_done:
     cmp.l   0, D6
-    bne     error_unmatched_open
+    bne     error
 
 fill_bracket_jumps:
     movea.l bracket_stack, A3
@@ -76,7 +76,7 @@ fill_bfj_loop:
     cmp.b   '[', D0
     bne     fill_bfj_check_close
     cmp.l   64, D1
-    bge     error_unmatched_open
+    bge     error
     move.l  D1, D3
     lsl.l   2, D3
     move.l  D4, 0(A3,D3)
@@ -87,7 +87,7 @@ fill_bfj_check_close:
     cmp.b   ']', D0
     bne     fill_bfj_adv
     sub.l   1, D1
-    blt     error_unmatched_close
+    blt     error
     move.l  D1, D3
     lsl.l   2, D3
     move.l  0(A3,D3), D6
@@ -136,17 +136,17 @@ main_loop:
     beq     main_next
     cmp.b   13, D0
     beq     main_next
-    jmp     error_invalid_cmd
+    jmp     error
 
 cmd_right:
     add.l   1, D7
     cmp.l   30, D7
-    bge     error_ptr_out
+    bge     error
     jmp     main_next
 
 cmd_left:
     sub.l   1, D7
-    blt     error_ptr_out
+    blt     error
     jmp     main_next
 
 cmd_inc:
@@ -217,29 +217,13 @@ main_next:
     add.l   1, D2
     jmp     main_loop
 
-program_end:
-    halt
-
-error_ptr_out:
+error:
     move.l  -1, (A1)
-    halt
-
-error_unmatched_close:
-    move.l  -1, (A1)
-    halt
-
-error_unmatched_open:
-    move.l  -1, (A1)
-    halt
+    jmp     program_end
 
 overflow_error:
     move.l  0xCCCCCCCC, (A1)
-    halt
+    jmp     program_end
 
-line_overflow_error:
-    move.l  0xCCCCCCCC, (A1)
-    halt
-
-error_invalid_cmd:
-    move.l  -1, (A1)
+program_end:
     halt

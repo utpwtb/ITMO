@@ -21,9 +21,8 @@ _start:
     -if check_one
     drop drop
     lit -1
-    @p output_addr b!
-    !b
-    halt
+    
+    end ;
 
 check_one:
     drop
@@ -51,23 +50,20 @@ check_one:
 is_one:
     drop drop
     lit 0
-    @p output_addr b!
-    !b
-    halt
+
+    end ;
 
 is_two:
     drop drop
     lit 1
-    @p output_addr b!
-    !b
-    halt
+
+    end ;
 
 is_even:
     drop
     lit 0
-    @p output_addr b!
-    !b
-    halt
+
+    end ;
 
 loop_start:
     !p n_store
@@ -105,15 +101,13 @@ loop_i:
 not_prime:
     drop
     lit 0
-    @p output_addr b!
-    !b
-    halt
+
+    end ;
 
 is_prime:
     lit 1
-    @p output_addr b!
-    !b
-    halt
+
+    end ;
 
 subtract:
     inv
@@ -157,3 +151,8 @@ mod_loop:
     
     drop
     ;
+
+end:
+    @p output_addr b!
+    !b
+    halt
