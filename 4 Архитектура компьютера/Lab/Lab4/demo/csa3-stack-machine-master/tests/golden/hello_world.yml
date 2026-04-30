@@ -1,0 +1,223 @@
+in_source: |
+  .data
+  hello_str: "Hello, world!"
+
+  .text
+  _start:
+          push hello_str ; 1. помещаем адрес переменной hello_str (адрес начала строки) в стек
+          load           ; 2. загружаю на вершину стэка значение по адресу вершины стэка - длину Pascal-строки
+  cycle:
+          jz ext         ; 3. если длина 0, то выходим
+          swap           ; 4. теперь на верхушке адрес
+          inc            ; 5. увеличиваем на 1, получаем адрес следующего символа
+          load           ; 6. загружаем символ из памяти по адресу
+          output 1       ; 7. вывод по порту для вывода
+          pop            ; 8. удаляем символ, теперь на вершине опять адрес символа
+          swap           ; 9. теперь на верхушке длина строки
+          dec            ; 10. уменьшаем на 1
+          jmp cycle      ; 11. безусловный переход
+  ext:
+          pop            ; 12. очищаем стек
+          pop            ; 13. очищаем стек
+          halt           ; 14. завершение работы
+
+
+in_stdin: |
+  <no input>
+out_log: |
+  DEBUG   simulation:run           TICK:   0,  PC:   0,  AR:   0,  MEM_OUT:  13,  TOS: []                    ,    jmp 1     |
+  DEBUG   simulation:run           TICK:   1,  PC:   1,  AR:   0,  MEM_OUT:  13,  TOS: []                    ,    push 0    |
+  DEBUG   simulation:run           TICK:   2,  PC:   2,  AR:   0,  MEM_OUT:  13,  TOS: [0]                   ,    load      |
+  DEBUG   simulation:run           TICK:   4,  PC:   3,  AR:   0,  MEM_OUT:  13,  TOS: [13, 0]               ,    jz 12     |
+  DEBUG   simulation:run           TICK:   5,  PC:   4,  AR:   0,  MEM_OUT:  13,  TOS: [13, 0]               ,    swap      |
+  DEBUG   simulation:run           TICK:   6,  PC:   5,  AR:   0,  MEM_OUT:  13,  TOS: [0, 13]               ,    inc       |
+  DEBUG   simulation:run           TICK:   7,  PC:   6,  AR:   0,  MEM_OUT:  13,  TOS: [1, 13]               ,    load      |
+  DEBUG   simulation:run           TICK:   9,  PC:   7,  AR:   1,  MEM_OUT:  72,  TOS: [72, 1, 13]           ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: H
+  DEBUG   simulation:run           TICK:  10,  PC:   8,  AR:   1,  MEM_OUT:  72,  TOS: [72, 1, 13]           ,    pop       |
+  DEBUG   simulation:run           TICK:  11,  PC:   9,  AR:   1,  MEM_OUT:  72,  TOS: [1, 13]               ,    swap      |
+  DEBUG   simulation:run           TICK:  12,  PC:  10,  AR:   1,  MEM_OUT:  72,  TOS: [13, 1]               ,    dec       |
+  DEBUG   simulation:run           TICK:  13,  PC:  11,  AR:   1,  MEM_OUT:  72,  TOS: [12, 1]               ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  14,  PC:   3,  AR:   1,  MEM_OUT:  72,  TOS: [12, 1]               ,    jz 12     |
+  DEBUG   simulation:run           TICK:  15,  PC:   4,  AR:   1,  MEM_OUT:  72,  TOS: [12, 1]               ,    swap      |
+  DEBUG   simulation:run           TICK:  16,  PC:   5,  AR:   1,  MEM_OUT:  72,  TOS: [1, 12]               ,    inc       |
+  DEBUG   simulation:run           TICK:  17,  PC:   6,  AR:   1,  MEM_OUT:  72,  TOS: [2, 12]               ,    load      |
+  DEBUG   simulation:run           TICK:  19,  PC:   7,  AR:   2,  MEM_OUT: 101,  TOS: [101, 2, 12]          ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: e
+  DEBUG   simulation:run           TICK:  20,  PC:   8,  AR:   2,  MEM_OUT: 101,  TOS: [101, 2, 12]          ,    pop       |
+  DEBUG   simulation:run           TICK:  21,  PC:   9,  AR:   2,  MEM_OUT: 101,  TOS: [2, 12]               ,    swap      |
+  DEBUG   simulation:run           TICK:  22,  PC:  10,  AR:   2,  MEM_OUT: 101,  TOS: [12, 2]               ,    dec       |
+  DEBUG   simulation:run           TICK:  23,  PC:  11,  AR:   2,  MEM_OUT: 101,  TOS: [11, 2]               ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  24,  PC:   3,  AR:   2,  MEM_OUT: 101,  TOS: [11, 2]               ,    jz 12     |
+  DEBUG   simulation:run           TICK:  25,  PC:   4,  AR:   2,  MEM_OUT: 101,  TOS: [11, 2]               ,    swap      |
+  DEBUG   simulation:run           TICK:  26,  PC:   5,  AR:   2,  MEM_OUT: 101,  TOS: [2, 11]               ,    inc       |
+  DEBUG   simulation:run           TICK:  27,  PC:   6,  AR:   2,  MEM_OUT: 101,  TOS: [3, 11]               ,    load      |
+  DEBUG   simulation:run           TICK:  29,  PC:   7,  AR:   3,  MEM_OUT: 108,  TOS: [108, 3, 11]          ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: l
+  DEBUG   simulation:run           TICK:  30,  PC:   8,  AR:   3,  MEM_OUT: 108,  TOS: [108, 3, 11]          ,    pop       |
+  DEBUG   simulation:run           TICK:  31,  PC:   9,  AR:   3,  MEM_OUT: 108,  TOS: [3, 11]               ,    swap      |
+  DEBUG   simulation:run           TICK:  32,  PC:  10,  AR:   3,  MEM_OUT: 108,  TOS: [11, 3]               ,    dec       |
+  DEBUG   simulation:run           TICK:  33,  PC:  11,  AR:   3,  MEM_OUT: 108,  TOS: [10, 3]               ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  34,  PC:   3,  AR:   3,  MEM_OUT: 108,  TOS: [10, 3]               ,    jz 12     |
+  DEBUG   simulation:run           TICK:  35,  PC:   4,  AR:   3,  MEM_OUT: 108,  TOS: [10, 3]               ,    swap      |
+  DEBUG   simulation:run           TICK:  36,  PC:   5,  AR:   3,  MEM_OUT: 108,  TOS: [3, 10]               ,    inc       |
+  DEBUG   simulation:run           TICK:  37,  PC:   6,  AR:   3,  MEM_OUT: 108,  TOS: [4, 10]               ,    load      |
+  DEBUG   simulation:run           TICK:  39,  PC:   7,  AR:   4,  MEM_OUT: 108,  TOS: [108, 4, 10]          ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: l
+  DEBUG   simulation:run           TICK:  40,  PC:   8,  AR:   4,  MEM_OUT: 108,  TOS: [108, 4, 10]          ,    pop       |
+  DEBUG   simulation:run           TICK:  41,  PC:   9,  AR:   4,  MEM_OUT: 108,  TOS: [4, 10]               ,    swap      |
+  DEBUG   simulation:run           TICK:  42,  PC:  10,  AR:   4,  MEM_OUT: 108,  TOS: [10, 4]               ,    dec       |
+  DEBUG   simulation:run           TICK:  43,  PC:  11,  AR:   4,  MEM_OUT: 108,  TOS: [9, 4]                ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  44,  PC:   3,  AR:   4,  MEM_OUT: 108,  TOS: [9, 4]                ,    jz 12     |
+  DEBUG   simulation:run           TICK:  45,  PC:   4,  AR:   4,  MEM_OUT: 108,  TOS: [9, 4]                ,    swap      |
+  DEBUG   simulation:run           TICK:  46,  PC:   5,  AR:   4,  MEM_OUT: 108,  TOS: [4, 9]                ,    inc       |
+  DEBUG   simulation:run           TICK:  47,  PC:   6,  AR:   4,  MEM_OUT: 108,  TOS: [5, 9]                ,    load      |
+  DEBUG   simulation:run           TICK:  49,  PC:   7,  AR:   5,  MEM_OUT: 111,  TOS: [111, 5, 9]           ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: o
+  DEBUG   simulation:run           TICK:  50,  PC:   8,  AR:   5,  MEM_OUT: 111,  TOS: [111, 5, 9]           ,    pop       |
+  DEBUG   simulation:run           TICK:  51,  PC:   9,  AR:   5,  MEM_OUT: 111,  TOS: [5, 9]                ,    swap      |
+  DEBUG   simulation:run           TICK:  52,  PC:  10,  AR:   5,  MEM_OUT: 111,  TOS: [9, 5]                ,    dec       |
+  DEBUG   simulation:run           TICK:  53,  PC:  11,  AR:   5,  MEM_OUT: 111,  TOS: [8, 5]                ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  54,  PC:   3,  AR:   5,  MEM_OUT: 111,  TOS: [8, 5]                ,    jz 12     |
+  DEBUG   simulation:run           TICK:  55,  PC:   4,  AR:   5,  MEM_OUT: 111,  TOS: [8, 5]                ,    swap      |
+  DEBUG   simulation:run           TICK:  56,  PC:   5,  AR:   5,  MEM_OUT: 111,  TOS: [5, 8]                ,    inc       |
+  DEBUG   simulation:run           TICK:  57,  PC:   6,  AR:   5,  MEM_OUT: 111,  TOS: [6, 8]                ,    load      |
+  DEBUG   simulation:run           TICK:  59,  PC:   7,  AR:   6,  MEM_OUT:  44,  TOS: [44, 6, 8]            ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: ,
+  DEBUG   simulation:run           TICK:  60,  PC:   8,  AR:   6,  MEM_OUT:  44,  TOS: [44, 6, 8]            ,    pop       |
+  DEBUG   simulation:run           TICK:  61,  PC:   9,  AR:   6,  MEM_OUT:  44,  TOS: [6, 8]                ,    swap      |
+  DEBUG   simulation:run           TICK:  62,  PC:  10,  AR:   6,  MEM_OUT:  44,  TOS: [8, 6]                ,    dec       |
+  DEBUG   simulation:run           TICK:  63,  PC:  11,  AR:   6,  MEM_OUT:  44,  TOS: [7, 6]                ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  64,  PC:   3,  AR:   6,  MEM_OUT:  44,  TOS: [7, 6]                ,    jz 12     |
+  DEBUG   simulation:run           TICK:  65,  PC:   4,  AR:   6,  MEM_OUT:  44,  TOS: [7, 6]                ,    swap      |
+  DEBUG   simulation:run           TICK:  66,  PC:   5,  AR:   6,  MEM_OUT:  44,  TOS: [6, 7]                ,    inc       |
+  DEBUG   simulation:run           TICK:  67,  PC:   6,  AR:   6,  MEM_OUT:  44,  TOS: [7, 7]                ,    load      |
+  DEBUG   simulation:run           TICK:  69,  PC:   7,  AR:   7,  MEM_OUT:  32,  TOS: [32, 7, 7]            ,    output 1  |
+  DEBUG   io:log_io        OUTPUT:  
+  DEBUG   simulation:run           TICK:  70,  PC:   8,  AR:   7,  MEM_OUT:  32,  TOS: [32, 7, 7]            ,    pop       |
+  DEBUG   simulation:run           TICK:  71,  PC:   9,  AR:   7,  MEM_OUT:  32,  TOS: [7, 7]                ,    swap      |
+  DEBUG   simulation:run           TICK:  72,  PC:  10,  AR:   7,  MEM_OUT:  32,  TOS: [7, 7]                ,    dec       |
+  DEBUG   simulation:run           TICK:  73,  PC:  11,  AR:   7,  MEM_OUT:  32,  TOS: [6, 7]                ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  74,  PC:   3,  AR:   7,  MEM_OUT:  32,  TOS: [6, 7]                ,    jz 12     |
+  DEBUG   simulation:run           TICK:  75,  PC:   4,  AR:   7,  MEM_OUT:  32,  TOS: [6, 7]                ,    swap      |
+  DEBUG   simulation:run           TICK:  76,  PC:   5,  AR:   7,  MEM_OUT:  32,  TOS: [7, 6]                ,    inc       |
+  DEBUG   simulation:run           TICK:  77,  PC:   6,  AR:   7,  MEM_OUT:  32,  TOS: [8, 6]                ,    load      |
+  DEBUG   simulation:run           TICK:  79,  PC:   7,  AR:   8,  MEM_OUT: 119,  TOS: [119, 8, 6]           ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: w
+  DEBUG   simulation:run           TICK:  80,  PC:   8,  AR:   8,  MEM_OUT: 119,  TOS: [119, 8, 6]           ,    pop       |
+  DEBUG   simulation:run           TICK:  81,  PC:   9,  AR:   8,  MEM_OUT: 119,  TOS: [8, 6]                ,    swap      |
+  DEBUG   simulation:run           TICK:  82,  PC:  10,  AR:   8,  MEM_OUT: 119,  TOS: [6, 8]                ,    dec       |
+  DEBUG   simulation:run           TICK:  83,  PC:  11,  AR:   8,  MEM_OUT: 119,  TOS: [5, 8]                ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  84,  PC:   3,  AR:   8,  MEM_OUT: 119,  TOS: [5, 8]                ,    jz 12     |
+  DEBUG   simulation:run           TICK:  85,  PC:   4,  AR:   8,  MEM_OUT: 119,  TOS: [5, 8]                ,    swap      |
+  DEBUG   simulation:run           TICK:  86,  PC:   5,  AR:   8,  MEM_OUT: 119,  TOS: [8, 5]                ,    inc       |
+  DEBUG   simulation:run           TICK:  87,  PC:   6,  AR:   8,  MEM_OUT: 119,  TOS: [9, 5]                ,    load      |
+  DEBUG   simulation:run           TICK:  89,  PC:   7,  AR:   9,  MEM_OUT: 111,  TOS: [111, 9, 5]           ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: o
+  DEBUG   simulation:run           TICK:  90,  PC:   8,  AR:   9,  MEM_OUT: 111,  TOS: [111, 9, 5]           ,    pop       |
+  DEBUG   simulation:run           TICK:  91,  PC:   9,  AR:   9,  MEM_OUT: 111,  TOS: [9, 5]                ,    swap      |
+  DEBUG   simulation:run           TICK:  92,  PC:  10,  AR:   9,  MEM_OUT: 111,  TOS: [5, 9]                ,    dec       |
+  DEBUG   simulation:run           TICK:  93,  PC:  11,  AR:   9,  MEM_OUT: 111,  TOS: [4, 9]                ,    jmp 3     |
+  DEBUG   simulation:run           TICK:  94,  PC:   3,  AR:   9,  MEM_OUT: 111,  TOS: [4, 9]                ,    jz 12     |
+  DEBUG   simulation:run           TICK:  95,  PC:   4,  AR:   9,  MEM_OUT: 111,  TOS: [4, 9]                ,    swap      |
+  DEBUG   simulation:run           TICK:  96,  PC:   5,  AR:   9,  MEM_OUT: 111,  TOS: [9, 4]                ,    inc       |
+  DEBUG   simulation:run           TICK:  97,  PC:   6,  AR:   9,  MEM_OUT: 111,  TOS: [10, 4]               ,    load      |
+  DEBUG   simulation:run           TICK:  99,  PC:   7,  AR:  10,  MEM_OUT: 114,  TOS: [114, 10, 4]          ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: r
+  DEBUG   simulation:run           TICK: 100,  PC:   8,  AR:  10,  MEM_OUT: 114,  TOS: [114, 10, 4]          ,    pop       |
+  DEBUG   simulation:run           TICK: 101,  PC:   9,  AR:  10,  MEM_OUT: 114,  TOS: [10, 4]               ,    swap      |
+  DEBUG   simulation:run           TICK: 102,  PC:  10,  AR:  10,  MEM_OUT: 114,  TOS: [4, 10]               ,    dec       |
+  DEBUG   simulation:run           TICK: 103,  PC:  11,  AR:  10,  MEM_OUT: 114,  TOS: [3, 10]               ,    jmp 3     |
+  DEBUG   simulation:run           TICK: 104,  PC:   3,  AR:  10,  MEM_OUT: 114,  TOS: [3, 10]               ,    jz 12     |
+  DEBUG   simulation:run           TICK: 105,  PC:   4,  AR:  10,  MEM_OUT: 114,  TOS: [3, 10]               ,    swap      |
+  DEBUG   simulation:run           TICK: 106,  PC:   5,  AR:  10,  MEM_OUT: 114,  TOS: [10, 3]               ,    inc       |
+  DEBUG   simulation:run           TICK: 107,  PC:   6,  AR:  10,  MEM_OUT: 114,  TOS: [11, 3]               ,    load      |
+  DEBUG   simulation:run           TICK: 109,  PC:   7,  AR:  11,  MEM_OUT: 108,  TOS: [108, 11, 3]          ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: l
+  DEBUG   simulation:run           TICK: 110,  PC:   8,  AR:  11,  MEM_OUT: 108,  TOS: [108, 11, 3]          ,    pop       |
+  DEBUG   simulation:run           TICK: 111,  PC:   9,  AR:  11,  MEM_OUT: 108,  TOS: [11, 3]               ,    swap      |
+  DEBUG   simulation:run           TICK: 112,  PC:  10,  AR:  11,  MEM_OUT: 108,  TOS: [3, 11]               ,    dec       |
+  DEBUG   simulation:run           TICK: 113,  PC:  11,  AR:  11,  MEM_OUT: 108,  TOS: [2, 11]               ,    jmp 3     |
+  DEBUG   simulation:run           TICK: 114,  PC:   3,  AR:  11,  MEM_OUT: 108,  TOS: [2, 11]               ,    jz 12     |
+  DEBUG   simulation:run           TICK: 115,  PC:   4,  AR:  11,  MEM_OUT: 108,  TOS: [2, 11]               ,    swap      |
+  DEBUG   simulation:run           TICK: 116,  PC:   5,  AR:  11,  MEM_OUT: 108,  TOS: [11, 2]               ,    inc       |
+  DEBUG   simulation:run           TICK: 117,  PC:   6,  AR:  11,  MEM_OUT: 108,  TOS: [12, 2]               ,    load      |
+  DEBUG   simulation:run           TICK: 119,  PC:   7,  AR:  12,  MEM_OUT: 100,  TOS: [100, 12, 2]          ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: d
+  DEBUG   simulation:run           TICK: 120,  PC:   8,  AR:  12,  MEM_OUT: 100,  TOS: [100, 12, 2]          ,    pop       |
+  DEBUG   simulation:run           TICK: 121,  PC:   9,  AR:  12,  MEM_OUT: 100,  TOS: [12, 2]               ,    swap      |
+  DEBUG   simulation:run           TICK: 122,  PC:  10,  AR:  12,  MEM_OUT: 100,  TOS: [2, 12]               ,    dec       |
+  DEBUG   simulation:run           TICK: 123,  PC:  11,  AR:  12,  MEM_OUT: 100,  TOS: [1, 12]               ,    jmp 3     |
+  DEBUG   simulation:run           TICK: 124,  PC:   3,  AR:  12,  MEM_OUT: 100,  TOS: [1, 12]               ,    jz 12     |
+  DEBUG   simulation:run           TICK: 125,  PC:   4,  AR:  12,  MEM_OUT: 100,  TOS: [1, 12]               ,    swap      |
+  DEBUG   simulation:run           TICK: 126,  PC:   5,  AR:  12,  MEM_OUT: 100,  TOS: [12, 1]               ,    inc       |
+  DEBUG   simulation:run           TICK: 127,  PC:   6,  AR:  12,  MEM_OUT: 100,  TOS: [13, 1]               ,    load      |
+  DEBUG   simulation:run           TICK: 129,  PC:   7,  AR:  13,  MEM_OUT:  33,  TOS: [33, 13, 1]           ,    output 1  |
+  DEBUG   io:log_io        OUTPUT: !
+  DEBUG   simulation:run           TICK: 130,  PC:   8,  AR:  13,  MEM_OUT:  33,  TOS: [33, 13, 1]           ,    pop       |
+  DEBUG   simulation:run           TICK: 131,  PC:   9,  AR:  13,  MEM_OUT:  33,  TOS: [13, 1]               ,    swap      |
+  DEBUG   simulation:run           TICK: 132,  PC:  10,  AR:  13,  MEM_OUT:  33,  TOS: [1, 13]               ,    dec       |
+  DEBUG   simulation:run           TICK: 133,  PC:  11,  AR:  13,  MEM_OUT:  33,  TOS: [0, 13]               ,    jmp 3     |
+  DEBUG   simulation:run           TICK: 134,  PC:   3,  AR:  13,  MEM_OUT:  33,  TOS: [0, 13]               ,    jz 12     |
+  DEBUG   simulation:run           TICK: 135,  PC:  12,  AR:  13,  MEM_OUT:  33,  TOS: [0, 13]               ,    pop       |
+  DEBUG   simulation:run           TICK: 136,  PC:  13,  AR:  13,  MEM_OUT:  33,  TOS: [13]                  ,    pop       |
+  DEBUG   simulation:run           TICK: 137,  PC:  14,  AR:  13,  MEM_OUT:  33,  TOS: []                    ,    halt      |
+  DEBUG   simulation:simulation    memory: DATA: [
+    0:     13
+    1:     72
+    2:     101
+    3:     108
+    4:     108
+    5:     111
+    6:     44
+    7:     32
+    8:     119
+    9:     111
+    10:    114
+    11:    108
+    12:    100
+    13:    33
+  ]
+  INFO    simulation:simulation    output_buffer (port 1): 'Hello, world!'
+  INFO    simulation:simulation    output_buffer (port 2): ''
+out_stdout: |
+  source LoC: 20 code instr: 15
+  ============================================================
+  Hello, world!
+
+  instr_counter:  123 ticks: 137
+out_code: |-
+  [
+  {"address": 0, "opcode": "jmp", "operand": 1},
+  {"address": 1, "opcode": "push", "operand": 0},
+  {"address": 2, "opcode": "load", "operand": null},
+  {"address": 3, "opcode": "jz", "operand": 12},
+  {"address": 4, "opcode": "swap", "operand": null},
+  {"address": 5, "opcode": "inc", "operand": null},
+  {"address": 6, "opcode": "load", "operand": null},
+  {"address": 7, "opcode": "output", "operand": 1},
+  {"address": 8, "opcode": "pop", "operand": null},
+  {"address": 9, "opcode": "swap", "operand": null},
+  {"address": 10, "opcode": "dec", "operand": null},
+  {"address": 11, "opcode": "jmp", "operand": 3},
+  {"address": 12, "opcode": "pop", "operand": null},
+  {"address": 13, "opcode": "pop", "operand": null},
+  {"address": 14, "opcode": "halt", "operand": null}
+  ]
+out_data: |-
+  [
+  {"address": 0, "value": 13},
+  {"address": 1, "value": 72},
+  {"address": 2, "value": 101},
+  {"address": 3, "value": 108},
+  {"address": 4, "value": 108},
+  {"address": 5, "value": 111},
+  {"address": 6, "value": 44},
+  {"address": 7, "value": 32},
+  {"address": 8, "value": 119},
+  {"address": 9, "value": 111},
+  {"address": 10, "value": 114},
+  {"address": 11, "value": 108},
+  {"address": 12, "value": 100},
+  {"address": 13, "value": 33}
+  ]

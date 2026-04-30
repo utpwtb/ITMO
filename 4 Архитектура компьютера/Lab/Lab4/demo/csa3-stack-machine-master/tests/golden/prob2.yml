@@ -1,0 +1,670 @@
+in_source: |
+  ;;; ANS: 4613732
+
+  ; cutoff=4000000
+  ; first_even = 2
+  ; second_even = 8
+  ; even_sum = first_even + second_even
+  ;
+  ; while even_sum < cutoff:
+  ;     even_fib = ((4 * second_even) + first_even)
+  ;     even_sum += even_fib
+  ;     first_even = second_even
+  ;     second_even = even_fib
+  ;
+  ; print(even_sum)
+
+  .data
+  cutoff: 4000000
+  first_even: 2
+  second_even: 8
+  even_sum: 10
+
+  .text
+  load_value:
+      load
+      swap
+      pop
+      ret
+
+  _start:
+  calculate_sum:          ; []
+      push even_sum       ; [even_sum]
+      call load_value
+
+      push cutoff         ; [even_sum, cutoff]
+      call load_value
+
+      cmp                 ; [even_sum - cutoff]
+      js print_result    ; если even_sum >= cutoff, перейти к выводу результата
+      pop
+      pop
+
+
+      ; even_fib = (4 * second_even) + first_even
+      push 4
+      push second_even    ; [4, second_even]
+      call load_value
+      mul                 ; [4 * second_even]
+      push first_even     ; [4 * second_even, first_even]
+      call load_value
+      add                 ; [even_fib]
+
+      ; even_sum += even_fib
+      push even_sum       ; [even_fib, even_sum]
+      load                ; [even_fib, even_sum_r, even_sum]
+      over3               ; [even_fib, even_sum_r, even_sum, even_fib]
+      add                 ; [even_fib, even_sum_r, even_sum+even_fib]
+      store               ; сохранить новый even_sum
+      pop
+      pop                 ; [even_fib]
+
+      ;; first_even = second_even; second_even = even_fib
+      push second_even    ; [even_fib, second_even_r]
+      call load_value     ; [even_fib, second_even]
+      push first_even     ; [even_fib, second_even, first_even_r]
+      swap                ; [even_fib, first_even_r, second_even]
+      store               ; сохранить first_even <- second_even
+      pop
+      pop                 ; [even_fib]
+      push second_even    ; [even_fib, second_even_r]
+      swap                ; [second_even_r, even_fib]
+      store               ; [second_even_r, even_fib]
+      pop
+      pop
+
+      jmp calculate_sum    ; перейти к началу цикла
+
+  print_result:
+      push even_sum
+      load
+      output 2             ; вывод результата
+      halt
+
+
+
+in_stdin: <no input>
+out_log: |
+  DEBUG   simulation:run           TICK:   0,  PC:   0,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK:   1,  PC:   5,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK:   2,  PC:   6,  AR:   0,  MEM_OUT: 4000000,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK:   3,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK:   5,  PC:   2,  AR:   3,  MEM_OUT:  10,  TOS: [10, 3]               ,    swap      |
+  DEBUG   simulation:run           TICK:   6,  PC:   3,  AR:   3,  MEM_OUT:  10,  TOS: [3, 10]               ,    pop       |
+  DEBUG   simulation:run           TICK:   7,  PC:   4,  AR:   3,  MEM_OUT:  10,  TOS: [10]                  ,    ret       |
+  DEBUG   simulation:run           TICK:   8,  PC:   7,  AR:   3,  MEM_OUT:  10,  TOS: [10]                  ,    push 0    |
+  DEBUG   simulation:run           TICK:   9,  PC:   8,  AR:   3,  MEM_OUT:  10,  TOS: [0, 10]               ,    call 1    |
+  DEBUG   simulation:run           TICK:  10,  PC:   1,  AR:   3,  MEM_OUT:  10,  TOS: [0, 10]               ,    load      |
+  DEBUG   simulation:run           TICK:  12,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 10]      ,    swap      |
+  DEBUG   simulation:run           TICK:  13,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 10]      ,    pop       |
+  DEBUG   simulation:run           TICK:  14,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 10]         ,    ret 7     |
+  DEBUG   simulation:run           TICK:  15,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 10]         ,    cmp       |
+  DEBUG   simulation:run           TICK:  16,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 10]         ,    js 40     |
+  DEBUG   simulation:run           TICK:  17,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 10]         ,    pop       |
+  DEBUG   simulation:run           TICK:  18,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [10]                  ,    pop       |
+  DEBUG   simulation:run           TICK:  19,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK:  20,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK:  21,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK:  22,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK:  24,  PC:   2,  AR:   2,  MEM_OUT:   8,  TOS: [8, 2, 4]             ,    swap      |
+  DEBUG   simulation:run           TICK:  25,  PC:   3,  AR:   2,  MEM_OUT:   8,  TOS: [2, 8, 4]             ,    pop       |
+  DEBUG   simulation:run           TICK:  26,  PC:   4,  AR:   2,  MEM_OUT:   8,  TOS: [8, 4]                ,    ret 9     |
+  DEBUG   simulation:run           TICK:  27,  PC:  16,  AR:   2,  MEM_OUT:   8,  TOS: [8, 4]                ,    mul       |
+  DEBUG   simulation:run           TICK:  28,  PC:  17,  AR:   2,  MEM_OUT:   8,  TOS: [32]                  ,    push 1    |
+  DEBUG   simulation:run           TICK:  29,  PC:  18,  AR:   2,  MEM_OUT:   8,  TOS: [1, 32]               ,    call 1    |
+  DEBUG   simulation:run           TICK:  30,  PC:   1,  AR:   2,  MEM_OUT:   8,  TOS: [1, 32]               ,    load      |
+  DEBUG   simulation:run           TICK:  32,  PC:   2,  AR:   1,  MEM_OUT:   2,  TOS: [2, 1, 32]            ,    swap      |
+  DEBUG   simulation:run           TICK:  33,  PC:   3,  AR:   1,  MEM_OUT:   2,  TOS: [1, 2, 32]            ,    pop       |
+  DEBUG   simulation:run           TICK:  34,  PC:   4,  AR:   1,  MEM_OUT:   2,  TOS: [2, 32]               ,    ret 16    |
+  DEBUG   simulation:run           TICK:  35,  PC:  19,  AR:   1,  MEM_OUT:   2,  TOS: [2, 32]               ,    add       |
+  DEBUG   simulation:run           TICK:  36,  PC:  20,  AR:   1,  MEM_OUT:   2,  TOS: [34]                  ,    push 3    |
+  DEBUG   simulation:run           TICK:  37,  PC:  21,  AR:   1,  MEM_OUT:   2,  TOS: [3, 34]               ,    load      |
+  DEBUG   simulation:run           TICK:  39,  PC:  22,  AR:   3,  MEM_OUT:  10,  TOS: [10, 3, 34]           ,    over3     |
+  DEBUG   simulation:run           TICK:  40,  PC:  23,  AR:   3,  MEM_OUT:  10,  TOS: [34, 10, 3, 34]       ,    add       |
+  DEBUG   simulation:run           TICK:  41,  PC:  24,  AR:   3,  MEM_OUT:  10,  TOS: [44, 3, 34]           ,    store     |
+  DEBUG   simulation:run           TICK:  43,  PC:  25,  AR:  44,  MEM_OUT:   0,  TOS: [44, 3, 34]           ,    pop       |
+  DEBUG   simulation:run           TICK:  44,  PC:  26,  AR:  44,  MEM_OUT:   0,  TOS: [3, 34]               ,    pop       |
+  DEBUG   simulation:run           TICK:  45,  PC:  27,  AR:  44,  MEM_OUT:   0,  TOS: [34]                  ,    push 2    |
+  DEBUG   simulation:run           TICK:  46,  PC:  28,  AR:  44,  MEM_OUT:   0,  TOS: [2, 34]               ,    call 1    |
+  DEBUG   simulation:run           TICK:  47,  PC:   1,  AR:  44,  MEM_OUT:   0,  TOS: [2, 34]               ,    load      |
+  DEBUG   simulation:run           TICK:  49,  PC:   2,  AR:   2,  MEM_OUT:   8,  TOS: [8, 2, 34]            ,    swap      |
+  DEBUG   simulation:run           TICK:  50,  PC:   3,  AR:   2,  MEM_OUT:   8,  TOS: [2, 8, 34]            ,    pop       |
+  DEBUG   simulation:run           TICK:  51,  PC:   4,  AR:   2,  MEM_OUT:   8,  TOS: [8, 34]               ,    ret 19    |
+  DEBUG   simulation:run           TICK:  52,  PC:  29,  AR:   2,  MEM_OUT:   8,  TOS: [8, 34]               ,    push 1    |
+  DEBUG   simulation:run           TICK:  53,  PC:  30,  AR:   2,  MEM_OUT:   8,  TOS: [1, 8, 34]            ,    swap      |
+  DEBUG   simulation:run           TICK:  54,  PC:  31,  AR:   2,  MEM_OUT:   8,  TOS: [8, 1, 34]            ,    store     |
+  DEBUG   simulation:run           TICK:  56,  PC:  32,  AR:   8,  MEM_OUT:   0,  TOS: [8, 1, 34]            ,    pop       |
+  DEBUG   simulation:run           TICK:  57,  PC:  33,  AR:   8,  MEM_OUT:   0,  TOS: [1, 34]               ,    pop       |
+  DEBUG   simulation:run           TICK:  58,  PC:  34,  AR:   8,  MEM_OUT:   0,  TOS: [34]                  ,    push 2    |
+  DEBUG   simulation:run           TICK:  59,  PC:  35,  AR:   8,  MEM_OUT:   0,  TOS: [2, 34]               ,    swap      |
+  DEBUG   simulation:run           TICK:  60,  PC:  36,  AR:   8,  MEM_OUT:   0,  TOS: [34, 2]               ,    store     |
+  DEBUG   simulation:run           TICK:  62,  PC:  37,  AR:  34,  MEM_OUT:   0,  TOS: [34, 2]               ,    pop       |
+  DEBUG   simulation:run           TICK:  63,  PC:  38,  AR:  34,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK:  64,  PC:  39,  AR:  34,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK:  65,  PC:   5,  AR:  34,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK:  66,  PC:   6,  AR:  34,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK:  67,  PC:   1,  AR:  34,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK:  69,  PC:   2,  AR:   3,  MEM_OUT:  44,  TOS: [44, 3]               ,    swap      |
+  DEBUG   simulation:run           TICK:  70,  PC:   3,  AR:   3,  MEM_OUT:  44,  TOS: [3, 44]               ,    pop       |
+  DEBUG   simulation:run           TICK:  71,  PC:   4,  AR:   3,  MEM_OUT:  44,  TOS: [44]                  ,    ret 29    |
+  DEBUG   simulation:run           TICK:  72,  PC:   7,  AR:   3,  MEM_OUT:  44,  TOS: [44]                  ,    push 0    |
+  DEBUG   simulation:run           TICK:  73,  PC:   8,  AR:   3,  MEM_OUT:  44,  TOS: [0, 44]               ,    call 1    |
+  DEBUG   simulation:run           TICK:  74,  PC:   1,  AR:   3,  MEM_OUT:  44,  TOS: [0, 44]               ,    load      |
+  DEBUG   simulation:run           TICK:  76,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 44]      ,    swap      |
+  DEBUG   simulation:run           TICK:  77,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 44]      ,    pop       |
+  DEBUG   simulation:run           TICK:  78,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 44]         ,    ret 7     |
+  DEBUG   simulation:run           TICK:  79,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 44]         ,    cmp       |
+  DEBUG   simulation:run           TICK:  80,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 44]         ,    js 40     |
+  DEBUG   simulation:run           TICK:  81,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 44]         ,    pop       |
+  DEBUG   simulation:run           TICK:  82,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [44]                  ,    pop       |
+  DEBUG   simulation:run           TICK:  83,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK:  84,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK:  85,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK:  86,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK:  88,  PC:   2,  AR:   2,  MEM_OUT:  34,  TOS: [34, 2, 4]            ,    swap      |
+  DEBUG   simulation:run           TICK:  89,  PC:   3,  AR:   2,  MEM_OUT:  34,  TOS: [2, 34, 4]            ,    pop       |
+  DEBUG   simulation:run           TICK:  90,  PC:   4,  AR:   2,  MEM_OUT:  34,  TOS: [34, 4]               ,    ret 9     |
+  DEBUG   simulation:run           TICK:  91,  PC:  16,  AR:   2,  MEM_OUT:  34,  TOS: [34, 4]               ,    mul       |
+  DEBUG   simulation:run           TICK:  92,  PC:  17,  AR:   2,  MEM_OUT:  34,  TOS: [136]                 ,    push 1    |
+  DEBUG   simulation:run           TICK:  93,  PC:  18,  AR:   2,  MEM_OUT:  34,  TOS: [1, 136]              ,    call 1    |
+  DEBUG   simulation:run           TICK:  94,  PC:   1,  AR:   2,  MEM_OUT:  34,  TOS: [1, 136]              ,    load      |
+  DEBUG   simulation:run           TICK:  96,  PC:   2,  AR:   1,  MEM_OUT:   8,  TOS: [8, 1, 136]           ,    swap      |
+  DEBUG   simulation:run           TICK:  97,  PC:   3,  AR:   1,  MEM_OUT:   8,  TOS: [1, 8, 136]           ,    pop       |
+  DEBUG   simulation:run           TICK:  98,  PC:   4,  AR:   1,  MEM_OUT:   8,  TOS: [8, 136]              ,    ret 16    |
+  DEBUG   simulation:run           TICK:  99,  PC:  19,  AR:   1,  MEM_OUT:   8,  TOS: [8, 136]              ,    add       |
+  DEBUG   simulation:run           TICK: 100,  PC:  20,  AR:   1,  MEM_OUT:   8,  TOS: [144]                 ,    push 3    |
+  DEBUG   simulation:run           TICK: 101,  PC:  21,  AR:   1,  MEM_OUT:   8,  TOS: [3, 144]              ,    load      |
+  DEBUG   simulation:run           TICK: 103,  PC:  22,  AR:   3,  MEM_OUT:  44,  TOS: [44, 3, 144]          ,    over3     |
+  DEBUG   simulation:run           TICK: 104,  PC:  23,  AR:   3,  MEM_OUT:  44,  TOS: [144, 44, 3, 144]     ,    add       |
+  DEBUG   simulation:run           TICK: 105,  PC:  24,  AR:   3,  MEM_OUT:  44,  TOS: [188, 3, 144]         ,    store     |
+  DEBUG   simulation:run           TICK: 107,  PC:  25,  AR: 188,  MEM_OUT:   0,  TOS: [188, 3, 144]         ,    pop       |
+  DEBUG   simulation:run           TICK: 108,  PC:  26,  AR: 188,  MEM_OUT:   0,  TOS: [3, 144]              ,    pop       |
+  DEBUG   simulation:run           TICK: 109,  PC:  27,  AR: 188,  MEM_OUT:   0,  TOS: [144]                 ,    push 2    |
+  DEBUG   simulation:run           TICK: 110,  PC:  28,  AR: 188,  MEM_OUT:   0,  TOS: [2, 144]              ,    call 1    |
+  DEBUG   simulation:run           TICK: 111,  PC:   1,  AR: 188,  MEM_OUT:   0,  TOS: [2, 144]              ,    load      |
+  DEBUG   simulation:run           TICK: 113,  PC:   2,  AR:   2,  MEM_OUT:  34,  TOS: [34, 2, 144]          ,    swap      |
+  DEBUG   simulation:run           TICK: 114,  PC:   3,  AR:   2,  MEM_OUT:  34,  TOS: [2, 34, 144]          ,    pop       |
+  DEBUG   simulation:run           TICK: 115,  PC:   4,  AR:   2,  MEM_OUT:  34,  TOS: [34, 144]             ,    ret 19    |
+  DEBUG   simulation:run           TICK: 116,  PC:  29,  AR:   2,  MEM_OUT:  34,  TOS: [34, 144]             ,    push 1    |
+  DEBUG   simulation:run           TICK: 117,  PC:  30,  AR:   2,  MEM_OUT:  34,  TOS: [1, 34, 144]          ,    swap      |
+  DEBUG   simulation:run           TICK: 118,  PC:  31,  AR:   2,  MEM_OUT:  34,  TOS: [34, 1, 144]          ,    store     |
+  DEBUG   simulation:run           TICK: 120,  PC:  32,  AR:  34,  MEM_OUT:   0,  TOS: [34, 1, 144]          ,    pop       |
+  DEBUG   simulation:run           TICK: 121,  PC:  33,  AR:  34,  MEM_OUT:   0,  TOS: [1, 144]              ,    pop       |
+  DEBUG   simulation:run           TICK: 122,  PC:  34,  AR:  34,  MEM_OUT:   0,  TOS: [144]                 ,    push 2    |
+  DEBUG   simulation:run           TICK: 123,  PC:  35,  AR:  34,  MEM_OUT:   0,  TOS: [2, 144]              ,    swap      |
+  DEBUG   simulation:run           TICK: 124,  PC:  36,  AR:  34,  MEM_OUT:   0,  TOS: [144, 2]              ,    store     |
+  DEBUG   simulation:run           TICK: 126,  PC:  37,  AR: 144,  MEM_OUT:   0,  TOS: [144, 2]              ,    pop       |
+  DEBUG   simulation:run           TICK: 127,  PC:  38,  AR: 144,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK: 128,  PC:  39,  AR: 144,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK: 129,  PC:   5,  AR: 144,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK: 130,  PC:   6,  AR: 144,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK: 131,  PC:   1,  AR: 144,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK: 133,  PC:   2,  AR:   3,  MEM_OUT: 188,  TOS: [188, 3]              ,    swap      |
+  DEBUG   simulation:run           TICK: 134,  PC:   3,  AR:   3,  MEM_OUT: 188,  TOS: [3, 188]              ,    pop       |
+  DEBUG   simulation:run           TICK: 135,  PC:   4,  AR:   3,  MEM_OUT: 188,  TOS: [188]                 ,    ret 29    |
+  DEBUG   simulation:run           TICK: 136,  PC:   7,  AR:   3,  MEM_OUT: 188,  TOS: [188]                 ,    push 0    |
+  DEBUG   simulation:run           TICK: 137,  PC:   8,  AR:   3,  MEM_OUT: 188,  TOS: [0, 188]              ,    call 1    |
+  DEBUG   simulation:run           TICK: 138,  PC:   1,  AR:   3,  MEM_OUT: 188,  TOS: [0, 188]              ,    load      |
+  DEBUG   simulation:run           TICK: 140,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 188]     ,    swap      |
+  DEBUG   simulation:run           TICK: 141,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 188]     ,    pop       |
+  DEBUG   simulation:run           TICK: 142,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 188]        ,    ret 7     |
+  DEBUG   simulation:run           TICK: 143,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 188]        ,    cmp       |
+  DEBUG   simulation:run           TICK: 144,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 188]        ,    js 40     |
+  DEBUG   simulation:run           TICK: 145,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 188]        ,    pop       |
+  DEBUG   simulation:run           TICK: 146,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [188]                 ,    pop       |
+  DEBUG   simulation:run           TICK: 147,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK: 148,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK: 149,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK: 150,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK: 152,  PC:   2,  AR:   2,  MEM_OUT: 144,  TOS: [144, 2, 4]           ,    swap      |
+  DEBUG   simulation:run           TICK: 153,  PC:   3,  AR:   2,  MEM_OUT: 144,  TOS: [2, 144, 4]           ,    pop       |
+  DEBUG   simulation:run           TICK: 154,  PC:   4,  AR:   2,  MEM_OUT: 144,  TOS: [144, 4]              ,    ret 9     |
+  DEBUG   simulation:run           TICK: 155,  PC:  16,  AR:   2,  MEM_OUT: 144,  TOS: [144, 4]              ,    mul       |
+  DEBUG   simulation:run           TICK: 156,  PC:  17,  AR:   2,  MEM_OUT: 144,  TOS: [576]                 ,    push 1    |
+  DEBUG   simulation:run           TICK: 157,  PC:  18,  AR:   2,  MEM_OUT: 144,  TOS: [1, 576]              ,    call 1    |
+  DEBUG   simulation:run           TICK: 158,  PC:   1,  AR:   2,  MEM_OUT: 144,  TOS: [1, 576]              ,    load      |
+  DEBUG   simulation:run           TICK: 160,  PC:   2,  AR:   1,  MEM_OUT:  34,  TOS: [34, 1, 576]          ,    swap      |
+  DEBUG   simulation:run           TICK: 161,  PC:   3,  AR:   1,  MEM_OUT:  34,  TOS: [1, 34, 576]          ,    pop       |
+  DEBUG   simulation:run           TICK: 162,  PC:   4,  AR:   1,  MEM_OUT:  34,  TOS: [34, 576]             ,    ret 16    |
+  DEBUG   simulation:run           TICK: 163,  PC:  19,  AR:   1,  MEM_OUT:  34,  TOS: [34, 576]             ,    add       |
+  DEBUG   simulation:run           TICK: 164,  PC:  20,  AR:   1,  MEM_OUT:  34,  TOS: [610]                 ,    push 3    |
+  DEBUG   simulation:run           TICK: 165,  PC:  21,  AR:   1,  MEM_OUT:  34,  TOS: [3, 610]              ,    load      |
+  DEBUG   simulation:run           TICK: 167,  PC:  22,  AR:   3,  MEM_OUT: 188,  TOS: [188, 3, 610]         ,    over3     |
+  DEBUG   simulation:run           TICK: 168,  PC:  23,  AR:   3,  MEM_OUT: 188,  TOS: [610, 188, 3, 610]    ,    add       |
+  DEBUG   simulation:run           TICK: 169,  PC:  24,  AR:   3,  MEM_OUT: 188,  TOS: [798, 3, 610]         ,    store     |
+  DEBUG   simulation:run           TICK: 171,  PC:  25,  AR: 798,  MEM_OUT:   0,  TOS: [798, 3, 610]         ,    pop       |
+  DEBUG   simulation:run           TICK: 172,  PC:  26,  AR: 798,  MEM_OUT:   0,  TOS: [3, 610]              ,    pop       |
+  DEBUG   simulation:run           TICK: 173,  PC:  27,  AR: 798,  MEM_OUT:   0,  TOS: [610]                 ,    push 2    |
+  DEBUG   simulation:run           TICK: 174,  PC:  28,  AR: 798,  MEM_OUT:   0,  TOS: [2, 610]              ,    call 1    |
+  DEBUG   simulation:run           TICK: 175,  PC:   1,  AR: 798,  MEM_OUT:   0,  TOS: [2, 610]              ,    load      |
+  DEBUG   simulation:run           TICK: 177,  PC:   2,  AR:   2,  MEM_OUT: 144,  TOS: [144, 2, 610]         ,    swap      |
+  DEBUG   simulation:run           TICK: 178,  PC:   3,  AR:   2,  MEM_OUT: 144,  TOS: [2, 144, 610]         ,    pop       |
+  DEBUG   simulation:run           TICK: 179,  PC:   4,  AR:   2,  MEM_OUT: 144,  TOS: [144, 610]            ,    ret 19    |
+  DEBUG   simulation:run           TICK: 180,  PC:  29,  AR:   2,  MEM_OUT: 144,  TOS: [144, 610]            ,    push 1    |
+  DEBUG   simulation:run           TICK: 181,  PC:  30,  AR:   2,  MEM_OUT: 144,  TOS: [1, 144, 610]         ,    swap      |
+  DEBUG   simulation:run           TICK: 182,  PC:  31,  AR:   2,  MEM_OUT: 144,  TOS: [144, 1, 610]         ,    store     |
+  DEBUG   simulation:run           TICK: 184,  PC:  32,  AR: 144,  MEM_OUT:   0,  TOS: [144, 1, 610]         ,    pop       |
+  DEBUG   simulation:run           TICK: 185,  PC:  33,  AR: 144,  MEM_OUT:   0,  TOS: [1, 610]              ,    pop       |
+  DEBUG   simulation:run           TICK: 186,  PC:  34,  AR: 144,  MEM_OUT:   0,  TOS: [610]                 ,    push 2    |
+  DEBUG   simulation:run           TICK: 187,  PC:  35,  AR: 144,  MEM_OUT:   0,  TOS: [2, 610]              ,    swap      |
+  DEBUG   simulation:run           TICK: 188,  PC:  36,  AR: 144,  MEM_OUT:   0,  TOS: [610, 2]              ,    store     |
+  DEBUG   simulation:run           TICK: 190,  PC:  37,  AR: 610,  MEM_OUT:   0,  TOS: [610, 2]              ,    pop       |
+  DEBUG   simulation:run           TICK: 191,  PC:  38,  AR: 610,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK: 192,  PC:  39,  AR: 610,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK: 193,  PC:   5,  AR: 610,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK: 194,  PC:   6,  AR: 610,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK: 195,  PC:   1,  AR: 610,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK: 197,  PC:   2,  AR:   3,  MEM_OUT: 798,  TOS: [798, 3]              ,    swap      |
+  DEBUG   simulation:run           TICK: 198,  PC:   3,  AR:   3,  MEM_OUT: 798,  TOS: [3, 798]              ,    pop       |
+  DEBUG   simulation:run           TICK: 199,  PC:   4,  AR:   3,  MEM_OUT: 798,  TOS: [798]                 ,    ret 29    |
+  DEBUG   simulation:run           TICK: 200,  PC:   7,  AR:   3,  MEM_OUT: 798,  TOS: [798]                 ,    push 0    |
+  DEBUG   simulation:run           TICK: 201,  PC:   8,  AR:   3,  MEM_OUT: 798,  TOS: [0, 798]              ,    call 1    |
+  DEBUG   simulation:run           TICK: 202,  PC:   1,  AR:   3,  MEM_OUT: 798,  TOS: [0, 798]              ,    load      |
+  DEBUG   simulation:run           TICK: 204,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 798]     ,    swap      |
+  DEBUG   simulation:run           TICK: 205,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 798]     ,    pop       |
+  DEBUG   simulation:run           TICK: 206,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 798]        ,    ret 7     |
+  DEBUG   simulation:run           TICK: 207,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 798]        ,    cmp       |
+  DEBUG   simulation:run           TICK: 208,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 798]        ,    js 40     |
+  DEBUG   simulation:run           TICK: 209,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 798]        ,    pop       |
+  DEBUG   simulation:run           TICK: 210,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [798]                 ,    pop       |
+  DEBUG   simulation:run           TICK: 211,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK: 212,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK: 213,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK: 214,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK: 216,  PC:   2,  AR:   2,  MEM_OUT: 610,  TOS: [610, 2, 4]           ,    swap      |
+  DEBUG   simulation:run           TICK: 217,  PC:   3,  AR:   2,  MEM_OUT: 610,  TOS: [2, 610, 4]           ,    pop       |
+  DEBUG   simulation:run           TICK: 218,  PC:   4,  AR:   2,  MEM_OUT: 610,  TOS: [610, 4]              ,    ret 9     |
+  DEBUG   simulation:run           TICK: 219,  PC:  16,  AR:   2,  MEM_OUT: 610,  TOS: [610, 4]              ,    mul       |
+  DEBUG   simulation:run           TICK: 220,  PC:  17,  AR:   2,  MEM_OUT: 610,  TOS: [2440]                ,    push 1    |
+  DEBUG   simulation:run           TICK: 221,  PC:  18,  AR:   2,  MEM_OUT: 610,  TOS: [1, 2440]             ,    call 1    |
+  DEBUG   simulation:run           TICK: 222,  PC:   1,  AR:   2,  MEM_OUT: 610,  TOS: [1, 2440]             ,    load      |
+  DEBUG   simulation:run           TICK: 224,  PC:   2,  AR:   1,  MEM_OUT: 144,  TOS: [144, 1, 2440]        ,    swap      |
+  DEBUG   simulation:run           TICK: 225,  PC:   3,  AR:   1,  MEM_OUT: 144,  TOS: [1, 144, 2440]        ,    pop       |
+  DEBUG   simulation:run           TICK: 226,  PC:   4,  AR:   1,  MEM_OUT: 144,  TOS: [144, 2440]           ,    ret 16    |
+  DEBUG   simulation:run           TICK: 227,  PC:  19,  AR:   1,  MEM_OUT: 144,  TOS: [144, 2440]           ,    add       |
+  DEBUG   simulation:run           TICK: 228,  PC:  20,  AR:   1,  MEM_OUT: 144,  TOS: [2584]                ,    push 3    |
+  DEBUG   simulation:run           TICK: 229,  PC:  21,  AR:   1,  MEM_OUT: 144,  TOS: [3, 2584]             ,    load      |
+  DEBUG   simulation:run           TICK: 231,  PC:  22,  AR:   3,  MEM_OUT: 798,  TOS: [798, 3, 2584]        ,    over3     |
+  DEBUG   simulation:run           TICK: 232,  PC:  23,  AR:   3,  MEM_OUT: 798,  TOS: [2584, 798, 3, 2584]  ,    add       |
+  DEBUG   simulation:run           TICK: 233,  PC:  24,  AR:   3,  MEM_OUT: 798,  TOS: [3382, 3, 2584]       ,    store     |
+  DEBUG   simulation:run           TICK: 235,  PC:  25,  AR: 3382,  MEM_OUT:   0,  TOS: [3382, 3, 2584]       ,    pop       |
+  DEBUG   simulation:run           TICK: 236,  PC:  26,  AR: 3382,  MEM_OUT:   0,  TOS: [3, 2584]             ,    pop       |
+  DEBUG   simulation:run           TICK: 237,  PC:  27,  AR: 3382,  MEM_OUT:   0,  TOS: [2584]                ,    push 2    |
+  DEBUG   simulation:run           TICK: 238,  PC:  28,  AR: 3382,  MEM_OUT:   0,  TOS: [2, 2584]             ,    call 1    |
+  DEBUG   simulation:run           TICK: 239,  PC:   1,  AR: 3382,  MEM_OUT:   0,  TOS: [2, 2584]             ,    load      |
+  DEBUG   simulation:run           TICK: 241,  PC:   2,  AR:   2,  MEM_OUT: 610,  TOS: [610, 2, 2584]        ,    swap      |
+  DEBUG   simulation:run           TICK: 242,  PC:   3,  AR:   2,  MEM_OUT: 610,  TOS: [2, 610, 2584]        ,    pop       |
+  DEBUG   simulation:run           TICK: 243,  PC:   4,  AR:   2,  MEM_OUT: 610,  TOS: [610, 2584]           ,    ret 19    |
+  DEBUG   simulation:run           TICK: 244,  PC:  29,  AR:   2,  MEM_OUT: 610,  TOS: [610, 2584]           ,    push 1    |
+  DEBUG   simulation:run           TICK: 245,  PC:  30,  AR:   2,  MEM_OUT: 610,  TOS: [1, 610, 2584]        ,    swap      |
+  DEBUG   simulation:run           TICK: 246,  PC:  31,  AR:   2,  MEM_OUT: 610,  TOS: [610, 1, 2584]        ,    store     |
+  DEBUG   simulation:run           TICK: 248,  PC:  32,  AR: 610,  MEM_OUT:   0,  TOS: [610, 1, 2584]        ,    pop       |
+  DEBUG   simulation:run           TICK: 249,  PC:  33,  AR: 610,  MEM_OUT:   0,  TOS: [1, 2584]             ,    pop       |
+  DEBUG   simulation:run           TICK: 250,  PC:  34,  AR: 610,  MEM_OUT:   0,  TOS: [2584]                ,    push 2    |
+  DEBUG   simulation:run           TICK: 251,  PC:  35,  AR: 610,  MEM_OUT:   0,  TOS: [2, 2584]             ,    swap      |
+  DEBUG   simulation:run           TICK: 252,  PC:  36,  AR: 610,  MEM_OUT:   0,  TOS: [2584, 2]             ,    store     |
+  DEBUG   simulation:run           TICK: 254,  PC:  37,  AR: 2584,  MEM_OUT:   0,  TOS: [2584, 2]             ,    pop       |
+  DEBUG   simulation:run           TICK: 255,  PC:  38,  AR: 2584,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK: 256,  PC:  39,  AR: 2584,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK: 257,  PC:   5,  AR: 2584,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK: 258,  PC:   6,  AR: 2584,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK: 259,  PC:   1,  AR: 2584,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK: 261,  PC:   2,  AR:   3,  MEM_OUT: 3382,  TOS: [3382, 3]             ,    swap      |
+  DEBUG   simulation:run           TICK: 262,  PC:   3,  AR:   3,  MEM_OUT: 3382,  TOS: [3, 3382]             ,    pop       |
+  DEBUG   simulation:run           TICK: 263,  PC:   4,  AR:   3,  MEM_OUT: 3382,  TOS: [3382]                ,    ret 29    |
+  DEBUG   simulation:run           TICK: 264,  PC:   7,  AR:   3,  MEM_OUT: 3382,  TOS: [3382]                ,    push 0    |
+  DEBUG   simulation:run           TICK: 265,  PC:   8,  AR:   3,  MEM_OUT: 3382,  TOS: [0, 3382]             ,    call 1    |
+  DEBUG   simulation:run           TICK: 266,  PC:   1,  AR:   3,  MEM_OUT: 3382,  TOS: [0, 3382]             ,    load      |
+  DEBUG   simulation:run           TICK: 268,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 3382]    ,    swap      |
+  DEBUG   simulation:run           TICK: 269,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 3382]    ,    pop       |
+  DEBUG   simulation:run           TICK: 270,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 3382]       ,    ret 7     |
+  DEBUG   simulation:run           TICK: 271,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 3382]       ,    cmp       |
+  DEBUG   simulation:run           TICK: 272,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 3382]       ,    js 40     |
+  DEBUG   simulation:run           TICK: 273,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 3382]       ,    pop       |
+  DEBUG   simulation:run           TICK: 274,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [3382]                ,    pop       |
+  DEBUG   simulation:run           TICK: 275,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK: 276,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK: 277,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK: 278,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK: 280,  PC:   2,  AR:   2,  MEM_OUT: 2584,  TOS: [2584, 2, 4]          ,    swap      |
+  DEBUG   simulation:run           TICK: 281,  PC:   3,  AR:   2,  MEM_OUT: 2584,  TOS: [2, 2584, 4]          ,    pop       |
+  DEBUG   simulation:run           TICK: 282,  PC:   4,  AR:   2,  MEM_OUT: 2584,  TOS: [2584, 4]             ,    ret 9     |
+  DEBUG   simulation:run           TICK: 283,  PC:  16,  AR:   2,  MEM_OUT: 2584,  TOS: [2584, 4]             ,    mul       |
+  DEBUG   simulation:run           TICK: 284,  PC:  17,  AR:   2,  MEM_OUT: 2584,  TOS: [10336]               ,    push 1    |
+  DEBUG   simulation:run           TICK: 285,  PC:  18,  AR:   2,  MEM_OUT: 2584,  TOS: [1, 10336]            ,    call 1    |
+  DEBUG   simulation:run           TICK: 286,  PC:   1,  AR:   2,  MEM_OUT: 2584,  TOS: [1, 10336]            ,    load      |
+  DEBUG   simulation:run           TICK: 288,  PC:   2,  AR:   1,  MEM_OUT: 610,  TOS: [610, 1, 10336]       ,    swap      |
+  DEBUG   simulation:run           TICK: 289,  PC:   3,  AR:   1,  MEM_OUT: 610,  TOS: [1, 610, 10336]       ,    pop       |
+  DEBUG   simulation:run           TICK: 290,  PC:   4,  AR:   1,  MEM_OUT: 610,  TOS: [610, 10336]          ,    ret 16    |
+  DEBUG   simulation:run           TICK: 291,  PC:  19,  AR:   1,  MEM_OUT: 610,  TOS: [610, 10336]          ,    add       |
+  DEBUG   simulation:run           TICK: 292,  PC:  20,  AR:   1,  MEM_OUT: 610,  TOS: [10946]               ,    push 3    |
+  DEBUG   simulation:run           TICK: 293,  PC:  21,  AR:   1,  MEM_OUT: 610,  TOS: [3, 10946]            ,    load      |
+  DEBUG   simulation:run           TICK: 295,  PC:  22,  AR:   3,  MEM_OUT: 3382,  TOS: [3382, 3, 10946]      ,    over3     |
+  DEBUG   simulation:run           TICK: 296,  PC:  23,  AR:   3,  MEM_OUT: 3382,  TOS: [10946, 3382, 3, 10946],    add       |
+  DEBUG   simulation:run           TICK: 297,  PC:  24,  AR:   3,  MEM_OUT: 3382,  TOS: [14328, 3, 10946]     ,    store     |
+  DEBUG   simulation:run           TICK: 299,  PC:  25,  AR: 14328,  MEM_OUT:   0,  TOS: [14328, 3, 10946]     ,    pop       |
+  DEBUG   simulation:run           TICK: 300,  PC:  26,  AR: 14328,  MEM_OUT:   0,  TOS: [3, 10946]            ,    pop       |
+  DEBUG   simulation:run           TICK: 301,  PC:  27,  AR: 14328,  MEM_OUT:   0,  TOS: [10946]               ,    push 2    |
+  DEBUG   simulation:run           TICK: 302,  PC:  28,  AR: 14328,  MEM_OUT:   0,  TOS: [2, 10946]            ,    call 1    |
+  DEBUG   simulation:run           TICK: 303,  PC:   1,  AR: 14328,  MEM_OUT:   0,  TOS: [2, 10946]            ,    load      |
+  DEBUG   simulation:run           TICK: 305,  PC:   2,  AR:   2,  MEM_OUT: 2584,  TOS: [2584, 2, 10946]      ,    swap      |
+  DEBUG   simulation:run           TICK: 306,  PC:   3,  AR:   2,  MEM_OUT: 2584,  TOS: [2, 2584, 10946]      ,    pop       |
+  DEBUG   simulation:run           TICK: 307,  PC:   4,  AR:   2,  MEM_OUT: 2584,  TOS: [2584, 10946]         ,    ret 19    |
+  DEBUG   simulation:run           TICK: 308,  PC:  29,  AR:   2,  MEM_OUT: 2584,  TOS: [2584, 10946]         ,    push 1    |
+  DEBUG   simulation:run           TICK: 309,  PC:  30,  AR:   2,  MEM_OUT: 2584,  TOS: [1, 2584, 10946]      ,    swap      |
+  DEBUG   simulation:run           TICK: 310,  PC:  31,  AR:   2,  MEM_OUT: 2584,  TOS: [2584, 1, 10946]      ,    store     |
+  DEBUG   simulation:run           TICK: 312,  PC:  32,  AR: 2584,  MEM_OUT:   0,  TOS: [2584, 1, 10946]      ,    pop       |
+  DEBUG   simulation:run           TICK: 313,  PC:  33,  AR: 2584,  MEM_OUT:   0,  TOS: [1, 10946]            ,    pop       |
+  DEBUG   simulation:run           TICK: 314,  PC:  34,  AR: 2584,  MEM_OUT:   0,  TOS: [10946]               ,    push 2    |
+  DEBUG   simulation:run           TICK: 315,  PC:  35,  AR: 2584,  MEM_OUT:   0,  TOS: [2, 10946]            ,    swap      |
+  DEBUG   simulation:run           TICK: 316,  PC:  36,  AR: 2584,  MEM_OUT:   0,  TOS: [10946, 2]            ,    store     |
+  DEBUG   simulation:run           TICK: 318,  PC:  37,  AR: 10946,  MEM_OUT:   0,  TOS: [10946, 2]            ,    pop       |
+  DEBUG   simulation:run           TICK: 319,  PC:  38,  AR: 10946,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK: 320,  PC:  39,  AR: 10946,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK: 321,  PC:   5,  AR: 10946,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK: 322,  PC:   6,  AR: 10946,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK: 323,  PC:   1,  AR: 10946,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK: 325,  PC:   2,  AR:   3,  MEM_OUT: 14328,  TOS: [14328, 3]            ,    swap      |
+  DEBUG   simulation:run           TICK: 326,  PC:   3,  AR:   3,  MEM_OUT: 14328,  TOS: [3, 14328]            ,    pop       |
+  DEBUG   simulation:run           TICK: 327,  PC:   4,  AR:   3,  MEM_OUT: 14328,  TOS: [14328]               ,    ret 29    |
+  DEBUG   simulation:run           TICK: 328,  PC:   7,  AR:   3,  MEM_OUT: 14328,  TOS: [14328]               ,    push 0    |
+  DEBUG   simulation:run           TICK: 329,  PC:   8,  AR:   3,  MEM_OUT: 14328,  TOS: [0, 14328]            ,    call 1    |
+  DEBUG   simulation:run           TICK: 330,  PC:   1,  AR:   3,  MEM_OUT: 14328,  TOS: [0, 14328]            ,    load      |
+  DEBUG   simulation:run           TICK: 332,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 14328]   ,    swap      |
+  DEBUG   simulation:run           TICK: 333,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 14328]   ,    pop       |
+  DEBUG   simulation:run           TICK: 334,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 14328]      ,    ret 7     |
+  DEBUG   simulation:run           TICK: 335,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 14328]      ,    cmp       |
+  DEBUG   simulation:run           TICK: 336,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 14328]      ,    js 40     |
+  DEBUG   simulation:run           TICK: 337,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 14328]      ,    pop       |
+  DEBUG   simulation:run           TICK: 338,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [14328]               ,    pop       |
+  DEBUG   simulation:run           TICK: 339,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK: 340,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK: 341,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK: 342,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK: 344,  PC:   2,  AR:   2,  MEM_OUT: 10946,  TOS: [10946, 2, 4]         ,    swap      |
+  DEBUG   simulation:run           TICK: 345,  PC:   3,  AR:   2,  MEM_OUT: 10946,  TOS: [2, 10946, 4]         ,    pop       |
+  DEBUG   simulation:run           TICK: 346,  PC:   4,  AR:   2,  MEM_OUT: 10946,  TOS: [10946, 4]            ,    ret 9     |
+  DEBUG   simulation:run           TICK: 347,  PC:  16,  AR:   2,  MEM_OUT: 10946,  TOS: [10946, 4]            ,    mul       |
+  DEBUG   simulation:run           TICK: 348,  PC:  17,  AR:   2,  MEM_OUT: 10946,  TOS: [43784]               ,    push 1    |
+  DEBUG   simulation:run           TICK: 349,  PC:  18,  AR:   2,  MEM_OUT: 10946,  TOS: [1, 43784]            ,    call 1    |
+  DEBUG   simulation:run           TICK: 350,  PC:   1,  AR:   2,  MEM_OUT: 10946,  TOS: [1, 43784]            ,    load      |
+  DEBUG   simulation:run           TICK: 352,  PC:   2,  AR:   1,  MEM_OUT: 2584,  TOS: [2584, 1, 43784]      ,    swap      |
+  DEBUG   simulation:run           TICK: 353,  PC:   3,  AR:   1,  MEM_OUT: 2584,  TOS: [1, 2584, 43784]      ,    pop       |
+  DEBUG   simulation:run           TICK: 354,  PC:   4,  AR:   1,  MEM_OUT: 2584,  TOS: [2584, 43784]         ,    ret 16    |
+  DEBUG   simulation:run           TICK: 355,  PC:  19,  AR:   1,  MEM_OUT: 2584,  TOS: [2584, 43784]         ,    add       |
+  DEBUG   simulation:run           TICK: 356,  PC:  20,  AR:   1,  MEM_OUT: 2584,  TOS: [46368]               ,    push 3    |
+  DEBUG   simulation:run           TICK: 357,  PC:  21,  AR:   1,  MEM_OUT: 2584,  TOS: [3, 46368]            ,    load      |
+  DEBUG   simulation:run           TICK: 359,  PC:  22,  AR:   3,  MEM_OUT: 14328,  TOS: [14328, 3, 46368]     ,    over3     |
+  DEBUG   simulation:run           TICK: 360,  PC:  23,  AR:   3,  MEM_OUT: 14328,  TOS: [46368, 14328, 3, 46368],    add       |
+  DEBUG   simulation:run           TICK: 361,  PC:  24,  AR:   3,  MEM_OUT: 14328,  TOS: [60696, 3, 46368]     ,    store     |
+  DEBUG   simulation:run           TICK: 363,  PC:  25,  AR: 60696,  MEM_OUT:   0,  TOS: [60696, 3, 46368]     ,    pop       |
+  DEBUG   simulation:run           TICK: 364,  PC:  26,  AR: 60696,  MEM_OUT:   0,  TOS: [3, 46368]            ,    pop       |
+  DEBUG   simulation:run           TICK: 365,  PC:  27,  AR: 60696,  MEM_OUT:   0,  TOS: [46368]               ,    push 2    |
+  DEBUG   simulation:run           TICK: 366,  PC:  28,  AR: 60696,  MEM_OUT:   0,  TOS: [2, 46368]            ,    call 1    |
+  DEBUG   simulation:run           TICK: 367,  PC:   1,  AR: 60696,  MEM_OUT:   0,  TOS: [2, 46368]            ,    load      |
+  DEBUG   simulation:run           TICK: 369,  PC:   2,  AR:   2,  MEM_OUT: 10946,  TOS: [10946, 2, 46368]     ,    swap      |
+  DEBUG   simulation:run           TICK: 370,  PC:   3,  AR:   2,  MEM_OUT: 10946,  TOS: [2, 10946, 46368]     ,    pop       |
+  DEBUG   simulation:run           TICK: 371,  PC:   4,  AR:   2,  MEM_OUT: 10946,  TOS: [10946, 46368]        ,    ret 19    |
+  DEBUG   simulation:run           TICK: 372,  PC:  29,  AR:   2,  MEM_OUT: 10946,  TOS: [10946, 46368]        ,    push 1    |
+  DEBUG   simulation:run           TICK: 373,  PC:  30,  AR:   2,  MEM_OUT: 10946,  TOS: [1, 10946, 46368]     ,    swap      |
+  DEBUG   simulation:run           TICK: 374,  PC:  31,  AR:   2,  MEM_OUT: 10946,  TOS: [10946, 1, 46368]     ,    store     |
+  DEBUG   simulation:run           TICK: 376,  PC:  32,  AR: 10946,  MEM_OUT:   0,  TOS: [10946, 1, 46368]     ,    pop       |
+  DEBUG   simulation:run           TICK: 377,  PC:  33,  AR: 10946,  MEM_OUT:   0,  TOS: [1, 46368]            ,    pop       |
+  DEBUG   simulation:run           TICK: 378,  PC:  34,  AR: 10946,  MEM_OUT:   0,  TOS: [46368]               ,    push 2    |
+  DEBUG   simulation:run           TICK: 379,  PC:  35,  AR: 10946,  MEM_OUT:   0,  TOS: [2, 46368]            ,    swap      |
+  DEBUG   simulation:run           TICK: 380,  PC:  36,  AR: 10946,  MEM_OUT:   0,  TOS: [46368, 2]            ,    store     |
+  DEBUG   simulation:run           TICK: 382,  PC:  37,  AR: 46368,  MEM_OUT:   0,  TOS: [46368, 2]            ,    pop       |
+  DEBUG   simulation:run           TICK: 383,  PC:  38,  AR: 46368,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK: 384,  PC:  39,  AR: 46368,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK: 385,  PC:   5,  AR: 46368,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK: 386,  PC:   6,  AR: 46368,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK: 387,  PC:   1,  AR: 46368,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK: 389,  PC:   2,  AR:   3,  MEM_OUT: 60696,  TOS: [60696, 3]            ,    swap      |
+  DEBUG   simulation:run           TICK: 390,  PC:   3,  AR:   3,  MEM_OUT: 60696,  TOS: [3, 60696]            ,    pop       |
+  DEBUG   simulation:run           TICK: 391,  PC:   4,  AR:   3,  MEM_OUT: 60696,  TOS: [60696]               ,    ret 29    |
+  DEBUG   simulation:run           TICK: 392,  PC:   7,  AR:   3,  MEM_OUT: 60696,  TOS: [60696]               ,    push 0    |
+  DEBUG   simulation:run           TICK: 393,  PC:   8,  AR:   3,  MEM_OUT: 60696,  TOS: [0, 60696]            ,    call 1    |
+  DEBUG   simulation:run           TICK: 394,  PC:   1,  AR:   3,  MEM_OUT: 60696,  TOS: [0, 60696]            ,    load      |
+  DEBUG   simulation:run           TICK: 396,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 60696]   ,    swap      |
+  DEBUG   simulation:run           TICK: 397,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 60696]   ,    pop       |
+  DEBUG   simulation:run           TICK: 398,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 60696]      ,    ret 7     |
+  DEBUG   simulation:run           TICK: 399,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 60696]      ,    cmp       |
+  DEBUG   simulation:run           TICK: 400,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 60696]      ,    js 40     |
+  DEBUG   simulation:run           TICK: 401,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 60696]      ,    pop       |
+  DEBUG   simulation:run           TICK: 402,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [60696]               ,    pop       |
+  DEBUG   simulation:run           TICK: 403,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK: 404,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK: 405,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK: 406,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK: 408,  PC:   2,  AR:   2,  MEM_OUT: 46368,  TOS: [46368, 2, 4]         ,    swap      |
+  DEBUG   simulation:run           TICK: 409,  PC:   3,  AR:   2,  MEM_OUT: 46368,  TOS: [2, 46368, 4]         ,    pop       |
+  DEBUG   simulation:run           TICK: 410,  PC:   4,  AR:   2,  MEM_OUT: 46368,  TOS: [46368, 4]            ,    ret 9     |
+  DEBUG   simulation:run           TICK: 411,  PC:  16,  AR:   2,  MEM_OUT: 46368,  TOS: [46368, 4]            ,    mul       |
+  DEBUG   simulation:run           TICK: 412,  PC:  17,  AR:   2,  MEM_OUT: 46368,  TOS: [185472]              ,    push 1    |
+  DEBUG   simulation:run           TICK: 413,  PC:  18,  AR:   2,  MEM_OUT: 46368,  TOS: [1, 185472]           ,    call 1    |
+  DEBUG   simulation:run           TICK: 414,  PC:   1,  AR:   2,  MEM_OUT: 46368,  TOS: [1, 185472]           ,    load      |
+  DEBUG   simulation:run           TICK: 416,  PC:   2,  AR:   1,  MEM_OUT: 10946,  TOS: [10946, 1, 185472]    ,    swap      |
+  DEBUG   simulation:run           TICK: 417,  PC:   3,  AR:   1,  MEM_OUT: 10946,  TOS: [1, 10946, 185472]    ,    pop       |
+  DEBUG   simulation:run           TICK: 418,  PC:   4,  AR:   1,  MEM_OUT: 10946,  TOS: [10946, 185472]       ,    ret 16    |
+  DEBUG   simulation:run           TICK: 419,  PC:  19,  AR:   1,  MEM_OUT: 10946,  TOS: [10946, 185472]       ,    add       |
+  DEBUG   simulation:run           TICK: 420,  PC:  20,  AR:   1,  MEM_OUT: 10946,  TOS: [196418]              ,    push 3    |
+  DEBUG   simulation:run           TICK: 421,  PC:  21,  AR:   1,  MEM_OUT: 10946,  TOS: [3, 196418]           ,    load      |
+  DEBUG   simulation:run           TICK: 423,  PC:  22,  AR:   3,  MEM_OUT: 60696,  TOS: [60696, 3, 196418]    ,    over3     |
+  DEBUG   simulation:run           TICK: 424,  PC:  23,  AR:   3,  MEM_OUT: 60696,  TOS: [196418, 60696, 3, 196418],    add       |
+  DEBUG   simulation:run           TICK: 425,  PC:  24,  AR:   3,  MEM_OUT: 60696,  TOS: [257114, 3, 196418]   ,    store     |
+  DEBUG   simulation:run           TICK: 427,  PC:  25,  AR: 257114,  MEM_OUT:   0,  TOS: [257114, 3, 196418]   ,    pop       |
+  DEBUG   simulation:run           TICK: 428,  PC:  26,  AR: 257114,  MEM_OUT:   0,  TOS: [3, 196418]           ,    pop       |
+  DEBUG   simulation:run           TICK: 429,  PC:  27,  AR: 257114,  MEM_OUT:   0,  TOS: [196418]              ,    push 2    |
+  DEBUG   simulation:run           TICK: 430,  PC:  28,  AR: 257114,  MEM_OUT:   0,  TOS: [2, 196418]           ,    call 1    |
+  DEBUG   simulation:run           TICK: 431,  PC:   1,  AR: 257114,  MEM_OUT:   0,  TOS: [2, 196418]           ,    load      |
+  DEBUG   simulation:run           TICK: 433,  PC:   2,  AR:   2,  MEM_OUT: 46368,  TOS: [46368, 2, 196418]    ,    swap      |
+  DEBUG   simulation:run           TICK: 434,  PC:   3,  AR:   2,  MEM_OUT: 46368,  TOS: [2, 46368, 196418]    ,    pop       |
+  DEBUG   simulation:run           TICK: 435,  PC:   4,  AR:   2,  MEM_OUT: 46368,  TOS: [46368, 196418]       ,    ret 19    |
+  DEBUG   simulation:run           TICK: 436,  PC:  29,  AR:   2,  MEM_OUT: 46368,  TOS: [46368, 196418]       ,    push 1    |
+  DEBUG   simulation:run           TICK: 437,  PC:  30,  AR:   2,  MEM_OUT: 46368,  TOS: [1, 46368, 196418]    ,    swap      |
+  DEBUG   simulation:run           TICK: 438,  PC:  31,  AR:   2,  MEM_OUT: 46368,  TOS: [46368, 1, 196418]    ,    store     |
+  DEBUG   simulation:run           TICK: 440,  PC:  32,  AR: 46368,  MEM_OUT:   0,  TOS: [46368, 1, 196418]    ,    pop       |
+  DEBUG   simulation:run           TICK: 441,  PC:  33,  AR: 46368,  MEM_OUT:   0,  TOS: [1, 196418]           ,    pop       |
+  DEBUG   simulation:run           TICK: 442,  PC:  34,  AR: 46368,  MEM_OUT:   0,  TOS: [196418]              ,    push 2    |
+  DEBUG   simulation:run           TICK: 443,  PC:  35,  AR: 46368,  MEM_OUT:   0,  TOS: [2, 196418]           ,    swap      |
+  DEBUG   simulation:run           TICK: 444,  PC:  36,  AR: 46368,  MEM_OUT:   0,  TOS: [196418, 2]           ,    store     |
+  DEBUG   simulation:run           TICK: 446,  PC:  37,  AR: 196418,  MEM_OUT:   0,  TOS: [196418, 2]           ,    pop       |
+  DEBUG   simulation:run           TICK: 447,  PC:  38,  AR: 196418,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK: 448,  PC:  39,  AR: 196418,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK: 449,  PC:   5,  AR: 196418,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK: 450,  PC:   6,  AR: 196418,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK: 451,  PC:   1,  AR: 196418,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK: 453,  PC:   2,  AR:   3,  MEM_OUT: 257114,  TOS: [257114, 3]           ,    swap      |
+  DEBUG   simulation:run           TICK: 454,  PC:   3,  AR:   3,  MEM_OUT: 257114,  TOS: [3, 257114]           ,    pop       |
+  DEBUG   simulation:run           TICK: 455,  PC:   4,  AR:   3,  MEM_OUT: 257114,  TOS: [257114]              ,    ret 29    |
+  DEBUG   simulation:run           TICK: 456,  PC:   7,  AR:   3,  MEM_OUT: 257114,  TOS: [257114]              ,    push 0    |
+  DEBUG   simulation:run           TICK: 457,  PC:   8,  AR:   3,  MEM_OUT: 257114,  TOS: [0, 257114]           ,    call 1    |
+  DEBUG   simulation:run           TICK: 458,  PC:   1,  AR:   3,  MEM_OUT: 257114,  TOS: [0, 257114]           ,    load      |
+  DEBUG   simulation:run           TICK: 460,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 257114]  ,    swap      |
+  DEBUG   simulation:run           TICK: 461,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 257114]  ,    pop       |
+  DEBUG   simulation:run           TICK: 462,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 257114]     ,    ret 7     |
+  DEBUG   simulation:run           TICK: 463,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 257114]     ,    cmp       |
+  DEBUG   simulation:run           TICK: 464,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 257114]     ,    js 40     |
+  DEBUG   simulation:run           TICK: 465,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 257114]     ,    pop       |
+  DEBUG   simulation:run           TICK: 466,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [257114]              ,    pop       |
+  DEBUG   simulation:run           TICK: 467,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK: 468,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK: 469,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK: 470,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK: 472,  PC:   2,  AR:   2,  MEM_OUT: 196418,  TOS: [196418, 2, 4]        ,    swap      |
+  DEBUG   simulation:run           TICK: 473,  PC:   3,  AR:   2,  MEM_OUT: 196418,  TOS: [2, 196418, 4]        ,    pop       |
+  DEBUG   simulation:run           TICK: 474,  PC:   4,  AR:   2,  MEM_OUT: 196418,  TOS: [196418, 4]           ,    ret 9     |
+  DEBUG   simulation:run           TICK: 475,  PC:  16,  AR:   2,  MEM_OUT: 196418,  TOS: [196418, 4]           ,    mul       |
+  DEBUG   simulation:run           TICK: 476,  PC:  17,  AR:   2,  MEM_OUT: 196418,  TOS: [785672]              ,    push 1    |
+  DEBUG   simulation:run           TICK: 477,  PC:  18,  AR:   2,  MEM_OUT: 196418,  TOS: [1, 785672]           ,    call 1    |
+  DEBUG   simulation:run           TICK: 478,  PC:   1,  AR:   2,  MEM_OUT: 196418,  TOS: [1, 785672]           ,    load      |
+  DEBUG   simulation:run           TICK: 480,  PC:   2,  AR:   1,  MEM_OUT: 46368,  TOS: [46368, 1, 785672]    ,    swap      |
+  DEBUG   simulation:run           TICK: 481,  PC:   3,  AR:   1,  MEM_OUT: 46368,  TOS: [1, 46368, 785672]    ,    pop       |
+  DEBUG   simulation:run           TICK: 482,  PC:   4,  AR:   1,  MEM_OUT: 46368,  TOS: [46368, 785672]       ,    ret 16    |
+  DEBUG   simulation:run           TICK: 483,  PC:  19,  AR:   1,  MEM_OUT: 46368,  TOS: [46368, 785672]       ,    add       |
+  DEBUG   simulation:run           TICK: 484,  PC:  20,  AR:   1,  MEM_OUT: 46368,  TOS: [832040]              ,    push 3    |
+  DEBUG   simulation:run           TICK: 485,  PC:  21,  AR:   1,  MEM_OUT: 46368,  TOS: [3, 832040]           ,    load      |
+  DEBUG   simulation:run           TICK: 487,  PC:  22,  AR:   3,  MEM_OUT: 257114,  TOS: [257114, 3, 832040]   ,    over3     |
+  DEBUG   simulation:run           TICK: 488,  PC:  23,  AR:   3,  MEM_OUT: 257114,  TOS: [832040, 257114, 3, 832040],    add       |
+  DEBUG   simulation:run           TICK: 489,  PC:  24,  AR:   3,  MEM_OUT: 257114,  TOS: [1089154, 3, 832040]  ,    store     |
+  DEBUG   simulation:run           TICK: 491,  PC:  25,  AR: 1089154,  MEM_OUT:   0,  TOS: [1089154, 3, 832040]  ,    pop       |
+  DEBUG   simulation:run           TICK: 492,  PC:  26,  AR: 1089154,  MEM_OUT:   0,  TOS: [3, 832040]           ,    pop       |
+  DEBUG   simulation:run           TICK: 493,  PC:  27,  AR: 1089154,  MEM_OUT:   0,  TOS: [832040]              ,    push 2    |
+  DEBUG   simulation:run           TICK: 494,  PC:  28,  AR: 1089154,  MEM_OUT:   0,  TOS: [2, 832040]           ,    call 1    |
+  DEBUG   simulation:run           TICK: 495,  PC:   1,  AR: 1089154,  MEM_OUT:   0,  TOS: [2, 832040]           ,    load      |
+  DEBUG   simulation:run           TICK: 497,  PC:   2,  AR:   2,  MEM_OUT: 196418,  TOS: [196418, 2, 832040]   ,    swap      |
+  DEBUG   simulation:run           TICK: 498,  PC:   3,  AR:   2,  MEM_OUT: 196418,  TOS: [2, 196418, 832040]   ,    pop       |
+  DEBUG   simulation:run           TICK: 499,  PC:   4,  AR:   2,  MEM_OUT: 196418,  TOS: [196418, 832040]      ,    ret 19    |
+  DEBUG   simulation:run           TICK: 500,  PC:  29,  AR:   2,  MEM_OUT: 196418,  TOS: [196418, 832040]      ,    push 1    |
+  DEBUG   simulation:run           TICK: 501,  PC:  30,  AR:   2,  MEM_OUT: 196418,  TOS: [1, 196418, 832040]   ,    swap      |
+  DEBUG   simulation:run           TICK: 502,  PC:  31,  AR:   2,  MEM_OUT: 196418,  TOS: [196418, 1, 832040]   ,    store     |
+  DEBUG   simulation:run           TICK: 504,  PC:  32,  AR: 196418,  MEM_OUT:   0,  TOS: [196418, 1, 832040]   ,    pop       |
+  DEBUG   simulation:run           TICK: 505,  PC:  33,  AR: 196418,  MEM_OUT:   0,  TOS: [1, 832040]           ,    pop       |
+  DEBUG   simulation:run           TICK: 506,  PC:  34,  AR: 196418,  MEM_OUT:   0,  TOS: [832040]              ,    push 2    |
+  DEBUG   simulation:run           TICK: 507,  PC:  35,  AR: 196418,  MEM_OUT:   0,  TOS: [2, 832040]           ,    swap      |
+  DEBUG   simulation:run           TICK: 508,  PC:  36,  AR: 196418,  MEM_OUT:   0,  TOS: [832040, 2]           ,    store     |
+  DEBUG   simulation:run           TICK: 510,  PC:  37,  AR: 832040,  MEM_OUT:   0,  TOS: [832040, 2]           ,    pop       |
+  DEBUG   simulation:run           TICK: 511,  PC:  38,  AR: 832040,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK: 512,  PC:  39,  AR: 832040,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK: 513,  PC:   5,  AR: 832040,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK: 514,  PC:   6,  AR: 832040,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK: 515,  PC:   1,  AR: 832040,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK: 517,  PC:   2,  AR:   3,  MEM_OUT: 1089154,  TOS: [1089154, 3]          ,    swap      |
+  DEBUG   simulation:run           TICK: 518,  PC:   3,  AR:   3,  MEM_OUT: 1089154,  TOS: [3, 1089154]          ,    pop       |
+  DEBUG   simulation:run           TICK: 519,  PC:   4,  AR:   3,  MEM_OUT: 1089154,  TOS: [1089154]             ,    ret 29    |
+  DEBUG   simulation:run           TICK: 520,  PC:   7,  AR:   3,  MEM_OUT: 1089154,  TOS: [1089154]             ,    push 0    |
+  DEBUG   simulation:run           TICK: 521,  PC:   8,  AR:   3,  MEM_OUT: 1089154,  TOS: [0, 1089154]          ,    call 1    |
+  DEBUG   simulation:run           TICK: 522,  PC:   1,  AR:   3,  MEM_OUT: 1089154,  TOS: [0, 1089154]          ,    load      |
+  DEBUG   simulation:run           TICK: 524,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 1089154] ,    swap      |
+  DEBUG   simulation:run           TICK: 525,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 1089154] ,    pop       |
+  DEBUG   simulation:run           TICK: 526,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 1089154]    ,    ret 7     |
+  DEBUG   simulation:run           TICK: 527,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 1089154]    ,    cmp       |
+  DEBUG   simulation:run           TICK: 528,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 1089154]    ,    js 40     |
+  DEBUG   simulation:run           TICK: 529,  PC:  11,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 1089154]    ,    pop       |
+  DEBUG   simulation:run           TICK: 530,  PC:  12,  AR:   0,  MEM_OUT: 4000000,  TOS: [1089154]             ,    pop       |
+  DEBUG   simulation:run           TICK: 531,  PC:  13,  AR:   0,  MEM_OUT: 4000000,  TOS: []                    ,    push 4    |
+  DEBUG   simulation:run           TICK: 532,  PC:  14,  AR:   0,  MEM_OUT: 4000000,  TOS: [4]                   ,    push 2    |
+  DEBUG   simulation:run           TICK: 533,  PC:  15,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    call 1    |
+  DEBUG   simulation:run           TICK: 534,  PC:   1,  AR:   0,  MEM_OUT: 4000000,  TOS: [2, 4]                ,    load      |
+  DEBUG   simulation:run           TICK: 536,  PC:   2,  AR:   2,  MEM_OUT: 832040,  TOS: [832040, 2, 4]        ,    swap      |
+  DEBUG   simulation:run           TICK: 537,  PC:   3,  AR:   2,  MEM_OUT: 832040,  TOS: [2, 832040, 4]        ,    pop       |
+  DEBUG   simulation:run           TICK: 538,  PC:   4,  AR:   2,  MEM_OUT: 832040,  TOS: [832040, 4]           ,    ret 9     |
+  DEBUG   simulation:run           TICK: 539,  PC:  16,  AR:   2,  MEM_OUT: 832040,  TOS: [832040, 4]           ,    mul       |
+  DEBUG   simulation:run           TICK: 540,  PC:  17,  AR:   2,  MEM_OUT: 832040,  TOS: [3328160]             ,    push 1    |
+  DEBUG   simulation:run           TICK: 541,  PC:  18,  AR:   2,  MEM_OUT: 832040,  TOS: [1, 3328160]          ,    call 1    |
+  DEBUG   simulation:run           TICK: 542,  PC:   1,  AR:   2,  MEM_OUT: 832040,  TOS: [1, 3328160]          ,    load      |
+  DEBUG   simulation:run           TICK: 544,  PC:   2,  AR:   1,  MEM_OUT: 196418,  TOS: [196418, 1, 3328160]  ,    swap      |
+  DEBUG   simulation:run           TICK: 545,  PC:   3,  AR:   1,  MEM_OUT: 196418,  TOS: [1, 196418, 3328160]  ,    pop       |
+  DEBUG   simulation:run           TICK: 546,  PC:   4,  AR:   1,  MEM_OUT: 196418,  TOS: [196418, 3328160]     ,    ret 16    |
+  DEBUG   simulation:run           TICK: 547,  PC:  19,  AR:   1,  MEM_OUT: 196418,  TOS: [196418, 3328160]     ,    add       |
+  DEBUG   simulation:run           TICK: 548,  PC:  20,  AR:   1,  MEM_OUT: 196418,  TOS: [3524578]             ,    push 3    |
+  DEBUG   simulation:run           TICK: 549,  PC:  21,  AR:   1,  MEM_OUT: 196418,  TOS: [3, 3524578]          ,    load      |
+  DEBUG   simulation:run           TICK: 551,  PC:  22,  AR:   3,  MEM_OUT: 1089154,  TOS: [1089154, 3, 3524578] ,    over3     |
+  DEBUG   simulation:run           TICK: 552,  PC:  23,  AR:   3,  MEM_OUT: 1089154,  TOS: [3524578, 1089154, 3, 3524578],    add       |
+  DEBUG   simulation:run           TICK: 553,  PC:  24,  AR:   3,  MEM_OUT: 1089154,  TOS: [4613732, 3, 3524578] ,    store     |
+  DEBUG   simulation:run           TICK: 555,  PC:  25,  AR: 4613732,  MEM_OUT:   0,  TOS: [4613732, 3, 3524578] ,    pop       |
+  DEBUG   simulation:run           TICK: 556,  PC:  26,  AR: 4613732,  MEM_OUT:   0,  TOS: [3, 3524578]          ,    pop       |
+  DEBUG   simulation:run           TICK: 557,  PC:  27,  AR: 4613732,  MEM_OUT:   0,  TOS: [3524578]             ,    push 2    |
+  DEBUG   simulation:run           TICK: 558,  PC:  28,  AR: 4613732,  MEM_OUT:   0,  TOS: [2, 3524578]          ,    call 1    |
+  DEBUG   simulation:run           TICK: 559,  PC:   1,  AR: 4613732,  MEM_OUT:   0,  TOS: [2, 3524578]          ,    load      |
+  DEBUG   simulation:run           TICK: 561,  PC:   2,  AR:   2,  MEM_OUT: 832040,  TOS: [832040, 2, 3524578]  ,    swap      |
+  DEBUG   simulation:run           TICK: 562,  PC:   3,  AR:   2,  MEM_OUT: 832040,  TOS: [2, 832040, 3524578]  ,    pop       |
+  DEBUG   simulation:run           TICK: 563,  PC:   4,  AR:   2,  MEM_OUT: 832040,  TOS: [832040, 3524578]     ,    ret 19    |
+  DEBUG   simulation:run           TICK: 564,  PC:  29,  AR:   2,  MEM_OUT: 832040,  TOS: [832040, 3524578]     ,    push 1    |
+  DEBUG   simulation:run           TICK: 565,  PC:  30,  AR:   2,  MEM_OUT: 832040,  TOS: [1, 832040, 3524578]  ,    swap      |
+  DEBUG   simulation:run           TICK: 566,  PC:  31,  AR:   2,  MEM_OUT: 832040,  TOS: [832040, 1, 3524578]  ,    store     |
+  DEBUG   simulation:run           TICK: 568,  PC:  32,  AR: 832040,  MEM_OUT:   0,  TOS: [832040, 1, 3524578]  ,    pop       |
+  DEBUG   simulation:run           TICK: 569,  PC:  33,  AR: 832040,  MEM_OUT:   0,  TOS: [1, 3524578]          ,    pop       |
+  DEBUG   simulation:run           TICK: 570,  PC:  34,  AR: 832040,  MEM_OUT:   0,  TOS: [3524578]             ,    push 2    |
+  DEBUG   simulation:run           TICK: 571,  PC:  35,  AR: 832040,  MEM_OUT:   0,  TOS: [2, 3524578]          ,    swap      |
+  DEBUG   simulation:run           TICK: 572,  PC:  36,  AR: 832040,  MEM_OUT:   0,  TOS: [3524578, 2]          ,    store     |
+  DEBUG   simulation:run           TICK: 574,  PC:  37,  AR: 3524578,  MEM_OUT:   0,  TOS: [3524578, 2]          ,    pop       |
+  DEBUG   simulation:run           TICK: 575,  PC:  38,  AR: 3524578,  MEM_OUT:   0,  TOS: [2]                   ,    pop       |
+  DEBUG   simulation:run           TICK: 576,  PC:  39,  AR: 3524578,  MEM_OUT:   0,  TOS: []                    ,    jmp 5     |
+  DEBUG   simulation:run           TICK: 577,  PC:   5,  AR: 3524578,  MEM_OUT:   0,  TOS: []                    ,    push 3    |
+  DEBUG   simulation:run           TICK: 578,  PC:   6,  AR: 3524578,  MEM_OUT:   0,  TOS: [3]                   ,    call 1    |
+  DEBUG   simulation:run           TICK: 579,  PC:   1,  AR: 3524578,  MEM_OUT:   0,  TOS: [3]                   ,    load      |
+  DEBUG   simulation:run           TICK: 581,  PC:   2,  AR:   3,  MEM_OUT: 4613732,  TOS: [4613732, 3]          ,    swap      |
+  DEBUG   simulation:run           TICK: 582,  PC:   3,  AR:   3,  MEM_OUT: 4613732,  TOS: [3, 4613732]          ,    pop       |
+  DEBUG   simulation:run           TICK: 583,  PC:   4,  AR:   3,  MEM_OUT: 4613732,  TOS: [4613732]             ,    ret 29    |
+  DEBUG   simulation:run           TICK: 584,  PC:   7,  AR:   3,  MEM_OUT: 4613732,  TOS: [4613732]             ,    push 0    |
+  DEBUG   simulation:run           TICK: 585,  PC:   8,  AR:   3,  MEM_OUT: 4613732,  TOS: [0, 4613732]          ,    call 1    |
+  DEBUG   simulation:run           TICK: 586,  PC:   1,  AR:   3,  MEM_OUT: 4613732,  TOS: [0, 4613732]          ,    load      |
+  DEBUG   simulation:run           TICK: 588,  PC:   2,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 0, 4613732] ,    swap      |
+  DEBUG   simulation:run           TICK: 589,  PC:   3,  AR:   0,  MEM_OUT: 4000000,  TOS: [0, 4000000, 4613732] ,    pop       |
+  DEBUG   simulation:run           TICK: 590,  PC:   4,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 4613732]    ,    ret 7     |
+  DEBUG   simulation:run           TICK: 591,  PC:   9,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 4613732]    ,    cmp       |
+  DEBUG   simulation:run           TICK: 592,  PC:  10,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 4613732]    ,    js 40     |
+  DEBUG   simulation:run           TICK: 593,  PC:  40,  AR:   0,  MEM_OUT: 4000000,  TOS: [4000000, 4613732]    ,    push 3    |
+  DEBUG   simulation:run           TICK: 594,  PC:  41,  AR:   0,  MEM_OUT: 4000000,  TOS: [3, 4000000, 4613732] ,    load      |
+  DEBUG   simulation:run           TICK: 596,  PC:  42,  AR:   3,  MEM_OUT: 4613732,  TOS: [4613732, 3, 4000000, 4613732],    output 2  |
+  DEBUG   io:log_io        OUTPUT: 4613732
+  DEBUG   simulation:run           TICK: 597,  PC:  43,  AR:   3,  MEM_OUT: 4613732,  TOS: [4613732, 3, 4000000, 4613732],    halt      |
+  DEBUG   simulation:simulation    memory: DATA: [
+    0:     4000000
+    1:     832040
+    2:     3524578
+    3:     4613732
+  ]
+  INFO    simulation:simulation    output_buffer (port 1): ''
+  INFO    simulation:simulation    output_buffer (port 2): '4613732'
+out_stdout: |
+  source LoC: 69 code instr: 44
+  ============================================================
+
+  4613732
+  instr_counter:  513 ticks: 597
+out_code: |-
+  [
+  {"address": 0, "opcode": "jmp", "operand": 5},
+  {"address": 1, "opcode": "load", "operand": null},
+  {"address": 2, "opcode": "swap", "operand": null},
+  {"address": 3, "opcode": "pop", "operand": null},
+  {"address": 4, "opcode": "ret", "operand": null},
+  {"address": 5, "opcode": "push", "operand": 3},
+  {"address": 6, "opcode": "call", "operand": 1},
+  {"address": 7, "opcode": "push", "operand": 0},
+  {"address": 8, "opcode": "call", "operand": 1},
+  {"address": 9, "opcode": "cmp", "operand": null},
+  {"address": 10, "opcode": "js", "operand": 40},
+  {"address": 11, "opcode": "pop", "operand": null},
+  {"address": 12, "opcode": "pop", "operand": null},
+  {"address": 13, "opcode": "push", "operand": 4},
+  {"address": 14, "opcode": "push", "operand": 2},
+  {"address": 15, "opcode": "call", "operand": 1},
+  {"address": 16, "opcode": "mul", "operand": null},
+  {"address": 17, "opcode": "push", "operand": 1},
+  {"address": 18, "opcode": "call", "operand": 1},
+  {"address": 19, "opcode": "add", "operand": null},
+  {"address": 20, "opcode": "push", "operand": 3},
+  {"address": 21, "opcode": "load", "operand": null},
+  {"address": 22, "opcode": "over3", "operand": null},
+  {"address": 23, "opcode": "add", "operand": null},
+  {"address": 24, "opcode": "store", "operand": null},
+  {"address": 25, "opcode": "pop", "operand": null},
+  {"address": 26, "opcode": "pop", "operand": null},
+  {"address": 27, "opcode": "push", "operand": 2},
+  {"address": 28, "opcode": "call", "operand": 1},
+  {"address": 29, "opcode": "push", "operand": 1},
+  {"address": 30, "opcode": "swap", "operand": null},
+  {"address": 31, "opcode": "store", "operand": null},
+  {"address": 32, "opcode": "pop", "operand": null},
+  {"address": 33, "opcode": "pop", "operand": null},
+  {"address": 34, "opcode": "push", "operand": 2},
+  {"address": 35, "opcode": "swap", "operand": null},
+  {"address": 36, "opcode": "store", "operand": null},
+  {"address": 37, "opcode": "pop", "operand": null},
+  {"address": 38, "opcode": "pop", "operand": null},
+  {"address": 39, "opcode": "jmp", "operand": 5},
+  {"address": 40, "opcode": "push", "operand": 3},
+  {"address": 41, "opcode": "load", "operand": null},
+  {"address": 42, "opcode": "output", "operand": 2},
+  {"address": 43, "opcode": "halt", "operand": null}
+  ]
+out_data: |-
+  [
+  {"address": 0, "value": 4000000},
+  {"address": 1, "value": 2},
+  {"address": 2, "value": 8},
+  {"address": 3, "value": 10}
+  ]

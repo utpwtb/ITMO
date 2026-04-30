@@ -1,0 +1,68 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Посетитель" as Visitor #LightBlue
+actor "Зарегистрированный пользователь" as User #LightGreen
+actor "Автор" as Author #LightYellow
+actor "Редактор" as Editor #LightCoral
+actor "Модератор" as Moderator #LightPink
+actor "Администратор" as Admin #LightGray
+
+rectangle "Система iPhones.ru" {
+  
+  usecase "Управление рабочим процессом статей" as UC1
+  usecase "Управление категориями и тегами" as UC2
+  usecase "Версионность статей" as UC3
+  usecase "Отложенная публикация" as UC4
+  usecase "Аутентификация пользователей" as UC5
+  usecase "Управление профилем" as UC6
+  usecase "Управление комментариями" as UC7
+  usecase "Управление правами и ролями" as UC8
+  usecase "Полнотекстовый поиск" as UC9
+  usecase "Категорийная навигация" as UC10
+  usecase "Облако тегов" as UC11
+  usecase "Рекомендация связанных статей" as UC12
+  usecase "Управление изображениями" as UC13
+  usecase "Управление видео" as UC14
+  usecase "Галерея изображений" as UC15
+  usecase "RSS-подписка" as UC16
+  usecase "Подписка по электронной почте" as UC17
+  usecase "Веб-пуш-уведомления" as UC18
+
+}
+
+' Отношения участников и прецедентов
+Visitor --> UC5
+Visitor --> UC9
+Visitor --> UC10
+Visitor --> UC11
+Visitor --> UC16
+Visitor --> UC17
+Visitor --> UC18
+
+User --> UC6
+User --> UC7
+User --> UC12
+
+Author --> UC1
+Author --> UC13
+Author --> UC15
+
+Editor --> UC2
+Editor --> UC4
+Editor --> UC14
+
+Moderator --> UC7
+Moderator --> UC1
+
+Admin --> UC3
+Admin --> UC8
+
+' Отношения между прецедентами
+UC1 ..> UC3 : <<include>>
+UC9 ..> UC12 : <<extend>>
+UC13 ..> UC15 : <<extend>>
+UC4 ..> UC1 : <<extend>>
+
+@enduml

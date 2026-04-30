@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="M68k Architecture">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ====== SWIMLANE 1: Control Unit ====== -->
+        <mxCell id="cu" value="Control Unit &amp; Instruction Processing" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="30" y="30" width="940" height="210" as="geometry"/>
+        </mxCell>
+
+        <!-- PC -->
+        <mxCell id="pc" value="Program Counter&#xa;(PC)  32-bit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="30" y="50" width="140" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- MAR -->
+        <mxCell id="mar" value="MAR&#xa;(Mem Addr Reg)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="220" y="50" width="120" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- IR + Decoder -->
+        <mxCell id="ir" value="Instruction Register&#xa;+ Decoder" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="390" y="50" width="170" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Control FSM -->
+        <mxCell id="ctrl" value="Control FSM&#xa;/ Sequencer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="610" y="50" width="160" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Microcode ROM -->
+        <mxCell id="urom" value="Microcode&#xa;ROM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="820" y="50" width="90" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch Logic -->
+        <mxCell id="branch" value="Branch Logic&#xa;(Bcc / JMP / JSR)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="30" y="130" width="150" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Timing -->
+        <mxCell id="timing" value="Timing &amp; Clock&#xa;Generator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="230" y="130" width="160" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Control Signal Dist -->
+        <mxCell id="csdist" value="Control Signal&#xa;Distribution" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="440" y="130" width="160" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Microsequencer -->
+        <mxCell id="useq" value="Microsequencer&#xa;(next-addr logic)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="cu">
+          <mxGeometry x="660" y="130" width="160" height="55" as="geometry"/>
+        </mxCell>
+
+
+        <!-- ====== SWIMLANE 2: Execution Unit ====== -->
+        <mxCell id="eu" value="Execution Unit  (Datapath)" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="30" y="260" width="940" height="340" as="geometry"/>
+        </mxCell>
+
+        <!-- Data Registers D0-D7 -->
+        <mxCell id="dreg" value="Data Registers&#xa;D0 - D7&#xa;(32-bit x 8)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="eu">
+          <mxGeometry x="30" y="50" width="180" height="75" as="geometry"/>
+        </mxCell>
+
+        <!-- ALU -->
+        <mxCell id="alu" value="ALU&#xa;(Arithmetic &amp; Logic Unit)&#xa;add / sub / cmp / mul / div&#xa;and / or / xor / not" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="eu">
+          <mxGeometry x="270" y="50" width="210" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Shifter -->
+        <mxCell id="shifter" value="Shifter&#xa;(asl / asr / lsl / lsr)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="eu">
+          <mxGeometry x="270" y="200" width="210" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- MDR -->
+        <mxCell id="mdr" value="MDR&#xa;(Mem Data Reg)  32-bit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="eu">
+          <mxGeometry x="30" y="150" width="180" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Address Registers A0-A7 -->
+        <mxCell id="areg" value="Address Registers&#xa;A0 - A7  (A7 = SP)&#xa;(32-bit x 8)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="eu">
+          <mxGeometry x="540" y="50" width="200" height="75" as="geometry"/>
+        </mxCell>
+
+        <!-- Status Register SR -->
+        <mxCell id="sr" value="Status Register (SR)&#xa;┌───┬───┬───┬───┐&#xa;│ N │ Z │ V │ C │&#xa;└───┴───┴───┴───┘" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="eu">
+          <mxGeometry x="540" y="150" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- AGU -->
+        <mxCell id="agu" value="Address Generation Unit (AGU)&#xa;(An)  (An)+  -(An)  d(An)  d(An,Xn)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="eu">
+          <mxGeometry x="540" y="240" width="260" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Temp / Immediate -->
+        <mxCell id="temp" value="Temp /&#xa;Immediate&#xa;Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="eu">
+          <mxGeometry x="810" y="70" width="80" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Byte/Word Mux -->
+        <mxCell id="bwsel" value="Byte / Word&#xa;Select&#xa;(.b / .l)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="eu">
+          <mxGeometry x="810" y="150" width="80" height="55" as="geometry"/>
+        </mxCell>
+
+
+        <!-- ====== SWIMLANE 3: Memory & Bus Interface ====== -->
+        <mxCell id="memif" value="Memory &amp; Bus Interface" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="30" y="620" width="940" height="250" as="geometry"/>
+        </mxCell>
+
+        <!-- Internal Address Bus -->
+        <mxCell id="addrbus" value="Internal Address Bus  (32-bit)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="memif">
+          <mxGeometry x="60" y="45" width="410" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Internal Data Bus -->
+        <mxCell id="databus" value="Internal Data Bus  (32-bit / 8-bit selectable)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="memif">
+          <mxGeometry x="60" y="105" width="410" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Control Bus -->
+        <mxCell id="ctrlbus" value="Internal Control Bus  (R/W, Size, Timing)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="memif">
+          <mxGeometry x="60" y="165" width="410" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Main Memory -->
+        <mxCell id="memory" value="Main Memory&#xa;(DRAM / SRAM)&#xa;32-bit Address Space" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;size=15;" vertex="1" parent="memif">
+          <mxGeometry x="530" y="40" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Memory-mapped I/O -->
+        <mxCell id="io" value="Memory-mapped I/O&#xa;UART / Timer / GPIO&#xa;Interrupt Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="memif">
+          <mxGeometry x="530" y="150" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Stack region annotation -->
+        <mxCell id="stackref" value="Stack (via A7/SP)&#xa;JSR / RTS / LINK / UNLK" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;dashed=1;dashPattern=2 2;" vertex="1" parent="memif">
+          <mxGeometry x="790" y="55" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+
+        <!-- ====== EDGES ====== -->
+
+        <!-- PC -> MAR -->
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;" edge="1" parent="1" source="pc" target="mar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- MAR -> Address Bus -->
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="mar" target="addrbus">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="240" />
+              <mxPoint x="183" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Address Bus -> Memory -->
+        <mxCell id="e3" value="address" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="addrbus" target="memory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Memory -> Data Bus -->
+        <mxCell id="e4" value="data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="memory" target="databus">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Data Bus -> MDR (instruction fetch path) -->
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="databus" target="mdr">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- MDR -> IR (instruction) -->
+        <mxCell id="e6" value="instruction" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="mdr" target="ir">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="230" />
+              <mxPoint x="475" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- MDR -> ALU (memory operand) -->
+        <mxCell id="e7" value="data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#6c8ebf;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="mdr" target="alu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- D0-D7 -> ALU (operand A) -->
+        <mxCell id="e8" value="A" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="dreg" target="alu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ALU -> D0-D7 (result writeback) -->
+        <mxCell id="e9" value="result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="alu" target="dreg">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="115" />
+              <mxPoint x="220" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ALU -> SR (flags) -->
+        <mxCell id="e10" value="N,Z,V,C" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#cc0000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="alu" target="sr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SR -> Branch Logic -->
+        <mxCell id="e11" value="C/V/Z/N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#cc0000;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sr" target="branch">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="580" />
+              <mxPoint x="210" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Branch Logic -> PC (branch/update) -->
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="branch" target="pc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- IR -> Decoder (implicit, they're the same block) -->
+        <!-- IR output to Control FSM -->
+        <mxCell id="e13" value="opcode" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ir" target="ctrl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Control FSM -> Microcode ROM -->
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ctrl" target="urom">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Microcode ROM -> Microsequencer -->
+        <mxCell id="e15" value="μinstr" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="urom" target="useq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Microsequencer -> Control FSM -->
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="useq" target="ctrl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Control FSM -> Control Signal Distribution -->
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ctrl" target="csdist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Timing -> Control FSM -->
+        <mxCell id="e18" value="clock" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="timing" target="ctrl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Control Signals -> ALU (dashed) -->
+        <mxCell id="e19" value="alu_ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=4 3;endArrow=block;endFill=1;strokeWidth=1;strokeColor=#9673a6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="csdist" target="alu">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="230" />
+              <mxPoint x="375" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Control -> Register File (dashed) -->
+        <mxCell id="e20" value="reg_ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=4 3;endArrow=block;endFill=1;strokeWidth=1;strokeColor=#9673a6;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="csdist" target="dreg">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="488" y="230" />
+              <mxPoint x="120" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- A0-A7 -> AGU -->
+        <mxCell id="e21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="areg" target="agu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- AGU -> MAR -->
+        <mxCell id="e22" value="eff_addr" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="agu" target="mar">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="550" />
+              <mxPoint x="410" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Address Bus -> I/O -->
+        <mxCell id="e23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="addrbus" target="io">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="600" />
+              <mxPoint x="640" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- D0-D7 -> MDR (store path) -->
+        <mxCell id="e24" value="store" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#6c8ebf;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dreg" target="mdr">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="200" />
+              <mxPoint x="120" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- A7 (SP) reference line to Stack -->
+        <mxCell id="e25" value="SP" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#82b366;dashed=1;dashPattern=4 3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="areg" target="stackref">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="550" />
+              <mxPoint x="760" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Control -> Bus Interface -->
+        <mxCell id="e26" value="bus_ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=4 3;endArrow=block;endFill=1;strokeWidth=1;strokeColor=#9673a6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="csdist" target="ctrlbus">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="230" />
+              <mxPoint x="610" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ALU -> Shifter -->
+        <mxCell id="e27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#333333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="alu" target="shifter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend box (outside swimlanes) -->
+        <mxCell id="legend" value="LEGEND&#xa;────────&#xa;──▶  Data / Instruction Flow&#xa;- -▶  Control Signals&#xa;──▶  Flag / Status Flow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="760" y="720" width="210" height="70" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
