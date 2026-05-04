@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ':*)",
+      "Bash(python3:*)",
+      "Bash(PYTHONIOENCODING=utf-8 python3:*)",
+      "Bash(where xelatex:*)",
+      "Bash(where pdflatex:*)",
+      "Bash(where lualatex:*)",
+      "Read(//c/texlive/**)",
+      "Read(//c//**)",
+      "Bash(mkdir -p __TRACKED_VAR__/.claude/skills/lecture-notes-workspace/iteration-1/eval-0-single-lecture/with_skill/outputs)",
+      "Bash(mkdir -p __TRACKED_VAR__/.claude/skills/lecture-notes-workspace/iteration-1/eval-0-single-lecture/without_skill/outputs)",
+      "Bash(python -c \"import fitz; print\\('PyMuPDF available'\\)\")",
+      "Bash(python -c \"import pdfplumber; print\\('pdfplumber available'\\)\")",
+      "Bash(pdftotext -layout \"C:\\\\develop\\\\NOTE_UTP\\\\StudyNote\\\\4 Математическая статистика\\\\Лекция\\\\Лекция 1.pdf\" /tmp/lecture1.txt)",
+      "Read(//tmp/**)",
+      "Bash(pdftotext -enc UTF-8 -layout \"C:\\\\develop\\\\NOTE_UTP\\\\StudyNote\\\\4 Математическая статистика\\\\Лекция\\\\Лекция 1.pdf\" /tmp/lecture1_utf8.txt)",
+      "Bash(python -c ':*)",
+      "Bash(python -m scripts.package_skill __TRACKED_VAR__/.claude/skills/lecture-notes)",
+      "Bash(python 'C:\\\\Users\\\\CHL\\\\.claude\\\\plugins\\\\marketplaces\\\\anthropic-agent-skills\\\\skills\\\\skill-creator\\\\scripts\\\\package_skill.py' __TRACKED_VAR__/.claude/skills/lecture-notes)",
+      "Bash(python:*)",
+      "Bash(pdftotext -enc UTF-8 -layout \"C:\\\\develop\\\\NOTE_UTP\\\\StudyNote\\\\4 Математическая статистика\\\\Лекция\\\\Лекция 9.pdf\" /tmp/lecture9.txt)",
+      "Bash(pip install:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

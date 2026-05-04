@@ -15,6 +15,6 @@ public class TrapezoidalSolver implements NumericalIntegrationSolver {
 
     @Override
     public String getMethodName() {
-        return "Метод трапеций";
+        return "梯形法";
     }
 }

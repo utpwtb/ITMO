@@ -1,66 +1,36 @@
     .data
 
-input_addr:      .word  0x80
-output_addr:     .word  0x84
+input_addr:      .word  0x80               ; Input address where the number 'n' is stored
+output_addr:     .word  0x84               ; Output address where the result should be stored
 
     .text
-    .org     0x200
 
 _start:
-    lui      sp, %hi(0x1000)
-    addi     sp, sp, %lo(0x1000)
-
+    ; Load input value
     lui      t0, %hi(input_addr)
     addi     t0, t0, %lo(input_addr)
-    lw       t0, 0(t0)
-    lw       a0, 0(t0)                     
+    lw       t0, 0(t0)                     ; t0 = &input (0x80)
+    lw       t1, 0(t0)                     ; t1 = n = *input_addr
 
-    jal      ra, count_trailing_zeros
+    ; if n == 0, return 32
+    addi     t2, zero, 32                  ; t2 = 32 (result for n==0)
+    beqz     t1, store_result              ; if n == 0, jump to store
 
+    ; count = 0
+    addi     t2, zero, 0                   ; t2 = count = 0
+    addi     t3, zero, 1                   ; t3 = 1 (constant for AND and shift)
+
+loop:
+    and      t4, t1, t3                    ; t4 = n & 1
+    bnez     t4, store_result              ; if (n & 1) != 0, done
+    addi     t2, t2, 1                     ; count++
+    srl      t1, t1, t3                    ; n >>= 1
+    j        loop
+
+store_result:
     lui      t0, %hi(output_addr)
     addi     t0, t0, %lo(output_addr)
-    lw       t0, 0(t0)
-    sw       a0, 0(t0)
+    lw       t0, 0(t0)                     ; t0 = &output (0x84)
+    sw       t2, 0(t0)                     ; *output_addr = count
 
     halt
-
-count_trailing_zeros:
-    addi     sp, sp, -12                   
-    sw       ra, 0(sp)                     
-    sw       s0, 4(sp)                     
-    sw       s1, 8(sp)                     
-
-    beqz     a0, ctz_return_32
-
-    mv       s1, a0                        
-    addi     s0, zero, 0                   
-
-ctz_loop:
-    mv       a0, s1                        
-    addi     a1, zero, 0                   
-    jal      ra, is_bit_set                
-
-    bnez     a0, ctz_done                  
-
-    addi     s0, s0, 1                     
-    addi     t0, zero, 1
-    srl      s1, s1, t0                    
-    j        ctz_loop
-
-ctz_return_32:
-    addi     s0, zero, 32                  
-
-ctz_done:
-    mv       a0, s0                       
-
-    lw       s1, 8(sp)                    
-    lw       s0, 4(sp)                    
-    lw       ra, 0(sp)                    
-    addi     sp, sp, 12                   
-    jr       ra                           
-
-is_bit_set:
-    srl      t0, a0, a1                   
-    addi     t1, zero, 1
-    and      a0, t0, t1                   
-    jr       ra                           

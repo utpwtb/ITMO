@@ -21,6 +21,6 @@ public class SimpsonSolver implements NumericalIntegrationSolver {
 
     @Override
     public String getMethodName() {
-        return "Метод Симпсона";
+        return "辛普森法";
     }
 }

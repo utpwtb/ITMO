@@ -15,6 +15,6 @@ public class MidpointRectangleSolver implements NumericalIntegrationSolver {
 
     @Override
     public String getMethodName() {
-        return "Метод средних прямоугольников";
+        return "中矩形法";
     }
 }

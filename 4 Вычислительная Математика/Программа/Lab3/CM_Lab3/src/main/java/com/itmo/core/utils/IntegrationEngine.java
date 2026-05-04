@@ -2,9 +2,7 @@ package com.itmo.core.utils;
 
 import com.itmo.core.functions.IntegralFunctionInfo;
 import com.itmo.core.solvers.integration.NumericalIntegrationSolver;
-import com.itmo.core.utils.models.ConvergenceCheck;
-import com.itmo.core.utils.models.IntegrationWithDiscontinuity;
-import com.itmo.core.utils.models.RungeResult;
+import com.itmo.core.utils.ImproperIntegralHandler.IntegrationWithDiscontinuity;
 
 public class IntegrationEngine {
     private static final int INITIAL_N = 4;
@@ -14,7 +12,7 @@ public class IntegrationEngine {
                                       double a, double b, double epsilon) {
         for (NumericalIntegrationSolver solver : solvers) {
             RungeRule runge = new RungeRule(solver);
-            RungeResult result = runge.compute(func.getFunction(), a, b, INITIAL_N, epsilon);
+            RungeRule.RungeResult result = runge.compute(func.getFunction(), a, b, INITIAL_N, epsilon);
             ResultFormatter.printRegularResult(solver, result);
         }
     }
@@ -22,7 +20,7 @@ public class IntegrationEngine {
     public static void computeImproper(IntegralFunctionInfo func,
                                        java.util.List<NumericalIntegrationSolver> solvers,
                                        double a, double b, double epsilon) {
-        ConvergenceCheck convCheck =
+        ImproperIntegralHandler.ConvergenceCheck convCheck =
                 ImproperIntegralHandler.checkConvergence(func, a, b);
 
         if (!convCheck.converges()) {

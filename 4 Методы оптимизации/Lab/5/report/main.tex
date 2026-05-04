@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+% babel removed — using polyglossia for Russian support
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{extarrows}
+\usepackage{float}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\defaultfontfeatures{Ligatures={TeX}}
+\newfontfamily\cyrillicfonttt{Courier New}
+
+\usetikzlibrary{intersections}
+\usepgfplotslibrary{fillbetween}
+
+\setmainfont[Ligatures=TeX]{CMU Serif}
+
+\usepackage[
+    a4paper,
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=3cm
+]{geometry}
+
+\usepackage{lipsum}
+\usepackage{setspace}
+
+\setlength{\parskip}{0.2\baselineskip}
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\include{title}
+\setstretch{0.95}
+\tableofcontents
+\newpage
+\setstretch{1}
+
+\include{1}
+\include{2}
+\include{4}
+
+\end{document}

@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{extarrows}
+\usepackage{float}
+\usepackage{polyglossia}   %% загружает пакет многоязыковой вёрстки
+\setdefaultlanguage{russian}  %% устанавливает главный язык документа
+\setotherlanguage{english} %% объявляет второй язык документа
+\defaultfontfeatures{Ligatures={TeX}}
+\newfontfamily\cyrillicfonttt{Courier New}
+
+\usetikzlibrary{intersections}
+\usepgfplotslibrary{fillbetween}
+
+\setmainfont[Ligatures=TeX]{CMU Serif}
+
+\usepackage[
+    a4paper,
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=3cm
+]{geometry}
+    
+\usepackage{lipsum}
+\usepackage{setspace}
+
+\setlength{\parskip}{0.2\baselineskip} % Отступ после абзаца
+\setlength{\parindent}{0cm} % Отступ красной строки
+
+\begin{document}
+\include{title}
+\setstretch{0.95}
+\tableofcontents
+\newpage
+\setstretch{1}
+
+\include{1.tex}
+\include{2.tex}
+\include{3.tex}
+\include{4.tex}
+\include{5}
+
+\end{document}

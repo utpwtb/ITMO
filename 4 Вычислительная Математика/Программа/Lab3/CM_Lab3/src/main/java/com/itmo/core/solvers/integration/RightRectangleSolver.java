@@ -15,6 +15,6 @@ public class RightRectangleSolver implements NumericalIntegrationSolver {
 
     @Override
     public String getMethodName() {
-        return "Метод правых прямоугольников";
+        return "右矩形法";
     }
 }

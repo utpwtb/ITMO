@@ -3,244 +3,290 @@ package com.itmo.core.utils;
 import com.itmo.core.functions.Function;
 import com.itmo.core.functions.IntegralFunctionInfo;
 import com.itmo.core.solvers.integration.NumericalIntegrationSolver;
-import com.itmo.core.utils.models.AnalysisResult;
-import com.itmo.core.utils.models.ConvergenceCheck;
-import com.itmo.core.utils.models.IntegrationWithDiscontinuity;
-import com.itmo.core.utils.models.Range;
-import com.itmo.core.utils.models.RungeResult;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class ImproperIntegralHandler {
 
-    private static final double EPS = 1e-6; // 排除间断点邻域的偏移量
-    private static final double ALPHA_THRESHOLD = 0.99; // 判断发散的阶数阈值
+    private static final double DELTA = 1e-10;
+    private static final int SAMPLE_COUNT = 10;
 
-    /**
-     * 收敛性判断入口
-     */
     public static ConvergenceCheck checkConvergence(IntegralFunctionInfo funcInfo, double a, double b) {
-        AnalysisResult analysis = analyzeInterval(funcInfo, a, b);
-        if (!analysis.converges) {
-            return new ConvergenceCheck(false, analysis.divergeReason);
+        Function function = funcInfo.getFunction();
+        double[] discPoints = collectDiscPointsInInterval(funcInfo.getDiscontinuityPoints(), a, b);
+
+        List<Range> segments = splitByDiscPoints(a, b, discPoints);
+
+        for (Range seg : segments) {
+            String validity = checkSegmentValidity(function, seg.a, seg.b);
+            if (validity != null) {
+                return new ConvergenceCheck(false, validity);
+            }
         }
-        return new ConvergenceCheck(true, "Интеграл сходится");
+
+        for (double discPoint : discPoints) {
+            if (discPoint >= a && discPoint <= b) {
+                double leftLimit = evaluateLimit(function, discPoint, -1e-10);
+                double rightLimit = evaluateLimit(function, discPoint, 1e-10);
+
+                boolean leftInfinite = Double.isInfinite(leftLimit) || Math.abs(leftLimit) > 1e15;
+                boolean rightInfinite = Double.isInfinite(rightLimit) || Math.abs(rightLimit) > 1e15;
+
+                if (!leftInfinite && !rightInfinite) continue;
+
+                double alphaLeft = (discPoint <= a + 1e-12) ? 0.5 : determineAlpha(function, discPoint, a, -1);
+                double alphaRight = (discPoint >= b - 1e-12) ? 0.5 : determineAlpha(function, discPoint, b, 1);
+
+                if (leftInfinite && rightInfinite) {
+                    if (alphaLeft >= 1 && alphaRight >= 1) {
+                        return new ConvergenceCheck(false, "积分发散（间断点 x=" + discPoint + " 处两侧均不收敛）");
+                    }
+                } else if (leftInfinite && alphaLeft >= 1) {
+                    return new ConvergenceCheck(false, "积分发散（左端间断点 x=" + discPoint + " 处不收敛）");
+                } else if (rightInfinite && alphaRight >= 1) {
+                    return new ConvergenceCheck(false, "积分发散（右端间断点 x=" + discPoint + " 处不收敛）");
+                }
+            }
+        }
+        return new ConvergenceCheck(true, "积分收敛");
     }
 
-    /**
-     * 带间断点处理的数值积分计算
-     */
+    private static String checkSegmentValidity(Function f, double segA, double segB) {
+        if (segB - segA < 1e-15) return null;
+
+        int validCount = 0;
+        int totalCount = 0;
+        int nanCount = 0;
+        int infCount = 0;
+
+        for (int i = 0; i <= SAMPLE_COUNT; i++) {
+            double x = segA + (segB - segA) * i / SAMPLE_COUNT;
+            double val = safeEval(f, x);
+            totalCount++;
+
+            if (Double.isNaN(val)) {
+                nanCount++;
+            } else if (Double.isInfinite(val)) {
+                infCount++;
+            } else {
+                validCount++;
+            }
+        }
+
+        if (nanCount == totalCount) {
+            return "积分不存在（区间 [%.4f, %.4f] 内函数无定义）".formatted(segA, segB);
+        }
+
+        if (nanCount > totalCount / 2) {
+            return "积分不存在（区间 [%.4f, %.4f] 内大部分区域函数无定义）".formatted(segA, segB);
+        }
+
+        if (validCount == 0 && infCount > 0) {
+            double midX = (segA + segB) / 2.0;
+            double midVal = safeEval(f, midX);
+            boolean interiorInf = Double.isInfinite(midVal);
+
+            boolean leftEdgeInf = Double.isInfinite(safeEval(f, segA + DELTA));
+            boolean rightEdgeInf = Double.isInfinite(safeEval(f, segB - DELTA));
+
+            if (interiorInf || (!leftEdgeInf && !rightEdgeInf)) {
+                return "积分不存在（区间 [%.4f, %.4f] 内函数无定义）".formatted(segA, segB);
+            }
+        }
+
+        return null;
+    }
+
+    private static List<Range> splitByDiscPoints(double a, double b, double[] discPoints) {
+        List<Range> segments = new ArrayList<>();
+        double cursor = a;
+        for (double d : discPoints) {
+            if (d > cursor + 1e-12 && d < b - 1e-12) {
+                segments.add(new Range(cursor, d));
+                cursor = d;
+            }
+        }
+        segments.add(new Range(cursor, b));
+        return segments;
+    }
+
     public static IntegrationWithDiscontinuity computeWithDiscontinuities(
             IntegralFunctionInfo funcInfo,
             NumericalIntegrationSolver solver,
             double a, double b, int initialN, double epsilon) {
 
-        AnalysisResult analysis = analyzeInterval(funcInfo, a, b);
-        if (!analysis.converges) {
-            return new IntegrationWithDiscontinuity(0, 0, false, "", analysis.divergeReason);
-        }
+        Function function = funcInfo.getFunction();
+        double[] allDiscPoints = collectDiscPointsInInterval(funcInfo.getDiscontinuityPoints(), a, b);
+        StringBuilder detailLog = new StringBuilder();
 
-        double totalValue = 0.0;
+        List<Range> cancelledRanges = detectSymmetricCancellations(funcInfo, a, b, allDiscPoints, detailLog);
+
+        List<Range> computeRanges = buildComputeRanges(a, b, allDiscPoints, cancelledRanges, detailLog);
+
+        double totalResult = 0.0;
         int maxN = initialN;
-        StringBuilder log = new StringBuilder();
 
-        // 对称抵消日志
-        for (Range cancelled : analysis.cancelledRanges) {
-            log.append(String.format("Симметричная компенсация: [%f, %f] - нечётная симметрия относительно точки разрыва, интеграл = 0\n", cancelled.a, cancelled.b));
-        }
+        for (Range range : computeRanges) {
+            String validity = checkSegmentValidity(function, range.a, range.b);
+            if (validity != null) {
+                return new IntegrationWithDiscontinuity(0, 0, false, "", validity);
+            }
 
-        // 对剩余有效子区间逐段积分
-        for (Range range : analysis.validRanges) {
-            if (range.b - range.a <= 1e-12) continue;
+            double effA = adjustEndpoint(range.a, allDiscPoints, +1);
+            double effB = adjustEndpoint(range.b, allDiscPoints, -1);
+
+            if (effB - effA < 1e-15) continue;
 
             RungeRule runge = new RungeRule(solver);
-            RungeResult result = runge.compute(funcInfo.getFunction(), range.a, range.b, initialN, epsilon);
+            RungeRule.RungeResult result = runge.compute(function, effA, effB, initialN, epsilon);
 
             if (Double.isNaN(result.getValue()) || Double.isInfinite(result.getValue())) {
-                return new IntegrationWithDiscontinuity(0, 0, false, "", "Результат вычисления не является конечным значением, интеграл не существует");
+                return new IntegrationWithDiscontinuity(result.getValue(), result.getN(), false,
+                        "", "计算结果为非有限值，积分不存在");
             }
 
-            totalValue += result.getValue();
+            totalResult += result.getValue();
             maxN = Math.max(maxN, result.getN());
-            log.append(String.format("Подинтервал [%.6f, %.6f]: I=%.10f, n=%d\n", range.a, range.b, result.getValue(), result.getN()));
+
+            detailLog.append(String.format(
+                    "子区间 [%.6f, %.6f]: I=%.10f, n=%d\n",
+                    range.a, range.b, result.getValue(), result.getN()));
         }
 
-        return new IntegrationWithDiscontinuity(totalValue, maxN, true, log.toString(), null);
+        return new IntegrationWithDiscontinuity(totalResult, maxN, true, detailLog.toString(), null);
     }
 
-    // ----------------------------------------------------
-    // 内部分析逻辑
-    // ----------------------------------------------------
-
-    /**
-     * 核心分析方法：对整个区间进行收敛性判断 + 区间分割
-     */
-    private static AnalysisResult analyzeInterval(IntegralFunctionInfo info, double a, double b) {
-        AnalysisResult result = new AnalysisResult();
-        Function f = info.getFunction();
-
-        // 1. 收集区间内所有间断点（排序+去重）
-        List<Double> points = getDiscontinuitiesInInterval(info.getDiscontinuityPoints(), a, b);
-
-        // 2. 检测对称抵消（仅处理内部间断点）
-        double cursor = a;
-        for (double c : points) {
-            if (c <= a + 1e-12 || c >= b - 1e-12) continue; // 跳过端点处的间断点
-
-            double maxSymLen = Math.min(c - cursor, b - c);
-            if (maxSymLen > 1e-8 && isOddSymmetric(f, c, maxSymLen)) {
-                Range cancelled = new Range(c - maxSymLen, c + maxSymLen);
-                result.cancelledRanges.add(cancelled);
+    private static double[] collectDiscPointsInInterval(double[] discPoints, double a, double b) {
+        List<Double> collected = new ArrayList<>();
+        for (double d : discPoints) {
+            if (d >= a - 1e-12 && d <= b + 1e-12) {
+                collected.add(d);
             }
         }
-
-        // 3. 构建有效活动区间（排除已抵消的部分）
-        List<Range> activeRanges = buildActiveRanges(a, b, result.cancelledRanges);
-
-        // 4. 按间断点进一步分割 + 端点发散性检查
-        for (Range active : activeRanges) {
-            List<Double> subPoints = getDiscontinuitiesInInterval(info.getDiscontinuityPoints(), active.a, active.b);
-
-            List<Range> segments = splitRangeByPoints(active, subPoints);
-
-            for (Range seg : segments) {
-                // 左端点是间断点 → 检查右侧是否发散
-                if (isDiscontinuity(seg.a, subPoints)) {
-                    if (divergesAt(f, seg.a, 1)) {
-                        result.converges = false;
-                        result.divergeReason = String.format("Интеграл расходится (справа от x=%.4f не сходится)", seg.a);
-                        return result;
-                    }
-                    seg = new Range(seg.a + EPS, seg.b); // 排除 ε 邻域
-                }
-
-                // 右端点是间断点 → 检查左侧是否发散
-                if (isDiscontinuity(seg.b, subPoints)) {
-                    if (divergesAt(f, seg.b, -1)) {
-                        result.converges = false;
-                        result.divergeReason = String.format("Интеграл расходится (слева от x=%.4f не сходится)", seg.b);
-                        return result;
-                    }
-                    seg = new Range(seg.a, seg.b - EPS); // 排除 ε 邻域
-                }
-
-                if (seg.a < seg.b) {
-                    result.validRanges.add(seg);
-                }
-            }
-        }
-
+        collected.sort(null);
+        double[] result = new double[collected.size()];
+        for (int i = 0; i < result.length; i++) result[i] = collected.get(i);
         return result;
     }
 
-    /**
-     * 判断在间断点 p 的 dir 方向上积分是否发散
-     * dir=1 表示向右（右侧逼近），dir=-1 表示向左（左侧逼近）
-     */
-    private static boolean divergesAt(Function f, double p, int dir) {
-        double eps1 = 1e-4;
-        double eps2 = 1e-6;
+    private static List<Range> detectSymmetricCancellations(
+            IntegralFunctionInfo funcInfo, double a, double b,
+            double[] discPoints, StringBuilder log) {
 
-        double y1 = Math.abs(f.evaluate(p + dir * eps1));
-        double y2 = Math.abs(f.evaluate(p + dir * eps2));
-
-        // 若附近值不趋向无穷（可去/跳跃），则收敛
-        if (Math.max(y1, y2) < 1e5 && Double.isFinite(y1) && Double.isFinite(y2)) {
-            return false;
-        }
-
-        // 计算收敛阶数 alpha: f(x) ~ 1/x^alpha
-        if (!Double.isFinite(y1) || !Double.isFinite(y2) || y1 == 0 || y2 == 0) {
-            return true; // 溢出 → 发散
-        }
-
-        double alpha = (Math.log(y2) - Math.log(y1)) / (Math.log(eps1) - Math.log(eps2));
-        return alpha >= ALPHA_THRESHOLD;
-    }
-
-    /**
-     * 判断函数 f 在点 c 的半径 h 范围内是否关于 c 奇对称: f(c-x) + f(c+x) ≈ 0
-     */
-    private static boolean isOddSymmetric(Function f, double c, double h) {
-        int samples = 5;
-        double totalMag = 0;
-        double maxError = 0;
-
-        for (int i = 1; i <= samples; i++) {
-            double dx = h * i / (samples + 1);
-            double y1 = f.evaluate(c - dx);
-            double y2 = f.evaluate(c + dx);
-
-            if (!Double.isFinite(y1) || !Double.isFinite(y2)) return false;
-
-            totalMag += Math.abs(y1) + Math.abs(y2);
-            maxError = Math.max(maxError, Math.abs(y1 + y2));
-        }
-        return totalMag > 1e-8 && (maxError / totalMag) < 1e-5;
-    }
-
-    /**
-     * 从预定义的间断点数组中筛选出落在 [a, b] 区间内的点
-     */
-    private static List<Double> getDiscontinuitiesInInterval(double[] disc, double a, double b) {
-        List<Double> list = new ArrayList<>();
-        if (disc == null) return list;
-        for (double d : disc) {
-            if (d >= a - 1e-12 && d <= b + 1e-12) {
-                list.add(d);
-            }
-        }
-        Collections.sort(list);
-        return list;
-    }
-
-    /** 判断 x 是否是已知间断点 */
-    private static boolean isDiscontinuity(double x, List<Double> points) {
-        for (double p : points) {
-            if (Math.abs(x - p) < 1e-10) return true;
-        }
-        return false;
-    }
-
-    /**
-     * 从 [a, b] 中排除已标记为对称抵消的区间，构建剩余有效区间列表
-     */
-    private static List<Range> buildActiveRanges(double a, double b, List<Range> cancelled) {
-        List<Range> active = new ArrayList<>();
-        List<Range> sortedCancelled = new ArrayList<>(cancelled);
-        sortedCancelled.sort(Comparator.comparingDouble(r -> r.a));
-
+        List<Range> cancelled = new ArrayList<>();
         double cursor = a;
-        for (Range c : sortedCancelled) {
-            if (c.a - cursor > 1e-12) {
-                active.add(new Range(cursor, c.a));
+
+        for (double disc : discPoints) {
+            if (disc < cursor || disc > b) continue;
+
+            double leftLen = disc - cursor;
+            double rightLen = b - disc;
+            double symLen = Math.min(leftLen, rightLen);
+
+            if (symLen > 1e-10 && isOddSymmetricAbout(funcInfo.getFunction(), disc, symLen)) {
+                double symStart = disc - symLen;
+                double symEnd = disc + symLen;
+                cancelled.add(new Range(symStart, symEnd));
+                log.append(String.format(
+                        "对称抵消: 区间 [%.6f, %.6f] 关于间断点 %.6f 奇对称，积分为 0\n",
+                        symStart, symEnd, disc));
+                cursor = symEnd;
             }
-            cursor = Math.max(cursor, c.b);
         }
-        if (b - cursor > 1e-12) {
-            active.add(new Range(cursor, b));
-        }
-        return active;
+        return cancelled;
     }
 
-    /**
-     * 按间断点将一个区间拆分为多个子段
-     */
-    private static List<Range> splitRangeByPoints(Range range, List<Double> points) {
-        List<Range> res = new ArrayList<>();
-        double cursor = range.a;
-        for (double p : points) {
-            if (p > cursor + 1e-12 && p < range.b - 1e-12) {
-                res.add(new Range(cursor, p));
-                cursor = p;
+    private static boolean isOddSymmetricAbout(Function f, double discPoint, double halfWidth) {
+        int checks = 5;
+        double maxErr = 0;
+        double totalMag = 0;
+        for (int i = 1; i <= checks; i++) {
+            double offset = halfWidth * i / (checks + 1);
+            double xLeft = discPoint - offset;
+            double xRight = discPoint + offset;
+            double vLeft = safeEval(f, xLeft);
+            double vRight = safeEval(f, xRight);
+            if (Double.isNaN(vLeft) || Double.isNaN(vRight)) return false;
+            if (Double.isInfinite(vLeft) || Double.isInfinite(vRight)) return false;
+            maxErr = Math.max(maxErr, Math.abs(vLeft + vRight));
+            totalMag += Math.abs(vLeft) + Math.abs(vRight);
+        }
+        return totalMag > 1e-15 && maxErr / totalMag * checks < 1e-6;
+    }
+
+    private static List<Range> buildComputeRanges(double a, double b,
+                                                   double[] discPoints,
+                                                   List<Range> cancelledRanges,
+                                                   StringBuilder log) {
+
+        List<Range> ranges = new ArrayList<>();
+        double cursor = a;
+
+        List<Range> sortedCancelled = new ArrayList<>(cancelledRanges);
+        sortedCancelled.sort((r1, r2) -> Double.compare(r1.a, r2.a));
+
+        for (Range cr : sortedCancelled) {
+            if (cr.a - cursor > 1e-15) {
+                ranges.add(new Range(cursor, cr.a));
+            }
+            cursor = Math.max(cursor, cr.b);
+        }
+
+        if (b - cursor > 1e-15) {
+            ranges.add(new Range(cursor, b));
+        }
+
+        if (ranges.isEmpty() && cancelledRanges.isEmpty()) {
+            ranges.add(new Range(a, b));
+        }
+
+        return ranges;
+    }
+
+    private static double adjustEndpoint(double endpoint, double[] discPoints, int sign) {
+        for (double d : discPoints) {
+            if (Math.abs(endpoint - d) < 1e-10) {
+                return endpoint + sign * DELTA;
             }
         }
-        if (range.b - cursor > 1e-12) {
-            res.add(new Range(cursor, range.b));
+        return endpoint;
+    }
+
+    private static double evaluateLimit(Function function, double point, double delta) {
+        try {
+            return function.evaluate(point + delta);
+        } catch (Exception e) {
+            return Double.NaN;
         }
-        return res;
+    }
+
+    private static double determineAlpha(Function function, double discPoint, double bound, int direction) {
+        boolean foundAny = false;
+        for (double eps : new double[]{1e-3, 1e-5, 1e-7}) {
+            double d = direction * eps;
+            double x = discPoint + d;
+            if ((direction == -1 && x >= bound) || (direction == 1 && x <= bound)) {
+                foundAny = true;
+                double fx = Math.abs(function.evaluate(x));
+                if (Double.isFinite(fx) && fx > 0) return 1.0;
+            }
+        }
+        return foundAny ? 2.0 : 1.5;
+    }
+
+    private static double safeEval(Function f, double x) {
+        return f.evaluate(x);
+    }
+
+    private record Range(double a, double b) {
+    }
+
+    public record ConvergenceCheck(boolean converges, String message) {
+    }
+
+    public record IntegrationWithDiscontinuity(double value, int maxN, boolean success, String detailLog,
+                                               String errorMessage) {
+
     }
 }

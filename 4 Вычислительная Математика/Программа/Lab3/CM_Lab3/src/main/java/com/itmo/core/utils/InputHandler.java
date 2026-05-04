@@ -15,30 +15,37 @@ public class InputHandler {
 
     public IntegralFunctionInfo selectFunction(List<IntegralFunctionInfo> functions) {
         while (true) {
-            System.out.print("Выберите функцию (1-" + functions.size() + "): ");
+            System.out.print("请选择函数编号 (1-" + functions.size() + "): ");
             try {
                 int choice = Integer.parseInt(scanner.nextLine().trim());
                 if (choice >= 1 && choice <= functions.size()) {
                     return functions.get(choice - 1);
                 }
-                System.out.println("Неверный номер, попробуйте снова.");
+                System.out.println("无效编号，请重新输入。");
             } catch (NumberFormatException e) {
-                System.out.println("Введите число.");
+                System.out.println("请输入有效数字。");
             }
         }
     }
 
     public List<NumericalIntegrationSolver> selectSolvers(List<NumericalIntegrationSolver> solvers) {
+        int maxChoice = solvers.size() + 1;
         while (true) {
-            System.out.printf("Выберите метод (1-%d): ", solvers.size());
+            System.out.printf("请选择积分方法编号 (1-%d): ", maxChoice);
             try {
-                int choice = Integer.parseInt(scanner.nextLine().trim());
+                String input = scanner.nextLine().trim();
+                if ("all".equalsIgnoreCase(input)) {
+                    return solvers;
+                }
+                int choice = Integer.parseInt(input);
                 if (choice >= 1 && choice <= solvers.size()) {
                     return List.of(solvers.get(choice - 1));
+                } else if (choice == maxChoice) {
+                    return solvers;
                 }
-                System.out.println("Неверный номер, попробуйте снова.");
+                System.out.println("无效编号，请重新输入。");
             } catch (NumberFormatException e) {
-                System.out.println("Введите число.");
+                System.out.println("请输入有效数字。");
             }
         }
     }
@@ -47,24 +54,24 @@ public class InputHandler {
         while (true) {
             System.out.print(prompt);
             try {
-                return Double.parseDouble(scanner.nextLine().trim().replace(',', '.'));
+                return Double.parseDouble(scanner.nextLine().trim());
             } catch (NumberFormatException e) {
-                System.out.println("Неверный ввод, введите число.");
+                System.out.println("无效输入，请输入一个数字。");
             }
         }
     }
 
     public boolean wantContinue() {
         while (true) {
-            System.out.print("\nПродолжить? (y/n): ");
+            System.out.print("\n是否继续计算？(y/n): ");
             String input = scanner.nextLine().trim().toLowerCase();
-            if ("y".equals(input) || "yes".equals(input) || "да".equals(input)) {
+            if ("y".equals(input) || "yes".equals(input) || "是".equals(input)) {
                 return true;
             }
-            if ("n".equals(input) || "no".equals(input) || "нет".equals(input) || "".equals(input)) {
+            if ("n".equals(input) || "no".equals(input) || "否".equals(input) || "".equals(input)) {
                 return false;
             }
-            System.out.println("Введите y/n");
+            System.out.println("请输入 y/n");
         }
     }
 }

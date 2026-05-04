@@ -23,13 +23,15 @@ public class Main {
         );
 
         do {
+            ResultFormatter.printHeader();
+
             List<IntegralFunctionInfo> allFunctions = IntegralRepository.getAllFunctions();
             ResultFormatter.printFunctionList(allFunctions);
 
             IntegralFunctionInfo selectedFunc = input.selectFunction(allFunctions);
-            double a = input.readDouble("Нижний предел a: ");
-            double b = input.readDouble("Верхний предел b: ");
-            double epsilon = input.readDouble("Точность ε: ");
+            double a = input.readDouble("请输入积分下限 a: ");
+            double b = input.readDouble("请输入积分上限 b: ");
+            double epsilon = input.readDouble("请输入计算精度 ε: ");
 
             ResultFormatter.printSolverList(allSolvers);
             List<NumericalIntegrationSolver> selectedSolvers = input.selectSolvers(allSolvers);
@@ -42,8 +44,8 @@ public class Main {
                 IntegrationEngine.computeRegular(selectedFunc, selectedSolvers, a, b, epsilon);
             }
         } while (input.wantContinue());
-        
-        System.out.println("\nСпасибо за использование программы!");
+
+        System.out.println("\n感谢使用，再见！");
         scanner.close();
     }
 }
