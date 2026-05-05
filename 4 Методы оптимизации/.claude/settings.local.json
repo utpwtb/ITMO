@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:chat.deepseek.com)",
+      "Bash(unzip:*)",
+      "Read(//c/tmp/**)",
+      "Read(//tmp/lecture-notes-tmp/lecture-notes/**)",
+      "Bash(mkdir -p /tmp/lecture-notes/skill/lecture-notes)",
+      "Read(//tmp/lecture-notes/skill/**)",
+      "Bash(python -c ':*)",
+      "Bash(mkdir -p /tmp/lecture-notes/dist)",
+      "Bash(zip -r \"/tmp/lecture-notes/dist/lecture-notes.skill\" \"lecture-notes\")",
+      "Read(//tmp/lecture-notes/dist/**)",
+      "Bash(python:*)",
+      "Bash(pdftotext -enc UTF-8 -layout \"C:/develop/NOTE_UTP/StudyNote/4 Методы оптимизации/Lab/5/material/ЛР5. Аппроксимация функций \\(мет.опт и машин.обуч.\\).pdf\" /tmp/lecture5_text.txt)",
+      "Bash(set PYTHONIOENCODING=utf-8)"
+    ]
+  }
+}

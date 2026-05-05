@@ -4,14 +4,14 @@ from scipy.optimize import minimize
 import os
 
 # ==============================================================================
-# ВАРИАНТ 7 — Исходные данные
+# ВАРИАНТ 11 — Исходные данные
 # ==============================================================================
 data = np.array([
-    [1.10, 1.10, 0.29],
-    [2.01, 1.98, 1.24],
-    [3.01, 2.85, 4.94],
-    [3.86, 3.99, 4.72],
-    [5.10, 4.90, 0.77]
+    [0.85, 1.12, 0.73],
+    [1.83, 2.20, 3.65],
+    [2.91, 3.12, 4.86],
+    [3.93, 3.92, 2.00],
+    [4.86, 4.94, 0.32]
 ])
 
 X = data[:, 0]
@@ -23,7 +23,7 @@ save_dir = '../pic'
 os.makedirs(save_dir, exist_ok=True)
 
 print("="*70)
-print("ЛАБОРАТОРНАЯ РАБОТА №5 — ВАРИАНТ 7")
+print("ЛАБОРАТОРНАЯ РАБОТА №5 — ВАРИАНТ 11")
 print("Аппроксимация табличных данных")
 print("="*70)
 
@@ -64,10 +64,9 @@ bounds_gauss = [
     (0.1, 5.0), (0.1, 5.0), (-np.pi/4, np.pi/4), (-1.0, 1.0)
 ]
 
-print("\nНачальное приближение:")
+print(f"\nНачальное приближение:")
 print(f"  A={init_gauss[0]:.2f}, x0={init_gauss[1]:.2f}, y0={init_gauss[2]:.2f}")
 print(f"  sigma_x={init_gauss[3]:.2f}, sigma_y={init_gauss[4]:.2f}")
-print(f"  theta={init_gauss[5]:.2f}, offset={init_gauss[6]:.2f}")
 
 gauss_loss_hist = []
 def cb_gauss(xk):
@@ -93,7 +92,7 @@ print(f"  Число итераций: {res_gauss.nit}")
 
 print(f"\nАналитический вид модели:")
 print(f"  z(x,y) = {A_g:.4f} * exp(-Q) + {off_g:.4f}")
-print(f"  Q = (x - {x0_g:.4f})^2 / (2*{sx_g:.4f}^2) + (y - {y0_g:.4f})^2 / (2*{sy_g:.4f}^2)")
+print(f"  Q = (x - {x0_g:.4f})^2/(2*{sx_g:.4f}^2) + (y - {y0_g:.4f})^2/(2*{sy_g:.4f}^2)")
 if abs(th_g) > 0.01:
     print(f"  Поворот: theta = {np.degrees(th_g):.2f}°")
 
@@ -135,9 +134,8 @@ bounds_parab = [
     (-5.0, -0.01), (-5.0, -0.01), (-2.0, 2.0)
 ]
 
-print("\nНачальное приближение:")
+print(f"\nНачальное приближение:")
 print(f"  z0={init_parab[0]:.2f}, x0={init_parab[1]:.2f}, y0={init_parab[2]:.2f}")
-print(f"  a={init_parab[3]:.2f}, b={init_parab[4]:.2f}, h={init_parab[5]:.2f}")
 
 parab_loss_hist = []
 def cb_parab(xk):
@@ -173,10 +171,57 @@ for i in range(len(X)):
 print(f"\n  MSE = {mse_parab:.6f}, RMSE = {rmse_parab:.6f}")
 
 # ==============================================================================
-# ЗАДАНИЕ 4: Аппроксимация RBF-сетью (соотв. Заданию 5 в методичке)
+# ЗАДАНИЕ 3: Аппроксимация константной моделью (MSE и MAE)
 # ==============================================================================
 print("\n" + "="*70)
-print("ЗАДАНИЕ 4: RBF-сеть")
+print("ЗАДАНИЕ 3: Константная модель (MSE и MAE)")
+print("="*70)
+
+# MSE-оптимальная константа: среднее арифметическое
+const_mse = np.mean(Z)
+# MAE-оптимальная константа: медиана
+const_mae = np.median(Z)
+
+z_pred_const_mse = np.full_like(Z, const_mse)
+z_pred_const_mae = np.full_like(Z, const_mae)
+
+err_const_mse = z_pred_const_mse - Z
+sq_err_const_mse = err_const_mse ** 2
+mse_const = np.mean(sq_err_const_mse)
+mae_of_mse_const = np.mean(np.abs(err_const_mse))
+
+err_const_mae = z_pred_const_mae - Z
+abs_err_const_mae = np.abs(err_const_mae)
+mae_const = np.mean(abs_err_const_mae)
+mse_of_mae_const = np.mean(err_const_mae ** 2)
+
+print(f"\nМинимизация MSE:")
+print(f"  Оптимальная константа z = mean(z) = {const_mse:.4f}")
+print(f"  MSE(min) = {mse_const:.4f}")
+print(f"  MAE = {mae_of_mse_const:.4f}")
+
+print(f"\nМинимизация MAE:")
+print(f"  Оптимальная константа z = median(z) = {const_mae:.4f}")
+print(f"  MAE(min) = {mae_const:.4f}")
+print(f"  MSE = {mse_of_mae_const:.4f}")
+
+print(f"\nТаблица невязок (MSE-константа = {const_mse:.4f}):")
+print(f"  {'Точка':<8} {'x':<6} {'y':<6} {'z_факт':<10} {'z_модель':<12} {'Невязка':<12} {'Кв.невязка':<14}")
+print(f"  " + "-"*68)
+for i in range(len(X)):
+    print(f"  {i:<8} {X[i]:<6.2f} {Y[i]:<6.2f} {Z[i]:<10.2f} {z_pred_const_mse[i]:<12.4f} {err_const_mse[i]:<12.6f} {sq_err_const_mse[i]:<14.6f}")
+
+print(f"\nТаблица невязок (MAE-константа = {const_mae:.4f}):")
+print(f"  {'Точка':<8} {'x':<6} {'y':<6} {'z_факт':<10} {'z_модель':<12} {'Невязка':<12} {'|Невязка|':<12}")
+print(f"  " + "-"*68)
+for i in range(len(X)):
+    print(f"  {i:<8} {X[i]:<6.2f} {Y[i]:<6.2f} {Z[i]:<10.2f} {z_pred_const_mae[i]:<12.4f} {err_const_mae[i]:<12.6f} {abs_err_const_mae[i]:<12.6f}")
+
+# ==============================================================================
+# ЗАДАНИЕ 5: Аппроксимация RBF-сетью
+# ==============================================================================
+print("\n" + "="*70)
+print("ЗАДАНИЕ 5: RBF-сеть")
 print("="*70)
 
 class KMeansScratch:
@@ -302,7 +347,7 @@ for i in range(rbf.n_hidden):
 print(f"\nАналитический вид модели:")
 print(f"  z(x,y) = {rbf.bias:.4f}")
 for i in range(rbf.n_hidden):
-    print(f"    + {rbf.weights[i]:.4f} * exp(-((x1-{rbf.centers[i,0]:.4f})^2 + (x2-{rbf.centers[i,1]:.4f})^2) / (2*{rbf.widths[i]:.4f}^2))")
+    print(f"    + {rbf.weights[i]:.4f} * exp(-((x-{rbf.centers[i,0]:.4f})^2 + (y-{rbf.centers[i,1]:.4f})^2) / (2*{rbf.widths[i]:.4f}^2))")
 
 print(f"\nТаблица невязок (RBF-сеть):")
 print(f"  {'Точка':<8} {'x':<6} {'y':<6} {'z_факт':<10} {'z_модель':<12} {'Невязка':<12} {'Кв.невязка':<14}")
@@ -327,6 +372,8 @@ print(f"\n{'Метод':<20} {'MSE':<14} {'RMSE':<14}")
 print("-" * 48)
 print(f"{'Гауссиана':<20} {mse_gauss:<14.10f} {rmse_gauss:<14.10f}")
 print(f"{'Параболоид':<20} {mse_parab:<14.6f} {rmse_parab:<14.6f}")
+print(f"{'Конст. MSE':<20} {mse_const:<14.6f} {np.sqrt(mse_const):<14.6f}")
+print(f"{'Конст. MAE':<20} {mse_of_mae_const:<14.6f} {np.sqrt(mse_of_mae_const):<14.6f}")
 print(f"{'RBF-сеть':<20} {mse_rbf:<14.10f} {rmse_rbf:<14.10f}")
 
 # ==============================================================================
@@ -341,9 +388,6 @@ Zg_gauss = gaussian_2d((XY_grid[:, 0], XY_grid[:, 1]), A_g, x0_g, y0_g, sx_g, sy
 Zg_parab = elliptic_paraboloid((XY_grid[:, 0], XY_grid[:, 1]), z0_p, x0_p, y0_p, a_p, b_p, h_p).reshape(50, 50)
 Zg_rbf = rbf.predict(XY_grid).reshape(50, 50)
 
-z_min_all = min(Z.min(), Zg_gauss.min(), Zg_parab.min(), Zg_rbf.min())
-z_max_all = max(Z.max(), Zg_gauss.max(), Zg_parab.max(), Zg_rbf.max())
-
 def plot_model_surface_and_contour(Xg, Yg, Zg, Xpts, Ypts, Zpts, title, filename):
     """Построение 3D поверхности + линий уровня с точками данных."""
     fig = plt.figure(figsize=(14, 6))
@@ -352,7 +396,7 @@ def plot_model_surface_and_contour(Xg, Yg, Zg, Xpts, Ypts, Zpts, title, filename
     ax1 = fig.add_subplot(121, projection='3d')
     surf = ax1.plot_surface(Xg, Yg, Zg, cmap='viridis', alpha=0.85)
     ax1.scatter(Xpts, Ypts, Zpts, c='red', s=80, edgecolors='black', linewidth=0.5,
-                label='Данные (Вариант 7)')
+                label='Данные (Вариант 11)')
     ax1.set_xlabel('X')
     ax1.set_ylabel('Y')
     ax1.set_zlabel('Z')
@@ -382,21 +426,20 @@ def plot_model_surface_and_contour(Xg, Yg, Zg, Xpts, Ypts, Zpts, title, filename
 
 # --- Графики поверхностей ---
 plot_model_surface_and_contour(Xg, Yg, Zg_gauss, X, Y, Z,
-    'Гауссова модель (Вариант 7)', 'gaussian_model.png')
+    'Гауссова модель (Вариант 11)', 'gaussian_model.png')
 plot_model_surface_and_contour(Xg, Yg, Zg_parab, X, Y, Z,
-    'Эллиптический параболоид (Вариант 7)', 'paraboloid_model.png')
+    'Эллиптический параболоид (Вариант 11)', 'paraboloid_model.png')
 plot_model_surface_and_contour(Xg, Yg, Zg_rbf, X, Y, Z,
-    'RBF-сеть (Вариант 7)', 'rbf_model.png')
+    'RBF-сеть (Вариант 11)', 'rbf_model.png')
 
 # --- Кривая обучения: Параболоид ---
 fig, ax = plt.subplots(figsize=(9, 5))
 iters = list(range(len(parab_loss_hist)))
 ax.plot(iters, parab_loss_hist, 'o-', color='#FF9800', markersize=5, linewidth=1.5)
-# Логарифмическая шкала по y для лучшей видимости
 ax.set_yscale('log')
 ax.set_xlabel('Номер итерации')
 ax.set_ylabel('MSE (логарифмическая шкала)')
-ax.set_title('Кривая обучения: Эллиптический параболоид\nВариант 7', fontweight='bold')
+ax.set_title('Кривая обучения: Эллиптический параболоид\nВариант 11', fontweight='bold')
 ax.grid(True, alpha=0.3)
 ax.annotate(f'MSE = {parab_loss_hist[-1]:.6f}',
             xy=(len(parab_loss_hist)-1, parab_loss_hist[-1]),
@@ -412,13 +455,12 @@ print("График сохранён: paraboloid_learning_curve.png")
 fig, ax = plt.subplots(figsize=(9, 5))
 epochs_list = list(range(len(rbf.loss_history)))
 ax.plot(epochs_list, rbf.loss_history, '-', color='#4CAF50', linewidth=1.2, label='RBF-сеть')
-# Горизонтальная линия конечного лосса
 ax.axhline(y=rbf.loss_history[-1], color='red', linestyle='--', alpha=0.5,
            label=f'Конечный MSE = {rbf.loss_history[-1]:.6f}')
 ax.set_yscale('log')
 ax.set_xlabel('Номер эпохи')
 ax.set_ylabel('MSE (логарифмическая шкала)')
-ax.set_title('Кривая обучения: RBF-сеть\nВариант 7', fontweight='bold')
+ax.set_title('Кривая обучения: RBF-сеть\nВариант 11', fontweight='bold')
 ax.legend()
 ax.grid(True, alpha=0.3)
 plt.tight_layout()
@@ -426,33 +468,33 @@ plt.savefig(os.path.join(save_dir, 'rbf_learning_curve.png'), dpi=300, bbox_inch
 plt.close()
 print("График сохранён: rbf_learning_curve.png")
 
-# --- Сравнение MSE трёх методов ---
-fig, ax = plt.subplots(figsize=(8, 5))
-methods = ['Гауссиана', 'Параболоид', 'RBF-сеть']
-mse_values = [mse_gauss, mse_parab, mse_rbf]
-colors = ['#2196F3', '#FF9800', '#4CAF50']
+# --- Сравнение MSE всех методов ---
+fig, ax = plt.subplots(figsize=(9, 5))
+methods = ['Гауссиана', 'Параболоид', 'Конст.\nMSE', 'Конст.\nMAE', 'RBF-сеть']
+mse_values = [mse_gauss, mse_parab, mse_const, mse_of_mae_const, mse_rbf]
+colors = ['#2196F3', '#FF9800', '#9C27B0', '#E91E63', '#4CAF50']
 bars = ax.bar(methods, mse_values, color=colors, alpha=0.85, edgecolor='black', linewidth=1.2)
 
 for bar, val in zip(bars, mse_values):
-    if val > 0.001:
+    if val > 0.01:
         ax.annotate(f'{val:.4f}', xy=(bar.get_x() + bar.get_width()/2, bar.get_height()),
                     xytext=(0, 8), textcoords="offset points", ha='center', va='bottom',
-                    fontsize=11, fontweight='bold')
+                    fontsize=9, fontweight='bold')
     else:
         ax.annotate(f'{val:.2e}', xy=(bar.get_x() + bar.get_width()/2, max(bar.get_height(), 1e-15)),
                     xytext=(0, 8), textcoords="offset points", ha='center', va='bottom',
-                    fontsize=11, fontweight='bold')
+                    fontsize=9, fontweight='bold')
 
 ax.set_yscale('log')
 ax.set_ylabel('MSE (логарифмическая шкала)')
-ax.set_title('Сравнение MSE методов аппроксимации\nВариант 7', fontweight='bold')
+ax.set_title('Сравнение MSE методов аппроксимации\nВариант 11', fontweight='bold')
 ax.grid(True, alpha=0.3, axis='y')
 plt.tight_layout()
 plt.savefig(os.path.join(save_dir, 'mse_comparison.png'), dpi=300, bbox_inches='tight')
 plt.close()
 print("График сохранён: mse_comparison.png")
 
-# --- Сравнение абсолютных невязок ---
+# --- Сравнение абсолютных невязок (без константных) ---
 fig, ax = plt.subplots(figsize=(10, 6))
 x_labels = [f'{i}' for i in range(len(X))]
 x_pos = np.arange(len(X))
@@ -473,7 +515,7 @@ for j, (ae, lbl, clr) in enumerate(zip(abs_errors, labels, bar_colors)):
 
 ax.set_xlabel('Номер точки')
 ax.set_ylabel('Абсолютная невязка $|z_{pred} - z_{true}|$')
-ax.set_title('Сравнение абсолютных невязок трёх методов\nВариант 7', fontweight='bold')
+ax.set_title('Сравнение абсолютных невязок трёх методов\nВариант 11', fontweight='bold')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(x_labels)
 ax.legend()
@@ -499,12 +541,37 @@ for idx, (Zg, model_title, cmap) in enumerate(models_3d):
     ax.set_zlabel('Z')
     ax.set_title(model_title, fontweight='bold')
 
-plt.suptitle('Сравнение трёх методов аппроксимации — Вариант 7',
+plt.suptitle('Сравнение трёх методов аппроксимации — Вариант 11',
              fontsize=14, fontweight='bold', y=1.02)
 plt.tight_layout()
 plt.savefig(os.path.join(save_dir, 'all_models_3d.png'), dpi=300, bbox_inches='tight')
 plt.close()
 print("График сохранён: all_models_3d.png")
+
+# --- Константная модель: визуализация ---
+fig, ax = plt.subplots(figsize=(9, 5))
+x_idx = np.arange(len(X))
+ax.axhline(y=const_mse, color='#9C27B0', linestyle='--', linewidth=2,
+           label=f'MSE-константа = {const_mse:.4f}')
+ax.axhline(y=const_mae, color='#E91E63', linestyle=':', linewidth=2,
+           label=f'MAE-константа = {const_mae:.4f}')
+ax.scatter(x_idx, Z, c='#2196F3', s=120, zorder=5, edgecolors='black',
+           label='Данные (Вариант 11)')
+for i, (xi, zi) in enumerate(zip(x_idx, Z)):
+    ax.plot([xi, xi], [const_mse, zi], color='#9C27B0', alpha=0.5, linewidth=1.2)
+    ax.plot([xi, xi], [const_mae, zi], color='#E91E63', alpha=0.5, linewidth=1.2)
+
+ax.set_xlabel('Номер точки')
+ax.set_ylabel('z')
+ax.set_title('Аппроксимация константной моделью\nВариант 11', fontweight='bold')
+ax.set_xticks(x_idx)
+ax.set_xticklabels([f'{i}' for i in range(len(X))])
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.savefig(os.path.join(save_dir, 'constant_model.png'), dpi=300, bbox_inches='tight')
+plt.close()
+print("График сохранён: constant_model.png")
 
 print("\n" + "="*70)
 print("ВСЕ ГРАФИКИ ПОСТРОЕНЫ")

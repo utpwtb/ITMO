@@ -47,7 +47,7 @@ public class ChartPanel extends JPanel {
 
         if (xData == null || xData.isEmpty()) {
             g2.setColor(Color.GRAY);
-            g2.drawString("暂无数据，请先输入数据并点击计算", getWidth() / 2 - 100, getHeight() / 2);
+            g2.drawString("Нет данных. Введите данные и нажмите «Вычислить»", getWidth() / 2 - 130, getHeight() / 2);
             return;
         }
 
@@ -85,13 +85,11 @@ public class ChartPanel extends JPanel {
         final double scaleY = (hgt - 2 * PADDING) / ySpan;
         final double _minX = minX, _minY = minY;
 
-        // Draw axes
         g2.setColor(Color.BLACK);
         g2.setStroke(new BasicStroke(2));
-        g2.drawLine(PADDING, hgt - PADDING, w - PADDING, hgt - PADDING); // X axis
-        g2.drawLine(PADDING, PADDING, PADDING, hgt - PADDING); // Y axis
+        g2.drawLine(PADDING, hgt - PADDING, w - PADDING, hgt - PADDING);
+        g2.drawLine(PADDING, PADDING, PADDING, hgt - PADDING);
 
-        // Draw grid
         g2.setColor(new Color(220, 220, 220));
         g2.setStroke(new BasicStroke(1));
         int gridLines = 10;
@@ -102,9 +100,8 @@ public class ChartPanel extends JPanel {
             g2.drawLine(PADDING, y, w - PADDING, y);
         }
 
-        // Draw tick labels
         g2.setColor(Color.BLACK);
-        g2.setFont(new Font("Consolas", Font.PLAIN, 10));
+        g2.setFont(new Font("Microsoft YaHei", Font.PLAIN, 10));
         for (int i = 0; i <= gridLines; i++) {
             double xVal = minX + i * xSpan / gridLines;
             double yVal = maxY - i * ySpan / gridLines;
@@ -116,12 +113,10 @@ public class ChartPanel extends JPanel {
             g2.drawString(yStr, PADDING - 55, ty + 5);
         }
 
-        // Draw axis labels
         g2.setFont(new Font("Microsoft YaHei", Font.BOLD, 13));
         g2.drawString("X", w - PADDING + 10, hgt - PADDING + 5);
         g2.drawString("Y", PADDING - 5, PADDING - 10);
 
-        // Draw fit curves
         if (results != null) {
             for (int idx = 0; idx < results.size(); idx++) {
                 ApproximationResult r = results.get(idx);
@@ -132,38 +127,53 @@ public class ChartPanel extends JPanel {
 
                 Path2D.Double path = new Path2D.Double();
                 int numPts = 500;
+                boolean inValidSegment = false;
                 for (int i = 0; i <= numPts; i++) {
                     double xp = minX + i * xSpan / numPts;
-                    double yp = r.getYPredicted()[0]; // fallback
-                    double[] yPred = r.getYPredicted();
-                    if (yPred != null && xData != null) {
-                        // Interpolate using the function directly for smooth curves
-                        double[] c = r.getCoefficients();
-                        switch (r.getFunctionType()) {
-                            case "线性函数":
-                                yp = c[0] * xp + c[1]; break;
-                            case "二次多项式":
-                                yp = c[0] + c[1] * xp + c[2] * xp * xp; break;
-                            case "三次多项式":
-                                yp = c[0] + c[1] * xp + c[2] * xp * xp + c[3] * xp * xp * xp; break;
-                            case "指数函数":
-                                yp = c[0] * Math.exp(c[1] * xp); break;
-                            case "对数函数":
-                                yp = xp > 0 ? c[0] * Math.log(xp) + c[1] : c[1]; break;
-                            case "幂函数":
-                                yp = xp > 0 ? c[0] * Math.pow(xp, c[1]) : 0; break;
-                        }
+                    double yp = 0;
+                    boolean valid = true;
+                    double[] c = r.getCoefficients();
+                    switch (r.getFunctionType()) {
+                        case "Линейная функция":
+                            yp = c[0] * xp + c[1]; break;
+                        case "Квадратичный полином":
+                            yp = c[0] + c[1] * xp + c[2] * xp * xp; break;
+                        case "Кубический полином":
+                            yp = c[0] + c[1] * xp + c[2] * xp * xp + c[3] * xp * xp * xp; break;
+                        case "Экспоненциальная функция":
+                            yp = c[0] * Math.exp(c[1] * xp); break;
+                        case "Логарифмическая функция":
+                            if (xp > 0) {
+                                yp = c[0] * Math.log(xp) + c[1];
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case "Степенная функция":
+                            if (xp > 0) {
+                                yp = c[0] * Math.pow(xp, c[1]);
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                    }
+                    if (!valid) {
+                        inValidSegment = false;
+                        continue;
                     }
                     int px = (int) (PADDING + (xp - _minX) * scaleX);
                     int py = (int) (hgt - PADDING - (yp - _minY) * scaleY);
-                    if (i == 0) path.moveTo(px, py);
-                    else path.lineTo(px, py);
+                    if (!inValidSegment) {
+                        path.moveTo(px, py);
+                        inValidSegment = true;
+                    } else {
+                        path.lineTo(px, py);
+                    }
                 }
                 g2.draw(path);
             }
         }
 
-        // Draw data points
         g2.setColor(Color.BLACK);
         for (int i = 0; i < xData.size(); i++) {
             double xi = xData.get(i), yi = yData.get(i);
@@ -172,30 +182,13 @@ public class ChartPanel extends JPanel {
             Ellipse2D.Double dot = new Ellipse2D.Double(px - 4, py - 4, 8, 8);
             g2.fill(dot);
         }
+    }
 
-        // Draw legend
-        if (results != null) {
-            int legendX = w - 220;
-            int legendY = PADDING + 5;
-            g2.setFont(new Font("Microsoft YaHei", Font.PLAIN, 11));
-            g2.setColor(new Color(255, 255, 255, 200));
-            g2.fillRect(legendX - 5, legendY - 5, 210, 18 * (results.size() + 1) + 15);
-            g2.setColor(Color.BLACK);
-            g2.drawRect(legendX - 5, legendY - 5, 210, 18 * (results.size() + 1) + 15);
+    public List<ApproximationResult> getResults() {
+        return results;
+    }
 
-            g2.fillOval(legendX, legendY, 8, 8);
-            g2.drawString("原始数据", legendX + 15, legendY + 8);
-            legendY += 18;
-
-            for (int idx = 0; idx < results.size(); idx++) {
-                ApproximationResult r = results.get(idx);
-                if (r.getDelta() >= Double.MAX_VALUE) continue;
-                g2.setColor(COLORS[idx % COLORS.length]);
-                g2.fillOval(legendX, legendY, 8, 8);
-                g2.setColor(Color.BLACK);
-                g2.drawString(r.getFunctionType(), legendX + 15, legendY + 8);
-                legendY += 18;
-            }
-        }
+    public static Color[] getColors() {
+        return COLORS;
     }
 }

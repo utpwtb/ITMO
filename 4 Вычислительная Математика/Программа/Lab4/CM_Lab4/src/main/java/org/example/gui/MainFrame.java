@@ -1,10 +1,9 @@
 package org.example.gui;
 
-import org.example.engine.LSMSolver;
 import org.example.model.ApproximationResult;
+import org.example.service.ApproximationService;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,124 +17,182 @@ public class MainFrame extends JFrame {
     private DefaultTableModel inputModel;
     private JTextArea resultArea;
     private ChartPanel chartPanel;
-    private JTabbedPane tabbedPane;
+    private JPanel legendPanel;
+
+    private static final Font UI_FONT = new Font("Microsoft YaHei", Font.PLAIN, 13);
+    private static final Font MONO_FONT = new Font("Consolas", Font.PLAIN, 13);
+    private static final Font RESULT_FONT = new Font("Microsoft YaHei", Font.PLAIN, 13);
 
     public MainFrame() {
-        setTitle("LSM函数逼近 - 最小二乘法");
+        setTitle("Аппроксимация МНК");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1200, 850);
+        setSize(1300, 850);
         setLocationRelativeTo(null);
-        setLayout(new BorderLayout());
 
-        tabbedPane = new JTabbedPane();
+        JPanel mainPanel = new JPanel(new BorderLayout(5, 0));
 
-        JPanel inputPanel = createInputPanel();
-        tabbedPane.addTab("数据输入", inputPanel);
+        JPanel leftPanel = createLeftPanel();
+        leftPanel.setPreferredSize(new Dimension(380, 850));
+        leftPanel.setMinimumSize(new Dimension(300, 600));
 
-        JPanel resultPanel = createResultPanel();
-        tabbedPane.addTab("计算结果", resultPanel);
+        JSplitPane rightSplit = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+        rightSplit.setResizeWeight(0.5);
+        rightSplit.setTopComponent(createResultPanel());
 
         chartPanel = new ChartPanel();
-        tabbedPane.addTab("图形", chartPanel);
+        JPanel chartContainer = new JPanel(new BorderLayout(0, 2));
+        legendPanel = createLegendPanel();
+        chartContainer.add(legendPanel, BorderLayout.NORTH);
+        chartContainer.add(chartPanel, BorderLayout.CENTER);
+        rightSplit.setBottomComponent(chartContainer);
 
-        add(tabbedPane, BorderLayout.CENTER);
+        mainPanel.add(leftPanel, BorderLayout.WEST);
+        mainPanel.add(rightSplit, BorderLayout.CENTER);
 
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
-        JButton calcBtn = new JButton("计算");
-        JButton loadBtn = new JButton("加载数据");
-        JButton saveBtn = new JButton("保存结果");
-        JButton clearBtn = new JButton("清空");
+        add(mainPanel);
+        initDefaultData();
+    }
 
-        String btnFont = "Microsoft YaHei";
-        calcBtn.setFont(new Font(btnFont, Font.BOLD, 14));
-        loadBtn.setFont(new Font(btnFont, Font.PLAIN, 14));
-        saveBtn.setFont(new Font(btnFont, Font.PLAIN, 14));
-        clearBtn.setFont(new Font(btnFont, Font.PLAIN, 14));
+    private JPanel createLeftPanel() {
+        JPanel panel = new JPanel(new BorderLayout(5, 5));
+        panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
+        JLabel lbl = new JLabel("<html>Введите точки данных (минимум 8, рекомендуется 8-12):</html>");
+        lbl.setFont(UI_FONT);
+        panel.add(lbl, BorderLayout.NORTH);
+
+        inputModel = new DefaultTableModel(new Object[]{"№", "x", "y"}, 0) {
+            @Override
+            public Class<?> getColumnClass(int columnIndex) {
+                return columnIndex == 0 ? Integer.class : String.class;
+            }
+        };
+
+        inputTable = new JTable(inputModel);
+        inputTable.setFont(MONO_FONT);
+        inputTable.setRowHeight(22);
+        inputTable.getColumnModel().getColumn(0).setPreferredWidth(40);
+        inputTable.getColumnModel().getColumn(0).setMaxWidth(60);
+        inputTable.getColumnModel().getColumn(1).setPreferredWidth(120);
+        inputTable.getColumnModel().getColumn(2).setPreferredWidth(120);
+
+        JScrollPane tableScroll = new JScrollPane(inputTable);
+        panel.add(tableScroll, BorderLayout.CENTER);
+
+        JPanel buttonPanel = new JPanel(new GridLayout(0, 2, 5, 5));
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
+
+        JButton addRowBtn = new JButton("Добавить");
+        JButton removeRowBtn = new JButton("Удалить");
+        JButton calcBtn = new JButton("Вычислить");
+        JButton loadBtn = new JButton("Загрузить");
+        JButton saveBtn = new JButton("Сохранить");
+        JButton clearBtn = new JButton("Очистить");
+
+        for (JButton btn : new JButton[]{addRowBtn, removeRowBtn, calcBtn, loadBtn, saveBtn, clearBtn}) {
+            btn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 12));
+        }
+
+        addRowBtn.addActionListener(e -> inputModel.addRow(new Object[]{inputModel.getRowCount() + 1, "", ""}));
+        removeRowBtn.addActionListener(e -> {
+            int row = inputTable.getSelectedRow();
+            if (row >= 0) {
+                inputModel.removeRow(row);
+                for (int i = 0; i < inputModel.getRowCount(); i++) {
+                    inputModel.setValueAt(i + 1, i, 0);
+                }
+            }
+        });
         calcBtn.addActionListener(this::onCalculate);
         loadBtn.addActionListener(this::onLoad);
         saveBtn.addActionListener(this::onSave);
         clearBtn.addActionListener(this::onClear);
 
+        buttonPanel.add(addRowBtn);
+        buttonPanel.add(removeRowBtn);
         buttonPanel.add(calcBtn);
         buttonPanel.add(loadBtn);
         buttonPanel.add(saveBtn);
         buttonPanel.add(clearBtn);
 
-        add(buttonPanel, BorderLayout.SOUTH);
-
-        initDefaultData();
-    }
-
-    private JPanel createInputPanel() {
-        JPanel panel = new JPanel(new BorderLayout());
-
-        JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        JLabel lbl = new JLabel("请输入数据点 (至少8个点，建议8-12个):");
-        lbl.setFont(new Font("Microsoft YaHei", Font.PLAIN, 13));
-        topPanel.add(lbl);
-        JButton addRowBtn = new JButton("添加行");
-        addRowBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 13));
-        addRowBtn.addActionListener(e -> inputModel.addRow(new Object[]{inputModel.getRowCount(), 0.0, 0.0}));
-        topPanel.add(addRowBtn);
-
-        JButton removeRowBtn = new JButton("删除选中行");
-        removeRowBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 13));
-        removeRowBtn.addActionListener(e -> {
-            int row = inputTable.getSelectedRow();
-            if (row >= 0) inputModel.removeRow(row);
-        });
-        topPanel.add(removeRowBtn);
-
-        panel.add(topPanel, BorderLayout.NORTH);
-
-        inputModel = new DefaultTableModel(new Object[]{"序号", "x", "y"}, 0) {
-            @Override
-            public Class<?> getColumnClass(int columnIndex) {
-                return columnIndex == 0 ? Integer.class : Double.class;
-            }
-        };
-
-        inputTable = new JTable(inputModel);
-        inputTable.setFont(new Font("Consolas", Font.PLAIN, 13));
-        inputTable.getColumnModel().getColumn(0).setPreferredWidth(50);
-        inputTable.getColumnModel().getColumn(1).setPreferredWidth(100);
-        inputTable.getColumnModel().getColumn(2).setPreferredWidth(100);
-
-        JScrollPane scroll = new JScrollPane(inputTable);
-        scroll.setPreferredSize(new Dimension(400, 500));
-        panel.add(scroll, BorderLayout.CENTER);
+        panel.add(buttonPanel, BorderLayout.SOUTH);
         return panel;
     }
 
-    private JPanel createResultPanel() {
-        JPanel panel = new JPanel(new BorderLayout());
+    private JScrollPane createResultPanel() {
         resultArea = new JTextArea();
-        resultArea.setFont(new Font("Consolas", Font.PLAIN, 13));
+        resultArea.setFont(RESULT_FONT);
         resultArea.setEditable(false);
         JScrollPane scroll = new JScrollPane(resultArea);
-        panel.add(scroll, BorderLayout.CENTER);
+        scroll.setBorder(BorderFactory.createTitledBorder("Результаты"));
+        return scroll;
+    }
+
+    private JPanel createLegendPanel() {
+        JPanel panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                List<ApproximationResult> r = chartPanel.getResults();
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setFont(new Font("Microsoft YaHei", Font.PLAIN, 12));
+
+                int x = 10;
+                int y = getHeight() / 2 + 5;
+
+                Color[] colors = ChartPanel.getColors();
+
+                g2.setColor(Color.BLACK);
+                g2.fillOval(x, y - 4, 8, 8);
+                g2.drawString("Исходные данные", x + 14, y + 4);
+                x += 150;
+
+                if (r != null) {
+                    for (int idx = 0; idx < r.size(); idx++) {
+                        ApproximationResult res = r.get(idx);
+                        if (res.getDelta() >= Double.MAX_VALUE) continue;
+                        g2.setColor(colors[idx % colors.length]);
+                        g2.fillOval(x, y - 4, 8, 8);
+                        g2.setColor(Color.BLACK);
+                        g2.drawString(res.getFunctionType(), x + 14, y + 4);
+                        x += g2.getFontMetrics().stringWidth(res.getFunctionType()) + 40;
+                    }
+                }
+            }
+        };
+        panel.setPreferredSize(new Dimension(0, 40));
+        panel.setBackground(Color.WHITE);
         return panel;
     }
 
     private void initDefaultData() {
-        // Option 14: y = 25x / (x^4 + 14), x in [0, 4], h = 0.4
-        double[] xVals = {0.0, 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 3.6, 4.0};
+        double[] xVals = {0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 3.6, 4.0};
         for (int i = 0; i < xVals.length; i++) {
             double xi = xVals[i];
             double yi = 25.0 * xi / (xi * xi * xi * xi + 14.0);
-            inputModel.addRow(new Object[]{i + 1, xi, yi});
+            inputModel.addRow(new Object[]{i + 1, String.valueOf(xi), String.valueOf(yi)});
+        }
+    }
+
+    private double parseNumber(Object val) {
+        if (val == null) return Double.NaN;
+        String s = val.toString().trim();
+        if (s.isEmpty()) return Double.NaN;
+        s = s.replace(',', '.');
+        s = s.replaceAll("\\s+", "");
+        try {
+            return Double.parseDouble(s);
+        } catch (NumberFormatException e) {
+            return Double.NaN;
         }
     }
 
     private List<Double> getXValues() {
         List<Double> list = new ArrayList<>();
         for (int i = 0; i < inputModel.getRowCount(); i++) {
-            Object val = inputModel.getValueAt(i, 1);
-            if (val instanceof Double) list.add((Double) val);
-            else if (val instanceof String) {
-                try { list.add(Double.parseDouble((String) val)); } catch (NumberFormatException ignored) {}
-            }
+            double val = parseNumber(inputModel.getValueAt(i, 1));
+            if (!Double.isNaN(val)) list.add(val);
         }
         return list;
     }
@@ -143,11 +200,8 @@ public class MainFrame extends JFrame {
     private List<Double> getYValues() {
         List<Double> list = new ArrayList<>();
         for (int i = 0; i < inputModel.getRowCount(); i++) {
-            Object val = inputModel.getValueAt(i, 2);
-            if (val instanceof Double) list.add((Double) val);
-            else if (val instanceof String) {
-                try { list.add(Double.parseDouble((String) val)); } catch (NumberFormatException ignored) {}
-            }
+            double val = parseNumber(inputModel.getValueAt(i, 2));
+            if (!Double.isNaN(val)) list.add(val);
         }
         return list;
     }
@@ -156,45 +210,57 @@ public class MainFrame extends JFrame {
         List<Double> xVals = getXValues();
         List<Double> yVals = getYValues();
 
-        if (xVals.size() < 8) {
-            JOptionPane.showMessageDialog(this, "至少需要8个数据点", "错误", JOptionPane.ERROR_MESSAGE);
+        int validCount = Math.min(xVals.size(), yVals.size());
+        if (validCount < 8) {
+            JOptionPane.showMessageDialog(this,
+                    "Необходимо минимум 8 точек. Текущее количество: " + validCount,
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
             return;
         }
         if (xVals.size() != yVals.size()) {
-            JOptionPane.showMessageDialog(this, "x和y数据点数不一致", "错误", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,
+                    "Количество x и y не совпадает (x: " + xVals.size() + ", y: " + yVals.size() + ")",
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        List<ApproximationResult> results = LSMSolver.computeAll(xVals, yVals);
+        int n = Math.min(xVals.size(), yVals.size());
+        xVals = xVals.subList(0, n);
+        yVals = yVals.subList(0, n);
+
+        List<ApproximationResult> results = ApproximationService.computeAll(xVals, yVals);
 
         StringBuilder sb = new StringBuilder();
-        sb.append("==================== 最小二乘法逼近结果 ====================\n\n");
-        sb.append(String.format("数据点数: %d\n\n", xVals.size()));
+        sb.append("==================== Результаты аппроксимации МНК ====================\n\n");
+        sb.append(String.format("Количество точек: %d\n\n", xVals.size()));
 
-        // Find best
         ApproximationResult best = null;
         double minDelta = Double.MAX_VALUE;
 
         for (ApproximationResult r : results) {
-            if (r.getDelta() < minDelta) {
+            if (r.getDelta() < minDelta && r.getDelta() < Double.MAX_VALUE / 2) {
                 minDelta = r.getDelta();
                 best = r;
             }
 
             sb.append("--------------------------------------------------------------\n");
-            sb.append(String.format("【%s】\n", r.getFunctionType()));
-            sb.append(String.format("  逼近公式: %s\n", r.getFormula()));
-            sb.append(String.format("  偏差度量 S = %.6f\n", r.getS()));
-            sb.append(String.format("  均方根偏差 = %.6f\n", r.getDelta()));
-            sb.append(String.format("  决定系数 R^2 = %.6f\n", r.getR2()));
-            sb.append(String.format("  评价: %s\n", r.getR2Message()));
+            sb.append(String.format("%s\n", r.getFunctionType()));
+            sb.append(String.format("  Формула: %s\n", ApproximationService.getFormula(r)));
+            if (r.getS() >= Double.MAX_VALUE / 2) {
+                sb.append("  Мера отклонения S = N/A (невозможно)\n");
+                sb.append("  Среднекв. отклонение = N/A (невозможно)\n");
+            } else {
+                sb.append(String.format("  Мера отклонения S = %.6f\n", r.getS()));
+                sb.append(String.format("  Среднекв. отклонение = %.6f\n", r.getDelta()));
+            }
+            sb.append(String.format("  Коэффициент детерминации R² = %.6f\n", r.getR2()));
+            sb.append(String.format("  Оценка: %s\n", r.getR2Message()));
 
-            if (r.getFunctionType().equals("线性函数")) {
-                sb.append(String.format("  皮尔逊相关系数 r = %.6f\n", r.getPearsonR()));
+            if (r.getFunctionType().contains("Линейная")) {
+                sb.append(String.format("  Коэффициент корреляции Пирсона r = %.6f\n", r.getPearsonR()));
             }
 
-            // Detailed table
-            sb.append("\n  数据点详情:\n");
+            sb.append("\n  Детали точек:\n");
             sb.append(String.format("  %6s %12s %12s %12s %12s\n", "x", "y", "phi(x)", "epsilon", "|eps|"));
             sb.append("  ---------------------------------------------------------\n");
             double[] yPred = r.getYPredicted();
@@ -208,14 +274,15 @@ public class MainFrame extends JFrame {
 
         sb.append("==============================================================\n");
         if (best != null) {
-            sb.append(String.format("\n★ 最佳逼近: 【%s】\n", best.getFunctionType()));
-            sb.append(String.format("  公式: %s\n", best.getFormula()));
-            sb.append(String.format("  均方根偏差: %.6f\n", best.getDelta()));
+            sb.append(String.format("\n  Лучшая аппроксимация: %s\n", best.getFunctionType()));
+            sb.append(String.format("  Формула: %s\n", ApproximationService.getFormula(best)));
+            sb.append(String.format("  Среднекв. отклонение: %.6f\n", best.getDelta()));
         }
 
         resultArea.setText(sb.toString());
+        resultArea.setCaretPosition(0);
         chartPanel.setData(xVals, yVals, results);
-        tabbedPane.setSelectedIndex(2); // switch to chart
+        legendPanel.repaint();
     }
 
     private void onLoad(ActionEvent e) {
@@ -228,18 +295,21 @@ public class MainFrame extends JFrame {
                 String line;
                 int row = 0;
                 while ((line = br.readLine()) != null) {
-                    String[] parts = line.trim().split("[,\\s]+");
+                    line = line.trim();
+                    if (line.isEmpty() || line.startsWith("#")) continue;
+                    String[] parts = line.split("[;\\s]+");
                     if (parts.length >= 2) {
-                        try {
-                            double x = Double.parseDouble(parts[0]);
-                            double y = Double.parseDouble(parts[1]);
-                            inputModel.addRow(new Object[]{++row, x, y});
-                        } catch (NumberFormatException ignored) {}
+                        double x = parseNumber(parts[0]);
+                        double y = parseNumber(parts[1]);
+                        if (!Double.isNaN(x) && !Double.isNaN(y)) {
+                            inputModel.addRow(new Object[]{++row, parts[0].trim(), parts[1].trim()});
+                        }
                     }
                 }
-                JOptionPane.showMessageDialog(this, "成功加载 " + row + " 个数据点");
+                JOptionPane.showMessageDialog(this, "Загружено " + row + " точек");
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "读取文件失败: " + ex.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ошибка чтения файла: " + ex.getMessage(),
+                        "Ошибка", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
@@ -251,9 +321,10 @@ public class MainFrame extends JFrame {
             try (PrintWriter pw = new PrintWriter(
                     new OutputStreamWriter(new FileOutputStream(file), "UTF-8"))) {
                 pw.print(resultArea.getText());
-                JOptionPane.showMessageDialog(this, "结果已保存到 " + file.getName());
+                JOptionPane.showMessageDialog(this, "Результат сохранён в " + file.getName());
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "保存失败: " + ex.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ошибка сохранения: " + ex.getMessage(),
+                        "Ошибка", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
@@ -262,5 +333,6 @@ public class MainFrame extends JFrame {
         inputModel.setRowCount(0);
         resultArea.setText("");
         chartPanel.clear();
+        legendPanel.repaint();
     }
 }

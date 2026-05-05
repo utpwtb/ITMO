@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 
 # ==============================================================================
-# ВАРИАНТ 7
+# ВАРИАНТ 11
 # ==============================================================================
 data = np.array([
-    [1.10, 1.10, 0.29],
-    [2.01, 1.98, 1.24],
-    [3.01, 2.85, 4.94],
-    [3.86, 3.99, 4.72],
-    [5.10, 4.90, 0.77]
+    [0.85, 1.12, 0.73],
+    [1.83, 2.20, 3.65],
+    [2.91, 3.12, 4.86],
+    [3.93, 3.92, 2.00],
+    [4.86, 4.94, 0.32]
 ])
 
 # ==============================================================================
@@ -31,7 +31,6 @@ def gauss_2d(x, y, A, x0, y0, sigma_x, sigma_y, theta=0, offset=0):
     """
     2D функция Гаусса
     Формула: A * exp(-(x_new^2/(2*sigma_x^2) + y_new^2/(2*sigma_y^2))) + offset,
-    x_new, y_new - координаты в канонической системе
     """
     if theta != 0:
         x_new = (x - x0) * np.cos(theta) + (y - y0) * np.sin(theta)
@@ -65,10 +64,10 @@ def loss_function(model_params):
 # ==============================================================================
 # ЗАДАНИЕ 4: Начальное приближение
 # ==============================================================================
-max_idx = np.argmax(Z)               # индекс максимума Z
-A_start = Z[max_idx] + 0.1           # максимум Z + корректировка
-x0_start = X[max_idx]                # X в точке максимума
-y0_start = Y[max_idx]                # Y в точке максимума
+max_idx = np.argmax(Z)
+A_start = Z[max_idx] + 0.1
+x0_start = X[max_idx]
+y0_start = Y[max_idx]
 sigma_x_start = np.std(X) * 0.5
 sigma_y_start = np.std(Y) * 0.5
 offset_start = 0.0
@@ -81,8 +80,6 @@ print(f"  Amplitude (A):     {A_start:.2f}")
 print(f"  Center (x0, y0):   ({x0_start:.2f}, {y0_start:.2f})")
 print(f"  Sigma_x:           {sigma_x_start:.2f}")
 print(f"  Sigma_y:           {sigma_y_start:.2f}")
-print(f"  Theta (rotation):  0.00 рад")
-print(f"  Offset:            0.00")
 print()
 
 # ==============================================================================
@@ -153,12 +150,12 @@ ax1.scatter(X, Y, Z, c='red', s=80)
 ax1.set_xlabel('X')
 ax1.set_ylabel('Y')
 ax1.set_zlabel('Z')
-ax1.set_title('3D-визуализация Гауссианы (Вариант 7)')
+ax1.set_title('3D-визуализация Гауссианы (Вариант 11)')
 
 # Линии уровня
 ax2 = fig.add_subplot(122)
 contour = ax2.contourf(X_grid, Y_grid, Z_grid, levels=25, cmap='viridis', alpha=0.9)
-scatter = ax2.scatter(X, Y, c=Z, s=120, edgecolors='black', cmap='viridis', vmin=Z.min(), vmax=Z.max())
+ax2.scatter(X, Y, c=Z, s=120, edgecolors='black', cmap='viridis', vmin=Z.min(), vmax=Z.max())
 ax2.contour(X_grid, Y_grid, Z_grid, levels=10, colors='white', alpha=0.3, linewidths=0.5)
 ax2.set_xlabel('X', fontsize=10)
 ax2.set_ylabel('Y', fontsize=10)
@@ -167,12 +164,11 @@ ax2.grid(True, alpha=0.3)
 cbar = plt.colorbar(contour, ax=ax2, label='Z')
 cbar.ax.tick_params(labelsize=9)
 
-# Добавляем подписи номеров точек
 for i in range(len(X)):
     ax2.annotate(f'{i}', (X[i], Y[i]), textcoords="offset points", xytext=(8, 8), fontsize=10, color='red')
 
 plt.tight_layout()
-print("\nГотово! Получилась двумерная гауссиана - аппроксимация для z(x,y)!")
+print("\nГотово!")
 plt.savefig('../pic/gaussian_3d.png', dpi=300, bbox_inches='tight')
 plt.close()
 print("График сохранён в ../pic/gaussian_3d.png")
