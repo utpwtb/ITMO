@@ -111,8 +111,6 @@ public class LSMSolver {
         return result;
     }
 
-    //指数函数 Экспоненциальная функция
-
     /**
      * 指数逼近 y = a·e^(b·x)。
      * 通过线性化处理：对 y 取自然对数转换为线性问题 ln(y) = ln(a) + b·x，
@@ -146,8 +144,6 @@ public class LSMSolver {
         return result;
     }
 
-    //对数函数 Логарифмическая функция (y = a·ln(x) + b)
-
     /**
      * 对数逼近 y = a·ln(x) + b。
      * 通过线性化处理：对 x 取自然对数转换为线性问题 y = a·X + b, 其中 X = ln(x)，
@@ -180,14 +176,13 @@ public class LSMSolver {
         return result;
     }
 
-    //幂函数 Степенная функция (y = a·x^b)
-
     /**
      * 幂函数逼近 y = a·x^b。
      * 通过线性化处理：对 x 和 y 同时取自然对数转换为线性问题
      * ln(y) = ln(a) + b·ln(x)，
      * 然后对 (ln(x), ln(y)) 做线性逼近。
      * 若任意 x ≤ 0 或 y ≤ 0 则 ln 无定义，拟合失败。
+
      */
     public static ApproximationResult power(List<Double> x, List<Double> y) {
         List<Double> lnX = x.stream().map(v -> {
