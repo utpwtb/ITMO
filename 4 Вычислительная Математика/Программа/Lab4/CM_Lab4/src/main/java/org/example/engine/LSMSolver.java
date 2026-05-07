@@ -7,16 +7,6 @@ import java.util.stream.Collectors;
 
 public class LSMSolver {
 
-    /**
-     * 计算数值质量指标并附加到结果对象上。
-     * 该方法仅设置数值指标（S、δ、R²、预测值、残差、皮尔逊 r），
-     * 不设置任何人类可读的评价消息。
-     *
-     * @param result 待填充的 ApproximationResult 对象
-     * @param x      自变量数据点列表
-     * @param y      因变量数据点列表
-     * @param phi    逼近函数 φ(x)，用于计算预测值
-     */
     private static void computeQuality(ApproximationResult result, List<Double> x, List<Double> y,
                                        Function<Double, Double> phi) {
         int n = x.size();
@@ -44,7 +34,7 @@ public class LSMSolver {
         result.setResiduals(res);
 
         // 决定系数 R² = 1 - SS_res / SS_tot
-        double r2 = ssTot == 0 ? 1.0 : 1 - ssRes / ssTot;
+        double r2 = 1 - ssRes / ssTot;
         result.setR2(r2);
 
         // 皮尔逊线性相关系数 r
@@ -59,16 +49,7 @@ public class LSMSolver {
         result.setPearsonR(denom == 0 ? 0 : cov / denom);
     }
 
-    // ==================== 线性函数 Линейная функция ====================
-
-    /**
-     * 线性逼近 y = a·x + b。
-     * 正规方程组：
-     *   [ Σx²  Σx ] [a]   [ Σxy ]
-     *   [ Σx   n  ] [b] = [ Σy  ]
-     *
-     * @return 包含系数 {a, b} 的 ApproximationResult 对象
-     */
+    //线性函数 Линейная функция
     public static ApproximationResult linear(List<Double> x, List<Double> y) {
         int n = x.size();
         double sX = 0, sXX = 0, sY = 0, sXY = 0;
@@ -85,14 +66,7 @@ public class LSMSolver {
         return result;
     }
 
-    // ==================== 二次多项式 Квадратичный полином ====================
-
-    /**
-     * 二次多项式逼近 y = c₀ + c₁·x + c₂·x²。
-     * 使用正规方程组（3×3）通过高斯消元法求解。
-     *
-     * @return 包含系数 {c₀, c₁, c₂} 的 ApproximationResult 对象
-     */
+    //二次多项式 Квадратичный полином
     public static ApproximationResult quadratic(List<Double> x, List<Double> y) {
         int n = x.size();
         double sX = 0, sX2 = 0, sX3 = 0, sX4 = 0, sY = 0, sXY = 0, sX2Y = 0;
@@ -111,14 +85,7 @@ public class LSMSolver {
         return result;
     }
 
-    // ==================== 三次多项式 Кубический полином ====================
-
-    /**
-     * 三次多项式逼近 y = c₀ + c₁·x + c₂·x² + c₃·x³。
-     * 使用正规方程组（4×4）通过高斯消元法求解。
-     *
-     * @return 包含系数 {c₀, c₁, c₂, c₃} 的 ApproximationResult 对象
-     */
+    //三次多项式 Кубический полином
     public static ApproximationResult cubic(List<Double> x, List<Double> y) {
         int n = x.size();
         double sX = 0, sX2 = 0, sX3 = 0, sX4 = 0, sX5 = 0, sX6 = 0;
@@ -144,15 +111,13 @@ public class LSMSolver {
         return result;
     }
 
-    // ==================== 指数函数 Экспоненциальная функция (y = a·e^(b·x)) ====================
+    //指数函数 Экспоненциальная функция
 
     /**
      * 指数逼近 y = a·e^(b·x)。
      * 通过线性化处理：对 y 取自然对数转换为线性问题 ln(y) = ln(a) + b·x，
      * 然后对 (x, ln(y)) 做线性逼近，最后从 ln(a) 恢复 a = exp(ln(a))。
      * 若任意 y ≤ 0 则 ln(y) 无定义，拟合失败。
-     *
-     * @return 包含系数 {a, b} 的 ApproximationResult 对象
      */
     public static ApproximationResult exponential(List<Double> x, List<Double> y) {
         List<Double> lnY = y.stream().map(v -> {
@@ -181,15 +146,13 @@ public class LSMSolver {
         return result;
     }
 
-    // ==================== 对数函数 Логарифмическая функция (y = a·ln(x) + b) ====================
+    //对数函数 Логарифмическая функция (y = a·ln(x) + b)
 
     /**
      * 对数逼近 y = a·ln(x) + b。
      * 通过线性化处理：对 x 取自然对数转换为线性问题 y = a·X + b, 其中 X = ln(x)，
      * 然后对 (ln(x), y) 做线性逼近。
      * 若任意 x ≤ 0 则 ln(x) 无定义，拟合失败。
-     *
-     * @return 包含系数 {a, b} 的 ApproximationResult 对象
      */
     public static ApproximationResult logarithmic(List<Double> x, List<Double> y) {
         List<Double> lnX = x.stream().map(v -> {
@@ -217,7 +180,7 @@ public class LSMSolver {
         return result;
     }
 
-    // ==================== 幂函数 Степенная функция (y = a·x^b) ====================
+    //幂函数 Степенная функция (y = a·x^b)
 
     /**
      * 幂函数逼近 y = a·x^b。
@@ -225,8 +188,6 @@ public class LSMSolver {
      * ln(y) = ln(a) + b·ln(x)，
      * 然后对 (ln(x), ln(y)) 做线性逼近。
      * 若任意 x ≤ 0 或 y ≤ 0 则 ln 无定义，拟合失败。
-     *
-     * @return 包含系数 {a, b} 的 ApproximationResult 对象
      */
     public static ApproximationResult power(List<Double> x, List<Double> y) {
         List<Double> lnX = x.stream().map(v -> {
@@ -259,21 +220,7 @@ public class LSMSolver {
         return result;
     }
 
-    // ==================== 高斯消元法求解线性方程组 ====================
-
-    /**
-     * 使用列主元高斯消元法求解 n×n 线性方程组 A·x = B。
-     * 构造增广矩阵 [A|B]，依次进行：
-     *   1. 列选主元：选取当前列绝对值最大的行作为主元行
-     *   2. 行交换：将主元行交换到当前行
-     *   3. 消元：将主元下方的元素消为 0
-     *   4. 回代：从最后一行开始向上依次求解
-     *
-     * @param A 系数矩阵 (n×n)
-     * @param B 右端常数向量 (长度为 n)
-     * @param n 方程组阶数
-     * @return 解向量 x (长度为 n)
-     */
+    //高斯消元法求解线性方程组
     private static double[] solveGauss(double[][] A, double[] B, int n) {
         double[][] a = new double[n][n + 1];
         for (int i = 0; i < n; i++) {
