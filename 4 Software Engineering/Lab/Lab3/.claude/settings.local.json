@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(java -version)",
+      "Bash(curl -sL https://services.gradle.org/distributions/gradle-8.10-bin.zip -o /tmp/gradle.zip)",
+      "Bash(unzip -qo /tmp/gradle.zip -d /tmp/)",
+      "Bash(/tmp/gradle-8.10/bin/gradle --version)",
+      "Bash(/tmp/gradle-8.10/bin/gradle wrapper:*)",
+      "Bash(./gradlew compileJava)",
+      "Bash(./gradlew buildProject)",
+      "Bash(./gradlew validateXml)",
+      "Bash(./gradlew native2asciiConvert)",
+      "Bash(./gradlew test:*)",
+      "Bash(./gradlew generateDoc)",
+      "Bash(./gradlew dependencies:*)",
+      "Bash(./gradlew clean:*)",
+      "Bash(./gradlew --stop)",
+      "Bash(_JAVA_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\" ./gradlew test)",
+      "Bash(_JAVA_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\" ./gradlew clean test --debug)",
+      "Bash(chcp.com:*)",
+      "Bash(cmd:*)",
+      "Bash(cp:*)",
+      "Bash(./gradlew validateXml:*)",
+      "Bash(ls gradlew* gradle/wrapper/)",
+      "Bash(powershell:*)",
+      "Bash(python3:*)",
+      "Read(//c/develop/NOTE_UTP/StudyNote/4 Software Engineering/Lab/Lab3/WebLab3/**)",
+      "Bash(svn --version)",
+      "Bash(choco install:*)",
+      "Bash(git svn:*)",
+      "Bash(curl -sL 'https://www.visualsvn.com/files/Apache-Subversion-1.14.4.zip' -o /tmp/svn.zip)",
+      "Bash(curl -sL --connect-timeout 10 --max-time 120 'https://github.com/ApacheSubversion/subversion-binaries/releases/download/1.14.4-1/apache-subversion-1.14.4-win32.zip' -o /tmp/svn2.zip)",
+      "Bash(winget install:*)",
+      "Bash(winget search:*)",
+      "Bash(curl -sL --connect-timeout 10 --max-time 180 'https://sourceforge.net/projects/win32svn/files/latest/download' -o /tmp/svn_sf.zip)",
+      "Bash(unzip -o /tmp/svn_sf.zip -d /tmp/svn_portable/)"
+    ]
+  }
+}

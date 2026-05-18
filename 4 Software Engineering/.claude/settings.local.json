@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/develop/NOTE_UTP/StudyNote/4 Основы программной инженерии/Lab/Lab2/commits/**)",
+      "Bash(unzip -l commit0.zip)",
+      "Bash(python -c \"import zipfile; z=zipfile.ZipFile\\('commit0.zip'\\); z.printdir\\(\\)\")",
+      "Bash(python -c 'import zipfile; z=zipfile.ZipFile\\('\\\\''commit__TRACKED_VAR__.zip'\\\\''\\); z.printdir\\(\\)')",
+      "Bash(python -c 'import zipfile; z=zipfile.ZipFile\\('\\\\''commit__TRACKED_VAR__.zip'\\\\''\\); print\\(z.read\\('\\\\''Lab4.java'\\\\''\\).decode\\('\\\\''utf-8'\\\\''\\)\\)')",
+      "Read(//c/develop/NOTE_UTP/StudyNote/4 Основы программной инженерии/Lab/Lab2/lab/**)",
+      "Bash(bash git.sh)",
+      "Bash(rm -rf git_work)",
+      "Bash(mkdir -p git_work2)",
+      "Bash(sed 's|git_work|git_work2|g' git.sh)",
+      "Bash(bash)",
+      "Bash(rm -rf git_work git_work2)",
+      "Bash(ls -d git_work*)",
+      "Bash(rm -rf git_work2)",
+      "Bash(cmd /c \"rmdir /s /q git_work2\")",
+      "Bash(cmd /c \"rmdir /s /q git_work 2>nul & rmdir /s /q git_work2 2>nul\")",
+      "Bash(cmd /c \"rmdir /s /q git_work 2>nul\")",
+      "Bash(cmd /c \"rmdir /s /q \\\\\"C:\\\\\\\\develop\\\\\\\\NOTE_UTP\\\\\\\\StudyNote\\\\\\\\4 Основы программной инженерии\\\\\\\\Lab\\\\\\\\Lab2\\\\\\\\lab\\\\\\\\git_work\\\\\" 2>nul\")",
+      "Bash(bash:*)",
+      "Read(//c/Program Files/Mercurial/**)",
+      "Read(//c/Program Files \\(x86\\)/Mercurial/**)",
+      "Bash(cmd.exe /c \"where hg\")",
+      "Read(//c/Users/CHL/AppData/Local/Programs/Mercurial/**)",
+      "Bash(whereis hg:*)",
+      "Read(//c/ProgramData/chocolatey/bin/**)",
+      "Bash(/c/Windows/System32/where.exe hg:*)",
+      "Bash(sed:*)",
+      "Bash(grep -c '\"$HG\"' 'C:\\\\develop\\\\NOTE_UTP\\\\StudyNote\\\\4 Основы программной инженерии\\\\Lab\\\\Lab2\\\\lab\\\\mercurial.sh')",
+      "Bash(\"/c/Program Files/Mercurial/hg.exe\" version)"
+    ]
+  }
+}
