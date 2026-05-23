@@ -238,7 +238,7 @@ public class MainFrame extends JFrame {
         double minDelta = Double.MAX_VALUE;
 
         for (ApproximationResult r : results) {
-            if (r.getDelta() < minDelta && r.getDelta() < Double.MAX_VALUE / 2) {
+            if (r.getDelta() < minDelta) {
                 minDelta = r.getDelta();
                 best = r;
             }

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<f:view>
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Веб‑лабораторная работа №3</title>
+        <h:outputStylesheet library="css" name="base.css"/>
+        <h:outputStylesheet library="css" name="layout.css"/>
+        <h:outputStylesheet library="css" name="form.css"/>
+        <h:outputStylesheet library="css" name="graph.css"/>
+        <h:outputStylesheet library="css" name="table.css"/>
+
+        <h:outputScript library="js" name="utils.js"/>
+        <h:outputScript library="js" name="validation.js"/>
+        <h:outputScript library="js" name="graph.js"/>
+        <h:outputScript library="js" name="form.js"/>
+        <h:outputScript library="js" name="ajax-hooks.js"/>
+        <h:outputScript library="js" name="init.js"/>
+    </h:head>
+    <h:body>
+        <div class="header-links">
+            <h:link outcome="index" value="Вернуться на стартовую страницу" styleClass="link-button"/>
+        </div>
+
+        <div class="container">
+            <header>
+                <h1>Веб‑лабораторная работа #3</h1>
+                <p>Студент: Чэнь Хаолинь &#160; Группа: P3216 &#160; Вариант: 321667</p>
+            </header>
+
+            <h:panelGroup id="graphWrapper" layout="block" styleClass="graph-container">
+                <svg
+                        id="graph-svg"
+                        width="100%"
+                        height="500"
+                        viewBox="0 0 600 600"
+                        preserveAspectRatio="xMidYMid meet"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style="cursor: pointer;">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+                        </marker>
+                    </defs>
+
+                    <line x1="50" y1="300" x2="550" y2="300" class="axis" marker-end="url(#arrowhead)"/>
+                    <text x="560" y="290" class="axis-label">X</text>
+                    <line x1="100" y1="295" x2="100" y2="305" class="axis"/>
+                    <text x="95" y="325" class="label">-R</text>
+                    <line x1="200" y1="295" x2="200" y2="305" class="axis"/>
+                    <text x="195" y="325" class="label">-R/2</text>
+                    <line x1="400" y1="295" x2="400" y2="305" class="axis"/>
+                    <text x="395" y="325" class="label">R/2</text>
+                    <line x1="500" y1="295" x2="500" y2="305" class="axis"/>
+                    <text x="495" y="325" class="label">R</text>
+
+                    <line x1="300" y1="550" x2="300" y2="50" class="axis" marker-end="url(#arrowhead)"/>
+                    <text x="310" y="40" class="axis-label">Y</text>
+                    <line x1="295" y1="100" x2="305" y2="100" class="axis"/>
+                    <text x="315" y="105" class="label">R</text>
+                    <line x1="295" y1="200" x2="305" y2="200" class="axis"/>
+                    <text x="315" y="205" class="label">R/2</text>
+                    <line x1="295" y1="400" x2="305" y2="400" class="axis"/>
+                    <text x="315" y="405" class="label">-R/2</text>
+                    <line x1="295" y1="500" x2="305" y2="500" class="axis"/>
+                    <text x="315" y="505" class="label">-R</text>
+
+                    <polygon points="300,300 500,300 300,100" class="shape"/>
+                    <path d="M300,100 A200,200 0 0,0 100,300 L300,300 Z" class="shape"/>
+                    <polygon points="300,300 500,300 500,500 300,500" class="shape"/>
+                </svg>
+                <p id="error-graph" style="color: #f41c52"></p>
+            </h:panelGroup>
+
+            <div class="form-container">
+                <h:form id="pointForm" prependId="false">
+                    <h:panelGroup id="errorX">
+                        <h:message for="xHidden" styleClass="error-message" style="color: #f41c52"/>
+                        <span id="errorXClient" class="error-message" style="color:#f41c52"></span>
+                    </h:panelGroup>
+                    <div class="form-section select-X">
+                        <span class="section-title">Выбор X:</span>
+                        <div id="xButtons">
+                            <h:commandButton type="button" styleClass="x-button" value="-4"
+                                             onclick="selectX(-4); return false;" pt:data-value="-4"/>
+                            <h:commandButton type="button" styleClass="x-button" value="-3"
+                                             onclick="selectX(-3); return false;" pt:data-value="-3"/>
+                            <h:commandButton type="button" styleClass="x-button" value="-2"
+                                             onclick="selectX(-2); return false;" pt:data-value="-2"/>
+                            <h:commandButton type="button" styleClass="x-button" value="-1"
+                                             onclick="selectX(-1); return false;" pt:data-value="-1"/>
+                            <h:commandButton type="button" styleClass="x-button" value="0"
+                                             onclick="selectX(0); return false;" pt:data-value="0"/>
+                            <h:commandButton type="button" styleClass="x-button" value="1"
+                                             onclick="selectX(1); return false;" pt:data-value="1"/>
+                            <h:commandButton type="button" styleClass="x-button" value="2"
+                                             onclick="selectX(2); return false;" pt:data-value="2"/>
+                            <h:commandButton type="button" styleClass="x-button" value="3"
+                                             onclick="selectX(3); return false;" pt:data-value="3"/>
+                            <h:commandButton type="button" styleClass="x-button" value="4"
+                                             onclick="selectX(4); return false;" pt:data-value="4"/>
+                        </div>
+                        <h:inputHidden
+                                id="xHidden" value="#{pointBean.x}" required="false">
+                            <f:convertNumber locale="en" />
+                        </h:inputHidden>
+                        <input type="hidden" id="xHiddenList" />
+                    </div>
+
+                    <h:panelGroup id="errorY">
+                        <h:message for="yHidden" styleClass="error-message" style="color: #f41c52"/>
+                        <span id="errorYClient" class="error-message" style="color:#f41c52"></span>
+                    </h:panelGroup>
+                    <div class="form-section text-Y">
+                        <span class="section-title">Введите Y (-5 ... 5):</span>
+                        <h:inputText id="yInputText" placeholder="Введите значение от -5 до 5"
+                               class="y-input"
+                               oninput="document.getElementById('pointForm:yHidden').value=this.value.replace(',', '.')" />
+                        <h:inputHidden
+                                id="yHidden" value="#{pointBean.y}" required="false">
+                            <f:convertNumber locale="en" />
+                        </h:inputHidden>
+                    </div>
+
+                    <h:panelGroup id="errorR">
+                        <h:message for="rHidden" styleClass="error-message" style="color: #f41c52"/>
+                        <span id="errorRClient" class="error-message" style="color:#f41c52"></span>
+                    </h:panelGroup>
+                    <div class="form-section text-R">
+                        <span class="section-title">Выбор R:</span>
+                        <div id="rLinks">
+                            <h:commandLink value="1" styleClass="r-link"
+                                           onclick="selectR(1); return false;" pt:data-value="1"/>
+                            <h:commandLink value="1.5" styleClass="r-link"
+                                           onclick="selectR(1.5); return false;" pt:data-value="1.5"/>
+                            <h:commandLink value="2" styleClass="r-link"
+                                           onclick="selectR(2); return false;" pt:data-value="2"/>
+                            <h:commandLink value="2.5" styleClass="r-link"
+                                           onclick="selectR(2.5); return false;" pt:data-value="2.5"/>
+                            <h:commandLink value="3" styleClass="r-link"
+                                           onclick="selectR(3); return false;" pt:data-value="3"/>
+                        </div>
+                        <h:inputHidden
+                                id="rHidden" value="#{pointBean.r}" required="false">
+                            <f:convertNumber locale="en" />
+                        </h:inputHidden>
+                        <input type="hidden" id="rHiddenList" />
+                    </div>
+
+                    <div class="submit-btn">
+                        <h:commandButton id="check-button" value="Отправить"
+                                         action="#{pointBean.checkPoint()}"
+                                         onclick="return handleFormSubmit(event);"
+                                         styleClass="check-button">
+                            <f:ajax execute="@form" render=":resultContainer :graphWrapper :pointForm:errorX :pointForm:errorY :pointForm:errorR"
+                                    onevent="handleFormAjaxEvent"/>
+                            <f:setPropertyActionListener
+                                    target="#{pointBean.submitSource}"
+                                    value="#{pointBean.submitSource.FORM}" />
+                        </h:commandButton>
+                        <h:commandButton id="graph-submit-button" value="graph-submit"
+                                         action="#{pointBean.checkPoint()}"
+                                         style="display:none">
+                            <f:ajax execute="@form" render=":resultContainer :graphWrapper :pointForm:errorX :pointForm:errorY :pointForm:errorR"
+                                    onevent="handleFormAjaxEvent"/>
+                            <f:setPropertyActionListener
+                                    target="#{pointBean.submitSource}"
+                                    value="#{pointBean.submitSource.SVG}" />
+                        </h:commandButton>
+                        <h:commandButton id="reset-button" value="Отменить"
+                                         type="button"
+                                         onclick="resetForm(); return false;"
+                                         styleClass="reset-button"/>
+                        <h:commandButton id="clear-results-button" value="Очистить результаты"
+                                         action="#{resultsBean.clearResults()}"
+                                         styleClass="clear-results-button">
+                            <f:ajax render=":resultContainer :graphWrapper :pointForm:errorX :pointForm:errorY :pointForm:errorR"/>
+                        </h:commandButton>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+
+        <h:panelGroup id="resultContainer" layout="block" styleClass="result-container">
+            <h2>Результаты проверок</h2>
+            <h:dataTable value="#{resultsBean.points}" var="point"
+                         styleClass="result-table"
+                         id="result-table"
+                         rendered="#{not empty resultsBean.points}">
+                <h:column>
+                    <f:facet name="header">X</f:facet>
+                    <h:outputText value="#{point.x}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Y</f:facet>
+                    <h:outputText value="#{point.y}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">R</f:facet>
+                    <h:outputText value="#{point.r}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Попадание</f:facet>
+                    <h:outputText value="#{point.hit ? 'попадание' : 'промах'}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Время запроса</f:facet>
+                    <h:outputText value="#{point.currentTime}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Время выполнения (мс)</f:facet>
+                    <h:outputText value="#{point.executionTime}"/>
+                </h:column>
+            </h:dataTable>
+            <ui:fragment rendered="#{empty resultsBean.points}">
+                <p>Результатов пока нет. Выберите X, введите Y, выберите R и нажмите «Проверить точку».</p>
+            </ui:fragment>
+        </h:panelGroup>
+    </h:body>
+</f:view>
+</html>
+

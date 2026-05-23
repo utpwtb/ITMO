@@ -18,8 +18,10 @@ public class LSMSolver {
         double ssRes = 0, ssTot = 0;
         for (int i = 0; i < n; i++) {
             double yi = y.get(i);
+            //预测值
             double pi = phi.apply(x.get(i));
             yPred[i] = pi;
+            //残差
             double eps = pi - yi;
             res[i] = eps;
             ssRes += eps * eps;
@@ -49,7 +51,7 @@ public class LSMSolver {
         result.setPearsonR(denom == 0 ? 0 : cov / denom);
     }
 
-    //线性函数 Линейная функция
+    //线性函数
     public static ApproximationResult linear(List<Double> x, List<Double> y) {
         int n = x.size();
         double sX = 0, sXX = 0, sY = 0, sXY = 0;
@@ -111,12 +113,7 @@ public class LSMSolver {
         return result;
     }
 
-    /**
-     * 指数逼近 y = a·e^(b·x)。
-     * 通过线性化处理：对 y 取自然对数转换为线性问题 ln(y) = ln(a) + b·x，
-     * 然后对 (x, ln(y)) 做线性逼近，最后从 ln(a) 恢复 a = exp(ln(a))。
-     * 若任意 y ≤ 0 则 ln(y) 无定义，拟合失败。
-     */
+    //指数逼近 y = a·e^(b·x)
     public static ApproximationResult exponential(List<Double> x, List<Double> y) {
         List<Double> lnY = y.stream().map(v -> {
             if (v <= 0) return Double.NaN;
@@ -144,12 +141,7 @@ public class LSMSolver {
         return result;
     }
 
-    /**
-     * 对数逼近 y = a·ln(x) + b。
-     * 通过线性化处理：对 x 取自然对数转换为线性问题 y = a·X + b, 其中 X = ln(x)，
-     * 然后对 (ln(x), y) 做线性逼近。
-     * 若任意 x ≤ 0 则 ln(x) 无定义，拟合失败。
-     */
+    //对数逼近 y = a·ln(x) + b。
     public static ApproximationResult logarithmic(List<Double> x, List<Double> y) {
         List<Double> lnX = x.stream().map(v -> {
             if (v <= 0) return Double.NaN;
@@ -176,14 +168,7 @@ public class LSMSolver {
         return result;
     }
 
-    /**
-     * 幂函数逼近 y = a·x^b。
-     * 通过线性化处理：对 x 和 y 同时取自然对数转换为线性问题
-     * ln(y) = ln(a) + b·ln(x)，
-     * 然后对 (ln(x), ln(y)) 做线性逼近。
-     * 若任意 x ≤ 0 或 y ≤ 0 则 ln 无定义，拟合失败。
-
-     */
+    //幂函数逼近 y = a·x^b。
     public static ApproximationResult power(List<Double> x, List<Double> y) {
         List<Double> lnX = x.stream().map(v -> {
             if (v <= 0) return Double.NaN;

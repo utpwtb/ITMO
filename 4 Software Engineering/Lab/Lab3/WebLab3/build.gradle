@@ -1,0 +1,872 @@
+// ============================================================
+// Plugins
+// ============================================================
+apply plugin: 'java'
+apply plugin: 'war'
+
+// ============================================================
+// Project configuration (from gradle.properties)
+// ============================================================
+group     = project.findProperty('project.group')     ?: 'com.itmo'
+version   = project.findProperty('project.version')   ?: '1.0-SNAPSHOT'
+
+sourceCompatibility = (project.findProperty('java.sourceCompatibility') ?: '17') as String
+targetCompatibility = (project.findProperty('java.targetCompatibility') ?: '17') as String
+
+// ============================================================
+// Repositories
+// ============================================================
+repositories {
+    mavenCentral()
+    maven { url 'https://repository.primefaces.org' }
+}
+
+// ============================================================
+// Dependencies
+// ============================================================
+dependencies {
+    providedCompile 'javax:javaee-api:8.0'
+    implementation  'org.primefaces:primefaces:8.0'
+    compileOnly     'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+    testImplementation platform('org.junit:junit-bom:5.10.3')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly    'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+    reports {
+        junitXml.required = true
+    }
+}
+
+// Java 17 compilation settings
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(17)
+}
+
+// JVM args for test execution (module system compatibility)
+tasks.withType(Test).configureEach {
+    jvmArgs '--add-opens', 'java.base/java.lang=ALL-UNNAMED'
+}
+
+// ============================================================
+// SCP configuration
+// ============================================================
+configurations {
+    scpAntTask
+}
+dependencies {
+    scpAntTask 'org.apache.ant:ant-jsch:1.10.14'
+    scpAntTask 'com.jcraft:jsch:0.1.55'
+}
+
+// ============================================================
+// WAR manifest configuration
+// ============================================================
+war {
+    manifest {
+        attributes(
+            'Implementation-Title':   project.findProperty('project.name') ?: 'WebLab3',
+            'Implementation-Version': project.version,
+            'Implementation-Vendor':  project.findProperty('manifest.implementation.vendor') ?: 'ITMO University',
+            'Main-Class':             project.findProperty('manifest.main.class') ?: 'com.itmo.bean.PointBean',
+            'Created-By':             "Gradle ${gradle.gradleVersion}",
+            'Build-Jdk':              System.getProperty('java.version'),
+            'Build-OS':               "${System.getProperty('os.name')} ${System.getProperty('os.arch')}"
+        )
+    }
+}
+
+// ============================================================
+// Helper: load properties into a Map for easier access
+// ============================================================
+def props = project.properties
+
+// ============================================================
+// TARGET: compile
+// 编译项目的源代码
+// ============================================================
+task compile(group: 'build', description: 'Compile project source code') {
+    dependsOn 'compileJava'
+    doLast {
+        println '[compile] Source code compilation completed successfully.'
+    }
+}
+
+// ============================================================
+// TARGET: build
+// 编译项目源代码并将其打包成 WAR 归档文件。通过调用 compile 目标来实现
+// ============================================================
+task buildProject(group: 'build', description: 'Compile and package into WAR archive') {
+    dependsOn compile, war
+    doLast {
+        println "[build] Project built successfully. WAR: ${war.archiveFile.get().asFile.name}"
+    }
+}
+
+// ============================================================
+// TARGET: clean
+// 删除项目已编译的类文件及所有临时文件
+// ============================================================
+task cleanAll(group: 'build', description: 'Delete compiled classes and all temporary files') {
+    dependsOn clean
+    doLast {
+        def buildDir = file('build')
+        def tempDirs = fileTree(dir: projectDir, include: '**/temp/**', exclude: 'build/**')
+        tempDirs.each { dir -> delete dir }
+        println '[clean] Compiled classes and temporary files deleted.'
+    }
+}
+
+// ============================================================
+// TARGET: test
+// 运行项目的 JUnit 测试。运行测试之前必须先构建项目（build 目标）
+// ============================================================
+task runTests(group: 'verification', description: 'Run JUnit tests after building the project') {
+    dependsOn buildProject, test
+    test.mustRunAfter buildProject
+
+    doLast {
+        def reportsDir = test.reports.html.outputLocation.get().asFile
+        println "[test] JUnit tests completed. Reports: ${reportsDir}"
+    }
+}
+
+// ============================================================
+// TARGET: xml
+// 验证项目中所有的 XML 文件
+// ============================================================
+task xmlValidate(group: 'verification', description: 'Validate all XML files in the project') {
+    doLast {
+        println '[xml] Starting XML file validation...'
+        def xmlFiles = fileTree(dir: projectDir, include: '**/*.xml')
+        def hasErrors = false
+
+        xmlFiles.each { xmlFile ->
+            try {
+                def parser = new groovy.xml.XmlParser(false, false)
+                parser.parse(xmlFile)
+                println "  [OK] ${xmlFile.name}"
+            } catch (Exception e) {
+                hasErrors = true
+                println "  [FAIL] ${xmlFile.name}: ${e.message}"
+            }
+        }
+
+        if (hasErrors) {
+            throw new GradleException('[xml] XML validation failed! See errors above.')
+        }
+        println "[xml] All XML files validated successfully (${xmlFiles.size()} files)."
+    }
+}
+
+// ============================================================
+// TARGET: scp
+// 构建完成后，通过 SCP 将构建好的项目传送到选定的服务器上
+// 必须先执行项目构建（build 目标）
+// ============================================================
+task scpDeploy(group: 'deployment', description: 'SCP the WAR file to the remote server') {
+    dependsOn buildProject
+
+    doLast {
+        def host     = props['scp.host']     ?: 'localhost'
+        def port     = props['scp.port']     ?: '22'
+        def user     = props['scp.user']     ?: ''
+        def password = props['scp.password'] ?: ''
+        def remotePath = props['scp.remote.deploy.path'] ?: '/tmp'
+        def trust    = props['scp.trust']    ?: 'true'
+        def warFile  = war.archiveFile.get().asFile
+
+        if (!user) {
+            throw new GradleException('[scp] SCP user not configured in gradle.properties.')
+        }
+
+        println "[scp] Deploying ${warFile.name} to ${user}@${host}:${remotePath} ..."
+
+        ant.taskdef(
+            name: 'scp',
+            classname: 'org.apache.tools.ant.taskdefs.optional.ssh.Scp',
+            classpath: configurations.scpAntTask.asPath
+        )
+
+        ant.scp(
+            file: warFile.absolutePath,
+            todir: "${user}@${host}:${remotePath}",
+            port: port,
+            password: password,
+            trust: trust.toBoolean(),
+            verbose: 'true'
+        )
+
+        println "[scp] Deployment completed successfully."
+    }
+}
+
+// ============================================================
+// TARGET: native2ascii
+// 对本地化文件的副本执行 native2ascii 转换
+// 所有字符串参数必须从类中提取到本地化文件中
+// ============================================================
+task native2ascii(group: 'localization', description: 'Execute native2ascii conversion on localization file copies') {
+    doLast {
+        def srcDir  = file('src/main/resources')
+        def destDir = file("${buildDir}/native2ascii")
+        def encoding = props['native2ascii.dest.encoding'] ?: 'ISO-8859-1'
+
+        def propFiles = fileTree(dir: srcDir, include: '**/messages*.properties')
+        if (propFiles.empty) {
+            println "[native2ascii] No localization files found in ${srcDir}. Skipping."
+            return
+        }
+
+        destDir.mkdirs()
+
+        propFiles.each { propFile ->
+            def relativePath = srcDir.toPath().relativize(propFile.toPath()).toString()
+            def destFile = new File(destDir, relativePath)
+            destFile.parentFile.mkdirs()
+
+            println "  Converting: ${propFile.name} -> ${destFile.absolutePath}"
+
+            // Use Ant native2ascii with dir-based src/dest (avoids file-vs-dir ambiguity)
+            ant.native2ascii(
+                encoding: encoding,
+                src: propFile.parentFile.absolutePath,
+                dest: destFile.parentFile.absolutePath,
+                includes: propFile.name
+            )
+        }
+        println "[native2ascii] Conversion completed. Output: ${destDir}"
+    }
+}
+
+// ============================================================
+// TARGET: music
+// 构建完成后（build 目标）播放音乐
+// ============================================================
+task music(group: 'other', description: 'Play music after build completes') {
+    dependsOn buildProject
+
+    doLast {
+        def musicFile = props['music.file'] ?: 'lib/bg_music.wav'
+        def audioFile = file(musicFile)
+
+        if (!audioFile.exists()) {
+            println "[music] Music file '${musicFile}' not found. Skipping playback."
+            return
+        }
+
+        try {
+            println "[music] Playing: ${audioFile.absolutePath}"
+            def audioStream = javax.sound.sampled.AudioSystem.getAudioInputStream(audioFile)
+            def clip = javax.sound.sampled.AudioSystem.getClip()
+            clip.open(audioStream)
+            clip.start()
+            // Wait for playback to finish (max 10 seconds for lab purposes)
+            def durationMs = (long) (clip.getMicrosecondLength() / 1000)
+            Thread.sleep(Math.min(durationMs, 10000L))
+            clip.close()
+            audioStream.close()
+            println "[music] Playback finished."
+        } catch (Exception e) {
+            println "[music] Could not play audio: ${e.message}"
+        }
+    }
+}
+
+// ============================================================
+// TARGET: doc
+// 在 MANIFEST.MF 文件中添加项目文件的 MD5 和 SHA-1 摘要，
+// 并为项目中的所有类生成 Javadoc 文档并将其添加到归档文件中
+// ============================================================
+task doc(group: 'documentation', description: 'Generate Javadoc and add MD5/SHA-1 digests to MANIFEST.MF') {
+    dependsOn buildProject, javadoc
+
+    doLast {
+        println '[doc] Computing MD5 and SHA-1 digests for project files...'
+
+        // Compute digests for WAR file
+        def warFile = war.archiveFile.get().asFile
+        def md5  = computeDigest(warFile, 'MD5')
+        def sha1 = computeDigest(warFile, 'SHA-1')
+
+        // Compute digests for all class files
+        def classFiles = fileTree(dir: compileJava.destinationDirectory.get().asFile, include: '**/*.class')
+        def classDigests = [:]
+        classFiles.each { cf ->
+            classDigests[cf.name] = [
+                'MD5':    computeDigest(cf, 'MD5'),
+                'SHA-1':  computeDigest(cf, 'SHA-1')
+            ]
+        }
+
+        // Update MANIFEST.MF
+        def manifestDir  = file("${buildDir}/tmp/doc")
+        manifestDir.mkdirs()
+        def manifestFile = new File(manifestDir, 'MANIFEST.MF')
+
+        manifestFile.text = ''
+        manifestFile << "Manifest-Version: 1.0\n"
+        manifestFile << "Implementation-Title: ${props['project.name'] ?: 'WebLab3'}\n"
+        manifestFile << "Implementation-Version: ${project.version}\n"
+        manifestFile << "WAR-MD5: ${md5}\n"
+        manifestFile << "WAR-SHA1: ${sha1}\n"
+        manifestFile << "Build-Date: ${new Date()}\n"
+        manifestFile << "\n"
+        manifestFile << "# Class file digests:\n"
+        classDigests.each { name, digests ->
+            manifestFile << "# ${name}: MD5=${digests['MD5']}, SHA-1=${digests['SHA-1']}\n"
+        }
+
+        println "[doc] MANIFEST.MF with digests written to: ${manifestFile}"
+        println "[doc] WAR-MD5:  ${md5}"
+        println "[doc] WAR-SHA1: ${sha1}"
+        println "[doc] Javadoc generated at: ${javadoc.destinationDir}"
+    }
+}
+
+/**
+ * Compute a digest for the given file.
+ */
+def computeDigest(File file, String algorithm) {
+    def digest = java.security.MessageDigest.getInstance(algorithm)
+    file.eachByte(4096) { byte[] buf, int len ->
+        digest.update(buf, 0, len)
+    }
+    return digest.digest().encodeHex().toString()
+}
+
+// ============================================================
+// TARGET: history
+// 如果项目编译失败（compile 目标），则从 SVN 仓库加载上一个版本。
+// 重复直到项目构建成功或已获取到最旧修订版。
+// 若找到成功修订版，则创建 diff 文件
+// ============================================================
+task history(group: 'recovery', description: 'On compile failure, revert through Git history until a working revision is found') {
+    doLast {
+        println '[history] Attempting to compile current source...'
+
+        // Try to compile
+        def compileSucceeded = tryCompile()
+
+        if (compileSucceeded) {
+            println '[history] Current source compiles successfully. No recovery needed.'
+            return
+        }
+
+        println '[history] Compilation failed. Starting Git history traversal...'
+
+        // Get all commit hashes in reverse chronological order
+        def logCmd = ['git', 'log', '--format=%H']
+        def logProc = logCmd.execute()
+        logProc.waitFor()
+        def commits = logProc.text.readLines()
+
+        if (commits.size() < 2) {
+            println '[history] Not enough Git history to traverse.'
+            return
+        }
+
+        // commits[0] is HEAD (already tried), start from HEAD~1
+        def workingCommit = null
+        for (int i = 1; i < commits.size(); i++) {
+            def hash = commits[i]
+            def hashShort = hash.substring(0, 7)
+            println "  Checking commit ${hashShort} (HEAD~${i})..."
+
+            // Checkout this commit to a temp directory
+            def tempDir = file("${buildDir}/history/${hashShort}")
+            tempDir.mkdirs()
+
+            // Use git archive + extract to get a clean copy
+            def archiveCmd = ['git', 'archive', hash, '--output', "${buildDir}/history/source_${hashShort}.tar"]
+            def archiveProc = archiveCmd.execute()
+            archiveProc.waitFor()
+
+            def tarFile = file("${buildDir}/history/source_${hashShort}.tar")
+            if (tarFile.exists()) {
+                def extractCmd = ['tar', '-xf', tarFile.absolutePath, '-C', tempDir.absolutePath]
+                def extractProc = extractCmd.execute()
+                extractProc.waitFor()
+                tarFile.delete()
+            }
+
+            // Copy current build scripts and wrapper to temp dir
+            copy { from 'build.gradle';      into tempDir }
+            copy { from 'gradle.properties'; into tempDir }
+            copy { from 'settings.gradle';   into tempDir }
+            if (file('gradlew').exists()) {
+                copy { from 'gradlew';     into tempDir }
+            }
+            if (file('gradlew.bat').exists()) {
+                copy { from 'gradlew.bat'; into tempDir }
+            }
+            if (file('gradle').exists()) {
+                copy { from 'gradle'; into "${tempDir}/gradle" }
+            }
+
+            // Try to compile this revision using the Gradle wrapper
+            def buildProc = (System.getProperty('os.name').toLowerCase().contains('win'))
+                ? ['cmd', '/c', 'gradlew.bat', 'compile'].execute(null, tempDir)
+                : ['./gradlew', 'compile'].execute(null, tempDir)
+
+
+            buildProc.waitFor()
+
+            if (buildProc.exitValue() == 0) {
+                workingCommit = hash
+                println "  Commit ${hashShort} compiles successfully!"
+                break
+            }
+        }
+
+        if (workingCommit == null) {
+            println '[history] No working commit found in the entire Git history.'
+            return
+        }
+
+        // Create diff showing what changed in the first broken commit after the working one
+        def workingHashShort = workingCommit.substring(0, 7)
+        def brokenHash = commits[commits.indexOf(workingCommit) - 1]
+        def brokenHashShort = brokenHash.substring(0, 7)
+        println "[history] Creating diff for commit ${brokenHashShort} (the first broken one after working ${workingHashShort})..."
+
+        def diffDir = file("${buildDir}/history/diffs")
+        diffDir.mkdirs()
+
+        def diffCmd = ['git', 'diff', "${workingCommit}..${brokenHash}"]
+        def diffOutput = diffCmd.execute().text
+
+        def diffFile = new File(diffDir, "diff_${workingHashShort}_to_${brokenHashShort}.patch")
+        diffFile.text = diffOutput
+        println "[history] Diff saved to: ${diffFile.absolutePath}"
+    }
+}
+
+/**
+ * Try to compile the project, returning true if successful.
+ */
+def tryCompile() {
+    try {
+        def compileDir = compileJava.destinationDirectory.get().asFile
+        compileDir.mkdirs()
+        // Force recompilation
+        fileTree(dir: compileDir, include: '**/*.class').each { it.delete() }
+        compileJava.exec()
+        return true
+    } catch (Exception e) {
+        return false
+    }
+}
+
+// ============================================================
+// TARGET: team
+// 从 Git 仓库中获取前两个修订版，构建它们（WAR）
+// 并将生成的 WAR 文件打包成 zip 归档文件
+// ============================================================
+task team(group: 'build', description: 'Build previous two Git revisions as WAR and zip them') {
+    doLast {
+        println '[team] Getting previous two Git revisions...'
+
+        def gitLogCmd = ['git', 'log', '--format=%H', '-n', '3']
+        def gitLogProc = gitLogCmd.execute()
+        gitLogProc.waitFor()
+        def commits = gitLogProc.text.readLines()
+
+        if (commits.size() < 2) {
+            println '[team] Not enough Git revisions found (need at least 2).'
+            return
+        }
+
+        // commits[0] is HEAD, commits[1] is HEAD~1, commits[2] is HEAD~2
+        def prevRevs = [commits[1], commits[2]]
+        def teamDir = file("${buildDir}/team")
+        teamDir.mkdirs()
+        def archiveDir = file("${teamDir}/output")
+        archiveDir.mkdirs()
+
+        prevRevs.eachWithIndex { revHash, idx ->
+            def revShort = revHash.substring(0, 7)
+            println "  Building revision ${idx + 1}: ${revShort}"
+
+            def checkoutDir = file("${teamDir}/rev${idx + 1}_${revShort}")
+            checkoutDir.mkdirs()
+
+            // Use git archive to extract the revision
+            def archiveCmd = ['git', 'archive', revHash, '--output', "${teamDir}/source_${revShort}.tar"]
+            def archiveProc = archiveCmd.execute()
+            archiveProc.waitFor()
+
+            // Extract
+            def tarFile = file("${teamDir}/source_${revShort}.tar")
+            if (tarFile.exists()) {
+                checkoutDir.mkdirs()
+                def extractCmd = (System.getProperty('os.name').toLowerCase().contains('win'))
+                    ? ['tar', '-xf', tarFile.absolutePath, '-C', checkoutDir.absolutePath]
+                    : ['tar', '-xf', tarFile.absolutePath, '-C', checkoutDir.absolutePath]
+                def extractProc = extractCmd.execute()
+                extractProc.waitFor()
+            }
+
+            // Copy build scripts and Gradle wrapper to checkout dir
+            copy { from 'build.gradle';      into checkoutDir }
+            copy { from 'gradle.properties'; into checkoutDir }
+            copy { from 'settings.gradle';   into checkoutDir }
+            if (file('gradlew').exists()) {
+                copy { from 'gradlew';     into checkoutDir }
+            }
+            if (file('gradlew.bat').exists()) {
+                copy { from 'gradlew.bat'; into checkoutDir }
+            }
+            if (file('gradle').exists()) {
+                copy { from 'gradle'; into "${checkoutDir}/gradle" }
+            }
+
+            // Build using Gradle wrapper in the checkout directory
+            def pb = new ProcessBuilder()
+            if (System.getProperty('os.name').toLowerCase().contains('win')) {
+                def gwPath = new File(checkoutDir, 'gradlew.bat').absolutePath
+                pb.command('cmd', '/c', "\"${gwPath}\" war")
+            } else {
+                pb.command('./gradlew', 'war')
+            }
+            pb.directory(checkoutDir)
+            pb.redirectErrorStream(true)
+            def buildProc = pb.start()
+            def teamBuildOutput = buildProc.inputStream.text
+            buildProc.waitFor()
+
+            if (buildProc.exitValue() == 0) {
+                // Find the WAR file
+                def wars = fileTree(dir: checkoutDir, include: 'build/libs/*.war')
+                if (!wars.empty) {
+                    def warFile = wars.first()
+                    def destWar = new File(archiveDir, "WebLab3_rev${idx + 1}_${revShort}.war")
+                    copy { from warFile; into archiveDir; rename { destWar.name } }
+                    println "    Built: ${destWar.name}"
+                } else {
+                    println "    WAR not found for revision ${revShort}"
+                }
+            } else {
+                println "    Build failed for revision ${revShort}"
+                println teamBuildOutput
+            }
+        }
+
+        // Zip all WARs
+        def warFiles = fileTree(dir: archiveDir, include: '*.war')
+        if (!warFiles.empty) {
+            def zipFile = file("${teamDir}/team_previous_versions.zip")
+            ant.zip(destfile: zipFile.absolutePath) {
+                fileset(dir: archiveDir.absolutePath, includes: '*.war')
+            }
+            println "[team] ZIP archive created: ${zipFile.absolutePath}"
+        } else {
+            println '[team] No WAR files to package into ZIP.'
+        }
+    }
+}
+
+// ============================================================
+// TARGET: alt
+// 创建一个修改变量和类名的替代版本程序
+// （使用 replace/replaceregexp 任务）并将其打包成 WAR 归档文件
+// ============================================================
+task alt(group: 'build', description: 'Create alternative version with renamed classes/variables and package as WAR') {
+    doLast {
+        println '[alt] Creating alternative version with renamed classes and variables...'
+
+        def altDir = file("${buildDir}/alt-${System.currentTimeMillis()}")
+        altDir.mkdirs()
+
+        def altSrcDir  = file("${altDir}/src/main/java")
+        def altResDir  = file("${altDir}/src/main/resources")
+        def altWebDir  = file("${altDir}/src/main/webapp")
+        altSrcDir.mkdirs()
+        altResDir.mkdirs()
+        altWebDir.mkdirs()
+
+        // Copy source to alt directory
+        copy { from 'src/main/java';      into altSrcDir }
+        copy { from 'src/main/resources'; into altResDir }
+        copy { from 'src/main/webapp';    into altWebDir }
+
+        // Collect replacement patterns from properties
+        def replacements = [:]
+        props.each { key, value ->
+            if (key.startsWith('alt.replace.class.')) {
+                def oldName = key - 'alt.replace.class.'
+                replacements[oldName] = value
+            }
+        }
+
+        def packageMap = [:]
+        props.each { key, value ->
+            if (key.startsWith('alt.replace.package.')) {
+                def oldPkg = key - 'alt.replace.package.'
+                packageMap[oldPkg] = value
+            }
+        }
+
+        def varMap = [:]
+        props.each { key, value ->
+            if (key.startsWith('alt.replace.variable.')) {
+                def oldVar = key - 'alt.replace.variable.'
+                varMap[oldVar] = value
+            }
+        }
+
+        // Apply replacements on Java source files
+        def javaFiles = fileTree(dir: altSrcDir, include: '**/*.java')
+        javaFiles.each { javaFile ->
+            def content = javaFile.text
+            def modified = false
+
+            // Replace class names (with word boundaries)
+            replacements.each { oldName, newName ->
+                def pattern = ~/\b${oldName}\b/
+                if (content =~ pattern) {
+                    content = content.replaceAll(pattern, newName)
+                    modified = true
+                }
+            }
+
+            // Replace package names
+            packageMap.each { oldPkg, newPkg ->
+                if (content.contains(oldPkg)) {
+                    content = content.replace(oldPkg, newPkg)
+                    modified = true
+                }
+            }
+
+            // Replace variable names (in setter/getter contexts, field access)
+            varMap.each { oldVar, newVar ->
+                def pattern = ~/\b${oldVar}\b/
+                if (content =~ pattern) {
+                    content = content.replaceAll(pattern, newVar)
+                    modified = true
+                }
+            }
+
+            if (modified) {
+                javaFile.text = content
+                println "  Modified: ${javaFile.name}"
+            }
+        }
+
+        // Rename files whose classes were renamed (Java requires file name = class name)
+        replacements.each { oldName, newName ->
+            def renamedFiles = fileTree(dir: altSrcDir, include: "**/${oldName}.java")
+            renamedFiles.each { f ->
+                def newFile = new File(f.parentFile, "${newName}.java")
+                if (f.renameTo(newFile)) {
+                    println "  Renamed: ${f.name} -> ${newFile.name}"
+                }
+            }
+        }
+
+        // Copy build scripts and Gradle wrapper to alt directory
+        copy { from 'build.gradle';      into altDir }
+        copy { from 'gradle.properties'; into altDir }
+        copy { from 'settings.gradle';   into altDir }
+        if (file('gradlew').exists()) {
+            copy { from 'gradlew';     into altDir }
+        }
+        if (file('gradlew.bat').exists()) {
+            copy { from 'gradlew.bat'; into altDir }
+        }
+        if (file('gradle').exists()) {
+            copy { from 'gradle'; into "${altDir}/gradle" }
+        }
+
+        // Build the alt project
+        println '  Building alternative project...'
+        def pb = new ProcessBuilder()
+        if (System.getProperty('os.name').toLowerCase().contains('win')) {
+            def gradlewPath = new File(altDir, 'gradlew.bat').absolutePath
+            pb.command('cmd', '/c', "\"${gradlewPath}\" war")
+        } else {
+            pb.command('./gradlew', 'war')
+        }
+        pb.directory(altDir)
+        pb.redirectErrorStream(true)
+        def buildProc = pb.start()
+        def buildOutput = buildProc.inputStream.text
+        buildProc.waitFor()
+
+        if (buildProc.exitValue() == 0) {
+            def warFiles = fileTree(dir: file("${altDir}/build/libs"), include: '*.war')
+            if (!warFiles.empty) {
+                def outputWar = file("${buildDir}/libs/${project.name}_alt-${project.version}.war")
+                outputWar.parentFile.mkdirs()
+                copy { from warFiles.first(); into outputWar.parentFile; rename { outputWar.name } }
+                println "[alt] Alternative WAR created: ${outputWar.absolutePath}"
+            }
+        } else {
+            println "[alt] Alternative build failed."
+            println buildOutput
+        }
+    }
+}
+
+// ============================================================
+// TARGET: report
+// 测试成功通过后，以 XML 格式保存 JUnit 报告，添加到 Git 仓库并提交
+// ============================================================
+task report(group: 'verification', description: 'Save JUnit XML report and commit to Git if tests pass') {
+    dependsOn runTests
+
+    doLast {
+        println '[report] Tests passed. Saving JUnit XML report...'
+
+        def xmlReportDir = test.reports.junitXml.outputLocation.get().asFile
+        def destDir = file("${buildDir}/reports/junit-xml")
+        destDir.mkdirs()
+
+        if (xmlReportDir.exists()) {
+            copy {
+                from xmlReportDir
+                into destDir
+            }
+        }
+
+        println "[report] JUnit XML report saved to: ${destDir}"
+
+        // Git commit
+        println '[report] Adding report to Git and committing...'
+        def addCmd = ['git', 'add', "${destDir.absolutePath}"]
+        def addProc = addCmd.execute()
+        addProc.waitFor()
+
+        def commitCmd = ['git', 'commit', '-m', "JUnit test report ${new Date()}"]
+        def commitProc = commitCmd.execute()
+        commitProc.waitFor()
+
+        if (commitProc.exitValue() == 0) {
+            println '[report] Git commit successful.'
+        } else {
+            println "[report] Git commit note: ${commitProc.err.text}"
+        }
+    }
+}
+
+// ============================================================
+// TARGET: env
+// 在替代环境中构建和运行程序
+// 环境由属性文件中指定的 Java 版本和虚拟机参数集定义
+// ============================================================
+task env(group: 'build', description: 'Build and run in an alternative Java environment') {
+    doLast {
+        def altJavaHome = props['alt.java.home'] ?: System.getProperty('java.home')
+        def jvmArgs     = props['alt.jvm.args'] ?: '-Xmx512m'
+
+        println '[env] Building in alternative environment...'
+        println "  JAVA_HOME: ${altJavaHome}"
+        println "  JVM Args:  ${jvmArgs}"
+
+        def javaBin = "${altJavaHome}/bin/java"
+        def gradleBin = (System.getProperty('os.name').toLowerCase().contains('win'))
+            ? 'gradle.bat'
+            : 'gradle'
+
+        // Build with alternative Java using Gradle wrapper
+        def pb = new ProcessBuilder()
+        if (System.getProperty('os.name').toLowerCase().contains('win')) {
+            def gwPath = new File(projectDir, 'gradlew.bat').absolutePath
+            pb.command('cmd', '/c', "\"${gwPath}\" war")
+        } else {
+            pb.command('./gradlew', 'war')
+        }
+        pb.directory(projectDir)
+        pb.redirectErrorStream(true)
+        pb.environment().put('JAVA_HOME', altJavaHome)
+        pb.environment().put('GRADLE_OPTS', jvmArgs)
+        def buildProc = pb.start()
+        def envBuildOutput = buildProc.inputStream.text
+        buildProc.waitFor()
+        println envBuildOutput
+
+        if (buildProc.exitValue() == 0) {
+            println '[env] Build in alternative environment succeeded.'
+        } else {
+            println '[env] Build in alternative environment failed.'
+        }
+    }
+}
+
+// ============================================================
+// TARGET: diff
+// 检查工作副本的状态，如果更改不涉及属性文件中指定的类，则在 Git 仓库中执行提交
+// ============================================================
+task diff(group: 'verification', description: 'Check working copy status, Git commit if excluded classes unchanged') {
+    doLast {
+        def excludedClassesRaw = props['diff.excluded.classes'] ?: ''
+
+        def excludedClasses = excludedClassesRaw.split(',').collect { it.trim() }.findAll { it }
+
+        println '[diff] Checking Git working copy status...'
+        println "  Excluded classes: ${excludedClasses}"
+
+        def statusCmd = ['git', 'status', '--porcelain']
+        def statusProc = statusCmd.execute()
+        statusProc.waitFor()
+        def changedFiles = statusProc.text.readLines()
+
+        if (changedFiles.empty) {
+            println '[diff] No changes detected. Nothing to commit.'
+            return
+        }
+
+        println '  Changed files:'
+        changedFiles.each { println "    ${it}" }
+
+        // Check if any excluded classes were changed
+        def excludedChanged = false
+        excludedClasses.each { className ->
+            changedFiles.each { line ->
+                if (line.contains(className + '.java')) {
+                    excludedChanged = true
+                    println "  WARNING: Excluded class '${className}' was modified!"
+                }
+            }
+        }
+
+        if (excludedChanged) {
+            println '[diff] Changes involve excluded classes. Skipping commit.'
+        } else {
+            println '[diff] Changes do not involve excluded classes. Committing...'
+            def addCmd = ['git', 'add', '.']
+            def addProc = addCmd.execute()
+            addProc.waitFor()
+
+            def commitCmd = ['git', 'commit', '-m', "Auto-commit: safe changes ${new Date()}"]
+            def commitProc = commitCmd.execute()
+            commitProc.waitFor()
+
+            if (commitProc.exitValue() == 0) {
+                println '[diff] Git commit successful.'
+            } else {
+                println "[diff] Git commit note: ${commitProc.err.text}"
+            }
+        }
+    }
+}
+
+// ============================================================
+// Task grouping for better output
+// ============================================================
+tasks.named('compileJava')  { group = 'build';         description = 'Compiles Java source files' }
+tasks.named('war')          { group = 'build';         description = 'Generates WAR archive' }
+tasks.named('test')         { group = 'verification';  description = 'Runs JUnit tests' }
+tasks.named('clean')        { group = 'build';         description = 'Deletes build directory' }
+
+javadoc {
+    source = sourceSets.main.allJava
+    classpath = sourceSets.main.compileClasspath
+    destinationDir = file("${buildDir}/docs/javadoc")
+    options.encoding = 'UTF-8'
+    options.docTitle = "WebLab3 API Documentation"
+}
