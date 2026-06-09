@@ -2,6 +2,7 @@ package org.example.gui;
 
 import org.example.engine.*;
 import org.example.model.InputData;
+import org.example.util.InterpolationUtils;
 import org.example.model.InterpolationResult;
 import org.example.service.DataLoader;
 
@@ -38,7 +39,7 @@ public class MainFrame extends JFrame {
     private JCheckBox cbLagrange, cbNewton, cbGauss, cbStirling, cbBessel;
 
     public MainFrame() {
-        setTitle("Lab5 - Function Interpolation (Variant 14)");
+        setTitle("Лабораторная работа №5 — Интерполяция функций");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1250, 750);
         setLocationRelativeTo(null);
@@ -51,19 +52,19 @@ public class MainFrame extends JFrame {
         // === TOP: Input Panel ===
         JPanel topPanel = new JPanel(new BorderLayout());
         inputTabs = new JTabbedPane();
-        inputTabs.addTab("Manual", createManualPanel());
-        inputTabs.addTab("File", createFilePanel());
-        inputTabs.addTab("Function", createFunctionPanel());
+        inputTabs.addTab("Вручную", createManualPanel());
+        inputTabs.addTab("Файл", createFilePanel());
+        inputTabs.addTab("Функция", createFunctionPanel());
         topPanel.add(inputTabs, BorderLayout.CENTER);
 
         // Method selection
         JPanel methodPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 12, 4));
-        methodPanel.setBorder(BorderFactory.createTitledBorder("Methods"));
-        cbLagrange = new JCheckBox("Lagrange", true);
-        cbNewton = new JCheckBox("Newton", true);
-        cbGauss = new JCheckBox("Gauss", true);
-        cbStirling = new JCheckBox("Stirling (extra)", true);
-        cbBessel = new JCheckBox("Bessel (extra)", true);
+        methodPanel.setBorder(BorderFactory.createTitledBorder("Методы"));
+        cbLagrange = new JCheckBox("Лагранж", true);
+        cbNewton = new JCheckBox("Ньютон", true);
+        cbGauss = new JCheckBox("Гаусс", true);
+        cbStirling = new JCheckBox("Стирлинг", true);
+        cbBessel = new JCheckBox("Бессель", true);
         methodPanel.add(cbLagrange);
         methodPanel.add(cbNewton);
         methodPanel.add(cbGauss);
@@ -78,14 +79,10 @@ public class MainFrame extends JFrame {
         x2Field = new JTextField("1.319", 6);
         methodPanel.add(x2Field);
 
-        JButton computeBtn = new JButton("Compute");
-        computeBtn.setFont(new Font("SansSerif", Font.BOLD, 13));
+        JButton computeBtn = new JButton("Вычислить");
+        computeBtn.setFont(new Font("Segoe UI", Font.BOLD, 13));
         computeBtn.addActionListener(e -> compute());
         methodPanel.add(computeBtn);
-
-        JButton loadDemoBtn = new JButton("Load Variant 14");
-        loadDemoBtn.addActionListener(e -> loadVariant14());
-        methodPanel.add(loadDemoBtn);
 
         topPanel.add(methodPanel, BorderLayout.SOUTH);
         add(topPanel, BorderLayout.NORTH);
@@ -103,24 +100,24 @@ public class MainFrame extends JFrame {
         diffTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         JScrollPane diffScroll = new JScrollPane(diffTable);
         diffScroll.setBorder(BorderFactory.createTitledBorder(
-                "Finite Difference Table"));
+                "Таблица конечных разностей"));
         diffScroll.setPreferredSize(new Dimension(550, 220));
         leftPanel.add(diffScroll, BorderLayout.NORTH);
 
         // Interpolation results
         resultArea = new JTextArea();
         resultArea.setEditable(false);
-        resultArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+        resultArea.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         JScrollPane resultScroll = new JScrollPane(resultArea);
         resultScroll.setBorder(BorderFactory.createTitledBorder(
-                "Interpolation Results"));
+                "Результаты интерполяции"));
         leftPanel.add(resultScroll, BorderLayout.CENTER);
 
         centerSplit.setLeftComponent(leftPanel);
 
         // Right: Chart
         chartPanel = new ChartPanel();
-        chartPanel.setBorder(BorderFactory.createTitledBorder("Graph"));
+        chartPanel.setBorder(BorderFactory.createTitledBorder("График"));
         centerSplit.setRightComponent(chartPanel);
 
         add(centerSplit, BorderLayout.CENTER);
@@ -134,14 +131,14 @@ public class MainFrame extends JFrame {
         c.fill = GridBagConstraints.HORIZONTAL;
 
         c.gridx = 0; c.gridy = 0;
-        p.add(new JLabel("X values (comma-separated):"), c);
+        p.add(new JLabel("Значения X:"), c);
         c.gridx = 1; c.weightx = 1.0;
         xField = new JTextField(
                 "1.05, 1.15, 1.25, 1.35, 1.45, 1.55, 1.65", 40);
         p.add(xField, c);
 
         c.gridx = 0; c.gridy = 1; c.weightx = 0;
-        p.add(new JLabel("Y values (comma-separated):"), c);
+        p.add(new JLabel("Значения Y:"), c);
         c.gridx = 1; c.weightx = 1.0;
         yField = new JTextField(
                 "0.1213, 1.1316, 2.1459, 3.1565, 4.1571, 5.1819, 6.1969", 40);
@@ -158,12 +155,12 @@ public class MainFrame extends JFrame {
         c.fill = GridBagConstraints.HORIZONTAL;
 
         c.gridx = 0;
-        p.add(new JLabel("File path:"), c);
+        p.add(new JLabel("Путь к файлу:"), c);
         c.gridx = 1; c.weightx = 1.0;
         filePathField = new JTextField("test_data/variant14.txt", 30);
         p.add(filePathField, c);
         c.gridx = 2; c.weightx = 0;
-        JButton browseBtn = new JButton("Browse...");
+        JButton browseBtn = new JButton("Обзор...");
         browseBtn.addActionListener(e -> {
             JFileChooser fc = new JFileChooser(".");
             if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
@@ -183,7 +180,7 @@ public class MainFrame extends JFrame {
         c.fill = GridBagConstraints.HORIZONTAL;
 
         c.gridx = 0; c.gridy = 0;
-        p.add(new JLabel("Function:"), c);
+        p.add(new JLabel("Функция:"), c);
         funcCombo = new JComboBox<>(new String[]{
                 "sin(x)", "cos(x)", "exp(x)", "x^2", "ln(x)"
         });
@@ -191,28 +188,20 @@ public class MainFrame extends JFrame {
         p.add(funcCombo, c);
 
         c.gridx = 0; c.gridy = 1; c.gridwidth = 1;
-        p.add(new JLabel("From a:"), c);
+        p.add(new JLabel("От a:"), c);
         funcAField = new JTextField("0.0", 6);
         c.gridx = 1;
         p.add(funcAField, c);
-        p.add(new JLabel("To b:"), c);
+        p.add(new JLabel("До b:"), c);
         funcBField = new JTextField("3.0", 6);
         c.gridx = 3;
         p.add(funcBField, c);
-        p.add(new JLabel("Points n:"), c);
+        p.add(new JLabel("Точек n:"), c);
         funcNField = new JTextField("7", 6);
         c.gridx = 5;
         p.add(funcNField, c);
 
         return p;
-    }
-
-    private void loadVariant14() {
-        xField.setText("1.05, 1.15, 1.25, 1.35, 1.45, 1.55, 1.65");
-        yField.setText("0.1213, 1.1316, 2.1459, 3.1565, 4.1571, 5.1819, 6.1969");
-        x1Field.setText("1.112");
-        x2Field.setText("1.319");
-        inputTabs.setSelectedIndex(0);
     }
 
     private void compute() {
@@ -230,9 +219,9 @@ public class MainFrame extends JFrame {
                 currentData = loadFromFunction();
             }
 
-            if (currentData == null || currentData.size() < 2) {
+            if (currentData.size() < 2) {
                 JOptionPane.showMessageDialog(this,
-                        "Need at least 2 data points.", "Error",
+                        "Необходимо не менее 2 точек данных.", "Ошибка",
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -244,8 +233,8 @@ public class MainFrame extends JFrame {
             for (int i = 1; i < x.length; i++) {
                 if (x[i] <= x[i - 1]) {
                     JOptionPane.showMessageDialog(this,
-                            "X values must be strictly increasing.",
-                            "Error", JOptionPane.ERROR_MESSAGE);
+                            "Значения X должны быть строго возрастающими.",
+                            "Ошибка", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             }
@@ -259,7 +248,7 @@ public class MainFrame extends JFrame {
 
             // Compute selected methods
             StringBuilder sb = new StringBuilder();
-            sb.append("Source: ").append(currentData.getSourceDescription())
+            sb.append("Источник: ").append(currentData.getSourceDescription())
                     .append("\n\n");
 
             if (cbLagrange.isSelected()) {
@@ -272,8 +261,8 @@ public class MainFrame extends JFrame {
             }
 
             if (cbNewton.isSelected()) {
-                InterpolationResult r1 = NewtonSolver.interpolate(x, y, x1);
-                InterpolationResult r2 = NewtonSolver.interpolate(x, y, x2);
+                InterpolationResult r1 = InterpolationUtils.interpolateNewton(x, y, x1);
+                InterpolationResult r2 = InterpolationUtils.interpolateNewton(x, y, x2);
                 results.add(r1);
                 results.add(r2);
                 sb.append(formatResult(r1)).append("\n");
@@ -281,8 +270,8 @@ public class MainFrame extends JFrame {
             }
 
             if (cbGauss.isSelected()) {
-                InterpolationResult r1 = GaussSolver.interpolate(x, y, x1);
-                InterpolationResult r2 = GaussSolver.interpolate(x, y, x2);
+                InterpolationResult r1 = InterpolationUtils.interpolateGauss(x, y, x1);
+                InterpolationResult r2 = InterpolationUtils.interpolateGauss(x, y, x2);
                 results.add(r1);
                 results.add(r2);
                 sb.append(formatResult(r1)).append("\n");
@@ -312,12 +301,12 @@ public class MainFrame extends JFrame {
 
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this,
-                    "Invalid number format: " + ex.getMessage(),
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                    "Неверный формат числа: " + ex.getMessage(),
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this,
-                    "File error: " + ex.getMessage(),
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                    "Ошибка файла: " + ex.getMessage(),
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -326,8 +315,8 @@ public class MainFrame extends JFrame {
         String[] ys = yField.getText().trim().split("[,\\s]+");
         if (xs.length != ys.length) {
             JOptionPane.showMessageDialog(this,
-                    "X and Y must have the same number of values.",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                    "Количество значений X и Y должно совпадать.",
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
             return null;
         }
         double[] x = new double[xs.length];
@@ -343,8 +332,8 @@ public class MainFrame extends JFrame {
         String path = filePathField.getText().trim();
         if (path.isEmpty()) {
             JOptionPane.showMessageDialog(this,
-                    "Please specify a file path.",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                    "Укажите путь к файлу.",
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
             return null;
         }
         return DataLoader.fromFile(path);
@@ -356,8 +345,8 @@ public class MainFrame extends JFrame {
         int n = Integer.parseInt(funcNField.getText().trim());
         if (n < 2) {
             JOptionPane.showMessageDialog(this,
-                    "Need at least 2 points (n >= 2).",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                    "Необходимо не менее 2 точек (n >= 2).",
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
             return null;
         }
         String funcName = (String) funcCombo.getSelectedItem();

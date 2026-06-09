@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(mkdir -p report)",
-      "Bash(python analysis.py)"
+      "Bash(python analysis.py)",
+      "Bash(ls -la \"C:/develop/NOTE_UTP/StudyNote/4 Математическая статистика/Задачи/РГР3/report/\"*.png)",
+      "Bash(ls:*)"
     ]
   }
 }

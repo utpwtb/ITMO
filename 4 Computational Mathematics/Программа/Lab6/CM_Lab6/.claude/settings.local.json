@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn compile:*)",
+      "Bash(mvn package:*)",
+      "Bash(mvn clean:*)",
+      "Bash(java -cp target/classes com.itmo.Main)",
+      "Bash(kill %1)"
+    ]
+  }
+}

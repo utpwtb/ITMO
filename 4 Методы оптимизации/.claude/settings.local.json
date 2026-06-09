@@ -13,7 +13,24 @@
       "Read(//tmp/lecture-notes/dist/**)",
       "Bash(python:*)",
       "Bash(pdftotext -enc UTF-8 -layout \"C:/develop/NOTE_UTP/StudyNote/4 Методы оптимизации/Lab/5/material/ЛР5. Аппроксимация функций \\(мет.опт и машин.обуч.\\).pdf\" /tmp/lecture5_text.txt)",
-      "Bash(set PYTHONIOENCODING=utf-8)"
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(pip install:*)",
+      "Bash(mkdir -p ref pic)",
+      "Bash(mv \"Contours and solutions.ipynb\" ref/)",
+      "Bash(rm -f level_lines_*.png)",
+      "Bash(mv UFSACO.ipynb ref/)",
+      "Bash(mv samples.pkl ref/)",
+      "Bash(mv \"Лекция 6. Комментарии к коду \\(FS\\).docx\" ref/)",
+      "Bash(mv \"Лекция 6. Комментарии к коду \\(FS\\).md\" ref/)",
+      "Bash(rm -f *.png)",
+      "Bash(python3:*)",
+      "Bash(chcp 65001)",
+      "Bash(PYTHONIOENCODING=utf-8 python gen_nb.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python dz1.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python dz3.py)",
+      "Bash(cp \"C:/develop/NOTE_UTP/StudyNote/4 Методы оптимизации/Lab/hw/1/\"*.png \"C:/develop/NOTE_UTP/StudyNote/4 Методы оптимизации/Lab/hw/report/pic/\")",
+      "Bash(cp \"C:/develop/NOTE_UTP/StudyNote/4 Методы оптимизации/Lab/hw/2/pic/\"*.png \"C:/develop/NOTE_UTP/StudyNote/4 Методы оптимизации/Lab/hw/report/pic/\")",
+      "Bash(cp \"C:/develop/NOTE_UTP/StudyNote/4 Методы оптимизации/Lab/hw/3/pic/\"*.png \"C:/develop/NOTE_UTP/StudyNote/4 Методы оптимизации/Lab/hw/report/pic/\")"
     ]
   }
 }

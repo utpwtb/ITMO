@@ -37,16 +37,18 @@ public class PointBean {
             return null;
         }
 
-        // ═══════════════════════════════════════════════════════════════
-        // ИСКУССТВЕННАЯ ПРОБЛЕМА: конкатенация String в цикле
-        // Создаёт ~50 000 временных объектов за один запрос → GC pressure
-        // Будет найдена через VisualVM CPU Profiler и исправлена
-        // ═══════════════════════════════════════════════════════════════
-        String debugLog = "";
+        //ПРОБЛЕМА: конкатенация String в цикле
+        /*String debugLog = "";
         for (int i = 0; i < 50000; i++) {
             debugLog += "Point[" + i + "]=(" + x + "," + y + "," + r + ") ";
+        }*/
+
+        StringBuilder debugLog = new StringBuilder();
+        for (int i = 0; i < 50000; i++) {
+            debugLog.append("Point[").append(i).append("]=(")
+                    .append(x).append(",").append(y).append(",").append(r).append(") ");
         }
-        // ═══════════════════════════════════════════════════════════════
+
 
         long startTime = System.currentTimeMillis();
         boolean hit = checkHit(x, y, r);

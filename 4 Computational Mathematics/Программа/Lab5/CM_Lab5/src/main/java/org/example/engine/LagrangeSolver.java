@@ -20,7 +20,7 @@ public class LagrangeSolver {
 
         double[][] diffTable = FiniteDifferenceTable.build(y);
         return new InterpolationResult(
-                "Lagrange Polynomial", xTarget, result, diffTable, n - 1
+                "Полином Лагранжа", xTarget, result, diffTable, n - 1
         );
     }
 }

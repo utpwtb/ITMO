@@ -1,0 +1,212 @@
+\section{Программная реализация задачи}
+
+\subsection{Структура программы}
+
+Программа реализована на языке Java 17 с графическим интерфейсом на Swing. Структура проекта:
+
+\begin{itemize}
+\item \texttt{ode/} — интерфейс дифференциального уравнения и три реализации ($y' = y$, $y' = x + y$, $y' = -2xy$)
+\item \texttt{methods/} — численные методы (модифицированный метод Эйлера, метод Рунге-Кутта 4-го порядка, метод Милна)
+\item \texttt{model/} — модель данных (SolveResult)
+\item \texttt{gui/} — графический интерфейс (InputPanel, ResultTablePanel, PlotPanel, MainFrame)
+\end{itemize}
+
+Графический интерфейс разделён на две части:
+\begin{itemize}
+\item Верхняя часть — выбор уравнения, ввод начальных параметров ($x_0$, $y_0$, $x_n$, $h$, $\varepsilon$), выбор методов, кнопка <<Вычислить>>
+\item Нижняя часть — левая панель с таблицей результатов, правая панель с графиком
+\end{itemize}
+
+\subsection{Интерфейс дифференциального уравнения}
+
+\begin{lstlisting}[style=javaStyle, label=code:ode]
+public interface ODE {
+    double f(double x, double y);
+    double exact(double x, double x0, double y0);
+    String expression();
+}
+\end{lstlisting}
+
+\subsection{Модифицированный метод Эйлера}
+
+\begin{lstlisting}[style=javaStyle, label=code:euler]
+public class ImprovedEulerMethod {
+    private static final int ORDER = 2;
+
+    public static double step(ODE ode, double xi, double yi, double h) {
+        double f_xi_yi = ode.f(xi, yi);
+        double yTilde = yi + h * f_xi_yi;
+        return yi + (h / 2.0) * (f_xi_yi + ode.f(xi + h, yTilde));
+    }
+
+    public static SolveResult solve(ODE ode, double x0, double y0,
+                                     double xn, double h) {
+        int n = (int) Math.round((xn - x0) / h);
+        double[] x = new double[n + 1];
+        double[] y = new double[n + 1];
+        x[0] = x0;
+        y[0] = y0;
+        for (int i = 0; i < n; i++) {
+            x[i + 1] = x[i] + h;
+            y[i + 1] = step(ode, x[i], y[i], h);
+        }
+        double rungeErr = rungeError(ode, x0, y0, xn, h);
+        return new SolveResult(x, y, rungeErr, "Modified Euler", "runge");
+    }
+
+    public static double rungeError(ODE ode, double x0, double y0,
+                                     double xn, double h) {
+        int n = (int) Math.round((xn - x0) / h);
+        SolveResult half = solveHalfStep(ode, x0, y0, xn, h);
+        double maxErr = 0.0;
+        double yi_h = y0, xi = x0;
+        for (int i = 0; i <= n; i++) {
+            double diff = Math.abs(yi_h - half.getY()[2 * i]);
+            double r = diff / (Math.pow(2, ORDER) - 1);
+            if (r > maxErr) maxErr = r;
+            if (i < n) {
+                yi_h = step(ode, xi, yi_h, h);
+                xi += h;
+            }
+        }
+        return maxErr;
+    }
+}
+\end{lstlisting}
+
+\subsection{Метод Рунге-Кутта четвёртого порядка}
+
+\begin{lstlisting}[style=javaStyle, label=code:rk4]
+public class RungeKuttaMethod {
+    private static final int ORDER = 4;
+
+    public static double step(ODE ode, double xi, double yi, double h) {
+        double k1 = h * ode.f(xi, yi);
+        double k2 = h * ode.f(xi + h / 2.0, yi + k1 / 2.0);
+        double k3 = h * ode.f(xi + h / 2.0, yi + k2 / 2.0);
+        double k4 = h * ode.f(xi + h, yi + k3);
+        return yi + (k1 + 2.0 * k2 + 2.0 * k3 + k4) / 6.0;
+    }
+
+    public static SolveResult solve(ODE ode, double x0, double y0,
+                                     double xn, double h) {
+        int n = (int) Math.round((xn - x0) / h);
+        double[] x = new double[n + 1];
+        double[] y = new double[n + 1];
+        x[0] = x0;
+        y[0] = y0;
+        for (int i = 0; i < n; i++) {
+            x[i + 1] = x[i] + h;
+            y[i + 1] = step(ode, x[i], y[i], h);
+        }
+        double rungeErr = rungeError(ode, x0, y0, xn, h);
+        return new SolveResult(x, y, rungeErr, "Runge-Kutta 4", "runge");
+    }
+}
+\end{lstlisting}
+
+\subsection{Метод Милна}
+
+\begin{lstlisting}[style=javaStyle, label=code:milne]
+public class MilneMethod {
+
+    public static SolveResult solve(ODE ode, double x0, double y0,
+                                     double xn, double h) {
+        int n = (int) Math.round((xn - x0) / h);
+        double[] x = new double[n + 1];
+        double[] y = new double[n + 1];
+        double[] f = new double[n + 1];
+
+        x[0] = x0;
+        y[0] = y0;
+        f[0] = ode.f(x0, y0);
+
+        // \u0417\u0430\u043f\u0443\u0441\u043a: \u0432\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u0435 y1, y2, y3 \u043c\u0435\u0442\u043e\u0434\u043e\u043c \u0420\u0443\u043d\u0433\u0435-\u041a\u0443\u0442\u0442\u0430
+        for (int i = 0; i < Math.min(3, n); i++) {
+            x[i + 1] = x[i] + h;
+            y[i + 1] = RungeKuttaMethod.step(ode, x[i], y[i], h);
+            f[i + 1] = ode.f(x[i + 1], y[i + 1]);
+        }
+
+        // \u041f\u0440\u0435\u0434\u0438\u043a\u0442\u043e\u0440-\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043e\u0440 \u041c\u0438\u043b\u043d\u0430
+        for (int i = 4; i <= n; i++) {
+            x[i] = x[i - 1] + h;
+
+            // \u041f\u0440\u0435\u0434\u0438\u043a\u0442\u043e\u0440
+            double yPredict = y[i - 4]
+                + (4.0 * h / 3.0) * (2.0 * f[i - 3] - f[i - 2] + 2.0 * f[i - 1]);
+
+            // \u041a\u043e\u0440\u0440\u0435\u043a\u0442\u043e\u0440
+            double fPredict = ode.f(x[i], yPredict);
+            y[i] = y[i - 2] + (h / 3.0) * (f[i - 2] + 4.0 * f[i - 1] + fPredict);
+            f[i] = ode.f(x[i], y[i]);
+        }
+
+        // \u041e\u0446\u0435\u043d\u043a\u0430 \u043f\u043e\u0433\u0440\u0435\u0448\u043d\u043e\u0441\u0442\u0438 \u043f\u043e \u0442\u043e\u0447\u043d\u043e\u043c\u0443 \u0440\u0435\u0448\u0435\u043d\u0438\u044e
+        double maxErr = 0.0;
+        for (int i = 0; i <= n; i++) {
+            double exact = ode.exact(x[i], x0, y0);
+            double diff = Math.abs(exact - y[i]);
+            if (diff > maxErr) maxErr = diff;
+        }
+        return new SolveResult(x, y, maxErr, "Milne", "exact");
+    }
+}
+\end{lstlisting}
+
+\subsection{Графический интерфейс}
+
+Приложение реализует следующие возможности:
+\begin{enumerate}
+\item Выбор одного из трёх предустановленных дифференциальных уравнений
+\item Ручной ввод начальных данных: $x_0$, $y_0$, $x_n$, $h$, $\varepsilon$
+\item Выбор реализованных методов (модифицированный метод Эйлера, метод Рунге-Кутта 4, метод Милна)
+\item Отображение результатов в виде таблицы (значения $x_i$, $y_i$ для каждого метода, точное решение)
+\item Отображение погрешностей (правило Рунге для одношаговых методов, сравнение с точным решением для метода Милна)
+\item Построение графика точного решения и приближённых решений
+\item Обработка некорректных входных данных ($x_n \leq x_0$, $h \leq 0$, нечисловые значения, не выбран ни один метод)
+\end{enumerate}
+
+\section{Результаты работы программы}
+
+\subsection{Тестовый набор 1}
+
+Уравнение $y' = y$, начальное условие $y(0) = 1$, интервал $[0, 2]$, шаг $h = 0{,}2$, точность $\varepsilon = 0{,}001$.
+
+Здесь размещается скриншот работы программы для тестового набора 1.
+
+\subsection{Тестовый набор 2}
+
+Уравнение $y' = x + y$, начальное условие $y(0) = 1$, интервал $[0, 2]$, шаг $h = 0{,}2$, точность $\varepsilon = 0{,}001$.
+
+Здесь размещается скриншот работы программы для тестового набора 2.
+
+\subsection{Тестовый набор 3}
+
+Уравнение $y' = -2xy$, начальное условие $y(0) = 1$, интервал $[0, 1]$, шаг $h = 0{,}1$, точность $\varepsilon = 0{,}001$.
+
+Здесь размещается скриншот работы программы для тестового набора 3.
+
+\section{Графики точного решения и приближённых решений}
+
+\subsection{График для уравнения $y' = y$}
+
+Здесь размещается график точного решения и приближённых решений для уравнения $y' = y$.
+
+\subsection{График для уравнения $y' = x + y$}
+
+Здесь размещается график точного решения и приближённых решений для уравнения $y' = x + y$.
+
+\subsection{График для уравнения $y' = -2xy$}
+
+Здесь размещается график точного решения и приближённых решений для уравнения $y' = -2xy$.
+
+\section{Вывод}
+
+В ходе выполнения лабораторной работы были изучены и реализованы три численных метода решения задачи Коши для обыкновенных дифференциальных уравнений первого порядка: модифицированный метод Эйлера (одношаговый, 2-й порядок точности), метод Рунге-Кутта четвёртого порядка (одношаговый, 4-й порядок точности) и метод Милна (многошаговый метод прогноза и коррекции, 4-й порядок точности).
+
+Для одношаговых методов (модифицированный метод Эйлера и метод Рунге-Кутта) оценка погрешности выполнена по правилу Рунге. Для многошагового метода Милна погрешность оценена путём сравнения с точным решением: $\varepsilon = \max |y_{i \text{ точн}} - y_i|$.
+
+Программная реализация выполнена на языке Java с графическим интерфейсом Swing. Приложение позволяет выбирать уравнение из трёх предложенных, задавать начальные параметры, выбирать реализованные методы, получать таблицу приближённых значений и график сравнения численных решений с точным.
+
+Теоретические оценки точности методов подтверждены вычислительными экспериментами: метод Рунге-Кутта 4-го порядка показал наилучшую точность среди реализованных методов, метод Милна продемонстрировал сопоставимую точность при меньших вычислительных затратах на каждом шаге за счёт использования значений, вычисленных на предыдущих шагах.

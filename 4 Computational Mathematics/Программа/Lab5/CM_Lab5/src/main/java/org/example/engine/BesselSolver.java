@@ -1,5 +1,6 @@
 package org.example.engine;
 
+import org.example.engine.util.CentralDifferenceUtils;
 import org.example.model.InterpolationResult;
 
 public class BesselSolver {
@@ -16,7 +17,9 @@ public class BesselSolver {
 
         for (int k = 1; k < n; k++) {
             double coeff = besselCoeff(q, k);
-            if (Math.abs(coeff) < 1e-15) continue;
+            if (Math.abs(coeff) < 1e-15) {
+                continue;
+            }
 
             double diffVal;
             if (k % 2 == 0) {
@@ -45,19 +48,43 @@ public class BesselSolver {
         }
 
         return new InterpolationResult(
-                "Bessel Formula", xTarget, result, ft, n - 1);
+                "Формула Бесселя", xTarget, result, ft, n - 1);
     }
 
-    /** Bessel coefficients: product of (q - shift_i) / k! */
-    private static double besselCoeff(double q, int k) {
-        switch (k) {
-            case 1:  return q;
-            case 2:  return q * (q - 1) / 2.0;
-            case 3:  return q * (q - 1) * (q - 0.5) / 6.0;
-            case 4:  return (q + 1) * q * (q - 1) * (q - 2) / 24.0;
-            case 5:  return (q + 1) * q * (q - 1) * (q - 2) * (q - 0.5) / 120.0;
-            case 6:  return (q + 2) * (q + 1) * q * (q - 1) * (q - 2) * (q - 3) / 720.0;
-            default: return 0;
+    /**
+     * Bessel coefficients using general term formula.
+     *
+     * For k = 1: product = t
+     * For even k = 2m (m >= 1):
+     *   product = (t - m) * Prod_{i=-(m-1)}^{m-1} (t + i) / k!
+     * For odd k = 2m+1 (m >= 1):
+     *   product = (t - 1/2) * (t - m) * Prod_{i=-(m-1)}^{m-1} (t + i) / k!
+     */
+    private static double besselCoeff(double t, int k) {
+        if (k == 1) {
+            return t;
         }
+
+        double prod = 1.0;
+
+        if (k % 2 == 0) {
+            // even k = 2m
+            int m = k / 2;
+            for (int i = -(m - 1); i <= m - 1; i++) {
+                prod *= (t + i);
+            }
+            prod *= (t - m);
+        } else {
+            // odd k = 2m + 1 (m >= 1)
+            int m = (k - 1) / 2;
+            prod *= (t - 0.5);
+            for (int i = -(m - 1); i <= m - 1; i++) {
+                prod *= (t + i);
+            }
+            prod *= (t - m);
+        }
+
+        return prod / CentralDifferenceUtils.factorial(k);
     }
+
 }

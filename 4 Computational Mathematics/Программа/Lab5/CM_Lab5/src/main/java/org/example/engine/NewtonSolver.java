@@ -19,7 +19,6 @@ public class NewtonSolver {
         return table;
     }
 
-    /** Newton 1st interpolation formula (forward) */
     public static InterpolationResult interpolateForward(double[] x, double[] y,
                                                          double xTarget) {
         double[][] dd = buildDividedDiffTable(x, y);
@@ -34,11 +33,10 @@ public class NewtonSolver {
 
         double[][] fd = FiniteDifferenceTable.build(y);
         return new InterpolationResult(
-                "Newton Divided Diff (Forward)", xTarget, result, fd, n - 1
+                "Ньютон (вперёд)", xTarget, result, fd, n - 1
         );
     }
 
-    /** Newton 2nd interpolation formula (backward) */
     public static InterpolationResult interpolateBackward(double[] x, double[] y,
                                                           double xTarget) {
         double[][] dd = buildDividedDiffTable(x, y);
@@ -53,19 +51,8 @@ public class NewtonSolver {
 
         double[][] fd = FiniteDifferenceTable.build(y);
         return new InterpolationResult(
-                "Newton Divided Diff (Backward)", xTarget, result, fd, n - 1
+                "Ньютон (назад)", xTarget, result, fd, n - 1
         );
     }
 
-    /** Auto-select forward or backward based on position in table */
-    public static InterpolationResult interpolate(double[] x, double[] y,
-                                                  double xTarget) {
-        int n = x.length;
-        int mid = n / 2;
-        if (xTarget <= x[mid]) {
-            return interpolateForward(x, y, xTarget);
-        } else {
-            return interpolateBackward(x, y, xTarget);
-        }
-    }
 }

@@ -51,7 +51,7 @@ public class ChartPanel extends JPanel {
                 RenderingHints.VALUE_ANTIALIAS_ON);
 
         if (data == null || data.size() == 0) {
-            g2.drawString("No data to display", getWidth() / 2 - 40,
+            g2.drawString("Нет данных для отображения", getWidth() / 2 - 55,
                     getHeight() / 2);
             return;
         }
@@ -99,7 +99,7 @@ public class ChartPanel extends JPanel {
 
         // Draw axis labels
         g2.setColor(Color.BLACK);
-        g2.setFont(new Font("SansSerif", Font.PLAIN, 10));
+        g2.setFont(new Font("Segoe UI", Font.PLAIN, 10));
         for (int i = 0; i <= 5; i++) {
             double val = xMin + (xMax - xMin) * i / 5;
             int gx = PADDING + i * plotW / 5;
@@ -169,9 +169,9 @@ public class ChartPanel extends JPanel {
 
         // Legend
         int legendY = PADDING + 12;
-        g2.setFont(new Font("SansSerif", Font.PLAIN, 11));
+        g2.setFont(new Font("Segoe UI", Font.PLAIN, 11));
         g2.setColor(new Color(20, 20, 20));
-        g2.drawString("Nodes", LEGEND_X, legendY);
+        g2.drawString("Узлы", LEGEND_X, legendY);
         legendY += 15;
         for (int i = 0; i < results.size(); i++) {
             g2.setColor(CURVE_COLORS[i % CURVE_COLORS.length]);
@@ -179,7 +179,7 @@ public class ChartPanel extends JPanel {
             legendY += 15;
         }
         g2.setColor(new Color(200, 30, 30));
-        g2.drawString("X1, X2 targets", LEGEND_X, legendY);
+        g2.drawString("X1, X2", LEGEND_X, legendY);
     }
 
     /** Quick interpolation using Lagrange for chart drawing */

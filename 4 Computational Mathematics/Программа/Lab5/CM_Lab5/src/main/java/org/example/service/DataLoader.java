@@ -12,7 +12,7 @@ import java.util.function.Function;
 public class DataLoader {
 
     public static InputData fromArrays(double[] x, double[] y) {
-        return new InputData(x, y, "Manual input");
+        return new InputData(x, y, "Ручной ввод");
     }
 
     public static InputData fromFile(String filePath) throws IOException {
@@ -34,7 +34,7 @@ public class DataLoader {
 
         double[] x = xList.stream().mapToDouble(Double::doubleValue).toArray();
         double[] y = yList.stream().mapToDouble(Double::doubleValue).toArray();
-        return new InputData(x, y, "File: " + filePath);
+        return new InputData(x, y, "Файл: " + filePath);
     }
 
     public static InputData fromFunction(Function<Double, Double> func,
@@ -46,6 +46,6 @@ public class DataLoader {
             x[i] = a + i * h;
             y[i] = func.apply(x[i]);
         }
-        return new InputData(x, y, "Function on [" + a + ", " + b + "], n=" + n);
+        return new InputData(x, y, "Функция на [" + a + ", " + b + "], n=" + n);
     }
 }

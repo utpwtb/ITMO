@@ -1,5 +1,6 @@
 package org.example.engine;
 
+import org.example.engine.util.CentralDifferenceUtils;
 import org.example.model.InterpolationResult;
 
 public class StirlingSolver {
@@ -11,26 +12,21 @@ public class StirlingSolver {
         double[][] ft = FiniteDifferenceTable.build(y);
         double h = x[1] - x[0];
         int c = n / 2;
-        double q = (xTarget - x[c]) / h;
+        double t = (xTarget - x[c]) / h;
 
-        double gf = gaussForwardEval(ft, c, q, n);
-        double gb = gaussBackwardEval(ft, c, q, n);
+        double gf = gaussForwardEval(ft, c, t, n);
+        double gb = gaussBackwardEval(ft, c, t, n);
         double result = (gf + gb) / 2.0;
 
         return new InterpolationResult(
-                "Stirling Formula", xTarget, result, ft, n - 1);
+                "Формула Стирлинга", xTarget, result, ft, n - 1);
     }
 
-    private static double gaussForwardEval(double[][] ft, int c, double q, int n) {
+    private static double gaussForwardEval(double[][] ft, int c, double t, int n) {
         double result = ft[c][0];
         for (int k = 1; k < n; k++) {
-            double coeff = gaussForwardCoeff(q, k);
-            int row;
-            if (k % 2 == 1) {
-                row = c - (k - 1) / 2;
-            } else {
-                row = c - k / 2;
-            }
+            double coeff = CentralDifferenceUtils.gaussForwardCoeff(t, k);
+            int row = (k % 2 == 1) ? c - (k - 1) / 2 : c - k / 2;
             if (row >= 0 && row < n - k) {
                 result += coeff * ft[row][k];
             }
@@ -38,60 +34,15 @@ public class StirlingSolver {
         return result;
     }
 
-    private static double gaussBackwardEval(double[][] ft, int c, double q, int n) {
+    private static double gaussBackwardEval(double[][] ft, int c, double t, int n) {
         double result = ft[c][0];
         for (int k = 1; k < n; k++) {
-            double coeff = gaussBackwardCoeff(q, k);
-            int row;
-            if (k % 2 == 1) {
-                row = c - (k + 1) / 2;
-            } else {
-                row = c - k / 2;
-            }
+            double coeff = CentralDifferenceUtils.gaussBackwardCoeff(t, k);
+            int row = (k % 2 == 1) ? c - (k + 1) / 2 : c - k / 2;
             if (row >= 0 && row < n - k) {
                 result += coeff * ft[row][k];
             }
         }
         return result;
-    }
-
-    private static double gaussForwardCoeff(double q, int k) {
-        double prod = 1.0;
-        if (k % 2 == 1) {
-            int m = (k - 1) / 2;
-            for (int s = -m; s <= m; s++) {
-                prod *= (q + s);
-            }
-        } else {
-            int start = -k / 2;
-            int end = k / 2 - 1;
-            for (int s = start; s <= end; s++) {
-                prod *= (q + s);
-            }
-        }
-        return prod / factorial(k);
-    }
-
-    private static double gaussBackwardCoeff(double q, int k) {
-        double prod = 1.0;
-        if (k % 2 == 1) {
-            int m = (k - 1) / 2;
-            for (int s = -m; s <= m; s++) {
-                prod *= (q + s);
-            }
-        } else {
-            int start = -(k / 2 - 1);
-            int end = k / 2;
-            for (int s = start; s <= end; s++) {
-                prod *= (q + s);
-            }
-        }
-        return prod / factorial(k);
-    }
-
-    private static double factorial(int k) {
-        double f = 1.0;
-        for (int i = 2; i <= k; i++) f *= i;
-        return f;
     }
 }
