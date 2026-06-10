@@ -3,12 +3,6 @@ package com.itmo.jmx;
 import javax.management.Notification;
 import javax.management.NotificationBroadcasterSupport;
 
-/**
- * MBean implementation that tracks total points and missed points.
- * Sends a JMX {@link Notification} when the user accumulates 3 consecutive misses.
- *
- * <p>ObjectName: {@code com.itmo:type=PointsStatistics}</p>
- */
 public class PointsStatistics
         extends NotificationBroadcasterSupport
         implements PointsStatisticsMBean {
@@ -19,14 +13,12 @@ public class PointsStatistics
     private int consecutiveMisses;
     private long notificationSequence;
 
-    /** Singleton reference set in constructor for convenient access from managed beans. */
     private static PointsStatistics instance;
 
     public PointsStatistics() {
         instance = this;
     }
 
-    /** Returns the singleton instance registered in the MBean server. */
     public static PointsStatistics getInstance() {
         return instance;
     }
@@ -69,12 +61,6 @@ public class PointsStatistics
         consecutiveMisses = 0;
     }
 
-    // ---------- Business logic ----------
-
-    /**
-     * Called by {@code ResultsBean.addPoint()} every time a point is checked.
-     * Updates counters and fires a notification on every third consecutive miss.
-     */
     public void recordPoint(boolean hit) {
         totalPoints++;
         if (hit) {

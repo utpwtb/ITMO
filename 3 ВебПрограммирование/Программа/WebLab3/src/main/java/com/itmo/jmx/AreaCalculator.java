@@ -1,12 +1,5 @@
 package com.itmo.jmx;
 
-/**
- * MBean implementation that calculates the total area of the target figure.
- *
- * <p>The area is computed from the current/shared radius R.</p>
- *
- * <p>ObjectName: {@code com.itmo:type=AreaCalculator}</p>
- */
 public class AreaCalculator implements AreaCalculatorMBean {
 
     private static final String DESCRIPTION =
@@ -16,10 +9,6 @@ public class AreaCalculator implements AreaCalculatorMBean {
                     + "  IV четверть (x>=0, y<=0):  прямоугольник               S3 = R²\n"
                     + "Общая площадь S = R² × (6 + π) / 4 ≈ R² × 2.2854";
 
-    /**
-     * Shared radius value set by the application when a point check is performed.
-     * Defaults to 1 (the minimum allowed R).
-     */
     private volatile double currentR = 1.0;
 
     private static AreaCalculator instance;

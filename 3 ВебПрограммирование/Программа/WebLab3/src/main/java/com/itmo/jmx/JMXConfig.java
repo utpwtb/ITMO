@@ -8,10 +8,6 @@ import java.lang.management.ManagementFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Registers application MBeans with the platform MBean server on startup
- * and unregisters them on shutdown.
- */
 @WebListener
 public class JMXConfig implements ServletContextListener {
 
