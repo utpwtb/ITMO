@@ -23,7 +23,7 @@ public class MainFrame extends JFrame {
     private final JSplitPane bottomSplit;
 
     public MainFrame() {
-        setTitle("Lab 6 — Numerical Solution of ODEs (Variant 14)");
+        setTitle("Лабораторная работа №6 — Численное решение ОДУ");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -57,13 +57,13 @@ public class MainFrame extends JFrame {
 
             if (xn <= x0) {
                 JOptionPane.showMessageDialog(this,
-                        "xn must be greater than x0", "Input Error",
+                        "xn должно быть больше x0", "Ошибка ввода",
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if (h <= 0) {
                 JOptionPane.showMessageDialog(this,
-                        "h must be positive", "Input Error",
+                        "h должно быть положительным", "Ошибка ввода",
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -89,7 +89,7 @@ public class MainFrame extends JFrame {
 
             if (results.isEmpty()) {
                 JOptionPane.showMessageDialog(this,
-                        "Select at least one method", "Input Error",
+                        "Выберите хотя бы один метод", "Ошибка ввода",
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -125,12 +125,12 @@ public class MainFrame extends JFrame {
 
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this,
-                    "Invalid numeric input: " + ex.getMessage(),
-                    "Input Error", JOptionPane.ERROR_MESSAGE);
+                    "Некорректный числовой ввод: " + ex.getMessage(),
+                    "Ошибка ввода", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this,
-                    "Error: " + ex.getMessage(),
-                    "Computation Error", JOptionPane.ERROR_MESSAGE);
+                    "Ошибка: " + ex.getMessage(),
+                    "Ошибка вычисления", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

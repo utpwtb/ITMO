@@ -15,5 +15,5 @@ public class ImprovedEulerMethod extends SingleStepMethod {
     protected int order() { return 2; }
 
     @Override
-    protected String methodName() { return "Modified Euler"; }
+    protected String methodName() { return "Модифицированный Эйлер"; }
 }

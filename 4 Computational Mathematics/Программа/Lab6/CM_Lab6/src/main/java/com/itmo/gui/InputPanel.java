@@ -23,7 +23,7 @@ public class InputPanel extends JPanel {
 
     public InputPanel() {
         setLayout(new GridBagLayout());
-        setBorder(BorderFactory.createTitledBorder("Input Data"));
+        setBorder(BorderFactory.createTitledBorder("Входные данные"));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(4, 6, 4, 6);
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -31,7 +31,7 @@ public class InputPanel extends JPanel {
         // Row 0: ODE selection
         gbc.gridy = 0;
         gbc.gridx = 0;
-        add(new JLabel("Equation:"), gbc);
+        add(new JLabel("Уравнение:"), gbc);
         gbc.gridx = 1;
         gbc.gridwidth = 5;
         odeCombo = new JComboBox<>();
@@ -80,19 +80,19 @@ public class InputPanel extends JPanel {
         // Row 3: methods and button
         gbc.gridy = 3;
         gbc.gridx = 0;
-        add(new JLabel("Methods:"), gbc);
+        add(new JLabel("Методы:"), gbc);
         gbc.gridx = 1;
-        eulerCheck = new JCheckBox("Modified Euler", true);
+        eulerCheck = new JCheckBox("Модифицированный Эйлер", true);
         add(eulerCheck, gbc);
         gbc.gridx = 2;
-        rk4Check = new JCheckBox("Runge-Kutta 4", true);
+        rk4Check = new JCheckBox("Рунге-Кутта 4", true);
         add(rk4Check, gbc);
         gbc.gridx = 3;
-        milneCheck = new JCheckBox("Milne", true);
+        milneCheck = new JCheckBox("Милн", true);
         add(milneCheck, gbc);
 
         gbc.gridx = 5;
-        computeButton = new JButton("Compute");
+        computeButton = new JButton("Вычислить");
         add(computeButton, gbc);
     }
 

@@ -35,7 +35,7 @@ public class PlotPanel extends JPanel {
         this.results = results;
         this.exactX = exactX;
         this.exactY = exactY;
-        setBorder(BorderFactory.createTitledBorder("Plot"));
+        setBorder(BorderFactory.createTitledBorder("График"));
         setPreferredSize(new Dimension(450, 450));
         computeBounds();
     }
@@ -44,7 +44,7 @@ public class PlotPanel extends JPanel {
         this.results = null;
         this.exactX = null;
         this.exactY = null;
-        setBorder(BorderFactory.createTitledBorder("Plot"));
+        setBorder(BorderFactory.createTitledBorder("График"));
         setPreferredSize(new Dimension(450, 450));
     }
 
@@ -73,7 +73,7 @@ public class PlotPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (results == null || exactX == null) {
-            g.drawString("Press 'Compute' to display plot", 30, 30);
+            g.drawString("Нажмите 'Вычислить' для отображения графика", 30, 30);
             return;
         }
         computeBounds();
@@ -172,7 +172,7 @@ public class PlotPanel extends JPanel {
         for (int m = 0; m < results.size(); m++) {
             names[m] = results.get(m).getMethodName();
         }
-        names[results.size()] = "Exact solution";
+        names[results.size()] = "Точное решение";
         for (int i = 0; i < names.length; i++) {
             g2.setColor(i < results.size() ? COLORS[i % 3] : COLORS[3]);
             g2.setStroke(i < results.size() ? SOLID : DASHED);

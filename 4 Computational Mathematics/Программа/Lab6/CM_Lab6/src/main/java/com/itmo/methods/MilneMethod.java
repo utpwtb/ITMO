@@ -53,7 +53,7 @@ public class MilneMethod {
 
         double maxErr = exactError(ode, x, y, x0, y0);
 
-        return new SolveResult(x, y, maxErr, "Milne", "exact");
+        return new SolveResult(x, y, maxErr, "Милн", "exact");
     }
 
     public static double exactError(ODE ode, double[] x, double[] y,

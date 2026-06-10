@@ -17,5 +17,5 @@ public class RungeKuttaMethod extends SingleStepMethod {
     protected int order() { return 4; }
 
     @Override
-    protected String methodName() { return "Runge-Kutta 4"; }
+    protected String methodName() { return "Рунге-Кутта 4"; }
 }

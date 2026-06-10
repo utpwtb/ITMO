@@ -17,7 +17,7 @@ public class ResultTablePanel extends JPanel {
 
     public ResultTablePanel() {
         setLayout(new BorderLayout());
-        setBorder(BorderFactory.createTitledBorder("Results"));
+        setBorder(BorderFactory.createTitledBorder("Результаты"));
 
         tableModel = new DefaultTableModel();
         table = new JTable(tableModel);
@@ -30,7 +30,7 @@ public class ResultTablePanel extends JPanel {
         errorArea.setEditable(false);
         errorArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
         JScrollPane errorScroll = new JScrollPane(errorArea);
-        errorScroll.setBorder(BorderFactory.createTitledBorder("Error Estimates"));
+        errorScroll.setBorder(BorderFactory.createTitledBorder("Оценки погрешности"));
         add(errorScroll, BorderLayout.SOUTH);
     }
 
@@ -54,7 +54,7 @@ public class ResultTablePanel extends JPanel {
         for (int m = 0; m < allY.length; m++) {
             colNames[2 + m] = methodNames[m];
         }
-        colNames[cols - 1] = "Exact";
+        colNames[cols - 1] = "Точное";
 
         for (String name : colNames) {
             tableModel.addColumn(name);
@@ -79,9 +79,9 @@ public class ResultTablePanel extends JPanel {
         for (int i = 0; i < methodNames.length; i++) {
             sb.append(methodNames[i]).append(":\n");
             if ("runge".equals(errorTypes[i])) {
-                sb.append("  Runge rule estimate: ").append(String.format("%.8f", errors[i])).append("\n");
+                sb.append("  Оценка по правилу Рунге: ").append(String.format("%.8f", errors[i])).append("\n");
             } else {
-                sb.append("  max|y_exact - y_i| = ").append(String.format("%.8f", errors[i])).append("\n");
+                sb.append("  max|y_точн - y_i| = ").append(String.format("%.8f", errors[i])).append("\n");
             }
         }
         errorArea.setText(sb.toString());
