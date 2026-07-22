@@ -1,0 +1,19 @@
+# 内存检查配置 - 逐步执行以验证内存中存放的是指令
+# 用法: wrench m68k/not.s --isa m68k -c memory-inspect.yaml
+#
+# 使用 -S 标志可直接查看完整内存布局(包含原始字节):
+#   wrench m68k/not.s --isa m68k -S
+
+name: memory inspection - first 100 cells
+limit: 200
+memory_size: 0x1000
+memory_mapped_io:
+  0x80: [1]
+  0x84: []
+reports:
+  - name: Step-by-step execution
+    slice: all
+    view: |
+      PC={pc:hex} | {instruction}
+      D0={D0:hex} D1={D1:hex} A0={A0:hex} A1={A1:hex}
+      ---

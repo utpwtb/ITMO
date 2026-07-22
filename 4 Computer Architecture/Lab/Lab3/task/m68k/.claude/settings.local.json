@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la *.yaml)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(docker run:*)"
+    ]
+  }
+}

@@ -38,16 +38,16 @@ public class PointBean {
         }
 
         //ПРОБЛЕМА: конкатенация String в цикле
-        /*String debugLog = "";
+        String debugLog = "";
         for (int i = 0; i < 50000; i++) {
             debugLog += "Point[" + i + "]=(" + x + "," + y + "," + r + ") ";
-        }*/
+        }
 
-        StringBuilder debugLog = new StringBuilder();
+        /*StringBuilder debugLog = new StringBuilder();
         for (int i = 0; i < 50000; i++) {
             debugLog.append("Point[").append(i).append("]=(")
                     .append(x).append(",").append(y).append(",").append(r).append(") ");
-        }
+        }*/
 
 
         long startTime = System.currentTimeMillis();
