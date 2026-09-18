@@ -1,0 +1,31 @@
+% Компиляция: xelatex stage1_report.tex (два запуска для оглавления и ссылок).
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{CMU Serif}}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\setsansfont{CMU Sans Serif}}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{amsmath,amssymb,array,longtable,booktabs,enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds}
+\usepackage{setspace}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black,
+ pdftitle={Онлайн-запись клиентов в салон красоты. Этап 1},pdfauthor={Чэнь Хаолинь}}
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+\setlength{\emergencystretch}{3em}
+\setlist{nosep,leftmargin=*}
+\renewcommand{\arraystretch}{1.15}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\ucfield}[2]{\par\noindent\textbf{#1:} #2\par}
+% Главный файл: пакеты, оформление, титульный лист, оглавление и основной текст.
+\begin{document}
+\input{titlepage.tex}
+\setcounter{page}{2}
+\tableofcontents
+\clearpage
+\input{body.tex}
+\end{document}
