@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+ <persistence-unit name="movies" transaction-type="RESOURCE_LOCAL">
+  <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+  <class>ru.itmo.movie.domain.Movie</class><class>ru.itmo.movie.domain.Coordinates</class>
+  <class>ru.itmo.movie.domain.Person</class><class>ru.itmo.movie.domain.Location</class>
+  <class>ru.itmo.movie.domain.AppState</class>
+  <class>ru.itmo.movie.domain.ZonedTimeConverter</class>
+  <exclude-unlisted-classes>true</exclude-unlisted-classes>
+  <properties><property name="eclipselink.weaving" value="false"/><property name="eclipselink.cache.shared.default" value="false"/><property name="eclipselink.logging.level" value="WARNING"/></properties>
+ </persistence-unit>
+</persistence>

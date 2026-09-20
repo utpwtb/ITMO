@@ -1,0 +1,232 @@
+{
+  "unary_facts": 24,
+  "binary_facts": 15,
+  "prolog_rules": 7,
+  "classes": 15,
+  "object_properties": 7,
+  "named_individuals": 17,
+  "consistent": true,
+  "reasoner": "Pellet",
+  "cross_checks": 7,
+  "tests": [
+    {
+      "name": "combatant",
+      "query": "SELECT ?x WHERE {?x a :Combatant}",
+      "actual": [
+        [
+          "aria"
+        ],
+        [
+          "borin"
+        ],
+        [
+          "celia"
+        ]
+      ],
+      "expected": [
+        [
+          "aria"
+        ],
+        [
+          "borin"
+        ],
+        [
+          "celia"
+        ]
+      ],
+      "pass_test": true
+    },
+    {
+      "name": "scout",
+      "query": "SELECT ?x WHERE {?x a :Scout}",
+      "actual": [
+        [
+          "elin"
+        ],
+        [
+          "finn"
+        ]
+      ],
+      "expected": [
+        [
+          "elin"
+        ],
+        [
+          "finn"
+        ]
+      ],
+      "pass_test": true
+    },
+    {
+      "name": "armed",
+      "query": "SELECT ?x WHERE {?x a :Armed}",
+      "actual": [
+        [
+          "aria"
+        ],
+        [
+          "borin"
+        ],
+        [
+          "celia"
+        ],
+        [
+          "darin"
+        ],
+        [
+          "elin"
+        ],
+        [
+          "finn"
+        ]
+      ],
+      "expected": [
+        [
+          "aria"
+        ],
+        [
+          "borin"
+        ],
+        [
+          "celia"
+        ],
+        [
+          "darin"
+        ],
+        [
+          "elin"
+        ],
+        [
+          "finn"
+        ]
+      ],
+      "pass_test": true
+    },
+    {
+      "name": "skilled_for",
+      "query": "SELECT ?x WHERE {?x :skilledFor :tower}",
+      "actual": [
+        [
+          "celia"
+        ]
+      ],
+      "expected": [
+        [
+          "celia"
+        ]
+      ],
+      "pass_test": true
+    },
+    {
+      "name": "ready_for",
+      "query": "SELECT ?x ?q WHERE {?x :readyFor ?q}",
+      "actual": [
+        [
+          "aria",
+          "ruins"
+        ],
+        [
+          "celia",
+          "tower"
+        ],
+        [
+          "finn",
+          "forest"
+        ]
+      ],
+      "expected": [
+        [
+          "aria",
+          "ruins"
+        ],
+        [
+          "celia",
+          "tower"
+        ],
+        [
+          "finn",
+          "forest"
+        ]
+      ],
+      "pass_test": true
+    },
+    {
+      "name": "guildmate",
+      "query": "SELECT ?x ?y WHERE {?x :guildmate ?y}",
+      "actual": [
+        [
+          "aria",
+          "celia"
+        ],
+        [
+          "celia",
+          "aria"
+        ]
+      ],
+      "expected": [
+        [
+          "aria",
+          "celia"
+        ],
+        [
+          "celia",
+          "aria"
+        ]
+      ],
+      "pass_test": true
+    },
+    {
+      "name": "safe_character",
+      "query": "SELECT ?x WHERE {?x a :SafeCharacter}",
+      "actual": [
+        [
+          "aria"
+        ],
+        [
+          "celia"
+        ],
+        [
+          "darin"
+        ],
+        [
+          "elin"
+        ],
+        [
+          "finn"
+        ]
+      ],
+      "expected": [
+        [
+          "aria"
+        ],
+        [
+          "celia"
+        ],
+        [
+          "darin"
+        ],
+        [
+          "elin"
+        ],
+        [
+          "finn"
+        ]
+      ],
+      "pass_test": true
+    },
+    {
+      "name": "negative_ready",
+      "query": "SELECT ?q WHERE {:borin :readyFor ?q}",
+      "actual": [],
+      "expected": [],
+      "pass_test": true
+    },
+    {
+      "name": "no_self_guildmate",
+      "query": "SELECT ?x WHERE {?x :guildmate ?x}",
+      "actual": [],
+      "expected": [],
+      "pass_test": true
+    }
+  ]
+}

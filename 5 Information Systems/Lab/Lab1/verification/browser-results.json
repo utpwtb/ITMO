@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-20T16:39:01.555Z",
+  "results": [
+    {
+      "name": "Unauthenticated API is rejected",
+      "passed": true
+    },
+    {
+      "name": "Wrong password is rejected",
+      "passed": true
+    },
+    {
+      "name": "Login returns CSRF token",
+      "passed": true
+    },
+    {
+      "name": "Mutation without CSRF is rejected",
+      "passed": true
+    },
+    {
+      "name": "Create coordinates",
+      "passed": true
+    },
+    {
+      "name": "Invalid movie yields informative error",
+      "passed": true
+    },
+    {
+      "name": "Second authenticated browser receives create automatically",
+      "passed": true
+    },
+    {
+      "name": "Full int64 budget survives browser/API round trip",
+      "passed": true
+    },
+    {
+      "name": "Details display related coordinates",
+      "passed": true
+    },
+    {
+      "name": "HTTP update succeeds",
+      "passed": true
+    },
+    {
+      "name": "Stale browser edit rejected without losing form input",
+      "passed": true
+    },
+    {
+      "name": "Second browser receives update automatically",
+      "passed": true
+    },
+    {
+      "name": "Special operations interface works",
+      "passed": true
+    },
+    {
+      "name": "Delete movie succeeds",
+      "passed": true
+    },
+    {
+      "name": "Second browser receives delete automatically",
+      "passed": true
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "passed": true
+    }
+  ]
+}

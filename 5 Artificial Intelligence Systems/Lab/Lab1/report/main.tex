@@ -1,0 +1,49 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\defaultfontfeatures{Ligatures=TeX}
+% Local copies of the template fonts allow compilation on another computer.
+\setmainfont{cmunrm.otf}[Path=fonts/,BoldFont=cmunbx.otf,
+ ItalicFont=cmunti.otf,BoldItalicFont=cmunbi.otf]
+\setmonofont{cmuntt.otf}[Path=fonts/,BoldFont=cmuntb.otf,
+ ItalicFont=cmunit.otf,BoldItalicFont=cmuntx.otf]
+\newfontfamily\cyrillicfonttt{cmuntt.otf}[Path=fonts/,
+ BoldFont=cmuntb.otf,ItalicFont=cmunit.otf,BoldItalicFont=cmuntx.otf]
+\usepackage{graphicx,float,tikz,setspace}
+\usetikzlibrary{arrows.meta,positioning}
+\setlength{\parskip}{0.2\baselineskip}
+\setlength{\parindent}{0pt}
+\usepackage{xcolor,listings,tcolorbox}
+\tcbuselibrary{listings,breakable}
+\usepackage{amsmath,amssymb,booktabs,longtable,tabularx,array,enumitem}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks]{hyperref}
+\urlstyle{same}
+\setlength{\emergencystretch}{2em}
+\lstset{
+ basicstyle=\ttfamily\scriptsize,
+ keywordstyle=\color{blue}\bfseries,
+ commentstyle=\color{gray}\itshape,
+ stringstyle=\color{red},showstringspaces=false,
+ breaklines=true,breakindent=0pt,breakautoindent=false,
+ postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
+ tabsize=2,frame=single,backgroundcolor=\color{gray!8},
+ numbers=left,numberstyle=\tiny\color{gray},numbersep=5pt,
+ columns=fullflexible,keepspaces=true,xleftmargin=8pt,
+ aboveskip=8pt,belowskip=8pt
+}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\TeacherName}{Болдырева Елена Александровна}
+\begin{document}
+\hypersetup{pageanchor=false}
+\include{title}
+\hypersetup{pageanchor=true}
+\setstretch{0.95}
+\tableofcontents
+\newpage
+\setstretch{1}
+\include{1}
+\end{document}

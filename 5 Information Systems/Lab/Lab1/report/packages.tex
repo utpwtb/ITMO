@@ -1,0 +1,19 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small,pkg/.style={draw,align=center,minimum width=5.4cm,minimum height=1.45cm,fill=gray!5},dep/.style={dashed,-{Stealth},thick}]
+\node[pkg] (ui) at (0,0) {\textit{«artifact»}\; webapp\\index.html, app.js, style.css};
+\node[pkg] (web) at (0,-2.6) {\textit{«package»}\; web\\MovieResource, AuthResource\\AuthFilter, ErrorMapper};
+\node[pkg] (svc) at (0,-5.4) {\textit{«package»}\; service\\MovieService, Problem};
+\node[pkg] (repo) at (0,-8) {\textit{«package»}\; persistence\\Database};
+\node[pkg,minimum width=4.4cm] (model) at (7,-5.4) {\textit{«package»}\; domain\\Movie, Person, Coordinates\\Location, AppState, enum\\конвертеры};
+\node[pkg] (db) at (0,-10.6) {\textit{«database»}\; PostgreSQL\\movie, person, coordinates\\location, app\_state};
+\draw[dep] (ui)--node[right]{HTTP / JSON} (web);
+\draw[dep] (web)--node[right]{CDI @Inject} (svc);
+\draw[dep] (svc)--node[right]{read / write} (repo);
+\draw[dep] (repo)--node[right]{JPA / EclipseLink / JDBC} (db);
+\draw[dep] (svc)--(model);
+\draw[dep] (web.east) -| (model.north);
+\draw[dep] (repo.east) -| (model.south);
+\end{tikzpicture}
+\caption{UML-диаграмма пакетов и внешних компонентов. Зависимости направлены от использующего компонента к используемому.}
+\end{figure}

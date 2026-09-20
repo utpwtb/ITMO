@@ -1,0 +1,35 @@
+# combatant
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?x WHERE {?x a :Combatant}
+
+# scout
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?x WHERE {?x a :Scout}
+
+# armed
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?x WHERE {?x a :Armed}
+
+# skilled_for
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?x WHERE {?x :skilledFor :tower}
+
+# ready_for
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?x ?q WHERE {?x :readyFor ?q}
+
+# guildmate
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?x ?y WHERE {?x :guildmate ?y}
+
+# safe_character
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?x WHERE {?x a :SafeCharacter}
+
+# negative_ready
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?q WHERE {:borin :readyFor ?q}
+
+# no_self_guildmate
+PREFIX : <https://example.org/rpg-lab1#>
+SELECT ?x WHERE {?x :guildmate ?x}

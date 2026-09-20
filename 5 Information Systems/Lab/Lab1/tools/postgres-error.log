@@ -1,0 +1,133 @@
+2026-09-20 19:11:54.782 MSK [30564] LOG:  starting PostgreSQL 17.4 on x86_64-windows, compiled by msvc-19.42.34436, 64-bit
+2026-09-20 19:11:54.784 MSK [30564] LOG:  listening on IPv4 address "127.0.0.1", port 55441
+2026-09-20 19:11:54.931 MSK [12252] LOG:  database system was shut down at 2026-09-20 19:08:40 MSK
+2026-09-20 19:11:55.062 MSK [30564] LOG:  database system is ready to accept connections
+2026-09-20 19:16:54.857 MSK [31940] LOG:  checkpoint starting: time
+2026-09-20 19:18:46.836 MSK [31940] LOG:  checkpoint complete: wrote 1034 buffers (6.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=111.813 s, sync=0.158 s, total=111.979 s; sync files=338, longest=0.005 s, average=0.001 s; distance=4981 kB, estimate=4981 kB; lsn=0/1A4F998, redo lsn=0/1A4F908
+2026-09-20 19:26:54.858 MSK [31940] LOG:  checkpoint starting: time
+2026-09-20 19:28:38.593 MSK [33672] ERROR:  operator does not exist: bigint <> character varying at character 80
+2026-09-20 19:28:38.593 MSK [33672] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2026-09-20 19:28:38.593 MSK [33672] STATEMENT:  SELECT COUNT(ID) FROM person WHERE ((PASSPORTID = $1) AND (($2 IS NULL) OR (ID <> $3)))
+2026-09-20 19:28:38.613 MSK [33672] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2026-09-20 19:28:38.613 MSK [33672] STATEMENT:  SELECT 1
+2026-09-20 19:28:40.466 MSK [41140] ERROR:  new row for relation "coordinates" violates check constraint "coordinates_x_check"
+2026-09-20 19:28:40.466 MSK [41140] DETAIL:  Failing row contains (1, 0, 827, 1).
+2026-09-20 19:28:40.466 MSK [41140] STATEMENT:  INSERT INTO coordinates(x,y) VALUES(827,1)
+2026-09-20 19:28:40.472 MSK [41140] ERROR:  new row for relation "person" violates check constraint "person_name_check"
+2026-09-20 19:28:40.472 MSK [41140] DETAIL:  Failing row contains (1, 0, , null, null, null, 1990-01-01T00:00Z, null, null, x).
+2026-09-20 19:28:40.472 MSK [41140] STATEMENT:  INSERT INTO person(name,birthday,passportid) VALUES('', '1990-01-01T00:00Z','x')
+2026-09-20 19:28:40.476 MSK [41140] ERROR:  new row for relation "location" violates check constraint "location_y_check"
+2026-09-20 19:28:40.476 MSK [41140] DETAIL:  Failing row contains (1, 0, 1, NaN, x).
+2026-09-20 19:28:40.476 MSK [41140] STATEMENT:  INSERT INTO location(x,y,name) VALUES(1,'NaN','x')
+2026-09-20 19:28:40.480 MSK [41140] ERROR:  null value in column "x" of relation "coordinates" violates not-null constraint
+2026-09-20 19:28:40.480 MSK [41140] DETAIL:  Failing row contains (2, 0, null, 1).
+2026-09-20 19:28:40.480 MSK [41140] STATEMENT:  INSERT INTO coordinates(x,y) VALUES(NULL,1)
+2026-09-20 19:28:40.631 MSK [38244] ERROR:  operator does not exist: bigint <> character varying at character 80
+2026-09-20 19:28:40.631 MSK [38244] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2026-09-20 19:28:40.631 MSK [38244] STATEMENT:  SELECT COUNT(ID) FROM person WHERE ((PASSPORTID = $1) AND (($2 IS NULL) OR (ID <> $3)))
+2026-09-20 19:28:40.634 MSK [38244] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2026-09-20 19:28:40.634 MSK [38244] STATEMENT:  SELECT 1
+2026-09-20 19:28:41.225 MSK [37128] ERROR:  operator does not exist: bigint <> character varying at character 80
+2026-09-20 19:28:41.225 MSK [37128] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2026-09-20 19:28:41.225 MSK [37128] STATEMENT:  SELECT COUNT(ID) FROM person WHERE ((PASSPORTID = $1) AND (($2 IS NULL) OR (ID <> $3)))
+2026-09-20 19:28:41.230 MSK [37128] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2026-09-20 19:28:41.230 MSK [37128] STATEMENT:  SELECT 1
+2026-09-20 19:28:44.896 MSK [32072] ERROR:  operator does not exist: bigint <> character varying at character 80
+2026-09-20 19:28:44.896 MSK [32072] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2026-09-20 19:28:44.896 MSK [32072] STATEMENT:  SELECT COUNT(ID) FROM person WHERE ((PASSPORTID = $1) AND (($2 IS NULL) OR (ID <> $3)))
+2026-09-20 19:28:44.900 MSK [32072] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2026-09-20 19:28:44.900 MSK [32072] STATEMENT:  SELECT 1
+2026-09-20 19:28:49.534 MSK [31940] LOG:  checkpoint complete: wrote 974 buffers (5.9%); 1 WAL file(s) added, 0 removed, 0 recycled; write=112.659 s, sync=0.413 s, total=114.676 s; sync files=1056, longest=0.031 s, average=0.001 s; distance=4552 kB, estimate=4938 kB; lsn=0/1FAFD20, redo lsn=0/1EC1BF0
+2026-09-20 19:30:48.981 MSK [32420] ERROR:  new row for relation "coordinates" violates check constraint "coordinates_x_check"
+2026-09-20 19:30:48.981 MSK [32420] DETAIL:  Failing row contains (1, 0, 827, 1).
+2026-09-20 19:30:48.981 MSK [32420] STATEMENT:  INSERT INTO coordinates(x,y) VALUES(827,1)
+2026-09-20 19:30:49.023 MSK [32420] ERROR:  new row for relation "person" violates check constraint "person_name_check"
+2026-09-20 19:30:49.023 MSK [32420] DETAIL:  Failing row contains (1, 0, , null, null, null, 1990-01-01T00:00Z, null, null, x).
+2026-09-20 19:30:49.023 MSK [32420] STATEMENT:  INSERT INTO person(name,birthday,passportid) VALUES('', '1990-01-01T00:00Z','x')
+2026-09-20 19:30:49.030 MSK [32420] ERROR:  new row for relation "location" violates check constraint "location_y_check"
+2026-09-20 19:30:49.030 MSK [32420] DETAIL:  Failing row contains (1, 0, 1, NaN, x).
+2026-09-20 19:30:49.030 MSK [32420] STATEMENT:  INSERT INTO location(x,y,name) VALUES(1,'NaN','x')
+2026-09-20 19:30:49.035 MSK [32420] ERROR:  null value in column "x" of relation "coordinates" violates not-null constraint
+2026-09-20 19:30:49.035 MSK [32420] DETAIL:  Failing row contains (2, 0, null, 1).
+2026-09-20 19:30:49.035 MSK [32420] STATEMENT:  INSERT INTO coordinates(x,y) VALUES(NULL,1)
+2026-09-20 19:31:54.553 MSK [31940] LOG:  checkpoint starting: time
+2026-09-20 19:32:12.216 MSK [31940] LOG:  checkpoint complete: wrote 144 buffers (0.9%); 0 WAL file(s) added, 0 removed, 1 recycled; write=15.649 s, sync=0.592 s, total=17.663 s; sync files=810, longest=0.008 s, average=0.001 s; distance=1838 kB, estimate=4628 kB; lsn=0/209FC90, redo lsn=0/208D5D0
+2026-09-20 19:34:42.884 MSK [26904] ERROR:  new row for relation "coordinates" violates check constraint "coordinates_x_check"
+2026-09-20 19:34:42.884 MSK [26904] DETAIL:  Failing row contains (1, 0, 827, 1).
+2026-09-20 19:34:42.884 MSK [26904] STATEMENT:  INSERT INTO coordinates(x,y) VALUES(827,1)
+2026-09-20 19:34:42.895 MSK [26904] ERROR:  new row for relation "person" violates check constraint "person_name_check"
+2026-09-20 19:34:42.895 MSK [26904] DETAIL:  Failing row contains (1, 0, , null, null, null, 1990-01-01T00:00Z, null, null, x).
+2026-09-20 19:34:42.895 MSK [26904] STATEMENT:  INSERT INTO person(name,birthday,passportid) VALUES('', '1990-01-01T00:00Z','x')
+2026-09-20 19:34:42.898 MSK [26904] ERROR:  new row for relation "location" violates check constraint "location_y_check"
+2026-09-20 19:34:42.898 MSK [26904] DETAIL:  Failing row contains (1, 0, 1, NaN, x).
+2026-09-20 19:34:42.898 MSK [26904] STATEMENT:  INSERT INTO location(x,y,name) VALUES(1,'NaN','x')
+2026-09-20 19:34:42.900 MSK [26904] ERROR:  null value in column "x" of relation "coordinates" violates not-null constraint
+2026-09-20 19:34:42.900 MSK [26904] DETAIL:  Failing row contains (2, 0, null, 1).
+2026-09-20 19:34:42.900 MSK [26904] STATEMENT:  INSERT INTO coordinates(x,y) VALUES(NULL,1)
+2026-09-20 19:34:43.252 MSK [26904] ERROR:  new row for relation "movie" violates check constraint "movie_oscarscount_check"
+2026-09-20 19:34:43.252 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 0, 9223372036854775807, null, PG_13, null, null, null, 120, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.252 MSK [26904] STATEMENT:  UPDATE movie SET oscarscount=0 WHERE id=1
+2026-09-20 19:34:43.253 MSK [26904] ERROR:  new row for relation "movie" violates check constraint "movie_budget_check"
+2026-09-20 19:34:43.253 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 0, null, PG_13, null, null, null, 120, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.253 MSK [26904] STATEMENT:  UPDATE movie SET budget=0 WHERE id=1
+2026-09-20 19:34:43.255 MSK [26904] ERROR:  new row for relation "movie" violates check constraint "movie_totalboxoffice_check"
+2026-09-20 19:34:43.255 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, 0, PG_13, null, null, null, 120, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.255 MSK [26904] STATEMENT:  UPDATE movie SET totalboxoffice=0 WHERE id=1
+2026-09-20 19:34:43.256 MSK [26904] ERROR:  new row for relation "movie" violates check constraint "movie_length_check"
+2026-09-20 19:34:43.256 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, null, PG_13, null, null, null, 0, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.256 MSK [26904] STATEMENT:  UPDATE movie SET length=0 WHERE id=1
+2026-09-20 19:34:43.257 MSK [26904] ERROR:  new row for relation "movie" violates check constraint "movie_goldenpalmcount_check"
+2026-09-20 19:34:43.257 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, null, PG_13, null, null, null, 120, 0, 100, Hello_world%, null).
+2026-09-20 19:34:43.257 MSK [26904] STATEMENT:  UPDATE movie SET goldenpalmcount=0 WHERE id=1
+2026-09-20 19:34:43.258 MSK [26904] ERROR:  new row for relation "movie" violates check constraint "movie_usaboxoffice_check"
+2026-09-20 19:34:43.258 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, null, PG_13, null, null, null, 120, null, 0, Hello_world%, null).
+2026-09-20 19:34:43.258 MSK [26904] STATEMENT:  UPDATE movie SET usaboxoffice=0 WHERE id=1
+2026-09-20 19:34:43.261 MSK [26904] ERROR:  null value in column "name" of relation "movie" violates not-null constraint
+2026-09-20 19:34:43.261 MSK [26904] DETAIL:  Failing row contains (1, 1, null, 1, 2026-09-20, 2, 9223372036854775807, null, PG_13, null, null, null, 120, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.261 MSK [26904] STATEMENT:  UPDATE movie SET name=NULL WHERE id=1
+2026-09-20 19:34:43.262 MSK [26904] ERROR:  null value in column "coordinates_id" of relation "movie" violates not-null constraint
+2026-09-20 19:34:43.262 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, null, 2026-09-20, 2, 9223372036854775807, null, PG_13, null, null, null, 120, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.262 MSK [26904] STATEMENT:  UPDATE movie SET coordinates_id=NULL WHERE id=1
+2026-09-20 19:34:43.263 MSK [26904] ERROR:  null value in column "creationdate" of relation "movie" violates not-null constraint
+2026-09-20 19:34:43.263 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, null, 2, 9223372036854775807, null, PG_13, null, null, null, 120, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.263 MSK [26904] STATEMENT:  UPDATE movie SET creationdate=NULL WHERE id=1
+2026-09-20 19:34:43.264 MSK [26904] ERROR:  null value in column "mpaarating" of relation "movie" violates not-null constraint
+2026-09-20 19:34:43.264 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, null, null, null, null, null, 120, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.264 MSK [26904] STATEMENT:  UPDATE movie SET mpaarating=NULL WHERE id=1
+2026-09-20 19:34:43.265 MSK [26904] ERROR:  null value in column "length" of relation "movie" violates not-null constraint
+2026-09-20 19:34:43.265 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, null, PG_13, null, null, null, null, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.265 MSK [26904] STATEMENT:  UPDATE movie SET length=NULL WHERE id=1
+2026-09-20 19:34:43.265 MSK [26904] ERROR:  null value in column "tagline" of relation "movie" violates not-null constraint
+2026-09-20 19:34:43.265 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, null, PG_13, null, null, null, 120, null, 100, null, null).
+2026-09-20 19:34:43.265 MSK [26904] STATEMENT:  UPDATE movie SET tagline=NULL WHERE id=1
+2026-09-20 19:34:43.267 MSK [26904] ERROR:  new row for relation "movie" violates check constraint "movie_mpaarating_check"
+2026-09-20 19:34:43.267 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, null, BAD, null, null, null, 120, null, 100, Hello_world%, null).
+2026-09-20 19:34:43.267 MSK [26904] STATEMENT:  UPDATE movie SET mpaarating='BAD' WHERE id=1
+2026-09-20 19:34:43.268 MSK [26904] ERROR:  new row for relation "movie" violates check constraint "movie_genre_check"
+2026-09-20 19:34:43.268 MSK [26904] DETAIL:  Failing row contains (1, 1, Valid, 1, 2026-09-20, 2, 9223372036854775807, null, PG_13, null, null, null, 120, null, 100, Hello_world%, BAD).
+2026-09-20 19:34:43.268 MSK [26904] STATEMENT:  UPDATE movie SET genre='BAD' WHERE id=1
+2026-09-20 19:34:45.591 MSK [26904] ERROR:  new row for relation "person" violates check constraint "person_height_check"
+2026-09-20 19:34:45.591 MSK [26904] DETAIL:  Failing row contains (1, 1, Александр, null, null, null, 1990-01-01T12:00+03:00[Europe/Moscow], 0, null, 3fd1f4c6-2ef3-45dc-8ec7-b492b10b592a).
+2026-09-20 19:34:45.591 MSK [26904] STATEMENT:  UPDATE person SET height=0 WHERE id=1
+2026-09-20 19:34:45.596 MSK [26904] ERROR:  new row for relation "person" violates check constraint "person_weight_check"
+2026-09-20 19:34:45.596 MSK [26904] DETAIL:  Failing row contains (1, 1, Александр, null, null, null, 1990-01-01T12:00+03:00[Europe/Moscow], null, 0, 3fd1f4c6-2ef3-45dc-8ec7-b492b10b592a).
+2026-09-20 19:34:45.596 MSK [26904] STATEMENT:  UPDATE person SET weight=0 WHERE id=1
+2026-09-20 19:34:45.599 MSK [26904] ERROR:  null value in column "name" of relation "person" violates not-null constraint
+2026-09-20 19:34:45.599 MSK [26904] DETAIL:  Failing row contains (1, 1, null, null, null, null, 1990-01-01T12:00+03:00[Europe/Moscow], null, null, 3fd1f4c6-2ef3-45dc-8ec7-b492b10b592a).
+2026-09-20 19:34:45.599 MSK [26904] STATEMENT:  UPDATE person SET name=NULL WHERE id=1
+2026-09-20 19:34:45.601 MSK [26904] ERROR:  null value in column "birthday" of relation "person" violates not-null constraint
+2026-09-20 19:34:45.601 MSK [26904] DETAIL:  Failing row contains (1, 1, Александр, null, null, null, null, null, null, 3fd1f4c6-2ef3-45dc-8ec7-b492b10b592a).
+2026-09-20 19:34:45.601 MSK [26904] STATEMENT:  UPDATE person SET birthday=NULL WHERE id=1
+2026-09-20 19:34:45.603 MSK [26904] ERROR:  null value in column "passportid" of relation "person" violates not-null constraint
+2026-09-20 19:34:45.603 MSK [26904] DETAIL:  Failing row contains (1, 1, Александр, null, null, null, 1990-01-01T12:00+03:00[Europe/Moscow], null, null, null).
+2026-09-20 19:34:45.603 MSK [26904] STATEMENT:  UPDATE person SET passportid=NULL WHERE id=1
+2026-09-20 19:34:45.605 MSK [26904] ERROR:  date/time field value out of range: "2020-99-99T00:00Z"
+2026-09-20 19:34:45.605 MSK [26904] HINT:  Perhaps you need a different "datestyle" setting.
+2026-09-20 19:34:45.605 MSK [26904] STATEMENT:  UPDATE person SET birthday='2020-99-99T00:00Z' WHERE id=1
+2026-09-20 19:34:45.608 MSK [26904] ERROR:  duplicate key value violates unique constraint "person_passportid_key"
+2026-09-20 19:34:45.608 MSK [26904] DETAIL:  Key (passportid)=(3fd1f4c6-2ef3-45dc-8ec7-b492b10b592a) already exists.
+2026-09-20 19:34:45.608 MSK [26904] STATEMENT:  INSERT INTO person(name,birthday,passportid) SELECT name,birthday,passportid FROM person WHERE id=1
+2026-09-20 19:36:54.223 MSK [31940] LOG:  checkpoint starting: time
+2026-09-20 19:37:06.557 MSK [31940] LOG:  checkpoint complete: wrote 107 buffers (0.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=11.462 s, sync=0.413 s, total=12.335 s; sync files=910, longest=0.006 s, average=0.001 s; distance=1207 kB, estimate=4286 kB; lsn=0/21C75D8, redo lsn=0/21BB4E0
+2026-09-20 19:41:54.571 MSK [31940] LOG:  checkpoint starting: time
+2026-09-20 19:41:58.511 MSK [31940] LOG:  checkpoint complete: wrote 37 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.917 s, sync=0.011 s, total=3.941 s; sync files=28, longest=0.002 s, average=0.001 s; distance=52 kB, estimate=3863 kB; lsn=0/21C85D8, redo lsn=0/21C8580

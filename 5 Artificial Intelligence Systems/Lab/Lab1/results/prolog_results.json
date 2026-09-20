@@ -1,0 +1,219 @@
+{
+  "version": {
+    "$tag": "bindings",
+    "V": {
+      "$t": "t",
+      "swi": [
+        [
+          10,
+          1,
+          15,
+          []
+        ]
+      ]
+    },
+    "success": true
+  },
+  "results": [
+    {
+      "query": "character(aria)",
+      "expected": [
+        "ok"
+      ],
+      "actual": [
+        "ok"
+      ],
+      "pass": true
+    },
+    {
+      "query": "character(dragon)",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "query": "warrior(X)",
+      "expected": [
+        "aria",
+        "borin"
+      ],
+      "actual": [
+        "aria",
+        "borin"
+      ],
+      "pass": true
+    },
+    {
+      "query": "owns(X,bow)",
+      "expected": [
+        "elin",
+        "finn"
+      ],
+      "actual": [
+        "elin",
+        "finn"
+      ],
+      "pass": true
+    },
+    {
+      "query": "combatant(X)",
+      "expected": [
+        "aria",
+        "borin",
+        "celia"
+      ],
+      "actual": [
+        "aria",
+        "borin",
+        "celia"
+      ],
+      "pass": true
+    },
+    {
+      "query": "scout(X)",
+      "expected": [
+        "elin",
+        "finn"
+      ],
+      "actual": [
+        "elin",
+        "finn"
+      ],
+      "pass": true
+    },
+    {
+      "query": "armed(X)",
+      "expected": [
+        "aria",
+        "borin",
+        "celia",
+        "darin",
+        "elin",
+        "finn"
+      ],
+      "actual": [
+        "aria",
+        "borin",
+        "celia",
+        "darin",
+        "elin",
+        "finn"
+      ],
+      "pass": true
+    },
+    {
+      "query": "skilled_for(X,tower)",
+      "expected": [
+        "celia"
+      ],
+      "actual": [
+        "celia"
+      ],
+      "pass": true
+    },
+    {
+      "query": "ready_for(X,Q)",
+      "expected": [
+        [
+          "aria",
+          "ruins"
+        ],
+        [
+          "celia",
+          "tower"
+        ],
+        [
+          "finn",
+          "forest"
+        ]
+      ],
+      "actual": [
+        [
+          "aria",
+          "ruins"
+        ],
+        [
+          "celia",
+          "tower"
+        ],
+        [
+          "finn",
+          "forest"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "query": "guildmate(X,Y)",
+      "expected": [
+        [
+          "aria",
+          "celia"
+        ],
+        [
+          "celia",
+          "aria"
+        ]
+      ],
+      "actual": [
+        [
+          "aria",
+          "celia"
+        ],
+        [
+          "celia",
+          "aria"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "query": "safe_character(X)",
+      "expected": [
+        "aria",
+        "celia",
+        "darin",
+        "elin",
+        "finn"
+      ],
+      "actual": [
+        "aria",
+        "celia",
+        "darin",
+        "elin",
+        "finn"
+      ],
+      "pass": true
+    },
+    {
+      "query": "ready_for(borin,ruins)",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "query": "guildmate(aria,aria)",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "query": "combatant(X), safe_character(X)",
+      "expected": [
+        "aria",
+        "celia"
+      ],
+      "actual": [
+        "aria",
+        "celia"
+      ],
+      "pass": true
+    },
+    {
+      "query": "safe_character(dragon)",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    }
+  ]
+}

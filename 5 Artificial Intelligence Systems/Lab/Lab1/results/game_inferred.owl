@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns="https://example.org/rpg-lab1#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#darin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Healer"/>
+    <rdf:type rdf:nodeID="N0fed0d33fcb6435cab3f2fea901c1588"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Armed"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#SafeCharacter"/>
+    <owns rdf:resource="https://example.org/rpg-lab1#staff"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N36a0a572e621476d8c869437f170d037">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:rest rdf:nodeID="N4d43557a8c6e40e6bd3d6bf64aafe497"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#rule_1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <swrl:body rdf:nodeID="Nddfef4d3a26a4b399bdbed73237b9d01"/>
+    <swrl:head rdf:nodeID="Nb9a4de6f184c4bbfbd386cf4dbca5dca"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N913583059c3e4cffa47c68a10ce9b2d7">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Skill"/>
+    <rdf:rest rdf:nodeID="N2a28a553e5ba4aafb8a34548f716ca02"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#sun">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Guild"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#borin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Warrior"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Cursed"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Armed"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Combatant"/>
+    <owns rdf:resource="https://example.org/rpg-lab1#sword"/>
+    <memberOf rdf:resource="https://example.org/rpg-lab1#moon"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Scout">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <owl:equivalentClass rdf:nodeID="Nbfe8266467754a3cb05d07fd76645399"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scout</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1c88324d7c9b41cb8cb67c3df03a16ee">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Warrior"/>
+    <rdf:rest rdf:nodeID="N477800f8b99a4948a6524ef13517d63a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#elin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Rogue"/>
+    <rdf:type rdf:nodeID="N6c56361a4d474b63bffd164a8c248a4e"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Armed"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#SafeCharacter"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Scout"/>
+    <owns rdf:resource="https://example.org/rpg-lab1#bow"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#bow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Weapon"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#aria">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Warrior"/>
+    <rdf:type rdf:nodeID="N52321dd3adf44e4e960f941912cc1d18"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Armed"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#SafeCharacter"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Combatant"/>
+    <owns rdf:resource="https://example.org/rpg-lab1#sword"/>
+    <hasSkill rdf:resource="https://example.org/rpg-lab1#melee"/>
+    <memberOf rdf:resource="https://example.org/rpg-lab1#sun"/>
+    <guildmate rdf:resource="https://example.org/rpg-lab1#celia"/>
+    <readyFor rdf:resource="https://example.org/rpg-lab1#ruins"/>
+    <skilledFor rdf:resource="https://example.org/rpg-lab1#ruins"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5514964fbdff4e38bb18a18ff7ad303d">
+    <rdf:first rdf:nodeID="N12d594ddd8a64ada9d0d939aecbd7a4f"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8e3fa4d49fb94b57a4b7d4dcc96da002">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="https://example.org/rpg-lab1#Cursed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf1f547ab8cb84219a097fe92ca5c54c9">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#sun"/>
+    <rdf:rest rdf:nodeID="N08f96545206047398ebeffde2113f32d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Healer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Healer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N82e3afa686974e9291363e09a4faf1d5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="https://example.org/rpg-lab1#Cursed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Quest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quest</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1decd824267043b59e95afb6e6ce67b7">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#celia"/>
+    <rdf:rest rdf:nodeID="N69a109da5e6d494ab2ec96e85504c9bf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#skilledFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:range rdf:resource="https://example.org/rpg-lab1#Quest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf6aa20b4895342a7b5a91384c428e7fd">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="https://example.org/rpg-lab1#requiresSkill"/>
+    <swrl:argument1 rdf:resource="urn:swrl#q"/>
+    <swrl:argument2 rdf:resource="urn:swrl#s"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#celia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Mage"/>
+    <rdf:type rdf:nodeID="N82e3afa686974e9291363e09a4faf1d5"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Armed"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#SafeCharacter"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Combatant"/>
+    <owns rdf:resource="https://example.org/rpg-lab1#staff"/>
+    <hasSkill rdf:resource="https://example.org/rpg-lab1#magic"/>
+    <memberOf rdf:resource="https://example.org/rpg-lab1#sun"/>
+    <guildmate rdf:resource="https://example.org/rpg-lab1#aria"/>
+    <readyFor rdf:resource="https://example.org/rpg-lab1#tower"/>
+    <skilledFor rdf:resource="https://example.org/rpg-lab1#tower"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Mage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Combatant"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na2b99bfbd8ba4c12a98a21057169cf84">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="https://example.org/rpg-lab1#memberOf"/>
+    <swrl:argument1 rdf:resource="urn:swrl#y"/>
+    <swrl:argument2 rdf:resource="urn:swrl#g"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N65bfc803bb184aeca714a80aed77a55c">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#borin"/>
+    <rdf:rest rdf:nodeID="N1decd824267043b59e95afb6e6ce67b7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N96821c70fa944ea9adc4298692d8e5f1">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="https://example.org/rpg-lab1#skilledFor"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#q"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N12d594ddd8a64ada9d0d939aecbd7a4f">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="https://example.org/rpg-lab1#skilledFor"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#q"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Warrior">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Combatant"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Warrior</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Weapon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weapon</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N69b3d82b390a4e3ca1a5f27a986d800c">
+    <rdf:first rdf:nodeID="Nda33640acf5b4e969dbcb85efb32e420"/>
+    <rdf:rest rdf:nodeID="N4aa81e78334d40958195ba0cfc8b0b74"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#readyFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:range rdf:resource="https://example.org/rpg-lab1#Quest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Rogue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Scout"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rogue</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Armed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <owl:equivalentClass rdf:nodeID="N721cf254f2154c5680f4c7b9d2722439"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Armed</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N40705a6f6f1c4e7aa2eaf3a934fcc0b4">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#magic"/>
+    <rdf:rest rdf:nodeID="Nc373eb8a769947ccaf21ab737ee772e0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#rule_3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <swrl:body rdf:nodeID="N7db39d92b3cc4044ba751bdc8651a8bc"/>
+    <swrl:head rdf:nodeID="Na914bc4bd3fe4a189fa9035aad1e0651"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncc8a84385e204fa29bed08ea7724acbd">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="https://example.org/rpg-lab1#readyFor"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#q"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2a66813554f4e5aaf76eb308187f07d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="https://example.org/rpg-lab1#hasSkill"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#s"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#guildmate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:range rdf:resource="https://example.org/rpg-lab1#Character"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Combatant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <owl:equivalentClass rdf:nodeID="N68c2e80aec1643cfb7d00746b61bd793"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Combatant</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N60840a7aafd14f40b564f8870abda1d6">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:rest rdf:nodeID="N974567e6deeb4ca09ed71f1c2656f455"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d43557a8c6e40e6bd3d6bf64aafe497">
+    <rdf:first rdf:nodeID="N6d6cb5b1b5714ef1b694e6fd1927b838"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na914bc4bd3fe4a189fa9035aad1e0651">
+    <rdf:first rdf:nodeID="N8729ed6a56fb4293be8fffe884134b2f"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5192b0d410644618bd6ae9dc112c2575">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="https://example.org/rpg-lab1#memberOf"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#g"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8583fd14ba15475a80cba9baefde2634">
+    <rdf:first rdf:nodeID="Nf6aa20b4895342a7b5a91384c428e7fd"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N14cd0b16e16e4d0cb37d125aca975d7a">
+    <rdf:first rdf:nodeID="Na2b99bfbd8ba4c12a98a21057169cf84"/>
+    <rdf:rest rdf:nodeID="N1019dcf478a248f9a3219ff0a95d15f1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nce5b868c5ac54fcc96b8798a1ada9100">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:rest rdf:nodeID="N6e4192d19ca245deb60514af432171bc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Учебная онтология вымышленных RPG-персонажей. Отрицательные утверждения Cursed задают полноту только текущего снимка.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbfe8266467754a3cb05d07fd76645399">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N36a0a572e621476d8c869437f170d037"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc4fdecdc07854d5299d82e507ced2abc">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Ranger"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8729ed6a56fb4293be8fffe884134b2f">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="https://example.org/rpg-lab1#guildmate"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neb23ef8f4429464590ce4981c0d674e0">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:rest rdf:nodeID="N2880bdcc24004fda9d9f7d347209a512"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3a8ae5226338471f83a134838e418547">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Neb23ef8f4429464590ce4981c0d674e0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N008cb0e04172438eb3ddf6868fc9cf88">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:argument2 rdf:resource="urn:swrl#y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na7f5250f65224cac9cce8c354f57fdd8">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#staff"/>
+    <rdf:rest rdf:nodeID="Ndb3468bf63d243b18a0bab0eeee267cd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#tower">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Quest"/>
+    <requiresSkill rdf:resource="https://example.org/rpg-lab1#magic"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nda33640acf5b4e969dbcb85efb32e420">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <swrl:argument1 rdf:resource="urn:swrl#y"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Ranger">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Scout"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ranger</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#forest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Quest"/>
+    <requiresSkill rdf:resource="https://example.org/rpg-lab1#tracking"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#staff">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Weapon"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N54246ef6f6724c4aa6beb141c0f91637">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#melee"/>
+    <rdf:rest rdf:nodeID="N40705a6f6f1c4e7aa2eaf3a934fcc0b4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1be83db90467471ebc458fb42f346a88">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="https://example.org/rpg-lab1#Cursed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc373eb8a769947ccaf21ab737ee772e0">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#tracking"/>
+    <rdf:rest rdf:nodeID="Nf1f547ab8cb84219a097fe92ca5c54c9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#sword">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Weapon"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7db39d92b3cc4044ba751bdc8651a8bc">
+    <rdf:first rdf:nodeID="Nb80bdfb577d649ec8df1f02bb180df6f"/>
+    <rdf:rest rdf:nodeID="N69b3d82b390a4e3ca1a5f27a986d800c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#SafeCharacter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <owl:equivalentClass rdf:nodeID="N3a8ae5226338471f83a134838e418547"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SafeCharacter</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#requiresSkill">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.org/rpg-lab1#Quest"/>
+    <rdfs:range rdf:resource="https://example.org/rpg-lab1#Skill"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c56361a4d474b63bffd164a8c248a4e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="https://example.org/rpg-lab1#Cursed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N721cf254f2154c5680f4c7b9d2722439">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Na40b94dc5e2c4e8a9aabbaa55ebe00a4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6d6cb5b1b5714ef1b694e6fd1927b838">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N7f67c85e07e640f988ab931fc779295f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9e3b69ffd56144d1904a430a76b1886f">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#forest"/>
+    <rdf:rest rdf:nodeID="Nba8c98b0d2f343eeb1583f7b1694329e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0e87a18d9a74969ac6d46a1839e7609">
+    <rdf:first rdf:nodeID="Ncc8a84385e204fa29bed08ea7724acbd"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#finn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Ranger"/>
+    <rdf:type rdf:nodeID="N1be83db90467471ebc458fb42f346a88"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Armed"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#SafeCharacter"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Scout"/>
+    <owns rdf:resource="https://example.org/rpg-lab1#bow"/>
+    <hasSkill rdf:resource="https://example.org/rpg-lab1#tracking"/>
+    <readyFor rdf:resource="https://example.org/rpg-lab1#forest"/>
+    <skilledFor rdf:resource="https://example.org/rpg-lab1#forest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#memberOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:range rdf:resource="https://example.org/rpg-lab1#Guild"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N68c2e80aec1643cfb7d00746b61bd793">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nce5b868c5ac54fcc96b8798a1ada9100"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5abee6b94d1445378d175d1f94650aa1">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#finn"/>
+    <rdf:rest rdf:nodeID="N41cd15533c8046779626c103cbf1c8e2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8c62d20b0347470eb9a11c81bfe7ac9d">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#ruins"/>
+    <rdf:rest rdf:nodeID="N9e3b69ffd56144d1904a430a76b1886f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndb3468bf63d243b18a0bab0eeee267cd">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#bow"/>
+    <rdf:rest rdf:nodeID="N8c62d20b0347470eb9a11c81bfe7ac9d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Character">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Character</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nad44428b6b894d35b3f0d8c1de9d4857">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="Nebf42c6b34bd4532a9185574bf7270f3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nddfef4d3a26a4b399bdbed73237b9d01">
+    <rdf:first rdf:nodeID="Nd2d0f36ba31949f98b67acb1987cdb20"/>
+    <rdf:rest rdf:nodeID="N64bb813ce8ca4b3da3f26b9958d73f0f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2e37b6d497004188aa24fa9448d144b1">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="https://example.org/rpg-lab1#Quest"/>
+    <swrl:argument1 rdf:resource="urn:swrl#q"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N64bb813ce8ca4b3da3f26b9958d73f0f">
+    <rdf:first rdf:nodeID="N2e37b6d497004188aa24fa9448d144b1"/>
+    <rdf:rest rdf:nodeID="N00a7527fcfd4499faac6136b81ad26ad"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Guild">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guild</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbc3a7ef6683e463a81e03ea194d6bb62">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="https://example.org/rpg-lab1#Armed"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5ced5d4e7ce74e1db8e497c27db326ad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N60840a7aafd14f40b564f8870abda1d6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0fed0d33fcb6435cab3f2fea901c1588">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="https://example.org/rpg-lab1#Cursed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nebf42c6b34bd4532a9185574bf7270f3">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#aria"/>
+    <rdf:rest rdf:nodeID="N65bfc803bb184aeca714a80aed77a55c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N52321dd3adf44e4e960f941912cc1d18">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="https://example.org/rpg-lab1#Cursed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N175ede737bad4a00b50d4fe1cd2b9bc4">
+    <rdf:first rdf:nodeID="Nbd11bb90457d445aa6341163d30ccb01"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2a28a553e5ba4aafb8a34548f716ca02">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Guild"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#q">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#rule_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <swrl:body rdf:nodeID="Ncd7106addad741e780ef506ffba38157"/>
+    <swrl:head rdf:nodeID="Nc0e87a18d9a74969ac6d46a1839e7609"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#ruins">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Quest"/>
+    <requiresSkill rdf:resource="https://example.org/rpg-lab1#melee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nba8c98b0d2f343eeb1583f7b1694329e">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#tower"/>
+    <rdf:rest rdf:nodeID="N54246ef6f6724c4aa6beb141c0f91637"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N08f96545206047398ebeffde2113f32d">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#moon"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6e4192d19ca245deb60514af432171bc">
+    <rdf:first rdf:nodeID="N4e7dc4cc45754f3884f94ddca99cb5e7"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N69a109da5e6d494ab2ec96e85504c9bf">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#darin"/>
+    <rdf:rest rdf:nodeID="N4c96effe112a4a1eb1d2fb9da9ea03ee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbd11bb90457d445aa6341163d30ccb01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/rpg-lab1#owns"/>
+    <owl:someValuesFrom rdf:resource="https://example.org/rpg-lab1#Weapon"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#moon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Guild"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nefa6fbefda6c4dd78bec0cb59381aa39">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Quest"/>
+    <rdf:rest rdf:nodeID="N913583059c3e4cffa47c68a10ce9b2d7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1019dcf478a248f9a3219ff0a95d15f1">
+    <rdf:first rdf:nodeID="N008cb0e04172438eb3ddf6868fc9cf88"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2880bdcc24004fda9d9f7d347209a512">
+    <rdf:first rdf:nodeID="N8e3fa4d49fb94b57a4b7d4dcc96da002"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2d0f36ba31949f98b67acb1987cdb20">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4aa81e78334d40958195ba0cfc8b0b74">
+    <rdf:first rdf:nodeID="N5192b0d410644618bd6ae9dc112c2575"/>
+    <rdf:rest rdf:nodeID="N14cd0b16e16e4d0cb37d125aca975d7a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7f67c85e07e640f988ab931fc779295f">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Rogue"/>
+    <rdf:rest rdf:nodeID="Nc4fdecdc07854d5299d82e507ced2abc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#owns">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:range rdf:resource="https://example.org/rpg-lab1#Weapon"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N477800f8b99a4948a6524ef13517d63a">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Mage"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N00a7527fcfd4499faac6136b81ad26ad">
+    <rdf:first rdf:nodeID="Nd2a66813554f4e5aaf76eb308187f07d"/>
+    <rdf:rest rdf:nodeID="N8583fd14ba15475a80cba9baefde2634"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N974567e6deeb4ca09ed71f1c2656f455">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Weapon"/>
+    <rdf:rest rdf:nodeID="Nefa6fbefda6c4dd78bec0cb59381aa39"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Skill">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Skill</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na40b94dc5e2c4e8a9aabbaa55ebe00a4">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdf:rest rdf:nodeID="N175ede737bad4a00b50d4fe1cd2b9bc4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#tracking">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Skill"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9a4de6f184c4bbfbd386cf4dbca5dca">
+    <rdf:first rdf:nodeID="N96821c70fa944ea9adc4298692d8e5f1"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#Cursed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cursed</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N41cd15533c8046779626c103cbf1c8e2">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#sword"/>
+    <rdf:rest rdf:nodeID="Na7f5250f65224cac9cce8c354f57fdd8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#y">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4c96effe112a4a1eb1d2fb9da9ea03ee">
+    <rdf:first rdf:resource="https://example.org/rpg-lab1#elin"/>
+    <rdf:rest rdf:nodeID="N5abee6b94d1445378d175d1f94650aa1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb80bdfb577d649ec8df1f02bb180df6f">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#magic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Skill"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncd7106addad741e780ef506ffba38157">
+    <rdf:first rdf:nodeID="Nbc3a7ef6683e463a81e03ea194d6bb62"/>
+    <rdf:rest rdf:nodeID="N5514964fbdff4e38bb18a18ff7ad303d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#g">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#x">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#hasSkill">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.org/rpg-lab1#Character"/>
+    <rdfs:range rdf:resource="https://example.org/rpg-lab1#Skill"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rpg-lab1#melee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://example.org/rpg-lab1#Skill"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4e7dc4cc45754f3884f94ddca99cb5e7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N1c88324d7c9b41cb8cb67c3df03a16ee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#s">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,123 @@
+note: connecting to http://127.0.0.1:18768/bundle.tar
+note: downloading index http://127.0.0.1:18768/bundle.tar.index.gz
+note: downloading SHA256SUM
+note: generating format "latex"
+note: downloading tectonic-format-latex.tex
+note: downloading xelatex.ini
+note: downloading latex.ltx
+note: downloading texsys.cfg
+note: downloading expl3.ltx
+note: downloading expl3-code.tex
+note: downloading cmr10.tfm
+note: downloading UnicodeData.txt
+note: downloading CaseFolding.txt
+note: downloading SpecialCasing.txt
+note: downloading fonttext.cfg
+note: downloading fonttext.ltx
+note: downloading omlenc.def
+note: downloading omsenc.def
+note: downloading ot1enc.def
+note: downloading t1enc.def
+note: downloading ts1enc.def
+note: downloading tuenc.def
+note: downloading tulmr.fd
+note: downloading tulmss.fd
+note: downloading tulmtt.fd
+note: downloading ts1lmr.fd
+note: downloading t1cmr.fd
+note: downloading ot1cmr.fd
+note: downloading ot1cmss.fd
+note: downloading ot1cmtt.fd
+note: downloading fontmath.cfg
+note: downloading fontmath.ltx
+warning: failure requesting "fontmath.ltx" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+warning: failure requesting "fontmath.ltx" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+note: download succeeded after retry
+note: downloading omlcmm.fd
+note: downloading omscmsy.fd
+note: downloading omxcmex.fd
+note: downloading ucmr.fd
+note: downloading preload.cfg
+note: downloading preload.ltx
+note: downloading cmex10.tfm
+note: downloading line10.tfm
+note: downloading linew10.tfm
+note: downloading lcircle10.tfm
+note: downloading lcirclew10.tfm
+note: downloading cmr5.tfm
+note: downloading cmr7.tfm
+note: downloading cmmi5.tfm
+note: downloading cmmi7.tfm
+note: downloading cmmi10.tfm
+note: downloading cmsy5.tfm
+warning: failure requesting "cmsy5.tfm" from network
+caused by: error sending request for url (http://127.0.0.1:18768/bundle.tar): connection closed before message completed
+caused by: connection closed before message completed
+note: download succeeded after retry
+note: downloading cmsy7.tfm
+note: downloading cmsy10.tfm
+note: downloading atveryend.sty
+warning: failure requesting "atveryend.sty" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+warning: failure requesting "atveryend.sty" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+warning: failure requesting "atveryend.sty" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+note: download succeeded after retry
+note: downloading atveryend-ltx.sty
+note: downloading atbegshi.sty
+note: downloading atbegshi-ltx.sty
+note: downloading load-unicode-data.tex
+note: downloading hyphen.cfg
+note: downloading xebabel.def
+note: downloading language.dat
+note: downloading hyphen.tex
+note: downloading dumyhyph.tex
+note: downloading zerohyph.tex
+note: downloading dehypht-x-2022-03-16.tex
+note: downloading dehypht-x-2022-03-16.pat
+warning: failure requesting "dehypht-x-2022-03-16.pat" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+warning: failure requesting "dehypht-x-2022-03-16.pat" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+warning: failure requesting "dehypht-x-2022-03-16.pat" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+note: download succeeded after retry
+note: downloading dehyphn-x-2022-03-16.tex
+note: downloading dehyphn-x-2022-03-16.pat
+note: downloading loadhyph-af.tex
+note: downloading hyph-af.tex
+note: downloading hyph-quote-af.tex
+note: downloading loadhyph-grc.tex
+note: downloading hyph-grc.tex
+note: downloading ibyhyph.tex
+note: downloading loadhyph-hy.tex
+note: downloading hyph-hy.tex
+note: downloading loadhyph-eu.tex
+note: downloading hyph-eu.tex
+note: downloading loadhyph-be.tex
+note: downloading hyph-be.tex
+warning: failure requesting "hyph-be.tex" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+warning: failure requesting "hyph-be.tex" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+note: download succeeded after retry
+note: downloading hyph-quote-be.tex
+note: downloading loadhyph-bg.tex
+note: downloading hyph-bg.tex
+warning: failure requesting "hyph-bg.tex" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+note: download succeeded after retry
+note: downloading loadhyph-ca.tex
+note: downloading hyph-ca.tex
+warning: failure requesting "hyph-ca.tex" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar
+note: download succeeded after retry
+note: downloading loadhyph-zh-latn-pinyin.tex
+note: downloading hyph-zh-latn-pinyin.tex
+note: downloading loadhyph-cu.tex
+note: downloading hyph-cu.tex
+warning: failure requesting "hyph-cu.tex" from network
+caused by: unexpected HTTP response code 502 Bad Gateway for URL http://127.0.0.1:18768/bundle.tar

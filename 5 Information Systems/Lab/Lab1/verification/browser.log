@@ -1,0 +1,16 @@
+PASS Unauthenticated API is rejected
+PASS Wrong password is rejected
+PASS Login returns CSRF token
+PASS Mutation without CSRF is rejected
+PASS Create coordinates
+PASS Invalid movie yields informative error
+PASS Second authenticated browser receives create automatically
+PASS Full int64 budget survives browser/API round trip
+PASS Details display related coordinates
+PASS HTTP update succeeds
+PASS Stale browser edit rejected without losing form input
+PASS Second browser receives update automatically
+PASS Special operations interface works
+PASS Delete movie succeeds
+PASS Second browser receives delete automatically
+PASS No browser JavaScript errors

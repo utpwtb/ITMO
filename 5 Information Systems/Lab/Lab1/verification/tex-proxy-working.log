@@ -1,0 +1,174 @@
+TeX cache proxy on 127.0.0.1:18768
+cached 730624-730642: 19 bytes
+cached 12802048-12802533: 486 bytes
+cached 774656-1315173: 540518 bytes
+cached 145267200-145275266: 8067 bytes
+cached 143142912-143147926: 5015 bytes
+cached 141933568-143138324: 1204757 bytes
+cached 362293248-362294543: 1296 bytes
+cached 13849088-15746880: 1897793 bytes
+cached 12869120-12953807: 84688 bytes
+cached 13831680-13848509: 16830 bytes
+cached 144123392-144125374: 1983 bytes
+cached 144125952-144129255: 3304 bytes
+cached 144935424-144937324: 1901 bytes
+cached 144947200-144949892: 2693 bytes
+cached 144989184-144993830: 4647 bytes
+cached 145187840-145198719: 10880 bytes
+cached 145319424-145327467: 8044 bytes
+cached 145333760-145362857: 29098 bytes
+cached 145366528-145371349: 4822 bytes
+cached 145372160-145375822: 3663 bytes
+cached 145380352-145384925: 4574 bytes
+cached 150848000-150849913: 1914 bytes
+cached 145175040-145177502: 2463 bytes
+cached 144973824-144977528: 3705 bytes
+cached 144978432-144981583: 3152 bytes
+cached 144982528-144985436: 2909 bytes
+cached 144095232-144097214: 1983 bytes
+The read operation timed out
+The read operation timed out
+cached 144097792-144122740: 24949 bytes
+cached 144929280-144931611: 2332 bytes
+cached 144944128-144946389: 2262 bytes
+cached 144956416-144958455: 2040 bytes
+cached 145389568-145393247: 3680 bytes
+cached 145019392-145021373: 1982 bytes
+cached 145021952-145023975: 2024 bytes
+cached 362266624-362267615: 992 bytes
+cached 503760384-503761131: 748 bytes
+cached 503761920-503762667: 748 bytes
+cached 503751168-503751987: 820 bytes
+cached 503752704-503753523: 820 bytes
+cached 362299392-362300611: 1220 bytes
+cached 362303488-362304787: 1300 bytes
+cached 362280960-362282467: 1508 bytes
+cached 362285056-362286583: 1528 bytes
+cached 362276864-362278391: 1528 bytes
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 7662)
+<urlopen error [WinError 10054] Զ������ǿ�ȹر���һ�����е����ӡ�>
+Traceback (most recent call last):
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\client.py", line 1386, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\client.py", line 1432, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\client.py", line 1381, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\client.py", line 1141, in _send_output
+    self.send(msg)
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\client.py", line 1085, in send
+    self.connect()
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\client.py", line 1527, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\ssl.py", line 1319, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] Զ������ǿ�ȹر���һ�����е����ӡ�
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\develop\NOTE_UTP\StudyNote\5 Information Systems\Lab\Lab1\tools\tex_bundle_proxy.py", line 23, in do_GET
+    with urllib.request.urlopen(request,timeout=25) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10054] Զ������ǿ�ȹر���һ�����е����ӡ�>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\server.py", line 440, in handle
+    self.handle_one_request()
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\server.py", line 428, in handle_one_request
+    method()
+  File "C:\develop\NOTE_UTP\StudyNote\5 Information Systems\Lab\Lab1\tools\tex_bundle_proxy.py", line 31, in do_GET
+    print(str(e),flush=True);self.send_error(502,str(e))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\server.py", line 471, in send_error
+    self.send_response(code, message)
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\server.py", line 506, in send_response
+    self.send_response_only(code, message)
+  File "C:\Users\CHL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\http\server.py", line 521, in send_response_only
+    (self.protocol_version, code, message)).encode(
+                                            ^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 45-61: ordinal not in range(256)
+----------------------------------------
+cached 362350080-362351191: 1112 bytes
+cached 362354176-362355295: 1120 bytes
+cached 362348032-362349155: 1124 bytes
+The read operation timed out
+The read operation timed out
+The read operation timed out
+cached 58731520-58750855: 19336 bytes
+cached 143761920-143764381: 2462 bytes
+cached 16098304-16123011: 24708 bytes
+cached 143758336-143761369: 3034 bytes
+cached 15965696-15972749: 7054 bytes
+cached 16514560-16520983: 6424 bytes
+cached 16670720-16682680: 11961 bytes
+cached 1451520-1458112: 6593 bytes
+cached 1633280-1661139: 27860 bytes
+cached 1632256-1632674: 419 bytes
+cached 1671680-1672081: 402 bytes
+cached 22978048-22983011: 4964 bytes
+The read operation timed out
+The read operation timed out
+The read operation timed out
+cached 22705152-22977303: 272152 bytes
+cached 22699520-22704483: 4964 bytes
+cached 22424576-22698564: 273989 bytes
+cached 2406400-2407630: 1231 bytes
+cached 5544448-5625188: 80741 bytes
+cached 5532160-5532279: 120 bytes
+cached 2408448-2409849: 1402 bytes
+cached 5625856-5707937: 82082 bytes
+cached 1710080-1738730: 28651 bytes
+cached 2410496-2411722: 1227 bytes
+cached 5708800-5721596: 12797 bytes
+cached 2412544-2413703: 1160 bytes
+cached 5722112-5726757: 4646 bytes
+cached 2414592-2415830: 1239 bytes
+The read operation timed out
+The read operation timed out
+cached 5727744-5764531: 36788 bytes
+cached 5533184-5533731: 548 bytes
+cached 2416640-2417815: 1176 bytes
+The read operation timed out
+cached 5765120-5871219: 106100 bytes
+cached 2418688-2419851: 1164 bytes
+The read operation timed out
+cached 5872128-5880203: 8076 bytes
+cached 2420736-2422094: 1359 bytes
+cached 5880832-5886676: 5845 bytes
+cached 2422784-2424292: 1509 bytes
+The read operation timed out

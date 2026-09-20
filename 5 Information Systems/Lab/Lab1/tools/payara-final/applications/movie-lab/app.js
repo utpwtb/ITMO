@@ -1,0 +1,62 @@
+'use strict';
+const $=id=>document.getElementById(id);
+const enums={genres:['WESTERN','COMEDY','TRAGEDY','HORROR'],rating:['G','PG','PG_13','R','NC_17'],color:['GREEN','BLACK','ORANGE','WHITE','BROWN']};
+// [field, label, type, required, reference/enum, min, max]
+const schemas={
+ movies:[['name','Название','text',true],['coordinates','Координаты','ref',true,'coordinates'],['oscarsCount','Число «Оскаров»','integer',true,null,1,2147483647],['budget','Бюджет','long',true,null,1],['totalBoxOffice','Общие сборы','number',false,null,0],['mpaaRating','Рейтинг MPAA','enum',true,'rating'],['director','Режиссёр','ref',false,'people'],['screenwriter','Сценарист','ref',false,'people'],['operator','Оператор','ref',false,'people'],['length','Продолжительность','integer',true,null,1,2147483647],['goldenPalmCount','Золотые пальмовые ветви','long',false,null,1],['usaBoxOffice','Сборы в США','integer',true,null,1,2147483647],['tagline','Слоган','text',true],['genre','Жанр','enum',false,'genres']],
+ people:[['name','Имя','text',true],['eyeColor','Цвет глаз','enum',false,'color'],['hairColor','Цвет волос','enum',false,'color'],['location','Место','ref',false,'locations'],['birthday','Дата рождения с часовым поясом','text',true],['height','Рост','number',false,null,0],['weight','Вес','number',false,null,0],['passportID','Паспорт (уникальный)','text',true]],
+ coordinates:[['x','X (≤ 826)','integer',true,null,-2147483648,826],['y','Y','integer',true,null,-2147483648,2147483647]],
+ locations:[['x','X','long',true],['y','Y','number',true],['name','Название','text',true]]
+};
+const titles={movies:'Фильмы',people:'Люди',coordinates:'Координаты',locations:'Места'};
+let state={kind:'movies',page:0,size:10,total:0,revision:null,csrf:'',busy:false,editing:null,detail:null,deleting:null};
+function option(select,value,label){const e=document.createElement('option');e.value=value;e.textContent=label;select.append(e);}
+for(const [v,l] of [['name','Название'],['tagline','Слоган'],['genre','Жанр'],['mpaaRating','MPAA'],['director','Режиссёр'],['screenwriter','Сценарист'],['operator','Оператор']]){option($('filter-column'),v,l);option($('sort-column'),v,l);}
+option($('sort-column'),'id','ID');$('sort-column').value='id';
+document.querySelectorAll('.genres').forEach(s=>enums.genres.forEach(v=>option(s,v,v)));
+async function api(path,method='GET',body){
+ const r=await fetch('api/'+path,{method,headers:{'Content-Type':'application/json','X-CSRF-Token':state.csrf},body:body===undefined?undefined:JSON.stringify(body)});
+ const text=await r.text();let data;try{data=JSON.parse(text);}catch{throw new Error('Сервер вернул некорректный ответ');}
+ if(!r.ok){if(r.status===401){$('workspace').hidden=true;$('login').hidden=false;}throw new Error(data.error||'Ошибка '+r.status);}return data;
+}
+function notice(message,error=false){$('notice').textContent=message;$('notice').className=error?'error':'';}
+function showSession(data){state.csrf=data.csrf||'';$('login').hidden=!!data.authenticated;$('workspace').hidden=!data.authenticated;$('session').replaceChildren();if(data.authenticated){const b=document.createElement('button');b.textContent='Выйти · '+data.user;b.onclick=async()=>{try{await api('auth','DELETE');showSession({authenticated:false});}catch(e){notice(e.message,true);}};$('session').append(b);}}
+$('login-form').onsubmit=async e=>{e.preventDefault();try{showSession(await api('auth','POST',Object.fromEntries(new FormData(e.target))));$('login-error').textContent='';e.target.reset();state.revision=null;await refresh();}catch(error){$('login-error').textContent=error.message;}};
+function format(value){if(value===null||value===undefined)return '—';if(typeof value==='object')return '#'+value.id+' · '+(value.name??`(${value.x}; ${value.y})`);return String(value);}
+function button(text,handler){const b=document.createElement('button');b.textContent=text;b.onclick=handler;return b;}
+async function refresh(){
+ if(state.kind==='operations')return;
+ const kind=state.kind;let data;
+ if(kind==='movies'){const q=new URLSearchParams({page:state.page,size:state.size,filter:$('filter-column').value,sort:$('sort-column').value,desc:$('sort-desc').checked});if($('filter-enabled').checked)q.set('value',$('filter-value').value);data=await api('movies?'+q);state.page=data.page;state.total=data.total;}
+ else{let items=await api(kind);state.total=items.length;state.page=Math.min(state.page,Math.max(0,Math.ceil(items.length/state.size)-1));data={items:items.slice(state.page*state.size,(state.page+1)*state.size)};}
+ if(kind!==state.kind)return;
+ const fields=[['id','ID'],...schemas[kind].map(f=>[f[0],f[1]])];if(kind==='movies')fields.splice(3,0,['creationDate','Дата создания']);
+ const tr=document.createElement('tr');for(const title of ['Действия',...fields.map(f=>f[1])]){const th=document.createElement('th');th.textContent=title;tr.append(th);}$('columns').replaceChildren(tr);$('rows').replaceChildren();
+ for(const row of data.items){const tr=document.createElement('tr'),actions=document.createElement('td');actions.append(button('Открыть',()=>details(kind,row.id)),button('Изменить',()=>edit(kind,row.id)),button('Удалить',()=>remove(kind,row)));tr.append(actions);for(const [key]of fields){const td=document.createElement('td');td.textContent=format(row[key]);tr.append(td);}$('rows').append(tr);}
+ if(!data.items.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=fields.length+1;td.textContent='Объектов нет';tr.append(td);$('rows').append(tr);}
+ $('heading').textContent=titles[kind];$('page-info').textContent=`Страница ${state.page+1} из ${Math.max(1,Math.ceil(state.total/state.size))} · Объектов: ${state.total}`;$('previous').disabled=state.page===0;$('next').disabled=(state.page+1)*state.size>=state.total;
+}
+async function navigate(kind){state.kind=kind;state.page=0;$('collection').hidden=kind==='operations';$('operations').hidden=kind!=='operations';$('filter-form').hidden=kind!=='movies';document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===kind));try{await refresh();}catch(e){notice(e.message,true);}}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>navigate(b.dataset.view));
+$('filter-form').onsubmit=async e=>{e.preventDefault();state.page=0;try{await refresh();}catch(e){notice(e.message,true);}};
+$('previous').onclick=async()=>{state.page--;await refresh().catch(e=>notice(e.message,true));};$('next').onclick=async()=>{state.page++;await refresh().catch(e=>notice(e.message,true));};$('page-size').onchange=async()=>{state.size=Number($('page-size').value);state.page=0;await refresh().catch(e=>notice(e.message,true));};
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
+$('create').onclick=()=>edit(state.kind);
+async function edit(kind,id){try{
+ const row=id?await api(kind+'/'+id):{};state.editing={kind,id,version:row.version};$('fields').replaceChildren();$('edit-error').textContent='';$('edit-title').textContent=(id?'Изменить: ':'Добавить: ')+titles[kind];$('edit-note').textContent='* Обязательное поле. Связанные объекты создаются в соответствующем разделе меню. ID и дата создания формируются автоматически.';
+ const refs={};for(const f of schemas[kind])if(f[2]==='ref'&&!refs[f[4]])refs[f[4]]=await api(f[4]);
+ for(const [key,label,type,required,list,min,max]of schemas[kind]){const wrapper=document.createElement('label');wrapper.textContent=label+(required?' *':'');let input;
+  if(type==='enum'||type==='ref'){input=document.createElement('select');option(input,'',required?'Выберите…':'Не указано');if(type==='enum')enums[list].forEach(v=>option(input,v,v));else refs[list].forEach(v=>option(input,String(v.id),format(v)));}
+  else{input=document.createElement('input');input.type=['integer','number'].includes(type)?'number':'text';if(type==='number')input.step='any';if(type==='integer')input.step='1';if(type==='long'){input.inputMode='numeric';input.pattern='-?[0-9]+';}if(min!==undefined&&type!=='long')input.min=min;if(max!==undefined)input.max=max;}
+  input.name=key;input.required=required&&!['tagline','passportID'].includes(key)&&!(kind==='locations'&&key==='name');if(key==='birthday')input.placeholder='1990-01-01T12:00:00+03:00[Europe/Moscow]';input.value=row[key]===null||row[key]===undefined?'':type==='ref'?String(row[key].id):row[key];wrapper.append(input);$('fields').append(wrapper);
+ }
+ $('editor').showModal();
+}catch(e){notice(e.message,true);}}
+$('edit-form').onsubmit=async e=>{e.preventDefault();const {kind,id,version}=state.editing;const data={};for(const [key,,type,required] of schemas[kind]){let value=e.target.elements.namedItem(key).value;data[key]=value===''&&!required?null:value;/* preserve int64 as decimal strings */}if(id)data.version=version;$('save').disabled=true;try{await api(kind+(id?'/'+id:''),id?'PUT':'POST',data);$('editor').close();notice('Изменения сохранены');await refresh();if(state.detail&&$('details').open)await details(state.detail.kind,state.detail.id);}catch(error){$('edit-error').textContent=error.message;}finally{$('save').disabled=false;}};
+function renderObject(row){const dl=document.createElement('dl');for(const [key,value] of Object.entries(row)){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=key;if(value&&typeof value==='object')dd.append(renderObject(value));else dd.textContent=format(value);dl.append(dt,dd);}return dl;}
+async function details(kind,id){try{const row=await api(kind+'/'+id);state.detail={kind,id};$('detail-content').replaceChildren(renderObject(row));$('detail-edit').onclick=()=>edit(kind,id);if(!$('details').open)$('details').showModal();}catch(e){notice(e.message,true);if($('details').open)$('details').close();}}
+function remove(kind,row){state.deleting={kind,row};$('delete-message').textContent=`Удалить ${titles[kind]} #${row.id}? При удалении координат или человека удаляются связанные фильмы; при удалении места — связанные люди и их фильмы. Независимые справочники при удалении фильма сохраняются.`;$('delete-error').textContent='';$('delete-dialog').showModal();}
+$('delete-confirm').onclick=async()=>{const {kind,row}=state.deleting;try{const r=await api(`${kind}/${row.id}?version=${row.version}`,'DELETE');$('delete-dialog').close();notice('Удалено объектов: '+r.deleted);await refresh();}catch(e){$('delete-error').textContent=e.message;}};
+document.querySelectorAll('[data-operation]').forEach(form=>form.onsubmit=async e=>{e.preventDefault();const op=form.dataset.operation;if(op==='box-office'&&!confirm('Удалить все фильмы с указанными сборами?'))return;const q=new URLSearchParams(new FormData(form));const method=op==='box-office'?'DELETE':['average','prefix'].includes(op)?'GET':'POST';try{const result=await api('operations/'+op+'?'+q,method);$('operation-result').replaceChildren();if(op==='prefix'){const p=document.createElement('p');p.textContent='Найдено: '+result.length;$('operation-result').append(p);result.forEach(row=>{const d=document.createElement('details'),s=document.createElement('summary');s.textContent=format(row);d.append(s,renderObject(row),button('Изменить',()=>edit('movies',row.id)));$('operation-result').append(d);});}else{const p=document.createElement('pre');p.textContent=op==='average'?'Среднее: '+(result.average??'нет данных'):JSON.stringify(result,null,2);$('operation-result').append(p);}notice('Операция выполнена');}catch(error){$('operation-result').textContent=error.message;}});
+setInterval(async()=>{if($('workspace').hidden||state.busy)return;state.busy=true;try{const {revision}=await api('revision');if(state.revision!==revision){const changed=state.revision!==null;await refresh();if(changed){notice('Коллекция обновлена · '+new Date().toLocaleTimeString('ru'));if($('details').open&&state.detail)await details(state.detail.kind,state.detail.id);if($('editor').open)$('edit-note').textContent='Коллекция изменилась. Ваш ввод сохранён; сервер проверит версию объекта при сохранении.';if(state.kind==='operations')$('operation-result').textContent='Коллекция изменилась. Повторите операцию для актуального результата.';}state.revision=revision;}}catch(e){notice('Нет связи: '+e.message,true);}finally{state.busy=false;}},2000);
+(async()=>{try{const data=await api('auth');showSession(data);if(data.authenticated)await navigate('movies');}catch(e){$('login-error').textContent=e.message;}})();

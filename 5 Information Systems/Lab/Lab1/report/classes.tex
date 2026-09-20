@@ -1,0 +1,21 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\scriptsize,box/.style={draw,rounded corners=1pt,align=left,inner sep=7pt,anchor=north west},link/.style={-{Stealth[length=2mm]},thick}]
+\node[box,text width=6.0cm] (movie) at (0,0) {\textbf{\large Movie}\\\rule{6cm}{0.4pt}\\
+id: Long \{identity\}\\
+name: String\\
+coordinates: Coordinates\\
+creationDate: LocalDate \{DB default\}\\
+oscarsCount: int\\budget: long\\totalBoxOffice: Double\\
+mpaaRating: MpaaRating\\director: Person\\screenwriter: Person\\operator: Person\\length: Integer\\goldenPalmCount: Long\\usaBoxOffice: int\\tagline: String\\genre: MovieGenre\\\rule{6cm}{0.4pt}\\version: long \{optimistic lock\}};
+\node[box,text width=5.6cm] (person) at (8,0) {\textbf{\large Person}\\\rule{5.6cm}{0.4pt}\\
+id: Long \{identity\}\\name: String\\eyeColor: Color\\hairColor: Color\\location: Location\\birthday: ZonedDateTime\\height: Float\\weight: Float\\passportID: String \{unique\}\\version: long};
+\node[box,text width=5.6cm,below=1.4cm of person.south west,anchor=north west] (location) {\textbf{\large Location}\\\rule{5.6cm}{0.4pt}\\id: Long \{identity\}\\x: Long\\y: Double\\name: String\\version: long};
+\node[box,text width=6cm,below=1.0cm of movie.south west,anchor=north west] (coordinates) {\textbf{\large Coordinates}\\\rule{6cm}{0.4pt}\\id: Long \{identity\}\\x: Integer \{x $\leq$ 826\}\\y: Integer\\version: long};
+\draw[link] (movie.east |- person.center) -- node[above,align=center]{3 роли} node[below]{0..* : 0..1} (person.west);
+\draw[link] (person.south) -- node[right]{0..* : 0..1} (location.north);
+\draw[link] (movie.south) -- node[right]{0..* : 1} (coordinates.north);
+\end{tikzpicture}
+\caption{UML-диаграмма сущностей. Стрелки показывают навигацию; каскад удаления направлен от справочного объекта к зависимым объектам.}
+\end{figure}
+\noindent Перечисления: \texttt{MpaaRating \{G, PG, PG\_13, R, NC\_17\}}, \texttt{MovieGenre \{WESTERN, COMEDY, TRAGEDY, HORROR\}}, \texttt{Color \{GREEN, BLACK, ORANGE, WHITE, BROWN\}}. Тип \texttt{Country \{GERMANY, VATICAN, ITALY, NORTH\_KOREA\}} включён в исходники, но не имеет связей в модели варианта.
