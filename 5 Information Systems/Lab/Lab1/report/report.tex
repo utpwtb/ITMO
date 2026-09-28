@@ -1,35 +1,51 @@
-% XeLaTeX: два запуска; либо tectonic report.tex
-\documentclass[12pt,a4paper]{article}
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb}
 \usepackage{fontspec}
-\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{CMU Serif}}
-\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\setsansfont{CMU Sans Serif}}
-\IfFontExistsTF{Consolas}{\setmonofont{Consolas}[Scale=0.85]}{\setmonofont{DejaVu Sans Mono}[Scale=0.8]}
 \usepackage{polyglossia}
 \setdefaultlanguage{russian}
 \setotherlanguage{english}
-\usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm]{geometry}
-\usepackage{amsmath,amssymb,array,longtable,booktabs,enumitem}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont[
+  Path=fonts/,
+  UprightFont=cmunrm.otf,
+  BoldFont=cmunbx.otf,
+  ItalicFont=cmunti.otf,
+  BoldItalicFont=cmunbi.otf
+]{CMU Serif}
+\newfontfamily\cyrillicfonttt[Path=fonts/]{cmuntt.otf}
+\newfontfamily\cyrillicfontsf[Path=fonts/]{cmunrm.otf}
+\newfontfamily\cyrillicfont[
+  Path=fonts/,
+  UprightFont=cmunrm.otf,
+  BoldFont=cmunbx.otf,
+  ItalicFont=cmunti.otf,
+  BoldItalicFont=cmunbi.otf,
+  Script=Cyrillic
+]{CMU Serif}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\usepackage{array,longtable,booktabs}
+\usepackage{graphicx,float}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,fit,calc}
-\usepackage{setspace,graphicx,float,fvextra,xurl,needspace}
+\usepackage{setspace}
+\usepackage{xurl}
 \usepackage{hyperref}
-\hypersetup{unicode=true,colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black,
-pdftitle={Лабораторная работа № 1. Информационная система управления фильмами. Вариант 4101},pdfauthor={Чэнь Хаолинь}}
-\onehalfspacing
-\setlength{\parindent}{1.25cm}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=black,urlcolor=blue,
+  pdftitle={Лабораторная работа. Информационная система управления фильмами},
+  pdfauthor={Чэнь Хаолинь}}
+\setlength{\parskip}{0.2\baselineskip}
+\setlength{\parindent}{0cm}
 \setlength{\emergencystretch}{3em}
-\setlist{nosep,leftmargin=*}
 \renewcommand{\arraystretch}{1.15}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \setcounter{tocdepth}{2}
-\fvset{fontsize=\scriptsize,breaklines=true,breakanywhere=true,tabsize=2,numbersep=6pt}
 \begin{document}
 \input{titlepage.tex}
-\setcounter{page}{2}
+\setstretch{0.95}
 \tableofcontents
 \clearpage
+\setstretch{1}
 \input{body.tex}
-\clearpage
-\appendix
-\input{source-code.tex}
 \end{document}

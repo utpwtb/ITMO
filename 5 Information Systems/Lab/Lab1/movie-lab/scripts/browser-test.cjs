@@ -3,7 +3,7 @@ const {chromium, request}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
 const path=require('node:path');
 const base=process.env.MOVIE_BASE_URL||'http://127.0.0.1:18081/movie-lab/';
-const out=path.resolve(__dirname,'../../verification');fs.mkdirSync(out,{recursive:true});
+const out=process.env.MOVIE_TEST_OUTPUT||path.resolve(__dirname,'../../verification');fs.mkdirSync(out,{recursive:true});
 const results=[];
 function check(name,condition){results.push({name,passed:!!condition});if(!condition)throw Error(name);console.log('PASS '+name);}
 (async()=>{

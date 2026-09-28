@@ -173,9 +173,9 @@
 \node[uc] (f) at (5.5,-4.2) {П6. Отзывы о посещении};
 \node[uc] (g) at (5.5,-5.7) {П12. Проверка доступности};
 \foreach \u in {a,b,c,d,e,f} \draw (client.east)--(\u.west);
-\draw[dashed,-{Stealth}] (d.east)--++(0.7,0)|-node[pos=0.35,right]{\scriptsize include}(g.east);
+\draw[dashed,-{Stealth}] (d.east)--++(0.7,0)|-node[pos=0.35,right] (inclabel) {\scriptsize include}(g.east);
 \begin{scope}[on background layer]
-\node[draw,fit=(a)(g),inner xsep=1.5cm,inner ysep=0.45cm,label=above:{Платформа: клиентские прецеденты}] {};
+\node[draw,fit=(a)(g)(inclabel),inner xsep=0.35cm,inner ysep=0.45cm,label=above:{Платформа: клиентские прецеденты}] {};
 \end{scope}
 \end{tikzpicture}
 \caption{Модель поиска, записи и оценки посещения}
@@ -187,7 +187,7 @@
  uc/.style={ellipse,draw,align=center,text width=5.8cm,minimum height=1cm}]
 \node[align=center] (owner) at (0,2) {Представитель\\салона};
 \node (master) at (0,-1.5) {Мастер};
-\node (admin) at (0,-4.5) {Администратор};
+\node (admin) at (-0.35,-4.5) {Администратор};
 \node[uc] (a) at (6,3) {П7. Регистрация салона};
 \node[uc] (b) at (6,1.4) {П8. Управление своим салоном};
 \node[uc] (c) at (6,-0.2) {П9. Работа мастера};
@@ -377,4 +377,3 @@
 \bibitem{geolocation} MDN Web Docs. Браузерный интерфейс геолокации. URL: \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API} (дата обращения: 15.09.2026).
 \bibitem{osm} OpenStreetMap Foundation. Правила использования картографических тайлов. URL: \url{https://operations.osmfoundation.org/policies/tiles/} (дата обращения: 15.09.2026).
 \end{thebibliography}
-

@@ -1,14 +1,17 @@
-# Отчёт LaTeX
+# Отчёт по лабораторной работе
 
-Основной файл: `report.tex`. Язык: русский. Оформление и титульный лист адаптированы из `archive_single_salon/stage1_report.tex` и `titlepage.tex`: Times New Roman, 12 pt, межстрочный интервал 1,5; поля слева 30 мм, справа 15 мм, сверху и снизу 20 мм.
+Главный файл: `report.tex`. Он подключает `titlepage.tex`, `body.tex`, `domain-requirements.tex`, `packages.tex` и `classes.tex`. Снимки интерфейса находятся в `images/`. Итоговый документ: `report.pdf`.
+
+Оформление соответствует образцам `russian-latex-report`: A4, 11 pt, поля слева/справа/сверху 2 см, снизу 3 см, `polyglossia` с русским языком, CMU Serif, отдельный титульный лист, оглавление и разделы. На титульном листе указаны студент Чэнь Хаолинь, группа P3316, преподаватель Коновалов Арсений Антонович и вариант задания. Основной текст заканчивается заключением.
+
+Ссылка на GitHub внесена по адресу, предоставленному пользователем. Листингов исходного кода в отчёте нет.
+
+Для локальной компиляции требуется XeLaTeX с пакетами `fontspec`, `polyglossia`, `geometry`, `longtable`, `booktabs`, `tikz`, `graphicx`, `hyperref`. Файлы CMU Serif включены в `fonts/`; установка шрифта в операционной системе не требуется. Из каталога отчёта выполните два раза:
 
 ```sh
-xelatex -interaction=nonstopmode report.tex
-xelatex -interaction=nonstopmode report.tex
+xelatex -interaction=nonstopmode -halt-on-error report.tex
 ```
 
-Альтернатива: `tectonic report.tex`. Нужны пакеты fontspec, polyglossia, TikZ, fvextra, graphicx и стандартные пакеты LaTeX. Если Times New Roman/Arial/Consolas недоступны, используются резервные шрифты, заданные в преамбуле.
+PDF также успешно собран с помощью Tectonic 0.17.0 (`tectonic report.tex`).
 
-Сохраняйте соседний каталог `../movie-lab`: приложение к отчёту подключает проверенные исходники напрямую через `\VerbatimInput`. Изображения находятся в `images/`. Содержимое `assignment.tex` воспроизводит разделы 1–6 исходного задания. `body.tex` содержит реализацию, результаты тестов и выводы, `classes.tex` и `packages.tex` — редактируемые UML-диаграммы TikZ.
-
-Студент, группа и преподаватель взяты из предоставленного шаблона. Их можно изменить в `titlepage.tex`.
+Отчёт использует результаты фактического запуска приложения на Helios: 32 интеграционных теста и 16 проверок браузера/API. Подтверждающие файлы находятся в `../deployment/verification/`.

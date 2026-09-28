@@ -1,0 +1,51 @@
+{
+  "config": {
+    "method": "gd",
+    "learning_rate": 0.1,
+    "iterations": 100
+  },
+  "threshold": 0.5,
+  "weights": [
+    -0.6498536985081746,
+    0.20081146822229634,
+    0.8282352615050054,
+    0.04685475962799087,
+    0.09935750874497143,
+    0.1375106566665343,
+    0.39948143496063876,
+    0.2115803056613103,
+    0.18289072920038335
+  ],
+  "preprocessing": {
+    "medians": {
+      "Pregnancies": 3.0,
+      "Glucose": 118.0,
+      "BloodPressure": 72.0,
+      "SkinThickness": 29.0,
+      "Insulin": 125.0,
+      "BMI": 32.3,
+      "DiabetesPedigreeFunction": 0.3725,
+      "Age": 29.0
+    },
+    "means": {
+      "Pregnancies": 3.8061889250814334,
+      "Glucose": 122.41205211726384,
+      "BloodPressure": 72.4543973941368,
+      "SkinThickness": 29.14169381107492,
+      "Insulin": 139.43322475570034,
+      "BMI": 32.378501628664495,
+      "DiabetesPedigreeFunction": 0.4660684039087949,
+      "Age": 33.21009771986971
+    },
+    "scales": {
+      "Pregnancies": 3.3478897242891863,
+      "Glucose": 31.292222311974577,
+      "BloodPressure": 11.976512242041576,
+      "SkinThickness": 8.822228425678384,
+      "Insulin": 82.34325512660556,
+      "BMI": 6.874322734955757,
+      "DiabetesPedigreeFunction": 0.32718738001353825,
+      "Age": 11.649600333845518
+    }
+  }
+}

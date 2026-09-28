@@ -1,8 +1,27 @@
 % Компиляция: xelatex stage1_report.tex (два запуска для оглавления и ссылок).
 \documentclass[12pt,a4paper]{article}
 \usepackage{fontspec}
-\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{CMU Serif}}
-\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\setsansfont{CMU Sans Serif}}
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+  \newfontfamily\cyrillicfont{Times New Roman}
+}{
+  \setmainfont{CMU Serif}
+  \newfontfamily\cyrillicfont{CMU Serif}
+}
+\IfFontExistsTF{Arial}{
+  \setsansfont{Arial}
+  \newfontfamily\cyrillicfontsf{Arial}
+}{
+  \setsansfont{CMU Sans Serif}
+  \newfontfamily\cyrillicfontsf{CMU Sans Serif}
+}
+\IfFontExistsTF{Courier New}{
+  \setmonofont{Courier New}
+  \newfontfamily\cyrillicfonttt{Courier New}
+}{
+  \setmonofont{CMU Typewriter Text}
+  \newfontfamily\cyrillicfonttt{CMU Typewriter Text}
+}
 \usepackage{polyglossia}
 \setdefaultlanguage{russian}
 \setotherlanguage{english}

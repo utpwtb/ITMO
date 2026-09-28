@@ -1,0 +1,40 @@
+% !TeX encoding = UTF-8
+\begin{longtable}{L{3.5cm}L{3.2cm}L{7.8cm}}
+\caption{Поля объектов и ограничения предметной области}\\
+\toprule Поле & Тип & Ограничения\\\midrule\endfirsthead
+\toprule Поле & Тип & Ограничения\\\midrule\endhead
+\multicolumn{3}{l}{\textbf{Movie}}\\
+id & Long & Не null; больше 0; уникальный; генерируется автоматически.\\
+name & String & Не null; непустая строка.\\
+coordinates & Coordinates & Не null.\\
+creationDate & LocalDate & Не null; генерируется автоматически.\\
+oscarsCount & int & Больше 0.\\
+budget & long & Больше 0.\\
+totalBoxOffice & Double & Может быть null; при наличии больше 0.\\
+mpaaRating & MpaaRating & Не null.\\
+director & Person & Может быть null.\\
+screenwriter & Person & Дополнительные ограничения в задании не указаны.\\
+operator & Person & Может быть null.\\
+length & Integer & Не null; больше 0.\\
+goldenPalmCount & Long & Может быть null; при наличии больше 0.\\
+usaBoxOffice & int & Больше 0.\\
+tagline & String & Не null.\\
+genre & MovieGenre & Может быть null.\\\midrule
+\multicolumn{3}{l}{\textbf{Coordinates}}\\
+x & Integer & Не null; не больше 826.\\
+y & Integer & Не null.\\\midrule
+\multicolumn{3}{l}{\textbf{Person}}\\
+name & String & Не null; непустая строка.\\
+eyeColor & Color & Может быть null.\\
+hairColor & Color & Может быть null.\\
+location & Location & Может быть null.\\
+birthday & ZonedDateTime & Не null.\\
+height & Float & Может быть null; при наличии больше 0.\\
+weight & Float & Может быть null; при наличии больше 0.\\
+passportID & String & Не null; уникальный.\\\midrule
+\multicolumn{3}{l}{\textbf{Location}}\\
+x & Long & Не null.\\
+y & Double & Не null.\\
+name & String & Не null.\\\bottomrule
+\end{longtable}
+Допустимые значения перечислений приведены после UML-диаграммы классов. Поля вспомогательных объектов хранятся в PostgreSQL вместе с фильмами.

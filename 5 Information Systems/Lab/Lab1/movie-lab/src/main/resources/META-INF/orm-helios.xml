@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm" version="3.0">
+ <entity class="ru.itmo.movie.domain.Movie"><table name="lab1_4101_movie"/></entity>
+ <entity class="ru.itmo.movie.domain.Coordinates"><table name="lab1_4101_coordinates"/></entity>
+ <entity class="ru.itmo.movie.domain.Person"><table name="lab1_4101_person"/></entity>
+ <entity class="ru.itmo.movie.domain.Location"><table name="lab1_4101_location"/></entity>
+ <entity class="ru.itmo.movie.domain.AppState"><table name="lab1_4101_app_state"/></entity>
+</entity-mappings>

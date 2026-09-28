@@ -1,0 +1,195 @@
+{
+  "seed": 42,
+  "raw_rows": 10000,
+  "rows": 9873,
+  "duplicates_removed": 127,
+  "missing": {
+    "Hours Studied": 0,
+    "Previous Scores": 0,
+    "Extracurricular Activities": 0,
+    "Sleep Hours": 0,
+    "Sample Question Papers Practiced": 0,
+    "Performance Index": 0
+  },
+  "train_rows": 7898,
+  "test_rows": 1975,
+  "sha256": "93793b00d9026d0b4907df0ca9f88b3696747c7496679d35833bb0fbf9fb57cf",
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "pandas": "3.0.1",
+  "checks": [
+    "exact linear recovery",
+    "pivot row swap",
+    "singularity detection",
+    "perfect and mean-baseline R2",
+    "missing values and train-only preprocessing",
+    "five-family example from Notion theory attachments"
+  ],
+  "preprocessing": {
+    "fill": {
+      "Hours Studied": 5.0,
+      "Previous Scores": 69.0,
+      "Extracurricular Activities": 0.0,
+      "Sleep Hours": 7.0,
+      "Sample Question Papers Practiced": 5.0
+    },
+    "mean": {
+      "Hours Studied": 4.9903773107115725,
+      "Previous Scores": 69.38123575588757,
+      "Extracurricular Activities": 0.49164345403899723,
+      "Sleep Hours": 6.523930108888326,
+      "Sample Question Papers Practiced": 4.591288933907318,
+      "Hours x Previous Scores": 345.71093947834896
+    },
+    "scale": {
+      "Hours Studied": 2.585711480163544,
+      "Previous Scores": 17.28921128726841,
+      "Extracurricular Activities": 0.49993016326243167,
+      "Sleep Hours": 1.697941539315148,
+      "Sample Question Papers Practiced": 2.8689772962844615,
+      "Hours x Previous Scores": 202.72204751418886
+    }
+  },
+  "baseline": {
+    "r2": -0.0004314043798829825,
+    "rmse": 19.358313781707956,
+    "mae": 16.306538877011004,
+    "sse": 740120.0171303517
+  },
+  "models": {
+    "M1": {
+      "features": [
+        "Hours Studied"
+      ],
+      "train": {
+        "r2": 0.14003665152651434,
+        "rmse": 17.777086815772325,
+        "mae": 15.389621258047988,
+        "sse": 2495963.994047188
+      },
+      "test": {
+        "r2": 0.14377749361934855,
+        "rmse": 17.908828878774713,
+        "mae": 15.506044689195418,
+        "sse": 633434.1498232393
+      },
+      "beta_standardized": [
+        55.13623702203089,
+        7.173671429421541
+      ],
+      "intercept_original": 41.29117835615807,
+      "beta_original": [
+        2.774351076852477
+      ],
+      "normal_equation_max_residual_per_row": 2.9272327506703294e-15
+    },
+    "M2": {
+      "features": [
+        "Hours Studied",
+        "Previous Scores"
+      ],
+      "train": {
+        "r2": 0.9857856802896359,
+        "rmse": 2.2855128216733815,
+        "mae": 1.823359112730593,
+        "sse": 41255.746840747976
+      },
+      "test": {
+        "r2": 0.9858096990932693,
+        "rmse": 2.305524116622244,
+        "mae": 1.8269821275072506,
+        "sse": 10497.996868345388
+      },
+      "beta_standardized": [
+        55.136237022030905,
+        7.381749095500005,
+        17.630783961939798
+      ],
+      "intercept_original": -29.862367456514313,
+      "beta_original": [
+        2.854823189721506,
+        1.0197564058299708
+      ],
+      "normal_equation_max_residual_per_row": 7.474620792885315e-15
+    },
+    "M3": {
+      "features": [
+        "Hours Studied",
+        "Previous Scores",
+        "Extracurricular Activities",
+        "Sleep Hours",
+        "Sample Question Papers Practiced"
+      ],
+      "train": {
+        "r2": 0.9886951140385078,
+        "rmse": 2.0382324669378944,
+        "mae": 1.6189314425650543,
+        "sse": 32811.38477213135
+      },
+      "test": {
+        "r2": 0.9886195114876466,
+        "rmse": 2.0646874568856313,
+        "mae": 1.639701503006645,
+        "sse": 8419.295231876189
+      },
+      "beta_standardized": [
+        55.136237022030905,
+        7.372866968013159,
+        17.615670074554476,
+        0.3104908664523631,
+        0.8212952666719573,
+        0.5488417404600507
+      ],
+      "intercept_original": -34.123870063290276,
+      "beta_original": [
+        2.8513881090657613,
+        1.0188822255603103,
+        0.6210684796975835,
+        0.4837005560292851,
+        0.19130222507192424
+      ],
+      "normal_equation_max_residual_per_row": 6.8089930306410714e-15
+    },
+    "M4 (bonus)": {
+      "features": [
+        "Hours Studied",
+        "Previous Scores",
+        "Extracurricular Activities",
+        "Sleep Hours",
+        "Sample Question Papers Practiced",
+        "Hours x Previous Scores"
+      ],
+      "train": {
+        "r2": 0.9886951563411358,
+        "rmse": 2.0382286534243983,
+        "mae": 1.6189022402409792,
+        "sse": 32811.26199267059
+      },
+      "test": {
+        "r2": 0.988618549651291,
+        "rmse": 2.0647747048758416,
+        "mae": 1.6398036761484818,
+        "sse": 8420.00679924286
+      },
+      "beta_standardized": [
+        55.136237022030905,
+        7.35710546526996,
+        17.608042665125698,
+        0.31043820297709396,
+        0.8213488801323946,
+        0.5488522606463503,
+        0.017869213648970254
+      ],
+      "intercept_original": -34.09348621934942,
+      "beta_original": [
+        2.845292493656187,
+        1.0184410597198306,
+        0.6209631380336088,
+        0.48373213159251616,
+        0.19130589194872846,
+        8.814637513820276e-05
+      ],
+      "normal_equation_max_residual_per_row": 8.399010082570682e-15
+    }
+  }
+}

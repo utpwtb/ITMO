@@ -28,18 +28,17 @@ docker compose up --build
 
 Адрес: <http://localhost:8080/movie-lab/>. Учётная запись та же. Конфигурация Docker предоставлена как альтернативный способ; в этой работе проверен непосредственный запуск Payara/PostgreSQL, поскольку Docker Engine не был запущен. Не используйте `docker compose down -v`, если нужны сохранённые данные.
 
-## Кафедральный PostgreSQL
+## Helios и кафедральный PostgreSQL
 
-Создайте отдельную схему в базе `studs`, выполните в ней `database/schema.sql`. Используйте реальный кафедральный логин/пароль через переменные окружения (не сохраняйте пароль в репозитории):
+22.09.2026 приложение развёрнуто в `/home/studs/s407960/is-lab1-4101` на Helios. Проверены PostgreSQL 18.3 (`pg:5432/studs`), Java 21, Maven 3.8.4 и Payara Micro 6.2025.1: 32 интеграционных теста и 16 проверок браузера/API прошли успешно.
 
-```powershell
-$env:MOVIE_DB_URL='jdbc:postgresql://pg:5432/studs?currentSchema=movie_lab'
-$env:MOVIE_DB_USER='<кафедральный логин>'
-$env:MOVIE_DB_PASSWORD='<кафедральный пароль>'
-java -jar payara-micro-6.2025.1.jar --deploy target/movie-lab.war --noCluster
+В схеме `s407960` используются таблицы с префиксом `lab1_4101_`; тесты используют отдельный префикс `lab1_4101_test_`. Существовавшие таблицы сохранены. JDBC получает пароль из серверного `~/.pgpass` через окружение. Компонент `Database` выбирает persistence unit по `MOVIE_PERSISTENCE_UNIT`: по умолчанию `movies`, на Helios `movies-helios`, в серверных тестах `movies-helios-test`.
+
+```sh
+ssh -N -L 18082:127.0.0.1:40796 -p 2222 s407960@helios.cs.ifmo.ru
 ```
 
-Хост `pg` доступен в сети кафедры. Доступ к нему в этой проверке не использовался. Не запускайте `start-local.ps1` для кафедральной БД: скрипт предназначен именно для локального стенда.
+После открытия SSH-туннеля адрес приложения: <http://localhost:18082/movie-lab/>. Учебная учётная запись: `student / student`. HTTP слушает только loopback сервера. Подробные команды запуска, остановки и повторных проверок: [инструкция Helios](../deployment/README.md). Протоколы: [приёмка Helios](../deployment/ACCEPTANCE.md).
 
 ## Функции и правила
 
@@ -71,7 +70,7 @@ java -jar payara-micro-6.2025.1.jar --deploy target/movie-lab.war --noCluster
 mvn '-DMOVIE_TEST_DB_URL=jdbc:postgresql://127.0.0.1:55441/movie_lab_test' verify
 ```
 
-JUnit создаёт уникальную временную схему, применяет настоящий PostgreSQL DDL и удаляет только эту схему после тестов. H2 и mock ORM не используются. JDBC user/password задаются системными свойствами `-DMOVIE_DB_USER=...`, `-DMOVIE_DB_PASSWORD=...`. Для браузерной проверки нужен Node.js и Playwright:
+JUnit создаёт уникальную временную схему, применяет настоящий PostgreSQL DDL и удаляет только эту схему после тестов. H2 и mock ORM не используются. JDBC user/password задаются переменными окружения `MOVIE_DB_USER`, `MOVIE_DB_PASSWORD`; системные свойства также поддерживаются, но пароль не следует передавать в аргументах командной строки. Для браузерной проверки нужен Node.js и Playwright:
 
 ```sh
 npm install --no-save playwright
