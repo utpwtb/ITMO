@@ -4,17 +4,9 @@
 
 ## 打开应用
 
-在自己电脑的终端执行，按提示输入学校 SSH 密码，并保持终端打开：
+需要两个终端窗口：一个用于登录服务器并启动应用，另一个用于 SSH 转发。
 
-```sh
-ssh -N -L 18082:127.0.0.1:40796 -p 2222 s407960@helios.cs.ifmo.ru
-```
-
-然后打开 <http://localhost:18082/movie-lab/>。实验应用账号是 `student`，密码是 `student`；它与学校 SSH、数据库账号互相独立。要测试多客户端同步，可以同时打开普通窗口和无痕窗口。
-
-HTTP 仅监听服务器 `127.0.0.1:40796`，通过 SSH 隧道访问。若提示本地 18082 被占用，改命令左侧端口，例如 `18083:127.0.0.1:40796`，浏览器也改用 18083。不要同时启动两个占用相同本地端口的隧道。
-
-## 登录服务器与服务管理
+先在第一个窗口登录服务器：
 
 ```sh
 ssh -p 2222 s407960@helios.cs.ifmo.ru
@@ -22,11 +14,59 @@ cd ~/is-lab1-4101
 python3.11 scripts/helios.py status
 ```
 
-启动、查看日志、停止：
+如果显示 `Not running`，执行：
 
 ```sh
 python3.11 scripts/helios.py start
+```
+
+启动后等待约 30 秒，再确认网页服务已就绪：
+
+```sh
+curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:40796/movie-lab/
+```
+
+输出 `200` 表示网页可以访问。仅有 `Running PID ...` 表示进程存在，应用可能还在启动。如果没有 `200`，查看日志：`tail -n 80 .runtime/payara.log`。
+
+随后在自己电脑的**第二个终端窗口**执行，按提示输入学校 SSH 密码，并保持窗口打开：
+
+```sh
+ssh -N -L 18082:127.0.0.1:40796 -p 2222 -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 s407960@helios.cs.ifmo.ru
+```
+
+输入密码后没有新提示符、光标一直等待是正常现象。`-N` 表示只建立转发通道，不打开远程命令行；这个窗口无需继续输入命令。服务器管理命令应在第一个窗口执行。
+
+如果转发窗口出现 `channel ... open failed: connect failed: Connection refused`，说明浏览器请求已经通过 SSH 到达服务器，但服务器的 `40796` 端口尚未接收连接。回到第一个窗口，确认应用已启动，并用上面的 `curl` 命令确认输出 `200`；随后刷新浏览器。转发窗口中先前打印的错误不会自动消失。若刷新时仍新增相同错误，可按 Ctrl+C 结束转发，再重新执行转发命令。
+
+然后打开 <http://localhost:18082/movie-lab/>。可点击“Зарегистрироваться”创建自己的实验账号，也可使用 `student / student`；它与学校 SSH、数据库账号互相独立。注册账号保存在数据库中，服务重启后需要重新登录，但账号仍然存在。要测试多客户端同步，可以同时打开普通窗口和无痕窗口。
+
+HTTP 仅监听服务器 `127.0.0.1:40796`，通过 SSH 隧道访问。若提示本地 18082 被占用，改命令左侧端口，例如 `18083:127.0.0.1:40796`，浏览器也改用 18083。不要同时启动两个占用相同本地端口的隧道。
+
+## 登录服务器与服务管理
+
+2026-10-02 已部署持久化注册功能，通过 38 项 PostgreSQL 集成测试和 32 项浏览器/API 检查（含重启后登录）。[本次记录](verification/auth-2026-10-02/README.md)。后续向现有安装上传新版源码后，先运行 `python3.11 scripts/helios.py test`，成功后执行 `python3.11 scripts/helios.py migrate` 增加账号表，再按下面的停止和启动方式发布 WAR。不要对已有数据再次执行 `init`。
+
+```sh
+ssh -p 2222 s407960@helios.cs.ifmo.ru
+cd ~/is-lab1-4101
+python3.11 scripts/helios.py status
+```
+
+启动应用：
+
+```sh
+python3.11 scripts/helios.py start
+```
+
+查看日志：
+
+```sh
 tail -n 80 .runtime/payara.log
+```
+
+需要停止应用时才执行：
+
+```sh
 python3.11 scripts/helios.py stop
 ```
 

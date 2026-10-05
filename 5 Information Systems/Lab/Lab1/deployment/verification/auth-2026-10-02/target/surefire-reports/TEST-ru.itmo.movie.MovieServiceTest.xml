@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="ru.itmo.movie.MovieServiceTest" time="42.561" tests="38" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/studs/s407960/is-lab1-4101/target/test-classes:/home/studs/s407960/is-lab1-4101/target/classes:/home/studs/s407960/.m2/repository/jakarta/platform/jakarta.jakartaee-api/10.0.0/jakarta.jakartaee-api-10.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/platform/jakarta.jakartaee-web-api/10.0.0/jakarta.jakartaee-web-api-10.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/servlet/jsp/jakarta.servlet.jsp-api/3.1.0/jakarta.servlet.jsp-api-3.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/servlet/jsp/jstl/jakarta.servlet.jsp.jstl-api/3.0.0/jakarta.servlet.jsp.jstl-api-3.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/faces/jakarta.faces-api/4.0.1/jakarta.faces-api-4.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/websocket/jakarta.websocket-api/2.1.0/jakarta.websocket-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/websocket/jakarta.websocket-client-api/2.1.0/jakarta.websocket-client-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/json/jakarta.json-api/2.1.0/jakarta.json-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/json/bind/jakarta.json.bind-api/3.0.0/jakarta.json.bind-api-3.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/studs/s407960/.m2/repository/jakarta/ejb/jakarta.ejb-api/4.0.1/jakarta.ejb-api-4.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/interceptor/jakarta.interceptor-api/2.1.0/jakarta.interceptor-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/enterprise/jakarta.enterprise.cdi-api/4.0.1/jakarta.enterprise.cdi-api-4.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/enterprise/jakarta.enterprise.lang-model/4.0.1/jakarta.enterprise.lang-model-4.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/authentication/jakarta.authentication-api/3.0.0/jakarta.authentication-api-3.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/security/enterprise/jakarta.security.enterprise-api/3.0.0/jakarta.security.enterprise-api-3.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/jms/jakarta.jms-api/3.1.0/jakarta.jms-api-3.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.0/jakarta.mail-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/resource/jakarta.resource-api/2.1.0/jakarta.resource-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/authorization/jakarta.authorization-api/2.1.0/jakarta.authorization-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/batch/jakarta.batch-api/2.1.1/jakarta.batch-api-2.1.1.jar:/home/studs/s407960/.m2/repository/org/eclipse/persistence/eclipselink/4.0.5/eclipselink-4.0.5.jar:/home/studs/s407960/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/studs/s407960/.m2/repository/com/sun/xml/bind/jaxb-xjc/4.0.5/jaxb-xjc-4.0.5.jar:/home/studs/s407960/.m2/repository/com/sun/xml/bind/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/studs/s407960/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/studs/s407960/.m2/repository/org/postgresql/postgresql/42.7.5/postgresql-42.7.5.jar:/home/studs/s407960/.m2/repository/org/checkerframework/checker-qual/3.48.3/checker-qual-3.48.3.jar:/home/studs/s407960/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/home/studs/s407960/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/studs/s407960/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar:/home/studs/s407960/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/home/studs/s407960/.m2/repository/org/glassfish/expressly/expressly/5.0.0/expressly-5.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/el/jakarta.el-api/5.0.0/jakarta.el-api-5.0.0.jar:/home/studs/s407960/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/studs/s407960/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/studs/s407960/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/studs/s407960/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/studs/s407960/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/studs/s407960/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/studs/s407960/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/studs/s407960/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:"/>
+    <property name="java.vm.vendor" value="OpenJDK BSD Porting Team"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/battleblow/jdk21u/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="FreeBSD"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="/usr/local/openjdk21/lib"/>
+    <property name="sun.java.command" value="/home/studs/s407960/is-lab1-4101/target/surefire/surefirebooter-20261002180547722_3.jar /home/studs/s407960/is-lab1-4101/target/surefire 2026-10-02T18-05-47_610-jvmRun1 surefire-20261002180547722_1tmp surefire_0-20261002180547722_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/studs/s407960/is-lab1-4101/target/test-classes:/home/studs/s407960/is-lab1-4101/target/classes:/home/studs/s407960/.m2/repository/jakarta/platform/jakarta.jakartaee-api/10.0.0/jakarta.jakartaee-api-10.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/platform/jakarta.jakartaee-web-api/10.0.0/jakarta.jakartaee-web-api-10.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/servlet/jsp/jakarta.servlet.jsp-api/3.1.0/jakarta.servlet.jsp-api-3.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/servlet/jsp/jstl/jakarta.servlet.jsp.jstl-api/3.0.0/jakarta.servlet.jsp.jstl-api-3.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/faces/jakarta.faces-api/4.0.1/jakarta.faces-api-4.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/websocket/jakarta.websocket-api/2.1.0/jakarta.websocket-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/websocket/jakarta.websocket-client-api/2.1.0/jakarta.websocket-client-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/json/jakarta.json-api/2.1.0/jakarta.json-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/json/bind/jakarta.json.bind-api/3.0.0/jakarta.json.bind-api-3.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/studs/s407960/.m2/repository/jakarta/ejb/jakarta.ejb-api/4.0.1/jakarta.ejb-api-4.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/interceptor/jakarta.interceptor-api/2.1.0/jakarta.interceptor-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/enterprise/jakarta.enterprise.cdi-api/4.0.1/jakarta.enterprise.cdi-api-4.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/enterprise/jakarta.enterprise.lang-model/4.0.1/jakarta.enterprise.lang-model-4.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/studs/s407960/.m2/repository/jakarta/authentication/jakarta.authentication-api/3.0.0/jakarta.authentication-api-3.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/security/enterprise/jakarta.security.enterprise-api/3.0.0/jakarta.security.enterprise-api-3.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/jms/jakarta.jms-api/3.1.0/jakarta.jms-api-3.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.0/jakarta.mail-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/resource/jakarta.resource-api/2.1.0/jakarta.resource-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/authorization/jakarta.authorization-api/2.1.0/jakarta.authorization-api-2.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/batch/jakarta.batch-api/2.1.1/jakarta.batch-api-2.1.1.jar:/home/studs/s407960/.m2/repository/org/eclipse/persistence/eclipselink/4.0.5/eclipselink-4.0.5.jar:/home/studs/s407960/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/studs/s407960/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/studs/s407960/.m2/repository/com/sun/xml/bind/jaxb-xjc/4.0.5/jaxb-xjc-4.0.5.jar:/home/studs/s407960/.m2/repository/com/sun/xml/bind/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/studs/s407960/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/studs/s407960/.m2/repository/org/postgresql/postgresql/42.7.5/postgresql-42.7.5.jar:/home/studs/s407960/.m2/repository/org/checkerframework/checker-qual/3.48.3/checker-qual-3.48.3.jar:/home/studs/s407960/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/home/studs/s407960/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/studs/s407960/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar:/home/studs/s407960/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/home/studs/s407960/.m2/repository/org/glassfish/expressly/expressly/5.0.0/expressly-5.0.0.jar:/home/studs/s407960/.m2/repository/jakarta/el/jakarta.el-api/5.0.0/jakarta.el-api-5.0.0.jar:/home/studs/s407960/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/studs/s407960/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/studs/s407960/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/studs/s407960/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/studs/s407960/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/studs/s407960/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/studs/s407960/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/studs/s407960/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/studs/s407960"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/usr/local/openjdk21"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/studs/s407960/is-lab1-4101"/>
+    <property name="java.vm.compressedOopsMode" value="Non-zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="MOVIE_DB_URL" value="jdbc:postgresql://pg:5432/studs?currentSchema=s407960"/>
+    <property name="surefire.real.class.path" value="/home/studs/s407960/is-lab1-4101/target/surefire/surefirebooter-20261002180547722_3.jar"/>
+    <property name="MOVIE_PERSISTENCE_UNIT" value="movies-helios-test"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.4+7-1"/>
+    <property name="user.name" value="s407960"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.5-STABLE"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/studs/s407960/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages&amp;component=Individual%20Port(s)&amp;short_desc=java/openjdk21%3A%20"/>
+    <property name="java.io.tmpdir" value="/tmp/"/>
+    <property name="java.version" value="21.0.4"/>
+    <property name="user.dir" value="/home/studs/s407960/is-lab1-4101"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib:/usr/local/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="OpenJDK BSD Porting Team"/>
+    <property name="java.vm.version" value="21.0.4+7-1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="argLine" value="-Xmx384m -XX:MaxMetaspaceSize=256m -XX:ActiveProcessorCount=2"/>
+  </properties>
+  <testcase name="registeredAccountPersistsAndUsesDistinctSalt" classname="ru.itmo.movie.MovieServiceTest" time="8.893">
+    <system-err><![CDATA[окт. 02, 2026 6:05:51 PM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 8.0.2.Final
+]]></system-err>
+  </testcase>
+  <testcase name="stringTaglineExactFilter" classname="ru.itmo.movie.MovieServiceTest" time="0.179"/>
+  <testcase name="nullableRoleSortingIncludesUnrelatedMovies" classname="ru.itmo.movie.MovieServiceTest" time="0.204"/>
+  <testcase name="duplicateAccountIsRejectedWithoutChangingPassword" classname="ru.itmo.movie.MovieServiceTest" time="9.66"/>
+  <testcase name="reusableReferencesSurviveMovieDeletion" classname="ru.itmo.movie.MovieServiceTest" time="0.132"/>
+  <testcase name="averageEmptyAndNonempty" classname="ru.itmo.movie.MovieServiceTest" time="0.125"/>
+  <testcase name="redistributionZeroPool" classname="ru.itmo.movie.MovieServiceTest" time="0.121"/>
+  <testcase name="createGeneratedFieldsAndNullableReferences" classname="ru.itmo.movie.MovieServiceTest" time="0.073"/>
+  <testcase name="escapedPrefix" classname="ru.itmo.movie.MovieServiceTest" time="0.128"/>
+  <testcase name="invalidMovieFieldsRejected" classname="ru.itmo.movie.MovieServiceTest" time="0.074"/>
+  <testcase name="concurrentRegistrationCreatesExactlyOneAccount" classname="ru.itmo.movie.MovieServiceTest" time="1.45"/>
+  <testcase name="databaseConstraintsIndependently" classname="ru.itmo.movie.MovieServiceTest" time="0.065"/>
+  <testcase name="duplicatePassport" classname="ru.itmo.movie.MovieServiceTest" time="0.059"/>
+  <testcase name="optimisticConflict" classname="ru.itmo.movie.MovieServiceTest" time="0.096"/>
+  <testcase name="allPositiveMovieFieldsAtServiceAndDatabase" classname="ru.itmo.movie.MovieServiceTest" time="2.107"/>
+  <testcase name="zonedBirthdayRoundTrip" classname="ru.itmo.movie.MovieServiceTest" time="0.08"/>
+  <testcase name="awardOverflowRollsBackWholeTransaction" classname="ru.itmo.movie.MovieServiceTest" time="0.095"/>
+  <testcase name="redistributionRejectsSameAndEmpty" classname="ru.itmo.movie.MovieServiceTest" time="0.096"/>
+  <testcase name="concurrentAwardsHaveNoLostUpdates" classname="ru.itmo.movie.MovieServiceTest" time="0.258"/>
+  <testcase name="deleteByBoxOffice" classname="ru.itmo.movie.MovieServiceTest" time="0.113"/>
+  <testcase name="nonFiniteRejected" classname="ru.itmo.movie.MovieServiceTest" time="0.052"/>
+  <testcase name="revisionOnlyAfterCommit" classname="ru.itmo.movie.MovieServiceTest" time="0.085"/>
+  <testcase name="redistributionConservesAwardsAndRemainder" classname="ru.itmo.movie.MovieServiceTest" time="0.14"/>
+  <testcase name="invalidRegistrationIsRejected" classname="ru.itmo.movie.MovieServiceTest" time="0.049"/>
+  <testcase name="requiredRelation" classname="ru.itmo.movie.MovieServiceTest" time="0.06"/>
+  <testcase name="exactFilteringSortingPagination" classname="ru.itmo.movie.MovieServiceTest" time="0.114"/>
+  <testcase name="pageBoundsAndSortInjection" classname="ru.itmo.movie.MovieServiceTest" time="0.043"/>
+  <testcase name="defaultAccountIsSeededOnlyOnce" classname="ru.itmo.movie.MovieServiceTest" time="7.628"/>
+  <testcase name="incorrectLoginIsRejected" classname="ru.itmo.movie.MovieServiceTest" time="4.846"/>
+  <testcase name="cascadeCoordinates" classname="ru.itmo.movie.MovieServiceTest" time="0.096"/>
+  <testcase name="cascadeLocationPersonMovie" classname="ru.itmo.movie.MovieServiceTest" time="0.117"/>
+  <testcase name="coordinateBoundary" classname="ru.itmo.movie.MovieServiceTest" time="0.067"/>
+  <testcase name="precisionAndRange" classname="ru.itmo.movie.MovieServiceTest" time="0.073"/>
+  <testcase name="updateRetainsIdentityAndCreationDate" classname="ru.itmo.movie.MovieServiceTest" time="0.081"/>
+  <testcase name="awardStrictBoundary" classname="ru.itmo.movie.MovieServiceTest" time="0.101"/>
+  <testcase name="redistributionOverflowRollsBack" classname="ru.itmo.movie.MovieServiceTest" time="0.096"/>
+  <testcase name="immutableFieldsRejected" classname="ru.itmo.movie.MovieServiceTest" time="1.113"/>
+  <testcase name="personConstraintsAtDatabase" classname="ru.itmo.movie.MovieServiceTest" time="0.061"/>
+</testsuite>

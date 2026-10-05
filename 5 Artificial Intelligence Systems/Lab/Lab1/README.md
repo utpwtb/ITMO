@@ -1,70 +1,50 @@
-# 实验一：Prolog 知识库与 OWL 本体
+# 实验一：线性回归 / Линейная регрессия
 
-主题：虚构 RPG 世界的角色与任务匹配。包含实验一的两个部分；实验二的对话式推荐程序不在本次范围内。
+本地编号为实验一，对应课程 Notion 原标注的[实验三要求](https://sunnysubmarines.notion.site/AI-System-a559a46cddc44363bdf27b77e10b7d85)。使用用户确认的奇数序号数据集 Student Performance。报告内容按 [模块二模板](https://sunnysubmarines.notion.site/2-4c3e6faa54b14630a267dbde97843b6d) 组织。
 
 ## 交付文件
 
-- `report/main.tex`、`report/title.tex`、`report/1.tex`：按提供的 LaTeX 格式和课程模板六个章节撰写的俄语报告。
-- `report/main.pdf`：编译后的报告。
-- `knowledge.pl`：24 条一元事实、15 条二元事实、7 条规则，俄语注释。
-- `game_ontology.owl`：用于 Protégé 的原始 OWL/SWRL 本体。
-- `results/game_inferred.owl`：经过 Pellet 推理并显式保存继承类型及推导关系的版本。
-- `run_prolog.mjs`：15 个真实 SWI-Prolog 查询与预期结果校验。
-- `build_ontology.py`：从 Prolog 读取事实，建立本体、运行 Pellet、执行 9 个 SPARQL 查询，并与 Prolog 比较 7 组结果。
-- `results/prolog_results.json`、`results/ontology_results.json`：实际运行的结果。
-- `queries.sparql`：9 个独立查询，每次选择其中一条执行，不是一个整体查询。
+- `report/main.pdf`：俄语报告。
+- `report/main.tex`、`content.tex`、`title.tex`：LaTeX 源文件；表格、图片和字体全部包含在 `report` 内，可单独上传 Overleaf。
+- `实验一任务与实现讲解.md`：对照课程任务和理论附件的中文讲解，说明公式、代码实现和运行结果。
+- `experiment.py`：完整可复现实验，手写高斯消元求解正规方程；没有调用 sklearn、SciPy 或 `numpy.linalg`。
+- `data/Student_Performance.csv`：原始数据，未经修改。
+- `results/`：实际运行产生的指标、系数、完整测试预测、划分索引、统计数据和四幅图。
+- `sources/linear_regression.pdf`、`sources/linear_regression.docx`：从 Notion 实验三理论页面下载并读取的两个原始附件。来源与要求见 `sources/README.md`。
+- `build_report_assets.py`：从实际结果生成 LaTeX 表格并同步图片，避免手填数据不一致。
 
-## 运行
+## 运行实验
 
-在 Lab1 目录执行，需要 Node.js、Python 和 Java（验证环境使用 Java 17）：
+需要 Python 3.12 或更新的兼容版本。在 `Lab1` 目录执行：
 
 ```powershell
-npm ci
 python -m pip install -r requirements.txt
-node run_prolog.mjs
-python build_ontology.py
+python experiment.py
+python build_report_assets.py
 ```
 
-`swipl-wasm` 是 SWI-Prolog 官方 WebAssembly 运行时，执行的是 `knowledge.pl` 中的真实 Prolog 规则，不是用 JavaScript 模拟规则。`package-lock.json` 固定依赖版本。Python 脚本也支持此目录下 `.deps` 中的依赖。
+脚本启动时会运行已知线性解、主元交换、奇异矩阵、R²、训练集独立预处理及课程附件例题检查；每个模型还检查正规方程残差。Matplotlib 仅用于绘图，模型计算仅用 NumPy/Pandas。
 
-安装桌面 SWI-Prolog 后，也可以直接运行：
+首次下载的数据已包含在项目内，之后运行实验不需要网络。安装 `requirements.txt` 即可恢复运行依赖；临时依赖缓存不属于交付内容。
 
-```powershell
-swipl -s knowledge.pl
-```
+## 实际结果
 
-在 Prolog 提示符中输入：
+原始数据 10,000 行；无缺失值；删除 127 条完全重复行，剩余 9,873 行。使用 `default_rng(42)`，训练 7,898 行，测试 1,975 行。三种基本特征方案及一项加分实验使用相同划分。
 
-```prolog
-ready_for(X,Q).
-guildmate(X,Y).
-combatant(X), safe_character(X).
-```
+| 模型 | 特征 | 测试 R² | 测试 RMSE |
+|---|---|---:|---:|
+| M1 | 学习时长 | 0.143777 | 17.9088 |
+| M2 | 学习时长、历史成绩 | 0.985810 | 2.3055 |
+| M3 | 全部五个原始特征 | 0.988620 | 2.0647 |
+| M4（加分） | M3 + 学习时长 × 历史成绩 | 0.988619 | 2.0648 |
 
-输入分号查看下一个解。`ready_for(X,Q)` 的结果是 `aria–ruins`、`celia–tower`、`finn–forest`。
+M3 在本次测试中最好，合成特征没有改善结果。数据作者明确说明这是合成教学数据，不应将模型系数解释为真实教育因果关系。
 
-## Protégé 演示
+预处理顺序：去重 → 划分 → Yes/No 编码 → 用训练集的中位数/众数补缺失 → 构造合成特征 → 用训练集均值与标准差进行标准化。原数据无缺失，补缺失分支通过人为缺失的小样本检查。目标值不缩放，也不截断预测。
 
-1. File → Open 打开 `game_ontology.owl`。
-2. Classes 查看 Character 子类；Object properties 查看 Domain/Range；Individuals 查看原始事实。
-3. 四个派生类通过 OWL 定义，三个关系通过 SWRL 规则定义。关系推理需要支持这些规则的 reasoner，例如 Pellet；不能把普通 RDF 查询当作 OWL 推理。
-4. 可单独打开 `results/game_inferred.owl`，直接检查 `aria readyFor ruins` 等已验证关系。该文件同时保存从类继承得到的类型，便于普通 SPARQL 查询。
-5. DL Query 示例：`Character and (readyFor value ruins)`；`Combatant and SafeCharacter`。前者应选出 Aria，后者应选出 Aria、Celia。
-6. 如需课堂截图，在自己的 Protégé 窗口截取类树、属性和查询结果。报告内已包含模型关系图，但没有伪造 Protégé 界面截图。本次已完成自动 Pellet 检查，未进行桌面 Protégé UI 操作。
+删除完全重复行是一项明确的实验假设；数据没有学生 ID，不能证明这些重复记录一定代表同一个人。报告说明了这一限制。所有训练/测试索引均保存，不会悄悄更改划分。
 
-注意：本体没有给基础类增加俄语显示标签，查询中可直接使用报告里的英文实体名。
-
-## 重要语义
-
-- `safe_character` 表示当前记录中不受诅咒，不表示实际战斗安全。
-- Prolog 的 `\+ cursed(X)` 是否定即失败；OWL 中缺少事实不能当成否定。为了比较当前快照，对其余五名角色显式声明 `not Cursed`。
-- 新增角色时，需要重新判断这种补充声明；两个系统并非对任何扩展数据都等价。
-- `AllDifferent` 对应 Prolog 原子名称的区分；角色可以兼具多个职业，因此职业类不设互斥。
-- `sword` 等表示武器种类，不是一件唯一的实物。
-
-## 编译俄语报告
-
-封面已填写：Чэнь Хаолинь，P3316，407960，教师 Болдырева Елена Александровна。学生信息在 `report/title.tex`，教师在 `report/main.tex` 的 `TeacherName` 中。
+## 编译报告
 
 ```powershell
 cd report
@@ -72,11 +52,8 @@ xelatex main.tex
 xelatex main.tex
 ```
 
-也可执行 `tectonic main.tex`。沿用示例的 CMU Serif、CMU Typewriter Text 字体，字体及许可证已附在 `report/fonts`，无需系统安装。将整个 `report` 文件夹上传到 Overleaf，选择 XeLaTeX，并将 `main.tex` 设为主文件即可。`report.tex` 仅作为兼容入口，引用 `main.tex`。
+也可 `tectonic main.tex`。将整个 `report` 文件夹上传 Overleaf，编译器选 **XeLaTeX**，主文件选 `main.tex`。字体已随报告附带，无需系统安装。
 
-## 课程来源
+封面沿用实验一已填写的信息：Чэнь Хаолинь，P3316，407960；教师 Болдырева Елена Александровна。需要调整时编辑 `report/title.tex`。
 
-- [实验任务](https://sunnysubmarines.notion.site/AI-System-a559a46cddc44363bdf27b77e10b7d85)
-- [模块一报告模板](https://sunnysubmarines.notion.site/1-ea9a418d514b4baa8f7b4fc4c3ee176e)
-
-模板结构：Введение；Анализ требований；Изучение основных концепций и инструментов；Реализация системы искусственного интеллекта；Оценка и интерпретация результатов；Заключение。报告保留六章，并说明实验二属于后续工作。
+可选排版检查脚本 `qa_report.py` 需要 PyMuPDF 和 Pillow，不属于实验算法依赖。输出保存在 `tmp/qa/`。

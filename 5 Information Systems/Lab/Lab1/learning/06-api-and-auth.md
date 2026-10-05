@@ -53,14 +53,22 @@ public Object get(@PathParam("kind") String kind, @PathParam("id") long id) {
 
 ```text
 POST /api/auth + 用户名密码
-→ 服务端比较配置的账号
+→ AuthService 查询数据库账号并校验密码哈希
 → 失效旧会话，创建新会话
 → 在会话中保存 user 和随机 csrf
 → 返回登录状态与 csrf
 → 浏览器后续同源请求自动携带会话 Cookie
 ```
 
-默认账号是学习用途的 `student / student`，可用环境变量替换。没有用户注册、用户表、角色权限或密码哈希存储流程。多用户演示使用多个独立会话，不是已经实现了完整账户管理系统。
+默认账号是学习用途的 `student / student`。2026-10-02 增加了注册（регистрация）：用户可在登录页选择“Зарегистрироваться”，提交用户名、密码和密码确认。所有账号仍有相同权限，没有角色划分。
+
+注册链路是 `register-form → POST /api/auth/register → AuthResource → AuthService → Database.write → app_user`。后端要求用户名长度为 3–64，只含字母、数字、`_ . -`；密码长度为 8–128。前端比较两次密码，后端独立检查用户名和密码，不能只依靠网页验证。重复用户名返回 409；数据库 `UNIQUE` 约束也防止重复。注册成功返回 201，同时创建会话，所以直接进入电影列表。
+
+[AuthService](<C:/develop/NOTE_UTP/StudyNote/5 Information Systems/Lab/Lab1/movie-lab/src/main/java/ru/itmo/movie/service/AuthService.java>) 使用 Java 自带的 `SecretKeyFactory` 计算 PBKDF2-HMAC-SHA256。每个账号生成独立的 16 字节随机盐（соль），迭代 600000 次，得到 32 字节哈希（хеш пароля）。表中保存 Base64 编码后的哈希、盐和迭代次数，不保存原始密码。Base64 只是二进制到文本的编码；保护密码的是带盐的慢哈希过程。
+
+登录时根据用户名找到 `AppUser`，用该账号的盐和迭代次数重新计算输入密码的哈希，再用 `MessageDigest.isEqual` 比较。即使两个用户密码相同，独立随机盐也会让存储结果不同。REST 响应只返回 `authenticated`、`user`、`csrf`，不序列化账号实体。
+
+账号和会话的寿命不同：账号存在 PostgreSQL 中，重启应用后仍可登录；`HttpSession` 属于服务器运行时，重启后需要重新登录。`MOVIE_USER`、`MOVIE_PASSWORD` 只决定初始账号第一次创建时的值；`seedDefaultAccount()` 在账号已存在时直接返回，不覆盖已保存的密码。现有安装先执行 `001_accounts.sql` 增加账号表，保留原有电影数据。Helios 表名为 `lab1_4101_app_user`，避免碰到原有的 `users` 表。
 
 `@RequestScoped` 资源对象的生命周期只有请求长度；登录状态放在 HttpSession，所以不会随着一次资源调用结束而消失。
 
@@ -73,6 +81,7 @@ POST /api/auth + 用户名密码
 | 情况 | 处理 |
 |---|---|
 | GET/POST auth | 允许访问登录状态或提交登录 |
+| POST auth/register | 允许匿名注册；由后端校验注册数据 |
 | 其他 API 没有有效会话 | 返回 401 |
 | 修改操作缺少正确 `X-CSRF-Token` | 返回 403 |
 | 通过验证 | 继续调用资源方法 |

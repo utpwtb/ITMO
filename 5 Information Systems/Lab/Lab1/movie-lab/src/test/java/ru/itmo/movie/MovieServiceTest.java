@@ -27,7 +27,7 @@ class MovieServiceTest {
     boolean created;
 
     String sql(String statement) {
-        return sharedSchema ? statement.replaceAll("\\b(movie|person|coordinates|location|app_state)\\b", "lab1_4101_test_$1")
+        return sharedSchema ? statement.replaceAll("\\b(movie|person|coordinates|location|app_state|app_user)\\b", "lab1_4101_test_$1")
                 .replaceAll("\\b(movie_[a-z]+_idx|person_location_idx)\\b", "lab1_4101_test_$1") : statement;
     }
 
@@ -67,7 +67,7 @@ class MovieServiceTest {
         if (connection != null) {
             try (Statement s = connection.createStatement()) {
                 if (created) {
-                    if (sharedSchema) s.execute(sql("DROP TABLE movie,person,coordinates,location,app_state"));
+                    if (sharedSchema) s.execute(sql("DROP TABLE movie,person,coordinates,location,app_state,app_user"));
                     else s.execute("DROP SCHEMA " + schema + " CASCADE");
                 }
             } finally {
@@ -79,13 +79,107 @@ class MovieServiceTest {
     @BeforeEach
     void clean() throws Exception {
         try (Statement s = connection.createStatement()) {
-            s.execute(sql("TRUNCATE movie,person,coordinates,location RESTART IDENTITY"));
+            s.execute(sql("TRUNCATE movie,person,coordinates,location,app_user RESTART IDENTITY"));
             s.execute(sql("UPDATE app_state SET revision=0"));
         }
     }
 
     Coordinates coord() {
         return (Coordinates) service.save("coordinates", null, Map.of("x", 826, "y", -10));
+    }
+
+    @Test
+    void registeredAccountPersistsAndUsesDistinctSalt() {
+        AuthService auth = new AuthService(db);
+        String password = "Integration password 2026";
+        assertEquals("tester_one", auth.register(" tester_one ", password));
+        auth.register("tester_two", password);
+        AppUser one = db.read(em -> em.createQuery("SELECT u FROM AppUser u WHERE u.username='tester_one'", AppUser.class).getSingleResult());
+        AppUser two = db.read(em -> em.createQuery("SELECT u FROM AppUser u WHERE u.username='tester_two'", AppUser.class).getSingleResult());
+        assertNotEquals(password, one.passwordHash);
+        assertNotEquals(one.passwordHash, two.passwordHash);
+        assertNotEquals(one.salt, two.salt);
+        assertEquals(32, Base64.getDecoder().decode(one.passwordHash).length);
+        assertEquals(16, Base64.getDecoder().decode(one.salt).length);
+        assertEquals("tester_one", new AuthService(db).authenticate("tester_one", password));
+    }
+
+    @Test
+    void duplicateAccountIsRejectedWithoutChangingPassword() {
+        AuthService auth = new AuthService(db);
+        auth.register("tester", "First password 2026");
+        Problem p = assertThrows(Problem.class, () -> auth.register(" tester ", "Second password 2026"));
+        assertEquals(409, p.status);
+        assertEquals("tester", auth.authenticate("tester", "First password 2026"));
+        assertEquals(401, assertThrows(Problem.class, () -> auth.authenticate("tester", "Second password 2026")).status);
+    }
+
+    @Test
+    void invalidRegistrationIsRejected() {
+        AuthService auth = new AuthService(db);
+        for (String name : new String[]{"ab", "with space", "<script>", "x".repeat(65)})
+            assertEquals(400, assertThrows(Problem.class, () -> auth.register(name, "Long password 2026")).status);
+        for (String password : new String[]{"short", "x".repeat(129)})
+            assertEquals(400, assertThrows(Problem.class, () -> auth.register("tester", password)).status);
+        assertEquals(400, assertThrows(Problem.class, () -> auth.register(null, null)).status);
+        assertEquals(0L, db.read(em -> em.createQuery("SELECT COUNT(u) FROM AppUser u", Long.class).getSingleResult()).longValue());
+    }
+
+    @Test
+    void incorrectLoginIsRejected() {
+        AuthService auth = new AuthService(db);
+        auth.register("tester", "Correct password 2026");
+        for (String name : new String[]{"tester", "missing"})
+            assertEquals(401, assertThrows(Problem.class, () -> auth.authenticate(name, "wrong")).status);
+        assertEquals(401, assertThrows(Problem.class, () -> auth.authenticate(null, null)).status);
+    }
+
+    @Test
+    void defaultAccountIsSeededOnlyOnce() {
+        AuthService auth = new AuthService(db);
+        auth.seedDefaultAccount();
+        String name = Database.config("MOVIE_USER", "student");
+        String password = Database.config("MOVIE_PASSWORD", "student");
+        assertEquals(name, auth.authenticate(name, password));
+        String previous = System.getProperty("MOVIE_PASSWORD");
+        try {
+            System.setProperty("MOVIE_PASSWORD", "Changed bootstrap password");
+            new AuthService(db).seedDefaultAccount();
+            assertEquals(name, auth.authenticate(name, password));
+            assertEquals(401, assertThrows(Problem.class, () -> auth.authenticate(name, "Changed bootstrap password")).status);
+            assertEquals(1L, db.read(em -> em.createQuery("SELECT COUNT(u) FROM AppUser u", Long.class).getSingleResult()).longValue());
+        } finally {
+            if (previous == null) System.clearProperty("MOVIE_PASSWORD");
+            else System.setProperty("MOVIE_PASSWORD", previous);
+        }
+    }
+
+    @Test
+    void concurrentRegistrationCreatesExactlyOneAccount() throws Exception {
+        ExecutorService workers = Executors.newFixedThreadPool(2);
+        CountDownLatch ready = new CountDownLatch(2), start = new CountDownLatch(1);
+        Callable<Integer> create = () -> {
+            ready.countDown();
+            start.await();
+            try {
+                new AuthService(db).register("same_user", "Concurrent password 2026");
+                return 201;
+            } catch (Problem p) {
+                return p.status;
+            }
+        };
+        try {
+            Future<Integer> first = workers.submit(create), second = workers.submit(create);
+            assertTrue(ready.await(10, TimeUnit.SECONDS));
+            start.countDown();
+            var statuses = new ArrayList<>(List.of(first.get(30, TimeUnit.SECONDS), second.get(30, TimeUnit.SECONDS)));
+            Collections.sort(statuses);
+            assertEquals(List.of(201, 409), statuses);
+            assertEquals(1L, db.read(em -> em.createQuery("SELECT COUNT(u) FROM AppUser u", Long.class).getSingleResult()).longValue());
+        } finally {
+            start.countDown();
+            workers.shutdownNow();
+        }
     }
 
     Map<String, Object> data(long c, String name, int oscars, MovieGenre genre) {

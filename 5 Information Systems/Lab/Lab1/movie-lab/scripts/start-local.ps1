@@ -29,6 +29,8 @@ if ($initialized -ne 't') {
  & (Join-Path $PostgresBin 'psql.exe') -h 127.0.0.1 -p $DatabasePort -U movie_lab -d movie_lab -v ON_ERROR_STOP=1 -f (Join-Path $project 'database/schema.sql')
  if($LASTEXITCODE -ne 0){throw 'Schema initialization failed'}
 }
+& (Join-Path $PostgresBin 'psql.exe') -h 127.0.0.1 -p $DatabasePort -U movie_lab -d movie_lab -v ON_ERROR_STOP=1 -1 -f (Join-Path $project 'database/migrations/001_accounts.sql')
+if($LASTEXITCODE -ne 0){throw 'Account migration failed'}
 Push-Location $project
 try {
  & mvn -B -s $settings -gs $settings "-Dmaven.repo.local=$repo" "-DMOVIE_TEST_DB_URL=jdbc:postgresql://127.0.0.1:$DatabasePort/movie_lab_test" verify
@@ -36,6 +38,6 @@ try {
  & mvn -B -s $settings -gs $settings "-Dmaven.repo.local=$repo" dependency:get '-Dartifact=fish.payara.extras:payara-micro:6.2025.1' '-Dtransitive=false'
  if($LASTEXITCODE -ne 0){throw 'Payara download failed'}
  $jar = Join-Path $repo 'fish/payara/extras/payara-micro/6.2025.1/payara-micro-6.2025.1.jar'
- Write-Host "Open http://localhost:$HttpPort/movie-lab/ ; local login: student / student (unless environment variables override it)"
+ Write-Host "Open http://localhost:$HttpPort/movie-lab/ ; register an account or use student / student (bootstrap defaults)"
  & java "-DMOVIE_DB_URL=jdbc:postgresql://127.0.0.1:$DatabasePort/movie_lab" -jar $jar --deploy (Join-Path $project 'target/movie-lab.war') --port $HttpPort --noCluster --rootdir (Join-Path $runtime 'payara')
 } finally { Pop-Location }

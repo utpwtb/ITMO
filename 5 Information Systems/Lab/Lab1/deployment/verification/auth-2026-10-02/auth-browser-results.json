@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-02T15:09:32.387Z",
+  "username": "authcheck_1790953756635",
+  "results": [
+    {
+      "name": "Login page offers registration",
+      "passed": true
+    },
+    {
+      "name": "Removed login explanation is absent",
+      "passed": true
+    },
+    {
+      "name": "Footer contains only the requested title",
+      "passed": true
+    },
+    {
+      "name": "Password confirmation mismatch is explained",
+      "passed": true
+    },
+    {
+      "name": "Registration creates account and session",
+      "passed": true
+    },
+    {
+      "name": "Auth response exposes no password material",
+      "passed": true
+    },
+    {
+      "name": "New account opens the collection immediately",
+      "passed": true
+    },
+    {
+      "name": "Duplicate username is explained in registration form",
+      "passed": true
+    },
+    {
+      "name": "Registered account can log out and log in again",
+      "passed": true
+    },
+    {
+      "name": "Registration form fits narrow screens",
+      "passed": true
+    },
+    {
+      "name": "Short password rejected by API",
+      "passed": true
+    },
+    {
+      "name": "Invalid username rejected by API",
+      "passed": true
+    },
+    {
+      "name": "Failed registration does not authenticate",
+      "passed": true
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "passed": true
+    }
+  ]
+}

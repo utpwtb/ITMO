@@ -17,6 +17,7 @@ public class AuthFilter implements ContainerRequestFilter {
         String path = context.getUriInfo().getPath();
         String method = context.getMethod();
         if (path.equals("auth") && (method.equals("POST") || method.equals("GET"))) return;
+        if (path.equals("auth/register") && method.equals("POST")) return;
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
             context.abortWith(Response.status(401).entity(Map.of("error", "Войдите в систему")).build());

@@ -74,6 +74,7 @@ function showSession(data) {
     $('login').hidden = !!data.authenticated;
     $('workspace').hidden = !data.authenticated;
     $('session').replaceChildren();
+    if (!data.authenticated) authView(false);
     if (data.authenticated) {
         const b = document.createElement('button');
         b.textContent = 'Выйти · ' + data.user;
@@ -88,6 +89,50 @@ function showSession(data) {
         $('session').append(b);
     }
 }
+
+function authView(register) {
+    $('login-form').hidden = register;
+    $('register-form').hidden = !register;
+    $('auth-heading').textContent = register ? 'Регистрация' : 'Вход в систему';
+    $('login-error').textContent = '';
+    $('register-error').textContent = '';
+    for (const form of [$('login-form'), $('register-form')]) {
+        form.querySelectorAll('input[type=password]').forEach(input => input.value = '');
+    }
+}
+
+$('show-register').onclick = () => {
+    authView(true);
+    $('register-form').elements.username.focus();
+};
+$('show-login').onclick = () => {
+    authView(false);
+    $('login-form').elements.username.focus();
+};
+
+$('register-form').onsubmit = async e => {
+    e.preventDefault();
+    const form = e.target;
+    const data = Object.fromEntries(new FormData(form));
+    if (data.password !== data.confirmation) {
+        $('register-error').textContent = 'Пароли не совпадают';
+        return;
+    }
+    const buttons = [...form.querySelectorAll('button')];
+    buttons.forEach(button => button.disabled = true);
+    try {
+        showSession(await api('auth/register', 'POST', {username: data.username, password: data.password}));
+        $('register-error').textContent = '';
+        form.reset();
+        $('login-form').reset();
+        state.revision = null;
+        await refresh();
+    } catch (error) {
+        $('register-error').textContent = error.message;
+    } finally {
+        buttons.forEach(button => button.disabled = false);
+    }
+};
 
 $('login-form').onsubmit = async e => {
     e.preventDefault();

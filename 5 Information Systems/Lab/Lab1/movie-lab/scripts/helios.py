@@ -49,8 +49,8 @@ def run(args, **kwargs):
 
 
 mode = sys.argv[1] if len(sys.argv) == 2 else ''
-if mode not in ('test', 'init', 'start', 'stop', 'status'):
-    sys.exit('Usage: python3.11 scripts/helios.py test|init|start|stop|status')
+if mode not in ('test', 'init', 'migrate', 'start', 'stop', 'status'):
+    sys.exit('Usage: python3.11 scripts/helios.py test|init|migrate|start|stop|status')
 
 pidfile = RUNTIME / 'payara.pid'
 
@@ -85,11 +85,12 @@ if mode == 'test':
     env.update(MOVIE_TEST_DB_URL='jdbc:postgresql://pg:5432/studs', MOVIE_TEST_SCHEMA='s407960')
     run(['mvn', '-B', '-ntp', '-s', 'scripts/maven-settings.xml',
          '-DargLine=-Xmx384m -XX:MaxMetaspaceSize=256m -XX:ActiveProcessorCount=2', 'clean', 'verify'])
-elif mode == 'init':
-    ddl = (ROOT / 'database/schema.sql').read_text(encoding='utf-8')
-    ddl = re.sub(r'\b(movie|person|coordinates|location|app_state)\b', r'lab1_4101_\1', ddl)
+elif mode in ('init', 'migrate'):
+    ddl_path = 'database/schema.sql' if mode == 'init' else 'database/migrations/001_accounts.sql'
+    ddl = (ROOT / ddl_path).read_text(encoding='utf-8')
+    ddl = re.sub(r'\b(movie|person|coordinates|location|app_state|app_user)\b', r'lab1_4101_\1', ddl)
     ddl = re.sub(r'\b(movie_[a-z]+_idx|person_location_idx)\b', r'lab1_4101_\1', ddl)
-    # One transaction. No IF NOT EXISTS: existing deployment data is never overwritten.
+    # Init refuses existing tables; migration only adds the account table.
     run(['psql', '-X', '-h', 'pg', '-d', 'studs', '-U', 's407960', '-w', '-v', 'ON_ERROR_STOP=1'],
         input='BEGIN;\nSET search_path TO s407960;\n' + ddl + '\nCOMMIT;\n', text=True)
 elif mode == 'start':

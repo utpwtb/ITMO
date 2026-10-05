@@ -13,12 +13,24 @@
         <h1>Кинотека</h1></div>
     <div id="session"></div>
 </header>
-<section id="login"><h2>Вход в систему</h2>
-    <p>Все авторизованные пользователи работают с общей коллекцией.</p>
+<section id="login"><h2 id="auth-heading">Вход в систему</h2>
     <form id="login-form"><label>Имя пользователя<input autocomplete="username" name="username" required></label><label>Пароль<input
             autocomplete="current-password" name="password" required type="password"></label>
-        <button>Войти</button>
+        <div class="toolbar"><button>Войти</button>
+            <button class="secondary" id="show-register" type="button">Зарегистрироваться</button></div>
         <p class="error" id="login-error" role="alert"></p></form>
+    <form hidden id="register-form">
+        <label>Имя пользователя<input autocomplete="username" maxlength="64" minlength="3" name="username" required
+            aria-describedby="username-hint"></label>
+        <p class="field-hint" id="username-hint">От 3 до 64 букв, цифр или символов _ . -</p>
+        <label>Пароль<input autocomplete="new-password" maxlength="128" minlength="8" name="password" required
+            type="password" aria-describedby="password-hint"></label>
+        <p class="field-hint" id="password-hint">От 8 до 128 символов</p>
+        <label>Повторите пароль<input autocomplete="new-password" maxlength="128" minlength="8" name="confirmation" required type="password"></label>
+        <div class="toolbar"><button>Создать аккаунт</button>
+            <button class="secondary" id="show-login" type="button">Вернуться ко входу</button></div>
+        <p class="error" id="register-error" role="alert"></p>
+    </form>
 </section>
 <main hidden id="workspace">
     <nav aria-label="Главное меню">
@@ -114,6 +126,6 @@
     <button class="danger" id="delete-confirm">Удалить</button>
     <button data-close="delete-dialog">Отмена</button>
 </dialog>
-<footer>Лабораторная работа № 1 · Общая коллекция · Автообновление каждые 2 секунды</footer>
+<footer>Лабораторная работа № 1</footer>
 </body>
 </html>

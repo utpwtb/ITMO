@@ -1,0 +1,38 @@
+% 中文版主文件。使用 Tectonic 或 XeLaTeX 编译。
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+\setCJKmainfont[AutoFakeBold=true,AutoFakeSlant=true]{SimSun}
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{SimSun}
+\usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{amsmath,amssymb,array,longtable,booktabs,enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=black,urlcolor=blue,
+ pdftitle={美容沙龙搜索与服务在线预约信息系统：第一阶段},
+ pdfauthor={Чэнь Хаолинь; Павлов Эдгар}}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\onehalfspacing
+\setlength{\parindent}{2em}
+\setlength{\emergencystretch}{3em}
+\setlist{nosep,leftmargin=*}
+\renewcommand{\arraystretch}{1.15}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\ucfield}[2]{\par\noindent\textbf{#1：}#2\par}
+\begin{document}
+\input{titlepage_zh.tex}
+\setcounter{page}{2}
+\tableofcontents
+\clearpage
+\input{body_zh.tex}
+\end{document}
+
