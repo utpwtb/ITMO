@@ -107,6 +107,9 @@ public class MovieService {
             try {
                 entity = id == null ? t.getDeclaredConstructor().newInstance() : required(em, t, id);
                 if (id != null) {
+                    // expected 是浏览器打开表单时保存的版本；entity 的版本来自本次事务读取的当前记录。
+                    // 比较在后端进行，不要求浏览器把编辑快照更新到最新版本；否则旧输入可能绕过过期检查。
+                    // @Version 检查后端读取实体之后的并发冲突，这里额外识别用户长时间编辑造成的旧表单。
                     Object expected = input.get("version");
                     if (expected == null || Long.parseLong(expected.toString()) != t.getField("version").getLong(entity))
                         throw new Problem(409, "Объект изменён другим пользователем. Откройте форму заново.");

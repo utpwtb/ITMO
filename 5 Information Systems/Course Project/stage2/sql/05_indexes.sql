@@ -1,0 +1,20 @@
+-- Automatically created PK/UQ/exclusion indexes are not duplicated here.
+CREATE INDEX idx_salon_public_district ON beauty.salon(district_id,salon_id) WHERE publication_status='PUBLISHED';
+CREATE INDEX idx_salon_public_coordinates ON beauty.salon(latitude,longitude) WHERE publication_status='PUBLISHED';
+CREATE INDEX idx_service_salon_type_price ON beauty.salon_service(salon_id,service_type_id,price) WHERE is_active;
+CREATE INDEX idx_service_type_price ON beauty.salon_service(service_type_id,price,salon_id) WHERE is_active;
+CREATE INDEX idx_master_salon ON beauty.master(salon_id,master_id) WHERE is_active;
+CREATE INDEX idx_assignment_service ON beauty.master_service(salon_service_id,master_id) WHERE is_active;
+CREATE INDEX idx_work_master_date ON beauty.work_interval(master_id,work_date,start_time) INCLUDE(end_time);
+CREATE INDEX idx_appointment_client_time ON beauty.appointment(client_user_id,start_at DESC) INCLUDE(status,master_id,salon_service_id);
+CREATE INDEX idx_appointment_master_time ON beauty.appointment(master_id,start_at) INCLUDE(status,client_user_id,salon_service_id);
+CREATE INDEX idx_appointment_service_future ON beauty.appointment(salon_service_id,start_at) INCLUDE(end_at) WHERE status='CONFIRMED';
+CREATE INDEX idx_appointment_busy ON beauty.appointment USING gist(master_id,slot) WHERE status='CONFIRMED';
+CREATE INDEX idx_review_published_target ON beauty.review(target_type,appointment_id) INCLUDE(rating) WHERE visibility='PUBLISHED';
+CREATE INDEX idx_salon_photo_visible ON beauty.salon_photo(salon_id,sort_order) WHERE visibility='PUBLISHED';
+CREATE INDEX idx_master_photo_visible ON beauty.master_photo(master_id,sort_order) WHERE visibility='PUBLISHED';
+CREATE INDEX idx_moderation_user ON beauty.moderation_decision(target_user_id,created_at DESC) WHERE target_user_id IS NOT NULL;
+CREATE INDEX idx_moderation_salon ON beauty.moderation_decision(target_salon_id,created_at DESC) WHERE target_salon_id IS NOT NULL;
+CREATE INDEX idx_moderation_master ON beauty.moderation_decision(target_master_id,created_at DESC) WHERE target_master_id IS NOT NULL;
+CREATE INDEX idx_moderation_review ON beauty.moderation_decision(target_review_id,created_at DESC) WHERE target_review_id IS NOT NULL;
+CREATE INDEX idx_invitation_master_history ON beauty.master_invitation(master_id,created_at DESC);

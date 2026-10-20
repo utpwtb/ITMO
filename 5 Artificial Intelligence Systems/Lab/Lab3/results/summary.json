@@ -1,0 +1,37 @@
+{
+  "raw_rows": 10000,
+  "duplicates_removed": 127,
+  "missing": {
+    "Hours Studied": 0,
+    "Previous Scores": 0,
+    "Extracurricular Activities": 0,
+    "Sleep Hours": 0,
+    "Sample Question Papers Practiced": 0,
+    "Performance Index": 0
+  },
+  "train": 5923,
+  "validation": 1975,
+  "test": 1975,
+  "learning_rate": 0.05,
+  "iterations": 15000,
+  "lambdas": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "ratios": [
+    0.2,
+    0.5,
+    0.8
+  ],
+  "initial_weights": "zeros",
+  "seed_outer": 42,
+  "seed_inner": 43,
+  "configurations": 104,
+  "data_sha256": "93793b00d9026d0b4907df0ca9f88b3696747c7496679d35833bb0fbf9fb57cf",
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "pandas": "3.0.1"
+}

@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="26.0.0">
+  <diagram name="ER-модель">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" math="0" shadow="0" lineJumps="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user_account" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Пользователь&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;user_account&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;user_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;email&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;password_hash&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;display_name&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;role&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;account_status&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;created_at&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="140.0" width="220" height="297" as="geometry" />
+        </mxCell>
+        <mxCell id="salon" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Салон&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;salon&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;salon_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;name&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;description&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;address&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;latitude, longitude&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;phone&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;opening_hours&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;publication_status&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;created_at&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;{Фотографии интерьера:&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;file_path, caption, sort_order, visibility}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="496.0" y="517.0" width="420" height="413" as="geometry" />
+        </mxCell>
+        <mxCell id="district" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Район&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;district&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;district_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;name&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;is_active&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="196.0" y="549.0" width="220" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="master" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Мастер&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;master&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;master_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;specialization&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;experience_description&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;is_active&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;{Фотографии работ:&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;file_path, caption, sort_order, visibility}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="1446.0" y="521.5" width="420" height="268" as="geometry" />
+        </mxCell>
+        <mxCell id="moderation_decision" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Решение модерации&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;moderation_decision&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;decision_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;action&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;reason&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;created_at&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;photo_path (необязательный)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="536.0" width="330" height="239" as="geometry" />
+        </mxCell>
+        <mxCell id="work_interval" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Рабочий интервал&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;work_interval&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;work_interval_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;work_date&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;start_time&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;end_time&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="1946.0" y="666.5" width="250" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="salon_service" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Услуга салона&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;salon_service&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;salon_service_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;name&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;description&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;price&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;duration_minutes&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;is_active&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1058.0" width="220" height="268" as="geometry" />
+        </mxCell>
+        <mxCell id="service_type" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Вид услуги&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;service_type&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;service_type_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;name&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;description&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;is_active&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="196.0" y="1103.0" width="220" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="appointment" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Запись&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;appointment&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;appointment_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;start_at, end_at&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;service_name_snapshot&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;price_snapshot, duration_snapshot&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;status&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;created_at&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;cancelled_at, cancellation_reason&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;result_marked_at&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="996.0" y="1430.0" width="370" height="326" as="geometry" />
+        </mxCell>
+        <mxCell id="review" value="&lt;div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'&gt;&lt;b&gt;Отзыв&lt;br&gt;&lt;span style='font-size:18px;font-weight:normal'&gt;review&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style='border-top:1px solid #202020'&gt;&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;review_id&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;target_type&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;rating&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;text&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;visibility&lt;/div&gt;&lt;div style='font-family:Arial;text-align:left;line-height:29px;height:29px;font-size:22px'&gt;created_at&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="1042" y="1836.0" width="220" height="268" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_salon_owner_user_id_fkey" value="владелец" edge="1" parent="1" source="salon" target="user_account" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToOne;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0761904761904762;exitY=0.0;entryX=0.0;entryY=0.43097643097643096;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="528" y="268" />
+            </Array>
+            <mxPoint x="-60.0" y="124.5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_salon_district_id_fkey" value="" edge="1" parent="1" source="salon" target="district" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0;exitY=0.2324455205811138;entryX=1.0;entryY=0.35359116022099446;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_master_user_id_fkey" value="профиль" edge="1" parent="1" source="master" target="user_account" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToOne;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.1523809523809524;exitY=0.0;entryX=1.0;entryY=0.43097643097643096;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1510" y="268" />
+            </Array>
+            <mxPoint x="65.75" y="126.75" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_master_salon_id_fkey" value="" edge="1" parent="1" source="master" target="salon" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0761904761904762;exitY=1.0;entryX=0.1523809523809524;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1478" y="1026" />
+              <mxPoint x="560" y="1026" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_salon_service_salon_id_fkey" value="" edge="1" parent="1" source="salon_service" target="salon" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.08181818181818182;exitY=0.0;entryX=0.0761904761904762;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_work_interval_master_id_fkey" value="" edge="1" parent="1" source="work_interval" target="master" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0;exitY=0.45476190476190476;entryX=1.0;entryY=0.8973880597014925;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_appointment_client_user_id_fkey" value="клиент" edge="1" parent="1" source="appointment" target="user_account" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0;exitY=0.294478527607362;entryX=0.0;entryY=0.10774410774410774;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="1526" />
+              <mxPoint x="100" y="172" />
+            </Array>
+            <mxPoint x="448.0" y="667.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_appointment_cancelled_by_user_id_fkey" value="отменил" edge="1" parent="1" source="appointment" target="user_account" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERzeroToOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0;exitY=0.19631901840490798;entryX=0.0;entryY=0.21548821548821548;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="132" y="1494" />
+              <mxPoint x="132" y="204" />
+            </Array>
+            <mxPoint x="432.0" y="635.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_appointment_result_marked_by_user_id_fkey" value="отметил результат" edge="1" parent="1" source="appointment" target="user_account" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERzeroToOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0;exitY=0.09815950920245399;entryX=0.0;entryY=0.32323232323232326;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="164" y="1462" />
+              <mxPoint x="164" y="236" />
+            </Array>
+            <mxPoint x="416.0" y="603.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_review_appointment_id_fkey" value="" edge="1" parent="1" source="review" target="appointment" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.08181818181818182;exitY=0.0;entryX=0.17297297297297298;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_moderation_decision_admin_user_id_fkey" value="ADMIN" edge="1" parent="1" source="moderation_decision" target="user_account" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.05454545454545454;exitY=0.0;entryX=0.08181818181818182;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="-44.0" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_moderation_decision_target_user_id_fkey" value="цель USER" edge="1" parent="1" source="moderation_decision" target="user_account" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERzeroToOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.15151515151515152;exitY=0.0;entryX=0.22727272727272727;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="62.5" y="0.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_moderation_decision_target_salon_id_fkey" value="" edge="1" parent="1" source="moderation_decision" target="salon" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERzeroToOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0;exitY=0.4560669456066946;entryX=1.0;entryY=0.3099273607748184;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_moderation_decision_target_master_id_fkey" value="" edge="1" parent="1" source="moderation_decision" target="master" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERzeroToOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=1.0;exitY=0.4560669456066946;entryX=0.0;entryY=0.4608208955223881;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_moderation_decision_target_review_id_fkey" value="" edge="1" parent="1" source="moderation_decision" target="review" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERzeroToOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.34545454545454546;exitY=1.0;entryX=1.0;entryY=0.11940298507462686;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1124" y="994" />
+              <mxPoint x="1898" y="994" />
+              <mxPoint x="1898" y="1868" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_salon_service_service_type_id_fkey" value="" edge="1" parent="1" source="salon_service" target="service_type" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.0;exitY=0.23880597014925373;entryX=1.0;entryY=0.09047619047619047;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_master_provides_salon_service" value="выполняет [M:N]" edge="1" parent="1" source="master" target="salon_service" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERzeroToMany;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.22857142857142856;exitY=1.0;entryX=1.0;entryY=0.11940298507462686;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1542" y="1090" />
+            </Array>
+            <mxPoint x="-150.25" y="-17.0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_appointment_master" value="" edge="1" parent="1" source="appointment" target="master" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.2594594594594595;exitY=0.0;entryX=0.3047619047619048;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1092" y="1358" />
+              <mxPoint x="1574" y="1358" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_appointment_salon_service" value="" edge="1" parent="1" source="appointment" target="salon_service" style="edgeStyle=none;rounded=0;html=1;strokeWidth=2;strokeColor=#202020;startArrow=ERzeroToMany;endArrow=ERmandOne;startFill=0;endFill=0;jumpStyle=arc;jumpSize=16;exitX=0.08648648648648649;exitY=0.0;entryX=0.08181818181818182;entryY=1.0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1028" y="1390" />
+              <mxPoint x="528" y="1390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

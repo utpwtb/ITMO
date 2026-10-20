@@ -1,0 +1,1010 @@
+{
+  "entity_count": 11,
+  "entities": [
+    {
+      "name": "user_account",
+      "russian_name": "Пользователь",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "email",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "password_hash",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "display_name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "role",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "account_status",
+          "type": "text",
+          "scale": null,
+          "default": "'ACTIVE'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    },
+    {
+      "name": "district",
+      "russian_name": "Район",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "district_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    },
+    {
+      "name": "salon",
+      "russian_name": "Салон",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "owner_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "district_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "description",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "address",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "numeric",
+          "name": "latitude",
+          "type": "numeric",
+          "scale": 6,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 9,
+          "expression": null
+        },
+        {
+          "udt": "numeric",
+          "name": "longitude",
+          "type": "numeric",
+          "scale": 6,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 9,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "phone",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "opening_hours",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "publication_status",
+          "type": "text",
+          "scale": null,
+          "default": "'PENDING'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": [
+        {
+          "name": "Фотографии интерьера",
+          "components": [
+            "file_path",
+            "caption",
+            "sort_order",
+            "visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "service_type",
+      "russian_name": "Вид услуги",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "service_type_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "description",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    },
+    {
+      "name": "salon_service",
+      "russian_name": "Услуга салона",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "salon_service_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "service_type_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "description",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "numeric",
+          "name": "price",
+          "type": "numeric",
+          "scale": 2,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 12,
+          "expression": null
+        },
+        {
+          "udt": "int4",
+          "name": "duration_minutes",
+          "type": "integer",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 32,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    },
+    {
+      "name": "master",
+      "russian_name": "Мастер",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "specialization",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "experience_description",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": [
+        {
+          "name": "Фотографии работ",
+          "components": [
+            "file_path",
+            "caption",
+            "sort_order",
+            "visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "master_service",
+      "russian_name": "Мастер--услуга",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "salon_service_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    },
+    {
+      "name": "work_interval",
+      "russian_name": "Рабочий интервал",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "work_interval_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "date",
+          "name": "work_date",
+          "type": "date",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "time",
+          "name": "start_time",
+          "type": "time without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "time",
+          "name": "end_time",
+          "type": "time without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    },
+    {
+      "name": "appointment",
+      "russian_name": "Запись",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "appointment_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "client_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "salon_service_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "start_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "service_name_snapshot",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "numeric",
+          "name": "price_snapshot",
+          "type": "numeric",
+          "scale": 2,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 12,
+          "expression": null
+        },
+        {
+          "udt": "int4",
+          "name": "duration_snapshot",
+          "type": "integer",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 32,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "end_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "ALWAYS",
+          "precision": null,
+          "expression": "(start_at + make_interval(mins => duration_snapshot))"
+        },
+        {
+          "udt": "text",
+          "name": "status",
+          "type": "text",
+          "scale": null,
+          "default": "'CONFIRMED'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "cancelled_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "cancelled_by_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "cancellation_reason",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "result_marked_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "result_marked_by_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    },
+    {
+      "name": "review",
+      "russian_name": "Отзыв",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "review_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "appointment_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "target_type",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int2",
+          "name": "rating",
+          "type": "smallint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 16,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "text",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "visibility",
+          "type": "text",
+          "scale": null,
+          "default": "'PUBLISHED'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    },
+    {
+      "name": "moderation_decision",
+      "russian_name": "Решение модерации",
+      "attributes": [
+        {
+          "udt": "int8",
+          "name": "decision_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "admin_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "target_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "target_salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "target_master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "target_review_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "photo_path",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "action",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "reason",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ],
+      "multivalued_attributes": []
+    }
+  ],
+  "many_to_many": {
+    "left": "master",
+    "right": "salon_service",
+    "association": "master_service",
+    "key": [
+      "master_id",
+      "salon_service_id"
+    ]
+  },
+  "physical_table_count": 14,
+  "attribute_relations": [
+    "salon_photo",
+    "master_photo"
+  ],
+  "technical_relations": [
+    "master_invitation"
+  ]
+}

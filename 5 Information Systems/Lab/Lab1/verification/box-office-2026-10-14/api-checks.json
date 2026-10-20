@@ -1,0 +1,11 @@
+{
+  "environment": "Isolated local test instance on port 18086; separate database on 55447",
+  "invalid_create": {
+    "error": "usaBoxOffice: Сборы в США не могут превышать общие сборы."
+  },
+  "equal_values_create_status": 201,
+  "invalid_update": {
+    "error": "usaBoxOffice: Сборы в США не могут превышать общие сборы."
+  },
+  "unchanged_after_rejection": true
+}

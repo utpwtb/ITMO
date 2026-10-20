@@ -1,0 +1,2426 @@
+{
+  "tables": [
+    {
+      "name": "appointment",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "appointment_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "client_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "salon_service_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "start_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "service_name_snapshot",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "numeric",
+          "name": "price_snapshot",
+          "type": "numeric",
+          "scale": 2,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 12,
+          "expression": null
+        },
+        {
+          "udt": "int4",
+          "name": "duration_snapshot",
+          "type": "integer",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 32,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "end_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "ALWAYS",
+          "precision": null,
+          "expression": "(start_at + make_interval(mins => duration_snapshot))"
+        },
+        {
+          "udt": "tsrange",
+          "name": "slot",
+          "type": "tsrange",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "ALWAYS",
+          "precision": null,
+          "expression": "tsrange(start_at, (start_at + make_interval(mins => duration_snapshot)), '[)'::text)"
+        },
+        {
+          "udt": "text",
+          "name": "status",
+          "type": "text",
+          "scale": null,
+          "default": "'CONFIRMED'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "cancelled_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "cancelled_by_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "cancellation_reason",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "result_marked_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "result_marked_by_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "district",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "district_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "master",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "specialization",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "experience_description",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "master_invitation",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "invitation_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "created_by_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "token_hash",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "expires_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "used_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "revoked_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "master_photo",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "file_path",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "caption",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int4",
+          "name": "sort_order",
+          "type": "integer",
+          "scale": 0,
+          "default": "0",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 32,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "visibility",
+          "type": "text",
+          "scale": null,
+          "default": "'PUBLISHED'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "mime_type",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int4",
+          "name": "byte_size",
+          "type": "integer",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 32,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "master_service",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "salon_service_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "moderation_decision",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "decision_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "admin_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "target_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "target_salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "target_master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "target_review_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "photo_path",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "action",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "reason",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "review",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "review_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "appointment_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "target_type",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int2",
+          "name": "rating",
+          "type": "smallint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 16,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "text",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "visibility",
+          "type": "text",
+          "scale": null,
+          "default": "'PUBLISHED'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "salon",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "owner_user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "district_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "description",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "address",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "numeric",
+          "name": "latitude",
+          "type": "numeric",
+          "scale": 6,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 9,
+          "expression": null
+        },
+        {
+          "udt": "numeric",
+          "name": "longitude",
+          "type": "numeric",
+          "scale": 6,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 9,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "phone",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "opening_hours",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "publication_status",
+          "type": "text",
+          "scale": null,
+          "default": "'PENDING'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "salon_photo",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "file_path",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "caption",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int4",
+          "name": "sort_order",
+          "type": "integer",
+          "scale": 0,
+          "default": "0",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 32,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "visibility",
+          "type": "text",
+          "scale": null,
+          "default": "'PUBLISHED'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "mime_type",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "int4",
+          "name": "byte_size",
+          "type": "integer",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 32,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "salon_service",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "salon_service_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "salon_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "service_type_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "description",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "numeric",
+          "name": "price",
+          "type": "numeric",
+          "scale": 2,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 12,
+          "expression": null
+        },
+        {
+          "udt": "int4",
+          "name": "duration_minutes",
+          "type": "integer",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 32,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "service_type",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "service_type_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "description",
+          "type": "text",
+          "scale": null,
+          "default": "''::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "bool",
+          "name": "is_active",
+          "type": "boolean",
+          "scale": null,
+          "default": "true",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "user_account",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "user_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "email",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "password_hash",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "display_name",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "role",
+          "type": "text",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "text",
+          "name": "account_status",
+          "type": "text",
+          "scale": null,
+          "default": "'ACTIVE'::text",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "timestamp",
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "scale": null,
+          "default": "beauty.local_now()",
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        }
+      ]
+    },
+    {
+      "name": "work_interval",
+      "columns": [
+        {
+          "udt": "int8",
+          "name": "work_interval_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "int8",
+          "name": "master_id",
+          "type": "bigint",
+          "scale": 0,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": 64,
+          "expression": null
+        },
+        {
+          "udt": "date",
+          "name": "work_date",
+          "type": "date",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "time",
+          "name": "start_time",
+          "type": "time without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "time",
+          "name": "end_time",
+          "type": "time without time zone",
+          "scale": null,
+          "default": null,
+          "nullable": false,
+          "generated": "NEVER",
+          "precision": null,
+          "expression": null
+        },
+        {
+          "udt": "tsrange",
+          "name": "slot",
+          "type": "tsrange",
+          "scale": null,
+          "default": null,
+          "nullable": true,
+          "generated": "ALWAYS",
+          "precision": null,
+          "expression": "tsrange((work_date + start_time), (work_date + end_time), '[)'::text)"
+        }
+      ]
+    }
+  ],
+  "indexes": [
+    {
+      "name": "user_account_pkey",
+      "table": "user_account",
+      "definition": "CREATE UNIQUE INDEX user_account_pkey ON beauty.user_account USING btree (user_id)"
+    },
+    {
+      "name": "uq_user_email",
+      "table": "user_account",
+      "definition": "CREATE UNIQUE INDEX uq_user_email ON beauty.user_account USING btree (email)"
+    },
+    {
+      "name": "salon_pkey",
+      "table": "salon",
+      "definition": "CREATE UNIQUE INDEX salon_pkey ON beauty.salon USING btree (salon_id)"
+    },
+    {
+      "name": "salon_owner_user_id_key",
+      "table": "salon",
+      "definition": "CREATE UNIQUE INDEX salon_owner_user_id_key ON beauty.salon USING btree (owner_user_id)"
+    },
+    {
+      "name": "idx_salon_public_district",
+      "table": "salon",
+      "definition": "CREATE INDEX idx_salon_public_district ON beauty.salon USING btree (district_id, salon_id) WHERE (publication_status = 'PUBLISHED'::text)"
+    },
+    {
+      "name": "idx_salon_public_coordinates",
+      "table": "salon",
+      "definition": "CREATE INDEX idx_salon_public_coordinates ON beauty.salon USING btree (latitude, longitude) WHERE (publication_status = 'PUBLISHED'::text)"
+    },
+    {
+      "name": "district_pkey",
+      "table": "district",
+      "definition": "CREATE UNIQUE INDEX district_pkey ON beauty.district USING btree (district_id)"
+    },
+    {
+      "name": "district_name_key",
+      "table": "district",
+      "definition": "CREATE UNIQUE INDEX district_name_key ON beauty.district USING btree (name)"
+    },
+    {
+      "name": "salon_service_pkey",
+      "table": "salon_service",
+      "definition": "CREATE UNIQUE INDEX salon_service_pkey ON beauty.salon_service USING btree (salon_service_id)"
+    },
+    {
+      "name": "idx_service_salon_type_price",
+      "table": "salon_service",
+      "definition": "CREATE INDEX idx_service_salon_type_price ON beauty.salon_service USING btree (salon_id, service_type_id, price) WHERE is_active"
+    },
+    {
+      "name": "idx_service_type_price",
+      "table": "salon_service",
+      "definition": "CREATE INDEX idx_service_type_price ON beauty.salon_service USING btree (service_type_id, price, salon_id) WHERE is_active"
+    },
+    {
+      "name": "service_type_pkey",
+      "table": "service_type",
+      "definition": "CREATE UNIQUE INDEX service_type_pkey ON beauty.service_type USING btree (service_type_id)"
+    },
+    {
+      "name": "service_type_name_key",
+      "table": "service_type",
+      "definition": "CREATE UNIQUE INDEX service_type_name_key ON beauty.service_type USING btree (name)"
+    },
+    {
+      "name": "master_pkey",
+      "table": "master",
+      "definition": "CREATE UNIQUE INDEX master_pkey ON beauty.master USING btree (master_id)"
+    },
+    {
+      "name": "master_user_id_key",
+      "table": "master",
+      "definition": "CREATE UNIQUE INDEX master_user_id_key ON beauty.master USING btree (user_id)"
+    },
+    {
+      "name": "idx_master_salon",
+      "table": "master",
+      "definition": "CREATE INDEX idx_master_salon ON beauty.master USING btree (salon_id, master_id) WHERE is_active"
+    },
+    {
+      "name": "master_service_pkey",
+      "table": "master_service",
+      "definition": "CREATE UNIQUE INDEX master_service_pkey ON beauty.master_service USING btree (master_id, salon_service_id)"
+    },
+    {
+      "name": "idx_assignment_service",
+      "table": "master_service",
+      "definition": "CREATE INDEX idx_assignment_service ON beauty.master_service USING btree (salon_service_id, master_id) WHERE is_active"
+    },
+    {
+      "name": "work_interval_pkey",
+      "table": "work_interval",
+      "definition": "CREATE UNIQUE INDEX work_interval_pkey ON beauty.work_interval USING btree (work_interval_id)"
+    },
+    {
+      "name": "ex_work_overlap",
+      "table": "work_interval",
+      "definition": "CREATE INDEX ex_work_overlap ON beauty.work_interval USING gist (master_id, slot)"
+    },
+    {
+      "name": "idx_work_master_date",
+      "table": "work_interval",
+      "definition": "CREATE INDEX idx_work_master_date ON beauty.work_interval USING btree (master_id, work_date, start_time) INCLUDE (end_time)"
+    },
+    {
+      "name": "appointment_pkey",
+      "table": "appointment",
+      "definition": "CREATE UNIQUE INDEX appointment_pkey ON beauty.appointment USING btree (appointment_id)"
+    },
+    {
+      "name": "ex_appointment_overlap",
+      "table": "appointment",
+      "definition": "CREATE INDEX ex_appointment_overlap ON beauty.appointment USING gist (master_id, slot) WHERE (status <> 'CANCELLED'::text)"
+    },
+    {
+      "name": "idx_appointment_client_time",
+      "table": "appointment",
+      "definition": "CREATE INDEX idx_appointment_client_time ON beauty.appointment USING btree (client_user_id, start_at DESC) INCLUDE (status, master_id, salon_service_id)"
+    },
+    {
+      "name": "idx_appointment_master_time",
+      "table": "appointment",
+      "definition": "CREATE INDEX idx_appointment_master_time ON beauty.appointment USING btree (master_id, start_at) INCLUDE (status, client_user_id, salon_service_id)"
+    },
+    {
+      "name": "idx_appointment_service_future",
+      "table": "appointment",
+      "definition": "CREATE INDEX idx_appointment_service_future ON beauty.appointment USING btree (salon_service_id, start_at) INCLUDE (end_at) WHERE (status = 'CONFIRMED'::text)"
+    },
+    {
+      "name": "idx_appointment_busy",
+      "table": "appointment",
+      "definition": "CREATE INDEX idx_appointment_busy ON beauty.appointment USING gist (master_id, slot) WHERE (status = 'CONFIRMED'::text)"
+    },
+    {
+      "name": "salon_photo_pkey",
+      "table": "salon_photo",
+      "definition": "CREATE UNIQUE INDEX salon_photo_pkey ON beauty.salon_photo USING btree (salon_id, file_path)"
+    },
+    {
+      "name": "idx_salon_photo_visible",
+      "table": "salon_photo",
+      "definition": "CREATE INDEX idx_salon_photo_visible ON beauty.salon_photo USING btree (salon_id, sort_order) WHERE (visibility = 'PUBLISHED'::text)"
+    },
+    {
+      "name": "master_photo_pkey",
+      "table": "master_photo",
+      "definition": "CREATE UNIQUE INDEX master_photo_pkey ON beauty.master_photo USING btree (master_id, file_path)"
+    },
+    {
+      "name": "idx_master_photo_visible",
+      "table": "master_photo",
+      "definition": "CREATE INDEX idx_master_photo_visible ON beauty.master_photo USING btree (master_id, sort_order) WHERE (visibility = 'PUBLISHED'::text)"
+    },
+    {
+      "name": "review_pkey",
+      "table": "review",
+      "definition": "CREATE UNIQUE INDEX review_pkey ON beauty.review USING btree (review_id)"
+    },
+    {
+      "name": "review_appointment_id_target_type_key",
+      "table": "review",
+      "definition": "CREATE UNIQUE INDEX review_appointment_id_target_type_key ON beauty.review USING btree (appointment_id, target_type)"
+    },
+    {
+      "name": "idx_review_published_target",
+      "table": "review",
+      "definition": "CREATE INDEX idx_review_published_target ON beauty.review USING btree (target_type, appointment_id) INCLUDE (rating) WHERE (visibility = 'PUBLISHED'::text)"
+    },
+    {
+      "name": "moderation_decision_pkey",
+      "table": "moderation_decision",
+      "definition": "CREATE UNIQUE INDEX moderation_decision_pkey ON beauty.moderation_decision USING btree (decision_id)"
+    },
+    {
+      "name": "idx_moderation_user",
+      "table": "moderation_decision",
+      "definition": "CREATE INDEX idx_moderation_user ON beauty.moderation_decision USING btree (target_user_id, created_at DESC) WHERE (target_user_id IS NOT NULL)"
+    },
+    {
+      "name": "idx_moderation_salon",
+      "table": "moderation_decision",
+      "definition": "CREATE INDEX idx_moderation_salon ON beauty.moderation_decision USING btree (target_salon_id, created_at DESC) WHERE (target_salon_id IS NOT NULL)"
+    },
+    {
+      "name": "idx_moderation_master",
+      "table": "moderation_decision",
+      "definition": "CREATE INDEX idx_moderation_master ON beauty.moderation_decision USING btree (target_master_id, created_at DESC) WHERE (target_master_id IS NOT NULL)"
+    },
+    {
+      "name": "idx_moderation_review",
+      "table": "moderation_decision",
+      "definition": "CREATE INDEX idx_moderation_review ON beauty.moderation_decision USING btree (target_review_id, created_at DESC) WHERE (target_review_id IS NOT NULL)"
+    },
+    {
+      "name": "master_invitation_pkey",
+      "table": "master_invitation",
+      "definition": "CREATE UNIQUE INDEX master_invitation_pkey ON beauty.master_invitation USING btree (invitation_id)"
+    },
+    {
+      "name": "master_invitation_token_hash_key",
+      "table": "master_invitation",
+      "definition": "CREATE UNIQUE INDEX master_invitation_token_hash_key ON beauty.master_invitation USING btree (token_hash)"
+    },
+    {
+      "name": "uq_invitation_open",
+      "table": "master_invitation",
+      "definition": "CREATE UNIQUE INDEX uq_invitation_open ON beauty.master_invitation USING btree (master_id) WHERE ((used_at IS NULL) AND (revoked_at IS NULL))"
+    },
+    {
+      "name": "idx_invitation_master_history",
+      "table": "master_invitation",
+      "definition": "CREATE INDEX idx_invitation_master_history ON beauty.master_invitation USING btree (master_id, created_at DESC)"
+    }
+  ],
+  "routines": [
+    {
+      "kind": "f",
+      "name": "lock_writes",
+      "result": "void",
+      "signature": "beauty.lock_writes()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "trg_lock",
+      "result": "trigger",
+      "signature": "beauty.trg_lock()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "local_now",
+      "result": "timestamp without time zone",
+      "signature": "beauty.local_now()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "require_actor",
+      "result": "beauty.user_account",
+      "signature": "beauty.require_actor(bigint,text[])",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "trg_identity",
+      "result": "trigger",
+      "signature": "beauty.trg_identity()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "trg_membership",
+      "result": "trigger",
+      "signature": "beauty.trg_membership()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "trg_future_guard",
+      "result": "trigger",
+      "signature": "beauty.trg_future_guard()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "reissue_invitation",
+      "result": "text",
+      "signature": "beauty.reissue_invitation(bigint,bigint)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "trg_appointment",
+      "result": "trigger",
+      "signature": "beauty.trg_appointment()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "trg_review",
+      "result": "trigger",
+      "signature": "beauty.trg_review()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "trg_photo",
+      "result": "trigger",
+      "signature": "beauty.trg_photo()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "trg_moderation",
+      "result": "trigger",
+      "signature": "beauty.trg_moderation()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "trg_invitation_history",
+      "result": "trigger",
+      "signature": "beauty.trg_invitation_history()",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "authenticate",
+      "result": "TABLE(user_id bigint, role text)",
+      "signature": "beauty.authenticate(text,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "book_appointment",
+      "result": "bigint",
+      "signature": "beauty.book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "add_review",
+      "result": "bigint",
+      "signature": "beauty.add_review(bigint,bigint,text,smallint,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "moderate",
+      "result": "bigint",
+      "signature": "beauty.moderate(bigint,text,bigint,text,text,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "create_salon",
+      "result": "bigint",
+      "signature": "beauty.create_salon(bigint,bigint,text,text,numeric,numeric,text,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "distance_km",
+      "result": "double precision",
+      "signature": "beauty.distance_km(numeric,numeric,numeric,numeric)",
+      "security_definer": false
+    },
+    {
+      "kind": "f",
+      "name": "save_work_interval",
+      "result": "bigint",
+      "signature": "beauty.save_work_interval(bigint,bigint,date,time without time zone,time without time zone,bigint)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "search_salons",
+      "result": "TABLE(salon_id bigint, name text, address text, latitude numeric, longitude numeric, min_price numeric, distance_km double precision, rating numeric, review_count bigint)",
+      "signature": "beauty.search_salons(bigint,bigint,numeric,numeric,date,numeric,numeric,numeric,numeric,numeric,numeric,numeric,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "p",
+      "name": "mark_visit",
+      "result": null,
+      "signature": "beauty.mark_visit(bigint,bigint,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "p",
+      "name": "set_master_service",
+      "result": null,
+      "signature": "beauty.set_master_service(bigint,bigint,bigint,boolean)",
+      "security_definer": true
+    },
+    {
+      "kind": "p",
+      "name": "delete_work_interval",
+      "result": null,
+      "signature": "beauty.delete_work_interval(bigint,bigint)",
+      "security_definer": true
+    },
+    {
+      "kind": "p",
+      "name": "save_master_profile",
+      "result": null,
+      "signature": "beauty.save_master_profile(bigint,bigint,text,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "p",
+      "name": "resubmit_salon",
+      "result": null,
+      "signature": "beauty.resubmit_salon(bigint,bigint)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "invite_master",
+      "result": "TABLE(master_id bigint, token text)",
+      "signature": "beauty.invite_master(bigint,bigint,text,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "register_user",
+      "result": "bigint",
+      "signature": "beauty.register_user(text,text,text,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "available_slots",
+      "result": "TABLE(start_at timestamp without time zone, end_at timestamp without time zone, price numeric, duration_minutes integer)",
+      "signature": "beauty.available_slots(bigint,bigint,date)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "cancel_appointment",
+      "result": "text",
+      "signature": "beauty.cancel_appointment(bigint,bigint,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "accept_invitation",
+      "result": "bigint",
+      "signature": "beauty.accept_invitation(text,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "save_service",
+      "result": "bigint",
+      "signature": "beauty.save_service(bigint,bigint,bigint,text,numeric,integer,boolean,bigint)",
+      "security_definer": true
+    },
+    {
+      "kind": "f",
+      "name": "appointment_journal",
+      "result": "TABLE(appointment_id bigint, salon_id bigint, master_id bigint, client_name text, master_name text, service_name text, start_at timestamp without time zone, end_at timestamp without time zone, price numeric, status text)",
+      "signature": "beauty.appointment_journal(bigint,date,text)",
+      "security_definer": true
+    },
+    {
+      "kind": "p",
+      "name": "put_photo",
+      "result": null,
+      "signature": "beauty.put_photo(bigint,text,bigint,text,text,integer,text,integer)",
+      "security_definer": true
+    },
+    {
+      "kind": "p",
+      "name": "archive_photo",
+      "result": null,
+      "signature": "beauty.archive_photo(bigint,text,bigint,text)",
+      "security_definer": true
+    }
+  ],
+  "triggers": [
+    {
+      "name": "a_lock",
+      "table": "user_account",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.user_account FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "district",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.district FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "salon",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.salon FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "service_type",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.service_type FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "salon_service",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.salon_service FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "master",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.master FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "master_service",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.master_service FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "work_interval",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.work_interval FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "appointment",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.appointment FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "salon_photo",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.salon_photo FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "master_photo",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.master_photo FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "review",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.review FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "moderation_decision",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.moderation_decision FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "a_lock",
+      "table": "master_invitation",
+      "definition": "CREATE TRIGGER a_lock BEFORE INSERT OR DELETE OR UPDATE ON beauty.master_invitation FOR EACH STATEMENT EXECUTE FUNCTION beauty.trg_lock()"
+    },
+    {
+      "name": "b_identity",
+      "table": "user_account",
+      "definition": "CREATE TRIGGER b_identity BEFORE UPDATE ON beauty.user_account FOR EACH ROW EXECUTE FUNCTION beauty.trg_identity()"
+    },
+    {
+      "name": "b_identity",
+      "table": "salon",
+      "definition": "CREATE TRIGGER b_identity BEFORE UPDATE ON beauty.salon FOR EACH ROW EXECUTE FUNCTION beauty.trg_identity()"
+    },
+    {
+      "name": "b_identity",
+      "table": "master",
+      "definition": "CREATE TRIGGER b_identity BEFORE UPDATE ON beauty.master FOR EACH ROW EXECUTE FUNCTION beauty.trg_identity()"
+    },
+    {
+      "name": "b_identity",
+      "table": "salon_service",
+      "definition": "CREATE TRIGGER b_identity BEFORE UPDATE ON beauty.salon_service FOR EACH ROW EXECUTE FUNCTION beauty.trg_identity()"
+    },
+    {
+      "name": "c_membership",
+      "table": "salon",
+      "definition": "CREATE TRIGGER c_membership BEFORE INSERT OR UPDATE ON beauty.salon FOR EACH ROW EXECUTE FUNCTION beauty.trg_membership()"
+    },
+    {
+      "name": "c_membership",
+      "table": "master",
+      "definition": "CREATE TRIGGER c_membership BEFORE INSERT OR UPDATE ON beauty.master FOR EACH ROW EXECUTE FUNCTION beauty.trg_membership()"
+    },
+    {
+      "name": "c_membership",
+      "table": "master_service",
+      "definition": "CREATE TRIGGER c_membership BEFORE INSERT OR UPDATE ON beauty.master_service FOR EACH ROW EXECUTE FUNCTION beauty.trg_membership()"
+    },
+    {
+      "name": "c_membership",
+      "table": "master_invitation",
+      "definition": "CREATE TRIGGER c_membership BEFORE INSERT OR UPDATE ON beauty.master_invitation FOR EACH ROW EXECUTE FUNCTION beauty.trg_membership()"
+    },
+    {
+      "name": "d_future",
+      "table": "master",
+      "definition": "CREATE TRIGGER d_future BEFORE UPDATE ON beauty.master FOR EACH ROW EXECUTE FUNCTION beauty.trg_future_guard()"
+    },
+    {
+      "name": "d_future",
+      "table": "salon_service",
+      "definition": "CREATE TRIGGER d_future BEFORE UPDATE ON beauty.salon_service FOR EACH ROW EXECUTE FUNCTION beauty.trg_future_guard()"
+    },
+    {
+      "name": "d_future",
+      "table": "master_service",
+      "definition": "CREATE TRIGGER d_future BEFORE DELETE OR UPDATE ON beauty.master_service FOR EACH ROW EXECUTE FUNCTION beauty.trg_future_guard()"
+    },
+    {
+      "name": "d_future",
+      "table": "work_interval",
+      "definition": "CREATE TRIGGER d_future BEFORE DELETE OR UPDATE ON beauty.work_interval FOR EACH ROW EXECUTE FUNCTION beauty.trg_future_guard()"
+    },
+    {
+      "name": "b_appointment",
+      "table": "appointment",
+      "definition": "CREATE TRIGGER b_appointment BEFORE INSERT OR DELETE OR UPDATE ON beauty.appointment FOR EACH ROW EXECUTE FUNCTION beauty.trg_appointment()"
+    },
+    {
+      "name": "b_review",
+      "table": "review",
+      "definition": "CREATE TRIGGER b_review BEFORE INSERT OR DELETE OR UPDATE ON beauty.review FOR EACH ROW EXECUTE FUNCTION beauty.trg_review()"
+    },
+    {
+      "name": "b_photo",
+      "table": "salon_photo",
+      "definition": "CREATE TRIGGER b_photo BEFORE INSERT OR DELETE OR UPDATE ON beauty.salon_photo FOR EACH ROW EXECUTE FUNCTION beauty.trg_photo()"
+    },
+    {
+      "name": "b_photo",
+      "table": "master_photo",
+      "definition": "CREATE TRIGGER b_photo BEFORE INSERT OR DELETE OR UPDATE ON beauty.master_photo FOR EACH ROW EXECUTE FUNCTION beauty.trg_photo()"
+    },
+    {
+      "name": "b_moderation",
+      "table": "moderation_decision",
+      "definition": "CREATE TRIGGER b_moderation BEFORE INSERT OR DELETE OR UPDATE ON beauty.moderation_decision FOR EACH ROW EXECUTE FUNCTION beauty.trg_moderation()"
+    },
+    {
+      "name": "b_history",
+      "table": "master_invitation",
+      "definition": "CREATE TRIGGER b_history BEFORE DELETE OR UPDATE ON beauty.master_invitation FOR EACH ROW EXECUTE FUNCTION beauty.trg_invitation_history()"
+    }
+  ],
+  "constraints": [
+    {
+      "kind": "c",
+      "name": "user_account_email_check",
+      "table": "user_account",
+      "definition": "CHECK (((email = lower(btrim(email))) AND (email ~~ '%@%'::text)))"
+    },
+    {
+      "kind": "c",
+      "name": "user_account_display_name_check",
+      "table": "user_account",
+      "definition": "CHECK ((btrim(display_name) <> ''::text))"
+    },
+    {
+      "kind": "c",
+      "name": "user_account_role_check",
+      "table": "user_account",
+      "definition": "CHECK ((role = ANY (ARRAY['CLIENT'::text, 'MASTER'::text, 'OWNER'::text, 'ADMIN'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "user_account_account_status_check",
+      "table": "user_account",
+      "definition": "CHECK ((account_status = ANY (ARRAY['INVITED'::text, 'ACTIVE'::text, 'BLOCKED'::text, 'ARCHIVED'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "ck_invited_role",
+      "table": "user_account",
+      "definition": "CHECK (((account_status <> 'INVITED'::text) OR (role = 'MASTER'::text)))"
+    },
+    {
+      "kind": "c",
+      "name": "ck_password",
+      "table": "user_account",
+      "definition": "CHECK (((password_hash IS NOT NULL) OR ((role = 'MASTER'::text) AND (account_status = 'INVITED'::text))))"
+    },
+    {
+      "kind": "p",
+      "name": "user_account_pkey",
+      "table": "user_account",
+      "definition": "PRIMARY KEY (user_id)"
+    },
+    {
+      "kind": "u",
+      "name": "uq_user_email",
+      "table": "user_account",
+      "definition": "UNIQUE (email)"
+    },
+    {
+      "kind": "c",
+      "name": "district_name_check",
+      "table": "district",
+      "definition": "CHECK ((btrim(name) <> ''::text))"
+    },
+    {
+      "kind": "p",
+      "name": "district_pkey",
+      "table": "district",
+      "definition": "PRIMARY KEY (district_id)"
+    },
+    {
+      "kind": "u",
+      "name": "district_name_key",
+      "table": "district",
+      "definition": "UNIQUE (name)"
+    },
+    {
+      "kind": "c",
+      "name": "salon_name_check",
+      "table": "salon",
+      "definition": "CHECK ((btrim(name) <> ''::text))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_address_check",
+      "table": "salon",
+      "definition": "CHECK ((btrim(address) <> ''::text))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_latitude_check",
+      "table": "salon",
+      "definition": "CHECK (((latitude >= ('-90'::integer)::numeric) AND (latitude <= (90)::numeric)))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_longitude_check",
+      "table": "salon",
+      "definition": "CHECK (((longitude >= ('-180'::integer)::numeric) AND (longitude <= (180)::numeric)))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_publication_status_check",
+      "table": "salon",
+      "definition": "CHECK ((publication_status = ANY (ARRAY['PENDING'::text, 'RETURNED'::text, 'PUBLISHED'::text, 'UNPUBLISHED'::text, 'BLOCKED'::text, 'ARCHIVED'::text])))"
+    },
+    {
+      "kind": "p",
+      "name": "salon_pkey",
+      "table": "salon",
+      "definition": "PRIMARY KEY (salon_id)"
+    },
+    {
+      "kind": "u",
+      "name": "salon_owner_user_id_key",
+      "table": "salon",
+      "definition": "UNIQUE (owner_user_id)"
+    },
+    {
+      "kind": "f",
+      "name": "salon_owner_user_id_fkey",
+      "table": "salon",
+      "definition": "FOREIGN KEY (owner_user_id) REFERENCES beauty.user_account(user_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "salon_district_id_fkey",
+      "table": "salon",
+      "definition": "FOREIGN KEY (district_id) REFERENCES beauty.district(district_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "c",
+      "name": "service_type_name_check",
+      "table": "service_type",
+      "definition": "CHECK ((btrim(name) <> ''::text))"
+    },
+    {
+      "kind": "p",
+      "name": "service_type_pkey",
+      "table": "service_type",
+      "definition": "PRIMARY KEY (service_type_id)"
+    },
+    {
+      "kind": "u",
+      "name": "service_type_name_key",
+      "table": "service_type",
+      "definition": "UNIQUE (name)"
+    },
+    {
+      "kind": "c",
+      "name": "salon_service_name_check",
+      "table": "salon_service",
+      "definition": "CHECK ((btrim(name) <> ''::text))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_service_price_check",
+      "table": "salon_service",
+      "definition": "CHECK ((price >= (0)::numeric))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_service_duration_minutes_check",
+      "table": "salon_service",
+      "definition": "CHECK ((duration_minutes > 0))"
+    },
+    {
+      "kind": "p",
+      "name": "salon_service_pkey",
+      "table": "salon_service",
+      "definition": "PRIMARY KEY (salon_service_id)"
+    },
+    {
+      "kind": "f",
+      "name": "salon_service_salon_id_fkey",
+      "table": "salon_service",
+      "definition": "FOREIGN KEY (salon_id) REFERENCES beauty.salon(salon_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "salon_service_service_type_id_fkey",
+      "table": "salon_service",
+      "definition": "FOREIGN KEY (service_type_id) REFERENCES beauty.service_type(service_type_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "p",
+      "name": "master_pkey",
+      "table": "master",
+      "definition": "PRIMARY KEY (master_id)"
+    },
+    {
+      "kind": "u",
+      "name": "master_user_id_key",
+      "table": "master",
+      "definition": "UNIQUE (user_id)"
+    },
+    {
+      "kind": "f",
+      "name": "master_user_id_fkey",
+      "table": "master",
+      "definition": "FOREIGN KEY (user_id) REFERENCES beauty.user_account(user_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "master_salon_id_fkey",
+      "table": "master",
+      "definition": "FOREIGN KEY (salon_id) REFERENCES beauty.salon(salon_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "p",
+      "name": "master_service_pkey",
+      "table": "master_service",
+      "definition": "PRIMARY KEY (master_id, salon_service_id)"
+    },
+    {
+      "kind": "f",
+      "name": "master_service_master_id_fkey",
+      "table": "master_service",
+      "definition": "FOREIGN KEY (master_id) REFERENCES beauty.master(master_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "master_service_salon_service_id_fkey",
+      "table": "master_service",
+      "definition": "FOREIGN KEY (salon_service_id) REFERENCES beauty.salon_service(salon_service_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "c",
+      "name": "work_interval_check",
+      "table": "work_interval",
+      "definition": "CHECK ((start_time < end_time))"
+    },
+    {
+      "kind": "p",
+      "name": "work_interval_pkey",
+      "table": "work_interval",
+      "definition": "PRIMARY KEY (work_interval_id)"
+    },
+    {
+      "kind": "x",
+      "name": "ex_work_overlap",
+      "table": "work_interval",
+      "definition": "EXCLUDE USING gist (master_id WITH =, slot WITH &&)"
+    },
+    {
+      "kind": "f",
+      "name": "work_interval_master_id_fkey",
+      "table": "work_interval",
+      "definition": "FOREIGN KEY (master_id) REFERENCES beauty.master(master_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "c",
+      "name": "appointment_price_snapshot_check",
+      "table": "appointment",
+      "definition": "CHECK ((price_snapshot >= (0)::numeric))"
+    },
+    {
+      "kind": "c",
+      "name": "appointment_duration_snapshot_check",
+      "table": "appointment",
+      "definition": "CHECK ((duration_snapshot > 0))"
+    },
+    {
+      "kind": "c",
+      "name": "appointment_status_check",
+      "table": "appointment",
+      "definition": "CHECK ((status = ANY (ARRAY['CONFIRMED'::text, 'CANCELLED'::text, 'COMPLETED'::text, 'NO_SHOW'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "ck_start_grid",
+      "table": "appointment",
+      "definition": "CHECK (((((EXTRACT(minute FROM start_at))::integer % 15) = 0) AND (EXTRACT(second FROM start_at) = (0)::numeric)))"
+    },
+    {
+      "kind": "c",
+      "name": "ck_appointment_evidence",
+      "table": "appointment",
+      "definition": "CHECK ((((status = 'CONFIRMED'::text) AND (cancelled_at IS NULL) AND (cancelled_by_user_id IS NULL) AND (cancellation_reason IS NULL) AND (result_marked_at IS NULL) AND (result_marked_by_user_id IS NULL)) OR ((status = 'CANCELLED'::text) AND (cancelled_at IS NOT NULL) AND (cancelled_by_user_id IS NOT NULL) AND (result_marked_at IS NULL) AND (result_marked_by_user_id IS NULL)) OR ((status = ANY (ARRAY['COMPLETED'::text, 'NO_SHOW'::text])) AND (result_marked_at IS NOT NULL) AND (result_marked_by_user_id IS NOT NULL) AND (cancelled_at IS NULL) AND (cancelled_by_user_id IS NULL) AND (cancellation_reason IS NULL))))"
+    },
+    {
+      "kind": "p",
+      "name": "appointment_pkey",
+      "table": "appointment",
+      "definition": "PRIMARY KEY (appointment_id)"
+    },
+    {
+      "kind": "x",
+      "name": "ex_appointment_overlap",
+      "table": "appointment",
+      "definition": "EXCLUDE USING gist (master_id WITH =, slot WITH &&) WHERE ((status <> 'CANCELLED'::text))"
+    },
+    {
+      "kind": "f",
+      "name": "appointment_client_user_id_fkey",
+      "table": "appointment",
+      "definition": "FOREIGN KEY (client_user_id) REFERENCES beauty.user_account(user_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "appointment_cancelled_by_user_id_fkey",
+      "table": "appointment",
+      "definition": "FOREIGN KEY (cancelled_by_user_id) REFERENCES beauty.user_account(user_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "appointment_result_marked_by_user_id_fkey",
+      "table": "appointment",
+      "definition": "FOREIGN KEY (result_marked_by_user_id) REFERENCES beauty.user_account(user_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "appointment_master_id_salon_service_id_fkey",
+      "table": "appointment",
+      "definition": "FOREIGN KEY (master_id, salon_service_id) REFERENCES beauty.master_service(master_id, salon_service_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "c",
+      "name": "salon_photo_file_path_check",
+      "table": "salon_photo",
+      "definition": "CHECK ((btrim(file_path) <> ''::text))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_photo_sort_order_check",
+      "table": "salon_photo",
+      "definition": "CHECK ((sort_order >= 0))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_photo_visibility_check",
+      "table": "salon_photo",
+      "definition": "CHECK ((visibility = ANY (ARRAY['PUBLISHED'::text, 'HIDDEN'::text, 'ARCHIVED'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_photo_mime_type_check",
+      "table": "salon_photo",
+      "definition": "CHECK ((mime_type = ANY (ARRAY['image/jpeg'::text, 'image/png'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "salon_photo_byte_size_check",
+      "table": "salon_photo",
+      "definition": "CHECK (((byte_size >= 1) AND (byte_size <= 5242880)))"
+    },
+    {
+      "kind": "p",
+      "name": "salon_photo_pkey",
+      "table": "salon_photo",
+      "definition": "PRIMARY KEY (salon_id, file_path)"
+    },
+    {
+      "kind": "f",
+      "name": "salon_photo_salon_id_fkey",
+      "table": "salon_photo",
+      "definition": "FOREIGN KEY (salon_id) REFERENCES beauty.salon(salon_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "c",
+      "name": "master_photo_file_path_check",
+      "table": "master_photo",
+      "definition": "CHECK ((btrim(file_path) <> ''::text))"
+    },
+    {
+      "kind": "c",
+      "name": "master_photo_sort_order_check",
+      "table": "master_photo",
+      "definition": "CHECK ((sort_order >= 0))"
+    },
+    {
+      "kind": "c",
+      "name": "master_photo_visibility_check",
+      "table": "master_photo",
+      "definition": "CHECK ((visibility = ANY (ARRAY['PUBLISHED'::text, 'HIDDEN'::text, 'ARCHIVED'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "master_photo_mime_type_check",
+      "table": "master_photo",
+      "definition": "CHECK ((mime_type = ANY (ARRAY['image/jpeg'::text, 'image/png'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "master_photo_byte_size_check",
+      "table": "master_photo",
+      "definition": "CHECK (((byte_size >= 1) AND (byte_size <= 5242880)))"
+    },
+    {
+      "kind": "p",
+      "name": "master_photo_pkey",
+      "table": "master_photo",
+      "definition": "PRIMARY KEY (master_id, file_path)"
+    },
+    {
+      "kind": "f",
+      "name": "master_photo_master_id_fkey",
+      "table": "master_photo",
+      "definition": "FOREIGN KEY (master_id) REFERENCES beauty.master(master_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "c",
+      "name": "review_target_type_check",
+      "table": "review",
+      "definition": "CHECK ((target_type = ANY (ARRAY['SALON'::text, 'MASTER'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "review_rating_check",
+      "table": "review",
+      "definition": "CHECK (((rating >= 1) AND (rating <= 5)))"
+    },
+    {
+      "kind": "c",
+      "name": "review_visibility_check",
+      "table": "review",
+      "definition": "CHECK ((visibility = ANY (ARRAY['PUBLISHED'::text, 'HIDDEN'::text])))"
+    },
+    {
+      "kind": "p",
+      "name": "review_pkey",
+      "table": "review",
+      "definition": "PRIMARY KEY (review_id)"
+    },
+    {
+      "kind": "u",
+      "name": "review_appointment_id_target_type_key",
+      "table": "review",
+      "definition": "UNIQUE (appointment_id, target_type)"
+    },
+    {
+      "kind": "f",
+      "name": "review_appointment_id_fkey",
+      "table": "review",
+      "definition": "FOREIGN KEY (appointment_id) REFERENCES beauty.appointment(appointment_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "c",
+      "name": "moderation_decision_action_check",
+      "table": "moderation_decision",
+      "definition": "CHECK ((action = ANY (ARRAY['APPROVE'::text, 'RETURN'::text, 'PUBLISH'::text, 'UNPUBLISH'::text, 'BLOCK'::text, 'UNBLOCK'::text, 'HIDE'::text, 'RESTORE'::text])))"
+    },
+    {
+      "kind": "c",
+      "name": "moderation_decision_reason_check",
+      "table": "moderation_decision",
+      "definition": "CHECK ((btrim(reason) <> ''::text))"
+    },
+    {
+      "kind": "c",
+      "name": "moderation_decision_check",
+      "table": "moderation_decision",
+      "definition": "CHECK ((num_nonnulls(target_user_id, target_salon_id, target_master_id, target_review_id) = 1))"
+    },
+    {
+      "kind": "c",
+      "name": "moderation_decision_check1",
+      "table": "moderation_decision",
+      "definition": "CHECK (((photo_path IS NULL) OR ((btrim(photo_path) <> ''::text) AND (num_nonnulls(target_salon_id, target_master_id) = 1))))"
+    },
+    {
+      "kind": "p",
+      "name": "moderation_decision_pkey",
+      "table": "moderation_decision",
+      "definition": "PRIMARY KEY (decision_id)"
+    },
+    {
+      "kind": "f",
+      "name": "moderation_decision_admin_user_id_fkey",
+      "table": "moderation_decision",
+      "definition": "FOREIGN KEY (admin_user_id) REFERENCES beauty.user_account(user_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "moderation_decision_target_user_id_fkey",
+      "table": "moderation_decision",
+      "definition": "FOREIGN KEY (target_user_id) REFERENCES beauty.user_account(user_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "moderation_decision_target_salon_id_fkey",
+      "table": "moderation_decision",
+      "definition": "FOREIGN KEY (target_salon_id) REFERENCES beauty.salon(salon_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "moderation_decision_target_master_id_fkey",
+      "table": "moderation_decision",
+      "definition": "FOREIGN KEY (target_master_id) REFERENCES beauty.master(master_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "moderation_decision_target_review_id_fkey",
+      "table": "moderation_decision",
+      "definition": "FOREIGN KEY (target_review_id) REFERENCES beauty.review(review_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "moderation_decision_target_salon_id_photo_path_fkey",
+      "table": "moderation_decision",
+      "definition": "FOREIGN KEY (target_salon_id, photo_path) REFERENCES beauty.salon_photo(salon_id, file_path) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "moderation_decision_target_master_id_photo_path_fkey",
+      "table": "moderation_decision",
+      "definition": "FOREIGN KEY (target_master_id, photo_path) REFERENCES beauty.master_photo(master_id, file_path) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "c",
+      "name": "master_invitation_check",
+      "table": "master_invitation",
+      "definition": "CHECK ((expires_at > created_at))"
+    },
+    {
+      "kind": "c",
+      "name": "master_invitation_check1",
+      "table": "master_invitation",
+      "definition": "CHECK ((num_nonnulls(used_at, revoked_at) <= 1))"
+    },
+    {
+      "kind": "c",
+      "name": "master_invitation_check2",
+      "table": "master_invitation",
+      "definition": "CHECK (((used_at IS NULL) OR ((used_at >= created_at) AND (used_at < expires_at))))"
+    },
+    {
+      "kind": "c",
+      "name": "master_invitation_check3",
+      "table": "master_invitation",
+      "definition": "CHECK (((revoked_at IS NULL) OR (revoked_at >= created_at)))"
+    },
+    {
+      "kind": "p",
+      "name": "master_invitation_pkey",
+      "table": "master_invitation",
+      "definition": "PRIMARY KEY (invitation_id)"
+    },
+    {
+      "kind": "u",
+      "name": "master_invitation_token_hash_key",
+      "table": "master_invitation",
+      "definition": "UNIQUE (token_hash)"
+    },
+    {
+      "kind": "f",
+      "name": "master_invitation_master_id_fkey",
+      "table": "master_invitation",
+      "definition": "FOREIGN KEY (master_id) REFERENCES beauty.master(master_id) ON DELETE RESTRICT"
+    },
+    {
+      "kind": "f",
+      "name": "master_invitation_created_by_user_id_fkey",
+      "table": "master_invitation",
+      "definition": "FOREIGN KEY (created_by_user_id) REFERENCES beauty.user_account(user_id) ON DELETE RESTRICT"
+    }
+  ],
+  "server_version": "17.4"
+}

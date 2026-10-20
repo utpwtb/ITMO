@@ -1,96 +1,89 @@
 {
-  "rows": 768,
+  "dataset": "Titanic labelled train.csv",
+  "rows": 891,
+  "sha256": "4a437fde05fe5264e1701a7387ac6fb75393772ba38bb2c9c566405af5af4bd7",
   "duplicates": 0,
-  "raw_nulls": 0,
-  "class_counts": {
-    "0": 500,
-    "1": 268
-  },
-  "split_sizes": {
-    "train": 614,
-    "test": 154,
-    "fit": 491,
-    "validation": 123
-  },
-  "split_classes": {
-    "train": [
-      400,
-      214
-    ],
-    "test": [
-      100,
-      54
-    ],
-    "fit": [
-      320,
-      171
-    ],
-    "validation": [
-      80,
-      43
-    ]
-  },
   "missing": {
-    "Pregnancies": 0,
-    "Glucose": 5,
-    "BloodPressure": 35,
-    "SkinThickness": 227,
-    "Insulin": 374,
-    "BMI": 11,
-    "DiabetesPedigreeFunction": 0,
-    "Age": 0
+    "PassengerId": 0,
+    "Survived": 0,
+    "Pclass": 0,
+    "Name": 0,
+    "Sex": 0,
+    "Age": 177,
+    "SibSp": 0,
+    "Parch": 0,
+    "Ticket": 0,
+    "Fare": 0,
+    "Cabin": 687,
+    "Embarked": 2
   },
-  "selected_id": 6,
-  "selected_config": {
-    "method": "gd",
-    "learning_rate": 0.1,
-    "iterations": 100
+  "splits": {
+    "train": {
+      "total": 713,
+      "class_0": 439,
+      "class_1": 274
+    },
+    "test": {
+      "total": 178,
+      "class_0": 110,
+      "class_1": 68
+    },
+    "fit": {
+      "total": 570,
+      "class_0": 351,
+      "class_1": 219
+    },
+    "validation": {
+      "total": 143,
+      "class_0": 88,
+      "class_1": 55
+    }
   },
-  "selected_result": {
-    "config_id": 6,
-    "method": "gd",
-    "learning_rate": 0.1,
-    "iterations": 100,
+  "selected_id": 19,
+  "selected": {
+    "config_id": 19,
+    "method": "newton",
+    "learning_rate": 1.0,
+    "iterations": 10,
     "selected": true,
-    "train_log_loss": 0.4747209044310859,
-    "test_log_loss": 0.49093253106407975,
-    "accuracy": 0.7792207792207793,
-    "precision": 0.7380952380952381,
-    "recall": 0.5740740740740741,
-    "f1": 0.6458333333333334,
-    "tn": 89,
-    "fp": 11,
-    "fn": 23,
-    "tp": 31
+    "train_log_loss": 0.44763723228686114,
+    "test_log_loss": 0.4227881727777274,
+    "accuracy": 0.7921348314606742,
+    "precision": 0.7540983606557377,
+    "recall": 0.6764705882352942,
+    "f1": 0.7131782945736435,
+    "tn": 95,
+    "fp": 15,
+    "fn": 22,
+    "tp": 46
   },
-  "validation_result": {
-    "config_id": 6,
-    "method": "gd",
-    "learning_rate": 0.1,
-    "iterations": 100,
-    "val_log_loss": 0.4623614075185968,
-    "val_accuracy": 0.7967479674796748,
-    "val_precision": 0.6956521739130435,
-    "val_recall": 0.7441860465116279,
-    "val_f1": 0.7191011235955056,
-    "val_tn": 66,
-    "val_fp": 14,
-    "val_fn": 11,
-    "val_tp": 32
+  "selected_validation": {
+    "config_id": 19,
+    "method": "newton",
+    "learning_rate": 1.0,
+    "iterations": 10,
+    "log_loss": 0.4055198453693451,
+    "accuracy": 0.8041958041958042,
+    "precision": 0.7547169811320755,
+    "recall": 0.7272727272727273,
+    "f1": 0.7407407407407407,
+    "tn": 75,
+    "fp": 13,
+    "fn": 15,
+    "tp": 40
   },
   "baseline": {
-    "accuracy": 0.6493506493506493,
+    "accuracy": 0.6179775280898876,
     "precision": 0.0,
     "recall": 0.0,
     "f1": 0.0,
-    "tn": 100,
+    "tn": 110,
     "fp": 0,
-    "fn": 54,
+    "fn": 68,
     "tp": 0
   },
-  "dataset_sha256": "6bfe5d0f379d17a0e0819b996407e3c09bf80febd4287f2ed212190dfff154af",
   "versions": {
-    "python": "3.12.14",
+    "python": "3.13.14",
     "numpy": "2.3.5",
     "pandas": "3.0.1"
   }

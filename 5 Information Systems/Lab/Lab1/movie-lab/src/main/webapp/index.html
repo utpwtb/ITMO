@@ -5,6 +5,8 @@
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <title>Кинотека · ИС 4101</title>
     <link href="style.css" rel="stylesheet">
+    <script defer src="ui-text.js"></script>
+    <script defer src="validation.js"></script>
     <script defer src="app.js"></script>
 </head>
 <body>
@@ -70,7 +72,7 @@
     </section>
     <section hidden id="operations"><h2>Специальные операции</h2>
         <div class="operation-grid">
-            <form data-operation="box-office"><h3>Удалить по сборам в США</h3><label>usaBoxOffice<input max="2147483647"
+            <form data-operation="box-office"><h3>Удалить по сборам в США</h3><label>Сборы в США<input max="2147483647"
                                                                                                         min="1"
                                                                                                         name="value"
                                                                                                         required
@@ -98,10 +100,15 @@
                 <button>Наградить</button>
             </form>
         </div>
-        <h3>Результат</h3>
-        <div aria-live="polite" id="operation-result">Выполните операцию.</div>
     </section>
 </main>
+<dialog id="result-dialog" aria-labelledby="result-title">
+    <div class="toolbar"><h2 id="result-title">Результат</h2>
+        <button type="button" data-close="result-dialog">Закрыть</button>
+    </div>
+    <p class="field-hint">Результат на момент выполнения операции.</p>
+    <div id="operation-result" aria-live="polite"></div>
+</dialog>
 <dialog id="editor">
     <form id="edit-form">
         <div class="toolbar"><h2 id="edit-title"></h2>

@@ -1,0 +1,23 @@
+\begingroup\setstretch{1}\begin{tikzpicture}[x=1cm,y=1cm, entity/.style={draw,rounded corners=1pt,fill=gray!3,align=center,text width=3.4cm,minimum width=3.6cm,minimum height=2.2cm,font=\small,inner sep=2pt,outer sep=0pt}]
+\draw (3.8,6.0) -- (5.2,6.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.16,6.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.84,6.25) {0..N};
+\draw (10.2,10.0) -- (7,10) -- (7.0,7.1);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.84,10.25) {0..1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (7.3,7.3999999999999995) {0..N};
+\draw (10.2,6.0) -- (8.8,6.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.84,6.25) {0..1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.16,6.25) {0..N};
+\draw (10.2,2.0) -- (8.8,2) -- (8.8,4.9);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.84,2.25) {0..1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.0,4.6000000000000005) {0..N};
+\draw (3.8,2.0) -- (5.2,2) -- (5.2,4.9);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.16,2.25) {0..1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (5.0,4.6000000000000005) {0..N};
+\node[entity] (admin) at (2,6) {\textbf{Пользователь}\\{\scriptsize \texttt{user\_\allowbreak{}id}}};
+\node[entity] (decision) at (7,6) {\textbf{Решение\\модерации}\\{\scriptsize \texttt{decision\_\allowbreak{}id}}\\{\scriptsize XOR: одна цель}\\{\scriptsize \texttt{photo\_\allowbreak{}path}}};
+\node[entity] (salon) at (12,10) {\textbf{Салон}\\{\scriptsize \texttt{salon\_\allowbreak{}id}}\\{\scriptsize \{Фото интерьера:\\путь, подпись,\\порядок, видимость\}}};
+\node[entity] (master) at (12,6) {\textbf{Мастер}\\{\scriptsize \texttt{master\_\allowbreak{}id}}\\{\scriptsize \{Фото работ:\\путь, подпись,\\порядок, видимость\}}};
+\node[entity] (review) at (12,2) {\textbf{Отзыв}\\{\scriptsize \texttt{review\_\allowbreak{}id}}};
+\node[entity] (target_user) at (2,2) {\textbf{Пользователь}\\{\scriptsize \texttt{user\_\allowbreak{}id}}};
+\end{tikzpicture}\endgroup

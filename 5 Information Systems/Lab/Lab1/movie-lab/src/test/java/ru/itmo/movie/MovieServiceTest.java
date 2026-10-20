@@ -293,6 +293,77 @@ class MovieServiceTest {
     }
 
     @Test
+    void boxOfficeRelationshipRejectsCreateAndRollsBackUpdate() {
+        Coordinates c = coord();
+        var input = data(c.id, "Box office", 1, null);
+        input.put("totalBoxOffice", 99.5);
+        long revision = service.revision();
+        Problem error = assertThrows(Problem.class, () -> service.save("movies", null, input));
+        assertEquals(400, error.status);
+        assertTrue(error.getMessage().contains("usaBoxOffice"));
+        assertEquals(revision, service.revision());
+        assertEquals(0L, service.page(0, 10, "name", null, "id", false).get("total"));
+
+        input.put("totalBoxOffice", 100);
+        Movie m = (Movie) service.save("movies", null, input);
+        assertThrows(Problem.class, () -> service.save("movies", m.id,
+                Map.of("version", m.version, "usaBoxOffice", 101)));
+        assertThrows(Problem.class, () -> service.save("movies", m.id,
+                Map.of("version", m.version, "totalBoxOffice", 99.5)));
+        Movie unchanged = (Movie) service.get("movies", m.id);
+        assertEquals(100, unchanged.usaBoxOffice);
+        assertEquals(100.0, unchanged.totalBoxOffice);
+        assertEquals(m.version, unchanged.version);
+    }
+
+    @Test
+    void boxOfficeRelationshipAllowsEqualGreaterAndUnknownTotal() {
+        var input = data(coord().id, "Box office", 1, null);
+        input.put("totalBoxOffice", 100);
+        Movie m = (Movie) service.save("movies", null, input);
+        m = (Movie) service.save("movies", m.id, Map.of("version", m.version, "totalBoxOffice", 100.5));
+        assertEquals(100.5, m.totalBoxOffice);
+        var update = new HashMap<String, Object>();
+        update.put("version", m.version);
+        update.put("totalBoxOffice", null);
+        Movie next = (Movie) service.save("movies", m.id, update);
+        assertNull(next.totalBoxOffice);
+        assertEquals(100, next.usaBoxOffice);
+    }
+
+    @Test
+    void databaseEnforcesBoxOfficeRelationshipWithoutService() throws Exception {
+        Movie m = movie("Box office", 1, null);
+        try (Statement s = connection.createStatement()) {
+            s.execute(sql("UPDATE movie SET totalboxoffice=100 WHERE id=" + m.id));
+            assertThrows(SQLException.class, () -> s.execute(sql("UPDATE movie SET usaboxoffice=101 WHERE id=" + m.id)));
+            assertThrows(SQLException.class, () -> s.execute(sql("UPDATE movie SET totalboxoffice=99.5 WHERE id=" + m.id)));
+            s.execute(sql("UPDATE movie SET totalboxoffice=100.5 WHERE id=" + m.id));
+            s.execute(sql("UPDATE movie SET totalboxoffice=NULL WHERE id=" + m.id));
+            s.execute(sql("UPDATE movie SET usaboxoffice=200 WHERE id=" + m.id));
+        }
+    }
+
+    @Test
+    void boxOfficeMigrationValidatesExistingDataAndCanBeRepeated() throws Exception {
+        Movie m = movie("Migration", 1, null);
+        String migration = sql(Files.readString(Path.of("database/migrations/002_box_office.sql")));
+        try (Statement s = connection.createStatement()) {
+            s.execute(sql("ALTER TABLE movie DROP CONSTRAINT movie_box_office_consistency"));
+            s.execute(sql("UPDATE movie SET totalboxoffice=50 WHERE id=" + m.id));
+            assertThrows(SQLException.class, () -> s.execute(migration));
+            try (ResultSet rows = s.executeQuery(sql("SELECT totalboxoffice FROM movie WHERE id=" + m.id))) {
+                assertTrue(rows.next());
+                assertEquals(50, rows.getDouble(1)); // Migration did not rewrite inconsistent records.
+            }
+            s.execute(sql("UPDATE movie SET totalboxoffice=100 WHERE id=" + m.id));
+            s.execute(migration);
+            s.execute(migration);
+            assertThrows(SQLException.class, () -> s.execute(sql("UPDATE movie SET usaboxoffice=101 WHERE id=" + m.id)));
+        }
+    }
+
+    @Test
     void exactFilteringSortingPagination() {
         movie("Alpha", 1, null);
         movie("Alphabet", 1, null);

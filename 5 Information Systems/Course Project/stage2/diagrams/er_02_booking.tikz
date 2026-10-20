@@ -1,0 +1,27 @@
+\begingroup\setstretch{1}\begin{tikzpicture}[x=1cm,y=1cm, entity/.style={draw,rounded corners=1pt,fill=gray!3,align=center,text width=3.4cm,minimum width=3.6cm,minimum height=2.2cm,font=\small,inner sep=2pt,outer sep=0pt}]
+\draw (3.8,6.0) -- (5.2,6.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.16,6.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.84,6.25) {0..N};
+\draw (8.8,6.0) -- (10.2,6.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.16,6.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.84,6.25) {0..N};
+\draw (13.8,6.0) -- (15.2,6.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (14.16,6.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (14.84,6.25) {0..2};
+\draw (7.0,8.9) -- (7.0,7.1);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (7.3,8.6) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (7.3,7.3999999999999995) {0..N};
+\draw (2.0,4.9) -- (2.0,3.1);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (2.3,4.6000000000000005) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (2.3,3.4) {0..N};
+\draw (12.0,3.1) -- (12.0,4.9);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (12.3,3.4) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (12.3,4.6000000000000005) {0..N};
+\node[entity] (master) at (2,6) {\textbf{Мастер}\\{\scriptsize \texttt{master\_\allowbreak{}id}}\\{\scriptsize \{Фото работ:\\путь, подпись,\\порядок, видимость\}}};
+\node[entity] (assignment) at (7,6) {\textbf{Мастер--услуга}\\{\scriptsize \texttt{master\_\allowbreak{}id}\\\texttt{salon\_\allowbreak{}service\_\allowbreak{}id}}\\{\scriptsize M:N: мастер и услуга}};
+\node[entity] (appointment) at (12,6) {\textbf{Запись}\\{\scriptsize \texttt{appointment\_\allowbreak{}id}}};
+\node[entity] (review) at (17,6) {\textbf{Отзыв}\\{\scriptsize \texttt{review\_\allowbreak{}id}}};
+\node[entity] (service) at (7,10) {\textbf{Услуга салона}\\{\scriptsize \texttt{salon\_\allowbreak{}service\_\allowbreak{}id}}};
+\node[entity] (work) at (2,2) {\textbf{Рабочий интервал}\\{\scriptsize \texttt{work\_\allowbreak{}interval\_\allowbreak{}id}}};
+\node[entity] (client) at (12,2) {\textbf{Пользователь}\\{\scriptsize \texttt{user\_\allowbreak{}id}}};
+\end{tikzpicture}\endgroup

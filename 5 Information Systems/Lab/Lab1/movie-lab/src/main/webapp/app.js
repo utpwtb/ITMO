@@ -1,5 +1,11 @@
 'use strict';
 const $ = id => document.getElementById(id);
+const {format: t, render: bind} = UiText;
+document.querySelectorAll('form').forEach(Validation.attach);
+function showError(element, error) {
+    const raw = error.raw || error.message || String(error);
+    bind(element, () => raw);
+}
 const enums = {
     genres: ['WESTERN', 'COMEDY', 'TRAGEDY', 'HORROR'],
     rating: ['G', 'PG', 'PG_13', 'R', 'NC_17'],
@@ -29,7 +35,7 @@ let state = {
 function option(select, value, label) {
     const e = document.createElement('option');
     e.value = value;
-    e.textContent = label;
+    bind(e, label);
     select.append(e);
 }
 
@@ -59,13 +65,16 @@ async function api(path, method = 'GET', body) {
             $('workspace').hidden = true;
             $('login').hidden = false;
         }
-        throw new Error(data.error || 'Ошибка ' + r.status);
+        const error = new Error(data.error || t('Ошибка {status}', {status: r.status}));
+        error.raw = data.error || error.message;
+        error.status = r.status;
+        throw error;
     }
     return data;
 }
 
 function notice(message, error = false) {
-    $('notice').textContent = message;
+    bind($('notice'), typeof message === 'function' ? message : () => error ? message : t(message));
     $('notice').className = error ? 'error' : '';
 }
 
@@ -77,7 +86,7 @@ function showSession(data) {
     if (!data.authenticated) authView(false);
     if (data.authenticated) {
         const b = document.createElement('button');
-        b.textContent = 'Выйти · ' + data.user;
+        bind(b, 'Выйти · {user}', {user: data.user});
         b.onclick = async () => {
             try {
                 await api('auth', 'DELETE');
@@ -93,10 +102,11 @@ function showSession(data) {
 function authView(register) {
     $('login-form').hidden = register;
     $('register-form').hidden = !register;
-    $('auth-heading').textContent = register ? 'Регистрация' : 'Вход в систему';
-    $('login-error').textContent = '';
-    $('register-error').textContent = '';
+    bind($('auth-heading'), register ? 'Регистрация' : 'Вход в систему');
+    bind($('login-error'), '');
+    bind($('register-error'), '');
     for (const form of [$('login-form'), $('register-form')]) {
+        Validation.clear(form);
         form.querySelectorAll('input[type=password]').forEach(input => input.value = '');
     }
 }
@@ -113,22 +123,24 @@ $('show-login').onclick = () => {
 $('register-form').onsubmit = async e => {
     e.preventDefault();
     const form = e.target;
+    if (!Validation.form(form)) return;
     const data = Object.fromEntries(new FormData(form));
     if (data.password !== data.confirmation) {
-        $('register-error').textContent = 'Пароли не совпадают';
+        bind($('register-error'), 'Пароли не совпадают');
         return;
     }
     const buttons = [...form.querySelectorAll('button')];
     buttons.forEach(button => button.disabled = true);
     try {
         showSession(await api('auth/register', 'POST', {username: data.username, password: data.password}));
-        $('register-error').textContent = '';
+        bind($('register-error'), '');
         form.reset();
         $('login-form').reset();
         state.revision = null;
         await refresh();
     } catch (error) {
-        $('register-error').textContent = error.message;
+        Validation.server(form, error.raw || error.message);
+        showError($('register-error'), error);
     } finally {
         buttons.forEach(button => button.disabled = false);
     }
@@ -136,26 +148,28 @@ $('register-form').onsubmit = async e => {
 
 $('login-form').onsubmit = async e => {
     e.preventDefault();
+    if (!Validation.form(e.target)) return;
     try {
         showSession(await api('auth', 'POST', Object.fromEntries(new FormData(e.target))));
-        $('login-error').textContent = '';
+        bind($('login-error'), '');
         e.target.reset();
         state.revision = null;
         await refresh();
     } catch (error) {
-        $('login-error').textContent = error.message;
+        showError($('login-error'), error);
     }
 };
 
-function format(value) {
+function format(value, key) {
     if (value === null || value === undefined) return '—';
     if (typeof value === 'object') return '#' + value.id + ' · ' + (value.name ?? `(${value.x}; ${value.y})`);
+    if (['genre', 'eyeColor', 'hairColor'].includes(key)) return t(String(value));
     return String(value);
 }
 
 function button(text, handler) {
     const b = document.createElement('button');
-    b.textContent = text;
+    bind(b, text);
     b.onclick = handler;
     return b;
 }
@@ -172,7 +186,10 @@ async function refresh() {
             sort: $('sort-column').value,
             desc: $('sort-desc').checked
         });
-        if ($('filter-enabled').checked) q.set('value', $('filter-value').value);
+        if ($('filter-enabled').checked) {
+            const value = $('filter-value').value;
+            q.set('value', value);
+        }
         data = await api('movies?' + q);
         state.page = data.page;
         state.total = data.total;
@@ -188,7 +205,7 @@ async function refresh() {
     const tr = document.createElement('tr');
     for (const title of ['Действия', ...fields.map(f => f[1])]) {
         const th = document.createElement('th');
-        th.textContent = title;
+        bind(th, title);
         tr.append(th);
     }
     $('columns').replaceChildren(tr);
@@ -199,7 +216,7 @@ async function refresh() {
         tr.append(actions);
         for (const [key] of fields) {
             const td = document.createElement('td');
-            td.textContent = format(row[key]);
+            bind(td, () => format(row[key], key));
             tr.append(td);
         }
         $('rows').append(tr);
@@ -207,12 +224,12 @@ async function refresh() {
     if (!data.items.length) {
         const tr = document.createElement('tr'), td = document.createElement('td');
         td.colSpan = fields.length + 1;
-        td.textContent = 'Объектов нет';
+        bind(td, 'Объектов нет');
         tr.append(td);
         $('rows').append(tr);
     }
-    $('heading').textContent = titles[kind];
-    $('page-info').textContent = `Страница ${state.page + 1} из ${Math.max(1, Math.ceil(state.total / state.size))} · Объектов: ${state.total}`;
+    bind($('heading'), titles[kind]);
+    bind($('page-info'), 'Страница {page} из {pages} · Объектов: {total}', {page: state.page + 1, pages: Math.max(1, Math.ceil(state.total / state.size)), total: state.total});
     $('previous').disabled = state.page === 0;
     $('next').disabled = (state.page + 1) * state.size >= state.total;
 }
@@ -234,6 +251,7 @@ async function navigate(kind) {
 document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => navigate(b.dataset.view));
 $('filter-form').onsubmit = async e => {
     e.preventDefault();
+    if (!Validation.form(e.target)) return;
     state.page = 0;
     try {
         await refresh();
@@ -260,16 +278,20 @@ $('create').onclick = () => edit(state.kind);
 async function edit(kind, id) {
     try {
         const row = id ? await api(kind + '/' + id) : {};
+        // 编辑快照：保存打开表单时的对象版本，它必须与本次编辑输入一起提交。
+        // revision 轮询可以刷新列表，但不能在保留旧输入时把这个版本替换成最新版本。
         state.editing = {kind, id, version: row.version};
         $('fields').replaceChildren();
-        $('edit-error').textContent = '';
-        $('edit-title').textContent = (id ? 'Изменить: ' : 'Добавить: ') + titles[kind];
-        $('edit-note').textContent = '* Обязательное поле. Связанные объекты создаются в соответствующем разделе меню. ID и дата создания формируются автоматически.';
+        bind($('edit-error'), '');
+        bind($('edit-title'), () => t(id ? 'Изменить: {kind}' : 'Добавить: {kind}', {kind: t(titles[kind])}));
+        bind($('edit-note'), '* Обязательное поле. Связанные объекты создаются в соответствующем разделе меню. ID и дата создания формируются автоматически.');
         const refs = {};
         for (const f of schemas[kind]) if (f[2] === 'ref' && !refs[f[4]]) refs[f[4]] = await api(f[4]);
         for (const [key, label, type, required, list, min, max] of schemas[kind]) {
             const wrapper = document.createElement('label');
-            wrapper.textContent = label + (required ? ' *' : '');
+            const caption = document.createElement('span');
+            bind(caption, () => t(label) + (required ? ' *' : ''));
+            wrapper.append(caption);
             let input;
             if (type === 'enum' || type === 'ref') {
                 input = document.createElement('select');
@@ -277,15 +299,14 @@ async function edit(kind, id) {
                 if (type === 'enum') enums[list].forEach(v => option(input, v, v)); else refs[list].forEach(v => option(input, String(v.id), format(v)));
             } else {
                 input = document.createElement('input');
-                input.type = ['integer', 'number'].includes(type) ? 'number' : 'text';
-                if (type === 'number') input.step = 'any';
-                if (type === 'integer') input.step = '1';
-                if (type === 'long') {
-                    input.inputMode = 'numeric';
-                    input.pattern = '-?[0-9]+';
-                }
-                if (min !== undefined && type !== 'long') input.min = min;
-                if (max !== undefined) input.max = max;
+                input.type = 'text';
+                input.dataset.valueType = type;
+                if (['integer', 'long', 'number'].includes(type)) input.inputMode = type === 'number' ? 'decimal' : 'numeric';
+                // Long uses decimal text + BigInt validation to avoid JavaScript Number rounding.
+                if (min !== undefined) input.dataset.min = min;
+                if (max !== undefined) input.dataset.max = max;
+                if (type === 'number' && min === 0) input.dataset.positive = 'true';
+                if (['height', 'weight'].includes(key)) input.dataset.max = '3.4028235e38';
             }
             input.name = key;
             input.required = required && !['tagline', 'passportID'].includes(key) && !(kind === 'locations' && key === 'name');
@@ -294,6 +315,7 @@ async function edit(kind, id) {
             wrapper.append(input);
             $('fields').append(wrapper);
         }
+        Validation.attach($('edit-form'));
         $('editor').showModal();
     } catch (e) {
         notice(e.message, true);
@@ -302,12 +324,14 @@ async function edit(kind, id) {
 
 $('edit-form').onsubmit = async e => {
     e.preventDefault();
+    if (!Validation.form(e.target)) { bind($('edit-error'), 'Проверьте поля с красными подсказками.'); return; }
     const {kind, id, version} = state.editing;
     const data = {};
     for (const [key, , type, required] of schemas[kind]) {
         let value = e.target.elements.namedItem(key).value;
         data[key] = value === '' && !required ? null : value;/* preserve int64 as decimal strings */
     }
+    // 提交的是编辑快照的版本，而不是列表刷新后可能取得的新版本；后端据此识别过期表单。
     if (id) data.version = version;
     $('save').disabled = true;
     try {
@@ -317,7 +341,8 @@ $('edit-form').onsubmit = async e => {
         await refresh();
         if (state.detail && $('details').open) await details(state.detail.kind, state.detail.id);
     } catch (error) {
-        $('edit-error').textContent = error.message;
+        Validation.server(e.target, error.raw || error.message);
+        showError($('edit-error'), error);
     } finally {
         $('save').disabled = false;
     }
@@ -327,8 +352,8 @@ function renderObject(row) {
     const dl = document.createElement('dl');
     for (const [key, value] of Object.entries(row)) {
         const dt = document.createElement('dt'), dd = document.createElement('dd');
-        dt.textContent = key;
-        if (value && typeof value === 'object') dd.append(renderObject(value)); else dd.textContent = format(value);
+        bind(dt, () => UiText.field(key));
+        if (value && typeof value === 'object') dd.append(renderObject(value)); else bind(dd, () => format(value, key));
         dl.append(dt, dd);
     }
     return dl;
@@ -349,8 +374,8 @@ async function details(kind, id) {
 
 function remove(kind, row) {
     state.deleting = {kind, row};
-    $('delete-message').textContent = `Удалить ${titles[kind]} #${row.id}? При удалении координат или человека удаляются связанные фильмы; при удалении места — связанные люди и их фильмы. Независимые справочники при удалении фильма сохраняются.`;
-    $('delete-error').textContent = '';
+    bind($('delete-message'), () => t('Удалить {kind} #{id}? При удалении координат или человека удаляются связанные фильмы; при удалении места — связанные люди и их фильмы. Независимые справочники при удалении фильма сохраняются.', {kind: t(titles[kind]), id: row.id}));
+    bind($('delete-error'), '');
     $('delete-dialog').showModal();
 }
 
@@ -359,39 +384,58 @@ $('delete-confirm').onclick = async () => {
     try {
         const r = await api(`${kind}/${row.id}?version=${row.version}`, 'DELETE');
         $('delete-dialog').close();
-        notice('Удалено объектов: ' + r.deleted);
+        notice(() => t('Удалено объектов: {count}', {count: r.deleted}));
         await refresh();
     } catch (e) {
-        $('delete-error').textContent = e.message;
+        showError($('delete-error'), e);
     }
 };
 document.querySelectorAll('[data-operation]').forEach(form => form.onsubmit = async e => {
     e.preventDefault();
+    if (!Validation.form(form)) return;
     const op = form.dataset.operation;
-    if (op === 'box-office' && !confirm('Удалить все фильмы с указанными сборами?')) return;
+    if (op === 'box-office' && !confirm(t('Удалить все фильмы с указанными сборами?'))) return;
     const q = new URLSearchParams(new FormData(form));
     const method = op === 'box-office' ? 'DELETE' : ['average', 'prefix'].includes(op) ? 'GET' : 'POST';
+    const submit = form.querySelector('button');
+    submit.disabled = true;
+    const operationTitles = {'box-office': 'Удалить по сборам в США', average: 'Средние сборы в США', prefix: 'Найти по началу слогана', redistribute: 'Перераспределить «Оскары»', award: 'Дополнительные награды'};
+    bind($('result-title'), operationTitles[op]);
+    $('operation-result').replaceChildren();
     try {
         const result = await api('operations/' + op + '?' + q, method);
-        $('operation-result').replaceChildren();
         if (op === 'prefix') {
             const p = document.createElement('p');
-            p.textContent = 'Найдено: ' + result.length;
+            bind(p, 'Найдено: {count}', {count: result.length});
             $('operation-result').append(p);
             result.forEach(row => {
                 const d = document.createElement('details'), s = document.createElement('summary');
                 s.textContent = format(row);
-                d.append(s, renderObject(row), button('Изменить', () => edit('movies', row.id)));
+                d.append(s, renderObject(row), button('Изменить', () => { $('result-dialog').close(); edit('movies', row.id); }));
                 $('operation-result').append(d);
             });
         } else {
-            const p = document.createElement('pre');
-            p.textContent = op === 'average' ? 'Среднее: ' + (result.average ?? 'нет данных') : JSON.stringify(result, null, 2);
-            $('operation-result').append(p);
+            if (op === 'average') {
+                const p = document.createElement('p');
+                bind(p, () => t('Среднее: {value}', {value: result.average ?? t('нет данных')}));
+                $('operation-result').append(p);
+            } else {
+                const labels = {deleted:'Удалено фильмов', updated:'Обновлено фильмов', transferred:'Передано наград', recipients:'Получателей', each:'Каждому', remainder:'Остаток'};
+                const dl = document.createElement('dl');
+                for (const [key, value] of Object.entries(result)) {
+                    const term = document.createElement('dt'), valueNode = document.createElement('dd');
+                    bind(term, labels[key] || key); valueNode.textContent = String(value); dl.append(term, valueNode);
+                }
+                $('operation-result').append(dl);
+            }
         }
         notice('Операция выполнена');
     } catch (error) {
-        $('operation-result').textContent = error.message;
+        const p = document.createElement('p'); p.className = 'error'; showError(p, error);
+        $('operation-result').append(p);
+    } finally {
+        submit.disabled = false;
+        if (!$('result-dialog').open) $('result-dialog').showModal();
     }
 });
 setInterval(async () => {
@@ -401,17 +445,19 @@ setInterval(async () => {
         const {revision} = await api('revision');
         if (state.revision !== revision) {
             const changed = state.revision !== null;
+            // 列表与编辑表单是两份状态：refresh() 不覆盖表单输入，也不更新 state.editing.version。
             await refresh();
             if (changed) {
-                notice('Коллекция обновлена · ' + new Date().toLocaleTimeString('ru'));
+                const changedAt = new Date();
+                notice(() => t('Коллекция обновлена · {time}', {time: changedAt.toLocaleTimeString('ru')}));
                 if ($('details').open && state.detail) await details(state.detail.kind, state.detail.id);
-                if ($('editor').open) $('edit-note').textContent = 'Коллекция изменилась. Ваш ввод сохранён; сервер проверит версию объекта при сохранении.';
-                if (state.kind === 'operations') $('operation-result').textContent = 'Коллекция изменилась. Повторите операцию для актуального результата.';
+                // 集合变化未必来自正在编辑的对象；这里只提示并保留草稿，是否过期由保存时的后端比较确定。
+                if ($('editor').open) bind($('edit-note'), 'Коллекция изменилась. Ваш ввод сохранён; сервер проверит версию объекта при сохранении.');
             }
             state.revision = revision;
         }
     } catch (e) {
-        notice('Нет связи: ' + e.message, true);
+        notice(() => t('Нет связи: {message}', {message: e.message}), true);
     } finally {
         state.busy = false;
     }
@@ -422,6 +468,6 @@ setInterval(async () => {
         showSession(data);
         if (data.authenticated) await navigate('movies');
     } catch (e) {
-        $('login-error').textContent = e.message;
+        showError($('login-error'), e);
     }
 })();

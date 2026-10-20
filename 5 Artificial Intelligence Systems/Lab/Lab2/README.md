@@ -1,76 +1,102 @@
-# 实验二：逻辑回归 / Лабораторная №2
+# 实验二：Titanic 逻辑回归 / Лабораторная 2
 
-本地编号为实验二，对应课程 Notion 原标注的实验六要求。俄语报告按 `russian-latex-report` skill 的版式重做，沿用模块二模板中逻辑回归的五个主体部分，并以结论结束。参考资料和代码保存在项目内，不嵌入报告正文。
+使用 Titanic 的 891 条带标签乘客数据，完成缺失值处理、类别编码、描述统计、可视化、手写逻辑回归和 21 组超参数实验。程序仅依赖 **NumPy、Pandas 和 Python 标准库**；不使用 scikit-learn、SciPy 或 Matplotlib。SVG 绘图由标准库直接输出。
 
-## 文件
+## 目录
 
-- `report/main.tex`、`report/title.tex`、`report/content.tex`：俄语 LaTeX 报告源文件。
-- `report/main.pdf`：编译后的报告。
-- `report/figures`、`report/tables`、`report/fonts`：报告所需图片、结果表和字体。
-- `model.py`：NumPy/Pandas 手写 sigmoid、log loss、梯度下降、牛顿法、预处理、分层划分及指标。
-- `run_experiment.py`：完整实验，21 组配置，自动保存所有结果。
-- `test_model.py`：6 项检查，包含有限差分检验梯度/海森矩阵和两种优化器的收敛一致性。
-- `make_figures.py`：从真实结果生成 6 张图和 5 张表，Matplotlib 仅用于绘图。
-- `predict.py`：读取保存的模型进行预测。
-- `data/pima-indians-diabetes.csv`：768 行原始数据，无标题行；程序添加列名。
-- `references`：已下载并查看的实验三 PDF、DOCX，实验六 DOCX，课程与模板页面快照和数据说明。
-- `results`：统计、完整参数比较、划分索引、测试预测、模型参数与校验记录。
+```text
+Lab2/
+├── data/
+│   ├── README.md                 # 数据来源和校验值
+│   └── raw/train.csv             # 原始 891 条带标签数据
+├── src/titanic/
+│   ├── data.py                   # 训练集拟合的预处理、分层划分
+│   ├── model.py                  # sigmoid、log loss、GD、Newton
+│   ├── metrics.py                # 四项指标和混淆矩阵
+│   ├── experiment.py             # 完整实验入口
+│   ├── visualization.py          # 可复现的统计图和实验图
+│   └── predict.py                # 加载模型进行预测
+├── tests/test_core.py            # 数值正确性和数据隔离检查
+├── results/
+│   ├── statistics/               # 数值统计、类别频次、缺失值
+│   ├── metrics/                  # 全部配置的验证/测试指标、损失历史
+│   ├── predictions/              # 每组配置和选定模型的测试预测
+│   ├── model/                    # 保存的预处理参数、模型、系数
+│   ├── figures/                  # 5 张 SVG 实验图
+│   ├── split.csv                 # 每条记录所属的划分
+│   └── summary.json              # 实验摘要和运行环境
+├── references/
+│   ├── assignment.md             # 本次作业要求
+│   └── logistic_regression.docx  # 用户提供的理论材料
+├── report/
+│   ├── main.pdf                  # 最终俄语报告
+│   ├── main.tex                  # LaTeX 入口
+│   ├── title.tex                 # 封面
+│   ├── content.tex               # 正文和代码附录
+│   ├── fonts/                    # 字体及许可证
+│   ├── figures/                  # 报告实际引用的矢量图
+│   └── tables/                   # 报告引用的结果表
+├── requirements.txt
+└── pyproject.toml                # 代码格式规范
+```
+
+原始数据、程序、计算结果、报告素材均属于交付内容。目录内不包含报告生成脚本、检查用预览图、编译日志、缓存或旧 Pima 实验。
 
 ## 运行
 
-需要 Python 3.12 或兼容版本。在本目录执行：
+在 `Lab2` 下打开 PowerShell。建议使用 Python 3.12；此次实际版本为 Python 3.12.14、NumPy 2.3.5、Pandas 3.0.1。可在项目外的虚拟环境安装依赖。
 
 ```powershell
 python -m pip install -r requirements.txt
-python test_model.py
-python run_experiment.py
-python make_figures.py
-python predict.py --row-id 0
+$env:PYTHONPATH = Join-Path (Get-Location) 'src'
+python -B -m titanic.experiment
+python -B -m unittest discover -s tests -v
 ```
 
-实验数据已随项目提供，运行无需联网下载。安装 `requirements.txt` 即可恢复运行依赖。
+实验入口重新计算结果并更新 `results/` 中的 CSV、JSON 和 SVG。`-B` 防止生成字节码缓存。固定种子控制分层划分；极小浮点差异可能随 NumPy/底层线性代数库而变化。
 
-预测另一个含列标题的 CSV：
+如已安装 Ruff，可检查格式；Ruff 是开发工具，不是程序运行依赖：
 
 ```powershell
-python predict.py --input new_samples.csv
+ruff format --check --no-cache src tests
+ruff check --no-cache src tests
 ```
 
-输入列名必须为：`Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age`。可选 `Outcome` 只用于输出对照，不参与预测。
-
-## 实验设计和结果
-
-- 外层分层划分：614 train / 154 test，seed 42。
-- train 内划分为 491 fit / 123 validation，seed 43。
-- 预处理参数仅从对应训练部分估计：五列的无效零值转换为空值、训练中位数填充、标准化。
-- GD：学习率 0.001/0.01/0.1/1，迭代 100/1000/5000。
-- Newton：步长 0.1/0.5/1，迭代 3/10/30。
-- 先按 validation log loss 选择配置，再在完整 train 上训练。按任务要求，全部 21 组都报告 test 指标；不根据 test 重新选择参数。
-- 选中 GD，学习率 0.1，100 次迭代：Accuracy 0.779221，Precision 0.738095，Recall 0.574074，F1 0.645833。
-- 混淆矩阵按真实行/预测列、类别 0/1：`[[89, 11], [23, 31]]`。
-- 固定阈值 0.5；未使用 scikit-learn、SciPy 或现成机器学习算法。
-
-结果来自一次固定划分，不能据此宣称该参数组合普遍最优。较多迭代降低 log loss，并不一定提高阈值分类指标。
-
-## 编译报告
+预测入口支持具有相同字段的新 CSV。若另行下载了 Kaggle 无标签测试文件并保存为 `data/raw/test.csv`，可运行：
 
 ```powershell
-cd report
-xelatex main.tex
-xelatex main.tex
+python -B -m titanic.predict --input data/raw/test.csv --output results/predictions/kaggle_test.csv
 ```
 
-也可以运行 `tectonic main.tex`。字体已附带。上传到 Overleaf 时，上传整个 `report` 目录，选择 XeLaTeX，并将 `main.tex` 设为主文件。报告封面沿用已填写的个人信息：Чэнь Хаолинь，P3316，407960；教师 Болдырева Елена Александровна。
+这个可选文件未包含在交付中。输出包含 PassengerId、probability 和 Survived；不是自动提交到 Kaggle 的操作。
 
-## 来源与参考资料
+## 设计与结果
 
-- [课程任务](https://sunnysubmarines.notion.site/AI-System-a559a46cddc44363bdf27b77e10b7d85)
-- [模块二模板](https://sunnysubmarines.notion.site/2-4c3e6faa54b14630a267dbde97843b6d)
-- [实验三理论附件](https://sunnysubmarines.notion.site/1-f2323e041d6a435191b76b0bc088f106)
-- [课程指定数据集](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)：本次 API 返回 403。
-- [实际使用的同一 Pima 数据集公开镜像](https://github.com/jbrownlee/Datasets/blob/master/pima-indians-diabetes.data.csv)
-- [镜像附带原始说明](https://github.com/jbrownlee/Datasets/blob/master/pima-indians-diabetes.names)
+- 输入：Age、SibSp、Parch、Fare，以及 Sex、Pclass、Embarked 的参照组编码；共 9 个特征，加截距共 10 个参数。
+- 训练/测试：713/178，分层、种子 42；训练内再分成拟合 570 条和验证 143 条，种子 43。
+- 年龄以训练部分中位数填充，登船港口以众数填充；只有数值特征标准化。验证和测试数据不参与估计填充值或缩放参数。
+- GD：学习率 0.001、0.01、0.1、1；迭代 100、1000、5000，共 12 组。
+- Newton：学习率/阻尼系数 0.1、0.5、1；迭代 3、10、30，共 9 组。
+- 先按验证 log loss 选参，再在全部训练数据上重训；按任务要求对每一组计算测试指标。测试集不用于重新选参。
+- 选定 Newton，学习率 1、10 次迭代。测试 accuracy **0.7921**、precision **0.7541**、recall **0.6765**、F1 **0.7132**；TN=95、FP=15、FN=22、TP=46。
+- 验证结果中多个充分收敛配置实际上等价；数值级差异不能证明优越性。测试最高 F1 为 0.7424（Newton，0.5，3），它仅用于描述比较，不替代验证选参结果。
 
-实验三两份资料讨论多元线性回归、最小二乘和系数解释；报告第 2.1 节明确说明与逻辑回归的关系，不将线性回归的正态误差假设或正规方程套用到逻辑回归。实验六附件存在混合语言和公式提取不完整的情况，报告采用完整数学公式进行说明。
+8 项检查覆盖极端 sigmoid/log loss、有限差分梯度和 Hessian、已知解析解、四项指标、分层划分、训练统计隔离、类别编码/模型反序列化，以及保存模型与测试预测一致性。
 
-本项目只包含本地实验二（课程原实验六）的执行结果。模板内其他实验的方法比较为定性比较，不声称完成原课程实验四至五。原始数据 SHA-256：`6bfe5d0f379d17a0e0819b996407e3c09bf80febd4287f2ed212190dfff154af`。
+## 报告
+
+采用用户最新指定的结构：Введение → Описание метода → Псевдокод метода → Результаты выполнения → Примеры использования метода → Сравнение методов（含两个指定小节）→ Заключение → Приложения（代码）。
+
+报告附录直接引用 `../src/titanic/model.py`、`data.py` 和 `metrics.py`，因此应保留整个 `Lab2` 结构。源码、图、表、字体均已提供；需要 XeLaTeX/LuaLaTeX 和通常的 TeX 宏包。`report/fonts/OFL.txt` 是字体许可证。
+
+编译时在 `report` 目录执行以下命令，将中间文件放在系统临时目录，不污染实验目录：
+
+```powershell
+$taskTexBuild = Join-Path $env:TEMP 'titanic-report-build'
+New-Item -ItemType Directory -Force -Path $taskTexBuild | Out-Null
+xelatex -interaction=nonstopmode "-output-directory=$taskTexBuild" main.tex
+xelatex -interaction=nonstopmode "-output-directory=$taskTexBuild" main.tex
+Copy-Item -LiteralPath (Join-Path $taskTexBuild 'main.pdf') -Destination main.pdf
+```
+
+报告表格和 PDF 图对应本次已验证的计算结果。重新运行实验会更新 CSV/JSON/SVG；如果修改实验设置，还应同步更新报告表格、插图和结论。按要求未保留报告生成辅助脚本。

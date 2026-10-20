@@ -1,0 +1,501 @@
+2026-10-13 20:36:27.631 MSK [39880] LOG:  starting PostgreSQL 17.4 on x86_64-windows, compiled by msvc-19.42.34436, 64-bit
+2026-10-13 20:36:27.632 MSK [39880] LOG:  listening on IPv4 address "127.0.0.1", port 7747
+2026-10-13 20:36:27.799 MSK [20748] LOG:  database system was shut down at 2026-10-13 20:36:26 MSK
+2026-10-13 20:36:27.943 MSK [39880] LOG:  database system is ready to accept connections
+2026-10-13 20:38:44.871 MSK [39880] LOG:  received fast shutdown request
+2026-10-13 20:38:44.872 MSK [39880] LOG:  aborting any active transactions
+2026-10-13 20:38:44.880 MSK [39880] LOG:  background worker "logical replication launcher" (PID 31396) exited with exit code 1
+2026-10-13 20:38:44.882 MSK [22884] LOG:  shutting down
+2026-10-13 20:38:44.883 MSK [22884] LOG:  checkpoint starting: shutdown immediate
+2026-10-13 20:38:44.900 MSK [22884] LOG:  checkpoint complete: wrote 46 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.006 s, total=0.019 s; sync files=11, longest=0.002 s, average=0.001 s; distance=266 kB, estimate=266 kB; lsn=0/15B4AC0, redo lsn=0/15B4AC0
+2026-10-13 20:38:44.912 MSK [39880] LOG:  database system is shut down
+2026-10-13 20:38:47.373 MSK [25016] LOG:  starting PostgreSQL 17.4 on x86_64-windows, compiled by msvc-19.42.34436, 64-bit
+2026-10-13 20:38:47.374 MSK [25016] LOG:  listening on IPv4 address "127.0.0.1", port 5634
+2026-10-13 20:38:47.523 MSK [43644] LOG:  database system was shut down at 2026-10-13 20:38:44 MSK
+2026-10-13 20:38:47.659 MSK [25016] LOG:  database system is ready to accept connections
+2026-10-13 20:38:57.138 MSK [22164] ERROR:  conflicting key value violates exclusion constraint "ex_appointment_overlap"
+2026-10-13 20:38:57.138 MSK [22164] DETAIL:  Key (master_id, slot)=(1, ["2026-10-14 09:15:00","2026-10-14 10:00:00")) conflicts with existing key (master_id, slot)=(1, ["2026-10-14 09:00:00","2026-10-14 09:45:00")).
+2026-10-13 20:38:57.138 MSK [22164] CONTEXT:  SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-13 20:38:57.138 MSK [22164] STATEMENT:  SELECT beauty.book_appointment(10001,1,1,beauty.local_now()::date+1+time '09:15',725,45);
+2026-10-13 20:38:57.263 MSK [26356] ERROR:  Appointment does not fit one working interval
+2026-10-13 20:38:57.263 MSK [26356] CONTEXT:  PL/pgSQL function trg_appointment() line 21 at RAISE
+	SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-13 20:38:57.263 MSK [26356] STATEMENT:  SELECT beauty.book_appointment(10001,3,3,beauty.local_now()::date+1+time '12:45',1125,35);
+2026-10-13 20:38:57.387 MSK [43696] ERROR:  new row for relation "appointment" violates check constraint "ck_start_grid"
+2026-10-13 20:38:57.387 MSK [43696] DETAIL:  Failing row contains (50009, 10001, 3, 3, 2026-10-14 10:05:00, Стрижка базовый, 1125.00, 35, 2026-10-14 10:40:00, ["2026-10-14 10:05:00","2026-10-14 10:40:00"), CONFIRMED, 2026-10-13 20:38:57.383183, null, null, null, null, null).
+2026-10-13 20:38:57.387 MSK [43696] CONTEXT:  SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-13 20:38:57.387 MSK [43696] STATEMENT:  SELECT beauty.book_appointment(10001,3,3,beauty.local_now()::date+1+time '10:05',1125,35);
+2026-10-13 20:38:57.510 MSK [45008] ERROR:  Appointment is outside the 30-day horizon
+2026-10-13 20:38:57.510 MSK [45008] CONTEXT:  PL/pgSQL function trg_appointment() line 17 at RAISE
+	SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-13 20:38:57.510 MSK [45008] STATEMENT:  SELECT beauty.book_appointment(10001,3,3,beauty.local_now()::date-1+time '14:00',1125,35);
+2026-10-13 20:38:57.625 MSK [30228] ERROR:  Appointment is outside the 30-day horizon
+2026-10-13 20:38:57.625 MSK [30228] CONTEXT:  PL/pgSQL function trg_appointment() line 17 at RAISE
+	SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-13 20:38:57.625 MSK [30228] STATEMENT:  SELECT beauty.book_appointment(10001,3,3,beauty.local_now()::date+30+time '10:00',1125,35);
+2026-10-13 20:38:57.742 MSK [37280] ERROR:  Actor has no permission
+2026-10-13 20:38:57.742 MSK [37280] CONTEXT:  PL/pgSQL function require_actor(bigint,text[]) line 4 at RAISE
+	SQL statement "SELECT beauty.require_actor(p_client,ARRAY['CLIENT'])"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 2 at PERFORM
+2026-10-13 20:38:57.742 MSK [37280] STATEMENT:  SELECT beauty.book_appointment(1001,3,3,beauty.local_now()::date+1+time '10:00',1125,35);
+2026-10-13 20:38:57.858 MSK [43916] ERROR:  Salon, master or service is unavailable
+2026-10-13 20:38:57.858 MSK [43916] CONTEXT:  PL/pgSQL function trg_appointment() line 15 at RAISE
+	SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-13 20:38:57.858 MSK [43916] STATEMENT:  SELECT beauty.book_appointment(10001,500,595,beauty.local_now()::date+1+time '10:00',700,45);
+2026-10-13 20:38:57.995 MSK [40680] ERROR:  Appointment belongs to another actor
+2026-10-13 20:38:57.995 MSK [40680] CONTEXT:  PL/pgSQL function cancel_appointment(bigint,bigint,text) line 7 at RAISE
+2026-10-13 20:38:57.995 MSK [40680] STATEMENT:  SELECT beauty.cancel_appointment(10002,50003);
+2026-10-13 20:38:58.116 MSK [36892] ERROR:  Appointment belongs to another actor
+2026-10-13 20:38:58.116 MSK [36892] CONTEXT:  PL/pgSQL function cancel_appointment(bigint,bigint,text) line 7 at RAISE
+2026-10-13 20:38:58.116 MSK [36892] STATEMENT:  SELECT beauty.cancel_appointment(1002,50003,'reason');
+2026-10-13 20:38:58.241 MSK [42448] ERROR:  Cancellation reason is required
+2026-10-13 20:38:58.241 MSK [42448] CONTEXT:  PL/pgSQL function trg_appointment() line 40 at RAISE
+	SQL statement "UPDATE beauty.appointment SET status='CANCELLED',cancelled_at=beauty.local_now(),cancelled_by_user_id=p_actor,cancellation_reason=p_reason WHERE appointment_id=p_appointment"
+	PL/pgSQL function cancel_appointment(bigint,bigint,text) line 9 at SQL statement
+2026-10-13 20:38:58.241 MSK [42448] STATEMENT:  SELECT beauty.cancel_appointment(2001,50003);
+2026-10-13 20:38:58.367 MSK [31844] ERROR:  A started appointment cannot be cancelled
+2026-10-13 20:38:58.367 MSK [31844] CONTEXT:  PL/pgSQL function trg_appointment() line 35 at RAISE
+	SQL statement "UPDATE beauty.appointment SET status='CANCELLED',cancelled_at=beauty.local_now(),cancelled_by_user_id=p_actor,cancellation_reason=p_reason WHERE appointment_id=p_appointment"
+	PL/pgSQL function cancel_appointment(bigint,bigint,text) line 9 at SQL statement
+2026-10-13 20:38:58.367 MSK [31844] STATEMENT:  SELECT beauty.cancel_appointment(1001,50001,'reason');
+2026-10-13 20:38:58.630 MSK [44096] ERROR:  Appointment has not ended
+2026-10-13 20:38:58.630 MSK [44096] CONTEXT:  PL/pgSQL function trg_appointment() line 44 at RAISE
+	SQL statement "UPDATE beauty.appointment SET status=p_result,result_marked_at=beauty.local_now(),result_marked_by_user_id=p_actor WHERE appointment_id=p_appointment"
+	PL/pgSQL function mark_visit(bigint,bigint,text) line 4 at SQL statement
+2026-10-13 20:38:58.630 MSK [44096] STATEMENT:  CALL beauty.mark_visit(2001,50003,'COMPLETED');
+2026-10-13 20:38:58.934 MSK [40392] ERROR:  Review requires a completed visit
+2026-10-13 20:38:58.934 MSK [40392] CONTEXT:  PL/pgSQL function trg_review() line 8 at RAISE
+	SQL statement "INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id"
+	PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement
+2026-10-13 20:38:58.934 MSK [40392] STATEMENT:  SELECT beauty.add_review(10001,50002,'SALON',4::smallint);
+2026-10-13 20:38:59.084 MSK [31016] ERROR:  Invalid or terminal status transition
+2026-10-13 20:38:59.084 MSK [31016] CONTEXT:  PL/pgSQL function trg_appointment() line 29 at RAISE
+	SQL statement "UPDATE beauty.appointment SET status=p_result,result_marked_at=beauty.local_now(),result_marked_by_user_id=p_actor WHERE appointment_id=p_appointment"
+	PL/pgSQL function mark_visit(bigint,bigint,text) line 4 at SQL statement
+2026-10-13 20:38:59.084 MSK [31016] STATEMENT:  CALL beauty.mark_visit(2001,501,'NO_SHOW');
+2026-10-13 20:38:59.367 MSK [37928] ERROR:  Service terms changed; confirm again
+2026-10-13 20:38:59.367 MSK [37928] CONTEXT:  PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 6 at RAISE
+2026-10-13 20:38:59.367 MSK [37928] STATEMENT:  SELECT beauty.book_appointment(10001,1,1,beauty.local_now()::date+1+time '10:00',725,45);
+2026-10-13 20:38:59.539 MSK [16056] ERROR:  Change would invalidate a future appointment
+2026-10-13 20:38:59.539 MSK [16056] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-13 20:38:59.539 MSK [16056] STATEMENT:  UPDATE beauty.master SET is_active=false WHERE master_id=1;
+2026-10-13 20:38:59.667 MSK [35648] ERROR:  Change would invalidate a future appointment
+2026-10-13 20:38:59.667 MSK [35648] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-13 20:38:59.667 MSK [35648] STATEMENT:  UPDATE beauty.salon_service SET is_active=false WHERE salon_service_id=1;
+2026-10-13 20:38:59.791 MSK [37748] ERROR:  Change would invalidate a future appointment
+2026-10-13 20:38:59.791 MSK [37748] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+	SQL statement "INSERT INTO beauty.master_service(master_id,salon_service_id,is_active) VALUES(p_master,p_service,p_active)
+	 ON CONFLICT(master_id,salon_service_id) DO UPDATE SET is_active=excluded.is_active"
+	PL/pgSQL function set_master_service(bigint,bigint,bigint,boolean) line 4 at SQL statement
+2026-10-13 20:38:59.791 MSK [37748] STATEMENT:  CALL beauty.set_master_service(1001,1,1,false);
+2026-10-13 20:38:59.936 MSK [38672] ERROR:  Change would invalidate a future appointment
+2026-10-13 20:38:59.936 MSK [38672] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-13 20:38:59.936 MSK [38672] STATEMENT:  UPDATE beauty.work_interval SET start_time='10:00' WHERE master_id=1 AND work_date=beauty.local_now()::date+1 AND start_time='09:00';
+2026-10-13 20:39:00.065 MSK [22648] ERROR:  Change would invalidate a future appointment
+2026-10-13 20:39:00.065 MSK [22648] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-13 20:39:00.065 MSK [22648] STATEMENT:  DELETE FROM beauty.work_interval WHERE master_id=1 AND work_date=beauty.local_now()::date+1 AND start_time='09:00';
+2026-10-13 20:39:00.301 MSK [38952] ERROR:  conflicting key value violates exclusion constraint "ex_work_overlap"
+2026-10-13 20:39:00.301 MSK [38952] DETAIL:  Key (master_id, slot)=(3, ["2026-10-14 12:00:00","2026-10-14 14:00:00")) conflicts with existing key (master_id, slot)=(3, ["2026-10-14 09:00:00","2026-10-14 13:00:00")).
+2026-10-13 20:39:00.301 MSK [38952] CONTEXT:  SQL statement "INSERT INTO beauty.work_interval(master_id,work_date,start_time,end_time) VALUES(p_master,p_date,p_start,p_end) RETURNING work_interval_id"
+	PL/pgSQL function save_work_interval(bigint,bigint,date,time without time zone,time without time zone,bigint) line 4 at SQL statement
+2026-10-13 20:39:00.301 MSK [38952] STATEMENT:  SELECT beauty.save_work_interval(1001,3,beauty.local_now()::date+1,time '12:00',time '14:00');
+2026-10-13 20:39:00.413 MSK [18264] ERROR:  Master and service must belong to the same salon
+2026-10-13 20:39:00.413 MSK [18264] CONTEXT:  PL/pgSQL function trg_membership() line 14 at RAISE
+	SQL statement "INSERT INTO beauty.master_service(master_id,salon_service_id,is_active) VALUES(p_master,p_service,p_active)
+	 ON CONFLICT(master_id,salon_service_id) DO UPDATE SET is_active=excluded.is_active"
+	PL/pgSQL function set_master_service(bigint,bigint,bigint,boolean) line 4 at SQL statement
+2026-10-13 20:39:00.413 MSK [18264] STATEMENT:  CALL beauty.set_master_service(1001,1,7,true);
+2026-10-13 20:39:00.528 MSK [11036] ERROR:  duplicate key value violates unique constraint "salon_owner_user_id_key"
+2026-10-13 20:39:00.528 MSK [11036] DETAIL:  Key (owner_user_id)=(1001) already exists.
+2026-10-13 20:39:00.528 MSK [11036] CONTEXT:  SQL statement "INSERT INTO beauty.salon(owner_user_id,district_id,name,address,latitude,longitude,phone,opening_hours)
+	 VALUES(p_owner,p_district,p_name,p_address,p_lat,p_lon,p_phone,p_hours) RETURNING salon_id"
+	PL/pgSQL function create_salon(bigint,bigint,text,text,numeric,numeric,text,text) line 3 at SQL statement
+2026-10-13 20:39:00.528 MSK [11036] STATEMENT:  SELECT beauty.create_salon(1001,1,'extra','address',59,30,'phone','hours');
+2026-10-13 20:39:00.750 MSK [41908] ERROR:  Salon owner must have OWNER role
+2026-10-13 20:39:00.750 MSK [41908] CONTEXT:  PL/pgSQL function trg_membership() line 5 at RAISE
+2026-10-13 20:39:00.750 MSK [41908] STATEMENT:  INSERT INTO beauty.salon(owner_user_id,district_id,name,address,latitude,longitude,phone,opening_hours) VALUES(10001,1,'bad','a',59,30,'p','h');
+2026-10-13 20:39:00.862 MSK [43816] ERROR:  User identity and role are immutable
+2026-10-13 20:39:00.862 MSK [43816] CONTEXT:  PL/pgSQL function trg_identity() line 4 at RAISE
+2026-10-13 20:39:00.862 MSK [43816] STATEMENT:  UPDATE beauty.user_account SET role='MASTER' WHERE user_id=10001;
+2026-10-13 20:39:00.972 MSK [39036] ERROR:  Master identity is immutable
+2026-10-13 20:39:00.972 MSK [39036] CONTEXT:  PL/pgSQL function trg_identity() line 8 at RAISE
+2026-10-13 20:39:00.972 MSK [39036] STATEMENT:  UPDATE beauty.master SET salon_id=2 WHERE master_id=1;
+2026-10-13 20:39:01.086 MSK [23388] ERROR:  Visit belongs to another client
+2026-10-13 20:39:01.086 MSK [23388] CONTEXT:  PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 3 at RAISE
+2026-10-13 20:39:01.086 MSK [23388] STATEMENT:  SELECT beauty.add_review(10001,501,'SALON',5::smallint);
+2026-10-13 20:39:01.314 MSK [32008] ERROR:  new row for relation "review" violates check constraint "review_rating_check"
+2026-10-13 20:39:01.314 MSK [32008] DETAIL:  Failing row contains (12004, 501, SALON, 6, null, PUBLISHED, 2026-10-13 20:39:01.314125).
+2026-10-13 20:39:01.314 MSK [32008] CONTEXT:  SQL statement "INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id"
+	PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement
+2026-10-13 20:39:01.314 MSK [32008] STATEMENT:  SELECT beauty.add_review(10502,501,'SALON',6::smallint);
+2026-10-13 20:39:01.429 MSK [16184] ERROR:  duplicate key value violates unique constraint "review_appointment_id_target_type_key"
+2026-10-13 20:39:01.429 MSK [16184] DETAIL:  Key (appointment_id, target_type)=(501, SALON) already exists.
+2026-10-13 20:39:01.429 MSK [16184] CONTEXT:  SQL statement "INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id"
+	PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement
+2026-10-13 20:39:01.429 MSK [16184] STATEMENT:  SELECT beauty.add_review(10502,501,'SALON',5::smallint);
+2026-10-13 20:39:01.544 MSK [40572] ERROR:  Appointments are historical records
+2026-10-13 20:39:01.544 MSK [40572] CONTEXT:  PL/pgSQL function trg_appointment() line 4 at RAISE
+2026-10-13 20:39:01.544 MSK [40572] STATEMENT:  DELETE FROM beauty.appointment WHERE appointment_id=50005;
+2026-10-13 20:39:01.659 MSK [7344] ERROR:  Review content is immutable
+2026-10-13 20:39:01.659 MSK [7344] CONTEXT:  PL/pgSQL function trg_review() line 6 at RAISE
+2026-10-13 20:39:01.659 MSK [7344] STATEMENT:  UPDATE beauty.review SET text='changed' WHERE review_id=2;
+2026-10-13 20:39:01.770 MSK [28604] ERROR:  Actor has no permission
+2026-10-13 20:39:01.770 MSK [28604] CONTEXT:  PL/pgSQL function require_actor(bigint,text[]) line 4 at RAISE
+	SQL statement "SELECT beauty.require_actor(p_admin,ARRAY['ADMIN'])"
+	PL/pgSQL function moderate(bigint,text,bigint,text,text,text) line 2 at PERFORM
+2026-10-13 20:39:01.770 MSK [28604] STATEMENT:  SELECT beauty.moderate(1001,'SALON',1,'UNPUBLISH','reason');
+2026-10-13 20:39:02.209 MSK [42360] ERROR:  Invalid moderation target/action/state
+2026-10-13 20:39:02.209 MSK [42360] CONTEXT:  PL/pgSQL function trg_moderation() line 23 at RAISE
+	SQL statement "INSERT INTO beauty.moderation_decision(admin_user_id,target_user_id,target_salon_id,target_master_id,target_review_id,photo_path,action,reason)
+	 VALUES(p_admin,CASE WHEN p_kind='USER' THEN p_target END,CASE WHEN p_kind='SALON' THEN p_target END,
+	 CASE WHEN p_kind='MASTER' THEN p_target END,CASE WHEN p_kind='REVIEW' THEN p_target END,p_photo_path,p_action,p_reason) RETURNING decision_id"
+	PL/pgSQL function moderate(bigint,text,bigint,text,text,text) line 4 at SQL statement
+2026-10-13 20:39:02.209 MSK [42360] STATEMENT:  SELECT beauty.moderate(1,'SALON',1,'HIDE','reason','missing.png');
+2026-10-13 20:39:02.437 MSK [43344] ERROR:  Work belongs to another actor
+2026-10-13 20:39:02.437 MSK [43344] CONTEXT:  PL/pgSQL function put_photo(bigint,text,bigint,text,text,integer,text,integer) line 7 at RAISE
+2026-10-13 20:39:02.437 MSK [43344] STATEMENT:  CALL beauty.put_photo(1002,'MASTER',1,'x.png','',0,'image/png',100);
+2026-10-13 20:39:02.551 MSK [28260] ERROR:  new row for relation "salon_photo" violates check constraint "salon_photo_byte_size_check"
+2026-10-13 20:39:02.551 MSK [28260] DETAIL:  Failing row contains (1, x.png, , 0, PUBLISHED, image/png, 5242881, 2026-10-13 20:39:02.550701).
+2026-10-13 20:39:02.551 MSK [28260] CONTEXT:  SQL statement "INSERT INTO beauty.salon_photo(salon_id,file_path,caption,sort_order,mime_type,byte_size) VALUES(p_target,p_path,p_caption,p_order,p_mime,p_bytes)"
+	PL/pgSQL function put_photo(bigint,text,bigint,text,text,integer,text,integer) line 5 at SQL statement
+2026-10-13 20:39:02.551 MSK [28260] STATEMENT:  CALL beauty.put_photo(1001,'SALON',1,'x.png','',0,'image/png',5242881);
+2026-10-13 20:39:02.666 MSK [43768] ERROR:  new row for relation "salon_photo" violates check constraint "salon_photo_mime_type_check"
+2026-10-13 20:39:02.666 MSK [43768] DETAIL:  Failing row contains (1, x.svg, , 0, PUBLISHED, image/svg+xml, 100, 2026-10-13 20:39:02.665938).
+2026-10-13 20:39:02.666 MSK [43768] CONTEXT:  SQL statement "INSERT INTO beauty.salon_photo(salon_id,file_path,caption,sort_order,mime_type,byte_size) VALUES(p_target,p_path,p_caption,p_order,p_mime,p_bytes)"
+	PL/pgSQL function put_photo(bigint,text,bigint,text,text,integer,text,integer) line 5 at SQL statement
+2026-10-13 20:39:02.666 MSK [43768] STATEMENT:  CALL beauty.put_photo(1001,'SALON',1,'x.svg','',0,'image/svg+xml',100);
+2026-10-13 20:39:03.322 MSK [40540] ERROR:  Appointment belongs to another actor
+2026-10-13 20:39:03.322 MSK [40540] CONTEXT:  PL/pgSQL function cancel_appointment(bigint,bigint,text) line 7 at RAISE
+2026-10-13 20:39:03.322 MSK [40540] STATEMENT:  SELECT beauty.cancel_appointment(1,50003,'exception');
+2026-10-13 20:39:03.802 MSK [29736] ERROR:  new row for relation "user_account" violates check constraint "ck_password"
+2026-10-13 20:39:03.802 MSK [29736] DETAIL:  Failing row contains (15001, nopassword@example.test, null, bad, CLIENT, ACTIVE, 2026-10-13 20:39:03.802322).
+2026-10-13 20:39:03.802 MSK [29736] STATEMENT:  INSERT INTO beauty.user_account(email,display_name,role) VALUES('nopassword@example.test','bad','CLIENT');
+2026-10-13 20:39:04.284 MSK [17896] ERROR:  duplicate key value violates unique constraint "uq_user_email"
+2026-10-13 20:39:04.284 MSK [17896] DETAIL:  Key (email)=(client1@example.test) already exists.
+2026-10-13 20:39:04.284 MSK [17896] CONTEXT:  SQL statement "INSERT INTO beauty.user_account(email,display_name,password_hash,role) VALUES(lower(btrim(p_email)),p_name,public.crypt(p_password,public.gen_salt('bf',12)),p_role) RETURNING user_id"
+	PL/pgSQL function register_user(text,text,text,text) line 5 at SQL statement
+2026-10-13 20:39:04.284 MSK [17896] STATEMENT:  SELECT beauty.register_user('CLIENT1@EXAMPLE.TEST','duplicate','long-demo-password','CLIENT');
+2026-10-13 20:39:05.249 MSK [25048] ERROR:  Public registration supports CLIENT or OWNER
+2026-10-13 20:39:05.249 MSK [25048] CONTEXT:  PL/pgSQL function register_user(text,text,text,text) line 3 at RAISE
+2026-10-13 20:39:05.249 MSK [25048] STATEMENT:  SELECT beauty.register_user('new@example.test','New','long-demo-password','ADMIN');
+2026-10-13 20:39:05.438 MSK [43848] ERROR:  duplicate key value violates unique constraint "uq_user_email"
+2026-10-13 20:39:05.438 MSK [43848] DETAIL:  Key (email)=(client1@example.test) already exists.
+2026-10-13 20:39:05.438 MSK [43848] CONTEXT:  SQL statement "INSERT INTO beauty.user_account(email,display_name,role,account_status) VALUES(lower(btrim(p_email)),p_name,'MASTER','INVITED') RETURNING user_id"
+	PL/pgSQL function invite_master(bigint,bigint,text,text) line 4 at SQL statement
+2026-10-13 20:39:05.438 MSK [43848] STATEMENT:  SELECT * FROM beauty.invite_master(1001,1,'client1@example.test','bad');
+2026-10-13 20:39:06.083 MSK [43880] ERROR:  Invitation is invalid or expired
+2026-10-13 20:39:06.083 MSK [43880] CONTEXT:  PL/pgSQL function accept_invitation(text,text) line 5 at RAISE
+2026-10-13 20:39:06.083 MSK [43880] STATEMENT:  SELECT beauty.accept_invitation('expired-token','long-demo-password');
+2026-10-13 20:39:06.367 MSK [42492] ERROR:  permission denied for table user_account
+2026-10-13 20:39:06.367 MSK [42492] STATEMENT:  SELECT password_hash FROM beauty.user_account;
+2026-10-13 20:39:06.536 MSK [44368] ERROR:  permission denied for function lock_writes
+2026-10-13 20:39:06.536 MSK [44368] STATEMENT:  SELECT beauty.lock_writes();
+2026-10-13 20:39:06.703 MSK [41100] ERROR:  permission denied for schema beauty at character 15
+2026-10-13 20:39:06.703 MSK [41100] STATEMENT:  SELECT * FROM beauty.search_salons();
+2026-10-13 20:39:07.249 MSK [9652] ERROR:  Invalid search parameters
+2026-10-13 20:39:07.249 MSK [9652] CONTEXT:  PL/pgSQL function search_salons(bigint,bigint,numeric,numeric,date,numeric,numeric,numeric,numeric,numeric,numeric,numeric,text) line 7 at RAISE
+2026-10-13 20:39:07.249 MSK [9652] STATEMENT:  SELECT * FROM beauty.search_salons(p_district=>1,p_lat=>59.9,p_lon=>30.3,p_radius=>3);
+2026-10-13 20:39:08.239 MSK [42676] ERROR:  Business writes require READ COMMITTED
+2026-10-13 20:39:08.239 MSK [42676] CONTEXT:  PL/pgSQL function lock_writes() line 4 at RAISE
+	SQL statement "SELECT beauty.lock_writes()"
+	PL/pgSQL function trg_lock() line 1 at PERFORM
+2026-10-13 20:39:08.239 MSK [42676] STATEMENT:  UPDATE beauty.master SET experience_description='test' WHERE master_id=3;
+2026-10-13 20:39:10.438 MSK [38780] ERROR:  conflicting key value violates exclusion constraint "ex_appointment_overlap"
+2026-10-13 20:39:10.438 MSK [38780] DETAIL:  Key (master_id, slot)=(3, ["2026-10-14 10:00:00","2026-10-14 10:35:00")) conflicts with existing key (master_id, slot)=(3, ["2026-10-14 10:00:00","2026-10-14 10:35:00")).
+2026-10-13 20:39:10.438 MSK [38780] CONTEXT:  SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-13 20:39:10.438 MSK [38780] STATEMENT:  SELECT beauty.book_appointment(10002,3,3,(beauty.local_now()::date+1)+time '10:00',1125,35);
+2026-10-13 20:39:12.639 MSK [8000] ERROR:  Change would invalidate a future appointment
+2026-10-13 20:39:12.639 MSK [8000] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-13 20:39:12.639 MSK [8000] STATEMENT:  UPDATE beauty.work_interval SET start_time='11:00' WHERE master_id=4 AND work_date=beauty.local_now()::date+1 AND start_time='09:00';
+2026-10-13 20:39:14.834 MSK [44036] ERROR:  duplicate key value violates unique constraint "review_appointment_id_target_type_key"
+2026-10-13 20:39:14.834 MSK [44036] DETAIL:  Key (appointment_id, target_type)=(40001, MASTER) already exists.
+2026-10-13 20:39:14.834 MSK [44036] CONTEXT:  SQL statement "INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id"
+	PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement
+2026-10-13 20:39:14.834 MSK [44036] STATEMENT:  SELECT beauty.add_review(10002,40001,'MASTER',4::smallint,'race');
+2026-10-13 20:39:17.279 MSK [20312] ERROR:  Invitation is invalid or expired
+2026-10-13 20:39:17.279 MSK [20312] CONTEXT:  PL/pgSQL function accept_invitation(text,text) line 5 at RAISE
+2026-10-13 20:39:17.279 MSK [20312] STATEMENT:  SELECT beauty.accept_invitation('demo-invitation-to-reissue','concurrent-password-2026');
+2026-10-13 20:39:18.441 MSK [11168] ERROR:  syntax error at or near "FROM" at character 593
+2026-10-13 20:39:18.441 MSK [11168] STATEMENT:  SELECT jsonb_build_object(
+	 'server_version',current_setting('server_version'),
+	 'tables',(SELECT jsonb_agg(jsonb_build_object('name',t.table_name,'columns',
+	  (SELECT jsonb_agg(jsonb_build_object('name',c.column_name,'type',c.data_type,'udt',c.udt_name,'nullable',c.is_nullable='YES',
+	    'generated',c.is_generated,'expression',c.generation_expression,'default',c.column_default,'precision',c.numeric_precision,'scale',c.numeric_scale) ORDER BY c.ordinal_position)
+	   FROM information_schema.columns c WHERE c.table_schema='beauty' AND c.table_name=t.table_name))) ORDER BY t.table_name)
+	  FROM information_schema.tables t WHERE t.table_schema='beauty' AND t.table_type='BASE TABLE'),
+	 'constraints',(SELECT jsonb_agg(jsonb_build_object('table',r.relname,'name',c.conname,'kind',c.contype,'definition',pg_get_constraintdef(c.oid))) FROM pg_constraint c JOIN pg_class r ON r.oid=c.conrelid JOIN pg_namespace n ON n.oid=r.relnamespace WHERE n.nspname='beauty'),
+	 'indexes',(SELECT jsonb_agg(jsonb_build_object('table',tablename,'name',indexname,'definition',indexdef)) FROM pg_indexes WHERE schemaname='beauty'),
+	 'routines',(SELECT jsonb_agg(jsonb_build_object('name',p.proname,'kind',p.prokind,'signature',p.oid::regprocedure::text,'result',pg_get_function_result(p.oid),'security_definer',p.prosecdef)) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='beauty'),
+	 'triggers',(SELECT jsonb_agg(jsonb_build_object('table',r.relname,'name',t.tgname,'definition',pg_get_triggerdef(t.oid))) FROM pg_trigger t JOIN pg_class r ON r.oid=t.tgrelid JOIN pg_namespace n ON n.oid=r.relnamespace WHERE n.nspname='beauty' AND NOT t.tgisinternal)
+	);
+2026-10-13 20:39:18.498 MSK [25016] LOG:  received fast shutdown request
+2026-10-13 20:39:18.501 MSK [25016] LOG:  aborting any active transactions
+2026-10-13 20:39:18.511 MSK [25016] LOG:  background worker "logical replication launcher" (PID 34296) exited with exit code 1
+2026-10-13 20:39:18.513 MSK [34064] LOG:  shutting down
+2026-10-13 20:39:18.515 MSK [34064] LOG:  checkpoint starting: shutdown immediate
+2026-10-13 20:39:19.042 MSK [34064] LOG:  checkpoint complete: wrote 5418 buffers (33.1%); 0 WAL file(s) added, 0 removed, 5 recycled; write=0.228 s, sync=0.265 s, total=0.529 s; sync files=420, longest=0.013 s, average=0.001 s; distance=79103 kB, estimate=79103 kB; lsn=0/62F49B0, redo lsn=0/62F49B0
+2026-10-13 20:39:19.074 MSK [25016] LOG:  database system is shut down
+2026-10-13 20:40:29.604 MSK [33420] LOG:  starting PostgreSQL 17.4 on x86_64-windows, compiled by msvc-19.42.34436, 64-bit
+2026-10-13 20:40:29.605 MSK [33420] LOG:  listening on IPv4 address "127.0.0.1", port 1414
+2026-10-13 20:40:29.757 MSK [39108] LOG:  database system was shut down at 2026-10-13 20:39:19 MSK
+2026-10-13 20:40:29.896 MSK [33420] LOG:  database system is ready to accept connections
+2026-10-13 20:40:31.446 MSK [11168] LOG:  checkpoint starting: immediate force wait
+2026-10-13 20:40:31.456 MSK [11168] LOG:  checkpoint complete: wrote 26 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.003 s, total=0.011 s; sync files=8, longest=0.001 s, average=0.001 s; distance=6391 kB, estimate=6391 kB; lsn=0/69329C8, redo lsn=0/6932970
+2026-10-13 20:40:31.865 MSK [33420] LOG:  received fast shutdown request
+2026-10-13 20:40:31.868 MSK [33420] LOG:  aborting any active transactions
+2026-10-13 20:40:31.874 MSK [33420] LOG:  background worker "logical replication launcher" (PID 800) exited with exit code 1
+2026-10-13 20:40:31.875 MSK [11168] LOG:  shutting down
+2026-10-13 20:40:31.876 MSK [11168] LOG:  checkpoint starting: shutdown immediate
+2026-10-13 20:40:31.883 MSK [11168] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.002 s, total=0.008 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=5752 kB; lsn=0/6932AD0, redo lsn=0/6932AD0
+2026-10-13 20:40:31.893 MSK [33420] LOG:  database system is shut down
+2026-10-20 22:24:13.187 MSK [18904] LOG:  starting PostgreSQL 17.4 on x86_64-windows, compiled by msvc-19.42.34436, 64-bit
+2026-10-20 22:24:13.188 MSK [18904] LOG:  listening on IPv4 address "127.0.0.1", port 9801
+2026-10-20 22:24:13.309 MSK [42336] LOG:  database system was shut down at 2026-10-13 20:40:31 MSK
+2026-10-20 22:24:13.418 MSK [18904] LOG:  database system is ready to accept connections
+2026-10-20 22:24:13.954 MSK [8484] LOG:  checkpoint starting: immediate force wait
+2026-10-20 22:24:13.961 MSK [8484] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.008 s; sync files=4, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=3 kB; lsn=0/69339E8, redo lsn=0/6933990
+2026-10-20 22:24:20.720 MSK [42428] ERROR:  conflicting key value violates exclusion constraint "ex_appointment_overlap"
+2026-10-20 22:24:20.720 MSK [42428] DETAIL:  Key (master_id, slot)=(1, ["2026-10-21 09:15:00","2026-10-21 10:00:00")) conflicts with existing key (master_id, slot)=(1, ["2026-10-21 09:00:00","2026-10-21 09:45:00")).
+2026-10-20 22:24:20.720 MSK [42428] CONTEXT:  SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-20 22:24:20.720 MSK [42428] STATEMENT:  SELECT beauty.book_appointment(10001,1,1,beauty.local_now()::date+1+time '09:15',725,45);
+2026-10-20 22:24:20.849 MSK [37188] ERROR:  Appointment does not fit one working interval
+2026-10-20 22:24:20.849 MSK [37188] CONTEXT:  PL/pgSQL function trg_appointment() line 21 at RAISE
+	SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-20 22:24:20.849 MSK [37188] STATEMENT:  SELECT beauty.book_appointment(10001,3,3,beauty.local_now()::date+1+time '12:45',1125,35);
+2026-10-20 22:24:20.974 MSK [39732] ERROR:  new row for relation "appointment" violates check constraint "ck_start_grid"
+2026-10-20 22:24:20.974 MSK [39732] DETAIL:  Failing row contains (50009, 10001, 3, 3, 2026-10-21 10:05:00, Стрижка базовый, 1125.00, 35, 2026-10-21 10:40:00, ["2026-10-21 10:05:00","2026-10-21 10:40:00"), CONFIRMED, 2026-10-20 22:24:20.969331, null, null, null, null, null).
+2026-10-20 22:24:20.974 MSK [39732] CONTEXT:  SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-20 22:24:20.974 MSK [39732] STATEMENT:  SELECT beauty.book_appointment(10001,3,3,beauty.local_now()::date+1+time '10:05',1125,35);
+2026-10-20 22:24:21.111 MSK [4020] ERROR:  Appointment is outside the 30-day horizon
+2026-10-20 22:24:21.111 MSK [4020] CONTEXT:  PL/pgSQL function trg_appointment() line 17 at RAISE
+	SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-20 22:24:21.111 MSK [4020] STATEMENT:  SELECT beauty.book_appointment(10001,3,3,beauty.local_now()::date-1+time '14:00',1125,35);
+2026-10-20 22:24:21.254 MSK [41848] ERROR:  Appointment is outside the 30-day horizon
+2026-10-20 22:24:21.254 MSK [41848] CONTEXT:  PL/pgSQL function trg_appointment() line 17 at RAISE
+	SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-20 22:24:21.254 MSK [41848] STATEMENT:  SELECT beauty.book_appointment(10001,3,3,beauty.local_now()::date+30+time '10:00',1125,35);
+2026-10-20 22:24:21.445 MSK [5564] ERROR:  Actor has no permission
+2026-10-20 22:24:21.445 MSK [5564] CONTEXT:  PL/pgSQL function require_actor(bigint,text[]) line 4 at RAISE
+	SQL statement "SELECT beauty.require_actor(p_client,ARRAY['CLIENT'])"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 2 at PERFORM
+2026-10-20 22:24:21.445 MSK [5564] STATEMENT:  SELECT beauty.book_appointment(1001,3,3,beauty.local_now()::date+1+time '10:00',1125,35);
+2026-10-20 22:24:21.723 MSK [20400] ERROR:  Salon, master or service is unavailable
+2026-10-20 22:24:21.723 MSK [20400] CONTEXT:  PL/pgSQL function trg_appointment() line 15 at RAISE
+	SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-20 22:24:21.723 MSK [20400] STATEMENT:  SELECT beauty.book_appointment(10001,500,595,beauty.local_now()::date+1+time '10:00',700,45);
+2026-10-20 22:24:21.883 MSK [33264] ERROR:  Appointment belongs to another actor
+2026-10-20 22:24:21.883 MSK [33264] CONTEXT:  PL/pgSQL function cancel_appointment(bigint,bigint,text) line 7 at RAISE
+2026-10-20 22:24:21.883 MSK [33264] STATEMENT:  SELECT beauty.cancel_appointment(10002,50003);
+2026-10-20 22:24:22.022 MSK [37600] ERROR:  Appointment belongs to another actor
+2026-10-20 22:24:22.022 MSK [37600] CONTEXT:  PL/pgSQL function cancel_appointment(bigint,bigint,text) line 7 at RAISE
+2026-10-20 22:24:22.022 MSK [37600] STATEMENT:  SELECT beauty.cancel_appointment(1002,50003,'reason');
+2026-10-20 22:24:22.210 MSK [4688] ERROR:  Cancellation reason is required
+2026-10-20 22:24:22.210 MSK [4688] CONTEXT:  PL/pgSQL function trg_appointment() line 40 at RAISE
+	SQL statement "UPDATE beauty.appointment SET status='CANCELLED',cancelled_at=beauty.local_now(),cancelled_by_user_id=p_actor,cancellation_reason=p_reason WHERE appointment_id=p_appointment"
+	PL/pgSQL function cancel_appointment(bigint,bigint,text) line 9 at SQL statement
+2026-10-20 22:24:22.210 MSK [4688] STATEMENT:  SELECT beauty.cancel_appointment(2001,50003);
+2026-10-20 22:24:22.333 MSK [41740] ERROR:  A started appointment cannot be cancelled
+2026-10-20 22:24:22.333 MSK [41740] CONTEXT:  PL/pgSQL function trg_appointment() line 35 at RAISE
+	SQL statement "UPDATE beauty.appointment SET status='CANCELLED',cancelled_at=beauty.local_now(),cancelled_by_user_id=p_actor,cancellation_reason=p_reason WHERE appointment_id=p_appointment"
+	PL/pgSQL function cancel_appointment(bigint,bigint,text) line 9 at SQL statement
+2026-10-20 22:24:22.333 MSK [41740] STATEMENT:  SELECT beauty.cancel_appointment(1001,50001,'reason');
+2026-10-20 22:24:22.651 MSK [41156] ERROR:  Appointment has not ended
+2026-10-20 22:24:22.651 MSK [41156] CONTEXT:  PL/pgSQL function trg_appointment() line 44 at RAISE
+	SQL statement "UPDATE beauty.appointment SET status=p_result,result_marked_at=beauty.local_now(),result_marked_by_user_id=p_actor WHERE appointment_id=p_appointment"
+	PL/pgSQL function mark_visit(bigint,bigint,text) line 4 at SQL statement
+2026-10-20 22:24:22.651 MSK [41156] STATEMENT:  CALL beauty.mark_visit(2001,50003,'COMPLETED');
+2026-10-20 22:24:23.011 MSK [39996] ERROR:  Review requires a completed visit
+2026-10-20 22:24:23.011 MSK [39996] CONTEXT:  PL/pgSQL function trg_review() line 8 at RAISE
+	SQL statement "INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id"
+	PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement
+2026-10-20 22:24:23.011 MSK [39996] STATEMENT:  SELECT beauty.add_review(10001,50002,'SALON',4::smallint);
+2026-10-20 22:24:23.159 MSK [37452] ERROR:  Invalid or terminal status transition
+2026-10-20 22:24:23.159 MSK [37452] CONTEXT:  PL/pgSQL function trg_appointment() line 29 at RAISE
+	SQL statement "UPDATE beauty.appointment SET status=p_result,result_marked_at=beauty.local_now(),result_marked_by_user_id=p_actor WHERE appointment_id=p_appointment"
+	PL/pgSQL function mark_visit(bigint,bigint,text) line 4 at SQL statement
+2026-10-20 22:24:23.159 MSK [37452] STATEMENT:  CALL beauty.mark_visit(2001,501,'NO_SHOW');
+2026-10-20 22:24:23.381 MSK [24816] ERROR:  Service terms changed; confirm again
+2026-10-20 22:24:23.381 MSK [24816] CONTEXT:  PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 6 at RAISE
+2026-10-20 22:24:23.381 MSK [24816] STATEMENT:  SELECT beauty.book_appointment(10001,1,1,beauty.local_now()::date+1+time '10:00',725,45);
+2026-10-20 22:24:23.508 MSK [39060] ERROR:  Change would invalidate a future appointment
+2026-10-20 22:24:23.508 MSK [39060] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-20 22:24:23.508 MSK [39060] STATEMENT:  UPDATE beauty.master SET is_active=false WHERE master_id=1;
+2026-10-20 22:24:23.774 MSK [38356] ERROR:  Change would invalidate a future appointment
+2026-10-20 22:24:23.774 MSK [38356] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-20 22:24:23.774 MSK [38356] STATEMENT:  UPDATE beauty.salon_service SET is_active=false WHERE salon_service_id=1;
+2026-10-20 22:24:23.986 MSK [37408] ERROR:  Change would invalidate a future appointment
+2026-10-20 22:24:23.986 MSK [37408] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+	SQL statement "INSERT INTO beauty.master_service(master_id,salon_service_id,is_active) VALUES(p_master,p_service,p_active)
+	 ON CONFLICT(master_id,salon_service_id) DO UPDATE SET is_active=excluded.is_active"
+	PL/pgSQL function set_master_service(bigint,bigint,bigint,boolean) line 4 at SQL statement
+2026-10-20 22:24:23.986 MSK [37408] STATEMENT:  CALL beauty.set_master_service(1001,1,1,false);
+2026-10-20 22:24:24.172 MSK [40528] ERROR:  Change would invalidate a future appointment
+2026-10-20 22:24:24.172 MSK [40528] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-20 22:24:24.172 MSK [40528] STATEMENT:  UPDATE beauty.work_interval SET start_time='10:00' WHERE master_id=1 AND work_date=beauty.local_now()::date+1 AND start_time='09:00';
+2026-10-20 22:24:24.311 MSK [42496] ERROR:  Change would invalidate a future appointment
+2026-10-20 22:24:24.311 MSK [42496] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-20 22:24:24.311 MSK [42496] STATEMENT:  DELETE FROM beauty.work_interval WHERE master_id=1 AND work_date=beauty.local_now()::date+1 AND start_time='09:00';
+2026-10-20 22:24:24.578 MSK [31564] ERROR:  conflicting key value violates exclusion constraint "ex_work_overlap"
+2026-10-20 22:24:24.578 MSK [31564] DETAIL:  Key (master_id, slot)=(3, ["2026-10-21 12:00:00","2026-10-21 14:00:00")) conflicts with existing key (master_id, slot)=(3, ["2026-10-21 09:00:00","2026-10-21 13:00:00")).
+2026-10-20 22:24:24.578 MSK [31564] CONTEXT:  SQL statement "INSERT INTO beauty.work_interval(master_id,work_date,start_time,end_time) VALUES(p_master,p_date,p_start,p_end) RETURNING work_interval_id"
+	PL/pgSQL function save_work_interval(bigint,bigint,date,time without time zone,time without time zone,bigint) line 4 at SQL statement
+2026-10-20 22:24:24.578 MSK [31564] STATEMENT:  SELECT beauty.save_work_interval(1001,3,beauty.local_now()::date+1,time '12:00',time '14:00');
+2026-10-20 22:24:24.820 MSK [25628] ERROR:  Master and service must belong to the same salon
+2026-10-20 22:24:24.820 MSK [25628] CONTEXT:  PL/pgSQL function trg_membership() line 14 at RAISE
+	SQL statement "INSERT INTO beauty.master_service(master_id,salon_service_id,is_active) VALUES(p_master,p_service,p_active)
+	 ON CONFLICT(master_id,salon_service_id) DO UPDATE SET is_active=excluded.is_active"
+	PL/pgSQL function set_master_service(bigint,bigint,bigint,boolean) line 4 at SQL statement
+2026-10-20 22:24:24.820 MSK [25628] STATEMENT:  CALL beauty.set_master_service(1001,1,7,true);
+2026-10-20 22:24:24.911 MSK [15624] ERROR:  duplicate key value violates unique constraint "salon_owner_user_id_key"
+2026-10-20 22:24:24.911 MSK [15624] DETAIL:  Key (owner_user_id)=(1001) already exists.
+2026-10-20 22:24:24.911 MSK [15624] CONTEXT:  SQL statement "INSERT INTO beauty.salon(owner_user_id,district_id,name,address,latitude,longitude,phone,opening_hours)
+	 VALUES(p_owner,p_district,p_name,p_address,p_lat,p_lon,p_phone,p_hours) RETURNING salon_id"
+	PL/pgSQL function create_salon(bigint,bigint,text,text,numeric,numeric,text,text) line 3 at SQL statement
+2026-10-20 22:24:24.911 MSK [15624] STATEMENT:  SELECT beauty.create_salon(1001,1,'extra','address',59,30,'phone','hours');
+2026-10-20 22:24:25.001 MSK [38072] ERROR:  Salon owner must have OWNER role
+2026-10-20 22:24:25.001 MSK [38072] CONTEXT:  PL/pgSQL function trg_membership() line 5 at RAISE
+2026-10-20 22:24:25.001 MSK [38072] STATEMENT:  INSERT INTO beauty.salon(owner_user_id,district_id,name,address,latitude,longitude,phone,opening_hours) VALUES(10001,1,'bad','a',59,30,'p','h');
+2026-10-20 22:24:25.130 MSK [35392] ERROR:  User identity and role are immutable
+2026-10-20 22:24:25.130 MSK [35392] CONTEXT:  PL/pgSQL function trg_identity() line 4 at RAISE
+2026-10-20 22:24:25.130 MSK [35392] STATEMENT:  UPDATE beauty.user_account SET role='MASTER' WHERE user_id=10001;
+2026-10-20 22:24:25.269 MSK [33808] ERROR:  Master identity is immutable
+2026-10-20 22:24:25.269 MSK [33808] CONTEXT:  PL/pgSQL function trg_identity() line 8 at RAISE
+2026-10-20 22:24:25.269 MSK [33808] STATEMENT:  UPDATE beauty.master SET salon_id=2 WHERE master_id=1;
+2026-10-20 22:24:25.422 MSK [20428] ERROR:  Visit belongs to another client
+2026-10-20 22:24:25.422 MSK [20428] CONTEXT:  PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 3 at RAISE
+2026-10-20 22:24:25.422 MSK [20428] STATEMENT:  SELECT beauty.add_review(10001,501,'SALON',5::smallint);
+2026-10-20 22:24:25.590 MSK [33552] ERROR:  new row for relation "review" violates check constraint "review_rating_check"
+2026-10-20 22:24:25.590 MSK [33552] DETAIL:  Failing row contains (12004, 501, SALON, 6, null, PUBLISHED, 2026-10-20 22:24:25.589686).
+2026-10-20 22:24:25.590 MSK [33552] CONTEXT:  SQL statement "INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id"
+	PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement
+2026-10-20 22:24:25.590 MSK [33552] STATEMENT:  SELECT beauty.add_review(10502,501,'SALON',6::smallint);
+2026-10-20 22:24:25.769 MSK [40188] ERROR:  duplicate key value violates unique constraint "review_appointment_id_target_type_key"
+2026-10-20 22:24:25.769 MSK [40188] DETAIL:  Key (appointment_id, target_type)=(501, SALON) already exists.
+2026-10-20 22:24:25.769 MSK [40188] CONTEXT:  SQL statement "INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id"
+	PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement
+2026-10-20 22:24:25.769 MSK [40188] STATEMENT:  SELECT beauty.add_review(10502,501,'SALON',5::smallint);
+2026-10-20 22:24:25.957 MSK [40564] ERROR:  Appointments are historical records
+2026-10-20 22:24:25.957 MSK [40564] CONTEXT:  PL/pgSQL function trg_appointment() line 4 at RAISE
+2026-10-20 22:24:25.957 MSK [40564] STATEMENT:  DELETE FROM beauty.appointment WHERE appointment_id=50005;
+2026-10-20 22:24:26.161 MSK [34056] ERROR:  Review content is immutable
+2026-10-20 22:24:26.161 MSK [34056] CONTEXT:  PL/pgSQL function trg_review() line 6 at RAISE
+2026-10-20 22:24:26.161 MSK [34056] STATEMENT:  UPDATE beauty.review SET text='changed' WHERE review_id=2;
+2026-10-20 22:24:26.260 MSK [27284] ERROR:  Actor has no permission
+2026-10-20 22:24:26.260 MSK [27284] CONTEXT:  PL/pgSQL function require_actor(bigint,text[]) line 4 at RAISE
+	SQL statement "SELECT beauty.require_actor(p_admin,ARRAY['ADMIN'])"
+	PL/pgSQL function moderate(bigint,text,bigint,text,text,text) line 2 at PERFORM
+2026-10-20 22:24:26.260 MSK [27284] STATEMENT:  SELECT beauty.moderate(1001,'SALON',1,'UNPUBLISH','reason');
+2026-10-20 22:24:26.573 MSK [27924] ERROR:  Invalid moderation target/action/state
+2026-10-20 22:24:26.573 MSK [27924] CONTEXT:  PL/pgSQL function trg_moderation() line 23 at RAISE
+	SQL statement "INSERT INTO beauty.moderation_decision(admin_user_id,target_user_id,target_salon_id,target_master_id,target_review_id,photo_path,action,reason)
+	 VALUES(p_admin,CASE WHEN p_kind='USER' THEN p_target END,CASE WHEN p_kind='SALON' THEN p_target END,
+	 CASE WHEN p_kind='MASTER' THEN p_target END,CASE WHEN p_kind='REVIEW' THEN p_target END,p_photo_path,p_action,p_reason) RETURNING decision_id"
+	PL/pgSQL function moderate(bigint,text,bigint,text,text,text) line 4 at SQL statement
+2026-10-20 22:24:26.573 MSK [27924] STATEMENT:  SELECT beauty.moderate(1,'SALON',1,'HIDE','reason','missing.png');
+2026-10-20 22:24:26.765 MSK [9084] ERROR:  Work belongs to another actor
+2026-10-20 22:24:26.765 MSK [9084] CONTEXT:  PL/pgSQL function put_photo(bigint,text,bigint,text,text,integer,text,integer) line 7 at RAISE
+2026-10-20 22:24:26.765 MSK [9084] STATEMENT:  CALL beauty.put_photo(1002,'MASTER',1,'x.png','',0,'image/png',100);
+2026-10-20 22:24:26.853 MSK [14988] ERROR:  new row for relation "salon_photo" violates check constraint "salon_photo_byte_size_check"
+2026-10-20 22:24:26.853 MSK [14988] DETAIL:  Failing row contains (1, x.png, , 0, PUBLISHED, image/png, 5242881, 2026-10-20 22:24:26.852434).
+2026-10-20 22:24:26.853 MSK [14988] CONTEXT:  SQL statement "INSERT INTO beauty.salon_photo(salon_id,file_path,caption,sort_order,mime_type,byte_size) VALUES(p_target,p_path,p_caption,p_order,p_mime,p_bytes)"
+	PL/pgSQL function put_photo(bigint,text,bigint,text,text,integer,text,integer) line 5 at SQL statement
+2026-10-20 22:24:26.853 MSK [14988] STATEMENT:  CALL beauty.put_photo(1001,'SALON',1,'x.png','',0,'image/png',5242881);
+2026-10-20 22:24:27.060 MSK [40196] ERROR:  new row for relation "salon_photo" violates check constraint "salon_photo_mime_type_check"
+2026-10-20 22:24:27.060 MSK [40196] DETAIL:  Failing row contains (1, x.svg, , 0, PUBLISHED, image/svg+xml, 100, 2026-10-20 22:24:27.059445).
+2026-10-20 22:24:27.060 MSK [40196] CONTEXT:  SQL statement "INSERT INTO beauty.salon_photo(salon_id,file_path,caption,sort_order,mime_type,byte_size) VALUES(p_target,p_path,p_caption,p_order,p_mime,p_bytes)"
+	PL/pgSQL function put_photo(bigint,text,bigint,text,text,integer,text,integer) line 5 at SQL statement
+2026-10-20 22:24:27.060 MSK [40196] STATEMENT:  CALL beauty.put_photo(1001,'SALON',1,'x.svg','',0,'image/svg+xml',100);
+2026-10-20 22:24:27.717 MSK [30128] ERROR:  Appointment belongs to another actor
+2026-10-20 22:24:27.717 MSK [30128] CONTEXT:  PL/pgSQL function cancel_appointment(bigint,bigint,text) line 7 at RAISE
+2026-10-20 22:24:27.717 MSK [30128] STATEMENT:  SELECT beauty.cancel_appointment(1,50003,'exception');
+2026-10-20 22:24:28.076 MSK [36836] ERROR:  new row for relation "user_account" violates check constraint "ck_password"
+2026-10-20 22:24:28.076 MSK [36836] DETAIL:  Failing row contains (15001, nopassword@example.test, null, bad, CLIENT, ACTIVE, 2026-10-20 22:24:28.076116).
+2026-10-20 22:24:28.076 MSK [36836] STATEMENT:  INSERT INTO beauty.user_account(email,display_name,role) VALUES('nopassword@example.test','bad','CLIENT');
+2026-10-20 22:24:28.270 MSK [41216] ERROR:  new row for relation "user_account" violates check constraint "ck_invited_role"
+2026-10-20 22:24:28.270 MSK [41216] DETAIL:  Failing row contains (15002, invalid-invited@example.test, non-null, bad, CLIENT, INVITED, 2026-10-20 22:24:28.270545).
+2026-10-20 22:24:28.270 MSK [41216] STATEMENT:  INSERT INTO beauty.user_account(email,display_name,password_hash,role,account_status) VALUES('invalid-invited@example.test','bad','non-null','CLIENT','INVITED');
+2026-10-20 22:24:28.399 MSK [42952] ERROR:  A new invitation requires a pending master account
+2026-10-20 22:24:28.399 MSK [42952] CONTEXT:  PL/pgSQL function trg_membership() line 21 at RAISE
+2026-10-20 22:24:28.399 MSK [42952] STATEMENT:  INSERT INTO beauty.master_invitation(master_id,created_by_user_id,token_hash,expires_at) VALUES(1,1001,'invalid-active-invitation',beauty.local_now()+interval '2 days');
+2026-10-20 22:24:28.701 MSK [16140] ERROR:  duplicate key value violates unique constraint "uq_user_email"
+2026-10-20 22:24:28.701 MSK [16140] DETAIL:  Key (email)=(client1@example.test) already exists.
+2026-10-20 22:24:28.701 MSK [16140] CONTEXT:  SQL statement "INSERT INTO beauty.user_account(email,display_name,password_hash,role) VALUES(lower(btrim(p_email)),p_name,public.crypt(p_password,public.gen_salt('bf',12)),p_role) RETURNING user_id"
+	PL/pgSQL function register_user(text,text,text,text) line 5 at SQL statement
+2026-10-20 22:24:28.701 MSK [16140] STATEMENT:  SELECT beauty.register_user('CLIENT1@EXAMPLE.TEST','duplicate','long-demo-password','CLIENT');
+2026-10-20 22:24:29.268 MSK [40172] ERROR:  Public registration supports CLIENT or OWNER
+2026-10-20 22:24:29.268 MSK [40172] CONTEXT:  PL/pgSQL function register_user(text,text,text,text) line 3 at RAISE
+2026-10-20 22:24:29.268 MSK [40172] STATEMENT:  SELECT beauty.register_user('new@example.test','New','long-demo-password','ADMIN');
+2026-10-20 22:24:29.397 MSK [42320] ERROR:  duplicate key value violates unique constraint "uq_user_email"
+2026-10-20 22:24:29.397 MSK [42320] DETAIL:  Key (email)=(client1@example.test) already exists.
+2026-10-20 22:24:29.397 MSK [42320] CONTEXT:  SQL statement "INSERT INTO beauty.user_account(email,display_name,role,account_status) VALUES(lower(btrim(p_email)),p_name,'MASTER','INVITED') RETURNING user_id"
+	PL/pgSQL function invite_master(bigint,bigint,text,text) line 4 at SQL statement
+2026-10-20 22:24:29.397 MSK [42320] STATEMENT:  SELECT * FROM beauty.invite_master(1001,1,'client1@example.test','bad');
+2026-10-20 22:24:29.797 MSK [25400] ERROR:  Invitation is invalid or expired
+2026-10-20 22:24:29.797 MSK [25400] CONTEXT:  PL/pgSQL function accept_invitation(text,text) line 5 at RAISE
+2026-10-20 22:24:29.797 MSK [25400] STATEMENT:  SELECT beauty.accept_invitation('expired-token','long-demo-password');
+2026-10-20 22:24:29.924 MSK [15828] ERROR:  permission denied for table user_account
+2026-10-20 22:24:29.924 MSK [15828] STATEMENT:  SELECT password_hash FROM beauty.user_account;
+2026-10-20 22:24:30.014 MSK [39820] ERROR:  permission denied for function lock_writes
+2026-10-20 22:24:30.014 MSK [39820] STATEMENT:  SELECT beauty.lock_writes();
+2026-10-20 22:24:30.107 MSK [41492] ERROR:  permission denied for schema beauty at character 15
+2026-10-20 22:24:30.107 MSK [41492] STATEMENT:  SELECT * FROM beauty.search_salons();
+2026-10-20 22:24:30.470 MSK [6828] ERROR:  Invalid search parameters
+2026-10-20 22:24:30.470 MSK [6828] CONTEXT:  PL/pgSQL function search_salons(bigint,bigint,numeric,numeric,date,numeric,numeric,numeric,numeric,numeric,numeric,numeric,text) line 7 at RAISE
+2026-10-20 22:24:30.470 MSK [6828] STATEMENT:  SELECT * FROM beauty.search_salons(p_district=>1,p_lat=>59.9,p_lon=>30.3,p_radius=>3);
+2026-10-20 22:24:31.244 MSK [38356] ERROR:  Business writes require READ COMMITTED
+2026-10-20 22:24:31.244 MSK [38356] CONTEXT:  PL/pgSQL function lock_writes() line 4 at RAISE
+	SQL statement "SELECT beauty.lock_writes()"
+	PL/pgSQL function trg_lock() line 1 at PERFORM
+2026-10-20 22:24:31.244 MSK [38356] STATEMENT:  UPDATE beauty.master SET experience_description='test' WHERE master_id=3;
+2026-10-20 22:24:33.485 MSK [39296] ERROR:  conflicting key value violates exclusion constraint "ex_appointment_overlap"
+2026-10-20 22:24:33.485 MSK [39296] DETAIL:  Key (master_id, slot)=(3, ["2026-10-21 10:00:00","2026-10-21 10:35:00")) conflicts with existing key (master_id, slot)=(3, ["2026-10-21 10:00:00","2026-10-21 10:35:00")).
+2026-10-20 22:24:33.485 MSK [39296] CONTEXT:  SQL statement "INSERT INTO beauty.appointment(client_user_id,master_id,salon_service_id,start_at,service_name_snapshot,price_snapshot,duration_snapshot)
+	 VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id"
+	PL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement
+2026-10-20 22:24:33.485 MSK [39296] STATEMENT:  SELECT beauty.book_appointment(10002,3,3,(beauty.local_now()::date+1)+time '10:00',1125,35);
+2026-10-20 22:24:35.599 MSK [27400] ERROR:  Change would invalidate a future appointment
+2026-10-20 22:24:35.599 MSK [27400] CONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE
+2026-10-20 22:24:35.599 MSK [27400] STATEMENT:  UPDATE beauty.work_interval SET start_time='11:00' WHERE master_id=4 AND work_date=beauty.local_now()::date+1 AND start_time='09:00';
+2026-10-20 22:24:37.732 MSK [39176] ERROR:  duplicate key value violates unique constraint "review_appointment_id_target_type_key"
+2026-10-20 22:24:37.732 MSK [39176] DETAIL:  Key (appointment_id, target_type)=(40001, MASTER) already exists.
+2026-10-20 22:24:37.732 MSK [39176] CONTEXT:  SQL statement "INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id"
+	PL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement
+2026-10-20 22:24:37.732 MSK [39176] STATEMENT:  SELECT beauty.add_review(10002,40001,'MASTER',4::smallint,'race');
+2026-10-20 22:24:40.132 MSK [41356] ERROR:  Invitation is invalid or expired
+2026-10-20 22:24:40.132 MSK [41356] CONTEXT:  PL/pgSQL function accept_invitation(text,text) line 5 at RAISE
+2026-10-20 22:24:40.132 MSK [41356] STATEMENT:  SELECT beauty.accept_invitation('demo-invitation-to-reissue','concurrent-password-2026');
+2026-10-20 22:24:41.987 MSK [8484] LOG:  checkpoint starting: immediate force wait
+2026-10-20 22:24:42.269 MSK [8484] LOG:  checkpoint complete: wrote 5419 buffers (33.1%); 0 WAL file(s) added, 0 removed, 5 recycled; write=0.061 s, sync=0.202 s, total=0.282 s; sync files=414, longest=0.007 s, average=0.001 s; distance=85440 kB, estimate=85440 kB; lsn=0/BCA3B30, redo lsn=0/BCA3AD8
+2026-10-20 22:24:42.518 MSK [18904] LOG:  received fast shutdown request
+2026-10-20 22:24:42.519 MSK [18904] LOG:  aborting any active transactions
+2026-10-20 22:24:42.525 MSK [18904] LOG:  background worker "logical replication launcher" (PID 40776) exited with exit code 1
+2026-10-20 22:24:42.525 MSK [8484] LOG:  shutting down
+2026-10-20 22:24:42.527 MSK [8484] LOG:  checkpoint starting: shutdown immediate
+2026-10-20 22:24:42.538 MSK [8484] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=76896 kB; lsn=0/BCA3C38, redo lsn=0/BCA3C38
+2026-10-20 22:24:42.555 MSK [18904] LOG:  database system is shut down

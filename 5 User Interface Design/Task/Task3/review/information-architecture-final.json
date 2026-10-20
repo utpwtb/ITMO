@@ -1,0 +1,112 @@
+{
+  "hard_ban_count": 0,
+  "hard_bans": [],
+  "marker_count": 12,
+  "markers": [
+    [
+      "Обвязка чата",
+      "markdown-подзаголовок ##",
+      11
+    ],
+    [
+      "Обвязка чата",
+      "жирный подзаголовок **…**",
+      1
+    ]
+  ],
+  "rhythm": {
+    "sentences": 128,
+    "words": 1321,
+    "mean_len": 10.3,
+    "stdev_len": 5.0,
+    "cv_len": 0.485,
+    "min_len": 1,
+    "max_len": 23,
+    "short_share": 0.125,
+    "long_share": 0.0,
+    "em_dash": 0,
+    "ellipsis": 0,
+    "parentheses": 0,
+    "questions": 4,
+    "staccato_runs": 0,
+    "staccato_max": 0
+  },
+  "morph": {
+    "nouns": 617,
+    "verbs": 186,
+    "noun_verb_ratio": 3.32,
+    "nominalizations": 150,
+    "tokens": 1256
+  },
+  "structure": {
+    "paragraphs": 45,
+    "para_mean_sent": 3.3,
+    "para_cv": 0.924,
+    "list_items": 4,
+    "listicle_share": 0.048,
+    "title_case_headings": 0,
+    "truncated_ending": false
+  },
+  "lexical": {
+    "tokens": 1256,
+    "mattr": 0.9201863354037267
+  },
+  "repeats": {
+    "tokens": 600,
+    "phrases": []
+  },
+  "score": {
+    "score": 75,
+    "band": "правка",
+    "penalties": [
+      {
+        "reason": "обвязка чата: 2 следа",
+        "points": -20
+      },
+      {
+        "reason": "номинальность (сущ./глаг.=3.32, цель ≤2.5)",
+        "points": -5
+      }
+    ],
+    "notes": []
+  },
+  "genre": "academic",
+  "muted_by_genre": {
+    "hard_bans": 0,
+    "markers": 1
+  },
+  "before": {
+    "source": "tmp/ia-build/before-style-review.md",
+    "score": {
+      "score": 75,
+      "band": "правка",
+      "penalties": [
+        {
+          "reason": "обвязка чата: 2 следа",
+          "points": -20
+        },
+        {
+          "reason": "номинальность (сущ./глаг.=3.27, цель ≤2.5)",
+          "points": -5
+        }
+      ],
+      "notes": []
+    }
+  },
+  "facts": {
+    "ok": false,
+    "lost": [
+      "имя:извлечь"
+    ],
+    "added": [
+      "имя:каждый"
+    ],
+    "kept": 57,
+    "soft_added": [],
+    "claims_added": [],
+    "emphasis_lost": [],
+    "status": "review_required",
+    "semantic_verified": false,
+    "scope": "Сопоставление извлечённых элементов; смысл и связь чисел с утверждениями не проверены."
+  }
+}

@@ -1,0 +1,21 @@
+\begingroup\setstretch{1}\begin{tikzpicture}[x=1cm,y=1cm, entity/.style={draw,rounded corners=1pt,fill=gray!3,align=center,text width=3.4cm,minimum width=3.6cm,minimum height=2.2cm,font=\small,inner sep=2pt,outer sep=0pt}]
+\draw (3.8,9.0) -- (6.2,9.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.16,9.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (5.84,9.25) {0..N};
+\draw (3.8,3.0) -- (6.2,3.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.16,3.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (5.84,3.25) {0..N};
+\draw (9.8,9.0) -- (12.2,9) -- (12.2,7.1);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (10.16,9.25) {0..1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (12.0,7.3999999999999995) {0..N};
+\node[font=\scriptsize,fill=white,inner sep=1pt] at (11.0,9.45) {\texttt{салон + путь}};
+\draw (9.8,3.0) -- (12.2,3) -- (12.2,4.9);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (10.16,3.25) {0..1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (12.0,4.6000000000000005) {0..N};
+\node[font=\scriptsize,fill=white,inner sep=1pt] at (11.0,3.45) {\texttt{мастер + путь}};
+\node[entity] (salon) at (2,9) {\textbf{Салон}\\{\scriptsize \texttt{salon\_\allowbreak{}id}}\\{\scriptsize \{Фото интерьера:\\путь, подпись,\\порядок, видимость\}}};
+\node[entity] (interior) at (8,9) {\textbf{Фото интерьера\\(атрибут)}\\{\scriptsize \texttt{salon\_\allowbreak{}id}\\\texttt{file\_\allowbreak{}path}}};
+\node[entity] (master) at (2,3) {\textbf{Мастер}\\{\scriptsize \texttt{master\_\allowbreak{}id}}\\{\scriptsize \{Фото работ:\\путь, подпись,\\порядок, видимость\}}};
+\node[entity] (work) at (8,3) {\textbf{Фото работ\\(атрибут)}\\{\scriptsize \texttt{master\_\allowbreak{}id}\\\texttt{file\_\allowbreak{}path}}};
+\node[entity] (decision) at (14,6) {\textbf{Решение\\модерации}\\{\scriptsize \texttt{decision\_\allowbreak{}id}}\\{\scriptsize XOR: одна цель}\\{\scriptsize \texttt{photo\_\allowbreak{}path}}};
+\end{tikzpicture}\endgroup

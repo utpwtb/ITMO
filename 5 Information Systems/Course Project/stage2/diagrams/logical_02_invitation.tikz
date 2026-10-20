@@ -1,0 +1,11 @@
+\begingroup\setstretch{1}\begin{tikzpicture}[x=1cm,y=1cm, entity/.style={draw,rounded corners=1pt,fill=gray!3,align=center,text width=3.4cm,minimum width=3.6cm,minimum height=2.2cm,font=\small,inner sep=2pt,outer sep=0pt}]
+\draw (3.8,5.0) -- (6.2,5.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.16,5.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (5.84,5.25) {0..N};
+\draw (12.2,5.0) -- (9.8,5.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (11.84,5.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (10.16,5.25) {0..N};
+\node[entity] (owner) at (2,5) {\textbf{Пользователь}\\{\scriptsize \texttt{user\_\allowbreak{}id}}};
+\node[entity] (invitation) at (8,5) {\textbf{Приглашение\\(техническое)}\\{\scriptsize \texttt{invitation\_\allowbreak{}id}}};
+\node[entity] (master) at (14,5) {\textbf{Мастер}\\{\scriptsize \texttt{master\_\allowbreak{}id}}\\{\scriptsize \{Фото работ:\\путь, подпись,\\порядок, видимость\}}};
+\end{tikzpicture}\endgroup

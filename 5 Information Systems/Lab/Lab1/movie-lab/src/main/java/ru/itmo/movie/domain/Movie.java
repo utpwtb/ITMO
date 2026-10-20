@@ -5,6 +5,7 @@ import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "movie")
+@ru.itmo.movie.domain.validation.ConsistentBoxOffice
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

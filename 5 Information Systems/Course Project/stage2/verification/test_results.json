@@ -1,0 +1,404 @@
+{
+  "utc_finished": "2026-10-20T19:24:42.626460+00:00",
+  "server_version": "psql (PostgreSQL) 17.4",
+  "passed": 79,
+  "total": 79,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "create database and install schema with demo history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fourteen physical tables",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "35-minute duration with 15-minute start grid",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "adjacent appointments accepted",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "overlapping appointment rejected",
+      "passed": true,
+      "detail": "rejected 23P01"
+    },
+    {
+      "name": "appointment crossing lunch gap rejected",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "start outside 15-minute grid rejected",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "past appointment rejected",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "day thirty outside horizon rejected",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "non-client cannot book",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "blocked master unavailable",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "wrong client cannot cancel",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "wrong owner cannot cancel",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "master cancellation needs reason",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "started appointment cannot be cancelled",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "cancellation idempotence and slot release",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "completion before planned end rejected",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "completed visit enables two independent reviews",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "no-show gives no right to review",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "terminal visit result immutable",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "snapshots survive catalog edits",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "changed terms require reconfirmation",
+      "passed": true,
+      "detail": "rejected 22023"
+    },
+    {
+      "name": "future booking protects master deactivation",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "future booking protects service deactivation",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "future booking protects assignment deactivation",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "future booking protects schedule shortening",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "future booking protects schedule deletion",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "unoccupied schedule can be changed",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "overlapping working intervals rejected",
+      "passed": true,
+      "detail": "rejected 23P01"
+    },
+    {
+      "name": "cross-salon master service rejected",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "owner has at most one salon",
+      "passed": true,
+      "detail": "rejected 23505"
+    },
+    {
+      "name": "owner role checked by trigger",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "user role cannot be changed",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "master cannot move to another salon",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "wrong client cannot review another visit",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "rating range checked",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "one review per target enforced",
+      "passed": true,
+      "detail": "rejected 23505"
+    },
+    {
+      "name": "appointment history cannot be deleted",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "review content cannot be edited",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "only admin may moderate",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "moderation XOR violation rolls back target change",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "photo moderation requires existing attribute element",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "photo attributes moderated via parent and path",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "wrong owner cannot upload a work",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "file metadata size constrained",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "file metadata MIME constrained",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "photo quota includes hidden elements and releases archived ones",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "salon and master ratings independent after moderation",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "master account block preserves existing bookings",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "unpublishing prevents new bookings and preserves old ones",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "admin exceptional cancellation requires blocked owner",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "admin resolves bookings of a blocked owner",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "password required for active client",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "INVITED status restricted to MASTER role",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "new invitation cannot target an already active master",
+      "passed": true,
+      "detail": "rejected 23514"
+    },
+    {
+      "name": "email normalized and duplicate rejected",
+      "passed": true,
+      "detail": "rejected 23505"
+    },
+    {
+      "name": "registration and password verification through backend API",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "public cannot register admin",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "invitation never takes over an existing email",
+      "passed": true,
+      "detail": "rejected 23505"
+    },
+    {
+      "name": "reissue revokes old token and new token is consumed once",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "expired invitation rejected",
+      "passed": true,
+      "detail": "rejected 22023"
+    },
+    {
+      "name": "backend denied direct table access",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "backend denied private lock helper",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "untrusted database role denied API access",
+      "passed": true,
+      "detail": "rejected 42501"
+    },
+    {
+      "name": "journal limits records by actor",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "service type and price filter apply to the same service",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "geographic modes mutually exclusive",
+      "passed": true,
+      "detail": "rejected 22023"
+    },
+    {
+      "name": "map bounds applied",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "published salon without services still visible without filters",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "server replaces supplied snapshots with catalog values",
+      "passed": true,
+      "detail": "validated"
+    },
+    {
+      "name": "wrong isolation level explicitly rejected",
+      "passed": true,
+      "detail": "rejected 25000"
+    },
+    {
+      "name": "concurrent duplicate booking",
+      "passed": true,
+      "detail": "A=0, B=['23P01'], waited=1.812s; tion_snapshot)\n VALUES(p_client,p_master,p_service,p_start,s.name,s.price,s.duration_minutes) RETURNING appointment_id\"\nPL/pgSQL function book_appointment(bigint,bigint,bigint,timestamp without time zone,numeric,integer) line 7 at SQL statement\nSCHEMA NAME:  beauty\nTABLE NAME:  appointment\nCONSTRAINT NAME:  ex_appointment_overlap\nLOCATION:  check_exclusion_or_unique_constraint, execIndexing.c:888\n"
+    },
+    {
+      "name": "booking versus schedule shortening",
+      "passed": true,
+      "detail": "A=0, B=['23514'], waited=2.000s; ERROR:  23514: Change would invalidate a future appointment\nCONTEXT:  PL/pgSQL function trg_future_guard() line 15 at RAISE\nLOCATION:  exec_stmt_raise, pl_exec.c:3925\n"
+    },
+    {
+      "name": "concurrent duplicate review",
+      "passed": true,
+      "detail": "A=0, B=['23505'], waited=1.984s; ady exists.\nCONTEXT:  SQL statement \"INSERT INTO beauty.review(appointment_id,target_type,rating,text) VALUES(p_appointment,p_target,p_rating,p_text) RETURNING review_id\"\nPL/pgSQL function add_review(bigint,bigint,text,smallint,text) line 4 at SQL statement\nSCHEMA NAME:  beauty\nTABLE NAME:  review\nCONSTRAINT NAME:  review_appointment_id_target_type_key\nLOCATION:  _bt_check_unique, nbtinsert.c:673\n"
+    },
+    {
+      "name": "concurrent invitation consumption",
+      "passed": true,
+      "detail": "A=0, B=['22023'], waited=2.140s; ERROR:  22023: Invitation is invalid or expired\nCONTEXT:  PL/pgSQL function accept_invitation(text,text) line 5 at RAISE\nLOCATION:  exec_stmt_raise, pl_exec.c:3925\n"
+    },
+    {
+      "name": "EXPLAIN ANALYZE captured for five use-case queries",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "live schema metadata exported",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "production install without fixtures",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "drop database script removes the isolated empty database",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

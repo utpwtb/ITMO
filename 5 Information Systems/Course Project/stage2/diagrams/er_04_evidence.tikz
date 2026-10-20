@@ -1,0 +1,14 @@
+\begingroup\setstretch{1}\begin{tikzpicture}[x=1cm,y=1cm, entity/.style={draw,rounded corners=1pt,fill=gray!3,align=center,text width=3.4cm,minimum width=3.6cm,minimum height=2.2cm,font=\small,inner sep=2pt,outer sep=0pt}]
+\draw (4.8,7.0) -- (9.2,7.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (5.16,7.25) {0..1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (8.84,7.25) {0..N};
+\node[font=\scriptsize,fill=white,inner sep=1pt] at (7.0,7.45) {\texttt{cancelled\_\allowbreak{}by\_\allowbreak{}user\_\allowbreak{}id}};
+\draw (4.8,2.0) -- (9.2,2.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (5.16,2.25) {0..1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (8.84,2.25) {0..N};
+\node[font=\scriptsize,fill=white,inner sep=1pt] at (7.0,2.45) {\texttt{result\_\allowbreak{}marked\_\allowbreak{}by\_\allowbreak{}user\_\allowbreak{}id}};
+\node[entity] (cancel_actor) at (3,7) {\textbf{Пользователь}\\{\scriptsize \texttt{user\_\allowbreak{}id}}};
+\node[entity] (cancel_appointment) at (11,7) {\textbf{Запись}\\{\scriptsize \texttt{appointment\_\allowbreak{}id}}};
+\node[entity] (result_actor) at (3,2) {\textbf{Пользователь}\\{\scriptsize \texttt{user\_\allowbreak{}id}}};
+\node[entity] (result_appointment) at (11,2) {\textbf{Запись}\\{\scriptsize \texttt{appointment\_\allowbreak{}id}}};
+\end{tikzpicture}\endgroup

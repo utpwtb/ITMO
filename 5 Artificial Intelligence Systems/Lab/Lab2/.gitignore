@@ -1,7 +1,10 @@
-.deps/
-tmp/
 __pycache__/
+.venv/
+.ruff_cache/
+*.pyc
 report/*.log
 report/*.aux
 report/*.toc
 report/*.xdv
+report/*.out
+report/*.synctex.gz

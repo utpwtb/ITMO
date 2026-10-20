@@ -202,6 +202,13 @@ dialog::backdrop {
     color: #586b63
 }
 
+.field-error { display: block; color: #a12222; font-size: 12px; line-height: 1.5; font-weight: normal; }
+[aria-invalid="true"] { border-color: #a12222; background: #fff9f8; }
+#operation-result details { padding: 12px 0; border-bottom: 1px solid #dce2dd; }
+#operation-result summary { cursor: pointer; font-weight: 600; overflow-wrap: anywhere; }
+#result-dialog .toolbar { justify-content: space-between; }
+#result-dialog .error { margin-top: 16px; }
+
 dl {
     display: grid;
     grid-template-columns:160px 1fr;
@@ -242,7 +249,9 @@ button:focus-visible, input:focus-visible, select:focus-visible {
     }
 
     header {
-        align-items: flex-start
+        align-items: flex-start;
+        gap: 16px;
+        flex-wrap: wrap
     }
 
     dl {

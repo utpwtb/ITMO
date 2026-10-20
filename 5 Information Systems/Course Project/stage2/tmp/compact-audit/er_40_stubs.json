@@ -1,0 +1,441 @@
+{
+  "nodes": [
+    {
+      "id": "user_account",
+      "x": 1042,
+      "y": 140.0,
+      "w": 220,
+      "h": 297
+    },
+    {
+      "id": "salon",
+      "x": 520.0,
+      "y": 517.0,
+      "w": 420,
+      "h": 413
+    },
+    {
+      "id": "district",
+      "x": 220.0,
+      "y": 557.0,
+      "w": 220,
+      "h": 181
+    },
+    {
+      "id": "master",
+      "x": 1470.0,
+      "y": 533.5,
+      "w": 420,
+      "h": 268
+    },
+    {
+      "id": "moderation_decision",
+      "x": 1040.0,
+      "y": 548.0,
+      "w": 330,
+      "h": 239
+    },
+    {
+      "id": "work_interval",
+      "x": 1970.0,
+      "y": 678.5,
+      "w": 250,
+      "h": 210
+    },
+    {
+      "id": "salon_service",
+      "x": 542,
+      "y": 1090.0,
+      "w": 220,
+      "h": 268
+    },
+    {
+      "id": "service_type",
+      "x": 220.0,
+      "y": 1139.0,
+      "w": 220,
+      "h": 210
+    },
+    {
+      "id": "appointment",
+      "x": 1020.0,
+      "y": 1478.0,
+      "w": 370,
+      "h": 326
+    },
+    {
+      "id": "review",
+      "x": 1082,
+      "y": 1884.0,
+      "w": 220,
+      "h": 268
+    }
+  ],
+  "edges": [
+    {
+      "id": "salon_owner_user_id_fkey",
+      "source": "salon",
+      "target": "user_account",
+      "points": [
+        [
+          560,
+          517.0
+        ],
+        [
+          560,
+          300
+        ],
+        [
+          1042,
+          300
+        ]
+      ]
+    },
+    {
+      "id": "salon_district_id_fkey",
+      "source": "salon",
+      "target": "district",
+      "points": [
+        [
+          520.0,
+          637
+        ],
+        [
+          440.0,
+          637
+        ]
+      ]
+    },
+    {
+      "id": "master_user_id_fkey",
+      "source": "master",
+      "target": "user_account",
+      "points": [
+        [
+          1550,
+          533.5
+        ],
+        [
+          1550,
+          300
+        ],
+        [
+          1262,
+          300
+        ]
+      ]
+    },
+    {
+      "id": "master_salon_id_fkey",
+      "source": "master",
+      "target": "salon",
+      "points": [
+        [
+          1510,
+          801.5
+        ],
+        [
+          1510,
+          1050
+        ],
+        [
+          600,
+          1050
+        ],
+        [
+          600,
+          930.0
+        ]
+      ]
+    },
+    {
+      "id": "salon_service_salon_id_fkey",
+      "source": "salon_service",
+      "target": "salon",
+      "points": [
+        [
+          560,
+          1090.0
+        ],
+        [
+          560,
+          930.0
+        ]
+      ]
+    },
+    {
+      "id": "work_interval_master_id_fkey",
+      "source": "work_interval",
+      "target": "master",
+      "points": [
+        [
+          1970.0,
+          778
+        ],
+        [
+          1890.0,
+          778
+        ]
+      ]
+    },
+    {
+      "id": "appointment_client_user_id_fkey",
+      "source": "appointment",
+      "target": "user_account",
+      "points": [
+        [
+          1020.0,
+          1598
+        ],
+        [
+          100,
+          1598
+        ],
+        [
+          100,
+          180
+        ],
+        [
+          1042,
+          180
+        ]
+      ]
+    },
+    {
+      "id": "appointment_cancelled_by_user_id_fkey",
+      "source": "appointment",
+      "target": "user_account",
+      "points": [
+        [
+          1020.0,
+          1558
+        ],
+        [
+          140,
+          1558
+        ],
+        [
+          140,
+          220
+        ],
+        [
+          1042,
+          220
+        ]
+      ]
+    },
+    {
+      "id": "appointment_result_marked_by_user_id_fkey",
+      "source": "appointment",
+      "target": "user_account",
+      "points": [
+        [
+          1020.0,
+          1518
+        ],
+        [
+          180,
+          1518
+        ],
+        [
+          180,
+          260
+        ],
+        [
+          1042,
+          260
+        ]
+      ]
+    },
+    {
+      "id": "review_appointment_id_fkey",
+      "source": "review",
+      "target": "appointment",
+      "points": [
+        [
+          1100,
+          1884.0
+        ],
+        [
+          1100,
+          1804.0
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_admin_user_id_fkey",
+      "source": "moderation_decision",
+      "target": "user_account",
+      "points": [
+        [
+          1060,
+          548.0
+        ],
+        [
+          1060,
+          437.0
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_user_id_fkey",
+      "source": "moderation_decision",
+      "target": "user_account",
+      "points": [
+        [
+          1100,
+          548.0
+        ],
+        [
+          1100,
+          437.0
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_salon_id_fkey",
+      "source": "moderation_decision",
+      "target": "salon",
+      "points": [
+        [
+          1040.0,
+          677
+        ],
+        [
+          940.0,
+          677
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_master_id_fkey",
+      "source": "moderation_decision",
+      "target": "master",
+      "points": [
+        [
+          1370.0,
+          677
+        ],
+        [
+          1470.0,
+          677
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_review_id_fkey",
+      "source": "moderation_decision",
+      "target": "review",
+      "points": [
+        [
+          1180,
+          787.0
+        ],
+        [
+          1180,
+          1010
+        ],
+        [
+          1930,
+          1010
+        ],
+        [
+          1930,
+          1924
+        ],
+        [
+          1302,
+          1924
+        ]
+      ]
+    },
+    {
+      "id": "salon_service_service_type_id_fkey",
+      "source": "salon_service",
+      "target": "service_type",
+      "points": [
+        [
+          542,
+          1170
+        ],
+        [
+          440.0,
+          1170
+        ]
+      ]
+    },
+    {
+      "id": "master_provides_salon_service",
+      "source": "master",
+      "target": "salon_service",
+      "points": [
+        [
+          1590,
+          801.5
+        ],
+        [
+          1590,
+          1130
+        ],
+        [
+          762,
+          1130
+        ]
+      ],
+      "cardinality": "M:N"
+    },
+    {
+      "id": "appointment_master",
+      "source": "appointment",
+      "target": "master",
+      "points": [
+        [
+          1140,
+          1478.0
+        ],
+        [
+          1140,
+          1398
+        ],
+        [
+          1630,
+          1398
+        ],
+        [
+          1630,
+          801.5
+        ]
+      ]
+    },
+    {
+      "id": "appointment_salon_service",
+      "source": "appointment",
+      "target": "salon_service",
+      "points": [
+        [
+          1060,
+          1478.0
+        ],
+        [
+          1060,
+          1438
+        ],
+        [
+          560,
+          1438
+        ],
+        [
+          560,
+          1358.0
+        ]
+      ]
+    }
+  ],
+  "canvas": {
+    "x_min": -2000,
+    "y_min": -100,
+    "width": 7600,
+    "height": 6900
+  },
+  "note": "Ten conceptual entities, direct M:N. Three crossings, all on moderation_decision_target_review_id_fkey; bridge jumps required."
+}

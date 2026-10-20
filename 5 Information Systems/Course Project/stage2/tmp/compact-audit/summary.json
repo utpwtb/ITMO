@@ -1,0 +1,1340 @@
+[
+  {
+    "model": "er",
+    "step": 24,
+    "canvas": [
+      2062.0,
+      2018.0
+    ],
+    "audit": {
+      "model": "er",
+      "entity_count": 10,
+      "relationship_count": 19,
+      "orthogonal_routes": true,
+      "duplicate_entities": 0,
+      "lines_through_boxes": 0,
+      "overlapping_segments": 0,
+      "crossings": 3,
+      "all_crossings_have_bridges": true,
+      "crossing_details": [
+        {
+          "edge1": "master_salon_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1278,
+            922
+          ]
+        },
+        {
+          "edge1": "moderation_decision_target_review_id_fkey",
+          "edge2": "master_provides_salon_service",
+          "point": [
+            1326,
+            922
+          ]
+        },
+        {
+          "edge1": "moderation_decision_target_review_id_fkey",
+          "edge2": "appointment_master",
+          "point": [
+            1350,
+            922
+          ]
+        }
+      ]
+    },
+    "boxes": [
+      {
+        "id": "user_account",
+        "desired": [
+          220,
+          297
+        ],
+        "actual": [
+          220,
+          297
+        ],
+        "slot": [
+          370,
+          297
+        ]
+      },
+      {
+        "id": "salon",
+        "desired": [
+          420,
+          413
+        ],
+        "actual": [
+          420,
+          413
+        ],
+        "slot": [
+          420,
+          413
+        ]
+      },
+      {
+        "id": "district",
+        "desired": [
+          220,
+          181
+        ],
+        "actual": [
+          220,
+          181
+        ],
+        "slot": [
+          220,
+          181
+        ]
+      },
+      {
+        "id": "master",
+        "desired": [
+          420,
+          268
+        ],
+        "actual": [
+          420,
+          268
+        ],
+        "slot": [
+          420,
+          268
+        ]
+      },
+      {
+        "id": "moderation_decision",
+        "desired": [
+          330,
+          239
+        ],
+        "actual": [
+          330,
+          239
+        ],
+        "slot": [
+          370,
+          268
+        ]
+      },
+      {
+        "id": "work_interval",
+        "desired": [
+          250,
+          210
+        ],
+        "actual": [
+          250,
+          210
+        ],
+        "slot": [
+          250,
+          389
+        ]
+      },
+      {
+        "id": "salon_service",
+        "desired": [
+          220,
+          268
+        ],
+        "actual": [
+          220,
+          268
+        ],
+        "slot": [
+          420,
+          268
+        ]
+      },
+      {
+        "id": "service_type",
+        "desired": [
+          220,
+          210
+        ],
+        "actual": [
+          220,
+          210
+        ],
+        "slot": [
+          220,
+          244
+        ]
+      },
+      {
+        "id": "appointment",
+        "desired": [
+          370,
+          326
+        ],
+        "actual": [
+          370,
+          326
+        ],
+        "slot": [
+          370,
+          326
+        ]
+      },
+      {
+        "id": "review",
+        "desired": [
+          220,
+          268
+        ],
+        "actual": [
+          220,
+          268
+        ],
+        "slot": [
+          370,
+          268
+        ]
+      }
+    ]
+  },
+  {
+    "model": "er",
+    "step": 28,
+    "canvas": [
+      2094.0,
+      2054.0
+    ],
+    "audit": {
+      "model": "er",
+      "entity_count": 10,
+      "relationship_count": 19,
+      "orthogonal_routes": true,
+      "duplicate_entities": 0,
+      "lines_through_boxes": 0,
+      "overlapping_segments": 0,
+      "crossings": 3,
+      "all_crossings_have_bridges": true,
+      "crossing_details": [
+        {
+          "edge1": "master_salon_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1306,
+            934
+          ]
+        },
+        {
+          "edge1": "moderation_decision_target_review_id_fkey",
+          "edge2": "master_provides_salon_service",
+          "point": [
+            1362,
+            934
+          ]
+        },
+        {
+          "edge1": "moderation_decision_target_review_id_fkey",
+          "edge2": "appointment_master",
+          "point": [
+            1390,
+            934
+          ]
+        }
+      ]
+    },
+    "boxes": [
+      {
+        "id": "user_account",
+        "desired": [
+          220,
+          297
+        ],
+        "actual": [
+          220,
+          297
+        ],
+        "slot": [
+          370,
+          297
+        ]
+      },
+      {
+        "id": "salon",
+        "desired": [
+          420,
+          413
+        ],
+        "actual": [
+          420,
+          413
+        ],
+        "slot": [
+          420,
+          413
+        ]
+      },
+      {
+        "id": "district",
+        "desired": [
+          220,
+          181
+        ],
+        "actual": [
+          220,
+          181
+        ],
+        "slot": [
+          220,
+          181
+        ]
+      },
+      {
+        "id": "master",
+        "desired": [
+          420,
+          268
+        ],
+        "actual": [
+          420,
+          268
+        ],
+        "slot": [
+          420,
+          268
+        ]
+      },
+      {
+        "id": "moderation_decision",
+        "desired": [
+          330,
+          239
+        ],
+        "actual": [
+          330,
+          239
+        ],
+        "slot": [
+          370,
+          268
+        ]
+      },
+      {
+        "id": "work_interval",
+        "desired": [
+          250,
+          210
+        ],
+        "actual": [
+          250,
+          210
+        ],
+        "slot": [
+          250,
+          385
+        ]
+      },
+      {
+        "id": "salon_service",
+        "desired": [
+          220,
+          268
+        ],
+        "actual": [
+          220,
+          268
+        ],
+        "slot": [
+          420,
+          268
+        ]
+      },
+      {
+        "id": "service_type",
+        "desired": [
+          220,
+          210
+        ],
+        "actual": [
+          220,
+          210
+        ],
+        "slot": [
+          220,
+          240
+        ]
+      },
+      {
+        "id": "appointment",
+        "desired": [
+          370,
+          326
+        ],
+        "actual": [
+          370,
+          326
+        ],
+        "slot": [
+          370,
+          326
+        ]
+      },
+      {
+        "id": "review",
+        "desired": [
+          220,
+          268
+        ],
+        "actual": [
+          220,
+          268
+        ],
+        "slot": [
+          370,
+          268
+        ]
+      }
+    ]
+  },
+  {
+    "model": "er",
+    "step": 30,
+    "canvas": [
+      2110.0,
+      2072.0
+    ],
+    "audit": {
+      "model": "er",
+      "entity_count": 10,
+      "relationship_count": 19,
+      "orthogonal_routes": true,
+      "duplicate_entities": 0,
+      "lines_through_boxes": 0,
+      "overlapping_segments": 0,
+      "crossings": 3,
+      "all_crossings_have_bridges": true,
+      "crossing_details": [
+        {
+          "edge1": "master_salon_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1320,
+            940
+          ]
+        },
+        {
+          "edge1": "moderation_decision_target_review_id_fkey",
+          "edge2": "master_provides_salon_service",
+          "point": [
+            1380,
+            940
+          ]
+        },
+        {
+          "edge1": "moderation_decision_target_review_id_fkey",
+          "edge2": "appointment_master",
+          "point": [
+            1410,
+            940
+          ]
+        }
+      ]
+    },
+    "boxes": [
+      {
+        "id": "user_account",
+        "desired": [
+          220,
+          297
+        ],
+        "actual": [
+          220,
+          297
+        ],
+        "slot": [
+          370,
+          297
+        ]
+      },
+      {
+        "id": "salon",
+        "desired": [
+          420,
+          413
+        ],
+        "actual": [
+          420,
+          413
+        ],
+        "slot": [
+          420,
+          413
+        ]
+      },
+      {
+        "id": "district",
+        "desired": [
+          220,
+          181
+        ],
+        "actual": [
+          220,
+          181
+        ],
+        "slot": [
+          220,
+          181
+        ]
+      },
+      {
+        "id": "master",
+        "desired": [
+          420,
+          268
+        ],
+        "actual": [
+          420,
+          268
+        ],
+        "slot": [
+          420,
+          271
+        ]
+      },
+      {
+        "id": "moderation_decision",
+        "desired": [
+          330,
+          239
+        ],
+        "actual": [
+          330,
+          239
+        ],
+        "slot": [
+          370,
+          271
+        ]
+      },
+      {
+        "id": "work_interval",
+        "desired": [
+          250,
+          210
+        ],
+        "actual": [
+          250,
+          210
+        ],
+        "slot": [
+          250,
+          383
+        ]
+      },
+      {
+        "id": "salon_service",
+        "desired": [
+          220,
+          268
+        ],
+        "actual": [
+          220,
+          268
+        ],
+        "slot": [
+          420,
+          268
+        ]
+      },
+      {
+        "id": "service_type",
+        "desired": [
+          220,
+          210
+        ],
+        "actual": [
+          220,
+          210
+        ],
+        "slot": [
+          220,
+          238
+        ]
+      },
+      {
+        "id": "appointment",
+        "desired": [
+          370,
+          326
+        ],
+        "actual": [
+          370,
+          326
+        ],
+        "slot": [
+          370,
+          326
+        ]
+      },
+      {
+        "id": "review",
+        "desired": [
+          220,
+          268
+        ],
+        "actual": [
+          220,
+          268
+        ],
+        "slot": [
+          370,
+          268
+        ]
+      }
+    ]
+  },
+  {
+    "model": "logical",
+    "step": 24,
+    "canvas": [
+      2338.0,
+      3747.0
+    ],
+    "audit": {
+      "model": "logical",
+      "entity_count": 14,
+      "relationship_count": 25,
+      "orthogonal_routes": true,
+      "duplicate_entities": 0,
+      "lines_through_boxes": 0,
+      "overlapping_segments": 0,
+      "crossings": 2,
+      "all_crossings_have_bridges": true,
+      "crossing_details": [
+        {
+          "edge1": "master_salon_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1730,
+            1727
+          ]
+        },
+        {
+          "edge1": "master_service_master_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1778,
+            1727
+          ]
+        }
+      ]
+    },
+    "boxes": [
+      {
+        "id": "user_account",
+        "desired": [
+          300,
+          418
+        ],
+        "actual": [
+          300,
+          418
+        ],
+        "slot": [
+          450,
+          496
+        ]
+      },
+      {
+        "id": "salon",
+        "desired": [
+          360,
+          526
+        ],
+        "actual": [
+          360,
+          526
+        ],
+        "slot": [
+          360,
+          550
+        ]
+      },
+      {
+        "id": "district",
+        "desired": [
+          270,
+          229
+        ],
+        "actual": [
+          270,
+          229
+        ],
+        "slot": [
+          270,
+          229
+        ]
+      },
+      {
+        "id": "master",
+        "desired": [
+          340,
+          310
+        ],
+        "actual": [
+          340,
+          313
+        ],
+        "slot": [
+          370,
+          526
+        ]
+      },
+      {
+        "id": "moderation_decision",
+        "desired": [
+          410,
+          526
+        ],
+        "actual": [
+          410,
+          526
+        ],
+        "slot": [
+          450,
+          526
+        ]
+      },
+      {
+        "id": "salon_photo",
+        "desired": [
+          300,
+          445
+        ],
+        "actual": [
+          300,
+          445
+        ],
+        "slot": [
+          360,
+          445
+        ]
+      },
+      {
+        "id": "master_photo",
+        "desired": [
+          310,
+          445
+        ],
+        "actual": [
+          310,
+          445
+        ],
+        "slot": [
+          310,
+          445
+        ]
+      },
+      {
+        "id": "master_invitation",
+        "desired": [
+          370,
+          472
+        ],
+        "actual": [
+          370,
+          472
+        ],
+        "slot": [
+          370,
+          472
+        ]
+      },
+      {
+        "id": "work_interval",
+        "desired": [
+          330,
+          337
+        ],
+        "actual": [
+          330,
+          337
+        ],
+        "slot": [
+          346,
+          502
+        ]
+      },
+      {
+        "id": "salon_service",
+        "desired": [
+          330,
+          391
+        ],
+        "actual": [
+          330,
+          391
+        ],
+        "slot": [
+          360,
+          391
+        ]
+      },
+      {
+        "id": "service_type",
+        "desired": [
+          320,
+          256
+        ],
+        "actual": [
+          320,
+          256
+        ],
+        "slot": [
+          360,
+          256
+        ]
+      },
+      {
+        "id": "master_service",
+        "desired": [
+          370,
+          283
+        ],
+        "actual": [
+          370,
+          283
+        ],
+        "slot": [
+          370,
+          283
+        ]
+      },
+      {
+        "id": "appointment",
+        "desired": [
+          450,
+          769
+        ],
+        "actual": [
+          450,
+          769
+        ],
+        "slot": [
+          450,
+          769
+        ]
+      },
+      {
+        "id": "review",
+        "desired": [
+          330,
+          418
+        ],
+        "actual": [
+          330,
+          418
+        ],
+        "slot": [
+          450,
+          418
+        ]
+      }
+    ]
+  },
+  {
+    "model": "logical",
+    "step": 28,
+    "canvas": [
+      2396.0,
+      3787.0
+    ],
+    "audit": {
+      "model": "logical",
+      "entity_count": 14,
+      "relationship_count": 25,
+      "orthogonal_routes": true,
+      "duplicate_entities": 0,
+      "lines_through_boxes": 0,
+      "overlapping_segments": 0,
+      "crossings": 2,
+      "all_crossings_have_bridges": true,
+      "crossing_details": [
+        {
+          "edge1": "master_salon_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1770,
+            1751
+          ]
+        },
+        {
+          "edge1": "master_service_master_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1826,
+            1751
+          ]
+        }
+      ]
+    },
+    "boxes": [
+      {
+        "id": "user_account",
+        "desired": [
+          300,
+          418
+        ],
+        "actual": [
+          300,
+          418
+        ],
+        "slot": [
+          450,
+          500
+        ]
+      },
+      {
+        "id": "salon",
+        "desired": [
+          360,
+          526
+        ],
+        "actual": [
+          360,
+          526
+        ],
+        "slot": [
+          360,
+          554
+        ]
+      },
+      {
+        "id": "district",
+        "desired": [
+          270,
+          229
+        ],
+        "actual": [
+          270,
+          229
+        ],
+        "slot": [
+          270,
+          229
+        ]
+      },
+      {
+        "id": "master",
+        "desired": [
+          340,
+          310
+        ],
+        "actual": [
+          340,
+          321
+        ],
+        "slot": [
+          370,
+          526
+        ]
+      },
+      {
+        "id": "moderation_decision",
+        "desired": [
+          410,
+          526
+        ],
+        "actual": [
+          410,
+          526
+        ],
+        "slot": [
+          450,
+          526
+        ]
+      },
+      {
+        "id": "salon_photo",
+        "desired": [
+          300,
+          445
+        ],
+        "actual": [
+          300,
+          445
+        ],
+        "slot": [
+          360,
+          445
+        ]
+      },
+      {
+        "id": "master_photo",
+        "desired": [
+          310,
+          445
+        ],
+        "actual": [
+          310,
+          445
+        ],
+        "slot": [
+          310,
+          445
+        ]
+      },
+      {
+        "id": "master_invitation",
+        "desired": [
+          370,
+          472
+        ],
+        "actual": [
+          370,
+          472
+        ],
+        "slot": [
+          370,
+          472
+        ]
+      },
+      {
+        "id": "work_interval",
+        "desired": [
+          330,
+          337
+        ],
+        "actual": [
+          330,
+          337
+        ],
+        "slot": [
+          342,
+          498
+        ]
+      },
+      {
+        "id": "salon_service",
+        "desired": [
+          330,
+          391
+        ],
+        "actual": [
+          330,
+          391
+        ],
+        "slot": [
+          360,
+          391
+        ]
+      },
+      {
+        "id": "service_type",
+        "desired": [
+          320,
+          256
+        ],
+        "actual": [
+          320,
+          256
+        ],
+        "slot": [
+          360,
+          256
+        ]
+      },
+      {
+        "id": "master_service",
+        "desired": [
+          370,
+          283
+        ],
+        "actual": [
+          370,
+          283
+        ],
+        "slot": [
+          370,
+          283
+        ]
+      },
+      {
+        "id": "appointment",
+        "desired": [
+          450,
+          769
+        ],
+        "actual": [
+          450,
+          769
+        ],
+        "slot": [
+          450,
+          769
+        ]
+      },
+      {
+        "id": "review",
+        "desired": [
+          330,
+          418
+        ],
+        "actual": [
+          330,
+          418
+        ],
+        "slot": [
+          450,
+          418
+        ]
+      }
+    ]
+  },
+  {
+    "model": "logical",
+    "step": 30,
+    "canvas": [
+      2425.0,
+      3807.0
+    ],
+    "audit": {
+      "model": "logical",
+      "entity_count": 14,
+      "relationship_count": 25,
+      "orthogonal_routes": true,
+      "duplicate_entities": 0,
+      "lines_through_boxes": 0,
+      "overlapping_segments": 0,
+      "crossings": 2,
+      "all_crossings_have_bridges": true,
+      "crossing_details": [
+        {
+          "edge1": "master_salon_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1790,
+            1763
+          ]
+        },
+        {
+          "edge1": "master_service_master_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1850,
+            1763
+          ]
+        }
+      ]
+    },
+    "boxes": [
+      {
+        "id": "user_account",
+        "desired": [
+          300,
+          418
+        ],
+        "actual": [
+          300,
+          418
+        ],
+        "slot": [
+          450,
+          502
+        ]
+      },
+      {
+        "id": "salon",
+        "desired": [
+          360,
+          526
+        ],
+        "actual": [
+          360,
+          526
+        ],
+        "slot": [
+          360,
+          556
+        ]
+      },
+      {
+        "id": "district",
+        "desired": [
+          270,
+          229
+        ],
+        "actual": [
+          270,
+          229
+        ],
+        "slot": [
+          270,
+          229
+        ]
+      },
+      {
+        "id": "master",
+        "desired": [
+          340,
+          310
+        ],
+        "actual": [
+          340,
+          325
+        ],
+        "slot": [
+          370,
+          526
+        ]
+      },
+      {
+        "id": "moderation_decision",
+        "desired": [
+          410,
+          526
+        ],
+        "actual": [
+          410,
+          526
+        ],
+        "slot": [
+          450,
+          526
+        ]
+      },
+      {
+        "id": "salon_photo",
+        "desired": [
+          300,
+          445
+        ],
+        "actual": [
+          300,
+          445
+        ],
+        "slot": [
+          360,
+          445
+        ]
+      },
+      {
+        "id": "master_photo",
+        "desired": [
+          310,
+          445
+        ],
+        "actual": [
+          310,
+          445
+        ],
+        "slot": [
+          310,
+          445
+        ]
+      },
+      {
+        "id": "master_invitation",
+        "desired": [
+          370,
+          472
+        ],
+        "actual": [
+          370,
+          472
+        ],
+        "slot": [
+          370,
+          472
+        ]
+      },
+      {
+        "id": "work_interval",
+        "desired": [
+          330,
+          337
+        ],
+        "actual": [
+          330,
+          337
+        ],
+        "slot": [
+          340,
+          496
+        ]
+      },
+      {
+        "id": "salon_service",
+        "desired": [
+          330,
+          391
+        ],
+        "actual": [
+          330,
+          391
+        ],
+        "slot": [
+          360,
+          391
+        ]
+      },
+      {
+        "id": "service_type",
+        "desired": [
+          320,
+          256
+        ],
+        "actual": [
+          320,
+          256
+        ],
+        "slot": [
+          360,
+          256
+        ]
+      },
+      {
+        "id": "master_service",
+        "desired": [
+          370,
+          283
+        ],
+        "actual": [
+          370,
+          283
+        ],
+        "slot": [
+          370,
+          283
+        ]
+      },
+      {
+        "id": "appointment",
+        "desired": [
+          450,
+          769
+        ],
+        "actual": [
+          450,
+          769
+        ],
+        "slot": [
+          450,
+          769
+        ]
+      },
+      {
+        "id": "review",
+        "desired": [
+          330,
+          418
+        ],
+        "actual": [
+          330,
+          418
+        ],
+        "slot": [
+          450,
+          418
+        ]
+      }
+    ]
+  }
+]

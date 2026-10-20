@@ -1,0 +1,791 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/hwbqtkby",
+    "id": "hwbqtkby",
+    "slide": 2,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F6F2",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ove9o7yd",
+      "id": "10",
+      "name": "Для кого мы создаём интерфейс",
+      "bbox": [
+        72,
+        50,
+        1136,
+        111
+      ],
+      "geometry": "rect",
+      "text": "Для кого мы создаём интерфейс",
+      "textPreview": "Для кого мы создаём интерфейс",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Для кого мы создаём интерфейс"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Для кого мы создаём интерфейс",
+          "resolvedTextStyle": {
+            "fontSize": 43,
+            "typeface": "Arial",
+            "color": "#182B3A",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Для кого мы создаём интерфейс",
+              "fontSize": 43,
+              "typeface": "Arial",
+              "color": "#182B3A",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9072xkry",
+      "id": "2",
+      "name": "02",
+      "bbox": [
+        1170,
+        665,
+        45,
+        25
+      ],
+      "geometry": "rect",
+      "text": "02",
+      "textPreview": "02",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#61707A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02",
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#61707A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ozy1ofad",
+      "id": "3",
+      "name": "Регулярно обсуждают\nвопросы с ИИ",
+      "bbox": [
+        72,
+        192,
+        535,
+        115
+      ],
+      "geometry": "rect",
+      "text": "Регулярно обсуждают\nвопросы с ИИ",
+      "textPreview": "Регулярно обсуждают | вопросы с ИИ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Регулярно обсуждают"
+          },
+          {
+            "index": 2,
+            "text": "вопросы с ИИ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Регулярно обсуждают",
+          "resolvedTextStyle": {
+            "fontSize": 43,
+            "typeface": "Arial",
+            "color": "#315FEA",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Регулярно обсуждают",
+              "fontSize": 43,
+              "typeface": "Arial",
+              "color": "#315FEA",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "вопросы с ИИ",
+          "resolvedTextStyle": {
+            "fontSize": 43,
+            "typeface": "Arial",
+            "color": "#315FEA",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "вопросы с ИИ",
+              "fontSize": 43,
+              "typeface": "Arial",
+              "color": "#315FEA",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b29kza94",
+      "id": "4",
+      "name": "Хотят сохранять знания\nи применять их снова",
+      "bbox": [
+        72,
+        347,
+        530,
+        112
+      ],
+      "geometry": "rect",
+      "text": "Хотят сохранять знания\nи применять их снова",
+      "textPreview": "Хотят сохранять знания | и применять их снова",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Хотят сохранять знания"
+          },
+          {
+            "index": 2,
+            "text": "и применять их снова"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Хотят сохранять знания",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "typeface": "Arial",
+            "color": "#182B3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Хотят сохранять знания",
+              "fontSize": 33,
+              "typeface": "Arial",
+              "color": "#182B3A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "и применять их снова",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "typeface": "Arial",
+            "color": "#182B3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "и применять их снова",
+              "fontSize": 33,
+              "typeface": "Arial",
+              "color": "#182B3A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a10jqpsj",
+      "id": "5",
+      "name": "Для первого этапа:\nпользователи Obsidian",
+      "bbox": [
+        72,
+        535,
+        520,
+        80
+      ],
+      "geometry": "rect",
+      "text": "Для первого этапа:\nпользователи Obsidian",
+      "textPreview": "Для первого этапа: | пользователи Obsidian",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Для первого этапа:"
+          },
+          {
+            "index": 2,
+            "text": "пользователи Obsidian"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Для первого этапа:",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "Arial",
+            "color": "#61707A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Для первого этапа:",
+              "fontSize": 25,
+              "typeface": "Arial",
+              "color": "#61707A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "пользователи Obsidian",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "Arial",
+            "color": "#61707A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "пользователи Obsidian",
+              "fontSize": 25,
+              "typeface": "Arial",
+              "color": "#61707A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x4r21kru",
+      "id": "6",
+      "name": "Работа и личные проекты",
+      "bbox": [
+        690,
+        195,
+        510,
+        50
+      ],
+      "geometry": "rect",
+      "text": "Работа и личные проекты",
+      "textPreview": "Работа и личные проекты",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Работа и личные проекты"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Работа и личные проекты",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Arial",
+            "color": "#182B3A",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Работа и личные проекты",
+              "fontSize": 29,
+              "typeface": "Arial",
+              "color": "#182B3A",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w3i1sfa9",
+      "id": "7",
+      "name": "Разработка, исследования,\nанализ и создание материалов",
+      "bbox": [
+        690,
+        263,
+        510,
+        99
+      ],
+      "geometry": "rect",
+      "text": "Разработка, исследования,\nанализ и создание материалов",
+      "textPreview": "Разработка, исследования, | анализ и создание материалов",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Разработка, исследования,"
+          },
+          {
+            "index": 2,
+            "text": "анализ и создание материалов"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Разработка, исследования,",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Arial",
+            "color": "#182B3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Разработка, исследования,",
+              "fontSize": 28,
+              "typeface": "Arial",
+              "color": "#182B3A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "анализ и создание материалов",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Arial",
+            "color": "#182B3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "анализ и создание материалов",
+              "fontSize": 28,
+              "typeface": "Arial",
+              "color": "#182B3A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r65knqtk",
+      "id": "8",
+      "name": "Самостоятельное изучение тем",
+      "bbox": [
+        690,
+        410,
+        515,
+        75
+      ],
+      "geometry": "rect",
+      "text": "Самостоятельное изучение тем",
+      "textPreview": "Самостоятельное изучение тем",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Самостоятельное изучение тем"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Самостоятельное изучение тем",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Arial",
+            "color": "#182B3A",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Самостоятельное изучение тем",
+              "fontSize": 29,
+              "typeface": "Arial",
+              "color": "#182B3A",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q5wjelsz",
+      "id": "9",
+      "name": "Профессиональные интересы\nи повседневные вопросы",
+      "bbox": [
+        690,
+        498,
+        510,
+        95
+      ],
+      "geometry": "rect",
+      "text": "Профессиональные интересы\nи повседневные вопросы",
+      "textPreview": "Профессиональные интересы | и повседневные вопросы",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Профессиональные интересы"
+          },
+          {
+            "index": 2,
+            "text": "и повседневные вопросы"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Профессиональные интересы",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Arial",
+            "color": "#182B3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Профессиональные интересы",
+              "fontSize": 28,
+              "typeface": "Arial",
+              "color": "#182B3A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "и повседневные вопросы",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Arial",
+            "color": "#182B3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "и повседневные вопросы",
+              "fontSize": 28,
+              "typeface": "Arial",
+              "color": "#182B3A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

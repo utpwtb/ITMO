@@ -29,8 +29,10 @@ if ($initialized -ne 't') {
  & (Join-Path $PostgresBin 'psql.exe') -h 127.0.0.1 -p $DatabasePort -U movie_lab -d movie_lab -v ON_ERROR_STOP=1 -f (Join-Path $project 'database/schema.sql')
  if($LASTEXITCODE -ne 0){throw 'Schema initialization failed'}
 }
-& (Join-Path $PostgresBin 'psql.exe') -h 127.0.0.1 -p $DatabasePort -U movie_lab -d movie_lab -v ON_ERROR_STOP=1 -1 -f (Join-Path $project 'database/migrations/001_accounts.sql')
-if($LASTEXITCODE -ne 0){throw 'Account migration failed'}
+foreach ($migration in (Get-ChildItem -LiteralPath (Join-Path $project 'database/migrations') -Filter '*.sql' | Sort-Object Name)) {
+ & (Join-Path $PostgresBin 'psql.exe') -h 127.0.0.1 -p $DatabasePort -U movie_lab -d movie_lab -v ON_ERROR_STOP=1 -1 -f $migration.FullName
+ if($LASTEXITCODE -ne 0){throw "Migration failed: $($migration.Name). Check existing data before retrying."}
+}
 Push-Location $project
 try {
  & mvn -B -s $settings -gs $settings "-Dmaven.repo.local=$repo" "-DMOVIE_TEST_DB_URL=jdbc:postgresql://127.0.0.1:$DatabasePort/movie_lab_test" verify

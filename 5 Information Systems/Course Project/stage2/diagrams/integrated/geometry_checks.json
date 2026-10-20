@@ -1,0 +1,87 @@
+{
+  "models": [
+    {
+      "model": "er",
+      "entity_count": 10,
+      "relationship_count": 19,
+      "orthogonal_routes": true,
+      "duplicate_entities": 0,
+      "lines_through_boxes": 0,
+      "overlapping_segments": 0,
+      "crossings": 3,
+      "all_crossings_have_bridges": true,
+      "crossing_details": [
+        {
+          "edge1": "master_salon_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1478,
+            994
+          ]
+        },
+        {
+          "edge1": "moderation_decision_target_review_id_fkey",
+          "edge2": "master_provides_salon_service",
+          "point": [
+            1542,
+            994
+          ]
+        },
+        {
+          "edge1": "moderation_decision_target_review_id_fkey",
+          "edge2": "appointment_master",
+          "point": [
+            1574,
+            994
+          ]
+        }
+      ],
+      "canvas_pixels": [
+        2286,
+        2434
+      ],
+      "body_font_px": 22,
+      "all_boxes_fit_content": true
+    },
+    {
+      "model": "logical",
+      "entity_count": 14,
+      "relationship_count": 25,
+      "orthogonal_routes": true,
+      "duplicate_entities": 0,
+      "lines_through_boxes": 0,
+      "overlapping_segments": 0,
+      "crossings": 2,
+      "all_crossings_have_bridges": true,
+      "crossing_details": [
+        {
+          "edge1": "master_salon_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1866,
+            1783
+          ]
+        },
+        {
+          "edge1": "master_service_master_id_fkey",
+          "edge2": "moderation_decision_target_review_id_fkey",
+          "point": [
+            1930,
+            1783
+          ]
+        }
+      ],
+      "canvas_pixels": [
+        2518,
+        3763
+      ],
+      "body_font_px": 20,
+      "all_boxes_fit_content": true
+    }
+  ],
+  "report_unchanged_sha256": {
+    "report\\stage2_report.tex": "b8748caeb9d4405abdcdf6cb135a00d5410d1db9c3a91b86add36b6c9a6a2d53",
+    "output\\pdf\\stage2_report.pdf": "49e0755673a034852fa88f95d9a8dda297e4d57ad8758058d1fe50562a688b70"
+  },
+  "source_metadata": "verification/schema_metadata.json"
+}

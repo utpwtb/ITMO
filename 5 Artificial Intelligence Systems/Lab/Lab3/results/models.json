@@ -1,0 +1,258 @@
+{
+  "M1_Baseline": {
+    "features": [
+      "Hours Studied"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.28867605844647
+    ],
+    "lam": 0.0,
+    "ratio": 0.0
+  },
+  "M1_L1": {
+    "features": [
+      "Hours Studied"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.188676058446473
+    ],
+    "lam": 0.1,
+    "ratio": 1.0
+  },
+  "M1_L2": {
+    "features": [
+      "Hours Studied"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.216510948956901
+    ],
+    "lam": 0.01,
+    "ratio": 0.0
+  },
+  "M1_ElasticNet": {
+    "features": [
+      "Hours Studied"
+    ],
+    "beta": [
+      55.04237717372946,
+      6.8939771985204406
+    ],
+    "lam": 0.1,
+    "ratio": 0.5
+  },
+  "M2_Baseline": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.402482965479482,
+      17.589175252687944
+    ],
+    "lam": 0.0,
+    "ratio": 0.0
+  },
+  "M2_L1": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.401476453061274,
+      17.5881687402697
+    ],
+    "lam": 0.001,
+    "ratio": 1.0
+  },
+  "M2_L2": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.3949739842354525,
+      17.571555112356663
+    ],
+    "lam": 0.001,
+    "ratio": 0.0
+  },
+  "M2_ElasticNet": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.400174901872581,
+      17.584843350197755
+    ],
+    "lam": 0.001,
+    "ratio": 0.8
+  },
+  "M3_Baseline": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores",
+      "Extracurricular Activities",
+      "Sleep Hours",
+      "Sample Question Papers Practiced"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.3910726528519,
+      17.577229514970483,
+      0.29355507396855884,
+      0.8254593521814437,
+      0.5751335647942388
+    ],
+    "lam": 0.0,
+    "ratio": 0.0
+  },
+  "M3_L1": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores",
+      "Extracurricular Activities",
+      "Sleep Hours",
+      "Sample Question Papers Practiced"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.390087868338135,
+      17.576244133380904,
+      0.29255940828336646,
+      0.8244527142156931,
+      0.5742133517449447
+    ],
+    "lam": 0.001,
+    "ratio": 1.0
+  },
+  "M3_L2": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores",
+      "Extracurricular Activities",
+      "Sleep Hours",
+      "Sample Question Papers Practiced"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.383575412590363,
+      17.559624463427536,
+      0.29335505676723755,
+      0.8246235808787548,
+      0.5750461377870764
+    ],
+    "lam": 0.001,
+    "ratio": 0.0
+  },
+  "M3_ElasticNet": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores",
+      "Extracurricular Activities",
+      "Sleep Hours",
+      "Sample Question Papers Practiced"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.38878431322483,
+      17.572917529843373,
+      0.29271867824051057,
+      0.8244869130525474,
+      0.5743801078388431
+    ],
+    "lam": 0.001,
+    "ratio": 0.8
+  },
+  "M4_Baseline": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores",
+      "Extracurricular Activities",
+      "Sleep Hours",
+      "Sample Question Papers Practiced",
+      "Hours x Previous Scores"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.368158050716966,
+      17.566249991669018,
+      0.2935187367069707,
+      0.8256145638717172,
+      0.5751515028279228,
+      0.02598200887020853
+    ],
+    "lam": 0.0,
+    "ratio": 0.0
+  },
+  "M4_L1": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores",
+      "Extracurricular Activities",
+      "Sleep Hours",
+      "Sample Question Papers Practiced",
+      "Hours x Previous Scores"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.361717994472618,
+      17.56265071861062,
+      0.29251442021933455,
+      0.8246448771029672,
+      0.5742355602677423,
+      0.0321675375712059
+    ],
+    "lam": 0.001,
+    "ratio": 1.0
+  },
+  "M4_L2": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores",
+      "Extracurricular Activities",
+      "Sleep Hours",
+      "Sample Question Papers Practiced",
+      "Hours x Previous Scores"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.117794204533642,
+      17.432276878663547,
+      0.2929319221889673,
+      0.8264247109231637,
+      0.5752462188688731,
+      0.301661888834535
+    ],
+    "lam": 0.001,
+    "ratio": 0.0
+  },
+  "M4_ElasticNet": {
+    "features": [
+      "Hours Studied",
+      "Previous Scores",
+      "Extracurricular Activities",
+      "Sleep Hours",
+      "Sample Question Papers Practiced",
+      "Hours x Previous Scores"
+    ],
+    "beta": [
+      55.04237717372946,
+      7.311332933971288,
+      17.535806810352533,
+      0.2925957610107065,
+      0.8250115792166441,
+      0.5744402729626307,
+      0.08783685322837245
+    ],
+    "lam": 0.001,
+    "ratio": 0.8
+  }
+}

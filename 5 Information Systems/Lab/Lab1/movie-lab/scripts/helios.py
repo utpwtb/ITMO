@@ -86,11 +86,11 @@ if mode == 'test':
     run(['mvn', '-B', '-ntp', '-s', 'scripts/maven-settings.xml',
          '-DargLine=-Xmx384m -XX:MaxMetaspaceSize=256m -XX:ActiveProcessorCount=2', 'clean', 'verify'])
 elif mode in ('init', 'migrate'):
-    ddl_path = 'database/schema.sql' if mode == 'init' else 'database/migrations/001_accounts.sql'
-    ddl = (ROOT / ddl_path).read_text(encoding='utf-8')
+    paths = [ROOT / 'database/schema.sql'] if mode == 'init' else sorted((ROOT / 'database/migrations').glob('*.sql'))
+    ddl = '\n'.join(path.read_text(encoding='utf-8') for path in paths)
     ddl = re.sub(r'\b(movie|person|coordinates|location|app_state|app_user)\b', r'lab1_4101_\1', ddl)
     ddl = re.sub(r'\b(movie_[a-z]+_idx|person_location_idx)\b', r'lab1_4101_\1', ddl)
-    # Init refuses existing tables; migration only adds the account table.
+    # Init refuses existing tables; migrations preserve rows and validate constraints.
     run(['psql', '-X', '-h', 'pg', '-d', 'studs', '-U', 's407960', '-w', '-v', 'ON_ERROR_STOP=1'],
         input='BEGIN;\nSET search_path TO s407960;\n' + ddl + '\nCOMMIT;\n', text=True)
 elif mode == 'start':

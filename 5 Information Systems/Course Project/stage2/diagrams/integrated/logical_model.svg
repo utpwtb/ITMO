@@ -1,0 +1,466 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2518" height="3763" viewBox="0 0 2518 3763">
+<rect width="100%" height="100%" fill="white"/>
+<text x="60" y="20" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="32" font-weight="bold" fill="#171717">Даталогическая модель PostgreSQL</text>
+<text x="60" y="64" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">14 таблиц · 25 внешних ключей · фактические типы PostgreSQL</text>
+<polyline points="578.00,1175.00 578.00,268.00 1056.00,268.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="546.00,1289.00 466.00,1289.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1898.00,1184.50 1898.00,268.00 1356.00,268.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1866.00,1494.50 1866.00,1815.00 610.00,1815.00 610.00,1701.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="578.00,1847.00 578.00,1701.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="578.00,2238.00 578.00,2318.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1930.00,1847.00 1930.00,1494.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1628.00,1879.00 890.00,1879.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2098.00,1486.00 1983.00,1486.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1138.00,2574.00 1138.00,2318.00 1898.00,2318.00 1898.00,2130.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1042.00,2670.00 100.00,2670.00 100.00,172.00 1056.00,172.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1042.00,2638.00 132.00,2638.00 132.00,204.00 1056.00,204.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1042.00,2606.00 164.00,2606.00 164.00,236.00 1056.00,236.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="946.00,1121.00 946.00,1193.00 906.00,1193.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1588.00,1121.00 1588.00,1193.00 1643.00,1193.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1612.00,2874.00 1492.00,2874.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1074.00,1161.00 1074.00,572.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1106.00,1161.00 1106.00,572.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1056.00,1321.00 906.00,1321.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1466.00,1321.00 1643.00,1321.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1056.00,1225.00 978.00,1225.00 978.00,1121.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1466.00,1225.00 1556.00,1225.00 1556.00,1121.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1170.00,1687.00 1170.00,1783.00 2030.00,1783.00 2030.00,2764.00 1942.00,2764.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2062.00,612.00 2062.00,1121.00 1962.00,1121.00 1962.00,1184.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2030.00,172.00 1356.00,172.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1856.00,1783.00 1876.00,1783.00" fill="none" stroke="white" stroke-width="6" stroke-linejoin="miter"/>
+<polyline points="1866.00,1777.00 1866.00,1789.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<path d="M 1854 1783 A 12 12 0 0 1 1878 1783" fill="none" stroke="white" stroke-width="8"/>
+<path d="M 1854 1783 A 12 12 0 0 1 1878 1783" fill="none" stroke="#202020" stroke-width="2"/>
+<polyline points="1920.00,1783.00 1940.00,1783.00" fill="none" stroke="white" stroke-width="6" stroke-linejoin="miter"/>
+<polyline points="1930.00,1777.00 1930.00,1789.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<path d="M 1918 1783 A 12 12 0 0 1 1942 1783" fill="none" stroke="white" stroke-width="8"/>
+<path d="M 1918 1783 A 12 12 0 0 1 1942 1783" fill="none" stroke="#202020" stroke-width="2"/>
+<polyline points="569.00,1166.00 587.00,1166.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="578.0" cy="1150.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1047.00,277.00 1047.00,259.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1035.00,277.00 1035.00,259.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="589.0" y="709.5" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="608.5" y="711.5" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F01</text>
+<polyline points="545.00,1297.00 530.00,1289.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="545.00,1289.00 530.00,1289.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="545.00,1281.00 530.00,1289.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="517.0" cy="1289.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="475.00,1280.00 475.00,1298.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="487.00,1280.00 487.00,1298.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="486.5" y="1260.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="506.0" y="1262.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F02</text>
+<polyline points="1889.00,1175.50 1907.00,1175.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1898.0" cy="1159.5" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1365.00,259.00 1365.00,277.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1377.00,259.00 1377.00,277.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1909.0" y="714.25" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1928.5" y="716.25" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F05</text>
+<polyline points="1874.00,1495.50 1866.00,1510.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1866.00,1495.50 1866.00,1510.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1858.00,1495.50 1866.00,1510.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1866.0" cy="1523.5" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="619.00,1710.00 601.00,1710.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="619.00,1722.00 601.00,1722.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1877.0" y="1642.75" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1896.5" y="1644.75" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F06</text>
+<polyline points="570.00,1846.00 578.00,1831.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="578.00,1846.00 578.00,1831.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="586.00,1846.00 578.00,1831.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="578.0" cy="1818.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="587.00,1710.00 569.00,1710.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="587.00,1722.00 569.00,1722.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="528.0" y="1762.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="547.5" y="1764.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F03</text>
+<polyline points="586.00,2239.00 578.00,2254.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="578.00,2239.00 578.00,2254.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="570.00,2239.00 578.00,2254.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="578.0" cy="2267.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="569.00,2309.00 587.00,2309.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="569.00,2297.00 587.00,2297.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="589.0" y="2266.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="608.5" y="2268.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F04</text>
+<polyline points="1922.00,1846.00 1930.00,1831.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1930.00,1846.00 1930.00,1831.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1938.00,1846.00 1930.00,1831.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1930.0" cy="1818.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1939.00,1503.50 1921.00,1503.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1939.00,1515.50 1921.00,1515.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1941.0" y="1658.75" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1960.5" y="1660.75" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F07</text>
+<polyline points="1627.00,1887.00 1612.00,1879.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1627.00,1879.00 1612.00,1879.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1627.00,1871.00 1612.00,1879.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1599.0" cy="1879.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="899.00,1870.00 899.00,1888.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="911.00,1870.00 911.00,1888.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1239.5" y="1850.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1259.0" y="1852.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F08</text>
+<polyline points="2097.00,1494.00 2082.00,1486.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2097.00,1486.00 2082.00,1486.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2097.00,1478.00 2082.00,1486.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="2069.0" cy="1486.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1992.00,1477.00 1992.00,1495.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2004.00,1477.00 2004.00,1495.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="2021.0" y="1457.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="2040.5" y="1459.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F09</text>
+<polyline points="1130.00,2573.00 1138.00,2558.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1138.00,2573.00 1138.00,2558.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1146.00,2573.00 1138.00,2558.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1138.0" cy="2545.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1907.00,2139.00 1889.00,2139.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1907.00,2151.00 1889.00,2151.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1149.0" y="2434.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1168.5" y="2436.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F13</text>
+<polyline points="1041.00,2678.00 1026.00,2670.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1041.00,2670.00 1026.00,2670.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1041.00,2662.00 1026.00,2670.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1013.0" cy="2670.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1047.00,181.00 1047.00,163.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1035.00,181.00 1035.00,163.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="551.5" y="2641.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="571.0" y="2643.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F10</text>
+<polyline points="1041.00,2646.00 1026.00,2638.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1041.00,2638.00 1026.00,2638.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1041.00,2630.00 1026.00,2638.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1013.0" cy="2638.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1047.00,213.00 1047.00,195.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1031.0" cy="204.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="567.5078125" y="2609.0" width="38.984375" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="587.0" y="2611.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F11</text>
+<polyline points="1041.00,2614.00 1026.00,2606.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1041.00,2606.00 1026.00,2606.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1041.00,2598.00 1026.00,2606.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1013.0" cy="2606.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1047.00,245.00 1047.00,227.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1031.0" cy="236.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="715.2" y="2610.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="734.7" y="2612.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F12</text>
+<polyline points="954.00,1122.00 946.00,1137.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="946.00,1122.00 946.00,1137.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="938.00,1122.00 946.00,1137.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="946.0" cy="1150.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="915.00,1184.00 915.00,1202.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="927.00,1184.00 927.00,1202.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="896.0" y="1134.2" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="915.5" y="1136.2" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F14</text>
+<polyline points="1596.00,1122.00 1588.00,1137.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1588.00,1122.00 1588.00,1137.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1580.00,1122.00 1588.00,1137.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1588.0" cy="1150.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1634.00,1202.00 1634.00,1184.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1622.00,1202.00 1622.00,1184.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1599.0" y="1145.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1618.5" y="1147.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F15</text>
+<polyline points="1611.00,2882.00 1596.00,2874.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1611.00,2874.00 1596.00,2874.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1611.00,2866.00 1596.00,2874.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1583.0" cy="2874.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="1558.0" y="2890.0" width="26.0" height="23" fill="white" stroke="white" stroke-width="0"/>
+<text x="1562.0" y="2892.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="16" font-weight="normal" fill="#171717">≤2</text>
+<polyline points="1501.00,2865.00 1501.00,2883.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1513.00,2865.00 1513.00,2883.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1532.5" y="2845.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1552.0" y="2847.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F16</text>
+<polyline points="1066.00,1160.00 1074.00,1145.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1074.00,1160.00 1074.00,1145.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1082.00,1160.00 1074.00,1145.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1074.0" cy="1132.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1083.00,581.00 1065.00,581.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1083.00,593.00 1065.00,593.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1024.0" y="854.5" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1043.5" y="856.5" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F17</text>
+<polyline points="1098.00,1160.00 1106.00,1145.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1106.00,1160.00 1106.00,1145.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1114.00,1160.00 1106.00,1145.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1106.0" cy="1132.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1115.00,581.00 1097.00,581.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1106.0" cy="597.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="1117.0" y="854.5" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1136.5" y="856.5" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F18</text>
+<polyline points="1055.00,1329.00 1040.00,1321.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1055.00,1321.00 1040.00,1321.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1055.00,1313.00 1040.00,1321.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1027.0" cy="1321.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="915.00,1312.00 915.00,1330.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="931.0" cy="1321.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="961.5" y="1292.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="981.0" y="1294.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F19</text>
+<polyline points="1467.00,1313.00 1482.00,1321.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1467.00,1321.00 1482.00,1321.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1467.00,1329.00 1482.00,1321.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1495.0" cy="1321.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1634.00,1330.00 1634.00,1312.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1618.0" cy="1321.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="1535.0" y="1292.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1554.5" y="1294.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F20</text>
+<polyline points="1055.00,1233.00 1040.00,1225.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1055.00,1225.00 1040.00,1225.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1055.00,1217.00 1040.00,1225.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1027.0" cy="1225.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="987.00,1130.00 969.00,1130.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="978.0" cy="1146.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="997.5" y="1196.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1017.0" y="1198.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F22</text>
+<polyline points="1467.00,1217.00 1482.00,1225.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1467.00,1225.00 1482.00,1225.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1467.00,1233.00 1482.00,1225.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1495.0" cy="1225.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1565.00,1130.00 1547.00,1130.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1556.0" cy="1146.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="1491.5" y="1196.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1511.0" y="1198.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F23</text>
+<polyline points="1178.00,1688.00 1170.00,1703.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1170.00,1688.00 1170.00,1703.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1162.00,1688.00 1170.00,1703.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1170.0" cy="1716.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1951.00,2755.00 1951.00,2773.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="1967.0" cy="2764.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<rect x="1181.0" y="1723.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1200.5" y="1725.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F21</text>
+<polyline points="2070.00,613.00 2062.00,628.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2062.00,613.00 2062.00,628.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2054.00,613.00 2062.00,628.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="2062.0" cy="641.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1953.00,1175.50 1971.00,1175.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1953.00,1163.50 1971.00,1163.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="2073.0" y="854.5" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="2092.5" y="856.5" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F24</text>
+<polyline points="2029.00,180.00 2014.00,172.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2029.00,172.00 2014.00,172.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="2029.00,164.00 2014.00,172.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<circle cx="2001.0" cy="172.0" r="6" fill="white" stroke="#202020" stroke-width="2"/>
+<polyline points="1365.00,163.00 1365.00,181.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<polyline points="1377.00,163.00 1377.00,181.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<rect x="1673.5" y="143.0" width="39.0" height="25" fill="white" stroke="white" stroke-width="0"/>
+<text x="1693.0" y="145.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">F25</text>
+<rect x="1056" y="154" width="300" height="418" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1206.0" y="164" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Пользователь</text>
+<text x="1206.0" y="194" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">user_account</text>
+<polyline points="1056.00,224.00 1356.00,224.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="1070" y="237" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">user_id BIGINT PK NN</text>
+<text x="1070" y="264" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">email TEXT UQ NN</text>
+<text x="1070" y="291" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">password_hash TEXT NULL</text>
+<text x="1070" y="318" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">display_name TEXT NN</text>
+<text x="1070" y="345" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">role TEXT NN</text>
+<text x="1070" y="372" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">account_status TEXT NN</text>
+<text x="1070" y="399" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_at TIMESTAMP NN</text>
+<polyline points="1057.00,429.00 1355.00,429.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1070" y="453" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">UQ(email); роль: CLIENT |</text>
+<text x="1070" y="480" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">MASTER | OWNER | ADMIN</text>
+<text x="1070" y="507" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">INVITED допустим только для</text>
+<text x="1070" y="534" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">MASTER</text>
+<rect x="546.0" y="1175" width="360" height="526" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="726.0" y="1185" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Салон</text>
+<text x="726.0" y="1215" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">salon</text>
+<polyline points="546.00,1245.00 906.00,1245.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="560.0" y="1258" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">salon_id BIGINT PK NN</text>
+<text x="560.0" y="1285" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">owner_user_id BIGINT F01 UQ NN</text>
+<text x="560.0" y="1312" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">district_id BIGINT F02 NN</text>
+<text x="560.0" y="1339" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">name TEXT NN</text>
+<text x="560.0" y="1366" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">description TEXT NN</text>
+<text x="560.0" y="1393" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">address TEXT NN</text>
+<text x="560.0" y="1420" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">latitude NUMERIC(9,6) NN</text>
+<text x="560.0" y="1447" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">longitude NUMERIC(9,6) NN</text>
+<text x="560.0" y="1474" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">phone TEXT NN</text>
+<text x="560.0" y="1501" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">opening_hours TEXT NN</text>
+<text x="560.0" y="1528" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">publication_status TEXT NN</text>
+<text x="560.0" y="1555" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_at TIMESTAMP NN</text>
+<polyline points="547.00,1585.00 905.00,1585.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="560.0" y="1609" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">UQ(owner_user_id)</text>
+<text x="560.0" y="1636" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK latitude: -90..90; longitude:</text>
+<text x="560.0" y="1663" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">-180..180</text>
+<rect x="196.0" y="1225.0" width="270" height="229" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="331.0" y="1235.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Район</text>
+<text x="331.0" y="1265.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">district</text>
+<polyline points="196.00,1295.00 466.00,1295.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="210.0" y="1308.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">district_id BIGINT PK NN</text>
+<text x="210.0" y="1335.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">name TEXT UQ NN</text>
+<text x="210.0" y="1362.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">is_active BOOLEAN NN</text>
+<polyline points="197.00,1392.00 465.00,1392.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="210.0" y="1416.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">UQ(name)</text>
+<rect x="1643.0" y="1184.5" width="340" height="310" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1813.0" y="1194.5" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Мастер</text>
+<text x="1813.0" y="1224.5" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">master</text>
+<polyline points="1643.00,1254.50 1983.00,1254.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="1657.0" y="1267.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">master_id BIGINT PK NN</text>
+<text x="1657.0" y="1294.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">user_id BIGINT F05 UQ NN</text>
+<text x="1657.0" y="1321.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">salon_id BIGINT F06 NN</text>
+<text x="1657.0" y="1348.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">specialization TEXT NN</text>
+<text x="1657.0" y="1375.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">experience_description TEXT NN</text>
+<text x="1657.0" y="1402.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">is_active BOOLEAN NN</text>
+<polyline points="1644.00,1432.50 1982.00,1432.50" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1657.0" y="1456.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">UQ(user_id)</text>
+<rect x="1056" y="1161.0" width="410" height="526" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1261.0" y="1171.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Решение модерации</text>
+<text x="1261.0" y="1201.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">moderation_decision</text>
+<polyline points="1056.00,1231.00 1466.00,1231.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="1070" y="1244.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">decision_id BIGINT PK NN</text>
+<text x="1070" y="1271.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">admin_user_id BIGINT F17 NN</text>
+<text x="1070" y="1298.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">target_user_id BIGINT F18 NULL</text>
+<text x="1070" y="1325.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">target_salon_id BIGINT F19 F22 NULL</text>
+<text x="1070" y="1352.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">target_master_id BIGINT F20 F23 NULL</text>
+<text x="1070" y="1379.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">target_review_id BIGINT F21 NULL</text>
+<text x="1070" y="1406.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">photo_path TEXT F22 F23 NULL</text>
+<text x="1070" y="1433.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">action TEXT NN</text>
+<text x="1070" y="1460.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">reason TEXT NN</text>
+<text x="1070" y="1487.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_at TIMESTAMP NN</text>
+<polyline points="1057.00,1517.00 1465.00,1517.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1070" y="1541.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">XOR: ровно один из четырёх target_*_id</text>
+<text x="1070" y="1568.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">photo_path → элемент выбранного салона /</text>
+<text x="1070" y="1595.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">мастера</text>
+<text x="1070" y="1622.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">Составные FK: (target_salon_id, photo_path)</text>
+<text x="1070" y="1649.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">и (target_master_id, photo_path)</text>
+<rect x="696" y="676.0" width="300" height="445" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="846.0" y="686.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Фотографии интерьера</text>
+<text x="846.0" y="716.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">salon_photo</text>
+<polyline points="696.00,746.00 996.00,746.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="710" y="759.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">salon_id BIGINT PK F14 NN</text>
+<text x="710" y="786.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">file_path TEXT PK NN</text>
+<text x="710" y="813.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">caption TEXT NN</text>
+<text x="710" y="840.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">sort_order INTEGER NN</text>
+<text x="710" y="867.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">visibility TEXT NN</text>
+<text x="710" y="894.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">mime_type TEXT NN</text>
+<text x="710" y="921.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">byte_size INTEGER NN</text>
+<text x="710" y="948.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_at TIMESTAMP NN</text>
+<polyline points="697.00,978.00 995.00,978.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="710" y="1002.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">PK(salon_id, file_path)</text>
+<text x="710" y="1029.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK byte_size: 1..5242880;</text>
+<text x="710" y="1056.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">JPEG | PNG</text>
+<text x="710" y="1083.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK sort_order &gt;= 0</text>
+<rect x="1524.0" y="676.0" width="310" height="445" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1679.0" y="686.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Фотографии работ</text>
+<text x="1679.0" y="716.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">master_photo</text>
+<polyline points="1524.00,746.00 1834.00,746.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="1538.0" y="759.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">master_id BIGINT PK F15 NN</text>
+<text x="1538.0" y="786.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">file_path TEXT PK NN</text>
+<text x="1538.0" y="813.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">caption TEXT NN</text>
+<text x="1538.0" y="840.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">sort_order INTEGER NN</text>
+<text x="1538.0" y="867.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">visibility TEXT NN</text>
+<text x="1538.0" y="894.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">mime_type TEXT NN</text>
+<text x="1538.0" y="921.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">byte_size INTEGER NN</text>
+<text x="1538.0" y="948.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_at TIMESTAMP NN</text>
+<polyline points="1525.00,978.00 1833.00,978.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1538.0" y="1002.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">PK(master_id, file_path)</text>
+<text x="1538.0" y="1029.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK byte_size: 1..5242880;</text>
+<text x="1538.0" y="1056.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">JPEG | PNG</text>
+<text x="1538.0" y="1083.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK sort_order &gt;= 0</text>
+<rect x="2030.0" y="140.0" width="370" height="472" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="2215.0" y="150.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Приглашение мастера</text>
+<text x="2215.0" y="180.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">master_invitation</text>
+<polyline points="2030.00,210.00 2400.00,210.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="2044.0" y="223.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">invitation_id BIGINT PK NN</text>
+<text x="2044.0" y="250.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">master_id BIGINT F24 NN</text>
+<text x="2044.0" y="277.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_by_user_id BIGINT F25 NN</text>
+<text x="2044.0" y="304.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">token_hash TEXT UQ NN</text>
+<text x="2044.0" y="331.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_at TIMESTAMP NN</text>
+<text x="2044.0" y="358.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">expires_at TIMESTAMP NN</text>
+<text x="2044.0" y="385.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">used_at TIMESTAMP NULL</text>
+<text x="2044.0" y="412.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">revoked_at TIMESTAMP NULL</text>
+<polyline points="2031.00,442.00 2399.00,442.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="2044.0" y="466.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">UQ(token_hash); один открытый токен</text>
+<text x="2044.0" y="493.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">на мастера</text>
+<text x="2044.0" y="520.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK expires_at &gt; created_at</text>
+<text x="2044.0" y="547.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">used_at и revoked_at</text>
+<text x="2044.0" y="574.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">взаимоисключающие</text>
+<rect x="2098.0" y="1335.5" width="330" height="337" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="2263.0" y="1345.5" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Рабочий интервал</text>
+<text x="2263.0" y="1375.5" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">work_interval</text>
+<polyline points="2098.00,1405.50 2428.00,1405.50" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="2112.0" y="1418.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">work_interval_id BIGINT PK NN</text>
+<text x="2112.0" y="1445.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">master_id BIGINT F09 NN</text>
+<text x="2112.0" y="1472.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">work_date DATE NN</text>
+<text x="2112.0" y="1499.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">start_time TIME NN</text>
+<text x="2112.0" y="1526.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">end_time TIME NN</text>
+<text x="2112.0" y="1553.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">slot TSRANGE NULL G</text>
+<polyline points="2099.00,1583.50 2427.00,1583.50" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="2112.0" y="1607.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK start_time &lt; end_time</text>
+<text x="2112.0" y="1634.5" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">EXCLUDE (master_id =, slot &amp;&amp;)</text>
+<rect x="560" y="1847.0" width="330" height="391" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="725.0" y="1857.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Услуга салона</text>
+<text x="725.0" y="1887.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">salon_service</text>
+<polyline points="560.00,1917.00 890.00,1917.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="574" y="1930.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">salon_service_id BIGINT PK NN</text>
+<text x="574" y="1957.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">salon_id BIGINT F03 NN</text>
+<text x="574" y="1984.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">service_type_id BIGINT F04 NN</text>
+<text x="574" y="2011.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">name TEXT NN</text>
+<text x="574" y="2038.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">description TEXT NN</text>
+<text x="574" y="2065.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">price NUMERIC(12,2) NN</text>
+<text x="574" y="2092.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">duration_minutes INTEGER NN</text>
+<text x="574" y="2119.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">is_active BOOLEAN NN</text>
+<polyline points="561.00,2149.00 889.00,2149.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="574" y="2173.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK price &gt;= 0; duration_minutes</text>
+<text x="574" y="2200.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">&gt; 0</text>
+<rect x="560" y="2318.0" width="320" height="256" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="720.0" y="2328.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Вид услуги</text>
+<text x="720.0" y="2358.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">service_type</text>
+<polyline points="560.00,2388.00 880.00,2388.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="574" y="2401.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">service_type_id BIGINT PK NN</text>
+<text x="574" y="2428.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">name TEXT UQ NN</text>
+<text x="574" y="2455.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">description TEXT NN</text>
+<text x="574" y="2482.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">is_active BOOLEAN NN</text>
+<polyline points="561.00,2512.00 879.00,2512.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="574" y="2536.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">UQ(name)</text>
+<rect x="1628.0" y="1847.0" width="370" height="283" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1813.0" y="1857.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Назначение услуги мастеру</text>
+<text x="1813.0" y="1887.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">master_service</text>
+<polyline points="1628.00,1917.00 1998.00,1917.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="1642.0" y="1930.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">master_id BIGINT PK F07 NN</text>
+<text x="1642.0" y="1957.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">salon_service_id BIGINT PK F08 NN</text>
+<text x="1642.0" y="1984.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">is_active BOOLEAN NN</text>
+<polyline points="1629.00,2014.00 1997.00,2014.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1642.0" y="2038.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">PK(master_id, salon_service_id)</text>
+<text x="1642.0" y="2065.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">Мастер и услуга принадлежат одному</text>
+<text x="1642.0" y="2092.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">салону</text>
+<rect x="1042.0" y="2574.0" width="450" height="769" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1267.0" y="2584.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Запись</text>
+<text x="1267.0" y="2614.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">appointment</text>
+<polyline points="1042.00,2644.00 1492.00,2644.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="1056.0" y="2657.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">appointment_id BIGINT PK NN</text>
+<text x="1056.0" y="2684.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">client_user_id BIGINT F10 NN</text>
+<text x="1056.0" y="2711.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">master_id BIGINT F13 NN</text>
+<text x="1056.0" y="2738.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">salon_service_id BIGINT F13 NN</text>
+<text x="1056.0" y="2765.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">start_at TIMESTAMP NN</text>
+<text x="1056.0" y="2792.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">service_name_snapshot TEXT NN</text>
+<text x="1056.0" y="2819.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">price_snapshot NUMERIC(12,2) NN</text>
+<text x="1056.0" y="2846.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">duration_snapshot INTEGER NN</text>
+<text x="1056.0" y="2873.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">end_at TIMESTAMP NULL G</text>
+<text x="1056.0" y="2900.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">slot TSRANGE NULL G</text>
+<text x="1056.0" y="2927.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">status TEXT NN</text>
+<text x="1056.0" y="2954.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_at TIMESTAMP NN</text>
+<text x="1056.0" y="2981.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">cancelled_at TIMESTAMP NULL</text>
+<text x="1056.0" y="3008.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">cancelled_by_user_id BIGINT F11 NULL</text>
+<text x="1056.0" y="3035.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">cancellation_reason TEXT NULL</text>
+<text x="1056.0" y="3062.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">result_marked_at TIMESTAMP NULL</text>
+<text x="1056.0" y="3089.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">result_marked_by_user_id BIGINT F12 NULL</text>
+<polyline points="1043.00,3119.00 1491.00,3119.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1056.0" y="3143.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">FK (master_id, salon_service_id) → master_service</text>
+<text x="1056.0" y="3170.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">EXCLUDE (master_id =, slot &amp;&amp;), кроме</text>
+<text x="1056.0" y="3197.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CANCELLED</text>
+<text x="1056.0" y="3224.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK: шаг начала 15 мин; price &gt;= 0; duration &gt;</text>
+<text x="1056.0" y="3251.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">0</text>
+<text x="1056.0" y="3278.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">Сведения об отмене и результате зависят от</text>
+<text x="1056.0" y="3305.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">status</text>
+<rect x="1612.0" y="2724.0" width="330" height="418" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1777.0" y="2734.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#171717">Отзыв</text>
+<text x="1777.0" y="2764.0" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">review</text>
+<polyline points="1612.00,2794.00 1942.00,2794.00" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="miter"/>
+<text x="1626.0" y="2807.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">review_id BIGINT PK NN</text>
+<text x="1626.0" y="2834.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">appointment_id BIGINT F16 NN</text>
+<text x="1626.0" y="2861.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">target_type TEXT NN</text>
+<text x="1626.0" y="2888.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">rating SMALLINT NN</text>
+<text x="1626.0" y="2915.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">text TEXT NULL</text>
+<text x="1626.0" y="2942.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">visibility TEXT NN</text>
+<text x="1626.0" y="2969.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="20" font-weight="normal" fill="#171717">created_at TIMESTAMP NN</text>
+<polyline points="1613.00,2999.00 1941.00,2999.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1626.0" y="3023.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">UQ(appointment_id, target_type)</text>
+<text x="1626.0" y="3050.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">CHECK rating BETWEEN 1 AND 5</text>
+<text x="1626.0" y="3077.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">target_type: SALON | MASTER;</text>
+<text x="1626.0" y="3104.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="18" font-weight="normal" fill="#171717">максимум 2 на запись</text>
+<polyline points="60.00,3433.00 2458.00,3433.00" fill="none" stroke="#777777" stroke-width="1" stroke-linejoin="miter"/>
+<text x="60" y="3455.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#171717">Обозначения: || — ровно 1; ○| — 0..1; ○&lt; — 0..N. Дуга на пересечении — линии не соединены.</text>
+<text x="60" y="3486.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#171717">Каждая сущность показана один раз. Чёрные точки соединения не используются: отдельные линии — отдельные связи.</text>
+<text x="60" y="3517.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#171717">PK — первичный ключ; F01…F25 — внешние ключи; UQ — уникальность; NN — NOT NULL; G — вычисляемый столбец.</text>
+<text x="60" y="3548.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#171717">TIMESTAMP — timestamp without time zone, Europe/Moscow. Все FK: ON DELETE RESTRICT.</text>
+<text x="60" y="3579.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#171717">Четыре target_*_id решения модерации образуют XOR. Составные FK фотографий показаны отдельными линиями.</text>
+<text x="60" y="3610.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial,sans-serif" font-size="21" font-weight="normal" fill="#171717">F01…F25 одинаково обозначены у полей таблиц и на соответствующих линиях.</text>
+</svg>

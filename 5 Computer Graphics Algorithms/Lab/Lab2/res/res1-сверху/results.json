@@ -1,0 +1,96 @@
+{
+  "parameters": {
+    "width_mm": 2000.0,
+    "height_mm": 1200.0,
+    "width_px": 600,
+    "height_px": 360,
+    "observer_z_mm": 2500.0,
+    "direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "screen_distance_mm": 2500.0,
+    "center_x_mm": 0.0,
+    "center_y_mm": 0.0,
+    "center_z_mm": 600.0,
+    "radius_mm": 350.0,
+    "kd": 0.2,
+    "ks": 0.8,
+    "shininess": 80.0,
+    "lights": [
+      {
+        "x_mm": 0.0,
+        "y_mm": -650.0,
+        "z_mm": 600.0,
+        "intensity_w_sr": 100.0,
+        "axis": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "x_mm": 0.0,
+        "y_mm": 650.0,
+        "z_mm": 600.0,
+        "intensity_w_sr": 100.0,
+        "axis": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      }
+    ]
+  },
+  "unit": "W/(m^2 sr)",
+  "model": "L=sum[I0*cos_emission/distance_m^2*cos_incidence*(kd+ks*cos_half^m)]",
+  "coefficients_unit": "sr^-1; empirical assignment BRDF, no energy-conservation claim",
+  "normalization": "round(255*L/visible_maximum); zero outside; all zero if maximum=0",
+  "statistics": {
+    "visible_minimum": 0.0,
+    "visible_maximum": 240.73640953030343,
+    "visible_mean": 8.102619296209575,
+    "visible_pixel_count": 62068,
+    "maximum_point_mm": [
+      -1.1418895439651295,
+      295.7493918869752,
+      787.1656840522669
+    ],
+    "sphere_sampled_minimum": 0.0,
+    "sphere_sampled_maximum": 241.5400400891798,
+    "sphere_grid": "361 polar angles x 720 azimuths, poles included"
+  },
+  "control_points": [
+    {
+      "name": "P1",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "z_mm": 950.0,
+      "radiance_w_m2_sr": 0.0,
+      "diffuse_w_m2_sr": 0.0,
+      "specular_w_m2_sr": 0.0,
+      "visible": true
+    },
+    {
+      "name": "P2",
+      "x_mm": -210.0,
+      "y_mm": 0.0,
+      "z_mm": 880.0,
+      "radiance_w_m2_sr": 0.0,
+      "diffuse_w_m2_sr": 0.0,
+      "specular_w_m2_sr": 0.0,
+      "visible": true
+    },
+    {
+      "name": "P3",
+      "x_mm": 210.0,
+      "y_mm": 0.0,
+      "z_mm": 880.0,
+      "radiance_w_m2_sr": 0.0,
+      "diffuse_w_m2_sr": 0.0,
+      "specular_w_m2_sr": 0.0,
+      "visible": true
+    }
+  ]
+}

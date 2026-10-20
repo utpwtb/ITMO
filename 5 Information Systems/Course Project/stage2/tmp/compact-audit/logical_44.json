@@ -1,0 +1,570 @@
+{
+  "nodes": [
+    {
+      "id": "user_account",
+      "x": 1108,
+      "y": 166,
+      "w": 300,
+      "h": 418
+    },
+    {
+      "id": "salon",
+      "x": 546.0,
+      "y": 1211.0,
+      "w": 360,
+      "h": 526
+    },
+    {
+      "id": "district",
+      "x": 232.0,
+      "y": 1277.0,
+      "w": 270,
+      "h": 229
+    },
+    {
+      "id": "master",
+      "x": 1740,
+      "y": 1215,
+      "w": 340,
+      "h": 353
+    },
+    {
+      "id": "moderation_decision",
+      "x": 1102.0,
+      "y": 1189.0,
+      "w": 410,
+      "h": 526
+    },
+    {
+      "id": "salon_photo",
+      "x": 712,
+      "y": 700.0,
+      "w": 300,
+      "h": 445
+    },
+    {
+      "id": "master_photo",
+      "x": 1576.0,
+      "y": 700.0,
+      "w": 310,
+      "h": 445
+    },
+    {
+      "id": "master_invitation",
+      "x": 2150.0,
+      "y": 140.0,
+      "w": 370,
+      "h": 472
+    },
+    {
+      "id": "work_interval",
+      "x": 2238.0,
+      "y": 1393.5,
+      "w": 330,
+      "h": 337
+    },
+    {
+      "id": "salon_service",
+      "x": 561.0,
+      "y": 1935.0,
+      "w": 330,
+      "h": 391
+    },
+    {
+      "id": "service_type",
+      "x": 566.0,
+      "y": 2370.0,
+      "w": 320,
+      "h": 256
+    },
+    {
+      "id": "master_service",
+      "x": 1722.0,
+      "y": 1935.0,
+      "w": 370,
+      "h": 283
+    },
+    {
+      "id": "appointment",
+      "x": 1082.0,
+      "y": 2626.0,
+      "w": 450,
+      "h": 769
+    },
+    {
+      "id": "review",
+      "x": 1142.0,
+      "y": 3439.0,
+      "w": 330,
+      "h": 418
+    }
+  ],
+  "edges": [
+    {
+      "id": "salon_owner_user_id_fkey",
+      "source": "salon",
+      "target": "user_account",
+      "points": [
+        [
+          590,
+          1211.0
+        ],
+        [
+          590,
+          316
+        ],
+        [
+          1108,
+          316
+        ]
+      ]
+    },
+    {
+      "id": "salon_district_id_fkey",
+      "source": "salon",
+      "target": "district",
+      "points": [
+        [
+          546.0,
+          1365
+        ],
+        [
+          502.0,
+          1365
+        ]
+      ]
+    },
+    {
+      "id": "master_user_id_fkey",
+      "source": "master",
+      "target": "user_account",
+      "points": [
+        [
+          1974,
+          1215
+        ],
+        [
+          1974,
+          316
+        ],
+        [
+          1408,
+          316
+        ]
+      ]
+    },
+    {
+      "id": "master_salon_id_fkey",
+      "source": "master",
+      "target": "salon",
+      "points": [
+        [
+          1930,
+          1568
+        ],
+        [
+          1930,
+          1891
+        ],
+        [
+          634,
+          1891
+        ],
+        [
+          634,
+          1737.0
+        ]
+      ]
+    },
+    {
+      "id": "salon_service_salon_id_fkey",
+      "source": "salon_service",
+      "target": "salon",
+      "points": [
+        [
+          590,
+          1935.0
+        ],
+        [
+          590,
+          1737.0
+        ]
+      ]
+    },
+    {
+      "id": "salon_service_service_type_id_fkey",
+      "source": "salon_service",
+      "target": "service_type",
+      "points": [
+        [
+          590,
+          2326.0
+        ],
+        [
+          590,
+          2370.0
+        ]
+      ]
+    },
+    {
+      "id": "master_service_master_id_fkey",
+      "source": "master_service",
+      "target": "master",
+      "points": [
+        [
+          2018,
+          1935.0
+        ],
+        [
+          2018,
+          1568
+        ]
+      ]
+    },
+    {
+      "id": "master_service_salon_service_id_fkey",
+      "source": "master_service",
+      "target": "salon_service",
+      "points": [
+        [
+          1722.0,
+          1979
+        ],
+        [
+          891.0,
+          1979
+        ]
+      ]
+    },
+    {
+      "id": "work_interval_master_id_fkey",
+      "source": "work_interval",
+      "target": "master",
+      "points": [
+        [
+          2238.0,
+          1550
+        ],
+        [
+          2080,
+          1550
+        ]
+      ]
+    },
+    {
+      "id": "appointment_master_id_salon_service_id_fkey",
+      "source": "appointment",
+      "target": "master_service",
+      "points": [
+        [
+          1214,
+          2626.0
+        ],
+        [
+          1214,
+          2370
+        ],
+        [
+          1974,
+          2370
+        ],
+        [
+          1974,
+          2218.0
+        ]
+      ]
+    },
+    {
+      "id": "appointment_client_user_id_fkey",
+      "source": "appointment",
+      "target": "user_account",
+      "points": [
+        [
+          1082.0,
+          2758
+        ],
+        [
+          100,
+          2758
+        ],
+        [
+          100,
+          184
+        ],
+        [
+          1108,
+          184
+        ]
+      ]
+    },
+    {
+      "id": "appointment_cancelled_by_user_id_fkey",
+      "source": "appointment",
+      "target": "user_account",
+      "points": [
+        [
+          1082.0,
+          2714
+        ],
+        [
+          144,
+          2714
+        ],
+        [
+          144,
+          228
+        ],
+        [
+          1108,
+          228
+        ]
+      ]
+    },
+    {
+      "id": "appointment_result_marked_by_user_id_fkey",
+      "source": "appointment",
+      "target": "user_account",
+      "points": [
+        [
+          1082.0,
+          2670
+        ],
+        [
+          188,
+          2670
+        ],
+        [
+          188,
+          272
+        ],
+        [
+          1108,
+          272
+        ]
+      ]
+    },
+    {
+      "id": "salon_photo_salon_id_fkey",
+      "source": "salon_photo",
+      "target": "salon",
+      "points": [
+        [
+          950,
+          1145.0
+        ],
+        [
+          950,
+          1233
+        ],
+        [
+          906.0,
+          1233
+        ]
+      ]
+    },
+    {
+      "id": "master_photo_master_id_fkey",
+      "source": "master_photo",
+      "target": "master",
+      "points": [
+        [
+          1664,
+          1145.0
+        ],
+        [
+          1664,
+          1233
+        ],
+        [
+          1740,
+          1233
+        ]
+      ]
+    },
+    {
+      "id": "review_appointment_id_fkey",
+      "source": "review",
+      "target": "appointment",
+      "points": [
+        [
+          1170,
+          3439.0
+        ],
+        [
+          1170,
+          3395.0
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_admin_user_id_fkey",
+      "source": "moderation_decision",
+      "target": "user_account",
+      "points": [
+        [
+          1126,
+          1189.0
+        ],
+        [
+          1126,
+          584
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_user_id_fkey",
+      "source": "moderation_decision",
+      "target": "user_account",
+      "points": [
+        [
+          1170,
+          1189.0
+        ],
+        [
+          1170,
+          584
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_salon_id_fkey",
+      "source": "moderation_decision",
+      "target": "salon",
+      "points": [
+        [
+          1102.0,
+          1409
+        ],
+        [
+          906.0,
+          1409
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_master_id_fkey",
+      "source": "moderation_decision",
+      "target": "master",
+      "points": [
+        [
+          1512.0,
+          1409
+        ],
+        [
+          1740,
+          1409
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_salon_id_photo_path_fkey",
+      "source": "moderation_decision",
+      "target": "salon_photo",
+      "points": [
+        [
+          1102.0,
+          1277
+        ],
+        [
+          994,
+          1277
+        ],
+        [
+          994,
+          1145.0
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_master_id_photo_path_fkey",
+      "source": "moderation_decision",
+      "target": "master_photo",
+      "points": [
+        [
+          1512.0,
+          1277
+        ],
+        [
+          1620,
+          1277
+        ],
+        [
+          1620,
+          1145.0
+        ]
+      ]
+    },
+    {
+      "id": "moderation_decision_target_review_id_fkey",
+      "source": "moderation_decision",
+      "target": "review",
+      "points": [
+        [
+          1258,
+          1715.0
+        ],
+        [
+          1258,
+          1847
+        ],
+        [
+          2150,
+          1847
+        ],
+        [
+          2150,
+          3483
+        ],
+        [
+          1472.0,
+          3483
+        ]
+      ]
+    },
+    {
+      "id": "master_invitation_master_id_fkey",
+      "source": "master_invitation",
+      "target": "master",
+      "points": [
+        [
+          2194,
+          612.0
+        ],
+        [
+          2194,
+          1145
+        ],
+        [
+          2062,
+          1145
+        ],
+        [
+          2062,
+          1215
+        ]
+      ]
+    },
+    {
+      "id": "master_invitation_created_by_user_id_fkey",
+      "source": "master_invitation",
+      "target": "user_account",
+      "points": [
+        [
+          2150.0,
+          184
+        ],
+        [
+          1408,
+          184
+        ]
+      ]
+    }
+  ],
+  "canvas": {
+    "x_min": -2000,
+    "y_min": -100,
+    "width": 7600,
+    "height": 6900
+  },
+  "note": "Two crossings both lie on moderation_decision_target_review_id_fkey. Draw this edge with bridge jumps at those intersections; every entity appears exactly once."
+}

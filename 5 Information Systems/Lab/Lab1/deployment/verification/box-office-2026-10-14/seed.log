@@ -1,0 +1,100 @@
+Current counts: {'locations': 0, 'coordinates': 0, 'people': 0, 'movies': 0}
+Dataset: 12 locations, 16 coordinates, 12 people, 32 movies.
+CREATED L01: locations #15
+CREATED L02: locations #16
+CREATED L03: locations #17
+CREATED L04: locations #18
+CREATED L05: locations #19
+CREATED L06: locations #20
+CREATED L07: locations #21
+CREATED L08: locations #22
+CREATED L09: locations #23
+CREATED L10: locations #24
+CREATED L11: locations #25
+CREATED L12: locations #26
+CREATED C01: coordinates #24
+CREATED C02: coordinates #25
+CREATED C03: coordinates #26
+CREATED C04: coordinates #27
+CREATED C05: coordinates #28
+CREATED C06: coordinates #29
+CREATED C07: coordinates #30
+CREATED C08: coordinates #31
+CREATED C09: coordinates #32
+CREATED C10: coordinates #33
+CREATED C11: coordinates #34
+CREATED C12: coordinates #35
+CREATED C13: coordinates #36
+CREATED C14: coordinates #37
+CREATED C15: coordinates #38
+CREATED C16: coordinates #39
+CREATED P01: people #15
+CREATED P02: people #16
+CREATED P03: people #17
+CREATED P04: people #18
+CREATED P05: people #19
+CREATED P06: people #20
+CREATED P07: people #21
+CREATED P08: people #22
+CREATED P09: people #23
+CREATED P10: people #24
+CREATED P11: people #25
+CREATED P12: people #26
+CREATED M01: movies #44
+CREATED M02: movies #45
+CREATED M03: movies #46
+CREATED M04: movies #47
+CREATED M05: movies #48
+CREATED M06: movies #49
+CREATED M07: movies #50
+CREATED M08: movies #51
+CREATED M09: movies #52
+CREATED M10: movies #53
+CREATED M11: movies #54
+CREATED M12: movies #55
+CREATED M13: movies #56
+CREATED M14: movies #57
+CREATED M15: movies #58
+CREATED M16: movies #59
+CREATED M17: movies #60
+CREATED M18: movies #61
+CREATED M19: movies #62
+CREATED M20: movies #63
+CREATED M21: movies #64
+CREATED M22: movies #65
+CREATED M23: movies #66
+CREATED M24: movies #67
+CREATED M25: movies #68
+CREATED M26: movies #69
+CREATED M27: movies #70
+CREATED M28: movies #71
+CREATED M29: movies #72
+CREATED M30: movies #73
+CREATED M31: movies #74
+CREATED M32: movies #75
+PASS All 72 fixtures persisted
+PASS All fixture scalar values and foreign keys match the plan
+PASS Every movie respects USA box office <= known total box office
+PASS Fixtures include equal box offices and unknown total box office
+PASS Original time-zone identifiers survive persistence
+PASS Second movie page contains ten rows
+PASS Exact duplicate-name filter returns two rows
+PASS Partial name is not an exact match
+PASS Upper/lowercase names are distinct
+PASS Empty-string filter includes boundary movie
+PASS ID sorting reverses direction
+PASS Ordinary prefix returns three fixture movies
+PASS LIKE metacharacters are literal
+PASS Maximum long budget preserves precision
+PASS Average matches the entire live collection
+PASS Movie detail expands related entities
+PASS Exact genre filter matches the known collection
+PASS Exact mpaaRating filter matches the known collection
+PASS Exact director filter matches the known collection
+PASS Exact screenwriter filter matches the known collection
+PASS Exact operator filter matches the known collection
+PASS Equal names have stable ID ordering
+PASS Invalid coordinate is rejected
+PASS Duplicate passport is rejected
+PASS Stale version is rejected
+Complete. No bulk awards, redistribution or deletion were executed.

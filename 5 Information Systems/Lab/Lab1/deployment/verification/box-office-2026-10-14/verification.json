@@ -1,0 +1,34 @@
+{
+  "backup": "/home/studs/s407960/is-lab1-4101/.runtime/box-office-20261014-172538",
+  "before": {
+    "movie": 31,
+    "person": 12,
+    "coordinates": 16,
+    "location": 12,
+    "app_state": 1,
+    "app_user": 3
+  },
+  "after": {
+    "movie": 32,
+    "person": 12,
+    "coordinates": 16,
+    "location": 12,
+    "app_state": 1,
+    "app_user": 3
+  },
+  "server_tests": 43,
+  "seed_checks": 25,
+  "constraint_validated": true,
+  "invalid_api_update_rejected_without_change": true,
+  "invalid_direct_sql_update_rejected": true,
+  "war_sha256": "918bb897f78df5997e579a34dd41fcc02c9855f1c1b30fce0a6b332832ab0e88",
+  "service_status": "Running PID 12451",
+  "browser_checks": {
+    "initial_errors": 0,
+    "box_office_error_visible": true,
+    "errors_after_correction": 0,
+    "errors_with_unknown_total": 0,
+    "console_errors": 0,
+    "verified_movie_total": 32
+  }
+}

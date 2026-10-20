@@ -1,0 +1,155 @@
+{
+  "before": {
+    "hard_ban_count": 0,
+    "hard_bans": [],
+    "marker_count": 34,
+    "markers": [
+      [
+        "Параллелизмы",
+        "не только",
+        1
+      ],
+      [
+        "Обвязка чата",
+        "markdown-подзаголовок ##",
+        26
+      ],
+      [
+        "Обвязка чата",
+        "жирный подзаголовок **…**",
+        7
+      ]
+    ],
+    "rhythm": {
+      "sentences": 177,
+      "words": 2124,
+      "mean_len": 12,
+      "stdev_len": 9.1,
+      "cv_len": 0.762,
+      "min_len": 1,
+      "max_len": 90,
+      "short_share": 0.158,
+      "long_share": 0.073,
+      "em_dash": 0,
+      "ellipsis": 0,
+      "parentheses": 2,
+      "questions": 0,
+      "staccato_runs": 0,
+      "staccato_max": 0
+    },
+    "morph": {
+      "nouns": 811,
+      "verbs": 332,
+      "noun_verb_ratio": 2.44,
+      "nominalizations": 207,
+      "tokens": 1916
+    },
+    "structure": {
+      "paragraphs": 105,
+      "para_mean_sent": 2.1,
+      "para_cv": 1.006,
+      "list_items": 12,
+      "listicle_share": 0.09,
+      "title_case_headings": 0,
+      "truncated_ending": false
+    },
+    "lexical": {
+      "tokens": 1916,
+      "mattr": 0.9212732919254658
+    },
+    "repeats": {
+      "tokens": 600,
+      "phrases": []
+    },
+    "score": {
+      "score": 80,
+      "band": "правка",
+      "penalties": [
+        {
+          "reason": "обвязка чата: 2 следа",
+          "points": -20
+        }
+      ],
+      "notes": []
+    },
+    "genre": "academic",
+    "muted_by_genre": {
+      "hard_bans": 1,
+      "markers": 3
+    }
+  },
+  "after": {
+    "hard_ban_count": 0,
+    "hard_bans": [],
+    "marker_count": 32,
+    "markers": [
+      [
+        "Обвязка чата",
+        "markdown-подзаголовок ##",
+        25
+      ],
+      [
+        "Обвязка чата",
+        "жирный подзаголовок **…**",
+        7
+      ]
+    ],
+    "rhythm": {
+      "sentences": 171,
+      "words": 1991,
+      "mean_len": 11.6,
+      "stdev_len": 9.0,
+      "cv_len": 0.774,
+      "min_len": 1,
+      "max_len": 91,
+      "short_share": 0.135,
+      "long_share": 0.064,
+      "em_dash": 0,
+      "ellipsis": 0,
+      "parentheses": 1,
+      "questions": 0,
+      "staccato_runs": 0,
+      "staccato_max": 0
+    },
+    "morph": {
+      "nouns": 783,
+      "verbs": 314,
+      "noun_verb_ratio": 2.49,
+      "nominalizations": 195,
+      "tokens": 1826
+    },
+    "structure": {
+      "paragraphs": 103,
+      "para_mean_sent": 2.1,
+      "para_cv": 0.91,
+      "list_items": 12,
+      "listicle_share": 0.092,
+      "title_case_headings": 0,
+      "truncated_ending": false
+    },
+    "lexical": {
+      "tokens": 1826,
+      "mattr": 0.8979813664596273
+    },
+    "repeats": {
+      "tokens": 600,
+      "phrases": []
+    },
+    "score": {
+      "score": 80,
+      "band": "правка",
+      "penalties": [
+        {
+          "reason": "обвязка чата: 2 следа",
+          "points": -20
+        }
+      ],
+      "notes": []
+    },
+    "genre": "academic",
+    "muted_by_genre": {
+      "hard_bans": 0,
+      "markers": 0
+    }
+  }
+}

@@ -1,0 +1,642 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/i107q5of",
+    "id": "i107q5of",
+    "slide": 5,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F6F2",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yhkbe1o7",
+      "id": "5",
+      "name": "Как новые знания дополняют базу",
+      "bbox": [
+        72,
+        50,
+        1136,
+        111
+      ],
+      "geometry": "rect",
+      "text": "Как новые знания дополняют базу",
+      "textPreview": "Как новые знания дополняют базу",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Как новые знания дополняют базу"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Как новые знания дополняют базу",
+          "resolvedTextStyle": {
+            "fontSize": 43,
+            "typeface": "Arial",
+            "color": "#182B3A",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Как новые знания дополняют базу",
+              "fontSize": 43,
+              "typeface": "Arial",
+              "color": "#182B3A",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dgbulwnm",
+      "id": "2",
+      "name": "05",
+      "bbox": [
+        1170,
+        665,
+        45,
+        25
+      ],
+      "geometry": "rect",
+      "text": "05",
+      "textPreview": "05",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#61707A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05",
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#61707A"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/8bm5cnad",
+      "id": "6",
+      "bbox": [
+        72,
+        185,
+        1136,
+        393
+      ],
+      "text": "Что найдено | Предложение системы\nНовое самостоятельное знание | Создать заметку\nДополнение к знакомой теме | Дополнить существующую заметку\nНебольшая часть общей темы | Включить в раздел подходящей заметки\nПовтор без новой информации | Пропустить\nПротиворечие прежней записи | Отметить конфликт для проверки",
+      "textPreview": "Что найдено | Предложение системы | Новое самостоятельное знание | Создать заметку | Дополнение к знакомой теме | Дополнить существующую ...",
+      "rows": 6,
+      "cols": 2,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            72,
+            185,
+            548,
+            58
+          ],
+          "text": "Что найдено",
+          "textPreview": "Что найдено",
+          "fillColor": "#182B3A",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Что найдено",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Что найдено",
+                  "fontSize": 23,
+                  "typeface": "Arial",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            620,
+            185,
+            588,
+            58
+          ],
+          "text": "Предложение системы",
+          "textPreview": "Предложение системы",
+          "fillColor": "#182B3A",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Предложение системы",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Предложение системы",
+                  "fontSize": 23,
+                  "typeface": "Arial",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            72,
+            243,
+            548,
+            67
+          ],
+          "text": "Новое самостоятельное знание",
+          "textPreview": "Новое самостоятельное знание",
+          "fillColor": "#F7F6F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Новое самостоятельное знание",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Новое самостоятельное знание",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#182B3A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            620,
+            243,
+            588,
+            67
+          ],
+          "text": "Создать заметку",
+          "textPreview": "Создать заметку",
+          "fillColor": "#ECF1FC",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Создать заметку",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Создать заметку",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#315FEA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            72,
+            310,
+            548,
+            67
+          ],
+          "text": "Дополнение к знакомой теме",
+          "textPreview": "Дополнение к знакомой теме",
+          "fillColor": "#F7F6F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Дополнение к знакомой теме",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Дополнение к знакомой теме",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#182B3A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            620,
+            310,
+            588,
+            67
+          ],
+          "text": "Дополнить существующую заметку",
+          "textPreview": "Дополнить существующую заметку",
+          "fillColor": "#ECF1FC",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Дополнить существующую заметку",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Дополнить существующую заметку",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#315FEA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            72,
+            377,
+            548,
+            67
+          ],
+          "text": "Небольшая часть общей темы",
+          "textPreview": "Небольшая часть общей темы",
+          "fillColor": "#F7F6F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Небольшая часть общей темы",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Небольшая часть общей темы",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#182B3A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            620,
+            377,
+            588,
+            67
+          ],
+          "text": "Включить в раздел подходящей заметки",
+          "textPreview": "Включить в раздел подходящей заметки",
+          "fillColor": "#ECF1FC",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Включить в раздел подходящей заметки",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Включить в раздел подходящей заметки",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#315FEA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            72,
+            444,
+            548,
+            67
+          ],
+          "text": "Повтор без новой информации",
+          "textPreview": "Повтор без новой информации",
+          "fillColor": "#F7F6F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Повтор без новой информации",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Повтор без новой информации",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#182B3A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            620,
+            444,
+            588,
+            67
+          ],
+          "text": "Пропустить",
+          "textPreview": "Пропустить",
+          "fillColor": "#ECF1FC",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Пропустить",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Пропустить",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#315FEA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            72,
+            511,
+            548,
+            67
+          ],
+          "text": "Противоречие прежней записи",
+          "textPreview": "Противоречие прежней записи",
+          "fillColor": "#F7F6F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Противоречие прежней записи",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Противоречие прежней записи",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#182B3A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            620,
+            511,
+            588,
+            67
+          ],
+          "text": "Отметить конфликт для проверки",
+          "textPreview": "Отметить конфликт для проверки",
+          "fillColor": "#ECF1FC",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Отметить конфликт для проверки",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Отметить конфликт для проверки",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#315FEA"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z2tcnm5s",
+      "id": "4",
+      "name": "Связи между заметками объединяют знания из разных диалогов",
+      "bbox": [
+        72,
+        620,
+        1100,
+        47
+      ],
+      "geometry": "rect",
+      "text": "Связи между заметками объединяют знания из разных диалогов",
+      "textPreview": "Связи между заметками объединяют знания из разных диалогов",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Связи между заметками объединяют знания из разных диалогов"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Связи между заметками объединяют знания из разных диалогов",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Arial",
+            "color": "#315FEA"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Связи между заметками объединяют знания из разных диалогов",
+              "fontSize": 26,
+              "typeface": "Arial",
+              "color": "#315FEA"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

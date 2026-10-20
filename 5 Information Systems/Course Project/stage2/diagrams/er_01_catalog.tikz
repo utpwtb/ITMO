@@ -1,0 +1,26 @@
+\begingroup\setstretch{1}\begin{tikzpicture}[x=1cm,y=1cm, entity/.style={draw,rounded corners=1pt,fill=gray!3,align=center,text width=3.4cm,minimum width=3.6cm,minimum height=2.2cm,font=\small,inner sep=2pt,outer sep=0pt}]
+\draw (3.8,8.0) -- (5.2,8.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.16,8.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.84,8.25) {0..N};
+\draw (8.8,8.0) -- (10.2,8.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.16,8.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (9.84,8.25) {0..N};
+\draw (15.2,8.0) -- (13.8,8.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (14.84,8.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (14.16,8.25) {0..N};
+\draw (5.2,6.9) -- (5.2,5.7) -- (2,5.7) -- (2.0,4.1);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (5.0,6.6000000000000005) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (2.3,4.3999999999999995) {0..N};
+\draw (7.0,4.1) -- (7.0,6.9);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (7.3,4.3999999999999995) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (7.3,6.6000000000000005) {0..1};
+\draw (5.2,3.0) -- (3.8,3.0);
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.84,3.25) {1};
+\node[fill=white,inner sep=1pt,font=\scriptsize] at (4.16,3.25) {0..1};
+\node[entity] (district) at (2,8) {\textbf{Район}\\{\scriptsize \texttt{district\_\allowbreak{}id}}};
+\node[entity] (salon) at (7,8) {\textbf{Салон}\\{\scriptsize \texttt{salon\_\allowbreak{}id}}\\{\scriptsize \{Фото интерьера:\\путь, подпись,\\порядок, видимость\}}};
+\node[entity] (service) at (12,8) {\textbf{Услуга салона}\\{\scriptsize \texttt{salon\_\allowbreak{}service\_\allowbreak{}id}}};
+\node[entity] (type) at (17,8) {\textbf{Вид услуги}\\{\scriptsize \texttt{service\_\allowbreak{}type\_\allowbreak{}id}}};
+\node[entity] (master) at (2,3) {\textbf{Мастер}\\{\scriptsize \texttt{master\_\allowbreak{}id}}\\{\scriptsize \{Фото работ:\\путь, подпись,\\порядок, видимость\}}};
+\node[entity] (owner) at (7,3) {\textbf{Пользователь}\\{\scriptsize \texttt{user\_\allowbreak{}id}}};
+\end{tikzpicture}\endgroup
