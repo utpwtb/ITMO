@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "finished_at": "2026-10-20T21:56:37+00:00",
+  "ddragon_version": "16.20.1",
+  "communitydragon_patch": "16.20",
+  "locale": "ru_RU",
+  "requested_champions": [
+    "Karma",
+    "Lux",
+    "Morgana"
+  ],
+  "counts": {
+    "champions": 3,
+    "abilities": 15,
+    "communitydragon": 3,
+    "official_pages": 3,
+    "errors": 0
+  },
+  "options": {
+    "community_dragon": true,
+    "official_pages": true,
+    "download_images": true,
+    "workers": 4
+  },
+  "complete": true,
+  "notes": [
+    "Data Dragon tags 表示英雄分类，不是上路/打野等分路。",
+    "官网为无历史版本保证的当前页面，仅用于核对，不自动覆盖固定版本数据。",
+    "CommunityDragon 仅核对同一 major.minor 补丁及英雄 ID，不保证与 Data Dragon 构建完全相同。",
+    "技能机制和对象/条件需人工核验；tooltip 的 {{...}} 变量保留，不猜测数值。",
+    "Data Dragon 只提供主要 P/Q/W/E/R；变身、子技能可能需要补充来源或人工整理。",
+    "mechanics_review.csv 保留人工编辑，仅追加新获取技能的待核验行。"
+  ],
+  "resources": [
+    {
+      "path": "16.20.1\\ru_RU\\images\\champion\\Karma.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/champion/Karma.png",
+      "retrieved_at": "2026-10-20T21:51:08+00:00",
+      "bytes": 30154,
+      "sha256": "e1df55d95c9a90445b59615db2984c3a8a9d8df3578faf968872bbe2e0075bc0",
+      "etag": "\"7e26361ff3c44773ec495c18e5166fb1\"",
+      "last_modified": "Tue, 06 Oct 2026 21:12:42 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\champion\\Lux.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/champion/Lux.png",
+      "retrieved_at": "2026-10-20T21:51:20+00:00",
+      "bytes": 29188,
+      "sha256": "64639bea2aa7d622dd07287de7a7820950e567f0993c7dcc422e1e699fd743fd",
+      "etag": "\"d82b67c6982fbd350ff966be4d578b77\"",
+      "last_modified": "Tue, 06 Oct 2026 21:12:42 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\champion\\Morgana.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/champion/Morgana.png",
+      "retrieved_at": "2026-10-20T21:51:32+00:00",
+      "bytes": 26025,
+      "sha256": "bd170027904c2e5a354e53dca0f5d50516a4f3d60a4fbb0c286c9eb32d8d8954",
+      "etag": "\"c917facb9c0c7e2390b8a5871bdbe5c9\"",
+      "last_modified": "Tue, 06 Oct 2026 21:12:42 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\passive\\FallenAngel_Empathize.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/passive/FallenAngel_Empathize.png",
+      "retrieved_at": "2026-10-20T21:51:33+00:00",
+      "bytes": 5841,
+      "sha256": "e18290599d085b3fb3ab0620bdb230501725acb249cfe9f69472de167ecee5f7",
+      "etag": "\"d0245ebc3c9c6d5968ccd946c6b06fbf\"",
+      "last_modified": "Tue, 06 Oct 2026 21:12:49 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\passive\\Karma_Passive.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/passive/Karma_Passive.png",
+      "retrieved_at": "2026-10-20T21:51:10+00:00",
+      "bytes": 5228,
+      "sha256": "138593083ea40265dcef9a72a7540e536d700e8b0501cfb88dd89de31838ca03",
+      "etag": "\"4ef2af558b8d88a6669de2194bf3c895\"",
+      "last_modified": "Tue, 06 Oct 2026 21:12:49 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\passive\\LuxIlluminatingFraulein.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/passive/LuxIlluminatingFraulein.png",
+      "retrieved_at": "2026-10-20T21:51:21+00:00",
+      "bytes": 5815,
+      "sha256": "2b4f421b424450afeca3757d86fbceed1c15a67960c5ccdddbf3341d71042b68",
+      "etag": "\"755c3b4abe6a13a402c98b1da6441589\"",
+      "last_modified": "Tue, 06 Oct 2026 21:12:49 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\KarmaMantra.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/KarmaMantra.png",
+      "retrieved_at": "2026-10-20T21:51:15+00:00",
+      "bytes": 6957,
+      "sha256": "c444d52fb694861fb4da627a729de3965917d6ea584fedb7ce4f76faa632e332",
+      "etag": "\"ef3751dec65e82c8a33e327656ca3c6d\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\KarmaQ.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/KarmaQ.png",
+      "retrieved_at": "2026-10-20T21:51:11+00:00",
+      "bytes": 5041,
+      "sha256": "2eb43d55f5e9987b975bd52b6bfd06d6250670e20ebed5d647a05cc82183c8a8",
+      "etag": "\"781e26a30e4a99ff9f55bd7a1991464a\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\KarmaSolKimShield.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/KarmaSolKimShield.png",
+      "retrieved_at": "2026-10-20T21:51:13+00:00",
+      "bytes": 6146,
+      "sha256": "55abf9b74c415447376bbcd99ca1f51e56ff6a92838725243ae73586e872d3a3",
+      "etag": "\"3ab617f28c14ec754a69528e5687996c\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\KarmaSpiritBind.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/KarmaSpiritBind.png",
+      "retrieved_at": "2026-10-20T21:51:12+00:00",
+      "bytes": 4572,
+      "sha256": "a132a48347bdaf067022bac979139c842b11887e349bf58e23a8c585bc892263",
+      "etag": "\"5dd3801192f99b37c999fbaa887aad53\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\LuxLightBinding.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/LuxLightBinding.png",
+      "retrieved_at": "2026-10-20T21:51:22+00:00",
+      "bytes": 6820,
+      "sha256": "06abdcb3edede637b6fd076e69381f2ff538a30c788c3ec857d4834742c2b424",
+      "etag": "\"688e7a5ce016310129d63951cf6c1f26\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\LuxLightStrikeKugel.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/LuxLightStrikeKugel.png",
+      "retrieved_at": "2026-10-20T21:51:25+00:00",
+      "bytes": 6567,
+      "sha256": "c5900b892f0065d9b19ce4d584b7633c23235dbfd0bf55cb7444fe0162fa0138",
+      "etag": "\"3f3af466edf4a9559801b13d7b277377\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\LuxPrismaticWave.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/LuxPrismaticWave.png",
+      "retrieved_at": "2026-10-20T21:51:24+00:00",
+      "bytes": 6679,
+      "sha256": "9eec398494b60cb908ca2a5635463ad3ee63bce31521a7a3ce657dbc2c6627e2",
+      "etag": "\"c77984713e69ea952ccb0a15df1fa153\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\LuxR.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/LuxR.png",
+      "retrieved_at": "2026-10-20T21:51:26+00:00",
+      "bytes": 5520,
+      "sha256": "392a1ed2da41f165ae79c2c3e00b8796ff017f6ce9d55e37d401d63606cb2a86",
+      "etag": "\"e8cabd42fbb95cdc4930c32ac15cdeb6\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\MorganaE.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/MorganaE.png",
+      "retrieved_at": "2026-10-20T21:51:37+00:00",
+      "bytes": 4924,
+      "sha256": "92e80ca3f16d0bc85948167f41528f4bb2fba47bb79131fddd0b873237161bbc",
+      "etag": "\"38c79f58588724657cc3384db088ac00\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\MorganaQ.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/MorganaQ.png",
+      "retrieved_at": "2026-10-20T21:51:34+00:00",
+      "bytes": 6387,
+      "sha256": "69160b268d435c77c5999a58c7b062c702019635e544288c7fa229d698d37061",
+      "etag": "\"ebdf82df7311a875a825fe0252591147\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\MorganaR.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/MorganaR.png",
+      "retrieved_at": "2026-10-20T21:51:38+00:00",
+      "bytes": 6789,
+      "sha256": "1d5c0ae0dbc60fa3dd958c8d7c3f596ffeb68494e6f60acfd2ce94e865755eea",
+      "etag": "\"886c3cf18835a4829090fab6762b6a7c\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\images\\spell\\MorganaW.png",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/MorganaW.png",
+      "retrieved_at": "2026-10-20T21:51:35+00:00",
+      "bytes": 5390,
+      "sha256": "59696d65b82ccde47c250360e202c5a7a569681b876e3be032a38a6d5056abe3",
+      "etag": "\"9e8f0f3d45aa28cb65055261ec407759\"",
+      "last_modified": "Tue, 06 Oct 2026 21:13:08 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\communitydragon\\Karma.json",
+      "url": "https://raw.communitydragon.org/16.20/plugins/rcp-be-lol-game-data/global/ru_ru/v1/champions/43.json",
+      "retrieved_at": "2026-10-20T21:51:06+00:00",
+      "bytes": 67104,
+      "sha256": "565c2f1f53f1796fb8fa8a439ea98f1266eb0fa56aa4f487f257817372bbbc09",
+      "etag": "W/\"6a31fc73-10620\"",
+      "last_modified": "Wed, 17 Jun 2026 01:46:27 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\communitydragon\\Lux.json",
+      "url": "https://raw.communitydragon.org/16.20/plugins/rcp-be-lol-game-data/global/ru_ru/v1/champions/99.json",
+      "retrieved_at": "2026-10-20T21:51:17+00:00",
+      "bytes": 73670,
+      "sha256": "b8ee7e9e6bfb861288063801b077d899eec4f04d46c9f6813e2ee426fd236d4f",
+      "etag": "W/\"6a824dd9-11fc6\"",
+      "last_modified": "Sun, 16 Aug 2026 23:55:05 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\communitydragon\\Morgana.json",
+      "url": "https://raw.communitydragon.org/16.20/plugins/rcp-be-lol-game-data/global/ru_ru/v1/champions/25.json",
+      "retrieved_at": "2026-10-20T21:51:29+00:00",
+      "bytes": 73071,
+      "sha256": "b6352b030f990846551d0c968dbe54fb2b94a9e9f1830e67b41cafc133c109dd",
+      "etag": "W/\"6abb0c76-11d6f\"",
+      "last_modified": "Tue, 29 Sep 2026 00:55:18 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\communitydragon\\content-metadata.json",
+      "url": "https://raw.communitydragon.org/16.20/content-metadata.json",
+      "retrieved_at": "2026-10-20T21:51:04+00:00",
+      "bytes": 74,
+      "sha256": "ab28af6e79f41825ad5f1f8b9d8f262df1267ce1ce0ea7d77291800484879dcd",
+      "etag": "W/\"6aca1494-4a\"",
+      "last_modified": "Sat, 10 Oct 2026 10:33:56 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\ddragon\\champion.json",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion.json",
+      "retrieved_at": "2026-10-20T21:51:00+00:00",
+      "bytes": 198787,
+      "sha256": "ca701536f4f36d157177bce18617213e364b1618b23db344189b525fde3b8ea0",
+      "etag": "\"78b96fa8d08d54e20c96e51d7ce1447b\"",
+      "last_modified": "Tue, 06 Oct 2026 21:14:03 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\ddragon\\champions\\Karma.json",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Karma.json",
+      "retrieved_at": "2026-10-20T21:51:03+00:00",
+      "bytes": 21102,
+      "sha256": "62f7f7df147b262e7c9c7494f59b5277c4d4af0868f6f1f5eeca49a1708b5f3b",
+      "etag": "\"f403c8a639a0cf9f3fe495553b6b4027\"",
+      "last_modified": "Tue, 06 Oct 2026 21:14:04 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\ddragon\\champions\\Lux.json",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Lux.json",
+      "retrieved_at": "2026-10-20T21:51:15+00:00",
+      "bytes": 19799,
+      "sha256": "768695bb4f19a08ec7d025ff86f910056d1e783628d25747c387f09b5f0cb9b4",
+      "etag": "\"d66540d2b81f4787a54dc0f4855698b1\"",
+      "last_modified": "Tue, 06 Oct 2026 21:14:04 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\ddragon\\champions\\Morgana.json",
+      "url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Morgana.json",
+      "retrieved_at": "2026-10-20T21:51:27+00:00",
+      "bytes": 20915,
+      "sha256": "f1443e2ab86fe80b2673eda6e38c12f213ab52c1d83d954c90c61c0e53f3c229",
+      "etag": "\"0ab08e96167000fd0b843192feb23664\"",
+      "last_modified": "Tue, 06 Oct 2026 21:14:04 GMT",
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\official\\Karma.html",
+      "url": "https://www.leagueoflegends.com/ru-ru/champions/karma/",
+      "retrieved_at": "2026-10-20T21:51:07+00:00",
+      "bytes": 179058,
+      "sha256": "13d760a971ff195afe723e221f311c7df3e1eb3deecac138dbc0e79484157ef6",
+      "etag": "\"e0l8b3kki43rlk\"",
+      "last_modified": null,
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\official\\Lux.html",
+      "url": "https://www.leagueoflegends.com/ru-ru/champions/lux/",
+      "retrieved_at": "2026-10-20T21:51:18+00:00",
+      "bytes": 187108,
+      "sha256": "1d7a3cd6f94a31bc5c6b50d77644bd18e592831a5e8b4a7a35f36ddb4ff0406b",
+      "etag": "\"8gncvyv2hf3xhv\"",
+      "last_modified": null,
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\official\\Morgana.html",
+      "url": "https://www.leagueoflegends.com/ru-ru/champions/morgana/",
+      "retrieved_at": "2026-10-20T21:51:30+00:00",
+      "bytes": 181757,
+      "sha256": "77588cc8abf7fb0fbed36aa1a9b808c9ffa683e49c5168e96d6d6f69121a3a16",
+      "etag": "\"lx1wcqoek03tix\"",
+      "last_modified": null,
+      "cached": true
+    },
+    {
+      "path": "16.20.1\\ru_RU\\raw\\official\\index.html",
+      "url": "https://www.leagueoflegends.com/ru-ru/champions/",
+      "retrieved_at": "2026-10-20T21:51:02+00:00",
+      "bytes": 255942,
+      "sha256": "2a1f65cb8acf8eb10660afe0dffccbebe07ac49b35fd45ae411c1eac6138f6a3",
+      "etag": "\"adozzienf75eeb\"",
+      "last_modified": null,
+      "cached": true
+    },
+    {
+      "path": "catalog\\languages.json",
+      "url": "https://ddragon.leagueoflegends.com/cdn/languages.json",
+      "retrieved_at": "2026-10-20T21:50:59+00:00",
+      "bytes": 225,
+      "sha256": "75ca0cd0a9ae4bdd9122389ff664a5293a2dc608206f01b0a7be5721958f817d",
+      "etag": "\"e4c028bfe9625158c692e97ce147c43e\"",
+      "last_modified": "Tue, 06 Oct 2026 21:12:14 GMT",
+      "cached": true
+    }
+  ],
+  "errors": []
+}

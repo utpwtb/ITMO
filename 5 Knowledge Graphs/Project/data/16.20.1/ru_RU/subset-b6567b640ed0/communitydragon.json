@@ -1,0 +1,1913 @@
+[
+  {
+    "champion_id": "Karma",
+    "patch": "16.20",
+    "client_content_version": "16.20.8248524+branch.releases-16-20.content.release",
+    "locale": "ru_RU",
+    "source_url": "https://raw.communitydragon.org/16.20/plugins/rcp-be-lol-game-data/global/ru_ru/v1/champions/43.json",
+    "roles": [
+      "mage",
+      "support"
+    ],
+    "tactical_info": {
+      "style": 10,
+      "difficulty": 1,
+      "damageType": "kMagic",
+      "attackType": "ranged"
+    },
+    "playstyle_info": {
+      "damage": 2,
+      "durability": 1,
+      "crowdControl": 2,
+      "mobility": 1,
+      "utility": 2
+    },
+    "champion_tag_info": {
+      "championTagPrimary": "Защита",
+      "championTagSecondary": "УпП"
+    },
+    "passive": {
+      "name": "Разгорающийся огонь",
+      "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Karma/HUD/Icons2D/Karma_Passive.png",
+      "abilityVideoPath": "",
+      "abilityVideoImagePath": "",
+      "description": "Умения Кармы, наносящие урон, сокращают перезарядку Мантры."
+    },
+    "spells": [
+      {
+        "spellKey": "q",
+        "name": "Внутреннее пламя",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Karma/HUD/Icons2D/Karma_Q1.png",
+        "abilityVideoPath": "champion-abilities/0043/ability_0043_Q1.webm",
+        "abilityVideoImagePath": "champion-abilities/0043/ability_0043_Q1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Карма выпускает заряд духовной энергии, который взрывается при столкновении с противником, нанося урон.<br><br>Эффект Мантры: Карма дополнительно увеличивает разрушительную силу Внутреннего пламени, создавая на земле энергетическую аномалию, наносящую урон по прошествии некоторого времени.",
+        "dynamicDescription": "Карма выпускает сгусток энергии, нанося <magicDamage>@TotalDamage@ магического урона</magicDamage> первой пораженной цели и окружающим врагам, а также <status>замедляя</status> их на @SlowAmount*-100@% на @SlowDuration@ сек.@SpellModifierDescriptionAppend@",
+        "range": [
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0
+        ],
+        "costCoefficients": [
+          40.0,
+          50.0,
+          60.0,
+          70.0,
+          80.0,
+          80.0
+        ],
+        "cooldownCoefficients": [
+          9.0,
+          8.0,
+          7.0,
+          6.0,
+          5.0,
+          5.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "w",
+        "name": "Решимость",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Karma/HUD/Icons2D/Karma_W1.png",
+        "abilityVideoPath": "champion-abilities/0043/ability_0043_W1.webm",
+        "abilityVideoImagePath": "champion-abilities/0043/ability_0043_W1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон.<br><br>Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания.",
+        "dynamicDescription": "Карма создает связь между собой и чемпионом или лесным монстром, нанося цели <magicDamage>@InitialDamage@ магического урона</magicDamage> и раскрывая ее на @TetherDuration@ сек. Если связь не разрывается, цель снова получает <magicDamage>@InitialDamage@ магического урона</magicDamage> и <status>обездвиживается</status> на @RootDuration@ сек.@SpellModifierDescriptionAppend@",
+        "range": [
+          675.0,
+          675.0,
+          675.0,
+          675.0,
+          675.0,
+          675.0
+        ],
+        "costCoefficients": [
+          50.0,
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0
+        ],
+        "cooldownCoefficients": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "e",
+        "name": "Воодушевление",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Karma/HUD/Icons2D/Karma_E1.png",
+        "abilityVideoPath": "champion-abilities/0043/ability_0043_E1.webm",
+        "abilityVideoImagePath": "champion-abilities/0043/ability_0043_E1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения.<br><br>Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов.",
+        "dynamicDescription": "Карма накладывает на союзного чемпиона <shield>щит прочностью @TotalShield@</shield> на @ShieldDuration@ сек. и увеличивает его <speed>скорость передвижения на @MoveSpeed*100@%</speed> на @MoveSpeedDuration@ сек.@SpellModifierDescriptionAppend@",
+        "range": [
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0
+        ],
+        "costCoefficients": [
+          60.0,
+          65.0,
+          70.0,
+          75.0,
+          80.0,
+          85.0
+        ],
+        "cooldownCoefficients": [
+          10.0,
+          9.5,
+          9.0,
+          8.5,
+          8.0,
+          8.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "r",
+        "name": "Мантра",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Karma/HUD/Icons2D/Karma_R.png",
+        "abilityVideoPath": "champion-abilities/0043/ability_0043_R1.webm",
+        "abilityVideoImagePath": "champion-abilities/0043/ability_0043_R1.jpg",
+        "cost": "Без стоимости",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Карма усиливает свое следующее умение дополнительным эффектом. Мантра доступна на 1-м уровне и не требует очка умений.",
+        "dynamicDescription": "Карма усиливает свое следующее умение, примененное в течение 8 сек.<br><li><spellName>Внутреннее пламя</spellName>: дополнительно наносит <magicDamage>@RQImpactDamage@ магического урона</magicDamage> и оставляет круг пламени, который <status>замедляет</status> врагов и наносит еще <magicDamage>@RQFieldDamage@ магического урона</magicDamage>.<li><spellName>Решимость</spellName>: Карма восстанавливает <healing>@RWHealAmount@ от недостающего здоровья</healing> во время образования и разрыва связи, а продолжительность <status>обездвиживания</status> увеличивается на @RWBonusRoot@ сек.<li><spellName>Воодушевление</spellName>: прочность <shield>щита</shield>, накладываемого на цель, увеличивается на <shield>@REBonusShield@</shield>. Кроме того, Карма накладывает на окружающих чемпионов щит прочностью @REBonusShieldArea@ и увеличивает их <speed>скорость передвижения на @REMoveSpeed*100@%</speed>.@SpellModifierDescriptionAppend@",
+        "range": [
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0
+        ],
+        "costCoefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cooldownCoefficients": [
+          40.0,
+          38.0,
+          36.0,
+          34.0,
+          34.0,
+          34.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      }
+    ]
+  },
+  {
+    "champion_id": "Lux",
+    "patch": "16.20",
+    "client_content_version": "16.20.8248524+branch.releases-16-20.content.release",
+    "locale": "ru_RU",
+    "source_url": "https://raw.communitydragon.org/16.20/plugins/rcp-be-lol-game-data/global/ru_ru/v1/champions/99.json",
+    "roles": [
+      "mage",
+      "support"
+    ],
+    "tactical_info": {
+      "style": 9,
+      "difficulty": 1,
+      "damageType": "kMagic",
+      "attackType": "ranged"
+    },
+    "playstyle_info": {
+      "damage": 3,
+      "durability": 1,
+      "crowdControl": 2,
+      "mobility": 1,
+      "utility": 2
+    },
+    "champion_tag_info": {
+      "championTagPrimary": "Взрывной",
+      "championTagSecondary": "Дальнобойность"
+    },
+    "passive": {
+      "name": "Иллюминация",
+      "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Lux/HUD/Icons2D/LuxIlluminatingFraulein.png",
+      "abilityVideoPath": "champion-abilities/0099/ability_0099_P1.webm",
+      "abilityVideoImagePath": "champion-abilities/0099/ability_0099_P1.jpg",
+      "description": "Используя атакующие умения, Люкс накладывает на врагов эффект Иллюминации на несколько секунд. Ее последующие автоатаки поджигают находящихся под действием эффекта врагов, нанося им дополнительный магический урон (тем больший, чем выше уровень Люкс), но снимают эффект."
+    },
+    "spells": [
+      {
+        "spellKey": "q",
+        "name": "Сковывание света",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Lux/HUD/Icons2D/LuxCrashingBlitz2.png",
+        "abilityVideoPath": "champion-abilities/0099/ability_0099_Q1.webm",
+        "abilityVideoImagePath": "champion-abilities/0099/ability_0099_Q1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Люкс выпускает сферу света, которая наносит урон и обездвиживает до двух врагов.",
+        "dynamicDescription": "Люкс выпускает сферу света, <status>обездвиживающую</status> первых 2 врагов на пути на @RootDuration@ сек. и наносящую им по <magicDamage>@TotalDamageTT@ ед. маг. урона</magicDamage>.@SpellModifierDescriptionAppend@",
+        "range": [
+          1175.0,
+          1175.0,
+          1175.0,
+          1175.0,
+          1175.0,
+          1175.0
+        ],
+        "costCoefficients": [
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "cooldownCoefficients": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "w",
+        "name": "Призматический барьер",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Lux/HUD/Icons2D/LuxPrismaWrap.png",
+        "abilityVideoPath": "champion-abilities/0099/ability_0099_W1.webm",
+        "abilityVideoImagePath": "champion-abilities/0099/ability_0099_W1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Люкс бросает свой жезл, который, касаясь союзных чемпионов, искривляет вокруг них лучи света, защищая от входящего урона.",
+        "dynamicDescription": "Люкс бросает свой жезл, на @ShieldDuration@ сек. накладывая <shield>щит прочностью @TotalShieldTT@</shield> на союзников, которых он касается. Затем жезл возвращается, повторно накладывая <shield>щит</shield> на пути назад.@SpellModifierDescriptionAppend@",
+        "range": [
+          1150.0,
+          1150.0,
+          1150.0,
+          1150.0,
+          1150.0,
+          1150.0
+        ],
+        "costCoefficients": [
+          60.0,
+          65.0,
+          70.0,
+          75.0,
+          80.0,
+          85.0
+        ],
+        "cooldownCoefficients": [
+          12.0,
+          11.5,
+          11.0,
+          10.5,
+          10.0,
+          9.5
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.4
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0,
+            12.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "Effect4Amount": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "e",
+        "name": "Светящаяся сингулярность",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Lux/HUD/Icons2D/LuxLightStrikeKugel.png",
+        "abilityVideoPath": "champion-abilities/0099/ability_0099_E1.webm",
+        "abilityVideoImagePath": "champion-abilities/0099/ability_0099_E1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Люкс создает в указанной области световую аномалию, замедляющую противников. Люкс может взорвать ее, нанеся урон всем находящимся в зоне поражения врагам.",
+        "dynamicDescription": "Люкс создает световую аномалию, <status>замедляющую</status> на @SlowPercent@% и раскрывающую область под собой. Через @SlowZoneDuration@ сек. или при <recast>повт. применении</recast> этого умения аномалия взрывается, нанося <magicDamage>@TotalDamageTT@ ед. маг. урона</magicDamage> и <status>замедляя</status> еще на @SlowLingerDuration@ сек.@SpellModifierDescriptionAppend@",
+        "range": [
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0
+        ],
+        "costCoefficients": [
+          70.0,
+          80.0,
+          90.0,
+          100.0,
+          110.0,
+          110.0
+        ],
+        "cooldownCoefficients": [
+          10.0,
+          9.5,
+          9.0,
+          8.5,
+          8.0,
+          8.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.8,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0
+          ],
+          "Effect2Amount": [
+            20.0,
+            65.0,
+            115.0,
+            165.0,
+            215.0,
+            265.0,
+            315.0
+          ],
+          "Effect3Amount": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "Effect4Amount": [
+            310.0,
+            310.0,
+            310.0,
+            310.0,
+            310.0,
+            310.0,
+            310.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "r",
+        "name": "Последняя искра",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Lux/HUD/Icons2D/LuxFinaleFunkeln.png",
+        "abilityVideoPath": "champion-abilities/0099/ability_0099_R1.webm",
+        "abilityVideoImagePath": "champion-abilities/0099/ability_0099_R1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Люкс накапливает энергию и выпускает мощный луч света, наносящий урон всем врагам на своем пути. Кроме того, луч поджигает врагов, на которых наложен эффект Иллюминации, после чего этот эффект обновляется.",
+        "dynamicDescription": "Люкс выпускает мощный луч света, который наносит <magicDamage>@TotalDamage@ магического урона</magicDamage> всем врагам на своем пути.@SpellModifierDescriptionAppend@",
+        "range": [
+          3340.0,
+          3340.0,
+          3340.0,
+          3340.0,
+          3340.0,
+          3340.0
+        ],
+        "costCoefficients": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "cooldownCoefficients": [
+          60.0,
+          50.0,
+          40.0,
+          40.0,
+          40.0,
+          30.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      }
+    ]
+  },
+  {
+    "champion_id": "Morgana",
+    "patch": "16.20",
+    "client_content_version": "16.20.8248524+branch.releases-16-20.content.release",
+    "locale": "ru_RU",
+    "source_url": "https://raw.communitydragon.org/16.20/plugins/rcp-be-lol-game-data/global/ru_ru/v1/champions/25.json",
+    "roles": [
+      "support",
+      "mage"
+    ],
+    "tactical_info": {
+      "style": 10,
+      "difficulty": 1,
+      "damageType": "kMagic",
+      "attackType": "ranged"
+    },
+    "playstyle_info": {
+      "damage": 2,
+      "durability": 1,
+      "crowdControl": 3,
+      "mobility": 1,
+      "utility": 2
+    },
+    "champion_tag_info": {
+      "championTagPrimary": "Контроль",
+      "championTagSecondary": "Защита"
+    },
+    "passive": {
+      "name": "Вытягивание души",
+      "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Morgana/HUD/Icons2D/FallenAngel_Empathize.png",
+      "abilityVideoPath": "champion-abilities/0025/ability_0025_P1.webm",
+      "abilityVideoImagePath": "champion-abilities/0025/ability_0025_P1.jpg",
+      "description": "Моргана вытягивает душу из своих врагов, восстанавливая здоровье при нанесении урона чемпионам, большим миньонам, а также средним и большим лесным монстрам."
+    },
+    "spells": [
+      {
+        "spellKey": "q",
+        "name": "Темные узы",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Morgana/HUD/Icons2D/FallenAngel_DarkBinding.png",
+        "abilityVideoPath": "champion-abilities/0025/ability_0025_Q1.webm",
+        "abilityVideoImagePath": "champion-abilities/0025/ability_0025_Q1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Моргана сковывает врага темной магией и наносит магический урон, заставляя почувствовать ту боль, которую он причинил. ",
+        "dynamicDescription": "Моргана выпускает заряд звездного огня, который <status>обездвиживает</status> первого пораженного врага на @RootDuration@ сек. и наносит <magicDamage>@TotalDamage@ магического урона</magicDamage>.@SpellModifierDescriptionAppend@",
+        "range": [
+          1250.0,
+          1250.0,
+          1250.0,
+          1250.0,
+          1250.0,
+          1250.0
+        ],
+        "costCoefficients": [
+          50.0,
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0
+        ],
+        "cooldownCoefficients": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "w",
+        "name": "Измученная тень",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Morgana/HUD/Icons2D/FallenAngel_TormentedSoil.png",
+        "abilityVideoPath": "champion-abilities/0025/ability_0025_W1.webm",
+        "abilityVideoImagePath": "champion-abilities/0025/ability_0025_W1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Моргана создает проклятую тень в выбранной области, нанося урон всем, кто рискнул ступить в ее темный круг. Враги внутри получают периодический магический урон, размер которого зависит от их уровня здоровья.",
+        "dynamicDescription": "Моргана поджигает землю на @WDuration@ сек., нанося <magicDamage>@TotalMinDamage@ ед. магического урона</magicDamage> в секунду. Урон увеличивается вплоть до <magicDamage>@TotalMaxDamage@</magicDamage> ед. в зависимости от недостающего здоровья целей.<br><br>Перезарядка этого умения сокращается на @CDRefundPercent*100@% каждый раз, когда Моргану лечит <spellName>Вытягивание души</spellName>.@SpellModifierDescriptionAppend@",
+        "range": [
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0
+        ],
+        "costCoefficients": [
+          70.0,
+          80.0,
+          90.0,
+          100.0,
+          110.0,
+          120.0
+        ],
+        "cooldownCoefficients": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "e",
+        "name": "Черный щит",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Morgana/HUD/Icons2D/FallenAngel_BlackShield.png",
+        "abilityVideoPath": "champion-abilities/0025/ability_0025_E1.webm",
+        "abilityVideoImagePath": "champion-abilities/0025/ability_0025_E1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Моргана защищает союзника защитным барьером из звездного огня, который поглощает магический урон и эффекты контроля, пока не будет уничтожен.",
+        "dynamicDescription": "Моргана накладывает на союзного чемпиона <shield>щит от магии прочностью @TotalShieldStrength@</shield> на @ShieldDuration@ сек. Этот щит блокирует <status>нейтрализующие</status> и <status>обездвиживающие</status> эффекты.@SpellModifierDescriptionAppend@",
+        "range": [
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0
+        ],
+        "costCoefficients": [
+          80.0,
+          80.0,
+          80.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "cooldownCoefficients": [
+          26.0,
+          23.5,
+          21.0,
+          18.5,
+          16.0,
+          16.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      },
+      {
+        "spellKey": "r",
+        "name": "Оковы души",
+        "abilityIconPath": "/lol-game-data/assets/ASSETS/Characters/Morgana/HUD/Icons2D/FallenAngel_Purgatory.png",
+        "abilityVideoPath": "champion-abilities/0025/ability_0025_R1.webm",
+        "abilityVideoImagePath": "champion-abilities/0025/ability_0025_R1.jpg",
+        "cost": "@AbilityResourceName@: @Cost@",
+        "cooldown": "@Cooldown@ сек. %i:cooldown%",
+        "description": "Моргана высвобождает всю свою небесную мощь, расправляя крылья и взмывая над землей. Она выпускает цепи темной агонии во вражеских чемпионов поблизости и увеличивает свою скорость передвижения. Ее цепи замедляют и наносят начальный урон, а после задержки оглушают тех, кто не смог их разорвать.",
+        "dynamicDescription": "Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося <magicDamage>@TotalDamage@ магического урона</magicDamage> и <status>замедляя</status> их на @SlowPercent@%. Через @ChainDuration@ сек. враги, которые не смогли разорвать цепи, дополнительно получают <magicDamage>@TotalDamage@ магического урона</magicDamage> и <status>оглушаются</status> на @StunDuration@ сек.<br><br>При применении этого умения Моргана увеличивает свою <speed>скорость передвижения на @HastePercent@%</speed>.@SpellModifierDescriptionAppend@",
+        "range": [
+          625.0,
+          625.0,
+          625.0,
+          625.0,
+          625.0,
+          625.0
+        ],
+        "costCoefficients": [
+          100.0,
+          100.0,
+          100.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cooldownCoefficients": [
+          120.0,
+          110.0,
+          100.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "coefficients": {
+          "coefficient1": 0.0,
+          "coefficient2": 0.0
+        },
+        "effectAmounts": {
+          "Effect1Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect2Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect3Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect4Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect5Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect6Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect7Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect8Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect9Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Effect10Amount": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ammo": {
+          "ammoRechargeTime": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maxAmmo": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "maxLevel": 0
+      }
+    ]
+  }
+]

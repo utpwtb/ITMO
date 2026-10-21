@@ -1,0 +1,1614 @@
+[
+  {
+    "ability_id": "Karma:P",
+    "champion_id": "Karma",
+    "champion_name": "Карма",
+    "slot": "P",
+    "kind": "passive",
+    "name": "Разгорающийся огонь",
+    "spell_id": null,
+    "description_html": "Умения Кармы, наносящие урон, сокращают перезарядку Мантры.",
+    "description_text": "Умения Кармы, наносящие урон, сокращают перезарядку Мантры.",
+    "tooltip_html": "",
+    "tooltip_text": "",
+    "unresolved_placeholders": [],
+    "max_rank": null,
+    "cooldown": null,
+    "cost": null,
+    "range": null,
+    "resource": null,
+    "effect": null,
+    "effect_burn": null,
+    "vars": null,
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/passive/Karma_Passive.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Karma.json"
+  },
+  {
+    "ability_id": "Karma:Q",
+    "champion_id": "Karma",
+    "champion_name": "Карма",
+    "slot": "Q",
+    "kind": "active",
+    "name": "Внутреннее пламя",
+    "spell_id": "KarmaQ",
+    "description_html": "Карма выпускает заряд духовной энергии, который взрывается при столкновении с противником, нанося урон.<br><br>Эффект Мантры: Карма дополнительно увеличивает разрушительную силу Внутреннего пламени, создавая на земле энергетическую аномалию, наносящую урон по прошествии некоторого времени.",
+    "description_text": "Карма выпускает заряд духовной энергии, который взрывается при столкновении с противником, нанося урон. Эффект Мантры: Карма дополнительно увеличивает разрушительную силу Внутреннего пламени, создавая на земле энергетическую аномалию, наносящую урон по прошествии некоторого времени.",
+    "tooltip_html": "Карма выпускает сгусток энергии, нанося <magicDamage>{{ totaldamage }} магического урона</magicDamage> первой пораженной цели и окружающим врагам, а также <status>замедляя</status> их на {{ slowamount*-100 }}% на {{ slowduration }} сек.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Карма выпускает сгусток энергии, нанося {{ totaldamage }} магического урона первой пораженной цели и окружающим врагам, а также замедляя их на {{ slowamount*-100 }}% на {{ slowduration }} сек.{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "slowamount*-100",
+      "slowduration",
+      "spellmodifierdescriptionappend",
+      "totaldamage"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      9,
+      8,
+      7,
+      6,
+      5
+    ],
+    "cost": [
+      40,
+      50,
+      60,
+      70,
+      80
+    ],
+    "range": [
+      950,
+      950,
+      950,
+      950,
+      950
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/KarmaQ.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Karma.json"
+  },
+  {
+    "ability_id": "Karma:W",
+    "champion_id": "Karma",
+    "champion_name": "Карма",
+    "slot": "W",
+    "kind": "active",
+    "name": "Решимость",
+    "spell_id": "KarmaSpiritBind",
+    "description_html": "Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон.<br><br>Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания.",
+    "description_text": "Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон. Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания.",
+    "tooltip_html": "Карма создает связь между собой и чемпионом или лесным монстром, нанося цели <magicDamage>{{ initialdamage }} магического урона</magicDamage> и раскрывая ее на {{ tetherduration }} сек. Если связь не разрывается, цель снова получает <magicDamage>{{ initialdamage }} магического урона</magicDamage> и <status>обездвиживается</status> на {{ rootduration }} сек.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Карма создает связь между собой и чемпионом или лесным монстром, нанося цели {{ initialdamage }} магического урона и раскрывая ее на {{ tetherduration }} сек. Если связь не разрывается, цель снова получает {{ initialdamage }} магического урона и обездвиживается на {{ rootduration }} сек.{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "initialdamage",
+      "rootduration",
+      "spellmodifierdescriptionappend",
+      "tetherduration"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      12,
+      12,
+      12,
+      12,
+      12
+    ],
+    "cost": [
+      50,
+      55,
+      60,
+      65,
+      70
+    ],
+    "range": [
+      675,
+      675,
+      675,
+      675,
+      675
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/KarmaSpiritBind.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Karma.json"
+  },
+  {
+    "ability_id": "Karma:E",
+    "champion_id": "Karma",
+    "champion_name": "Карма",
+    "slot": "E",
+    "kind": "active",
+    "name": "Воодушевление",
+    "spell_id": "KarmaSolKimShield",
+    "description_html": "Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения.<br><br>Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов.",
+    "description_text": "Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения. Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов.",
+    "tooltip_html": "Карма накладывает на союзного чемпиона <shield>щит прочностью {{ totalshield }}</shield> на {{ shieldduration }} сек. и увеличивает его <speed>скорость передвижения на {{ movespeed*100 }}%</speed> на {{ movespeedduration }} сек.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Карма накладывает на союзного чемпиона щит прочностью {{ totalshield }} на {{ shieldduration }} сек. и увеличивает его скорость передвижения на {{ movespeed*100 }}% на {{ movespeedduration }} сек.{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "movespeed*100",
+      "movespeedduration",
+      "shieldduration",
+      "spellmodifierdescriptionappend",
+      "totalshield"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      10,
+      9.5,
+      9,
+      8.5,
+      8
+    ],
+    "cost": [
+      60,
+      65,
+      70,
+      75,
+      80
+    ],
+    "range": [
+      800,
+      800,
+      800,
+      800,
+      800
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/KarmaSolKimShield.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Karma.json"
+  },
+  {
+    "ability_id": "Karma:R",
+    "champion_id": "Karma",
+    "champion_name": "Карма",
+    "slot": "R",
+    "kind": "active",
+    "name": "Мантра",
+    "spell_id": "KarmaMantra",
+    "description_html": "Карма усиливает свое следующее умение дополнительным эффектом. Мантра доступна на 1-м уровне и не требует очка умений.",
+    "description_text": "Карма усиливает свое следующее умение дополнительным эффектом. Мантра доступна на 1-м уровне и не требует очка умений.",
+    "tooltip_html": "Карма усиливает свое следующее умение, примененное в течение 8 сек.<br /><li><spellName>Внутреннее пламя</spellName>: дополнительно наносит <magicDamage>{{ rqimpactdamage }} магического урона</magicDamage> и оставляет круг пламени, который <status>замедляет</status> врагов и наносит еще <magicDamage>{{ rqfielddamage }} магического урона</magicDamage>.<li><spellName>Решимость</spellName>: Карма восстанавливает <healing>{{ rwhealamount }} от недостающего здоровья</healing> во время образования и разрыва связи, а продолжительность <status>обездвиживания</status> увеличивается на {{ rwbonusroot }} сек.<li><spellName>Воодушевление</spellName>: прочность <shield>щита</shield>, накладываемого на цель, увеличивается на <shield>{{ rebonusshield }}</shield>. Кроме того, Карма накладывает на окружающих чемпионов щит прочностью {{ rebonusshieldarea }} и увеличивает их <speed>скорость передвижения на {{ removespeed*100 }}%</speed>.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Карма усиливает свое следующее умение, примененное в течение 8 сек. Внутреннее пламя : дополнительно наносит {{ rqimpactdamage }} магического урона и оставляет круг пламени, который замедляет врагов и наносит еще {{ rqfielddamage }} магического урона . Решимость : Карма восстанавливает {{ rwhealamount }} от недостающего здоровья во время образования и разрыва связи, а продолжительность обездвиживания увеличивается на {{ rwbonusroot }} сек. Воодушевление : прочность щита , накладываемого на цель, увеличивается на {{ rebonusshield }} . Кроме того, Карма накладывает на окружающих чемпионов щит прочностью {{ rebonusshieldarea }} и увеличивает их скорость передвижения на {{ removespeed*100 }}% .{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "rebonusshield",
+      "rebonusshieldarea",
+      "removespeed*100",
+      "rqfielddamage",
+      "rqimpactdamage",
+      "rwbonusroot",
+      "rwhealamount",
+      "spellmodifierdescriptionappend"
+    ],
+    "max_rank": 4,
+    "cooldown": [
+      40,
+      38,
+      36,
+      34
+    ],
+    "cost": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "range": [
+      1100,
+      1100,
+      1100,
+      1100
+    ],
+    "resource": "Без стоимости",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/KarmaMantra.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Karma.json"
+  },
+  {
+    "ability_id": "Lux:P",
+    "champion_id": "Lux",
+    "champion_name": "Люкс",
+    "slot": "P",
+    "kind": "passive",
+    "name": "Иллюминация",
+    "spell_id": null,
+    "description_html": "Используя атакующие умения, Люкс накладывает на врагов эффект Иллюминации на несколько секунд. Ее последующие автоатаки поджигают находящихся под действием эффекта врагов, нанося им дополнительный магический урон (тем больший, чем выше уровень Люкс), но снимают эффект.",
+    "description_text": "Используя атакующие умения, Люкс накладывает на врагов эффект Иллюминации на несколько секунд. Ее последующие автоатаки поджигают находящихся под действием эффекта врагов, нанося им дополнительный магический урон (тем больший, чем выше уровень Люкс), но снимают эффект.",
+    "tooltip_html": "",
+    "tooltip_text": "",
+    "unresolved_placeholders": [],
+    "max_rank": null,
+    "cooldown": null,
+    "cost": null,
+    "range": null,
+    "resource": null,
+    "effect": null,
+    "effect_burn": null,
+    "vars": null,
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/passive/LuxIlluminatingFraulein.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Lux.json"
+  },
+  {
+    "ability_id": "Lux:Q",
+    "champion_id": "Lux",
+    "champion_name": "Люкс",
+    "slot": "Q",
+    "kind": "active",
+    "name": "Сковывание света",
+    "spell_id": "LuxLightBinding",
+    "description_html": "Люкс выпускает сферу света, которая наносит урон и обездвиживает до двух врагов.",
+    "description_text": "Люкс выпускает сферу света, которая наносит урон и обездвиживает до двух врагов.",
+    "tooltip_html": "Люкс выпускает сферу света, <status>обездвиживающую</status> первых 2 врагов на пути на {{ rootduration }} сек. и наносящую им по <magicDamage>{{ totaldamagett }} ед. маг. урона</magicDamage>.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Люкс выпускает сферу света, обездвиживающую первых 2 врагов на пути на {{ rootduration }} сек. и наносящую им по {{ totaldamagett }} ед. маг. урона .{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "rootduration",
+      "spellmodifierdescriptionappend",
+      "totaldamagett"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "cost": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "range": [
+      1175,
+      1175,
+      1175,
+      1175,
+      1175
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/LuxLightBinding.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Lux.json"
+  },
+  {
+    "ability_id": "Lux:W",
+    "champion_id": "Lux",
+    "champion_name": "Люкс",
+    "slot": "W",
+    "kind": "active",
+    "name": "Призматический барьер",
+    "spell_id": "LuxPrismaticWave",
+    "description_html": "Люкс бросает свой жезл, который, касаясь союзных чемпионов, искривляет вокруг них лучи света, защищая от входящего урона.",
+    "description_text": "Люкс бросает свой жезл, который, касаясь союзных чемпионов, искривляет вокруг них лучи света, защищая от входящего урона.",
+    "tooltip_html": "Люкс бросает свой жезл, на {{ shieldduration }} сек. накладывая <shield>щит прочностью {{ totalshieldtt }}</shield> на союзников, которых он касается. Затем жезл возвращается, повторно накладывая <shield>щит</shield> на пути назад.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Люкс бросает свой жезл, на {{ shieldduration }} сек. накладывая щит прочностью {{ totalshieldtt }} на союзников, которых он касается. Затем жезл возвращается, повторно накладывая щит на пути назад.{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "shieldduration",
+      "spellmodifierdescriptionappend",
+      "totalshieldtt"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      12,
+      11.5,
+      11,
+      10.5,
+      10
+    ],
+    "cost": [
+      60,
+      65,
+      70,
+      75,
+      80
+    ],
+    "range": [
+      1150,
+      1150,
+      1150,
+      1150,
+      1150
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "2/4/6/8/10",
+      "0",
+      "2.5",
+      "100",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/LuxPrismaticWave.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Lux.json"
+  },
+  {
+    "ability_id": "Lux:E",
+    "champion_id": "Lux",
+    "champion_name": "Люкс",
+    "slot": "E",
+    "kind": "active",
+    "name": "Светящаяся сингулярность",
+    "spell_id": "LuxLightStrikeKugel",
+    "description_html": "Люкс создает в указанной области световую аномалию, замедляющую противников. Люкс может взорвать ее, нанеся урон всем находящимся в зоне поражения врагам.",
+    "description_text": "Люкс создает в указанной области световую аномалию, замедляющую противников. Люкс может взорвать ее, нанеся урон всем находящимся в зоне поражения врагам.",
+    "tooltip_html": "Люкс создает световую аномалию, <status>замедляющую</status> на {{ slowpercent }}% и раскрывающую область под собой. Через {{ slowzoneduration }} сек. или при <recast>повт. применении</recast> этого умения аномалия взрывается, нанося <magicDamage>{{ totaldamagett }} ед. маг. урона</magicDamage> и <status>замедляя</status> еще на {{ slowlingerduration }} сек.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Люкс создает световую аномалию, замедляющую на {{ slowpercent }}% и раскрывающую область под собой. Через {{ slowzoneduration }} сек. или при повт. применении этого умения аномалия взрывается, нанося {{ totaldamagett }} ед. маг. урона и замедляя еще на {{ slowlingerduration }} сек.{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "slowlingerduration",
+      "slowpercent",
+      "slowzoneduration",
+      "spellmodifierdescriptionappend",
+      "totaldamagett"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      10,
+      9.5,
+      9,
+      8.5,
+      8
+    ],
+    "cost": [
+      70,
+      80,
+      90,
+      100,
+      110
+    ],
+    "range": [
+      1100,
+      1100,
+      1100,
+      1100,
+      1100
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        25,
+        30,
+        35,
+        40,
+        45
+      ],
+      [
+        65,
+        115,
+        165,
+        215,
+        265
+      ],
+      [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        310,
+        310,
+        310,
+        310,
+        310
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "25/30/35/40/45",
+      "65/115/165/215/265",
+      "5",
+      "310",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/LuxLightStrikeKugel.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Lux.json"
+  },
+  {
+    "ability_id": "Lux:R",
+    "champion_id": "Lux",
+    "champion_name": "Люкс",
+    "slot": "R",
+    "kind": "active",
+    "name": "Последняя искра",
+    "spell_id": "LuxR",
+    "description_html": "Люкс накапливает энергию и выпускает мощный луч света, наносящий урон всем врагам на своем пути. Кроме того, луч поджигает врагов, на которых наложен эффект Иллюминации, после чего этот эффект обновляется.",
+    "description_text": "Люкс накапливает энергию и выпускает мощный луч света, наносящий урон всем врагам на своем пути. Кроме того, луч поджигает врагов, на которых наложен эффект Иллюминации, после чего этот эффект обновляется.",
+    "tooltip_html": "Люкс выпускает мощный луч света, который наносит <magicDamage>{{ totaldamage }} магического урона</magicDamage> всем врагам на своем пути.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Люкс выпускает мощный луч света, который наносит {{ totaldamage }} магического урона всем врагам на своем пути.{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "spellmodifierdescriptionappend",
+      "totaldamage"
+    ],
+    "max_rank": 3,
+    "cooldown": [
+      60,
+      50,
+      40
+    ],
+    "cost": [
+      100,
+      100,
+      100
+    ],
+    "range": [
+      3340,
+      3340,
+      3340
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/LuxR.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Lux.json"
+  },
+  {
+    "ability_id": "Morgana:P",
+    "champion_id": "Morgana",
+    "champion_name": "Моргана",
+    "slot": "P",
+    "kind": "passive",
+    "name": "Вытягивание души",
+    "spell_id": null,
+    "description_html": "Моргана вытягивает душу из своих врагов, восстанавливая здоровье при нанесении урона чемпионам, большим миньонам, а также средним и большим лесным монстрам.",
+    "description_text": "Моргана вытягивает душу из своих врагов, восстанавливая здоровье при нанесении урона чемпионам, большим миньонам, а также средним и большим лесным монстрам.",
+    "tooltip_html": "",
+    "tooltip_text": "",
+    "unresolved_placeholders": [],
+    "max_rank": null,
+    "cooldown": null,
+    "cost": null,
+    "range": null,
+    "resource": null,
+    "effect": null,
+    "effect_burn": null,
+    "vars": null,
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/passive/FallenAngel_Empathize.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Morgana.json"
+  },
+  {
+    "ability_id": "Morgana:Q",
+    "champion_id": "Morgana",
+    "champion_name": "Моргана",
+    "slot": "Q",
+    "kind": "active",
+    "name": "Темные узы",
+    "spell_id": "MorganaQ",
+    "description_html": "Моргана сковывает врага темной магией и наносит магический урон, заставляя почувствовать ту боль, которую он причинил. ",
+    "description_text": "Моргана сковывает врага темной магией и наносит магический урон, заставляя почувствовать ту боль, которую он причинил.",
+    "tooltip_html": "Моргана выпускает заряд звездного огня, который <status>обездвиживает</status> первого пораженного врага на {{ rootduration }} сек. и наносит <magicDamage>{{ totaldamage }} магического урона</magicDamage>.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Моргана выпускает заряд звездного огня, который обездвиживает первого пораженного врага на {{ rootduration }} сек. и наносит {{ totaldamage }} магического урона .{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "rootduration",
+      "spellmodifierdescriptionappend",
+      "totaldamage"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "cost": [
+      50,
+      55,
+      60,
+      65,
+      70
+    ],
+    "range": [
+      1250,
+      1250,
+      1250,
+      1250,
+      1250
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/MorganaQ.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Morgana.json"
+  },
+  {
+    "ability_id": "Morgana:W",
+    "champion_id": "Morgana",
+    "champion_name": "Моргана",
+    "slot": "W",
+    "kind": "active",
+    "name": "Измученная тень",
+    "spell_id": "MorganaW",
+    "description_html": "Моргана создает проклятую тень в выбранной области, нанося урон всем, кто рискнул ступить в ее темный круг. Враги внутри получают периодический магический урон, размер которого зависит от их уровня здоровья.",
+    "description_text": "Моргана создает проклятую тень в выбранной области, нанося урон всем, кто рискнул ступить в ее темный круг. Враги внутри получают периодический магический урон, размер которого зависит от их уровня здоровья.",
+    "tooltip_html": "Моргана поджигает землю на {{ wduration }} сек., нанося <magicDamage>{{ totalmindamage }} ед. магического урона</magicDamage> в секунду. Урон увеличивается вплоть до <magicDamage>{{ totalmaxdamage }}</magicDamage> ед. в зависимости от недостающего здоровья целей.<br /><br />Перезарядка этого умения сокращается на {{ cdrefundpercent*100 }}% каждый раз, когда Моргану лечит <spellName>Вытягивание души</spellName>.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Моргана поджигает землю на {{ wduration }} сек., нанося {{ totalmindamage }} ед. магического урона в секунду. Урон увеличивается вплоть до {{ totalmaxdamage }} ед. в зависимости от недостающего здоровья целей. Перезарядка этого умения сокращается на {{ cdrefundpercent*100 }}% каждый раз, когда Моргану лечит Вытягивание души .{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "cdrefundpercent*100",
+      "spellmodifierdescriptionappend",
+      "totalmaxdamage",
+      "totalmindamage",
+      "wduration"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      12,
+      12,
+      12,
+      12,
+      12
+    ],
+    "cost": [
+      70,
+      80,
+      90,
+      100,
+      110
+    ],
+    "range": [
+      900,
+      900,
+      900,
+      900,
+      900
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/MorganaW.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Morgana.json"
+  },
+  {
+    "ability_id": "Morgana:E",
+    "champion_id": "Morgana",
+    "champion_name": "Моргана",
+    "slot": "E",
+    "kind": "active",
+    "name": "Черный щит",
+    "spell_id": "MorganaE",
+    "description_html": "Моргана защищает союзника защитным барьером из звездного огня, который поглощает магический урон и эффекты контроля, пока не будет уничтожен.",
+    "description_text": "Моргана защищает союзника защитным барьером из звездного огня, который поглощает магический урон и эффекты контроля, пока не будет уничтожен.",
+    "tooltip_html": "Моргана накладывает на союзного чемпиона <shield>щит от магии прочностью {{ totalshieldstrength }}</shield> на {{ shieldduration }} сек. Этот щит блокирует <status>нейтрализующие</status> и <status>обездвиживающие</status> эффекты.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Моргана накладывает на союзного чемпиона щит от магии прочностью {{ totalshieldstrength }} на {{ shieldduration }} сек. Этот щит блокирует нейтрализующие и обездвиживающие эффекты.{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "shieldduration",
+      "spellmodifierdescriptionappend",
+      "totalshieldstrength"
+    ],
+    "max_rank": 5,
+    "cooldown": [
+      26,
+      23.5,
+      21,
+      18.5,
+      16
+    ],
+    "cost": [
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "range": [
+      800,
+      800,
+      800,
+      800,
+      800
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/MorganaE.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Morgana.json"
+  },
+  {
+    "ability_id": "Morgana:R",
+    "champion_id": "Morgana",
+    "champion_name": "Моргана",
+    "slot": "R",
+    "kind": "active",
+    "name": "Оковы души",
+    "spell_id": "MorganaR",
+    "description_html": "Моргана высвобождает всю свою небесную мощь, расправляя крылья и взмывая над землей. Она выпускает цепи темной агонии во вражеских чемпионов поблизости и увеличивает свою скорость передвижения. Ее цепи замедляют и наносят начальный урон, а после задержки оглушают тех, кто не смог их разорвать.",
+    "description_text": "Моргана высвобождает всю свою небесную мощь, расправляя крылья и взмывая над землей. Она выпускает цепи темной агонии во вражеских чемпионов поблизости и увеличивает свою скорость передвижения. Ее цепи замедляют и наносят начальный урон, а после задержки оглушают тех, кто не смог их разорвать.",
+    "tooltip_html": "Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося <magicDamage>{{ totaldamage }} магического урона</magicDamage> и <status>замедляя</status> их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают <magicDamage>{{ totaldamage }} магического урона</magicDamage> и <status>оглушаются</status> на {{ stunduration }} сек.<br /><br />При применении этого умения Моргана увеличивает свою <speed>скорость передвижения на {{ hastepercent }}%</speed>.{{ spellmodifierdescriptionappend }}",
+    "tooltip_text": "Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}",
+    "unresolved_placeholders": [
+      "chainduration",
+      "hastepercent",
+      "slowpercent",
+      "spellmodifierdescriptionappend",
+      "stunduration",
+      "totaldamage"
+    ],
+    "max_rank": 3,
+    "cooldown": [
+      120,
+      110,
+      100
+    ],
+    "cost": [
+      100,
+      100,
+      100
+    ],
+    "range": [
+      625,
+      625,
+      625
+    ],
+    "resource": "{{ abilityresourcename }}: {{ cost }}",
+    "effect": [
+      null,
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "effect_burn": [
+      null,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "vars": [],
+    "icon_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/img/spell/MorganaR.png",
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "source_url": "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Morgana.json"
+  }
+]
