@@ -1,5 +1,7 @@
 # 第一阶段：LoL 英雄与技能数据采集
 
+老师面前的代码与数据展示可使用 [中俄对照稿](<C:/develop/NOTE_UTP/StudyNote/5 Knowledge Graphs/Project/presentation_zh_ru.md>)，俄语正文按 B2 难度编写，预计 7 分钟以内；另有 [俄语纯稿](<C:/develop/NOTE_UTP/StudyNote/5 Knowledge Graphs/Project/presentation_ru.txt>) 供朗读练习。脚本的注释、命令行提示和导出清单说明已改为俄语。
+
 `fetch_lol_data.py` 按本目录第一阶段 PPT 第 3、4 页实现采集，Python 3.10+，只使用标准库，**无需安装依赖、无需 Riot API Key**。
 
 本次已实际采集并校验 `16.20.1 / ru_RU`：173 个英雄、865 条主要技能，CommunityDragon 和官网各覆盖 173 个英雄，错误为 0。结果位于 `data/16.20.1/ru_RU/all/`，523 个来源文件的摘要已核验；10 项离线检查通过。技能机制仍需按下文核验表人工标注。

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""采集第一阶段 PPT 所需的 LoL 英雄与技能数据。仅使用 Python 标准库。"""
+"""Сбор данных о чемпионах и умениях LoL для первого этапа проекта. Только стандартная библиотека Python."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ Json = dict[str, Any]
 
 
 class CollectionError(Exception):
-    """可向命令行用户直接显示的采集错误。"""
+    """Ошибка сбора данных с сообщением для пользователя командной строки."""
 
 
 def utc_now() -> str:
@@ -51,7 +51,7 @@ def save_json(path: Path, value: Any) -> None:
 
 
 def save_csv(path: Path, rows: list[Json], fields: list[str]) -> None:
-    """UTF-8 BOM 便于 Windows Excel 正确显示俄语和中文。"""
+    """UTF-8 с BOM для корректного отображения кириллицы и иероглифов в Excel под Windows."""
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(path.name + ".part")
     with temporary.open("w", encoding="utf-8-sig", newline="") as stream:
@@ -88,7 +88,7 @@ def plain_text(value: str) -> str:
 
 
 class NextDataParser(HTMLParser):
-    """读取官网 HTML 中随页面公开提供的数据，不调用内部 CMS 接口。"""
+    """Чтение открытых данных из HTML официального сайта без обращения к внутреннему API CMS."""
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=False)
@@ -114,11 +114,11 @@ def website_page(body: bytes) -> Json:
     try:
         return json.loads("".join(parser.parts))["props"]["pageProps"]["page"]
     except (ValueError, KeyError, TypeError) as exc:
-        raise CollectionError("官网页面结构已变化：HTML 已保存，但无法提取 __NEXT_DATA__。") from exc
+        raise CollectionError("Структура страницы изменилась: HTML сохранён, но извлечь __NEXT_DATA__ не удалось.") from exc
 
 
 class HttpClient:
-    """限速请求、超时重试、线程安全文件缓存以及来源清单。"""
+    """HTTP-клиент с ограничением частоты запросов, повторами, потокобезопасным кешем и учётом источников."""
 
     def __init__(self, root: Path, timeout: float, retries: int, delay: float, refresh: bool) -> None:
         self.root = root
@@ -149,7 +149,7 @@ class HttpClient:
                     self.resources[str(path.relative_to(self.root))] = {**meta, "cached": True}
                     return value
             except (OSError, ValueError, KeyError):
-                LOG.warning("缓存损坏，重新下载 %s", path.name)
+                LOG.warning("Кеш повреждён, файл %s будет загружен повторно", path.name)
 
         for attempt in range(self.retries + 1):
             with self.rate_lock:
@@ -194,13 +194,13 @@ class HttpClient:
                 can_retry = True
             if not can_retry or attempt == self.retries:
                 raise CollectionError(error)
-            # 不超过 60 秒的阻塞等待。服务器要求更长等待时停止本次请求。
+            # Ожидание не превышает 60 секунд. Если сервер требует больше, запрос прекращается.
             if retry_after is not None and retry_after > 60:
-                raise CollectionError(f"{error}; 服务器要求等待 {retry_after:.0f} 秒，请稍后重跑。")
+                raise CollectionError(f"{error}; сервер требует подождать {retry_after:.0f} с. Повторите запуск позже.")
             wait = max(0, retry_after) if retry_after is not None else min(2 ** attempt, 30)
-            LOG.warning("%s；%.1f 秒后重试 (%d/%d)", error, wait, attempt + 1, self.retries)
+            LOG.warning("%s; повтор через %.1f с (%d/%d)", error, wait, attempt + 1, self.retries)
             time.sleep(wait)
-        raise CollectionError(f"无法获取 {url}")
+        raise CollectionError(f"Не удалось получить {url}")
 
 
 def resolve_version(client: HttpClient, requested: str | None) -> str:
@@ -208,32 +208,32 @@ def resolve_version(client: HttpClient, requested: str | None) -> str:
     if requested is None and lock_path.exists():
         version = json.loads(lock_path.read_text(encoding="utf-8"))["ddragon_version"]
         if not isinstance(version, str) or not re.fullmatch(r"\d+\.\d+\.\d+", version):
-            raise CollectionError("version-lock.json 中的版本无效。")
+            raise CollectionError("Некорректная версия в файле version-lock.json.")
         return version
     if requested and requested != "latest" and not re.fullmatch(r"\d+\.\d+\.\d+", requested):
-        raise CollectionError("--version 应为完整版本（例如 16.20.1）或 latest。")
+        raise CollectionError("Укажите полную версию в --version, например 16.20.1, или значение latest.")
     versions = client.fetch(f"{DDRAGON}/api/versions.json", client.root / "catalog/versions.json", fresh=True)
     if not isinstance(versions, list) or not versions:
-        raise CollectionError("Data Dragon 版本列表为空或格式异常。")
+        raise CollectionError("Список версий Data Dragon пуст или имеет неверный формат.")
     version = versions[0] if requested in {None, "latest"} else requested
     if version not in versions:
-        raise CollectionError(f"Data Dragon 不存在版本 {version}。")
+        raise CollectionError(f"Версия {version} отсутствует в Data Dragon.")
     save_json(lock_path, {"ddragon_version": version, "locked_at": utc_now()})
     return version
 
 
 def check_ddragon(payload: Json, version: str, champion_id: str | None = None) -> Json:
     if payload.get("version") != version or not isinstance(payload.get("data"), dict):
-        raise CollectionError(f"Data Dragon 响应版本或结构不符，要求版本 {version}。")
+        raise CollectionError(f"Версия или структура ответа Data Dragon не соответствует ожидаемой версии {version}.")
     if champion_id is None:
         if not payload["data"]:
-            raise CollectionError("Data Dragon 英雄列表为空。")
+            raise CollectionError("Список чемпионов Data Dragon пуст.")
         return payload["data"]
     champion = payload["data"].get(champion_id)
     if not isinstance(champion, dict) or champion.get("id") != champion_id:
-        raise CollectionError(f"英雄详情 ID 不匹配：{champion_id}。")
+        raise CollectionError(f"Идентификатор в данных чемпиона не совпадает с {champion_id}.")
     if not champion.get("passive") or not champion.get("spells"):
-        raise CollectionError(f"英雄详情缺少技能：{champion_id}。")
+        raise CollectionError(f"В данных чемпиона {champion_id} отсутствуют умения.")
     return champion
 
 
@@ -248,7 +248,7 @@ def select_champions(roster: Json, requested: list[str] | None) -> list[str]:
     for value in requested:
         champion_id = lookup.get(value.casefold())
         if champion_id is None:
-            raise CollectionError(f"找不到英雄 {value!r}。请使用英文 ID、数字 key 或当前语言名称。")
+            raise CollectionError(f"Чемпион {value!r} не найден. Укажите английский ID, числовой key или имя на выбранном языке.")
         result.add(champion_id)
     return sorted(result)
 
@@ -268,7 +268,7 @@ def normalize_champion(champion: Json, version: str, locale: str, source_url: st
     }
     abilities = []
     for index, skill in enumerate([champion["passive"], *champion["spells"]]):
-        # Data Dragon 的四个 spells 按 Q/W/E/R 排列。变身及子技能仍保留在原始 JSON 中。
+        # Элементы spells идут в порядке Q/W/E/R. Исходный JSON сохраняется отдельно; другие формы могут потребовать дополнительных источников.
         slot = ("P", "Q", "W", "E", "R")[index] if index < 5 else f"EXTRA_{index}"
         description = skill.get("description", "")
         tooltip = skill.get("tooltip", "")
@@ -299,13 +299,13 @@ def collect_cdragon(client: HttpClient, raw: Path, champion: Json, version: str,
         metadata = client.fetch(f"{base}/content-metadata.json", raw / "communitydragon/content-metadata.json")
     actual = metadata.get("version", "")
     if not actual.startswith(patch + "."):
-        raise CollectionError(f"CommunityDragon 版本不符：{actual!r}，要求 {patch}。")
-    # en_US 在 CDragon 中使用 default；其余语言严格请求本地化数据，不静默回退到英语。
+        raise CollectionError(f"Версия CommunityDragon {actual!r} не соответствует патчу {patch}.")
+    # Для en_US в CDragon используется default. Для остальных языков запрашивается указанная локализация без автоматической замены на английскую.
     language = "default" if locale == "en_US" else locale.lower()
     url = f"{base}/plugins/rcp-be-lol-game-data/global/{language}/v1/champions/{champion['champion_key']}.json"
     data = client.fetch(url, raw / f"communitydragon/{champion['champion_id']}.json")
     if str(data.get("id")) != str(champion["champion_key"]):
-        raise CollectionError(f"CommunityDragon 英雄 ID 不符：{champion['champion_id']}。")
+        raise CollectionError(f"Идентификатор чемпиона в CommunityDragon не совпадает с {champion['champion_id']}.")
     return {
         "champion_id": champion["champion_id"], "patch": patch, "client_content_version": actual,
         "locale": locale, "source_url": url,
@@ -325,7 +325,7 @@ def website_links(page: Json, locale: str) -> Json:
             if parsed.netloc == "www.leagueoflegends.com" and parsed.path.startswith(prefix):
                 links[item.get("title", "").casefold()] = url
     if not links:
-        raise CollectionError("官网列表未找到英雄链接，可能需要更新页面解析器。")
+        raise CollectionError("Ссылки на чемпионов в официальном списке не найдены. Возможно, нужно обновить парсер страницы.")
     return links
 
 
@@ -351,7 +351,7 @@ def collect_official(client: HttpClient, raw: Path, champion: Json, url: str) ->
                     "icon_url": group.get("thumbnail", {}).get("url"),
                 })
     if not result["name"] or not result["abilities"]:
-        raise CollectionError(f"官网详情结构变化：{champion['champion_id']}，原始 HTML 已保存。")
+        raise CollectionError(f"Структура страницы чемпиона {champion['champion_id']} изменилась. Исходный HTML сохранён.")
     return result
 
 
@@ -371,7 +371,7 @@ def export_dataset(output: Path, champions: list[Json], abilities: list[Json]) -
         for c in champions for tag in c["classes"]
     ]
     save_csv(output / "champion_classes.csv", relations, ["champion_id", "class", "version", "source_url"])
-    # 保留已有人工编辑，只为本次新获取的技能追加待核验行。
+    # Сохраняем ручные правки и добавляем строки для проверки только новых умений.
     review = output / "mechanics_review.csv"
     fields = [
         "ability_id", "champion_id", "champion_name", "slot", "name", "evidence_text",
@@ -398,7 +398,7 @@ def run(args: argparse.Namespace) -> int:
     version = resolve_version(client, args.version)
     languages = client.fetch(f"{DDRAGON}/cdn/languages.json", root / "catalog/languages.json")
     if args.locale not in languages:
-        raise CollectionError(f"不支持的语言 {args.locale}。可用语言：{', '.join(languages)}")
+        raise CollectionError(f"Язык {args.locale} не поддерживается. Доступные языки: {', '.join(languages)}")
     locale_dir = root / version / args.locale
     raw = locale_dir / "raw"
     base = f"{DDRAGON}/cdn/{version}/data/{args.locale}"
@@ -408,7 +408,7 @@ def run(args: argparse.Namespace) -> int:
         ",".join(selected).encode("utf-8")).hexdigest()[:12]
     output = locale_dir / selection
     output.mkdir(parents=True, exist_ok=True)
-    LOG.info("固定版本 %s，语言 %s，共 %d 个英雄", version, args.locale, len(selected))
+    LOG.info("Зафиксирована версия %s, язык %s, чемпионов: %d", version, args.locale, len(selected))
     errors: list[Json] = []
     champions: list[Json] = []
     abilities: list[Json] = []
@@ -427,7 +427,7 @@ def run(args: argparse.Namespace) -> int:
             cdragon_metadata = client.fetch(f"{CDRAGON}/{patch}/content-metadata.json",
                                            raw / "communitydragon/content-metadata.json")
             if not str(cdragon_metadata.get("version", "")).startswith(patch + "."):
-                raise CollectionError(f"CommunityDragon 构建信息与补丁 {patch} 不匹配。")
+                raise CollectionError(f"Сведения о сборке CommunityDragon не соответствуют патчу {patch}.")
         except CollectionError as exc:
             record_error("communitydragon_metadata", None, exc)
             cdragon_metadata = None
@@ -467,10 +467,10 @@ def run(args: argparse.Namespace) -> int:
 
         if args.official_pages and links:
             try:
-                # 按列表中的本地化名称匹配，避免 MonkeyKing/Wukong 等 ID 与网址差异。
+                # Сопоставляем локализованные имена из списка: ID и адрес страницы могут различаться, например MonkeyKing/Wukong.
                 url = links.get(champion["name"].casefold())
                 if not url:
-                    raise CollectionError("官网列表没有同名英雄，需人工核对名称或历史版本差异。")
+                    raise CollectionError("В официальном списке нет чемпиона с таким именем. Проверьте имя и различия между версиями вручную.")
                 official_page = collect_official(client, raw, champion, url)
             except CollectionError as exc:
                 failed("official", exc)
@@ -497,11 +497,11 @@ def run(args: argparse.Namespace) -> int:
                 official.append(official_page)
             errors.extend(local_errors)
     finally:
-        # Ctrl+C 或意外异常时取消排队任务，只等待已经开始的请求结束。
+        # При Ctrl+C или неожиданной ошибке отменяем задачи в очереди и ждём только уже начатые запросы.
         pool.shutdown(wait=True, cancel_futures=True)
 
     export_dataset(output, champions, abilities)
-    # 每次运行单独记录补充来源，未请求的来源不沿用旧导出结果。
+    # Для каждого запуска записываем запрошенные дополнительные источники, не подставляя прежние результаты.
     save_json(output / "communitydragon.json", cdragon)
     save_json(output / "official_pages.json", official)
     save_json(output / "errors.json", errors)
@@ -515,52 +515,52 @@ def run(args: argparse.Namespace) -> int:
                     "download_images": args.download_images, "workers": args.workers},
         "complete": not errors,
         "notes": [
-            "Data Dragon tags 表示英雄分类，不是上路/打野等分路。",
-            "官网为无历史版本保证的当前页面，仅用于核对，不自动覆盖固定版本数据。",
-            "CommunityDragon 仅核对同一 major.minor 补丁及英雄 ID，不保证与 Data Dragon 构建完全相同。",
-            "技能机制和对象/条件需人工核验；tooltip 的 {{...}} 变量保留，不猜测数值。",
-            "Data Dragon 只提供主要 P/Q/W/E/R；变身、子技能可能需要补充来源或人工整理。",
-            "mechanics_review.csv 保留人工编辑，仅追加新获取技能的待核验行。",
+            "Поле tags в Data Dragon обозначает классы чемпионов, а не позиции вроде верхней линии или леса.",
+            "Официальный сайт показывает текущие страницы без гарантии исторической версии. Они служат для сверки и не заменяют данные зафиксированной версии.",
+            "В CommunityDragon проверяются патч major.minor и ID чемпиона. Полное совпадение сборки с Data Dragon не гарантируется.",
+            "Механики, цели и условия действия умений требуют ручной проверки. Переменные {{...}} в tooltip сохраняются без подстановки предполагаемых значений.",
+            "Data Dragon предоставляет основные умения P/Q/W/E/R. Формы и дополнительные умения могут потребовать других источников или ручной обработки.",
+            "В mechanics_review.csv сохраняются ручные правки. Строки для проверки добавляются только для новых умений.",
         ],
         "resources": [{"path": path, **meta} for path, meta in sorted(client.resources.items())],
         "errors": errors,
     })
-    LOG.info("已保存 %d 个英雄、%d 个技能；输出目录：%s", len(champions), len(abilities), output)
+    LOG.info("Сохранено чемпионов: %d, умений: %d. Каталог результатов: %s", len(champions), len(abilities), output)
     if errors:
-        LOG.warning("有 %d 项失败，详见 errors.json。重跑相同命令可复用已下载内容。", len(errors))
+        LOG.warning("Ошибок: %d. Подробности в errors.json. Повторный запуск той же команды использует уже загруженные файлы.", len(errors))
         return 1
     return 0
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "data", help="数据根目录")
-    parser.add_argument("--version", help="Data Dragon 版本；首次自动选最新并锁定，以后沿用锁定版本；latest 可更新锁")
-    parser.add_argument("--locale", default="ru_RU", help="数据语言，PPT 要求俄语")
-    parser.add_argument("--champions", nargs="+", help="仅采集指定英雄，可用英文 ID、数字 key 或本地化名称")
-    parser.add_argument("--community-dragon", action="store_true", help="采集同补丁 CommunityDragon 补充 JSON")
-    parser.add_argument("--official-pages", action="store_true", help="采集当前官网 HTML、分类与技能描述供人工核对")
-    parser.add_argument("--download-images", action="store_true", help="下载英雄和 P/Q/W/E/R 图标；默认仅保存 URL")
-    parser.add_argument("--refresh", action="store_true", help="重新下载原始数据，不覆盖人工机制核验表")
-    parser.add_argument("--workers", type=int, default=4, help="同时采集的英雄数量（1-8）")
-    parser.add_argument("--timeout", type=float, default=25, help="每次网络请求超时秒数")
-    parser.add_argument("--retries", type=int, default=2, help="失败后的最大重试次数")
-    parser.add_argument("--delay", type=float, default=0.15, help="两次网络请求的最短间隔秒数")
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "data", help="Корневой каталог данных")
+    parser.add_argument("--version", help="Версия Data Dragon; при первом запуске фиксируется последняя версия, затем используется сохранённая; latest обновляет выбор")
+    parser.add_argument("--locale", default="ru_RU", help="Язык данных; для проекта выбрана русская локализация")
+    parser.add_argument("--champions", nargs="+", help="Собирать только указанных чемпионов: английский ID, числовой key или локализованное имя")
+    parser.add_argument("--community-dragon", action="store_true", help="Загрузить дополнительные JSON CommunityDragon для того же патча")
+    parser.add_argument("--official-pages", action="store_true", help="Сохранить текущие страницы сайта, классы и описания умений для ручной сверки")
+    parser.add_argument("--download-images", action="store_true", help="Загрузить значки чемпионов и умений P/Q/W/E/R; по умолчанию сохраняются только URL")
+    parser.add_argument("--refresh", action="store_true", help="Загрузить исходные данные заново, сохранив ручные правки в таблице проверки механик")
+    parser.add_argument("--workers", type=int, default=4, help="Число одновременно обрабатываемых чемпионов (1–8)")
+    parser.add_argument("--timeout", type=float, default=25, help="Тайм-аут каждого сетевого запроса в секундах")
+    parser.add_argument("--retries", type=int, default=2, help="Максимальное число повторов после ошибки")
+    parser.add_argument("--delay", type=float, default=0.15, help="Минимальный интервал между сетевыми запросами в секундах")
     args = parser.parse_args()
     if args.timeout <= 0 or args.retries < 0 or args.delay < 0:
-        parser.error("timeout 必须大于 0，retries 和 delay 必须大于等于 0。")
+        parser.error("timeout должен быть больше 0, retries и delay не должны быть отрицательными.")
     if not 1 <= args.workers <= 8:
-        parser.error("workers 必须为 1 到 8。")
+        parser.error("workers должен быть в диапазоне от 1 до 8.")
     if not re.fullmatch(r"[a-z]{2}_[A-Z]{2}", args.locale):
-        parser.error("locale 格式应为 ru_RU、zh_CN 或 en_US。")
+        parser.error("Укажите locale в формате ru_RU, zh_CN или en_US.")
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
     try:
         return run(args)
     except (CollectionError, OSError, ValueError, KeyError, TypeError) as exc:
-        LOG.error("采集终止：%s", exc)
+        LOG.error("Сбор данных остановлен: %s", exc)
         return 1
     except KeyboardInterrupt:
-        LOG.warning("采集已中断。已下载的原始文件保留，重跑可继续。")
+        LOG.warning("Сбор данных прерван. Загруженные исходные файлы сохранены; повторный запуск продолжит работу с ними.")
         return 130
 
 

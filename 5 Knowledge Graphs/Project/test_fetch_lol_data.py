@@ -1,4 +1,4 @@
-"""离线验证：版本隔离、数据保真、恢复采集和人工标注保护。"""
+"""Проверки без сети: разделение версий, сохранность данных, продолжение сбора и защита ручных пометок."""
 
 import csv
 import io
@@ -106,14 +106,14 @@ class CollectorTests(unittest.TestCase):
                 fields = reader.fieldnames
                 rows = list(reader)
             rows[0]["review_status"] = "verified"
-            rows[0]["notes"] = "保留人工核验"
+            rows[0]["notes"] = "Сохранить результат ручной проверки"
             rows.append({**rows[0], "mechanic": "second mechanic"})
             app.save_csv(review, rows, fields)
             app.export_dataset(output, [champion], abilities)
             with review.open(encoding="utf-8-sig", newline="") as stream:
                 result = list(csv.DictReader(stream))
             self.assertEqual(len(result), 3)
-            self.assertEqual(result[0]["notes"], "保留人工核验")
+            self.assertEqual(result[0]["notes"], "Сохранить результат ручной проверки")
             self.assertEqual(result[0]["review_status"], "verified")
             self.assertEqual(result[-1]["ability_id"], "Lux:Q")
             self.assertEqual(result[-1]["review_status"], "pending")
