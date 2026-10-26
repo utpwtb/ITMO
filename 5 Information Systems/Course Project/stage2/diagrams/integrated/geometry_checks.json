@@ -58,30 +58,33 @@
           "edge1": "master_salon_id_fkey",
           "edge2": "moderation_decision_target_review_id_fkey",
           "point": [
-            1866,
-            1783
+            2096,
+            1729
           ]
         },
         {
           "edge1": "master_service_master_id_fkey",
           "edge2": "moderation_decision_target_review_id_fkey",
           "point": [
-            1930,
-            1783
+            2160,
+            1729
           ]
         }
       ],
       "canvas_pixels": [
-        2518,
-        3763
+        2784,
+        3221
       ],
       "body_font_px": 20,
-      "all_boxes_fit_content": true
+      "all_boxes_fit_content": true,
+      "separate_bold_key_column": true,
+      "bold_data_types": true,
+      "bottom_legend_removed": true
     }
   ],
   "report_unchanged_sha256": {
-    "report\\stage2_report.tex": "b8748caeb9d4405abdcdf6cb135a00d5410d1db9c3a91b86add36b6c9a6a2d53",
-    "output\\pdf\\stage2_report.pdf": "49e0755673a034852fa88f95d9a8dda297e4d57ad8758058d1fe50562a688b70"
+    "report\\stage2_report.tex": "835d34b7185cc478349755313dde53840aa3e20f1deffe954a26fcbbef3deb6e",
+    "output\\pdf\\stage2_report.pdf": "dcf78f2fd8fa7eab430b1bf1dc80a450e38defda9fef4e4ca58df367685e4329"
   },
   "source_metadata": "verification/schema_metadata.json"
 }

@@ -1,25 +1,25 @@
 # 第二阶段：数据库设计与 PostgreSQL 实现
 
-业务基准为当前俄语第一阶段报告 `../stage1/body.tex`。已核对实体变化：**11 个概念实体**，照片是沙龙或服务师的复合多值属性。关系模型将两个照片属性展开为明细表，并增加邀请技术表，共 **14 张物理表**。
+业务基准为当前俄语第一阶段报告 `../stage1/body.tex`。最新 ER 图使用 **10 个业务实体**，美容师与沙龙服务直接以 M:N 关系表示；照片仍是复合多值属性。关系模型增加 M:N 中间表、两张照片属性明细表和邀请技术表，共 **14 张物理表**。
 
 ## 交付内容
 
 | 要求 | 对应成果 |
 |---|---|
-| 1. ER 模型，≥10 实体、M:N | `report/conceptual_model.json`；`diagrams/er_01_catalog.svg` 到 `er_04_evidence.svg` |
+| 1. ER 模型，≥10 实体、M:N | `report/conceptual_model.json`；`diagrams/integrated/er_model.svg` 完整总图 |
 | 2. 教师确认、关系模型 | `TEACHER_REVIEW.md` 为待确认记录；俄语报告包含关系模型、字段类型、键和范式分析 |
 | 3. PostgreSQL 实现 | `sql/01_tables.sql`：14 表及两项扩展；实际在 PostgreSQL 17.4 验证 |
 | 4. DDL 与触发器完整性 | PK/FK/UQ/CHECK/GiST EXCLUDE；`sql/03_integrity.sql`；32 个自定义触发器 |
 | 5. 创建、删除、测试数据 | `00_create_database.sql`、`99_drop_database.sql`、`02_seed.sql`、`install.sql`；PowerShell 包装脚本 |
 | 6. 关键函数、过程 | `sql/04_routines.sql`：22 个业务 API，以及内部辅助函数；覆盖 П1–П12 |
 | 7. 索引及依据 | `sql/05_indexes.sql`；报告中的逐项理由及五个真实 EXPLAIN ANALYZE 计划 |
-| 8. 报告 | `output/pdf/stage2_report.pdf`；独立 LaTeX 源 `report/stage2_report.tex` |
+| 8. 报告 | 11 页精炼报告 `output/pdf/stage2_report.pdf`；LaTeX 源 `report/stage2_report.tex`；完整源码包 `output/stage2_report_sources.zip` |
 
 教师尚未实际批准，报告和确认记录均如实标注。你需要带模型与教师讨论，并填写真实的确认结果。
 
 ## 模型对应关系
 
-核心实体：用户、地区、沙龙、服务类型、沙龙服务、服务师、服务师—服务、工作区间、预约、评价、审核决定。
+核心实体：用户、地区、沙龙、服务类型、沙龙服务、服务师、工作区间、预约、评价、审核决定。“服务师—服务”作为 M:N 关系表达，关系模型保留其实现表。
 
 - `master_service` 的联合主键是 `(master_id, salon_service_id)`，实现 M:N。预约用联合外键引用已存在的服务能力组合，且师傅和服务必须属于同一门店。
 - `salon_photo(salon_id, file_path)` 与 `master_photo(master_id, file_path)` 是多值属性的元素关系，不计为概念照片实体。
@@ -85,17 +85,20 @@ API 使用 SECURITY DEFINER 和固定 search_path；后端角色不取得直接�
 - `seed_counts.json`：初始填充行数，区别于并发测试提交后的少量新增记录。
 - `schema_metadata.json`：实际创建的字段、约束、触发器、索引和例程。
 - `explain_plans.json`：五个真实的 EXPLAIN ANALYZE + BUFFERS JSON 计划，没有强行关闭顺序扫描。
-- `diagram_geometry.json`：六张图的横竖线、零交叉和零穿框检查。
+- `../diagrams/integrated/geometry_checks.json`：当前两张总图的完整性、正交连线和跨线桥检查。`diagram_geometry.json` 对应早期分图，仅供历史参考。
 
 数据库共 43 个索引：23 个由 PK/UQ/排斥约束建立，19 个面向查询，1 个保证每名师傅只有一个未使用且未撤销的邀请。
 
 ## 报告与图的编辑
 
-`report/stage2_report.tex` 是独立源文件，所有图均内嵌，无需额外图片或 TeX 子文件。图有 SVG、PNG、TikZ 源和坐标 JSON。四张 ER 图是同一模型的不同视图，重复框不增加实体数量；另外两张图说明照片属性和邀请如何映射为关系。
+当前报告正文精简为 11 页，采用两张完整总图。ER 图使用 A3 图页，逻辑模型使用 A2 图页；其余为 A4 正文。数据逻辑图将键放在左侧独立列加粗，右侧数据类型加粗，并删除底部说明。SQL 采用 listings 语法高亮，无需 shell-escape。
 
-`scripts/build_report.py` 是 Windows 本地生成工具，使用 Python 的 `reportlab`、`pypdfium2` 及系统字体，从已验证的数据库元数据与测试证据生成报告和图，重新生成时执行几何断言。`scripts/CompileReport.ps1` 使用项目现有的 Tectonic；也可用 XeLaTeX 编译独立源文件两次。
+`report/stage2_report.tex` 引用 `report/figures/er_model_a3.pdf` 与 `logical_model_a2.pdf` 两个矢量图文件。源码 ZIP 已打包这三个必要文件；解压后使用 XeLaTeX 编译两次。独立图有 SVG、PNG、draw.io 和坐标 JSON，位于 `diagrams/integrated/`。
+
+`scripts/build_report.py` 与 `scripts/build_compact_report.py` 均生成当前精炼版本。它们使用 Python 的 Pillow、reportlab、pypdf 及系统字体，从已验证的数据和元数据生成图与报告。`scripts/CompileReport.ps1` 使用项目现有的 Tectonic。
 
 ```powershell
+python .\scripts\build_report.py
 .\scripts\CompileReport.ps1
 ```
 

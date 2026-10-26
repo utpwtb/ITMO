@@ -10,6 +10,10 @@ import sys
 import xml.etree.ElementTree as ET
 
 from PIL import Image, ImageDraw, ImageFont
+from reportlab.pdfgen import canvas as pdfcanvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib.colors import toColor
 
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parents[1]
@@ -100,7 +104,7 @@ def pk_fields(name):
     return re.search(r"\(([^)]+)\)", c["definition"])[1].split(", ")
 
 
-def logical_rows(name):
+def logical_fields(name):
     pk = pk_fields(name)
     unique = [re.search(r"\(([^)]+)\)", c["definition"])[1].split(", ") for c in CONSTRAINTS if c["table"] == name and c["kind"] == "u"]
     refs = {c["name"]: fk_fields(c)[0] for c in FKS if c["table"] == name}
@@ -109,17 +113,32 @@ def logical_rows(name):
         typ = col["type"].upper().replace("TIMESTAMP WITHOUT TIME ZONE", "TIMESTAMP").replace("TIME WITHOUT TIME ZONE", "TIME")
         if col["type"] == "numeric":
             typ = f"NUMERIC({col['precision']},{col['scale']})"
-        flags = []
+        keys = []
         if col["name"] in pk:
-            flags.append("PK")
-        flags.extend(FK_IDS[k] for k, fields in refs.items() if col["name"] in fields)
+            keys.append("PK")
+        foreign=[FK_IDS[k] for k,fields in refs.items() if col["name"] in fields]
+        if foreign:
+            keys.append("FK "+",".join(foreign))
         if [col["name"]] in unique:
-            flags.append("UQ")
+            keys.append("UQ")
+        flags=[]
         flags.append("NULL" if col["nullable"] else "NN")
         if col["generated"] == "ALWAYS":
             flags.append("G")
-        result.append(f"{col['name']}  {typ}  {' '.join(flags)}")
+        result.append({"name":col["name"],"type":typ,"keys":", ".join(keys),"flags":" ".join(flags)})
     return result
+
+
+def logical_rows(name):
+    return [f"{c['name']}  {c['type']}  {c['flags']}" for c in logical_fields(name)]
+
+
+def key_column_width(name):
+    return math.ceil(max([text_width(c["keys"],16,"bold") for c in logical_fields(name)]+[24])+22)
+
+
+def field_spans(field):
+    return [(field["name"]+"  ","normal"),(field["type"],"bold"),("  "+field["flags"],"normal")]
 
 
 def endpoint_cards(e, model):
@@ -216,20 +235,24 @@ class Drawing:
         self.width, self.height = int(math.ceil(width)), int(math.ceil(height))
         self.image = Image.new("RGB", (self.width, self.height), "white")
         self.pen = ImageDraw.Draw(self.image)
+        self.commands=[]
         self.svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{self.width}" height="{self.height}" viewBox="0 0 {self.width} {self.height}">',
                     '<rect width="100%" height="100%" fill="white"/>']
 
     def line(self, points, width=2, color="#202020"):
+        self.commands.append(("line",points,width,color))
         self.pen.line([tuple(p) for p in points], fill=color, width=width)
         coords = " ".join(f"{x:.2f},{y:.2f}" for x, y in points)
         self.svg.append(f'<polyline points="{coords}" fill="none" stroke="{color}" stroke-width="{width}" stroke-linejoin="miter"/>')
 
     def rect(self, box, fill="white", stroke="#202020", width=2):
+        self.commands.append(("rect",box,fill,stroke,width))
         x, y, w, h = box
         self.pen.rectangle((x, y, x+w, y+h), fill=fill, outline=stroke, width=width)
         self.svg.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}" stroke-width="{width}"/>')
 
     def circle(self, x, y, r=6):
+        self.commands.append(("circle",x,y,r))
         self.pen.ellipse((x-r, y-r, x+r, y+r), fill="white", outline="#202020", width=2)
         self.svg.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="white" stroke="#202020" stroke-width="2"/>')
 
@@ -238,9 +261,15 @@ class Drawing:
         left = x-width/2 if anchor == "middle" else x-width if anchor == "right" else x
         if halo:
             self.rect((left-4, y-2, width+8, size+7), "white", "white", 0)
+        self.commands.append(("text",x,y,value,size,weight,anchor,color))
         self.pen.text((left, y), value, font=font(size, weight), fill=color, anchor="lt")
         svg_anchor={"left":"start","middle":"middle","right":"end"}[anchor]
         self.svg.append(f'<text x="{x}" y="{y}" dominant-baseline="text-before-edge" text-anchor="{svg_anchor}" font-family="Arial,sans-serif" font-size="{size}" font-weight="{"bold" if weight=="bold" else "normal"}" fill="{color}">{html.escape(value)}</text>')
+
+    def rich_text(self,x,y,spans,size=20):
+        for value,weight in spans:
+            self.text(x,y,value,size,weight)
+            x+=text_width(value,size,weight)
 
     def bridge(self, x, y, radius=12):
         # Horizontal connection crosses above the vertical connection; no junction dot.
@@ -251,8 +280,10 @@ class Drawing:
         self.pen.line(points, fill="#202020", width=2)
         self.svg.append(f'<path d="M {x-radius} {y} A {radius} {radius} 0 0 1 {x+radius} {y}" fill="none" stroke="white" stroke-width="8"/>')
         self.svg.append(f'<path d="M {x-radius} {y} A {radius} {radius} 0 0 1 {x+radius} {y}" fill="none" stroke="#202020" stroke-width="2"/>')
+        self.commands.append(("bridge",x,y,radius))
 
     def vertical_text(self,x,y,value,size=18):
+        self.commands.append(("vertical_text",x,y,value,size))
         w=math.ceil(text_width(value,size))+12
         tile=Image.new("RGBA",(w,size+12),(255,255,255,255))
         ImageDraw.Draw(tile).text((6,5),value,font=font(size),fill="#171717",anchor="lt")
@@ -260,6 +291,51 @@ class Drawing:
         self.image.paste(tile,(round(x-tile.width/2),round(y-tile.height/2)),tile)
         self.svg.append(f'<rect x="{x-(size+12)/2}" y="{y-w/2}" width="{size+12}" height="{w}" fill="white"/>')
         self.svg.append(f'<text transform="translate({x},{y}) rotate(-90)" text-anchor="middle" dominant-baseline="middle" font-family="Arial,sans-serif" font-size="{size}" fill="#171717">{html.escape(value)}</text>')
+
+    def export_pdf(self,path,height):
+        path.parent.mkdir(parents=True,exist_ok=True)
+        for weight in ("normal","bold"):
+            name="Diagram-"+weight
+            if name not in pdfmetrics.getRegisteredFontNames():
+                pdfmetrics.registerFont(TTFont(name,str(FONT_DIR/FONT_FILES[weight])))
+        c=pdfcanvas.Canvas(str(path),pagesize=(self.width,height))
+        c.setTitle("Integrated database model")
+        for command in self.commands:
+            kind,*args=command
+            if kind=="line":
+                points,width,color=args
+                c.setStrokeColor(toColor(color));c.setLineWidth(width)
+                p=c.beginPath();p.moveTo(points[0][0],height-points[0][1])
+                for x,y in points[1:]:p.lineTo(x,height-y)
+                c.drawPath(p)
+            elif kind=="rect":
+                (x,y,w,h),fill,stroke,width=args
+                c.setFillColor(toColor(fill));c.setStrokeColor(toColor(stroke));c.setLineWidth(width)
+                c.rect(x,height-y-h,w,h,fill=1,stroke=int(width>0))
+            elif kind=="circle":
+                x,y,r=args
+                c.setFillColor(toColor("#ffffff"));c.setStrokeColor(toColor("#202020"));c.setLineWidth(2)
+                c.circle(x,height-y,r,fill=1,stroke=1)
+            elif kind=="text":
+                x,y,value,size,weight,anchor,color=args
+                width=text_width(value,size,weight)
+                left=x-width/2 if anchor=="middle" else x-width if anchor=="right" else x
+                top=font(size,weight).getbbox(value or "A",anchor="ls")[1]
+                c.setFillColor(toColor(color));c.setFont("Diagram-"+weight,size)
+                c.drawString(left,height-y+top,value)
+            elif kind=="bridge":
+                x,y,r=args
+                for color,width in (("#ffffff",8),("#202020",2)):
+                    c.setStrokeColor(toColor(color));c.setLineWidth(width)
+                    c.arc(x-r,height-y-r,x+r,height-y+r,startAng=0,extent=180)
+            elif kind=="vertical_text":
+                x,y,value,size=args
+                width=text_width(value,size)+12
+                c.setFillColor(toColor("#ffffff"));c.rect(x-(size+12)/2,height-y-width/2,size+12,width,fill=1,stroke=0)
+                c.saveState();c.translate(x,height-y);c.rotate(90)
+                c.setFillColor(toColor("#171717"));c.setFont("Diagram-normal",size)
+                c.drawCentredString(0,-size*.35,value);c.restoreState()
+        c.save()
 
     def cardinality(self, p, q, value):
         dx, dy = q[0]-p[0], q[1]-p[1]
@@ -304,6 +380,8 @@ def content_dimensions(entity, model):
     size=22 if model=="er" else 20
     values=logical_rows(entity) if model=="logical" else CONCEPT_ATTRS[entity]
     widths=[text_width(value,size) for value in values]
+    if model=="logical":
+        widths=[key_column_width(entity)+sum(text_width(v,size,w) for v,w in field_spans(c)) for c in logical_fields(entity)]
     widths.extend((text_width(NAMES[entity],23,"bold"),text_width(entity,18)))
     width=max(220,math.ceil((max(widths)+30)/10)*10)
     n={"id":entity,"w":width}
@@ -465,10 +543,22 @@ def write_drawio(path, layout, model, node_rows):
         size,rows=node_rows[n["id"]]
         title=html.escape(NAMES[n["id"]])+"<br><span style='font-size:18px;font-weight:normal'>"+html.escape(n["id"])+"</span>"
         value="<div style='font-family:Arial;text-align:center;font-size:23px;height:62px;line-height:27px'><b>"+title+"</b></div><div style='border-top:1px solid #202020'></div>"
-        for v,k in rows:
+        if model=="logical":
+            kw=key_column_width(n["id"])
+            value+="<table style='border-collapse:collapse;width:100%;font-family:Arial'>"
+            for field in logical_fields(n["id"]):
+                spans=html.escape(field["name"])+" &nbsp;<b>"+html.escape(field["type"])+"</b> &nbsp;"+html.escape(field["flags"])
+                value+=f"<tr style='height:{size+7}px'><td style='border-right:1px solid #202020;width:{kw}px;text-align:center;font-size:16px;white-space:nowrap'><b>{html.escape(field['keys'])}</b></td><td style='text-align:left;padding-left:12px;font-size:{size}px;white-space:nowrap'>{spans}</td></tr>"
+            value+="</table>"
+            extra=rows[len(logical_fields(n["id"])):]
+        else:
+            extra=rows
+        for v,k in extra:
             border="border-top:1px solid #777;" if k=="separator" else ""
-            value+="<div style='font-family:Arial;text-align:left;line-height:"+str(size+7)+"px;height:"+str(size+7)+"px;"+border+"font-size:"+str(size if k=="normal" else size-2)+"px'>"+html.escape(v or " ")+"</div>"
-        cell=ET.SubElement(cells,"mxCell",id=n["id"],value=value,style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;overflow=hidden;",vertex="1",parent="1")
+            padding="padding-left:14px;padding-right:14px;box-sizing:border-box;" if model=="logical" else ""
+            value+="<div style='font-family:Arial;text-align:left;"+padding+"line-height:"+str(size+7)+"px;height:"+str(size+7)+"px;"+border+"font-size:"+str(size if k=="normal" else size-2)+"px'>"+html.escape(v or " ")+"</div>"
+        spacing=0 if model=="logical" else 14
+        cell=ET.SubElement(cells,"mxCell",id=n["id"],value=value,style=f"rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#202020;strokeWidth=2;align=left;verticalAlign=top;spacingLeft={spacing};spacingRight={spacing};spacingTop=8;spacingBottom=8;overflow=hidden;",vertex="1",parent="1")
         ET.SubElement(cell,"mxGeometry",x=str(n["x"]),y=str(n["y"]),width=str(n["w"]),height=str(n["h"]),**{"as":"geometry"})
     arrows={"1":"ERmandOne","0..1":"ERzeroToOne","0..N":"ERzeroToMany","0..2":"ERzeroToMany","1..N":"ERmany"}
     for e in layout["edges"]:
@@ -504,8 +594,8 @@ def render(layout, model):
     all_y=[p[1] for e in layout["edges"] for p in e["points"]]
     assert min(all_x)>=50 and min(all_y)>=100
     width=max([n["x"]+n["w"] for n in layout["nodes"]]+all_x)+90
-    bottom=max([n["y"]+n["h"] for n in layout["nodes"]]+all_y)+90
-    footer_height=330 if model=="logical" else 240
+    bottom=max([n["y"]+n["h"] for n in layout["nodes"]]+all_y)+(40 if model=="logical" else 90)
+    footer_height=0 if model=="logical" else 240
     drawing=Drawing(width,bottom+footer_height)
     drawing.text(60,20,"ER-модель" if model=="er" else "Даталогическая модель PostgreSQL",32,"bold")
     sub="10 сущностей · связь M:N показана напрямую" if model=="er" else "14 таблиц · 25 внешних ключей · фактические типы PostgreSQL"
@@ -541,13 +631,27 @@ def render(layout, model):
         drawing.text(x+w/2,y+40,n["id"],18,anchor="middle")
         drawing.line([(x,y+70),(x+w,y+70)])
         row_y=y+83
-        for value,kind in rows:
+        if model=="logical":
+            kw=key_column_width(n["id"])
+            fields=logical_fields(n["id"])
+            drawing.line([(x+kw,y+70),(x+kw,row_y+len(fields)*(size+7)+3)],width=1)
+            for field in fields:
+                drawing.text(x+kw/2,row_y+2,field["keys"],16,"bold","middle")
+                drawing.rich_text(x+kw+12,row_y,field_spans(field),size)
+                row_y+=size+7
+            extra=rows[len(fields):]
+        else:
+            extra=rows
+        for value,kind in extra:
             if kind=="separator":
                 drawing.line([(x+1,row_y+3),(x+w-1,row_y+3)],width=1,color="#777777")
             else:
                 drawing.text(x+14,row_y,value,size if kind=="normal" else size-2)
             row_y+=size+7
-    drawing.line([(60,bottom),(width-60,bottom)],width=1,color="#777777")
+    stem="er_model" if model=="er" else "logical_model"
+    drawing.export_pdf(ROOT/"report/figures"/f"{stem}.pdf",bottom)
+    if model=="er":
+        drawing.line([(60,bottom),(width-60,bottom)],width=1,color="#777777")
     legend=[
         "Обозначения: || — ровно 1; ○| — 0..1; ○< — 0..N. Дуга на пересечении — линии не соединены.",
         "Каждая сущность показана один раз. Чёрные точки соединения не используются: отдельные линии — отдельные связи.",
@@ -562,8 +666,9 @@ def render(layout, model):
                    "Связь «выполняет» M:N имеет атрибут is_active; в отношениях она преобразуется в master_service.",
                    "Четыре цели модерации: XOR. Автор и объект отзыва определяются через выполненную запись.",
                    "Запись выбирает существующую пару «мастер—услуга» из связи M:N; отзывов на запись не более двух."]
-    for i,value in enumerate(legend):
-        drawing.text(60,bottom+22+i*31,value,21)
+    if model=="er":
+        for i,value in enumerate(legend):
+            drawing.text(60,bottom+22+i*31,value,21)
     drawing.svg.append("</svg>")
     stem="er_model" if model=="er" else "logical_model"
     (OUT/f"{stem}.svg").write_text("\n".join(drawing.svg),encoding="utf-8")
@@ -575,6 +680,10 @@ def render(layout, model):
     audit["canvas_pixels"]=[drawing.width,drawing.height]
     audit["body_font_px"]=22 if model=="er" else 20
     audit["all_boxes_fit_content"]=all([n["w"],n["h"]]==list(content_dimensions(n["id"],model)) for n in layout["nodes"])
+    if model=="logical":
+        audit["separate_bold_key_column"]=True
+        audit["bold_data_types"]=True
+        audit["bottom_legend_removed"]=True
     return audit
 
 

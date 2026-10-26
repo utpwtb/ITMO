@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>信息系统实验答辩｜中俄双语学习手册</title>
+<style>
+:root{
+  --bg:#f4f6fb;--paper:#fff;--ink:#172033;--muted:#5e687c;--line:#dce2ee;
+  --blue:#2457c5;--blue-soft:#eaf0ff;--teal:#087f8c;--gold:#8b5e00;
+  --code:#111827;--code-ink:#e5e7eb;--shadow:0 8px 28px rgba(25,42,75,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.68 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif}
+header{background:linear-gradient(130deg,#15284b,#2457c5 65%,#087f8c);color:#fff;padding:42px 22px 34px}
+.hero,.layout{max-width:1240px;margin:0 auto}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.82}
+h1{font-size:clamp(2rem,4vw,3.15rem);line-height:1.15;margin:.45rem 0 1rem}
+header p{max-width:850px;margin:.4rem 0;color:#edf3ff}
+.hero-note{display:inline-block;margin-top:16px;padding:8px 12px;border:1px solid #ffffff55;border-radius:10px;background:#ffffff12;font-size:.9rem}
+.toolbar{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 18px}
+.toolbar-inner{max-width:1240px;margin:auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+button,input{font:inherit}
+button{border:1px solid var(--line);border-radius:9px;padding:8px 12px;background:white;color:var(--ink);cursor:pointer}
+button:hover{border-color:var(--blue);color:var(--blue)}
+button.active{background:var(--blue);border-color:var(--blue);color:white}
+.search{flex:1;min-width:220px;border:1px solid var(--line);border-radius:9px;padding:9px 12px;background:white}
+.layout{display:grid;grid-template-columns:255px minmax(0,1fr);gap:24px;padding:24px 18px 70px}
+nav{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+nav strong{display:block;margin-bottom:8px}
+nav a{display:block;padding:6px 8px;margin:2px 0;border-radius:7px;text-decoration:none;color:var(--muted);font-size:.92rem}
+nav a:hover{background:var(--blue-soft);color:var(--blue)}
+main{min-width:0}
+.card,.topic{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.topic{scroll-margin-top:86px}
+h2{font-size:1.5rem;line-height:1.3;margin:0 0 16px}
+h3{font-size:1.08rem;margin:0 0 10px}
+h4{font-size:.98rem;margin:18px 0 7px}
+p{margin:.45rem 0 .8rem}
+ul,ol{padding-left:1.35rem;margin:.45rem 0 .9rem}
+li{margin:.28rem 0}
+a{color:var(--blue)}
+.bilingual{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.lang{min-width:0}
+.lang.cn,.lang.ru{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}
+.lang.cn{border-top:3px solid var(--blue)}
+.lang.ru{border-top:3px solid var(--teal)}
+body[data-lang="cn"] .lang.ru,body[data-lang="ru"] .lang.cn{display:none}
+body[data-lang="cn"] .bilingual,body[data-lang="ru"] .bilingual{grid-template-columns:1fr}
+body[data-lang="cn"] .lang.cn,body[data-lang="ru"] .lang.ru{display:block}
+.kicker{color:var(--muted);font-size:.9rem}
+.pill{display:inline-block;border-radius:999px;padding:3px 9px;background:var(--blue-soft);color:var(--blue);font-size:.8rem;margin:2px 4px 2px 0}
+.callout{border-left:4px solid var(--teal);background:#eefafb;padding:12px 14px;border-radius:0 9px 9px 0;margin:12px 0}
+.warning{border-left-color:#d49a16;background:#fff8e7}
+table{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:.93rem}
+th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top;text-align:left}
+th{background:#f0f4fb}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--code);color:var(--code-ink);padding:14px;border-radius:10px;font-size:.86rem;line-height:1.55;overflow:auto}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}
+:not(pre)>code{background:#eef1f7;color:#24314d;padding:2px 5px;border-radius:5px}
+.qa{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}
+.qa summary{cursor:pointer;font-weight:700}
+.qa .answer{padding-top:8px}
+.small{font-size:.9rem;color:var(--muted)}
+.flow{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap;margin:14px 0}
+.flow span{background:var(--blue-soft);border:1px solid #d6e1ff;border-radius:9px;padding:9px 12px;flex:1;min-width:130px;text-align:center}
+.flow b{align-self:center;color:var(--muted)}
+footer{max-width:1240px;margin:0 auto;padding:0 18px 42px;color:var(--muted);font-size:.9rem}
+.hide{display:none!important}
+@media(max-width:900px){.layout{grid-template-columns:1fr}nav{position:static;max-height:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}nav strong{grid-column:1/-1}.bilingual{grid-template-columns:1fr}}
+@media(max-width:520px){.card,.topic{padding:15px}.lang.cn,.lang.ru{padding:12px}nav{grid-template-columns:1fr}.toolbar-inner{gap:6px}.search{min-width:100%;order:2}}
+@media print{
+ body{background:white;font-size:11pt}.toolbar,nav{display:none!important}.layout{display:block;padding:0;max-width:none}
+ .card,.topic{box-shadow:none;border:0;padding:10px 0;margin:0 0 14px;break-inside:avoid}
+ .bilingual{grid-template-columns:1fr 1fr!important}.lang.cn,.lang.ru{display:block!important;padding:9px}
+ header{padding:18px;background:#fff;color:#111;border-bottom:2px solid #333}header p{color:#333}
+ a{color:#111;text-decoration:none}pre{white-space:pre-wrap}.topic{break-before:auto}
+}
+</style>
+</head>
+<body data-lang="both">
+<header>
+  <div class="hero">
+    <div class="eyebrow">INFORMATION SYSTEMS LAB · ORAL DEFENSE GUIDE</div>
+    <h1>信息系统实验答辩学习手册<br>Учебное пособие к защите лабораторной работы</h1>
+    <p>中俄双语｜概念解释｜技术对比｜优缺点｜API 与代码示例｜答辩模拟问题</p>
+    <p>Китайско-русский материал: понятия, сравнение технологий, преимущества и недостатки, API, примеры кода и вопросы для устного ответа.</p>
+    <div class="hero-note">建议学习顺序：先理解“谁定义标准、谁实现标准、谁简化开发”，再记 API 和注解。</div>
+  </div>
+</header>
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <button class="langbtn" data-mode="cn">仅中文</button>
+    <button class="langbtn" data-mode="ru">Только русский</button>
+    <button class="langbtn active" data-mode="both">中俄双语</button>
+    <input id="search" class="search" type="search" placeholder="搜索术语，例如 Hibernate、CDI、контейнер…">
+    <button id="printBtn">打印 / 保存为 PDF</button>
+    <button id="expandBtn">展开全部答辩题</button>
+  </div>
+</div>
+<div class="layout">
+<nav>
+  <strong>目录 / Содержание</strong>
+  <a href="#map">0. 技术全景 / Общая схема</a>
+  <a href="#patterns">1. 设计模式与架构模式</a>
+  <a href="#jakarta">2. Jakarta EE 与组件</a>
+  <a href="#beans">3. Managed Beans 与 CDI</a>
+  <a href="#orm">4. ORM、Hibernate、EclipseLink</a>
+  <a href="#persistence">5. Jakarta Persistence</a>
+  <a href="#data">6. Jakarta Data</a>
+  <a href="#spring">7. Spring 与 Jakarta EE</a>
+  <a href="#boot">8. Spring Boot</a>
+  <a href="#springdata">9. Spring Data</a>
+  <a href="#compare">10. 总对比表 / Сводное сравнение</a>
+  <a href="#defense">11. 高频答辩问题</a>
+  <a href="#glossary">12. 术语表 / Глоссарий</a>
+  <a href="#sources">13. 官方资料</a>
+</nav>
+<main>
+<section class="card" id="map">
+  <h2>0. 先建立整体认知 / Сначала — общая картина</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>中文：这些技术分别解决什么问题？</h3>
+      <p>把它们看作不同层次，不要当成互相替代的同类产品：</p>
+      <div class="flow"><span><b>设计模式</b><br>如何组织代码</span><b>→</b><span><b>架构模式</b><br>如何组织系统</span><b>→</b><span><b>平台 / 框架</b><br>提供运行与开发能力</span></div>
+      <div class="flow"><span><b>Jakarta EE / Spring</b><br>应用开发生态</span><b>→</b><span><b>Persistence / ORM</b><br>对象与数据库映射</span><b>→</b><span><b>Data / Repository</b><br>简化数据访问</span></div>
+      <ul>
+        <li><b>Jakarta EE</b>：一组标准规范及其运行环境，不是某一个单独框架。</li>
+        <li><b>Spring Framework</b>：应用开发框架及生态，提供 IoC、AOP、Web、事务等。</li>
+        <li><b>Spring Boot</b>：帮助快速配置和启动 Spring 应用。</li>
+        <li><b>Jakarta Persistence（JPA）</b>：持久化标准 API；Hibernate、EclipseLink 是实现该标准的 ORM 提供者。</li>
+        <li><b>Jakarta Data / Spring Data</b>：更高层的数据访问抽象；它们不等于 ORM，也不等于 JPA。</li>
+      </ul>
+      <div class="callout"><b>答辩主线：</b>标准（Specification）规定“应该怎样”；实现（Implementation / Provider）负责“实际怎样运行”；框架或抽象层让开发者少写重复代码。</div>
+    </article>
+    <article class="lang ru">
+      <h3>Русский: какую задачу решает каждая технология?</h3>
+      <p>Это разные уровни, а не взаимозаменяемые продукты одного типа:</p>
+      <div class="flow"><span><b>Паттерны проектирования</b><br>Организация кода</span><b>→</b><span><b>Архитектурные паттерны</b><br>Организация системы</span><b>→</b><span><b>Платформа / фреймворк</b><br>Среда и инструменты</span></div>
+      <div class="flow"><span><b>Jakarta EE / Spring</b><br>Экосистема приложения</span><b>→</b><span><b>Persistence / ORM</b><br>Связь объектов и БД</span><b>→</b><span><b>Data / Repository</b><br>Упрощение доступа к данным</span></div>
+      <ul>
+        <li><b>Jakarta EE</b> — набор стандартных спецификаций и совместимых сред выполнения, а не один фреймворк.</li>
+        <li><b>Spring Framework</b> — фреймворк и экосистема: IoC, AOP, Web, транзакции и др.</li>
+        <li><b>Spring Boot</b> — упрощает конфигурацию и запуск приложений Spring.</li>
+        <li><b>Jakarta Persistence (JPA)</b> — стандартный API персистентности; Hibernate и EclipseLink — ORM-провайдеры.</li>
+        <li><b>Jakarta Data / Spring Data</b> — более высокий уровень абстракции доступа к данным; это не ORM и не JPA.</li>
+      </ul>
+      <div class="callout"><b>Главная мысль для защиты:</b> спецификация определяет правила; реализация обеспечивает работу; фреймворк или абстракция сокращает повторяющийся код.</div>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="patterns">
+  <h2>1. Шаблоны проектирования и архитектурные шаблоны / 设计模式与架构模式</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>概念与区别</h3>
+      <p><b>设计模式（Design Pattern）</b>是针对反复出现的软件设计问题的可复用解决思路。它不是一段可以直接运行的代码，而是角色、关系和协作方式的模板。</p>
+      <p><b>架构模式（Architectural Pattern）</b>决定系统较高层次的结构：系统如何分层、组件如何通信、依赖如何组织，以及数据和控制流如何通过系统。</p>
+      <table><thead><tr><th>类别</th><th>典型模式</th><th>主要用途</th></tr></thead><tbody>
+        <tr><td>创建型</td><td>Factory Method、Abstract Factory、Builder、Singleton</td><td>控制对象创建，降低对具体类的依赖。</td></tr>
+        <tr><td>结构型</td><td>Adapter、Decorator、Facade、Composite</td><td>组织对象关系、适配接口、扩展功能。</td></tr>
+        <tr><td>行为型</td><td>Strategy、Observer、Command、Template Method</td><td>组织算法、事件通知和对象协作。</td></tr>
+        <tr><td>架构模式</td><td>分层架构、MVC、六边形架构、微服务、事件驱动</td><td>组织整个应用或多个服务。</td></tr>
+      </tbody></table>
+      <h4>例子：模式如何组合？</h4>
+      <p>一个图书管理系统可以采用<b>分层架构</b>（Controller → Service → Repository），用 <b>Repository 模式</b>隔离数据访问，用 <b>Strategy 模式</b>切换不同的罚款计算算法。它们解决不同层次的问题，可以同时使用。</p>
+      <h4>优缺点</h4>
+      <ul><li><b>优点：</b>提供共同词汇；降低耦合；提高可维护性和可测试性；帮助团队复用成熟经验。</li><li><b>缺点：</b>不适合所有场景；过度设计会增加类、接口和跳转；照搬模式可能让简单问题变复杂。</li></ul>
+      <h4>不要混淆</h4>
+      <ul><li><b>模式</b>：解决问题的通用方案。</li><li><b>框架</b>：可复用代码与约定，通常由框架控制程序流程（控制反转）。</li><li><b>库</b>：应用主动调用的工具集合，通常由应用控制调用时机。</li></ul>
+    </article>
+    <article class="lang ru">
+      <h3>Понятие и различия</h3>
+      <p><b>Паттерн проектирования (Design Pattern)</b> — типовое решение часто встречающейся проблемы проектирования. Это не готовый исполняемый код, а шаблон ролей, связей и взаимодействий объектов.</p>
+      <p><b>Архитектурный паттерн</b> задаёт структуру более высокого уровня: слои системы, взаимодействие компонентов, направление зависимостей и потоки данных.</p>
+      <table><thead><tr><th>Категория</th><th>Примеры</th><th>Назначение</th></tr></thead><tbody>
+        <tr><td>Порождающие</td><td>Factory Method, Abstract Factory, Builder, Singleton</td><td>Управлять созданием объектов и уменьшать зависимость от конкретных классов.</td></tr>
+        <tr><td>Структурные</td><td>Adapter, Decorator, Facade, Composite</td><td>Организовать связи объектов, адаптировать интерфейсы, расширять функции.</td></tr>
+        <tr><td>Поведенческие</td><td>Strategy, Observer, Command, Template Method</td><td>Организовать алгоритмы, уведомления и взаимодействия.</td></tr>
+        <tr><td>Архитектурные</td><td>Слоистая архитектура, MVC, гексагональная архитектура, микросервисы, событийная архитектура</td><td>Организовать приложение целиком или набор сервисов.</td></tr>
+      </tbody></table>
+      <h4>Как паттерны сочетаются?</h4>
+      <p>Система управления библиотекой может использовать <b>слоистую архитектуру</b> (Controller → Service → Repository), паттерн <b>Repository</b> для изоляции доступа к данным и <b>Strategy</b> для смены алгоритма расчёта штрафа. Они решают задачи разных уровней и могут применяться вместе.</p>
+      <h4>Плюсы и минусы</h4>
+      <ul><li><b>Плюсы:</b> общий язык команды, снижение связанности, удобство сопровождения и тестирования, повторное использование опыта.</li><li><b>Минусы:</b> не подходят автоматически к любой задаче; избыточное применение создаёт лишние классы и усложняет код.</li></ul>
+      <h4>Не путать</h4>
+      <ul><li><b>Паттерн</b> — общее решение проблемы.</li><li><b>Фреймворк</b> — повторно используемый код и правила; обычно он управляет потоком выполнения (инверсия управления).</li><li><b>Библиотека</b> — набор инструментов, которые приложение вызывает само.</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="jakarta">
+  <h2>2. Платформа Jakarta EE. Виды компонентов / Jakarta EE 平台与组件类型</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>Jakarta EE 是什么？</h3>
+      <p>Jakarta EE 是面向企业级 Java 应用的一套开放标准。每项技术通常由规范（Specification）、API、兼容性测试（TCK）和兼容实现组成。应用可以依赖标准 API，而不必绑定某个厂商的专有 API。</p>
+      <p>常见兼容运行环境包括 GlassFish、Payara、WildFly、Open Liberty 等。运行环境中的容器为组件提供生命周期管理、依赖注入、事务、安全、连接池等服务。</p>
+      <h4>Profiles（配置档案）</h4>
+      <ul><li><b>Core Profile：</b>较精简的核心企业应用能力，适合轻量服务和云原生场景。</li><li><b>Web Profile：</b>在核心能力上增加常用 Web 应用技术。</li><li><b>Platform：</b>更完整的企业级技术集合，包含更多消息、批处理、邮件等能力。</li></ul>
+      <h4>常见组件类别</h4>
+      <table><tr><th>类别</th><th>例子</th><th>职责</th></tr>
+        <tr><td>Web 组件</td><td>Servlet、Jakarta REST 资源类、WebSocket endpoint、Faces 相关组件</td><td>处理 HTTP 请求、REST API、WebSocket 和 Web 表现层。</td></tr>
+        <tr><td>业务组件</td><td>CDI bean、Enterprise Beans（EJB）</td><td>实现业务规则；EJB 还提供特定的事务、安全、异步或远程调用能力。</td></tr>
+        <tr><td>持久化模型</td><td>JPA / Jakarta Persistence entity</td><td>描述持久化数据及对象关系；通常由 Persistence Provider 管理其持久化行为。</td></tr>
+        <tr><td>横切组件</td><td>Interceptor、事件监听器、过滤器</td><td>日志、审计、权限检查、请求预处理等。</td></tr>
+      </table>
+      <div class="callout warning"><b>注意：</b>“组件”在严格规范语境中有具体含义；实体类、CDI bean、Servlet 的生命周期和容器服务并不完全相同。答辩时可以先按职责分类，再说明具体规范。</div>
+      <h4>容器的意义</h4>
+      <p>开发者声明组件和依赖，容器负责创建对象、注入依赖、管理上下文、协调事务和提供基础设施。这样业务代码不必自己管理所有底层资源。</p>
+    </article>
+    <article class="lang ru">
+      <h3>Что такое Jakarta EE?</h3>
+      <p>Jakarta EE — набор открытых стандартов для корпоративных Java-приложений. Обычно технология включает спецификацию, API, тест совместимости (TCK) и совместимые реализации. Приложение может использовать стандартный API, не привязываясь к закрытому API одного поставщика.</p>
+      <p>Примеры совместимых сред: GlassFish, Payara, WildFly, Open Liberty. Контейнер предоставляет компонентам управление жизненным циклом, внедрение зависимостей, транзакции, безопасность, пулы соединений и другие службы.</p>
+      <h4>Профили</h4>
+      <ul><li><b>Core Profile:</b> более компактный набор базовых корпоративных возможностей, подходящий для лёгких сервисов и cloud-native-приложений.</li><li><b>Web Profile:</b> базовые возможности плюс распространённые веб-технологии.</li><li><b>Platform:</b> более полный набор корпоративных технологий, включая дополнительные возможности сообщений, пакетной обработки, почты и т. д.</li></ul>
+      <h4>Распространённые категории компонентов</h4>
+      <table><tr><th>Категория</th><th>Примеры</th><th>Назначение</th></tr>
+        <tr><td>Веб-компоненты</td><td>Servlet, ресурсный класс Jakarta REST, WebSocket endpoint, компоненты Faces</td><td>HTTP-запросы, REST API, WebSocket и веб-уровень.</td></tr>
+        <tr><td>Бизнес-компоненты</td><td>CDI bean, Enterprise Beans (EJB)</td><td>Бизнес-правила; EJB также предоставляет специальные возможности транзакций, безопасности, асинхронного или удалённого вызова.</td></tr>
+        <tr><td>Модель персистентности</td><td>Entity Jakarta Persistence / JPA</td><td>Описывает сохраняемые данные и связи объектов; поведение персистентности обычно обеспечивает провайдер.</td></tr>
+        <tr><td>Сквозные компоненты</td><td>Interceptor, listener, filter</td><td>Логирование, аудит, проверка прав, предварительная обработка запросов.</td></tr>
+      </table>
+      <div class="callout warning"><b>Важно:</b> термин «компонент» в спецификациях имеет точное значение. Entity, CDI bean и Servlet имеют разные модели жизненного цикла. На защите можно сначала классифицировать их по назначению, а затем уточнить конкретную спецификацию.</div>
+      <h4>Зачем нужен контейнер?</h4>
+      <p>Разработчик объявляет компоненты и зависимости, а контейнер создаёт объекты, внедряет зависимости, управляет контекстами, координирует транзакции и предоставляет инфраструктуру. Бизнес-коду не нужно самостоятельно управлять всеми ресурсами.</p>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="beans">
+  <h2>3. Jakarta EE. Управляемые бины. CDI-бины / Managed Beans 与 CDI Beans</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>核心概念</h3>
+      <p><b>Managed Bean（受容器管理的 Bean）</b>泛指由容器创建并管理生命周期、依赖或上下文的对象。注意：历史上也存在名为 Jakarta Managed Beans 的独立轻量规范；它不能与 CDI 混为一谈。</p>
+      <p><b>CDI（Contexts and Dependency Injection）</b>是 Jakarta EE 的上下文与依赖注入规范。CDI bean 由 CDI 容器发现、创建并管理，可以使用依赖注入、作用域、限定符、事件和拦截器等功能。</p>
+      <h4>常见注解</h4>
+      <table><tr><th>注解</th><th>作用</th></tr>
+        <tr><td><code>@Inject</code></td><td>按类型和限定符注入依赖。</td></tr>
+        <tr><td><code>@ApplicationScoped</code></td><td>应用级上下文；同一应用上下文中通常共享一个上下文实例。</td></tr>
+        <tr><td><code>@RequestScoped</code></td><td>每个 HTTP 请求一个上下文实例。</td></tr>
+        <tr><td><code>@SessionScoped</code></td><td>会话级上下文；对象通常需要可序列化。</td></tr>
+        <tr><td><code>@Dependent</code></td><td>依赖对象的生命周期通常与注入它的对象/注入点相关。</td></tr>
+        <tr><td><code>@Qualifier</code></td><td>当同一接口有多个实现时，明确选择哪一个。</td></tr>
+        <tr><td><code>@Produces</code></td><td>声明由生产者方法或字段提供的对象。</td></tr>
+      </table>
+      <h4>CDI、普通 Java 对象、EJB 的区别</h4>
+      <ul><li>普通 `new` 创建的对象不自动获得 CDI 注入和容器生命周期管理。</li><li>CDI bean 适合常见业务服务，支持注入、作用域、事件、装饰器和拦截器。</li><li>EJB 是企业 Bean 组件模型；当需要其特定能力（例如消息驱动 Bean、远程调用或某些容器管理服务）时仍有价值。新业务组件常可优先考虑 CDI。</li></ul>
+      <h4>示例</h4>
+      <pre><code>import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
+@ApplicationScoped
+public class BookService {
+    @Inject
+    BookRepository repository;
+
+    public Book find(Long id) {
+        return repository.findById(id);
+    }
+}</code></pre>
+      <p>容器创建 `BookService`，并把合适的 `BookRepository` 实例注入进去。类必须由容器管理，手动 `new BookService()` 不会自动触发 CDI 注入。</p>
+      <h4>优缺点</h4>
+      <ul><li><b>优点：</b>松耦合、可测试、生命周期统一、业务类更简洁。</li><li><b>缺点：</b>需要理解作用域与代理；作用域选择错误可能导致状态泄漏、并发问题或序列化问题；注入歧义需要限定符解决。</li></ul>
+    </article>
+    <article class="lang ru">
+      <h3>Основные понятия</h3>
+      <p><b>Managed bean</b> — общее название объекта, создание и жизненный цикл которого контролирует контейнер. Исторически существовала и отдельная спецификация Jakarta Managed Beans; её не следует отождествлять с CDI.</p>
+      <p><b>CDI (Contexts and Dependency Injection)</b> — спецификация контекстов и внедрения зависимостей Jakarta EE. CDI-контейнер обнаруживает, создаёт и управляет CDI-бинами. Доступны внедрение зависимостей, области видимости, квалификаторы, события и перехватчики.</p>
+      <h4>Распространённые аннотации</h4>
+      <table><tr><th>Аннотация</th><th>Назначение</th></tr>
+        <tr><td><code>@Inject</code></td><td>Внедрение зависимости по типу и квалификаторам.</td></tr>
+        <tr><td><code>@ApplicationScoped</code></td><td>Контекст приложения; обычно общий контекстный экземпляр в пределах приложения.</td></tr>
+        <tr><td><code>@RequestScoped</code></td><td>Контекстный экземпляр на HTTP-запрос.</td></tr>
+        <tr><td><code>@SessionScoped</code></td><td>Контекст сессии; объект обычно должен поддерживать сериализацию.</td></tr>
+        <tr><td><code>@Dependent</code></td><td>Жизненный цикл зависит от объекта или точки внедрения, использующей бин.</td></tr>
+        <tr><td><code>@Qualifier</code></td><td>Позволяет выбрать нужную реализацию, если их несколько.</td></tr>
+        <tr><td><code>@Produces</code></td><td>Объявляет объект, предоставляемый методом или полем-производителем.</td></tr>
+      </table>
+      <h4>CDI, обычный Java-объект и EJB</h4>
+      <ul><li>Объект, созданный через обычный `new`, автоматически не получает CDI-внедрение и управление жизненным циклом.</li><li>CDI bean подходит для обычных бизнес-сервисов; поддерживает внедрение, контексты, события, декораторы и перехватчики.</li><li>EJB — модель корпоративных компонентов. Она полезна, когда нужны специфические функции, например Message-Driven Bean, удалённые вызовы или определённые контейнерные службы. Для новых бизнес-компонентов часто достаточно CDI.</li></ul>
+      <h4>Пример</h4>
+      <pre><code>import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
+@ApplicationScoped
+public class BookService {
+    @Inject
+    BookRepository repository;
+
+    public Book find(Long id) {
+        return repository.findById(id);
+    }
+}</code></pre>
+      <p>Контейнер создаёт `BookService` и внедряет подходящий `BookRepository`. Если вручную вызвать `new BookService()`, CDI-внедрение автоматически не произойдёт.</p>
+      <h4>Преимущества и недостатки</h4>
+      <ul><li><b>Плюсы:</b> слабая связанность, тестируемость, единое управление жизненным циклом, более простой бизнес-код.</li><li><b>Минусы:</b> нужно понимать области видимости и прокси; неверный scope может привести к утечке состояния, проблемам конкурентного доступа или сериализации; неоднозначность внедрения решается квалификаторами.</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="orm">
+  <h2>4. ORM. Hibernate 与 EclipseLink / ORM、Hibernate и EclipseLink</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>什么是 ORM？</h3>
+      <p><b>ORM（Object-Relational Mapping，对象关系映射）</b>把面向对象程序中的类和对象映射到关系数据库的表和记录。它处理对象属性与列、对象关联与外键之间的关系，并可自动生成 SQL、跟踪对象变化和协调持久化操作。</p>
+      <p>典型映射：`Book` 类 → `book` 表；`Book.id` → 主键列；`Book.author` → 关联或外键。ORM 并不意味着开发者永远不需要 SQL，也不能自动消除数据库设计和性能问题。</p>
+      <h4>Hibernate 与 EclipseLink：共同点</h4>
+      <ul><li>都是 Java ORM 解决方案，也都可作为 Jakarta Persistence（JPA）提供者。</li><li>都能映射实体、处理关联、执行查询、参与事务，并提供缓存等能力。</li><li>都支持标准的 `jakarta.persistence` API；在标准范围内编写代码通常更容易更换提供者。</li></ul>
+      <h4>区别概览</h4>
+      <table><tr><th>维度</th><th>Hibernate ORM</th><th>EclipseLink</th></tr>
+        <tr><td>定位</td><td>广泛使用的 ORM 框架与 JPA 提供者；拥有丰富的 Hibernate 专有扩展。</td><td>Jakarta Persistence 的重要参考实现之一；也是 EclipseLink 持久化项目的一部分。</td></tr>
+        <tr><td>原生 API</td><td>除标准 `EntityManager` 外，还提供 Hibernate `Session` 等专有 API。</td><td>除标准 API 外，也提供 EclipseLink 专有扩展和配置能力。</td></tr>
+        <tr><td>特色</td><td>HQL、丰富的 ORM 扩展；部分项目会使用 Envers 等生态功能。</td><td>支持 weaving（织入）等机制，并有 EclipseLink MOXy 等相关映射能力。</td></tr>
+        <tr><td>可移植性</td><td>使用标准 API 较好；依赖 Hibernate 专有功能会增加迁移成本。</td><td>使用标准 API 较好；依赖 EclipseLink 专有扩展同样会增加迁移成本。</td></tr>
+      </table>
+      <h4>ORM 的优点与代价</h4>
+      <ul><li><b>优点：</b>减少 CRUD 样板代码；对象模型更自然；关联和脏检查更方便；可通过缓存、批处理等优化。</li><li><b>代价：</b>抽象层会隐藏 SQL；复杂查询可能需要原生 SQL；懒加载可能触发 N+1 查询；错误的抓取策略、事务边界或缓存配置会导致性能问题。</li></ul>
+      <div class="callout"><b>答辩关键句：</b>Hibernate/EclipseLink 是实现；Jakarta Persistence 是标准 API/规范。优先使用 `EntityManager`、JPQL 和标准注解；确有必要时才使用提供者专有 API。</div>
+    </article>
+    <article class="lang ru">
+      <h3>Что такое ORM?</h3>
+      <p><b>ORM (Object-Relational Mapping)</b> сопоставляет классы и объекты объектно-ориентированной программы с таблицами и строками реляционной БД. ORM связывает свойства объектов с колонками, ассоциации — с внешними ключами, а также может генерировать SQL, отслеживать изменения объектов и координировать сохранение.</p>
+      <p>Пример: класс `Book` → таблица `book`; `Book.id` → первичный ключ; `Book.author` → связь или внешний ключ. ORM не означает, что SQL больше никогда не нужен, и не решает автоматически проблемы проектирования БД и производительности.</p>
+      <h4>Общее у Hibernate и EclipseLink</h4>
+      <ul><li>Оба решения являются Java ORM и могут выступать провайдерами Jakarta Persistence (JPA).</li><li>Оба отображают сущности, связи, выполняют запросы, участвуют в транзакциях и предоставляют механизмы кэширования.</li><li>Оба поддерживают стандартный API `jakarta.persistence`; код на стандартном API обычно легче перенести к другому провайдеру.</li></ul>
+      <h4>Краткое сравнение</h4>
+      <table><tr><th>Критерий</th><th>Hibernate ORM</th><th>EclipseLink</th></tr>
+        <tr><td>Позиционирование</td><td>Широко используемый ORM-фреймворк и JPA-провайдер с большим набором собственных расширений.</td><td>Одна из важных эталонных реализаций Jakarta Persistence; часть проекта EclipseLink.</td></tr>
+        <tr><td>Нативный API</td><td>Помимо стандартного `EntityManager`, есть собственный API Hibernate, например `Session`.</td><td>Помимо стандарта, есть расширения и собственные средства конфигурации EclipseLink.</td></tr>
+        <tr><td>Особенности</td><td>HQL и множество ORM-расширений; в экосистеме встречается Envers.</td><td>В том числе weaving и связанные возможности отображения, например EclipseLink MOXy.</td></tr>
+        <tr><td>Переносимость</td><td>Стандартный API повышает переносимость; собственные функции Hibernate увеличивают стоимость миграции.</td><td>Стандартный API повышает переносимость; собственные расширения EclipseLink также создают зависимость.</td></tr>
+      </table>
+      <h4>Плюсы и цена ORM</h4>
+      <ul><li><b>Плюсы:</b> меньше шаблонного CRUD-кода; естественная объектная модель; удобные связи и dirty checking; возможны оптимизации кэшем и пакетными операциями.</li><li><b>Минусы:</b> абстракция скрывает SQL; для сложных запросов может понадобиться native SQL; lazy loading способен вызвать N+1 запросов; неверные стратегии загрузки, транзакции или кэширования ухудшают производительность.</li></ul>
+      <div class="callout"><b>Фраза для защиты:</b> Hibernate/EclipseLink — реализации, а Jakarta Persistence — стандарт API и правил. По возможности используйте `EntityManager`, JPQL и стандартные аннотации; специфический API провайдера — только при необходимости.</div>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="persistence">
+  <h2>5. Jakarta Persistence（JPA）/ 持久化标准</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>它是什么？</h3>
+      <p><b>Jakarta Persistence</b> 是 Java 对象持久化与 ORM 的标准规范。过去常称 JPA（Java Persistence API），因此资料和口头交流中仍经常说“JPA”。它规定 API、实体映射和查询语义，但本身不是数据库，也不是 Hibernate 这样的具体 ORM 实现。</p>
+      <h4>重要 API</h4>
+      <ul><li><code>Entity</code>、<code>Id</code>、<code>GeneratedValue</code>、<code>Column</code>：声明实体及字段映射。</li><li><code>ManyToOne</code>、<code>OneToMany</code>、<code>OneToOne</code>、<code>ManyToMany</code>、<code>JoinColumn</code>：声明实体关系。</li><li><code>EntityManagerFactory</code>：创建 `EntityManager`；通常是较重的对象，按持久化单元管理。</li><li><code>EntityManager</code>：管理持久化上下文，查找、持久化、合并、删除实体并创建查询。</li><li><code>TypedQuery</code>、JPQL、Criteria API：以实体模型为基础进行类型化查询。</li><li><code>persistence.xml</code>：可用于配置持久化单元、实体和提供者相关设置。</li></ul>
+      <h4>实体状态（高频考点）</h4>
+      <table><tr><th>状态</th><th>含义</th></tr>
+        <tr><td>New / Transient</td><td>刚创建的普通对象，尚未纳入持久化上下文。</td></tr>
+        <tr><td>Managed</td><td>由当前持久化上下文管理；属性变化可被脏检查发现。</td></tr>
+        <tr><td>Detached</td><td>曾经受管理，但已脱离当前持久化上下文。</td></tr>
+        <tr><td>Removed</td><td>已标记删除，通常在同步/提交时执行数据库删除。</td></tr>
+      </table>
+      <h4>工作过程</h4>
+      <ol><li>定义 `@Entity` 类和主键、字段、关联映射。</li><li>获得 `EntityManager`（在 Jakarta EE 环境可由容器注入；Java SE 可通过 `Persistence` 引导创建）。</li><li>在事务中调用 `persist`、`find`、`merge`、`remove` 或查询 API。</li><li>持久化上下文跟踪实体状态；`flush` 将待执行变更同步到数据库，事务 `commit` 决定是否提交。</li></ol>
+      <div class="callout warning"><b>易错点：</b><code>flush()</code> 不等于 <code>commit()</code>。Flush 是把上下文中的变更同步到数据库连接/事务中；Commit 才是提交事务。事务回滚仍可能撤销已 flush 的变更。</div>
+      <h4>示例：实体类</h4>
+      <pre><code>import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String title;
+
+    protected Book() {} // 供持久化框架使用
+}</code></pre>
+      <h4>优点与局限</h4>
+      <ul><li><b>优点：</b>标准化；实体映射与查询 API 相对可移植；减少手写 SQL 和重复映射代码。</li><li><b>局限：</b>需要理解实体状态、事务、懒加载和关联维护；标准并不保证所有数据库生成的 SQL 和性能相同；特殊 SQL 能力可能需要 native query 或提供者扩展。</li></ul>
+    </article>
+    <article class="lang ru">
+      <h3>Что это такое?</h3>
+      <p><b>Jakarta Persistence</b> — стандарт для сохранения Java-объектов и ORM. Раньше он назывался JPA (Java Persistence API), поэтому термин «JPA» по-прежнему широко используется. Спецификация определяет API, отображение сущностей и семантику запросов, но сама не является ни БД, ни конкретной ORM-реализацией вроде Hibernate.</p>
+      <h4>Важные API</h4>
+      <ul><li><code>Entity</code>, <code>Id</code>, <code>GeneratedValue</code>, <code>Column</code> — объявление сущности и отображения полей.</li><li><code>ManyToOne</code>, <code>OneToMany</code>, <code>OneToOne</code>, <code>ManyToMany</code>, <code>JoinColumn</code> — связи между сущностями.</li><li><code>EntityManagerFactory</code> — создаёт `EntityManager`; обычно это более тяжёлый объект уровня persistence unit.</li><li><code>EntityManager</code> — управляет контекстом персистентности, ищет, сохраняет, объединяет и удаляет сущности, создаёт запросы.</li><li><code>TypedQuery</code>, JPQL, Criteria API — типизированные запросы на основе модели сущностей.</li><li><code>persistence.xml</code> — файл для настройки persistence unit, сущностей и параметров провайдера.</li></ul>
+      <h4>Состояния сущности — частый вопрос</h4>
+      <table><tr><th>Состояние</th><th>Значение</th></tr>
+        <tr><td>New / Transient</td><td>Новый обычный объект, ещё не включённый в контекст персистентности.</td></tr>
+        <tr><td>Managed</td><td>Управляется текущим контекстом; изменения полей могут быть обнаружены dirty checking.</td></tr>
+        <tr><td>Detached</td><td>Раньше управлялся, но больше не связан с текущим контекстом персистентности.</td></tr>
+        <tr><td>Removed</td><td>Помечен на удаление; SQL DELETE обычно выполняется при синхронизации или фиксации.</td></tr>
+      </table>
+      <h4>Как работает технология</h4>
+      <ol><li>Определить класс `@Entity`, первичный ключ, поля и связи.</li><li>Получить `EntityManager` (в Jakarta EE его может внедрить контейнер; в Java SE фабрику можно создать через `Persistence`).</li><li>В транзакции вызвать `persist`, `find`, `merge`, `remove` или API запросов.</li><li>Контекст отслеживает состояние сущностей; `flush` синхронизирует изменения с БД, а `commit` фиксирует транзакцию.</li></ol>
+      <div class="callout warning"><b>Типичная ошибка:</b><code>flush()</code> не равен <code>commit()</code>. Flush отправляет изменения из контекста в БД внутри текущей транзакции; commit фиксирует транзакцию. Откат всё ещё может отменить изменения, которые уже были flush-нуты.</div>
+      <h4>Пример сущности</h4>
+      <pre><code>import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String title;
+
+    protected Book() {} // для ORM
+}</code></pre>
+      <h4>Преимущества и ограничения</h4>
+      <ul><li><b>Плюсы:</b> стандартизация; относительно переносимые отображение и запросы; меньше ручного SQL и повторяющегося кода.</li><li><b>Ограничения:</b> нужно понимать состояния сущностей, транзакции, lazy loading и управление связями; стандарт не гарантирует одинаковый SQL и производительность на всех БД; для специфических запросов могут понадобиться native query или расширения провайдера.</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="data">
+  <h2>6. Технология Jakarta Data / Jakarta Data 数据访问规范</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>定位：比 Persistence 更高一层</h3>
+      <p><b>Jakarta Data</b> 是标准化的数据访问 API，1.0 版于 2024 年发布，并面向 Jakarta EE 11 生态。目标是用 Repository（仓储）抽象简化常见查询、增删改、分页和排序，让应用代码更关注领域模型与业务。</p>
+      <p>它的目标是补充而不是取代 Jakarta Persistence 或 Jakarta NoSQL。Jakarta Persistence 侧重实体映射、持久化上下文和 ORM 行为；Jakarta Data 侧重统一的仓储接口和数据访问方式。</p>
+      <h4>主要概念</h4>
+      <ul><li><code>@Repository</code>：声明仓储接口。</li><li><code>BasicRepository</code>、<code>CrudRepository</code>：提供常见基础操作的接口。</li><li><code>@Find</code>、<code>@Query</code>：声明查询方法；具体查询语法和提供者支持需查看实现及规范版本。</li><li><code>@Insert</code>、<code>@Update</code>、<code>@Delete</code>、<code>@Save</code>：声明数据生命周期操作。</li><li>分页、排序、限制结果数量等能力减少手写通用代码。</li></ul>
+      <h4>概念示例</h4>
+      <pre><code>import jakarta.data.repository.BasicRepository;
+import jakarta.data.repository.Repository;
+
+@Repository
+public interface BookRepository
+        extends BasicRepository&lt;Book, Long&gt; {
+    // 通用保存、删除、按 ID 查找等操作
+}</code></pre>
+      <p>接口的实际实现由 Jakarta Data Provider 提供；应用通常注入接口，而不是自己编写实现类。具体运行时是否提供兼容实现，需要确认。</p>
+      <h4>与 Jakarta Persistence 的区别</h4>
+      <table><tr><th>比较项</th><th>Jakarta Persistence</th><th>Jakarta Data</th></tr>
+        <tr><td>核心问题</td><td>对象如何映射、管理与持久化？</td><td>应用如何用统一仓储 API 访问数据？</td></tr>
+        <tr><td>典型对象</td><td>Entity、EntityManager、Persistence Context</td><td>Repository 接口、通用 CRUD、查询方法</td></tr>
+        <tr><td>抽象层次</td><td>ORM / 持久化 API</td><td>数据访问 / Repository 抽象</td></tr>
+        <tr><td>关系</td><td colspan="2">互补，不是替代关系；具体 provider 与持久化技术的集成方式取决于实现和规范支持。</td></tr>
+      </table>
+      <div class="callout warning"><b>版本细节：</b>Jakarta Data 1.0 没有规定一种强制、统一的 Jakarta Persistence 集成方式。因此不要直接说“Jakarta Data 就是 JPA 的一层包装”；要强调它是标准化的仓储 API，具体集成依赖提供者。</div>
+      <h4>优缺点</h4>
+      <ul><li><b>优点：</b>减少样板代码；接口表达清晰；有分页和查询抽象；目标是面向不同数据存储保持一致的编程模型。</li><li><b>局限：</b>规范较新，运行环境和提供者支持需要核实；不同数据库的能力并不完全相同；复杂查询和数据库专有功能可能仍需扩展或底层 API。</li></ul>
+    </article>
+    <article class="lang ru">
+      <h3>Позиционирование: уровень выше Persistence</h3>
+      <p><b>Jakarta Data</b> — стандартизованный API доступа к данным. Версия 1.0 выпущена в 2024 году для экосистемы Jakarta EE 11. Цель — упростить типичные запросы, CRUD, пагинацию и сортировку с помощью абстракции Repository, чтобы код был ближе к доменной модели и бизнес-задачам.</p>
+      <p>Спецификация дополняет, а не заменяет Jakarta Persistence или Jakarta NoSQL. Jakarta Persistence сосредоточена на отображении сущностей, контексте персистентности и поведении ORM; Jakarta Data — на единообразных репозиториях и доступе к данным.</p>
+      <h4>Основные понятия</h4>
+      <ul><li><code>@Repository</code> — объявляет интерфейс репозитория.</li><li><code>BasicRepository</code>, <code>CrudRepository</code> — интерфейсы с базовыми операциями.</li><li><code>@Find</code>, <code>@Query</code> — объявляют методы запросов; точный синтаксис и поддержка зависят от версии спецификации и провайдера.</li><li><code>@Insert</code>, <code>@Update</code>, <code>@Delete</code>, <code>@Save</code> — обозначают операции жизненного цикла данных.</li><li>Пагинация, сортировка и ограничение количества результатов сокращают шаблонный код.</li></ul>
+      <h4>Концептуальный пример</h4>
+      <pre><code>import jakarta.data.repository.BasicRepository;
+import jakarta.data.repository.Repository;
+
+@Repository
+public interface BookRepository
+        extends BasicRepository&lt;Book, Long&gt; {
+    // Базовые операции: сохранить, удалить, найти по ID
+}</code></pre>
+      <p>Реализацию интерфейса предоставляет Jakarta Data Provider; приложение обычно внедряет интерфейс и не пишет класс реализации вручную. Наличие совместимого провайдера в конкретной среде нужно проверить.</p>
+      <h4>Отличие от Jakarta Persistence</h4>
+      <table><tr><th>Критерий</th><th>Jakarta Persistence</th><th>Jakarta Data</th></tr>
+        <tr><td>Главный вопрос</td><td>Как отображать, управлять и сохранять объекты?</td><td>Как обращаться к данным через единый API репозиториев?</td></tr>
+        <tr><td>Типичные сущности API</td><td>Entity, EntityManager, Persistence Context</td><td>Интерфейс Repository, CRUD, методы запросов</td></tr>
+        <tr><td>Уровень</td><td>ORM / API персистентности</td><td>Доступ к данным / абстракция Repository</td></tr>
+        <tr><td>Связь</td><td colspan="2">Технологии дополняют друг друга. Способ интеграции конкретного провайдера с технологией хранения зависит от реализации и поддержки спецификаций.</td></tr>
+      </table>
+      <div class="callout warning"><b>Важная деталь версии:</b> Jakarta Data 1.0 не определяет единственный обязательный способ интеграции с Jakarta Persistence. Поэтому неверно утверждать, что «Jakarta Data — просто обёртка над JPA»: это стандартный API репозиториев, а конкретная интеграция зависит от провайдера.</div>
+      <h4>Плюсы и ограничения</h4>
+      <ul><li><b>Плюсы:</b> меньше шаблонного кода; выразительные интерфейсы; абстракции запросов и пагинации; единообразная модель для разных типов хранилищ.</li><li><b>Ограничения:</b> спецификация сравнительно новая, нужно проверять поддержку средой и провайдером; возможности разных БД не одинаковы; для сложных запросов и специфических функций могут понадобиться расширения или нижележащий API.</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="spring">
+  <h2>7. Платформа Spring. Сходства и отличия с Java EE / Spring 与 Java EE、Jakarta EE</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>先区分名称</h3>
+      <p><b>Java EE</b> 是 Jakarta EE 的前身名称。Java EE 由 Oracle 移交给 Eclipse Foundation 后，后续平台称为 Jakarta EE。Jakarta EE 是一组标准规范；<b>Spring Framework</b> 则是一个独立的应用开发框架和生态系统。</p>
+      <h4>共同点</h4>
+      <ul><li>都用于构建企业级 Java 应用。</li><li>都提供依赖注入、Web 开发、事务管理、验证、安全集成和数据访问集成等能力。</li><li>都能与 Jakarta Persistence、Hibernate 等持久化技术协作。</li></ul>
+      <h4>核心区别</h4>
+      <table><tr><th>维度</th><th>Jakarta EE</th><th>Spring</th></tr>
+        <tr><td>性质</td><td>标准规范集合，由兼容运行环境实现。</td><td>应用框架与模块化生态。</td></tr>
+        <tr><td>依赖注入</td><td>以 CDI、<code>@Inject</code> 等标准为主。</td><td>以 Spring IoC 容器、<code>@Component</code>、<code>@Autowired</code> 等为主，也支持部分标准注解。</td></tr>
+        <tr><td>运行方式</td><td>常见于兼容应用服务器/运行环境，也可使用轻量配置和现代部署方式。</td><td>可运行于嵌入式服务器，也可部署到外部容器；具体取决于应用形态。</td></tr>
+        <tr><td>可移植性</td><td>标准 API 有利于在兼容实现间迁移。</td><td>Spring API 在 Spring 生态内使用方便；若大量依赖 Spring 专有 API，迁移到其他框架需要改造。</td></tr>
+        <tr><td>扩展方式</td><td>通过标准规范和兼容实现扩展。</td><td>通过 Spring 模块、starter、生态项目和自动配置扩展。</td></tr>
+      </table>
+      <h4>常见注解对照</h4>
+      <table><tr><th>用途</th><th>Jakarta EE / CDI</th><th>Spring</th></tr>
+        <tr><td>注入</td><td><code>@Inject</code></td><td><code>@Autowired</code>（也支持部分 <code>@Inject</code>）</td></tr>
+        <tr><td>组件发现</td><td>CDI bean-defining annotation、<code>@ApplicationScoped</code> 等</td><td><code>@Component</code>、<code>@Service</code>、<code>@Repository</code></td></tr>
+        <tr><td>事务</td><td><code>jakarta.transaction.Transactional</code></td><td><code>org.springframework.transaction.annotation.Transactional</code></td></tr>
+      </table>
+      <div class="callout warning"><b>特别容易考：</b>两个包中可能存在同名注解，但并不代表它们完全相同。例如 Spring 的 <code>@Repository</code> 是组件立体标记之一；Jakarta Data 的 <code>@Repository</code> 用来声明数据仓储接口，包名和语义不同。</div>
+      <h4>如何选择？</h4>
+      <ul><li>重视标准化、应用服务器兼容和规范可移植性时，可考虑 Jakarta EE。</li><li>重视 Spring 生态、快速组合模块、团队已有 Spring 经验时，Spring 常更方便。</li><li>两者不是绝对对立：Spring 应用也可以使用 JPA、Bean Validation 等 Jakarta 标准。</li></ul>
+    </article>
+    <article class="lang ru">
+      <h3>Сначала различим названия</h3>
+      <p><b>Java EE</b> — прежнее название платформы, которая теперь называется Jakarta EE. После передачи Java EE от Oracle фонду Eclipse дальнейшая платформа развивается как Jakarta EE. Jakarta EE — набор стандартных спецификаций; <b>Spring Framework</b> — независимый фреймворк и экосистема разработки приложений.</p>
+      <h4>Общее</h4>
+      <ul><li>Обе технологии предназначены для корпоративных Java-приложений.</li><li>Обе предоставляют внедрение зависимостей, веб-разработку, транзакции, валидацию, интеграцию безопасности и доступа к данным.</li><li>Обе могут работать с Jakarta Persistence, Hibernate и другими технологиями хранения данных.</li></ul>
+      <h4>Ключевые отличия</h4>
+      <table><tr><th>Критерий</th><th>Jakarta EE</th><th>Spring</th></tr>
+        <tr><td>Природа</td><td>Набор стандартных спецификаций, реализуемых совместимыми средами.</td><td>Фреймворк и модульная экосистема.</td></tr>
+        <tr><td>DI</td><td>В основном CDI и стандартные аннотации, например <code>@Inject</code>.</td><td>Контейнер Spring IoC, <code>@Component</code>, <code>@Autowired</code>; также поддерживается часть стандартных аннотаций.</td></tr>
+        <tr><td>Запуск</td><td>Часто используется совместимый сервер приложений; возможны и лёгкие современные варианты развёртывания.</td><td>Может запускаться со встроенным сервером или развёртываться во внешнем контейнере — в зависимости от приложения.</td></tr>
+        <tr><td>Переносимость</td><td>Стандартный API облегчает перенос между совместимыми реализациями.</td><td>API Spring удобен внутри экосистемы; сильная зависимость от специфических API усложняет миграцию на другой фреймворк.</td></tr>
+        <tr><td>Расширение</td><td>Стандартные спецификации и совместимые реализации.</td><td>Модули Spring, starter-зависимости, сторонние проекты и автоконфигурация.</td></tr>
+      </table>
+      <h4>Сопоставление аннотаций</h4>
+      <table><tr><th>Задача</th><th>Jakarta EE / CDI</th><th>Spring</th></tr>
+        <tr><td>Внедрение</td><td><code>@Inject</code></td><td><code>@Autowired</code> (поддерживается и часть вариантов <code>@Inject</code>)</td></tr>
+        <tr><td>Обнаружение компонентов</td><td>CDI bean-defining annotation, например <code>@ApplicationScoped</code></td><td><code>@Component</code>, <code>@Service</code>, <code>@Repository</code></td></tr>
+        <tr><td>Транзакции</td><td><code>jakarta.transaction.Transactional</code></td><td><code>org.springframework.transaction.annotation.Transactional</code></td></tr>
+      </table>
+      <div class="callout warning"><b>Частый вопрос:</b> одноимённые аннотации в разных пакетах не обязательно эквивалентны. Например, Spring <code>@Repository</code> — стереотип компонента; Jakarta Data <code>@Repository</code> объявляет интерфейс репозитория. Пакеты и семантика отличаются.</div>
+      <h4>Как выбирать?</h4>
+      <ul><li>Jakarta EE уместна, если важны стандартизация, совместимость с сервером приложений и переносимость стандартного API.</li><li>Spring часто удобнее благодаря экосистеме модулей, быстрой композиции и опыту команды.</li><li>Это не абсолютные конкуренты: приложение Spring тоже может использовать стандарты Jakarta, например JPA и Bean Validation.</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="boot">
+  <h2>8. Spring Boot / Spring Boot 框架</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>它是什么、解决什么问题？</h3>
+      <p><b>Spring Boot 构建在 Spring Framework 之上</b>，目标是减少新项目的配置成本，让应用更容易启动、测试和部署。它没有替代 Spring，而是通过约定优于配置、自动配置、starter 依赖和可执行应用打包来简化 Spring 应用开发。</p>
+      <h4>关键机制</h4>
+      <ul><li><b>Auto-configuration（自动配置）：</b>根据 classpath、已有 Bean 和配置属性，尝试配置合适的组件；通常可由用户配置覆盖。</li><li><b>Starters：</b>把一组常用依赖打包成依赖入口，例如 Web、测试、数据访问等 starter。</li><li><b>Embedded server：</b>常见 Web 应用可将服务器嵌入应用并以可执行 JAR 运行，而不必手工部署 WAR 到外部服务器。</li><li><b>Externalized configuration：</b>通过配置文件、环境变量、命令行参数等管理环境差异。</li><li><b>Actuator：</b>提供健康检查、指标、应用信息等运维端点（具体功能取决于配置和依赖）。</li></ul>
+      <h4>典型入口</h4>
+      <pre><code>import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}</code></pre>
+      <p><code>@SpringBootApplication</code> 通常组合了配置类、自动配置启用和组件扫描等功能。</p>
+      <h4>优点与代价</h4>
+      <ul><li><b>优点：</b>启动快、默认配置多、依赖组合方便、易于容器化与部署、生态成熟。</li><li><b>代价：</b>自动配置可能让初学者不清楚“为什么这样运行”；依赖版本冲突、默认设置和启动行为仍需理解；不正确的配置也可能带来安全或性能问题。</li></ul>
+      <div class="callout"><b>一句话回答：</b>Spring 是核心框架；Spring Boot 是简化 Spring 应用配置、启动和部署的工具集。</div>
+    </article>
+    <article class="lang ru">
+      <h3>Что это и какую проблему решает?</h3>
+      <p><b>Spring Boot построен поверх Spring Framework</b> и уменьшает стоимость настройки нового проекта, упрощая запуск, тестирование и развёртывание. Он не заменяет Spring, а упрощает разработку за счёт принципа convention over configuration, автоконфигурации, starter-зависимостей и исполняемого пакета приложения.</p>
+      <h4>Ключевые механизмы</h4>
+      <ul><li><b>Автоконфигурация:</b> на основе classpath, уже существующих Bean и настроек пытается подобрать нужные компоненты; конфигурацию обычно можно переопределить.</li><li><b>Starters:</b> группируют типичные зависимости в удобные точки подключения, например для Web, тестирования и доступа к данным.</li><li><b>Встроенный сервер:</b> веб-приложение часто запускается как исполняемый JAR со встроенным сервером, без ручного развёртывания WAR во внешнем сервере.</li><li><b>Внешняя конфигурация:</b> файлы настроек, переменные окружения, аргументы командной строки помогают различать окружения.</li><li><b>Actuator:</b> предоставляет средства мониторинга — health checks, метрики, сведения о приложении; набор функций зависит от конфигурации и зависимостей.</li></ul>
+      <h4>Типичная точка входа</h4>
+      <pre><code>import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}</code></pre>
+      <p><code>@SpringBootApplication</code> обычно объединяет конфигурационный класс, включение автоконфигурации и сканирование компонентов.</p>
+      <h4>Преимущества и цена</h4>
+      <ul><li><b>Плюсы:</b> быстрый старт, разумные настройки по умолчанию, удобное подключение зависимостей, контейнеризация и развёртывание, зрелая экосистема.</li><li><b>Минусы:</b> новичку бывает неясно, почему сработала определённая автоконфигурация; нужно понимать версии зависимостей, настройки по умолчанию и процесс запуска; ошибочная конфигурация может повлиять на безопасность и производительность.</li></ul>
+      <div class="callout"><b>Ответ одной фразой:</b> Spring — основной фреймворк; Spring Boot — инструменты для упрощения конфигурации, запуска и развёртывания приложений Spring.</div>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="springdata">
+  <h2>9. Spring Data / Spring Data 数据访问生态</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>定位与组成</h3>
+      <p><b>Spring Data</b> 是一组用于简化数据访问的 Spring 项目，不是单独的数据库，也不是某一个 ORM。它通过 Repository 抽象、查询方法、分页、排序和审计等能力，减少重复的数据访问代码。</p>
+      <ul><li><b>Spring Data JPA：</b>基于 JPA 的模块，常与 Hibernate 等 JPA provider 搭配。</li><li><b>Spring Data JDBC：</b>面向 JDBC 和关系型数据访问，抽象与 ORM 不同。</li><li><b>Spring Data MongoDB、Redis 等：</b>面向不同存储系统的独立模块。</li><li><b>Spring Data Commons：</b>提供多个 Spring Data 模块共享的核心仓储抽象。</li></ul>
+      <h4>Spring Data JPA 示例</h4>
+      <pre><code>import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository
+        extends JpaRepository&lt;Book, Long&gt; {
+    // Spring Data 可根据方法名生成查询
+    List&lt;Book&gt; findByTitleContainingIgnoreCase(String title);
+}</code></pre>
+      <p>开发者声明接口；Spring Data 在运行时提供实现。`JpaRepository<Book, Long>` 表示管理 `Book` 实体，主键类型是 `Long`。</p>
+      <h4>与 Jakarta Data、JPA 的区别</h4>
+      <table><tr><th>技术</th><th>层次与重点</th></tr>
+        <tr><td>Jakarta Persistence / JPA</td><td>标准化 ORM 与持久化 API：实体、EntityManager、JPQL、持久化上下文。</td></tr>
+        <tr><td>Hibernate / EclipseLink</td><td>JPA 的具体 ORM 提供者，实现持久化行为。</td></tr>
+        <tr><td>Jakarta Data</td><td>标准化 Repository / 数据访问 API；强调规范层面的统一接口。</td></tr>
+        <tr><td>Spring Data</td><td>Spring 生态中的多个数据访问项目；提供不同存储模块和 Spring 风格的 Repository。</td></tr>
+        <tr><td>Spring Data JPA</td><td>Spring Data 的 JPA 模块；通常通过 JPA provider 执行持久化。</td></tr>
+      </table>
+      <h4>优缺点</h4>
+      <ul><li><b>优点：</b>减少 DAO 样板代码；方法名可表达简单查询；分页和排序方便；与 Spring DI、事务和测试体系整合紧密。</li><li><b>缺点：</b>方法名查询过长时可读性下降；复杂查询仍需要 JPQL、Criteria 或原生 SQL；接口和注解与 Spring 生态绑定，迁移到非 Spring 方案时需调整。</li></ul>
+      <div class="callout warning"><b>答辩陷阱：</b>Spring Data JPA ≠ JPA。JPA 是标准；Spring Data JPA 是 Spring 项目；Hibernate 常作为底层 provider。三者可以同时出现在一个项目中。</div>
+    </article>
+    <article class="lang ru">
+      <h3>Позиционирование и состав</h3>
+      <p><b>Spring Data</b> — семейство проектов Spring для упрощения доступа к данным, а не отдельная база данных и не одна ORM. Абстракция Repository, методы запросов, пагинация, сортировка и аудит сокращают повторяющийся код.</p>
+      <ul><li><b>Spring Data JPA:</b> модуль на основе JPA, часто используемый вместе с Hibernate или другим JPA-провайдером.</li><li><b>Spring Data JDBC:</b> доступ к реляционным данным через JDBC; его модель отличается от ORM.</li><li><b>Spring Data MongoDB, Redis и др.:</b> отдельные модули для разных хранилищ.</li><li><b>Spring Data Commons:</b> общие абстракции репозиториев для модулей Spring Data.</li></ul>
+      <h4>Пример Spring Data JPA</h4>
+      <pre><code>import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository
+        extends JpaRepository&lt;Book, Long&gt; {
+    // Spring Data строит запрос по имени метода
+    List&lt;Book&gt; findByTitleContainingIgnoreCase(String title);
+}</code></pre>
+      <p>Разработчик объявляет интерфейс, а Spring Data предоставляет реализацию во время выполнения. `JpaRepository<Book, Long>` означает работу с сущностью `Book` и ключом типа `Long`.</p>
+      <h4>Отличие Jakarta Data, JPA и Spring Data</h4>
+      <table><tr><th>Технология</th><th>Уровень и назначение</th></tr>
+        <tr><td>Jakarta Persistence / JPA</td><td>Стандартный ORM и API персистентности: сущности, EntityManager, JPQL, контекст персистентности.</td></tr>
+        <tr><td>Hibernate / EclipseLink</td><td>Конкретные ORM-провайдеры JPA, реализующие поведение персистентности.</td></tr>
+        <tr><td>Jakarta Data</td><td>Стандартный API Repository / доступа к данным с унифицированными интерфейсами.</td></tr>
+        <tr><td>Spring Data</td><td>Семейство проектов Spring для разных хранилищ и Spring-ориентированных репозиториев.</td></tr>
+        <tr><td>Spring Data JPA</td><td>Модуль Spring Data для JPA; персистентность обычно выполняет JPA-провайдер.</td></tr>
+      </table>
+      <h4>Преимущества и недостатки</h4>
+      <ul><li><b>Плюсы:</b> меньше шаблонного DAO-кода; простые запросы выражаются именами методов; удобные пагинация и сортировка; тесная интеграция с DI, транзакциями и тестированием Spring.</li><li><b>Минусы:</b> слишком длинные имена методов ухудшают читаемость; сложные запросы требуют JPQL, Criteria или native SQL; API связан с экосистемой Spring, поэтому переход на другую платформу потребует изменений.</li></ul>
+      <div class="callout warning"><b>Ловушка на защите:</b> Spring Data JPA ≠ JPA. JPA — стандарт; Spring Data JPA — проект Spring; Hibernate часто выступает нижележащим провайдером. Все три технологии могут использоваться в одном приложении.</div>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="compare">
+  <h2>10. 总对比表 / Сводное сравнение</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>一眼看清技术关系</h3>
+      <table><tr><th>名称</th><th>是什么</th><th>主要解决的问题</th><th>它不是什么</th></tr>
+        <tr><td>Jakarta EE</td><td>企业 Java 标准规范与平台生态</td><td>统一企业应用 API 和容器服务</td><td>不是单一 ORM 或单个框架</td></tr>
+        <tr><td>CDI</td><td>标准的依赖注入与上下文规范</td><td>组件创建、依赖、作用域、事件</td><td>不是数据库访问 API</td></tr>
+        <tr><td>Jakarta Persistence / JPA</td><td>持久化与 ORM 标准 API</td><td>实体映射、查询、持久化上下文</td><td>不是具体实现</td></tr>
+        <tr><td>Hibernate / EclipseLink</td><td>ORM / JPA provider</td><td>执行对象关系映射和数据库操作</td><td>不是 JPA 规范本身</td></tr>
+        <tr><td>Jakarta Data</td><td>标准仓储 / 数据访问 API</td><td>减少常见数据访问样板代码</td><td>不是 JPA 的替代品</td></tr>
+        <tr><td>Spring Framework</td><td>应用开发框架</td><td>IoC、AOP、Web、事务等</td><td>不是 Jakarta EE 规范集合</td></tr>
+        <tr><td>Spring Boot</td><td>Spring 快速配置与启动工具</td><td>自动配置、依赖组合、打包部署</td><td>不是 Spring Framework 的替代品</td></tr>
+        <tr><td>Spring Data</td><td>Spring 数据访问项目家族</td><td>Repository、查询方法、分页排序</td><td>不是一个 ORM provider</td></tr>
+        <tr><td>Spring Data JPA</td><td>Spring Data 的 JPA 模块</td><td>用 Spring Repository 简化 JPA 操作</td><td>不是 JPA 标准本身</td></tr>
+      </table>
+    </article>
+    <article class="lang ru">
+      <h3>Связи технологий в одной таблице</h3>
+      <table><tr><th>Название</th><th>Что это</th><th>Основная задача</th><th>Чем не является</th></tr>
+        <tr><td>Jakarta EE</td><td>Стандарты и платформа корпоративной Java</td><td>Единые API и контейнерные службы</td><td>Не одна ORM и не один фреймворк</td></tr>
+        <tr><td>CDI</td><td>Стандарт DI и контекстов</td><td>Создание компонентов, зависимости, scope, события</td><td>Не API доступа к БД</td></tr>
+        <tr><td>Jakarta Persistence / JPA</td><td>Стандарт API персистентности и ORM</td><td>Отображение сущностей, запросы, persistence context</td><td>Не конкретная реализация</td></tr>
+        <tr><td>Hibernate / EclipseLink</td><td>ORM / JPA-провайдеры</td><td>Реализация отображения объектов и операций БД</td><td>Не сама спецификация JPA</td></tr>
+        <tr><td>Jakarta Data</td><td>Стандартный API репозиториев и доступа к данным</td><td>Сокращение шаблонного кода доступа к данным</td><td>Не замена JPA</td></tr>
+        <tr><td>Spring Framework</td><td>Фреймворк разработки приложений</td><td>IoC, AOP, Web, транзакции и др.</td><td>Не набор спецификаций Jakarta EE</td></tr>
+        <tr><td>Spring Boot</td><td>Инструменты быстрого запуска и настройки Spring</td><td>Автоконфигурация, зависимости, упаковка</td><td>Не замена Spring Framework</td></tr>
+        <tr><td>Spring Data</td><td>Семейство проектов доступа к данным</td><td>Repository, методы запросов, пагинация</td><td>Не ORM-провайдер</td></tr>
+        <tr><td>Spring Data JPA</td><td>Модуль Spring Data для JPA</td><td>Упрощение JPA через Spring Repository</td><td>Не сам стандарт JPA</td></tr>
+      </table>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="defense">
+  <h2>11. 高频答辩问题 / Вопросы для устной защиты</h2>
+  <p class="small">点击问题展开答案。建议先用 2–4 句话回答，再根据追问补充例子。</p>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>中文问答</h3>
+      <details class="qa"><summary>1. 设计模式和架构模式有什么区别？</summary><div class="answer">设计模式解决类和对象层面的重复设计问题；架构模式决定系统更高层次的结构和组件协作方式。例如 Strategy 是设计模式，分层架构是架构模式。一个系统可以同时使用多种设计模式和一种或多种架构模式。</div></details>
+      <details class="qa"><summary>2. Jakarta EE 是框架吗？</summary><div class="answer">更准确地说，它是一组企业 Java 标准规范及其平台生态。规范定义标准 API 和行为要求，兼容运行环境负责实现。开发者因此能在不同兼容实现之间获得一定的可移植性。</div></details>
+      <details class="qa"><summary>3. Managed Bean 和 CDI Bean 一样吗？</summary><div class="answer">不完全一样。“managed bean”可以泛指由容器管理的对象；CDI bean 是 CDI 规范定义的 bean 模型。历史上的 Jakarta Managed Beans 又是一个独立规范，不能简单与 CDI 等同。</div></details>
+      <details class="qa"><summary>4. 为什么依赖注入比在类里直接 new 更好？</summary><div class="answer">依赖由容器提供，类不必自己选择和创建具体实现，降低耦合并便于测试替换。缺点是对象创建和生命周期不再完全显式，因此需要理解容器配置、作用域和注入规则。</div></details>
+      <details class="qa"><summary>5. ORM 解决什么问题？</summary><div class="answer">ORM 把对象模型映射到关系表，减少重复 SQL 和映射代码，并帮助管理实体关系及变化。但 ORM 不会消除 SQL、事务和性能问题；仍需关注查询计划、索引、抓取策略和 N+1 查询。</div></details>
+      <details class="qa"><summary>6. JPA 与 Hibernate 有什么区别？</summary><div class="answer">JPA（现在的名称是 Jakarta Persistence）是标准 API/规范；Hibernate 是实现这一标准的 ORM provider，也提供自己的扩展 API。使用标准 API 有助于移植，使用专有扩展则可能增加对 Hibernate 的依赖。</div></details>
+      <details class="qa"><summary>7. Hibernate 和 EclipseLink 有什么相同点和不同点？</summary><div class="answer">两者都可实现 Jakarta Persistence，支持实体映射、关联、查询和事务。它们的扩展 API、配置方式、SQL 生成、缓存和性能特征不同；应基于项目兼容性、团队经验、实际测试和所需特性选择。</div></details>
+      <details class="qa"><summary>8. EntityManager 和 EntityManagerFactory 的区别？</summary><div class="answer">EntityManagerFactory 创建 EntityManager，通常是较重且可在应用范围复用的工厂；EntityManager 负责一个持久化上下文中的实体操作，通常不应被多个并发线程随意共享。</div></details>
+      <details class="qa"><summary>9. flush 和 commit 的区别？</summary><div class="answer">flush 把持久化上下文中的待执行变更同步到数据库事务中；commit 提交事务。flush 不代表事务已经提交，后续回滚仍可能撤销这些更改。</div></details>
+      <details class="qa"><summary>10. Jakarta Data 会取代 Jakarta Persistence 吗？</summary><div class="answer">不会。Jakarta Data 提供更高层的 Repository 数据访问抽象；Jakarta Persistence 定义实体映射、持久化上下文和 ORM API。两者目标不同，设计上是互补关系；具体集成要看 provider 的支持。</div></details>
+      <details class="qa"><summary>11. Spring 和 Jakarta EE 的本质区别是什么？</summary><div class="answer">Jakarta EE 以标准规范和兼容实现为核心；Spring 是应用开发框架及生态。两者功能重叠但组织方式不同，也能结合使用，例如 Spring 应用使用 JPA 标准 API 和 Hibernate provider。</div></details>
+      <details class="qa"><summary>12. Spring Boot 是什么？</summary><div class="answer">Spring Boot 是构建在 Spring Framework 之上的工具集，借助自动配置、starter 依赖、外部化配置和嵌入式服务器降低配置与部署成本。它不替代 Spring，而是简化 Spring 应用的开发流程。</div></details>
+      <details class="qa"><summary>13. Spring Data 与 Spring Data JPA 有什么区别？</summary><div class="answer">Spring Data 是包含多个存储技术模块的项目家族；Spring Data JPA 是其中使用 JPA 的一个模块。Spring Data JPA 通常通过 Hibernate 等 JPA provider 执行底层持久化。</div></details>
+      <details class="qa"><summary>14. Jakarta Data 和 Spring Data 的区别？</summary><div class="answer">Jakarta Data 是标准化的 Jakarta API，目标是跨实现提供一致的数据访问编程模型；Spring Data 是 Spring 生态中的项目家族，提供针对多种数据存储的模块。前者强调标准规范，后者强调 Spring 生态和具体模块能力。</div></details>
+      <details class="qa"><summary>15. 什么是 Repository 模式？</summary><div class="answer">Repository 在业务逻辑和数据存储之间提供一个面向领域的接口，把查询和持久化细节封装起来。这样服务层不需要直接依赖 SQL 或具体数据访问实现，更易测试和维护。</div></details>
+      <details class="qa"><summary>16. 使用 Spring Data/Jakarta Data 后还需要理解 SQL 吗？</summary><div class="answer">需要。抽象可以减少重复代码，但不会消除数据库索引、连接、事务隔离、查询计划和性能优化问题。复杂查询和数据库专有功能仍可能需要 SQL 或底层 API。</div></details>
+    </article>
+    <article class="lang ru">
+      <h3>Вопросы и ответы по-русски</h3>
+      <details class="qa"><summary>1. Чем отличаются паттерн проектирования и архитектурный паттерн?</summary><div class="answer">Паттерн проектирования решает повторяющуюся задачу на уровне классов и объектов; архитектурный паттерн определяет более крупную структуру системы и взаимодействие компонентов. Например, Strategy — паттерн проектирования, а слоистая архитектура — архитектурный паттерн. Их можно применять одновременно.</div></details>
+      <details class="qa"><summary>2. Jakarta EE — это фреймворк?</summary><div class="answer">Точнее, это набор корпоративных Java-спецификаций и экосистема платформы. Спецификации задают стандартные API и требования к поведению, а совместимые среды их реализуют. Это обеспечивает определённую переносимость приложений.</div></details>
+      <details class="qa"><summary>3. Managed Bean и CDI Bean — одно и то же?</summary><div class="answer">Не совсем. «Managed bean» может быть общим термином для объекта, жизненным циклом которого управляет контейнер. CDI bean — модель бина, определённая CDI. Историческая спецификация Jakarta Managed Beans также была отдельной технологией, поэтому термины нельзя безоговорочно отождествлять.</div></details>
+      <details class="qa"><summary>4. Почему DI лучше, чем создавать зависимости через new?</summary><div class="answer">Зависимости предоставляет контейнер, поэтому класс не обязан сам выбирать и создавать конкретные реализации. Это уменьшает связанность и упрощает тестирование. При этом нужно понимать конфигурацию контейнера, scope и правила внедрения.</div></details>
+      <details class="qa"><summary>5. Какую проблему решает ORM?</summary><div class="answer">ORM отображает объектную модель на реляционные таблицы, сокращает повторяющийся SQL и код отображения, помогает управлять связями и изменениями сущностей. Но ORM не устраняет проблемы SQL, транзакций и производительности: нужны индексы, контроль запросов, стратегии загрузки и внимание к N+1.</div></details>
+      <details class="qa"><summary>6. Чем JPA отличается от Hibernate?</summary><div class="answer">JPA, современное название — Jakarta Persistence, является стандартом API и спецификацией. Hibernate — ORM-провайдер, реализующий этот стандарт и предлагающий собственные расширения. Стандартный API повышает переносимость, а специфические функции связывают код с Hibernate.</div></details>
+      <details class="qa"><summary>7. Что общего и различного у Hibernate и EclipseLink?</summary><div class="answer">Оба могут реализовывать Jakarta Persistence и поддерживают отображение сущностей, связи, запросы и транзакции. Отличаются расширениями, конфигурацией, генерацией SQL, кэшированием и характеристиками производительности. Выбор нужно делать по совместимости, опыту команды, нужным функциям и результатам тестов.</div></details>
+      <details class="qa"><summary>8. Чем EntityManager отличается от EntityManagerFactory?</summary><div class="answer">EntityManagerFactory создаёт EntityManager и обычно является более тяжёлой фабрикой, которую можно повторно использовать на уровне приложения. EntityManager выполняет операции с сущностями в конкретном контексте персистентности; его не следует бездумно разделять между конкурентными потоками.</div></details>
+      <details class="qa"><summary>9. В чём разница между flush и commit?</summary><div class="answer">Flush синхронизирует ожидающие изменения контекста персистентности с БД внутри текущей транзакции. Commit фиксирует транзакцию. После flush транзакция ещё не обязательно завершена, и изменения могут быть отменены откатом.</div></details>
+      <details class="qa"><summary>10. Заменит ли Jakarta Data Jakarta Persistence?</summary><div class="answer">Нет. Jakarta Data даёт более высокоуровневую абстракцию доступа к данным через Repository; Jakarta Persistence определяет отображение сущностей, контекст персистентности и ORM API. Их цели различаются, они дополняют друг друга; интеграция зависит от провайдера.</div></details>
+      <details class="qa"><summary>11. В чём принципиальная разница Spring и Jakarta EE?</summary><div class="answer">Jakarta EE опирается на спецификации и совместимые реализации; Spring — фреймворк и экосистема разработки приложений. Функциональность частично пересекается, но подходы отличаются. Их можно сочетать: например, приложение Spring использует стандартный JPA API и Hibernate-провайдер.</div></details>
+      <details class="qa"><summary>12. Что такое Spring Boot?</summary><div class="answer">Spring Boot — инструменты поверх Spring Framework, которые упрощают конфигурацию и развёртывание за счёт автоконфигурации, starter-зависимостей, внешней конфигурации и встроенного сервера. Он не заменяет Spring, а упрощает работу с ним.</div></details>
+      <details class="qa"><summary>13. Чем Spring Data отличается от Spring Data JPA?</summary><div class="answer">Spring Data — семейство модулей для разных хранилищ; Spring Data JPA — один из модулей, использующий JPA. Для реальной персистентности Spring Data JPA обычно обращается к JPA-провайдеру, например Hibernate.</div></details>
+      <details class="qa"><summary>14. Чем Jakarta Data отличается от Spring Data?</summary><div class="answer">Jakarta Data — стандартизованный API Jakarta с целью обеспечить единообразную модель доступа к данным между реализациями. Spring Data — семейство проектов экосистемы Spring с модулями для различных хранилищ. Первый подход делает акцент на стандарте, второй — на интеграции и возможностях Spring.</div></details>
+      <details class="qa"><summary>15. Что такое паттерн Repository?</summary><div class="answer">Repository предоставляет ориентированный на предметную область интерфейс между бизнес-логикой и хранилищем данных. Он скрывает детали запросов и сохранения, поэтому сервисный слой меньше зависит от SQL и конкретной реализации доступа к данным.</div></details>
+      <details class="qa"><summary>16. Нужно ли знать SQL, если используется Spring Data или Jakarta Data?</summary><div class="answer">Да. Абстракции сокращают шаблонный код, но не отменяют необходимость понимать индексы, соединения, изоляцию транзакций, планы запросов и оптимизацию производительности. Для сложных запросов и специфических функций всё ещё могут понадобиться SQL или нижележащие API.</div></details>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="glossary">
+  <h2>12. 术语表 / Глоссарий</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <table><tr><th>英文</th><th>中文解释</th><th>俄语</th></tr>
+        <tr><td>Specification</td><td>规范：定义标准 API 与行为要求</td><td>спецификация</td></tr>
+        <tr><td>Implementation / Provider</td><td>实现 / 提供者：真正执行规范</td><td>реализация / провайдер</td></tr>
+        <tr><td>Container</td><td>容器：管理组件并提供运行服务</td><td>контейнер</td></tr>
+        <tr><td>Dependency Injection (DI)</td><td>依赖注入：由外部提供对象依赖</td><td>внедрение зависимостей</td></tr>
+        <tr><td>Inversion of Control (IoC)</td><td>控制反转：对象创建/流程部分交由框架控制</td><td>инверсия управления</td></tr>
+        <tr><td>Scope</td><td>作用域：定义实例在什么上下文中存在</td><td>область видимости / scope</td></tr>
+        <tr><td>ORM</td><td>对象关系映射</td><td>объектно-реляционное отображение</td></tr>
+        <tr><td>Entity</td><td>实体：具有持久化身份的数据对象</td><td>сущность</td></tr>
+        <tr><td>Persistence Context</td><td>持久化上下文：跟踪受管理实体及其变化</td><td>контекст персистентности</td></tr>
+        <tr><td>Provider</td><td>提供者；在 JPA 语境下通常指 ORM 实现</td><td>провайдер</td></tr>
+        <tr><td>Repository</td><td>仓储：封装数据访问的领域接口</td><td>репозиторий</td></tr>
+        <tr><td>CRUD</td><td>创建、读取、更新、删除</td><td>создание, чтение, обновление, удаление</td></tr>
+        <tr><td>Auto-configuration</td><td>自动配置：根据依赖和配置选择默认组件</td><td>автоконфигурация</td></tr>
+        <tr><td>Starter</td><td>一组常用依赖的便捷入口</td><td>starter-зависимость / набор зависимостей</td></tr>
+        <tr><td>Lazy Loading</td><td>懒加载：访问数据时才加载关联或对象</td><td>ленивая загрузка</td></tr>
+        <tr><td>N+1 Query Problem</td><td>N+1 查询问题：先查列表，再为每条记录额外查询</td><td>проблема запросов N+1</td></tr>
+        <tr><td>Portability</td><td>可移植性：在不同兼容实现间迁移的难易程度</td><td>переносимость</td></tr>
+      </table>
+    </article>
+    <article class="lang ru">
+      <table><tr><th>Термин</th><th>Краткое объяснение</th><th>中文</th></tr>
+        <tr><td>Specification</td><td>Определяет стандартный API и требования к поведению</td><td>规范</td></tr>
+        <tr><td>Implementation / Provider</td><td>Реализует спецификацию и обеспечивает работу</td><td>实现 / 提供者</td></tr>
+        <tr><td>Container</td><td>Управляет компонентами и предоставляет службы выполнения</td><td>容器</td></tr>
+        <tr><td>Dependency Injection (DI)</td><td>Внешнее предоставление объекту его зависимостей</td><td>依赖注入</td></tr>
+        <tr><td>Inversion of Control (IoC)</td><td>Часть создания объектов и потока управления передаётся фреймворку</td><td>控制反转</td></tr>
+        <tr><td>Scope</td><td>Контекст, в пределах которого существует экземпляр</td><td>作用域</td></tr>
+        <tr><td>ORM</td><td>Отображение объектной модели на реляционную модель</td><td>对象关系映射</td></tr>
+        <tr><td>Entity</td><td>Объект данных с идентичностью в хранилище</td><td>实体</td></tr>
+        <tr><td>Persistence Context</td><td>Отслеживает управляемые сущности и их изменения</td><td>持久化上下文</td></tr>
+        <tr><td>Provider</td><td>Провайдер; в JPA — обычно реализация ORM</td><td>提供者</td></tr>
+        <tr><td>Repository</td><td>Доменный интерфейс, скрывающий доступ к данным</td><td>仓储</td></tr>
+        <tr><td>CRUD</td><td>Create, Read, Update, Delete</td><td>增删改查</td></tr>
+        <tr><td>Auto-configuration</td><td>Выбор настроек по умолчанию на основе зависимостей и конфигурации</td><td>自动配置</td></tr>
+        <tr><td>Starter</td><td>Удобный набор связанных зависимостей</td><td>依赖组合</td></tr>
+        <tr><td>Lazy Loading</td><td>Связанные данные загружаются при обращении к ним</td><td>懒加载</td></tr>
+        <tr><td>N+1 Query Problem</td><td>Один запрос списка и ещё по запросу на каждую запись</td><td>N+1 查询问题</td></tr>
+        <tr><td>Portability</td><td>Возможность переноса между совместимыми реализациями</td><td>可移植性</td></tr>
+      </table>
+    </article>
+  </div>
+</section>
+
+<section class="topic" id="sources">
+  <h2>13. 官方资料与延伸阅读 / Официальные источники</h2>
+  <div class="bilingual">
+    <article class="lang cn">
+      <h3>建议阅读顺序</h3>
+      <ol>
+        <li><a href="https://jakarta.ee/learn/docs/jakartaee-tutorial/current/intro/overview/overview.html" target="_blank" rel="noopener">Jakarta EE Tutorial：平台概览与组件</a></li>
+        <li><a href="https://jakarta.ee/specifications/cdi/" target="_blank" rel="noopener">Jakarta CDI 规范</a></li>
+        <li><a href="https://jakarta.ee/specifications/persistence/3.2/" target="_blank" rel="noopener">Jakarta Persistence 3.2</a></li>
+        <li><a href="https://jakarta.ee/specifications/data/1.0/" target="_blank" rel="noopener">Jakarta Data 1.0</a></li>
+        <li><a href="https://hibernate.org/orm/documentation/" target="_blank" rel="noopener">Hibernate ORM 文档</a></li>
+        <li><a href="https://eclipse.dev/eclipselink/documentation/" target="_blank" rel="noopener">EclipseLink 文档</a></li>
+        <li><a href="https://docs.spring.io/spring-framework/reference/core/beans.html" target="_blank" rel="noopener">Spring Framework：IoC 容器与 Bean</a></li>
+        <li><a href="https://docs.spring.io/spring-boot/reference/" target="_blank" rel="noopener">Spring Boot 官方参考</a></li>
+        <li><a href="https://docs.spring.io/spring-data/commons/reference/" target="_blank" rel="noopener">Spring Data Commons 官方参考</a></li>
+      </ol>
+      <p class="small">规范和框架会持续演进。准备答辩时，优先记住稳定的概念和职责边界；若老师问版本特性，再查对应版本的官方文档。</p>
+    </article>
+    <article class="lang ru">
+      <h3>Рекомендуемый порядок чтения</h3>
+      <ol>
+        <li><a href="https://jakarta.ee/learn/docs/jakartaee-tutorial/current/intro/overview/overview.html" target="_blank" rel="noopener">Jakarta EE Tutorial: обзор платформы и компонентов</a></li>
+        <li><a href="https://jakarta.ee/specifications/cdi/" target="_blank" rel="noopener">Спецификация Jakarta CDI</a></li>
+        <li><a href="https://jakarta.ee/specifications/persistence/3.2/" target="_blank" rel="noopener">Jakarta Persistence 3.2</a></li>
+        <li><a href="https://jakarta.ee/specifications/data/1.0/" target="_blank" rel="noopener">Jakarta Data 1.0</a></li>
+        <li><a href="https://hibernate.org/orm/documentation/" target="_blank" rel="noopener">Документация Hibernate ORM</a></li>
+        <li><a href="https://eclipse.dev/eclipselink/documentation/" target="_blank" rel="noopener">Документация EclipseLink</a></li>
+        <li><a href="https://docs.spring.io/spring-framework/reference/core/beans.html" target="_blank" rel="noopener">Spring Framework: IoC-контейнер и Bean</a></li>
+        <li><a href="https://docs.spring.io/spring-boot/reference/" target="_blank" rel="noopener">Официальная документация Spring Boot</a></li>
+        <li><a href="https://docs.spring.io/spring-data/commons/reference/" target="_blank" rel="noopener">Официальная документация Spring Data Commons</a></li>
+      </ol>
+      <p class="small">Спецификации и фреймворки развиваются. Для защиты сначала выучите устойчивые понятия и границы ответственности; если преподаватель спросит о конкретной версии, сверяйтесь с документацией этой версии.</p>
+    </article>
+  </div>
+</section>
+</main>
+</div>
+<footer>
+  <p>Материал предназначен для подготовки к устной защите. Примеры показывают типичные идеи и могут требовать зависимостей, импортов и конфигурации конкретного проекта.</p>
+  <p>本资料用于答辩复习。代码片段展示典型用法，实际运行时可能还需要项目依赖、完整 import 和具体配置。</p>
+</footer>
+<script>
+const body = document.body;
+const langButtons = [...document.querySelectorAll('.langbtn')];
+langButtons.forEach(btn => btn.addEventListener('click', () => {
+  body.dataset.lang = btn.dataset.mode;
+  langButtons.forEach(b => b.classList.toggle('active', b === btn));
+}));
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+const search = document.getElementById('search');
+search.addEventListener('input', () => {
+  const q = search.value.trim().toLowerCase();
+  document.querySelectorAll('main > section.topic').forEach(section => {
+    section.classList.toggle('hide', q && !section.innerText.toLowerCase().includes(q));
+  });
+  document.getElementById('map').classList.toggle('hide', q && !document.getElementById('map').innerText.toLowerCase().includes(q));
+});
+let expanded = false;
+document.getElementById('expandBtn').addEventListener('click', e => {
+  expanded = !expanded;
+  document.querySelectorAll('details.qa').forEach(d => d.open = expanded);
+  e.currentTarget.textContent = expanded ? '收起全部答辩题' : '展开全部答辩题';
+});
+</script>
+</body>
+</html>
