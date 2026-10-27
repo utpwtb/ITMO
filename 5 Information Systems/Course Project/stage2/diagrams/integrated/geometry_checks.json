@@ -58,33 +58,36 @@
           "edge1": "master_salon_id_fkey",
           "edge2": "moderation_decision_target_review_id_fkey",
           "point": [
-            2096,
-            1729
+            2406,
+            1346
           ]
         },
         {
           "edge1": "master_service_master_id_fkey",
           "edge2": "moderation_decision_target_review_id_fkey",
           "point": [
-            2160,
-            1729
+            2470,
+            1346
           ]
         }
       ],
       "canvas_pixels": [
-        2784,
-        3221
+        3188,
+        2595
       ],
       "body_font_px": 20,
       "all_boxes_fit_content": true,
       "separate_bold_key_column": true,
       "bold_data_types": true,
-      "bottom_legend_removed": true
+      "bottom_legend_removed": true,
+      "full_constraint_labels": true,
+      "generated_marker_removed": true,
+      "box_constraint_notes_removed": true
     }
   ],
   "report_unchanged_sha256": {
-    "report\\stage2_report.tex": "835d34b7185cc478349755313dde53840aa3e20f1deffe954a26fcbbef3deb6e",
-    "output\\pdf\\stage2_report.pdf": "dcf78f2fd8fa7eab430b1bf1dc80a450e38defda9fef4e4ca58df367685e4329"
+    "report\\stage2_report.tex": "16d34afe3aeb3167fb7d7564cc20fa078b63b3870ae109787432efa1c3dcbb3a",
+    "output\\pdf\\stage2_report.pdf": "f134a1b4140abad5f92cd0b1f01f84ecedd8e0215983cb41b8a863de84ab2833"
   },
   "source_metadata": "verification/schema_metadata.json"
 }

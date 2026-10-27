@@ -35,21 +35,30 @@ def sql_block(source):
     return "\n".join([r"\begin{lstlisting}[style=sql]",source.strip(),r"\end{lstlisting}"])
 
 
-def sheet(source,destination,pagesize,caption,legend):
+def readable_sql(source):
+    parts=re.split(r"('(?:''|[^'])*')",source)
+    return "".join(re.sub(r",(?=\S|$)",", ",part) if i%2==0 else part for i,part in enumerate(parts))
+
+
+def sheet(source,destination,pagesize,caption,legend,section_title):
     """Place a whole vector diagram on a standard foldout sheet, without rasterizing."""
     width,height=pagesize
     page=PdfReader(str(source)).pages[0]
-    sw,sh=float(page.mediabox.width),float(page.mediabox.height)
-    scale=min((width-72)/sw,(height-105)/sh)
+    sw,sh=float(page.mediabox.width),float(page.mediabox.height)-105
+    page.cropbox.upper_right=(sw,sh)
+    scale=min((width-72)/sw,(height-155)/sh)
     x=(width-sw*scale)/2
-    y=height-36-sh*scale
+    y=height-78-sh*scale
     writer=PdfWriter()
     output=writer.add_blank_page(width,height)
     output.merge_transformed_page(page,Transformation().scale(scale).translate(x,y))
     if "ReportArial" not in pdfmetrics.getRegisteredFontNames():
         pdfmetrics.registerFont(TTFont("ReportArial","C:/Windows/Fonts/arial.ttf"))
+        pdfmetrics.registerFont(TTFont("ReportArialBold","C:/Windows/Fonts/arialbd.ttf"))
     overlay=BytesIO()
     c=canvas.Canvas(overlay,pagesize=pagesize)
+    c.setFont("ReportArialBold",18)
+    c.drawString(36,height-45,section_title)
     c.setFont("ReportArial",11)
     c.drawString(36,45,caption)
     c.setFont("ReportArial",9)
@@ -58,6 +67,63 @@ def sheet(source,destination,pagesize,caption,legend):
     output.merge_page(PdfReader(overlay).pages[0])
     with destination.open("wb") as stream:
         writer.write(stream)
+
+
+def operations_markdown(fragment):
+    """Move the former sections 7 and 8 intact, with Markdown tables and code."""
+    def inline(value):
+        value=value.replace(r"\allowbreak{}","").replace(r"\_","_")
+        value=re.sub(r"\\texttt\{([^{}]*)\}",lambda m:"`"+m[1]+"`",value)
+        value=re.sub(r"\\textbf\{([^{}]*)\}",lambda m:"**"+m[1]+"**",value)
+        return value.replace(r"\par ","<br>").replace(r"\&","&").replace(r"\%","%")
+    def convert_table(match):
+        headers=[inline(c.strip()) for c in match[1].split(" & ")]
+        rows=[row.strip() for row in match[2].split(r"\\") if row.strip()]
+        return "\n\n"+"\n".join(["| "+" | ".join(headers)+" |","| "+" | ".join("---" for _ in headers)+" |"]+
+                                    ["| "+" | ".join(inline(c.strip()) for c in row.split(" & "))+" |" for row in rows])+"\n\n"
+    fragment=re.sub(r"\\begin\{longtable\}.*?\\toprule (.*?)\\\\\\midrule\\endhead\s*(.*?)\\bottomrule\\end\{longtable\}",convert_table,fragment,flags=re.S)
+    fragment=re.sub(r"\\begin\{lstlisting\}\[style=commands\]\s*(.*?)\\end\{lstlisting\}",lambda m:"\n```bash\n"+m[1].strip()+"\n```\n",fragment,flags=re.S)
+    fragment=fragment.replace(r"\section{Скрипты и воспроизведение}","## 7. Скрипты и воспроизведение")
+    fragment=fragment.replace(r"\section{Результаты проверки}","## 8. Результаты проверки")
+    result="# Скрипты, воспроизведение и проверка\n\nМатериалы бывших разделов 7 и 8, вынесенные из PDF-отчёта.\n\n"+inline(fragment).strip()+"\n"
+    assert r"\begin{" not in result and r"\end{" not in result
+    return re.sub(r"\n{3,}","\n\n",result)
+
+
+def revise_report(full):
+    start=full.index(r"\section{Скрипты и воспроизведение}")
+    end=full.index(r"\section{Заключение}")
+    (S/"OPERATIONS_AND_VERIFICATION.md").write_text(operations_markdown(full[start:end]),encoding="utf-8")
+    full=full[:start]+full[end:]
+    start=full.index(r"\section{ER-модель}")
+    end=full.index(r"\section{Целостность и доступ}")
+    figures=r'''\clearpage
+\includepdf[pages=1,fitpaper=true,pagecommand={\thispagestyle{empty}\refstepcounter{section}\addcontentsline{toc}{section}{\protect\numberline{\thesection}ER-модель}}]{figures/er_model_a3.pdf}
+\includepdf[pages=1,fitpaper=true,pagecommand={\thispagestyle{empty}\refstepcounter{section}\addcontentsline{toc}{section}{\protect\numberline{\thesection}Даталогическая модель}}]{figures/logical_model_a2.pdf}
+'''
+    full=full[:start]+figures+full[end:]
+    # The full statements below replace the former isolated master_service example.
+    start=full.index("Основные фрагменты DDL:")
+    end=full.index("Триггеры защищают условия",start)
+    full=full[:start]+full[end:]
+    ddl=(S/"sql/01_tables.sql").read_text("utf-8")
+    tables=re.findall(r"CREATE TABLE beauty\.([a-z_]+) \(.*?\n\);",ddl,re.S)
+    statements=re.findall(r"CREATE TABLE beauty\.[a-z_]+ \(.*?\n\);",ddl,re.S)
+    assert len(statements)==14 and set(tables)==set(diagrams.TABLES)
+    setup=ddl[:ddl.index("CREATE TABLE")].strip()
+    chunks=[r"\subsection{Создание таблиц}",sql_block(setup)]
+    for name,statement in zip(tables,statements):
+        chunks += [r"\par\medskip\noindent\begin{minipage}{\linewidth}",
+                   r"\subsubsection*{"+tex(diagrams.NAMES[name])+" ("+code(name)+")}",
+                   sql_block(readable_sql(statement)),r"\end{minipage}\par\medskip"]
+    chunks.append(r"\subsection{Контроль бизнес-правил}")
+    marker=r"\section{Целостность и доступ}"
+    full=full.replace(marker,marker+"\n"+"\n".join(chunks),1)
+    full=full.replace("UQ","UNIQUE")
+    full=full.replace("Все 79 проверок пройдены; полезность индексов подтверждена планами запросов. ","")
+    full=full.replace(r"\section{Заключение}",r"\par\begin{samepage}\section{Заключение}")
+    full=full.replace(r"\end{document}",r"\par\end{samepage}\end{document}")
+    return full
 
 
 PREAMBLE=r'''\documentclass[11pt,a4paper]{article}
@@ -118,10 +184,12 @@ def main():
     figs=S/"report/figures"
     sheet(figs/"er_model.pdf",figs/"er_model_a3.pdf",landscape(A3),
           "Рисунок 1. Полная ER-модель: 10 сущностей и прямая связь M:N.",
-          "Кружок означает необязательность, «лапка» - множество. Дуга на пересечении не является соединением. Фотографии - многозначные атрибуты.")
-    sheet(figs/"logical_model.pdf",figs/"logical_model_a2.pdf",A2,
+          "","2. ER-модель")
+    native=PdfReader(str(figs/"logical_model.pdf")).pages[0]
+    logical_size=landscape(A2) if float(native.mediabox.width)>float(native.mediabox.height) else A2
+    sheet(figs/"logical_model.pdf",figs/"logical_model_a2.pdf",logical_size,
           "Рисунок 2. Полная даталогическая модель PostgreSQL: 14 таблиц и 25 внешних ключей.",
-          "")
+          "","3. Даталогическая модель")
     model={"entity_count":10,"entities":[{"name":n,"russian_name":diagrams.NAMES[n],"attributes":diagrams.CONCEPT_ATTRS[n]} for n in diagrams.CORE],
            "many_to_many":{"left":"master","right":"salon_service","association_table":"master_service","attributes":["is_active"]},
            "physical_table_count":14,"attribute_relations":["salon_photo","master_photo"],"technical_relations":["master_invitation"]}
@@ -236,7 +304,7 @@ BEGIN
   ) RETURNING appointment_id INTO id;
   RETURN id;
 END $$;'''),r'''
-Процедура mark\_visit принимает только COMPLETED или NO\_SHOW; триггер проверяет полномочия конкретного мастера/владельца и наступление планового окончания. cancel\_appointment идемпотентна, сохраняет автора и причину и освобождает слот. add\_review проверяет принадлежность завершённого посещения клиенту. Приглашение хранит хеш; повторная выдача отзывает прежний токен, активация использует его ровно один раз.
+{\raggedright mark\_\allowbreak{}visit фиксирует COMPLETED или NO\_SHOW после окончания посещения. cancel\_\allowbreak{}appointment идемпотентна и сохраняет автора отмены. add\_\allowbreak{}review допускает отзыв клиента о выполненной записи. При активации приглашения проверяются срок и однократность токена.\par}
 
 \section{Индексы по прецедентам}
 В схеме 43 индекса: 23 обеспечивают PK/UQ/EXCLUDE, 19 созданы для запросов и один частичный уникальный индекс защищает открытые приглашения. Индексы ограничений не дублируются.
@@ -267,8 +335,6 @@ END $$;'''),r'''
 CREATE INDEX idx_appointment_busy
   ON beauty.appointment USING gist (master_id, slot)
   WHERE status = 'CONFIRMED';'''),r'''
-B-tree обслуживает равенства, диапазоны и сортировку; GiST --- пересечение диапазонов. Частичные индексы исключают неактуальные строки. Индекс координат ускоряет предварительный отбор, а не сам расчёт географического расстояния. В малых справочниках последовательное сканирование может быть выгоднее индекса.
-
 \section{Скрипты и воспроизведение}
 Нужны PostgreSQL, psql, права владельца схемы и расширения btree\_gist, pgcrypto. Проверенная версия --- PostgreSQL 17.4. При работе в выданной преподавателем пустой базе шаг CREATE DATABASE пропускается.
 ''',table(["Файлы","Назначение"],[
@@ -313,8 +379,9 @@ EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) выполнен без отключен
 Построены ER-модель из десяти сущностей с M:N и даталогическая модель из четырнадцати отношений. Реализованы PostgreSQL DDL, триггеры, бизнес-операции PL/pgSQL, индексы и скрипты жизненного цикла. Все 79 проверок пройдены; полезность индексов подтверждена планами запросов. Материалы готовы к обсуждению с преподавателем; фактическое согласование ER-модели остаётся обязательным внешним шагом.
 \end{document}
 ''']
-    (S/"report/stage2_report.tex").write_text("\n\n".join(parts),encoding="utf-8")
-    print("Concise report source ready; 2 complete vector diagrams; SQL syntax highlighting enabled.")
+    full=revise_report("\n\n".join(parts))
+    (S/"report/stage2_report.tex").write_text(full,encoding="utf-8")
+    print("Report ready: sections 2/3 are diagrams only; 14 complete CREATE TABLE statements; former sections 7/8 moved to Markdown.")
 
 
 if __name__=="__main__":

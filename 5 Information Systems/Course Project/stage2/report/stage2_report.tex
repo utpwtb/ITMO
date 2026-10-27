@@ -56,69 +56,245 @@
 \end{enumerate}
 Платформа обслуживает несколько салонов одного города. У пользователя одна роль: клиент, мастер, владелец или администратор. Владелец управляет одним салоном, мастер работает в одном салоне. Запись содержит одну услугу и одного мастера. Денежные значения заданы в рублях, локальное время --- Europe/Moscow. Горизонт записи составляет 30 календарных дней, включая текущий; начала выбираются с шагом 15 минут, длительность услуги может быть произвольным положительным числом минут.
 
-\section{ER-модель}
-Концептуальная модель содержит \textbf{10 сущностей}: пользователь, район, салон, вид услуги, услуга салона, мастер, рабочий интервал, запись, отзыв и решение модерации. Полная схема приведена на рисунке~1; каждый объект показан один раз.
-
-Связь «мастер выполняет услугу салона» имеет кратность \textbf{M:N} и атрибут активности назначения. Например, два мастера выполняют маникюр, а один из них также выполняет педикюр: это три разрешённые пары. Сама пара не вводится в ER-граф как отдельный бизнес-объект; её таблица появляется при переходе к отношениям.
-
-Фотографии интерьера и работ мастера --- составные многозначные атрибуты: путь, подпись, порядок и видимость. Автор отзыва и его конкретные цели выводятся через выполненную запись. Решение модерации имеет обязательного администратора и ровно одну цель: пользователя, салон, мастера или отзыв. Путь фотографии уточняет элемент атрибута выбранного салона или мастера.
-
-\textbf{Согласование:} модель подготовлена к обсуждению; фактическое подтверждение преподавателя пока не зафиксировано. Даталогическая модель далее представляет вариант для согласования.
 \clearpage
-\includepdf[pages=1,fitpaper=true,pagecommand={\thispagestyle{empty}}]{figures/er_model_a3.pdf}
-\section{Даталогическая модель и нормализация}
-Полная схема на рисунке~2 содержит \textbf{14 таблиц}: десять основных отношений, таблицу связи M:N, две таблицы элементов фотоатрибутов и техническую таблицу приглашений.
-
-
-\begin{longtable}{L{4.1cm}L{12.0cm}}
-\toprule Преобразование & Результат и ключ\\\midrule\endhead
-Бизнес-сущности & По одной таблице с идентификатором; исключение для многозначных атрибутов указано ниже.\\
-Связь M:N & \texttt{master\_\allowbreak{}service}: PK (master\_id, salon\_service\_id), активность пары.\\
-Фотографии & \texttt{salon\_\allowbreak{}photo}, \texttt{master\_\allowbreak{}photo}: составные PK (родитель, file\_path).\\
-Одноразовое приглашение & \texttt{master\_\allowbreak{}invitation}: invitation\_id; уникальный хеш, срок, использование и отзыв токена.\\
-\bottomrule\end{longtable}
-
-
-Запись ссылается составным FK на разрешённую пару «мастер--услуга». Триггер дополнительно проверяет принадлежность обоих объектов одному салону. Отзыв имеет FK на запись и уникальную пару (appointment\_id, target\_type): не более одного отзыва о салоне и одного о мастере. Имя мастера хранится в пользователе и не дублируется в профиле.
-
-Для модерации используются четыре целевых FK с XOR. Два дополнительных составных FK (target\_salon\_id, photo\_path) и (target\_master\_id, photo\_path) проверяют существование конкретного фотоэлемента. Все внешние ключи используют ON DELETE RESTRICT: исторически значимые объекты архивируются.
-
-Разделение фотоэлементов устраняет повторяющиеся группы и обеспечивает 1НФ. Атрибуты основных отношений зависят от их ключей; связи и сведения о пользователе не дублируются, что соответствует 3НФ. Снимки названия, цены и длительности относятся к факту подтверждения записи и сохраняют историю. Окончание и диапазон времени --- контролируемые generated-столбцы. Рейтинги и свободные времена вычисляются запросами.
-
-На рисунке~2 ключи вынесены в отдельную левую колонку; типы справа выделены полужирным. PK --- первичный ключ, FK --- внешний, UQ --- уникальность, NN --- NOT NULL, G --- вычисляемый столбец. Повтор F13 у двух полей означает один составной FK, а не две независимые ссылки.
-\clearpage
-\includepdf[pages=1,fitpaper=true,pagecommand={\thispagestyle{empty}}]{figures/logical_model_a2.pdf}
+\includepdf[pages=1,fitpaper=true,pagecommand={\thispagestyle{empty}\refstepcounter{section}\addcontentsline{toc}{section}{\protect\numberline{\thesection}ER-модель}}]{figures/er_model_a3.pdf}
+\includepdf[pages=1,fitpaper=true,pagecommand={\thispagestyle{empty}\refstepcounter{section}\addcontentsline{toc}{section}{\protect\numberline{\thesection}Даталогическая модель}}]{figures/logical_model_a2.pdf}
 \section{Целостность и доступ}
+\subsection{Создание таблиц}
+\begin{lstlisting}[style=sql]
+CREATE EXTENSION IF NOT EXISTS btree_gist WITH SCHEMA public;
+CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
+CREATE SCHEMA beauty;
+REVOKE ALL ON SCHEMA beauty FROM PUBLIC;
+CREATE FUNCTION beauty.local_now() RETURNS timestamp LANGUAGE sql VOLATILE
+SET search_path = pg_catalog AS $$ SELECT clock_timestamp() AT TIME ZONE 'Europe/Moscow' $$;
+\end{lstlisting}
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Пользователь (\texttt{user\_\allowbreak{}account})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.user_account (
+ user_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ email text NOT NULL CHECK (email = lower(btrim(email)) AND email LIKE '%@%'),
+ password_hash text,
+ display_name text NOT NULL CHECK (btrim(display_name) <> ''),
+ role text NOT NULL CHECK (role IN ('CLIENT', 'MASTER', 'OWNER', 'ADMIN')),
+ account_status text NOT NULL DEFAULT 'ACTIVE' CHECK (account_status IN ('INVITED', 'ACTIVE', 'BLOCKED', 'ARCHIVED')),
+ created_at timestamp NOT NULL DEFAULT beauty.local_now(),
+ CONSTRAINT uq_user_email UNIQUE(email),
+ CONSTRAINT ck_invited_role CHECK(account_status<>'INVITED' OR role='MASTER'),
+ CONSTRAINT ck_password CHECK (password_hash IS NOT NULL OR (role='MASTER' AND account_status='INVITED'))
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Район (\texttt{district})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.district (
+ district_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ name text NOT NULL UNIQUE CHECK(btrim(name)<>''), is_active boolean NOT NULL DEFAULT true
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Салон (\texttt{salon})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.salon (
+ salon_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ owner_user_id bigint NOT NULL UNIQUE REFERENCES beauty.user_account ON DELETE RESTRICT,
+ district_id bigint NOT NULL REFERENCES beauty.district ON DELETE RESTRICT,
+ name text NOT NULL CHECK(btrim(name)<>''), description text NOT NULL DEFAULT '',
+ address text NOT NULL CHECK(btrim(address)<>''),
+ latitude numeric(9, 6) NOT NULL CHECK(latitude BETWEEN -90 AND 90),
+ longitude numeric(9, 6) NOT NULL CHECK(longitude BETWEEN -180 AND 180),
+ phone text NOT NULL, opening_hours text NOT NULL,
+ publication_status text NOT NULL DEFAULT 'PENDING'
+   CHECK(publication_status IN ('PENDING', 'RETURNED', 'PUBLISHED', 'UNPUBLISHED', 'BLOCKED', 'ARCHIVED')),
+ created_at timestamp NOT NULL DEFAULT beauty.local_now()
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Вид услуги (\texttt{service\_\allowbreak{}type})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.service_type (
+ service_type_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ name text NOT NULL UNIQUE CHECK(btrim(name)<>''), description text NOT NULL DEFAULT '',
+ is_active boolean NOT NULL DEFAULT true
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Услуга салона (\texttt{salon\_\allowbreak{}service})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.salon_service (
+ salon_service_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ salon_id bigint NOT NULL REFERENCES beauty.salon ON DELETE RESTRICT,
+ service_type_id bigint NOT NULL REFERENCES beauty.service_type ON DELETE RESTRICT,
+ name text NOT NULL CHECK(btrim(name)<>''), description text NOT NULL DEFAULT '',
+ price numeric(12, 2) NOT NULL CHECK(price>=0),
+ duration_minutes integer NOT NULL CHECK(duration_minutes>0),
+ is_active boolean NOT NULL DEFAULT true
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Мастер (\texttt{master})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.master (
+ master_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ user_id bigint NOT NULL UNIQUE REFERENCES beauty.user_account ON DELETE RESTRICT,
+ salon_id bigint NOT NULL REFERENCES beauty.salon ON DELETE RESTRICT,
+ specialization text NOT NULL DEFAULT '', experience_description text NOT NULL DEFAULT '',
+ is_active boolean NOT NULL DEFAULT true
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Назначение услуги мастеру (\texttt{master\_\allowbreak{}service})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.master_service (
+ master_id bigint NOT NULL REFERENCES beauty.master ON DELETE RESTRICT,
+ salon_service_id bigint NOT NULL REFERENCES beauty.salon_service ON DELETE RESTRICT,
+ is_active boolean NOT NULL DEFAULT true,
+ PRIMARY KEY(master_id, salon_service_id)
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Рабочий интервал (\texttt{work\_\allowbreak{}interval})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.work_interval (
+ work_interval_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ master_id bigint NOT NULL REFERENCES beauty.master ON DELETE RESTRICT,
+ work_date date NOT NULL, start_time time NOT NULL, end_time time NOT NULL,
+ slot tsrange GENERATED ALWAYS AS (tsrange(work_date+start_time, work_date+end_time, '[)')) STORED,
+ CHECK(start_time<end_time),
+ CONSTRAINT ex_work_overlap EXCLUDE USING gist(master_id WITH =, slot WITH &&)
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Запись (\texttt{appointment})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.appointment (
+ appointment_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ client_user_id bigint NOT NULL REFERENCES beauty.user_account ON DELETE RESTRICT,
+ master_id bigint NOT NULL, salon_service_id bigint NOT NULL,
+ start_at timestamp NOT NULL,
+ service_name_snapshot text NOT NULL,
+ price_snapshot numeric(12, 2) NOT NULL CHECK(price_snapshot>=0),
+ duration_snapshot integer NOT NULL CHECK(duration_snapshot>0),
+ end_at timestamp GENERATED ALWAYS AS (start_at+make_interval(mins=>duration_snapshot)) STORED,
+ slot tsrange GENERATED ALWAYS AS (tsrange(start_at, start_at+make_interval(mins=>duration_snapshot), '[)')) STORED,
+ status text NOT NULL DEFAULT 'CONFIRMED' CHECK(status IN ('CONFIRMED', 'CANCELLED', 'COMPLETED', 'NO_SHOW')),
+ created_at timestamp NOT NULL DEFAULT beauty.local_now(),
+ cancelled_at timestamp, cancelled_by_user_id bigint REFERENCES beauty.user_account ON DELETE RESTRICT,
+ cancellation_reason text,
+ result_marked_at timestamp, result_marked_by_user_id bigint REFERENCES beauty.user_account ON DELETE RESTRICT,
+ FOREIGN KEY(master_id, salon_service_id) REFERENCES beauty.master_service ON DELETE RESTRICT,
+ CONSTRAINT ck_start_grid CHECK(extract(minute FROM start_at)::integer % 15=0 AND extract(second FROM start_at)=0),
+ CONSTRAINT ck_appointment_evidence CHECK (
+  (status='CONFIRMED' AND cancelled_at IS NULL AND cancelled_by_user_id IS NULL AND cancellation_reason IS NULL
+    AND result_marked_at IS NULL AND result_marked_by_user_id IS NULL) OR
+  (status='CANCELLED' AND cancelled_at IS NOT NULL AND cancelled_by_user_id IS NOT NULL
+    AND result_marked_at IS NULL AND result_marked_by_user_id IS NULL) OR
+  (status IN ('COMPLETED', 'NO_SHOW') AND result_marked_at IS NOT NULL AND result_marked_by_user_id IS NOT NULL
+    AND cancelled_at IS NULL AND cancelled_by_user_id IS NULL AND cancellation_reason IS NULL)
+ ),
+ CONSTRAINT ex_appointment_overlap EXCLUDE USING gist(master_id WITH =, slot WITH &&) WHERE(status<>'CANCELLED')
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Фотографии интерьера (\texttt{salon\_\allowbreak{}photo})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.salon_photo (
+ salon_id bigint NOT NULL REFERENCES beauty.salon ON DELETE RESTRICT,
+ file_path text NOT NULL CHECK(btrim(file_path)<>''), caption text NOT NULL DEFAULT '',
+ sort_order integer NOT NULL DEFAULT 0 CHECK(sort_order>=0),
+ visibility text NOT NULL DEFAULT 'PUBLISHED' CHECK(visibility IN ('PUBLISHED', 'HIDDEN', 'ARCHIVED')),
+ mime_type text NOT NULL CHECK(mime_type IN ('image/jpeg', 'image/png')),
+ byte_size integer NOT NULL CHECK(byte_size BETWEEN 1 AND 5242880),
+ created_at timestamp NOT NULL DEFAULT beauty.local_now(), PRIMARY KEY(salon_id, file_path)
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Фотографии работ (\texttt{master\_\allowbreak{}photo})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.master_photo (
+ master_id bigint NOT NULL REFERENCES beauty.master ON DELETE RESTRICT,
+ file_path text NOT NULL CHECK(btrim(file_path)<>''), caption text NOT NULL DEFAULT '',
+ sort_order integer NOT NULL DEFAULT 0 CHECK(sort_order>=0),
+ visibility text NOT NULL DEFAULT 'PUBLISHED' CHECK(visibility IN ('PUBLISHED', 'HIDDEN', 'ARCHIVED')),
+ mime_type text NOT NULL CHECK(mime_type IN ('image/jpeg', 'image/png')),
+ byte_size integer NOT NULL CHECK(byte_size BETWEEN 1 AND 5242880),
+ created_at timestamp NOT NULL DEFAULT beauty.local_now(), PRIMARY KEY(master_id, file_path)
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Отзыв (\texttt{review})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.review (
+ review_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ appointment_id bigint NOT NULL REFERENCES beauty.appointment ON DELETE RESTRICT,
+ target_type text NOT NULL CHECK(target_type IN ('SALON', 'MASTER')),
+ rating smallint NOT NULL CHECK(rating BETWEEN 1 AND 5), text text,
+ visibility text NOT NULL DEFAULT 'PUBLISHED' CHECK(visibility IN ('PUBLISHED', 'HIDDEN')),
+ created_at timestamp NOT NULL DEFAULT beauty.local_now(),
+ UNIQUE(appointment_id, target_type)
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Решение модерации (\texttt{moderation\_\allowbreak{}decision})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.moderation_decision (
+ decision_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ admin_user_id bigint NOT NULL REFERENCES beauty.user_account ON DELETE RESTRICT,
+ target_user_id bigint REFERENCES beauty.user_account ON DELETE RESTRICT,
+ target_salon_id bigint REFERENCES beauty.salon ON DELETE RESTRICT,
+ target_master_id bigint REFERENCES beauty.master ON DELETE RESTRICT,
+ target_review_id bigint REFERENCES beauty.review ON DELETE RESTRICT,
+ photo_path text,
+ action text NOT NULL CHECK(action IN ('APPROVE', 'RETURN', 'PUBLISH', 'UNPUBLISH', 'BLOCK', 'UNBLOCK', 'HIDE', 'RESTORE')),
+ reason text NOT NULL CHECK(btrim(reason)<>''), created_at timestamp NOT NULL DEFAULT beauty.local_now(),
+ CHECK(num_nonnulls(target_user_id, target_salon_id, target_master_id, target_review_id)=1),
+ CHECK(photo_path IS NULL OR (btrim(photo_path)<>'' AND num_nonnulls(target_salon_id, target_master_id)=1)),
+ FOREIGN KEY(target_salon_id, photo_path) REFERENCES beauty.salon_photo(salon_id, file_path) ON DELETE RESTRICT,
+ FOREIGN KEY(target_master_id, photo_path) REFERENCES beauty.master_photo(master_id, file_path) ON DELETE RESTRICT
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\par\medskip\noindent\begin{minipage}{\linewidth}
+\subsubsection*{Приглашение мастера (\texttt{master\_\allowbreak{}invitation})}
+\begin{lstlisting}[style=sql]
+CREATE TABLE beauty.master_invitation (
+ invitation_id bigint GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+ master_id bigint NOT NULL REFERENCES beauty.master ON DELETE RESTRICT,
+ created_by_user_id bigint NOT NULL REFERENCES beauty.user_account ON DELETE RESTRICT,
+ token_hash text NOT NULL UNIQUE,
+ created_at timestamp NOT NULL DEFAULT beauty.local_now(), expires_at timestamp NOT NULL,
+ used_at timestamp, revoked_at timestamp,
+ CHECK(expires_at>created_at), CHECK(num_nonnulls(used_at, revoked_at)<=1),
+ CHECK(used_at IS NULL OR (used_at>=created_at AND used_at<expires_at)),
+ CHECK(revoked_at IS NULL OR revoked_at>=created_at)
+);
+\end{lstlisting}
+\end{minipage}\par\medskip
+\subsection{Контроль бизнес-правил}
 
 
 \begin{longtable}{L{4.1cm}L{12.0cm}}
 \toprule Инвариант & Реализация\\\midrule\endhead
-Идентичность и принадлежность & PK, FK, UQ; неизменность роли и владельческих связей; проверка ролей и одного салона триггерами.\\
+Идентичность и принадлежность & PK, FK, UNIQUE; неизменность роли и владельческих связей; проверка ролей и одного салона триггерами.\\
 Нет пересечения времени & GiST EXCLUDE по мастеру и диапазону для рабочих интервалов и неотменённых записей. Полуоткрытые интервалы допускают соседние посещения.\\
 Запись допустима & Триггер проверяет публикацию, активность, разрешённую пару, горизонт, шаг начала и вхождение всей услуги в один рабочий интервал.\\
 История и статусы & Снимки неизменны; отмена до начала, результат после окончания. Сокращение графика и деактивация не нарушают ещё не завершённые подтверждённые записи.\\
-Отзывы и модерация & Только COMPLETED, рейтинг 1--5, UQ по типу цели; неизменяемый текст и аудит. CHECK XOR и составные FK для фото.\\
+Отзывы и модерация & Только COMPLETED, рейтинг 1--5, UNIQUE по типу цели; неизменяемый текст и аудит. CHECK XOR и составные FK для фото.\\
 Фото и приглашения & До 20 неархивных фото; JPEG/PNG до 5 МБ; скрытые фото учитываются в квоте. Уникальный одноразовый токен, срок и взаимное исключение использования и отзыва.\\
 \bottomrule\end{longtable}
-
-Основные фрагменты DDL:
-
-\begin{lstlisting}[style=sql]
-CREATE TABLE beauty.master_service (
-  master_id bigint NOT NULL
-    REFERENCES beauty.master ON DELETE RESTRICT,
-  salon_service_id bigint NOT NULL
-    REFERENCES beauty.salon_service ON DELETE RESTRICT,
-  is_active boolean NOT NULL DEFAULT true,
-  PRIMARY KEY (master_id, salon_service_id)
-);
-
--- Constraint inside beauty.appointment:
-CONSTRAINT ex_appointment_overlap
-  EXCLUDE USING gist (master_id WITH =, slot WITH &&)
-  WHERE (status <> 'CANCELLED')
-\end{lstlisting}
-
 
 Триггеры защищают условия, зависящие от других строк и времени. Например, контроль права на отзыв включает следующую проверку:
 
@@ -188,10 +364,10 @@ END $$;
 \end{lstlisting}
 
 
-Процедура mark\_visit принимает только COMPLETED или NO\_SHOW; триггер проверяет полномочия конкретного мастера/владельца и наступление планового окончания. cancel\_appointment идемпотентна, сохраняет автора и причину и освобождает слот. add\_review проверяет принадлежность завершённого посещения клиенту. Приглашение хранит хеш; повторная выдача отзывает прежний токен, активация использует его ровно один раз.
+{\raggedright mark\_\allowbreak{}visit фиксирует COMPLETED или NO\_SHOW после окончания посещения. cancel\_\allowbreak{}appointment идемпотентна и сохраняет автора отмены. add\_\allowbreak{}review допускает отзыв клиента о выполненной записи. При активации приглашения проверяются срок и однократность токена.\par}
 
 \section{Индексы по прецедентам}
-В схеме 43 индекса: 23 обеспечивают PK/UQ/EXCLUDE, 19 созданы для запросов и один частичный уникальный индекс защищает открытые приглашения. Индексы ограничений не дублируются.
+В схеме 43 индекса: 23 обеспечивают PK/UNIQUE/EXCLUDE, 19 созданы для запросов и один частичный уникальный индекс защищает открытые приглашения. Индексы ограничений не дублируются.
 
 
 \begin{longtable}{L{6.4cm}L{2.0cm}L{7.3cm}}
@@ -227,68 +403,6 @@ CREATE INDEX idx_appointment_busy
 \end{lstlisting}
 
 
-B-tree обслуживает равенства, диапазоны и сортировку; GiST --- пересечение диапазонов. Частичные индексы исключают неактуальные строки. Индекс координат ускоряет предварительный отбор, а не сам расчёт географического расстояния. В малых справочниках последовательное сканирование может быть выгоднее индекса.
-
-\section{Скрипты и воспроизведение}
-Нужны PostgreSQL, psql, права владельца схемы и расширения btree\_gist, pgcrypto. Проверенная версия --- PostgreSQL 17.4. При работе в выданной преподавателем пустой базе шаг CREATE DATABASE пропускается.
-
-
-\begin{longtable}{L{8.1cm}L{8.0cm}}
-\toprule Файлы & Назначение\\\midrule\endhead
-\texttt{sql/00\_\allowbreak{}create\_\allowbreak{}database.\allowbreak{}sql}, \texttt{sql/99\_\allowbreak{}drop\_\allowbreak{}database.\allowbreak{}sql} & Создание явно указанной UTF-8 базы и удаление без FORCE.\\
-\texttt{sql/01\_\allowbreak{}tables.\allowbreak{}sql}, \texttt{sql/02\_\allowbreak{}seed.\allowbreak{}sql} & Таблицы, декларативные ограничения и синтетические данные.\\
-\texttt{sql/03\_\allowbreak{}integrity.\allowbreak{}sql}, \texttt{sql/04\_\allowbreak{}routines.\allowbreak{}sql} & Триггеры, помощники, бизнес-функции, процедуры и view.\\
-\texttt{sql/05\_\allowbreak{}indexes.\allowbreak{}sql}, \texttt{sql/06\_\allowbreak{}grant\_\allowbreak{}backend.\allowbreak{}sql} & Индексы запросов и EXECUTE для существующей серверной роли.\\
-\texttt{sql/install.\allowbreak{}sql} & Атомарная установка, необязательные демоданные и ANALYZE.\\
-\texttt{scripts/CreateDatabase.\allowbreak{}ps1}, \texttt{scripts/DropDatabase.\allowbreak{}ps1}, \texttt{scripts/TestDatabase.\allowbreak{}ps1} & Локальные команды создания, удаления и изолированной проверки.\\
-\bottomrule\end{longtable}
-
-Запуск из каталога второго этапа:
-
-\begin{lstlisting}[style=commands]
-psql -h HOST -U USER -d postgres \
-  -v db_name=beauty_course -f sql/00_create_database.sql
-psql -h HOST -U USER -d beauty_course \
-  -v with_demo_data=true -f sql/install.sql
-psql -h HOST -U OWNER -d beauty_course \
-  -v backend_role=SERVER_ROLE -f sql/06_grant_backend.sql
-psql -h HOST -U USER -d postgres \
-  -v db_name=beauty_course -f sql/99_drop_database.sql
-\end{lstlisting}
-Исторические демоданные загружаются после DDL, до установки бизнес-триггеров, в одной транзакции install. Декларативные ограничения действуют при загрузке; дополнительные проверки подтверждают согласованность истории. Этот путь предназначен для новой демонстрационной базы. Без флага демоданных создаётся пустая рабочая схема. Удаление не завершает чужие сеансы.
-
-\section{Результаты проверки}
-
-
-Выполнено \textbf{79 из 79 проверок}; все завершились успешно. Создано 14 таблиц, 32 пользовательских триггера, 43 индекса. Проверены установка с демоданными и без них, создание и удаление отдельной базы, допустимые и запрещённые сценарии и права backend.
-
-\begin{longtable}{L{4.2cm}L{11.9cm}}
-\toprule Данные / проверка & Результат\\\midrule\endhead
-Нагрузка тестовых данных & 100 салонов, 501 профиль мастера, 600 услуг; 80000 рабочих интервалов, 50005 записей, 12000 отзывов.\\
-Время и каталог & Отклонены пересечение, перерыв, прошедшая дата, неверный шаг, чужая услуга и изменение занятых условий; соседние записи разрешены.\\
-Права и история & Отклонены чужая отмена, ранний результат, изменение конечного статуса, удаление истории, повтор отзыва, прямой доступ к таблицам.\\
-Модерация и приглашения & Проверены XOR, ссылки на фото, квота, скрытие и рейтинги, сроки, отзыв и одноразовое использование токена.\\
-Четыре конкурентных сценария & Повтор одной записи; запись против сокращения графика; одинаковый отзыв; двойная активация приглашения.\\
-\bottomrule\end{longtable}
-
-
-В конкурентных проверках использованы пары реальных сеансов: первая транзакция удерживалась две секунды, вторая ожидала блокировку более секунды. Вторая запись в тот же слот отклонялась с 23P01, сокращение занятого графика --- с 23514, повтор отзыва --- с 23505, повтор токена --- с 22023. Проверка нагрузки всей платформы не проводилась.
-
-EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) выполнен без отключения последовательного сканирования:
-
-
-\begin{longtable}{L{4.0cm}L{9.8cm}L{1.8cm}}
-\toprule Запрос & Выбранные индексы & мс\\\midrule\endhead
-История клиента & \texttt{idx\_\allowbreak{}appointment\_\allowbreak{}client\_\allowbreak{}time} & 0.159\\
-Журнал мастера & \texttt{idx\_\allowbreak{}appointment\_\allowbreak{}master\_\allowbreak{}time} & 0.883\\
-График на дату & \texttt{idx\_\allowbreak{}work\_\allowbreak{}master\_\allowbreak{}date} & 0.51\\
-Пересечение слота & \texttt{idx\_\allowbreak{}appointment\_\allowbreak{}busy}\par \texttt{idx\_\allowbreak{}appointment\_\allowbreak{}master\_\allowbreak{}time} & 1.777\\
-Тип услуги и цена & \texttt{idx\_\allowbreak{}service\_\allowbreak{}type\_\allowbreak{}price} & 0.141\\
-\bottomrule\end{longtable}
-
-
-Планы подтверждают использование индексов в пяти характерных запросах. Время относится к локальным SQL-вызовам и не включает сеть, HTTP или параллельную нагрузку. Геометрическая проверка двух полных схем подтвердила отсутствие повторных сущностей, перекрытий и проходов через рамки; три и два пересечения соответственно обозначены дугами.
-
-\section{Заключение}
-Построены ER-модель из десяти сущностей с M:N и даталогическая модель из четырнадцати отношений. Реализованы PostgreSQL DDL, триггеры, бизнес-операции PL/pgSQL, индексы и скрипты жизненного цикла. Все 79 проверок пройдены; полезность индексов подтверждена планами запросов. Материалы готовы к обсуждению с преподавателем; фактическое согласование ER-модели остаётся обязательным внешним шагом.
-\end{document}
+\par\begin{samepage}\section{Заключение}
+Построены ER-модель из десяти сущностей с M:N и даталогическая модель из четырнадцати отношений. Реализованы PostgreSQL DDL, триггеры, бизнес-операции PL/pgSQL, индексы и скрипты жизненного цикла. Материалы готовы к обсуждению с преподавателем; фактическое согласование ER-модели остаётся обязательным внешним шагом.
+\par\end{samepage}\end{document}

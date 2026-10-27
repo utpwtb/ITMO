@@ -13,7 +13,7 @@
 | 5. 创建、删除、测试数据 | `00_create_database.sql`、`99_drop_database.sql`、`02_seed.sql`、`install.sql`；PowerShell 包装脚本 |
 | 6. 关键函数、过程 | `sql/04_routines.sql`：22 个业务 API，以及内部辅助函数；覆盖 П1–П12 |
 | 7. 索引及依据 | `sql/05_indexes.sql`；报告中的逐项理由及五个真实 EXPLAIN ANALYZE 计划 |
-| 8. 报告 | 11 页精炼报告 `output/pdf/stage2_report.pdf`；LaTeX 源 `report/stage2_report.tex`；完整源码包 `output/stage2_report_sources.zip` |
+| 8. 报告 | 13 页报告 `output/pdf/stage2_report.pdf`，含全部 14 张表的完整建表 SQL；LaTeX 源 `report/stage2_report.tex`；完整源码包 `output/stage2_report_sources.zip` |
 
 教师尚未实际批准，报告和确认记录均如实标注。你需要带模型与教师讨论，并填写真实的确认结果。
 
@@ -91,9 +91,11 @@ API 使用 SECURITY DEFINER 和固定 search_path；后端角色不取得直接�
 
 ## 报告与图的编辑
 
-当前报告正文精简为 11 页，采用两张完整总图。ER 图使用 A3 图页，逻辑模型使用 A2 图页；其余为 A4 正文。数据逻辑图将键放在左侧独立列加粗，右侧数据类型加粗，并删除底部说明。SQL 采用 listings 语法高亮，无需 shell-escape。
+当前报告共 13 页，采用两张完整总图，第 2、3 节不再包含图前说明。ER 图使用 A3 图页，逻辑模型使用 A2 横向图页；其余为 A4 正文。数据逻辑图将键放在左侧独立列加粗，右侧数据类型加粗，使用完整的 NOT NULL、UNIQUE，保留 PK/FK；已删除 G、各表框底部的约束说明和图底说明。
 
-`report/stage2_report.tex` 引用 `report/figures/er_model_a3.pdf` 与 `logical_model_a2.pdf` 两个矢量图文件。源码 ZIP 已打包这三个必要文件；解压后使用 XeLaTeX 编译两次。独立图有 SVG、PNG、draw.io 和坐标 JSON，位于 `diagrams/integrated/`。
+第 4 节展示全部 14 张表的完整 CREATE TABLE 语句，直接来自 `sql/01_tables.sql`，仅调整显示空白。SQL 采用 listings 语法高亮，无需 shell-escape。原第 7 节“脚本与复现”和第 8 节“验证结果”已移入 `OPERATIONS_AND_VERIFICATION.md`，不再出现在 PDF 正文中。
+
+`report/stage2_report.tex` 引用 `report/figures/er_model_a3.pdf` 与 `logical_model_a2.pdf` 两个矢量图文件。源码 ZIP 已打包这三个必要文件和移出的 Markdown 文档；解压后使用 XeLaTeX 编译两次。独立图有 SVG、PNG、draw.io 和坐标 JSON，位于 `diagrams/integrated/`。
 
 `scripts/build_report.py` 与 `scripts/build_compact_report.py` 均生成当前精炼版本。它们使用 Python 的 Pillow、reportlab、pypdf 及系统字体，从已验证的数据和元数据生成图与报告。`scripts/CompileReport.ps1` 使用项目现有的 Tectonic。
 

@@ -120,11 +120,9 @@ def logical_fields(name):
         if foreign:
             keys.append("FK "+",".join(foreign))
         if [col["name"]] in unique:
-            keys.append("UQ")
+            keys.append("UNIQUE")
         flags=[]
-        flags.append("NULL" if col["nullable"] else "NN")
-        if col["generated"] == "ALWAYS":
-            flags.append("G")
+        flags.append("NULL" if col["nullable"] else "NOT NULL")
         result.append({"name":col["name"],"type":typ,"keys":", ".join(keys),"flags":" ".join(flags)})
     return result
 
@@ -368,7 +366,7 @@ class Drawing:
 def body_lines(n, model, size):
     values = logical_rows(n["id"]) if model == "logical" else CONCEPT_ATTRS[n["id"]]
     rows = [(line,"normal") for value in values for line in wrap(value,n["w"]-30,size)]
-    notes = NOTES[n["id"]] if model == "logical" else []
+    notes = []
     if notes:
         rows.append(("","separator"))
         rows.extend((line,"note") for value in notes for line in wrap(value,n["w"]-30,size-2))
@@ -634,7 +632,7 @@ def render(layout, model):
         if model=="logical":
             kw=key_column_width(n["id"])
             fields=logical_fields(n["id"])
-            drawing.line([(x+kw,y+70),(x+kw,row_y+len(fields)*(size+7)+3)],width=1)
+            drawing.line([(x+kw,y+70),(x+kw,y+h)],width=1)
             for field in fields:
                 drawing.text(x+kw/2,row_y+2,field["keys"],16,"bold","middle")
                 drawing.rich_text(x+kw+12,row_y,field_spans(field),size)
@@ -684,6 +682,9 @@ def render(layout, model):
         audit["separate_bold_key_column"]=True
         audit["bold_data_types"]=True
         audit["bottom_legend_removed"]=True
+        audit["full_constraint_labels"]=True
+        audit["generated_marker_removed"]=True
+        audit["box_constraint_notes_removed"]=True
     return audit
 
 

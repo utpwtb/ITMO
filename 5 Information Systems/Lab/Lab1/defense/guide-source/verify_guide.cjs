@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 
 (async()=>{
   const file = path.resolve(__dirname, '..', '信息系统答辩_中俄双语.html');
-  const qa = path.resolve(__dirname, '..', 'verification');
+  const qa = process.env.GUIDE_QA_DIR || path.resolve(__dirname, '..', 'verification');
   fs.mkdirSync(qa,{recursive:true});
   const browser = await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
   const context = await browser.newContext({viewport:{width:1440,height:1000},deviceScaleFactor:1});
