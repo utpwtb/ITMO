@@ -1,0 +1,35 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< ru.itmo:movie-lab >--------------------------
+[INFO] Building movie-lab 1.0.0
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ movie-lab ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ movie-lab ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ movie-lab ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ movie-lab ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.5.2:test (default-test) @ movie-lab ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-war-plugin:3.4.0:war (default-war) @ movie-lab ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [movie-lab] in [/home/studs/s407960/is-lab2-4101/target/movie-lab]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/studs/s407960/is-lab2-4101/src/main/webapp]
+[INFO] Building war: /home/studs/s407960/is-lab2-4101/target/movie-lab.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.959 s
+[INFO] Finished at: 2026-10-28T14:31:41+03:00
+[INFO] ------------------------------------------------------------------------

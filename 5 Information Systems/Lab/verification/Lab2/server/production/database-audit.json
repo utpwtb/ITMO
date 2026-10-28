@@ -1,0 +1,350 @@
+{
+  "lab1FingerprintsBefore": {
+    "coordinates": "694de7a25613e598aaea88fa8967ca99",
+    "location": "e65423cfbd594b40df1949e55e4d8631",
+    "person": "f0f557b2d43d07359ce80e4e9f9417f2",
+    "movie": "37dea9daa331a00401b581b82edd8809",
+    "app_state": "62c87070efaf04dcb8b982aeec2b11a2",
+    "app_user": "250ebfabf2dc11cea1afc2e795078e23"
+  },
+  "lab1FingerprintsAfter": {
+    "coordinates": "694de7a25613e598aaea88fa8967ca99",
+    "location": "e65423cfbd594b40df1949e55e4d8631",
+    "person": "f0f557b2d43d07359ce80e4e9f9417f2",
+    "movie": "37dea9daa331a00401b581b82edd8809",
+    "app_state": "62c87070efaf04dcb8b982aeec2b11a2",
+    "app_user": "250ebfabf2dc11cea1afc2e795078e23"
+  },
+  "lab1Unchanged": true,
+  "constraints": [
+    {
+      "conname": "lab2_4101_app_user_id_check",
+      "contype": "c",
+      "definition": "CHECK ((id > 0))"
+    },
+    {
+      "conname": "lab2_4101_app_user_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL id"
+    },
+    {
+      "conname": "lab2_4101_app_user_iterations_check",
+      "contype": "c",
+      "definition": "CHECK ((iterations >= 600000))"
+    },
+    {
+      "conname": "lab2_4101_app_user_iterations_not_null",
+      "contype": "n",
+      "definition": "NOT NULL iterations"
+    },
+    {
+      "conname": "lab2_4101_app_user_password_hash_not_null",
+      "contype": "n",
+      "definition": "NOT NULL password_hash"
+    },
+    {
+      "conname": "lab2_4101_app_user_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "conname": "lab2_4101_app_user_role_check",
+      "contype": "c",
+      "definition": "CHECK (((role)::text = ANY ((ARRAY['USER'::character varying, 'ADMIN'::character varying])::text[])))"
+    },
+    {
+      "conname": "lab2_4101_app_user_role_not_null",
+      "contype": "n",
+      "definition": "NOT NULL role"
+    },
+    {
+      "conname": "lab2_4101_app_user_salt_not_null",
+      "contype": "n",
+      "definition": "NOT NULL salt"
+    },
+    {
+      "conname": "lab2_4101_app_user_username_check",
+      "contype": "c",
+      "definition": "CHECK (((length((username)::text) >= 3) AND (length((username)::text) <= 64)))"
+    },
+    {
+      "conname": "lab2_4101_app_user_username_key",
+      "contype": "u",
+      "definition": "UNIQUE (username)"
+    },
+    {
+      "conname": "lab2_4101_app_user_username_not_null",
+      "contype": "n",
+      "definition": "NOT NULL username"
+    },
+    {
+      "conname": "lab2_4101_movie_budget_check",
+      "contype": "c",
+      "definition": "CHECK ((budget > 0))"
+    },
+    {
+      "conname": "lab2_4101_movie_budget_not_null",
+      "contype": "n",
+      "definition": "NOT NULL budget"
+    },
+    {
+      "conname": "lab2_4101_movie_coordinates_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (coordinates_id) REFERENCES lab2_4101_coordinates(id) ON DELETE CASCADE"
+    },
+    {
+      "conname": "lab2_4101_movie_coordinates_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL coordinates_id"
+    },
+    {
+      "conname": "lab2_4101_movie_creationdate_not_null",
+      "contype": "n",
+      "definition": "NOT NULL creationdate"
+    },
+    {
+      "conname": "lab2_4101_movie_director_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (director_id) REFERENCES lab2_4101_person(id) ON DELETE CASCADE"
+    },
+    {
+      "conname": "lab2_4101_movie_genre_check",
+      "contype": "c",
+      "definition": "CHECK (((genre)::text = ANY ((ARRAY['WESTERN'::character varying, 'COMEDY'::character varying, 'TRAGEDY'::character varying, 'HORROR'::character varying])::text[])))"
+    },
+    {
+      "conname": "lab2_4101_movie_goldenpalmcount_check",
+      "contype": "c",
+      "definition": "CHECK ((goldenpalmcount > 0))"
+    },
+    {
+      "conname": "lab2_4101_movie_id_check",
+      "contype": "c",
+      "definition": "CHECK ((id > 0))"
+    },
+    {
+      "conname": "lab2_4101_movie_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL id"
+    },
+    {
+      "conname": "lab2_4101_movie_length_check",
+      "contype": "c",
+      "definition": "CHECK ((length > 0))"
+    },
+    {
+      "conname": "lab2_4101_movie_length_not_null",
+      "contype": "n",
+      "definition": "NOT NULL length"
+    },
+    {
+      "conname": "lab2_4101_movie_mpaarating_check",
+      "contype": "c",
+      "definition": "CHECK (((mpaarating)::text = ANY ((ARRAY['G'::character varying, 'PG'::character varying, 'PG_13'::character varying, 'R'::character varying, 'NC_17'::character varying])::text[])))"
+    },
+    {
+      "conname": "lab2_4101_movie_mpaarating_not_null",
+      "contype": "n",
+      "definition": "NOT NULL mpaarating"
+    },
+    {
+      "conname": "lab2_4101_movie_name_check",
+      "contype": "c",
+      "definition": "CHECK ((length(name) > 0))"
+    },
+    {
+      "conname": "lab2_4101_movie_name_not_null",
+      "contype": "n",
+      "definition": "NOT NULL name"
+    },
+    {
+      "conname": "lab2_4101_movie_operator_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (operator_id) REFERENCES lab2_4101_person(id) ON DELETE CASCADE"
+    },
+    {
+      "conname": "lab2_4101_movie_oscarscount_check",
+      "contype": "c",
+      "definition": "CHECK ((oscarscount > 0))"
+    },
+    {
+      "conname": "lab2_4101_movie_oscarscount_not_null",
+      "contype": "n",
+      "definition": "NOT NULL oscarscount"
+    },
+    {
+      "conname": "lab2_4101_movie_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "conname": "lab2_4101_movie_screenwriter_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (screenwriter_id) REFERENCES lab2_4101_person(id) ON DELETE CASCADE"
+    },
+    {
+      "conname": "lab2_4101_movie_tagline_not_null",
+      "contype": "n",
+      "definition": "NOT NULL tagline"
+    },
+    {
+      "conname": "lab2_4101_movie_totalboxoffice_check",
+      "contype": "c",
+      "definition": "CHECK (((totalboxoffice > (0)::double precision) AND (totalboxoffice < 'Infinity'::double precision)))"
+    },
+    {
+      "conname": "lab2_4101_movie_usaboxoffice_check",
+      "contype": "c",
+      "definition": "CHECK ((usaboxoffice > 0))"
+    },
+    {
+      "conname": "lab2_4101_movie_usaboxoffice_not_null",
+      "contype": "n",
+      "definition": "NOT NULL usaboxoffice"
+    },
+    {
+      "conname": "lab2_4101_movie_version_not_null",
+      "contype": "n",
+      "definition": "NOT NULL version"
+    },
+    {
+      "conname": "lab2_4101_person_birthday_check",
+      "contype": "c",
+      "definition": "CHECK ((birthday ~ '^\\d{4}-\\d{2}-\\d{2}T.*(Z|[+-]\\d{2}:\\d{2})(\\[.*\\])?$'::text))"
+    },
+    {
+      "conname": "lab2_4101_person_birthday_check1",
+      "contype": "c",
+      "definition": "CHECK (((split_part(birthday, '['::text, 1))::timestamp with time zone IS NOT NULL))"
+    },
+    {
+      "conname": "lab2_4101_person_birthday_not_null",
+      "contype": "n",
+      "definition": "NOT NULL birthday"
+    },
+    {
+      "conname": "lab2_4101_person_eyecolor_check",
+      "contype": "c",
+      "definition": "CHECK (((eyecolor)::text = ANY ((ARRAY['GREEN'::character varying, 'BLACK'::character varying, 'ORANGE'::character varying, 'WHITE'::character varying, 'BROWN'::character varying])::text[])))"
+    },
+    {
+      "conname": "lab2_4101_person_haircolor_check",
+      "contype": "c",
+      "definition": "CHECK (((haircolor)::text = ANY ((ARRAY['GREEN'::character varying, 'BLACK'::character varying, 'ORANGE'::character varying, 'WHITE'::character varying, 'BROWN'::character varying])::text[])))"
+    },
+    {
+      "conname": "lab2_4101_person_height_check",
+      "contype": "c",
+      "definition": "CHECK (((height > (0)::double precision) AND (height < 'Infinity'::real)))"
+    },
+    {
+      "conname": "lab2_4101_person_id_check",
+      "contype": "c",
+      "definition": "CHECK ((id > 0))"
+    },
+    {
+      "conname": "lab2_4101_person_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL id"
+    },
+    {
+      "conname": "lab2_4101_person_location_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (location_id) REFERENCES lab2_4101_location(id) ON DELETE CASCADE"
+    },
+    {
+      "conname": "lab2_4101_person_name_check",
+      "contype": "c",
+      "definition": "CHECK ((length(name) > 0))"
+    },
+    {
+      "conname": "lab2_4101_person_name_not_null",
+      "contype": "n",
+      "definition": "NOT NULL name"
+    },
+    {
+      "conname": "lab2_4101_person_passportid_key",
+      "contype": "u",
+      "definition": "UNIQUE (passportid)"
+    },
+    {
+      "conname": "lab2_4101_person_passportid_not_null",
+      "contype": "n",
+      "definition": "NOT NULL passportid"
+    },
+    {
+      "conname": "lab2_4101_person_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "conname": "lab2_4101_person_version_not_null",
+      "contype": "n",
+      "definition": "NOT NULL version"
+    },
+    {
+      "conname": "lab2_4101_person_weight_check",
+      "contype": "c",
+      "definition": "CHECK (((weight > (0)::double precision) AND (weight < 'Infinity'::real)))"
+    },
+    {
+      "conname": "movie_box_office_consistency",
+      "contype": "c",
+      "definition": "CHECK (((totalboxoffice IS NULL) OR ((usaboxoffice)::double precision <= totalboxoffice)))"
+    }
+  ],
+  "indexes": [
+    {
+      "indexname": "lab2_4101_app_user_pkey",
+      "indexdef": "CREATE UNIQUE INDEX lab2_4101_app_user_pkey ON s407960.lab2_4101_app_user USING btree (id)"
+    },
+    {
+      "indexname": "lab2_4101_app_user_username_key",
+      "indexdef": "CREATE UNIQUE INDEX lab2_4101_app_user_username_key ON s407960.lab2_4101_app_user USING btree (username)"
+    },
+    {
+      "indexname": "lab2_4101_movie_coordinates_idx",
+      "indexdef": "CREATE INDEX lab2_4101_movie_coordinates_idx ON s407960.lab2_4101_movie USING btree (coordinates_id)"
+    },
+    {
+      "indexname": "lab2_4101_movie_director_idx",
+      "indexdef": "CREATE INDEX lab2_4101_movie_director_idx ON s407960.lab2_4101_movie USING btree (director_id)"
+    },
+    {
+      "indexname": "lab2_4101_movie_genre_idx",
+      "indexdef": "CREATE INDEX lab2_4101_movie_genre_idx ON s407960.lab2_4101_movie USING btree (genre)"
+    },
+    {
+      "indexname": "lab2_4101_movie_name_idx",
+      "indexdef": "CREATE INDEX lab2_4101_movie_name_idx ON s407960.lab2_4101_movie USING btree (name)"
+    },
+    {
+      "indexname": "lab2_4101_movie_operator_idx",
+      "indexdef": "CREATE INDEX lab2_4101_movie_operator_idx ON s407960.lab2_4101_movie USING btree (operator_id)"
+    },
+    {
+      "indexname": "lab2_4101_movie_pkey",
+      "indexdef": "CREATE UNIQUE INDEX lab2_4101_movie_pkey ON s407960.lab2_4101_movie USING btree (id)"
+    },
+    {
+      "indexname": "lab2_4101_movie_screenwriter_idx",
+      "indexdef": "CREATE INDEX lab2_4101_movie_screenwriter_idx ON s407960.lab2_4101_movie USING btree (screenwriter_id)"
+    },
+    {
+      "indexname": "lab2_4101_person_location_idx",
+      "indexdef": "CREATE INDEX lab2_4101_person_location_idx ON s407960.lab2_4101_person USING btree (location_id)"
+    },
+    {
+      "indexname": "lab2_4101_person_passportid_key",
+      "indexdef": "CREATE UNIQUE INDEX lab2_4101_person_passportid_key ON s407960.lab2_4101_person USING btree (passportid)"
+    },
+    {
+      "indexname": "lab2_4101_person_pkey",
+      "indexdef": "CREATE UNIQUE INDEX lab2_4101_person_pkey ON s407960.lab2_4101_person USING btree (id)"
+    }
+  ],
+  "noMovieCombinationUniqueIndex": true,
+  "noMovieUserTrigger": true,
+  "warSha256": "cf386061ed67f25abac1f84cf13b61fdcb4a988dddbfe3363c81e670365d0576",
+  "passed": true
+}

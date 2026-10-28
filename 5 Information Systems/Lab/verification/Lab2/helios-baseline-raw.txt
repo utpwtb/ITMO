@@ -1,0 +1,46 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx384m -XX:ActiveProcessorCount=2
+openjdk version "21.0.4" 2024-07-16
+OpenJDK Runtime Environment (build 21.0.4+7-1)
+OpenJDK 64-Bit Server VM (build 21.0.4+7-1, mixed mode, sharing)
+Picked up JAVA_TOOL_OPTIONS: -Xmx384m -XX:ActiveProcessorCount=2
+Apache Maven 3.8.4 (9b656c72d54e5bacbed989b64718c159fe39b537)
+Maven home: /usr/local/share/java/maven
+Java version: 21.0.4, vendor: OpenJDK BSD Porting Team, runtime: /usr/local/openjdk21
+Default locale: ru_RU, platform encoding: UTF-8
+OS name: "freebsd", version: "14.5-stable", arch: "amd64", family: "unix"
+  PID COMMAND
+35800 sshd-session: s407960@notty (sshd-session)
+35801 bash -c export JAVA_HOME=/usr/local/openjdk21; export PATH=$JAVA_HOME/bin:$PATH; export JAVA_TOOL_OPTIONS="-Xmx384m -XX:ActiveProcessorCount=2"; java -version; mvn -version; ps -ww -U s407960 -o pid,command; sockstat -4 -l | grep s407960; ls -l ~/is-lab1-4101/.runtime/*jar; psql -X -h pg -U s407960 -d studs -w -c "select version(),current_schema(),current_setting('transaction_isolation');" -c "select tablename from pg_tables where schemaname=current_user order by tablename;" -c "select name,director_id,array_agg(id) as ids,count(*) from lab1_4101_movie group by name,director_id having count(*)>1;"
+35826 ps -ww -U s407960 -o pid,command
+-rw-------  1 s407960 studs 102056602 22 сент. 18:32 /home/studs/s407960/is-lab1-4101/.runtime/payara-micro-6.2025.1.jar
+                                                                                 version                                                                                  | current_schema | current_setting 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+-----------------
+ PostgreSQL 18.3 on amd64-portbld-freebsd14.4, compiled by FreeBSD clang version 19.1.7 (https://github.com/llvm/llvm-project.git llvmorg-19.1.7-0-gcd708029e0b2), 64-bit | s407960        | read committed
+(1 строка)
+
+       tablename       
+-----------------------
+ action
+ actiontype
+ coordinates
+ lab1_4101_app_state
+ lab1_4101_app_user
+ lab1_4101_coordinates
+ lab1_4101_location
+ lab1_4101_movie
+ lab1_4101_person
+ location
+ locations
+ move
+ movetype
+ person
+ persons
+ professiontype
+ status
+ users
+(18 строк)
+
+ name | director_id | ids | count 
+------+-------------+-----+-------
+(0 строк)
+

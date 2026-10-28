@@ -1,0 +1,19 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< ru.itmo:movie-lab >--------------------------
+[INFO] Building movie-lab 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  34.281 s
+[INFO] Finished at: 2026-10-28T02:29:41+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project movie-lab: Could not resolve dependencies for project ru.itmo:movie-lab:war:1.0.0: Failed to collect dependencies at org.junit.jupiter:junit-jupiter:jar:5.11.4 -> org.junit.jupiter:junit-jupiter-api:jar:5.11.4 -> org.junit.platform:junit-platform-commons:jar:1.11.4: Failed to read artifact descriptor for org.junit.platform:junit-platform-commons:jar:1.11.4: The following artifacts could not be resolved: org.junit.platform:junit-platform-commons:pom:1.11.4 (absent): Could not transfer artifact org.junit.platform:junit-platform-commons:pom:1.11.4 from/to alimaven (http://maven.aliyun.com/nexus/content/groups/public/): C:\develop\apache-maven-3.9.4-bin\apache-maven-3.9.4\mvn_repo\org\junit\platform\junit-platform-commons\1.11.4\junit-platform-commons-1.11.4.pom.13661013773440834825.tmp -> C:\develop\apache-maven-3.9.4-bin\apache-maven-3.9.4\mvn_repo\org\junit\platform\junit-platform-commons\1.11.4\junit-platform-commons-1.11.4.pom -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException

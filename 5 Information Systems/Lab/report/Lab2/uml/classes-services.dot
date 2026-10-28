@@ -1,0 +1,26 @@
+digraph UML {
+graph [rankdir=LR,bgcolor="white",nodesep=0.4,ranksep=0.65,pad=0.2];
+node [shape=plain,fontname="Arial",fontsize=11];
+edge [fontname="Arial",fontsize=10,arrowsize=0.8];
+"ImportResource" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>ImportResource</B></TD></TR><TR><TD ALIGN="LEFT">+ upload(): Response<BR ALIGN="LEFT"/>+ list(page, size): Object<BR ALIGN="LEFT"/>+ get(id): Object</TD></TR></TABLE>>];
+"ImportService" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>ImportService</B></TD></TR><TR><TD ALIGN="LEFT">+ upload(user, filename, bytes): Map<BR ALIGN="LEFT"/>- person(em, input, cache): Person<BR ALIGN="LEFT"/>- samePerson(a, b): boolean</TD></TR></TABLE>>];
+"ImportParser" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>ImportParser</B></TD></TR><TR><TD ALIGN="LEFT">+ parse(bytes): ImportDocument<BR ALIGN="LEFT"/>- object(node, type, row, path): T<BR ALIGN="LEFT"/>- value(node, type, row, path): Object</TD></TR></TABLE>>];
+"ImportDocument" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«record»<BR/>ImportDocument</B></TD></TR><TR><TD ALIGN="LEFT">+ formatVersion: int<BR ALIGN="LEFT"/>+ movies: List&lt;Movie&gt;</TD></TR></TABLE>>];
+"ImportHistoryService" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>ImportHistoryService</B></TD></TR><TR><TD ALIGN="LEFT">+ list(user, page, size): Map<BR ALIGN="LEFT"/>+ get(user, id): Map<BR ALIGN="LEFT"/>+ dto(operation): Map</TD></TR></TABLE>>];
+"MovieService" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>MovieService</B></TD></TR><TR><TD ALIGN="LEFT">+ save(kind, id, input): Object<BR ALIGN="LEFT"/>+ saveInTransaction(em, kind, id, input)<BR ALIGN="LEFT"/>+ saveImported(em, movie): Movie<BR ALIGN="LEFT"/>+ delete / award / redistribute</TD></TR></TABLE>>];
+"MovieUniquenessValidator" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>MovieUniquenessValidator</B></TD></TR><TR><TD ALIGN="LEFT">+ check(em, movie): void</TD></TR></TABLE>>];
+"MovieKey" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«record»<BR/>MovieKey</B></TD></TR><TR><TD ALIGN="LEFT">+ name: String<BR ALIGN="LEFT"/>+ directorIdOrNull: Long</TD></TR></TABLE>>];
+"Database" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>Database</B></TD></TR><TR><TD ALIGN="LEFT">+ read(work): T<BR ALIGN="LEFT"/>+ write(work): T<BR ALIGN="LEFT"/>+ metadata(work): T<BR ALIGN="LEFT"/>- transaction / once</TD></TR></TABLE>>];
+"AuthService" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>AuthService</B></TD></TR><TR><TD ALIGN="LEFT">+ identity(username): AppUser<BR ALIGN="LEFT"/>+ register(username, password): String<BR ALIGN="LEFT"/>+ authenticate(username, password): String</TD></TR></TABLE>>];
+ImportResource -> ImportService [style=dashed,arrowhead=vee];
+ImportResource -> ImportHistoryService [style=dashed,arrowhead=vee];
+ImportService -> ImportParser [style=dashed,arrowhead=vee];
+ImportService -> MovieService [style=dashed,arrowhead=vee];
+ImportService -> Database [style=dashed,arrowhead=vee];
+ImportParser -> ImportDocument [style=dashed,arrowhead=vee];
+MovieService -> MovieUniquenessValidator [style=dashed,arrowhead=vee];
+MovieService -> Database [style=dashed,arrowhead=vee];
+ImportHistoryService -> Database [style=dashed,arrowhead=vee];
+AuthService -> Database [style=dashed,arrowhead=vee];
+MovieUniquenessValidator -> MovieKey [style=dashed,arrowhead=vee];
+}

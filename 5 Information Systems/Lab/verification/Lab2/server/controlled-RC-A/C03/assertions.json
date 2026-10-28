@@ -1,0 +1,18 @@
+{
+  "scenario": "C03",
+  "threads": 10,
+  "rounds": 20,
+  "requests": 200,
+  "commits": 20,
+  "expectedConflicts": 180,
+  "unexpected": 0,
+  "averageMs": 139.21,
+  "p95Ms": 74,
+  "duplicates": 0,
+  "failedImportResidue": 0,
+  "passed": true,
+  "errors": [],
+  "jmeterExit": 0,
+  "jtlFailures": 0,
+  "elapsedSeconds": 18.114031553268433
+}

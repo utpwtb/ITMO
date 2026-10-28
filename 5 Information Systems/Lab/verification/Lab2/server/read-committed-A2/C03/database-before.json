@@ -1,0 +1,40 @@
+{
+  "movies": 54,
+  "coordinates": 10,
+  "people": 14,
+  "locations": 2,
+  "duplicates": 0,
+  "orphans": 0,
+  "histories": [
+    {
+      "id": "1",
+      "status": "SUCCESS",
+      "count": 2,
+      "filename": "http-valid.json"
+    },
+    {
+      "id": "2",
+      "status": "FAILED",
+      "count": null,
+      "filename": "duplicate.json"
+    },
+    {
+      "id": "3",
+      "status": "FAILED",
+      "count": null,
+      "filename": "invalid.json"
+    },
+    {
+      "id": "4",
+      "status": "SUCCESS",
+      "count": 2,
+      "filename": "import-valid.json"
+    },
+    {
+      "id": "5",
+      "status": "FAILED",
+      "count": null,
+      "filename": "import-valid.json"
+    }
+  ]
+}

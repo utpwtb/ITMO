@@ -1,0 +1,12 @@
+digraph UML {
+graph [rankdir=LR,bgcolor="white",nodesep=0.4,ranksep=0.65,pad=0.2];
+node [shape=plain,fontname="Arial",fontsize=11];
+edge [fontname="Arial",fontsize=10,arrowsize=0.8];
+"AppUser" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«entity»<BR/>AppUser</B></TD></TR><TR><TD ALIGN="LEFT">+ role: UserRole<BR ALIGN="LEFT"/>+ id: Long<BR ALIGN="LEFT"/>+ username: String<BR ALIGN="LEFT"/>+ passwordHash: String<BR ALIGN="LEFT"/>+ salt: String<BR ALIGN="LEFT"/>+ iterations: int</TD></TR></TABLE>>];
+"ImportOperation" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«entity»<BR/>ImportOperation</B></TD></TR><TR><TD ALIGN="LEFT">+ id: Long<BR ALIGN="LEFT"/>+ user: AppUser<BR ALIGN="LEFT"/>+ status: ImportStatus<BR ALIGN="LEFT"/>+ addedCount: Integer<BR ALIGN="LEFT"/>+ startedAt: Instant<BR ALIGN="LEFT"/>+ finishedAt: Instant<BR ALIGN="LEFT"/>+ filename: String<BR ALIGN="LEFT"/>+ errorCode: String<BR ALIGN="LEFT"/>+ errorMessage: String</TD></TR></TABLE>>];
+"UserRole" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«enumeration»<BR/>UserRole</B></TD></TR><TR><TD ALIGN="LEFT">USER<BR ALIGN="LEFT"/>ADMIN</TD></TR></TABLE>>];
+"ImportStatus" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«enumeration»<BR/>ImportStatus</B></TD></TR><TR><TD ALIGN="LEFT">RUNNING<BR ALIGN="LEFT"/>SUCCESS<BR ALIGN="LEFT"/>FAILED</TD></TR></TABLE>>];
+ImportOperation -> AppUser [label="user 1",arrowhead=vee];
+AppUser -> UserRole [style=dashed,arrowhead=vee];
+ImportOperation -> ImportStatus [style=dashed,arrowhead=vee];
+}

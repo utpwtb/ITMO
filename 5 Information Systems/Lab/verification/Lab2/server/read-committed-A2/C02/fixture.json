@@ -1,0 +1,667 @@
+{
+  "scenario": "C02",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r0-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/47",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r0-update",
+            "version": 1
+          },
+          "read": "movies/47",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/47?version=1",
+          "read": "movies/47",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "47",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r1-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/48",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r1-update",
+            "version": 1
+          },
+          "read": "movies/48",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/48?version=1",
+          "read": "movies/48",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "48",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r2-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/49",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r2-update",
+            "version": 1
+          },
+          "read": "movies/49",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/49?version=1",
+          "read": "movies/49",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "49",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r3-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/50",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r3-update",
+            "version": 1
+          },
+          "read": "movies/50",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/50?version=1",
+          "read": "movies/50",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "50",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r4-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/51",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r4-update",
+            "version": 1
+          },
+          "read": "movies/51",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/51?version=1",
+          "read": "movies/51",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "51",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r5-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/52",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r5-update",
+            "version": 1
+          },
+          "read": "movies/52",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/52?version=1",
+          "read": "movies/52",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "52",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r6-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/53",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r6-update",
+            "version": 1
+          },
+          "read": "movies/53",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/53?version=1",
+          "read": "movies/53",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "53",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r7-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/54",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r7-update",
+            "version": 1
+          },
+          "read": "movies/54",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/54?version=1",
+          "read": "movies/54",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "54",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r8-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/55",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r8-update",
+            "version": 1
+          },
+          "read": "movies/55",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/55?version=1",
+          "read": "movies/55",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "55",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r9-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/56",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r9-update",
+            "version": 1
+          },
+          "read": "movies/56",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/56?version=1",
+          "read": "movies/56",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "56",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r10-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/57",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r10-update",
+            "version": 1
+          },
+          "read": "movies/57",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/57?version=1",
+          "read": "movies/57",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "57",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r11-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/58",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r11-update",
+            "version": 1
+          },
+          "read": "movies/58",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/58?version=1",
+          "read": "movies/58",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "58",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r12-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/59",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r12-update",
+            "version": 1
+          },
+          "read": "movies/59",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/59?version=1",
+          "read": "movies/59",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "59",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r13-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/60",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r13-update",
+            "version": 1
+          },
+          "read": "movies/60",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/60?version=1",
+          "read": "movies/60",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "60",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r14-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/61",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r14-update",
+            "version": 1
+          },
+          "read": "movies/61",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/61?version=1",
+          "read": "movies/61",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "61",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r15-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/62",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r15-update",
+            "version": 1
+          },
+          "read": "movies/62",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/62?version=1",
+          "read": "movies/62",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "62",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r16-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/63",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r16-update",
+            "version": 1
+          },
+          "read": "movies/63",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/63?version=1",
+          "read": "movies/63",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "63",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r17-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/64",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r17-update",
+            "version": 1
+          },
+          "read": "movies/64",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/64?version=1",
+          "read": "movies/64",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "64",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r18-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/65",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r18-update",
+            "version": 1
+          },
+          "read": "movies/65",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/65?version=1",
+          "read": "movies/65",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "65",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C02-3c3db8-r19-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/66",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C02-3c3db8-r19-update",
+            "version": 1
+          },
+          "read": "movies/66",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/66?version=1",
+          "read": "movies/66",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "66",
+      "targetVersion": 1
+    }
+  ],
+  "marker": "lab2-read-committed-A2-C02-3c3db8"
+}

@@ -1,0 +1,26 @@
+-rw-r--r--  1 s407960 studs 2229 28 окт.  03:26 /home/studs/s407960/is-lab2-4101/scripts/lab2-restart-check.py
+ id 
+----
+  7
+(1 строка)
+
+INSERT 0 1
+Production snapshot saved; roles/history/domain invariants pass
+Stop requested for PID 43850
+BEGIN
+ id 
+----
+  1
+(1 строка)
+
+ id 
+----
+  7
+(1 строка)
+
+UPDATE 1
+COMMIT
+Started PID 44732; log: /home/studs/s407960/is-lab2-4101/.runtime/payara.log
+Actual process restart passed: accounts, roles, terminal histories, movies preserved; orphan RUNNING recovered
+{"passed": true, "lab1Unchanged": true, "warSha256": "cf386061ed67f25abac1f84cf13b61fdcb4a988dddbfe3363c81e670365d0576"}
+{"passed": true, "pid": 44732, "restartVerified": true}

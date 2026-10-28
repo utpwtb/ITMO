@@ -1,0 +1,1727 @@
+{
+  "scenario": "C11",
+  "threads": 10,
+  "rounds": [
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r0-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r1-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r2-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r3-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r4-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r5-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r6-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r7-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r8-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r9-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r10-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r11-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r12-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r13-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r14-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r15-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r16-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r17-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r18-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C11/r19-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-SERIALIZABLE-C11-922cb1-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-final-SERIALIZABLE-C11-922cb1"
+}

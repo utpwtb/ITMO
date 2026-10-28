@@ -1,0 +1,28 @@
+DROP TABLE
+NOTICE:  table "lab2_4101_test_import_operation" does not exist, skipping
+NOTICE:  table "lab2_4101_test_movie" does not exist, skipping
+NOTICE:  table "lab2_4101_test_person" does not exist, skipping
+NOTICE:  table "lab2_4101_test_coordinates" does not exist, skipping
+NOTICE:  table "lab2_4101_test_location" does not exist, skipping
+NOTICE:  table "lab2_4101_test_app_state" does not exist, skipping
+NOTICE:  table "lab2_4101_test_app_user" does not exist, skipping
+DROP TABLE
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 140, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-war-plugin:3.4.0:war (default-war) @ movie-lab ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [movie-lab] in [/home/studs/s407960/is-lab2-4101/target/movie-lab]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/studs/s407960/is-lab2-4101/src/main/webapp]
+[INFO] Building war: /home/studs/s407960/is-lab2-4101/target/movie-lab.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:24 min
+[INFO] Finished at: 2026-10-28T02:51:40+03:00
+[INFO] ------------------------------------------------------------------------
+FINAL_VERIFY_EXIT=0

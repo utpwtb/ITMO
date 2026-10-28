@@ -1,0 +1,587 @@
+{
+  "scenario": "C02D",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r0-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1007?version=1",
+          "read": "movies/1007",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1007?version=1",
+          "read": "movies/1007",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1007",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r1-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1008?version=1",
+          "read": "movies/1008",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1008?version=1",
+          "read": "movies/1008",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1008",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r2-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1009?version=1",
+          "read": "movies/1009",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1009?version=1",
+          "read": "movies/1009",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1009",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r3-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1010?version=1",
+          "read": "movies/1010",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1010?version=1",
+          "read": "movies/1010",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1010",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r4-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1011?version=1",
+          "read": "movies/1011",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1011?version=1",
+          "read": "movies/1011",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1011",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r5-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1012?version=1",
+          "read": "movies/1012",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1012?version=1",
+          "read": "movies/1012",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1012",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r6-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1013?version=1",
+          "read": "movies/1013",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1013?version=1",
+          "read": "movies/1013",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1013",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r7-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1014?version=1",
+          "read": "movies/1014",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1014?version=1",
+          "read": "movies/1014",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1014",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r8-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1015?version=1",
+          "read": "movies/1015",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1015?version=1",
+          "read": "movies/1015",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1015",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r9-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1016?version=1",
+          "read": "movies/1016",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1016?version=1",
+          "read": "movies/1016",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1016",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r10-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1017?version=1",
+          "read": "movies/1017",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1017?version=1",
+          "read": "movies/1017",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1017",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r11-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1018?version=1",
+          "read": "movies/1018",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1018?version=1",
+          "read": "movies/1018",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1018",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r12-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1019?version=1",
+          "read": "movies/1019",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1019?version=1",
+          "read": "movies/1019",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1019",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r13-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1020?version=1",
+          "read": "movies/1020",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1020?version=1",
+          "read": "movies/1020",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1020",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r14-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1021?version=1",
+          "read": "movies/1021",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1021?version=1",
+          "read": "movies/1021",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1021",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r15-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1022?version=1",
+          "read": "movies/1022",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1022?version=1",
+          "read": "movies/1022",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1022",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r16-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1023?version=1",
+          "read": "movies/1023",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1023?version=1",
+          "read": "movies/1023",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1023",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r17-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1024?version=1",
+          "read": "movies/1024",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1024?version=1",
+          "read": "movies/1024",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1024",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r18-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1025?version=1",
+          "read": "movies/1025",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1025?version=1",
+          "read": "movies/1025",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1025",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C02D-1eeedd-r19-",
+      "actions": [
+        {
+          "method": "DELETE",
+          "path": "movies/1026?version=1",
+          "read": "movies/1026",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1026?version=1",
+          "read": "movies/1026",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        }
+      ],
+      "target": "1026",
+      "targetVersion": 1
+    }
+  ],
+  "marker": "lab2-controlled-RC-A-C02D-1eeedd"
+}

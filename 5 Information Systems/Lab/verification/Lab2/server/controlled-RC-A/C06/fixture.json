@@ -1,0 +1,707 @@
+{
+  "scenario": "C06",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r0-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1267",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r0-target",
+            "version": 1
+          },
+          "read": "movies/1267",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1268",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r0-target",
+            "version": 1
+          },
+          "read": "movies/1268",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r1-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1269",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r1-target",
+            "version": 1
+          },
+          "read": "movies/1269",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1270",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r1-target",
+            "version": 1
+          },
+          "read": "movies/1270",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r2-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1271",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r2-target",
+            "version": 1
+          },
+          "read": "movies/1271",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1272",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r2-target",
+            "version": 1
+          },
+          "read": "movies/1272",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r3-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1273",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r3-target",
+            "version": 1
+          },
+          "read": "movies/1273",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1274",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r3-target",
+            "version": 1
+          },
+          "read": "movies/1274",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r4-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1275",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r4-target",
+            "version": 1
+          },
+          "read": "movies/1275",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1276",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r4-target",
+            "version": 1
+          },
+          "read": "movies/1276",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r5-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1277",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r5-target",
+            "version": 1
+          },
+          "read": "movies/1277",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1278",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r5-target",
+            "version": 1
+          },
+          "read": "movies/1278",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r6-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1279",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r6-target",
+            "version": 1
+          },
+          "read": "movies/1279",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1280",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r6-target",
+            "version": 1
+          },
+          "read": "movies/1280",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r7-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1281",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r7-target",
+            "version": 1
+          },
+          "read": "movies/1281",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1282",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r7-target",
+            "version": 1
+          },
+          "read": "movies/1282",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r8-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1283",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r8-target",
+            "version": 1
+          },
+          "read": "movies/1283",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1284",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r8-target",
+            "version": 1
+          },
+          "read": "movies/1284",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r9-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1285",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r9-target",
+            "version": 1
+          },
+          "read": "movies/1285",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1286",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r9-target",
+            "version": 1
+          },
+          "read": "movies/1286",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r10-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1287",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r10-target",
+            "version": 1
+          },
+          "read": "movies/1287",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1288",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r10-target",
+            "version": 1
+          },
+          "read": "movies/1288",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r11-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1289",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r11-target",
+            "version": 1
+          },
+          "read": "movies/1289",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1290",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r11-target",
+            "version": 1
+          },
+          "read": "movies/1290",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r12-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1291",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r12-target",
+            "version": 1
+          },
+          "read": "movies/1291",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1292",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r12-target",
+            "version": 1
+          },
+          "read": "movies/1292",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r13-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1293",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r13-target",
+            "version": 1
+          },
+          "read": "movies/1293",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1294",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r13-target",
+            "version": 1
+          },
+          "read": "movies/1294",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r14-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1295",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r14-target",
+            "version": 1
+          },
+          "read": "movies/1295",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1296",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r14-target",
+            "version": 1
+          },
+          "read": "movies/1296",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r15-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1297",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r15-target",
+            "version": 1
+          },
+          "read": "movies/1297",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1298",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r15-target",
+            "version": 1
+          },
+          "read": "movies/1298",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r16-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1299",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r16-target",
+            "version": 1
+          },
+          "read": "movies/1299",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1300",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r16-target",
+            "version": 1
+          },
+          "read": "movies/1300",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r17-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1301",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r17-target",
+            "version": 1
+          },
+          "read": "movies/1301",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1302",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r17-target",
+            "version": 1
+          },
+          "read": "movies/1302",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r18-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1303",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r18-target",
+            "version": 1
+          },
+          "read": "movies/1303",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1304",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r18-target",
+            "version": 1
+          },
+          "read": "movies/1304",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C06-5f87fc-r19-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1305",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r19-target",
+            "version": 1
+          },
+          "read": "movies/1305",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1306",
+          "body": {
+            "name": "lab2-controlled-RC-A-C06-5f87fc-r19-target",
+            "version": 1
+          },
+          "read": "movies/1306",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-controlled-RC-A-C06-5f87fc"
+}

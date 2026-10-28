@@ -1,0 +1,367 @@
+2026-10-28 02:55:00,802 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-10-28 02:55:00,821 INFO o.a.j.JMeter: Loading user properties from: /home/studs/s407960/is-lab2-4101/tools/apache-jmeter-5.6.3/bin/user.properties
+2026-10-28 02:55:00,822 INFO o.a.j.JMeter: Loading system properties from: /home/studs/s407960/is-lab2-4101/tools/apache-jmeter-5.6.3/bin/system.properties
+2026-10-28 02:55:00,822 INFO o.a.j.JMeter: Setting JMeter property: host=127.0.0.1
+2026-10-28 02:55:00,822 INFO o.a.j.JMeter: Setting JMeter property: port=40797
+2026-10-28 02:55:00,822 INFO o.a.j.JMeter: Setting JMeter property: basePath=/movie-lab/api
+2026-10-28 02:55:00,822 INFO o.a.j.JMeter: Setting JMeter property: scenario=C07
+2026-10-28 02:55:00,822 INFO o.a.j.JMeter: Setting JMeter property: threads=10
+2026-10-28 02:55:00,822 INFO o.a.j.JMeter: Setting JMeter property: rounds=20
+2026-10-28 02:55:00,822 INFO o.a.j.JMeter: Setting JMeter property: fixtureFile=/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/fixture.json
+2026-10-28 02:55:00,823 INFO o.a.j.JMeter: Setting JMeter property: credentialsFile=/home/studs/s407960/is-lab2-4101/.runtime/lab2-users.json
+2026-10-28 02:55:00,823 INFO o.a.j.JMeter: Setting JMeter property: resultFile=/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/responses.jsonl
+2026-10-28 02:55:00,828 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-10-28 02:55:00,828 INFO o.a.j.JMeter: Version 5.6.3
+2026-10-28 02:55:00,828 INFO o.a.j.JMeter: java.version=21.0.4
+2026-10-28 02:55:00,829 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2026-10-28 02:55:00,829 INFO o.a.j.JMeter: os.name=FreeBSD
+2026-10-28 02:55:00,829 INFO o.a.j.JMeter: os.arch=amd64
+2026-10-28 02:55:00,829 INFO o.a.j.JMeter: os.version=14.5-STABLE
+2026-10-28 02:55:00,829 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-10-28 02:55:00,829 INFO o.a.j.JMeter: java.awt.headless=true
+2026-10-28 02:55:00,829 INFO o.a.j.JMeter: Max memory     =268435456
+2026-10-28 02:55:00,829 INFO o.a.j.JMeter: Available Processors =2
+2026-10-28 02:55:00,839 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-10-28 02:55:00,839 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-10-28 02:55:00,839 INFO o.a.j.JMeter: JMeterHome=/home/studs/s407960/is-lab2-4101/tools/apache-jmeter-5.6.3
+2026-10-28 02:55:00,839 INFO o.a.j.JMeter: user.dir  =/home/studs/s407960/is-lab2-4101
+2026-10-28 02:55:00,839 INFO o.a.j.JMeter: PWD       =/home/studs/s407960/is-lab2-4101
+2026-10-28 02:55:00,848 INFO o.a.j.JMeter: IP: 192.168.10.80 Name: helios.cs.ifmo.ru FullName: helios.cs.ifmo.ru
+2026-10-28 02:55:00,862 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/html'
+2026-10-28 02:55:00,864 INFO o.a.j.s.FileServer: Default base='/home/studs/s407960/is-lab2-4101'
+2026-10-28 02:55:00,866 INFO o.a.j.s.FileServer: Set new base='/home/studs/s407960/is-lab2-4101/jmeter'
+2026-10-28 02:55:01,072 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-10-28 02:55:01,107 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-10-28 02:55:01,111 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-10-28 02:55:01,115 INFO o.a.j.s.SaveService: Loading file: jmeter/lab2-concurrency.jmx
+2026-10-28 02:55:01,156 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2026-10-28 02:55:01,203 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-28 02:55:01,203 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-28 02:55:01,203 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-28 02:55:01,203 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-28 02:55:01,203 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-10-28 02:55:01,203 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-10-28 02:55:01,483 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-10-28 02:55:01,496 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2026-10-28 02:55:01,496 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: verification/Lab2/controlled-RC-A/C07/results.jtl
+2026-10-28 02:55:01,496 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: /home/studs/s407960/is-lab2-4101/tools/apache-jmeter-5.6.3/bin/reportgenerator.properties
+2026-10-28 02:55:01,497 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2026-10-28 02:55:01,501 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2026-10-28 02:55:01,504 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2026-10-28 02:55:01,504 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2026-10-28 02:55:01,504 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2026-10-28 02:55:01,504 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2026-10-28 02:55:01,504 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2026-10-28 02:55:01,504 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2026-10-28 02:55:01,504 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2026-10-28 02:55:01,505 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2026-10-28 02:55:01,508 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,509 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,509 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,509 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,509 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,509 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,510 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,510 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,510 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,510 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-10-28 02:55:01,511 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2026-10-28 02:55:01,511 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2026-10-28 02:55:01,511 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2026-10-28 02:55:01,511 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2026-10-28 02:55:01,512 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2026-10-28 02:55:01,512 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2026-10-28 02:55:01,527 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-10-28 02:55:01,527 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-10-28 02:55:01,528 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-10-28 02:55:01,532 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-10-28 02:55:01,532 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-10-28 02:55:03,901 INFO o.a.j.JMeter: Running test (1793145303901)
+2026-10-28 02:55:03,938 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : C07
+2026-10-28 02:55:03,939 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group C07.
+2026-10-28 02:55:03,939 INFO o.a.j.e.StandardJMeterEngine: Test will stop on error
+2026-10-28 02:55:03,939 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=10 ramp-up=1 delayedStart=false
+2026-10-28 02:55:03,948 INFO o.a.j.t.JMeterThread: Thread started: C07 1-1
+2026-10-28 02:55:03,951 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-10-28 02:55:03,951 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-10-28 02:55:03,951 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-10-28 02:55:03,951 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-10-28 02:55:03,955 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-10-28 02:55:03,955 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-10-28 02:55:04,043 INFO o.a.j.t.JMeterThread: Thread started: C07 1-2
+2026-10-28 02:55:04,141 INFO o.a.j.t.JMeterThread: Thread started: C07 1-3
+2026-10-28 02:55:04,242 INFO o.a.j.t.JMeterThread: Thread started: C07 1-4
+2026-10-28 02:55:04,341 INFO o.a.j.t.JMeterThread: Thread started: C07 1-5
+2026-10-28 02:55:04,441 INFO o.a.j.t.JMeterThread: Thread started: C07 1-6
+2026-10-28 02:55:04,541 INFO o.a.j.t.JMeterThread: Thread started: C07 1-7
+2026-10-28 02:55:04,641 INFO o.a.j.t.JMeterThread: Thread started: C07 1-8
+2026-10-28 02:55:04,741 INFO o.a.j.t.JMeterThread: Thread started: C07 1-9
+2026-10-28 02:55:04,841 INFO o.a.j.t.JMeterThread: Thread started: C07 1-10
+2026-10-28 02:55:04,866 INFO o.a.j.r.Summariser: summary +      1 in 00:00:01 =    1.0/s Avg:   122 Min:   122 Max:   122 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+2026-10-28 02:55:04,883 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = helios.cs.ifmo.ru
+2026-10-28 02:55:04,890 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-10-28 02:55:10,123 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p7.json
+2026-10-28 02:55:10,123 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p5.json
+2026-10-28 02:55:10,124 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p6.json
+2026-10-28 02:55:10,124 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p2.json
+2026-10-28 02:55:10,124 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p0.json
+2026-10-28 02:55:10,124 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p3.json
+2026-10-28 02:55:10,124 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p9.json
+2026-10-28 02:55:10,124 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p1.json
+2026-10-28 02:55:10,124 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p8.json
+2026-10-28 02:55:10,125 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r0-p4.json
+2026-10-28 02:55:10,401 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p6.json
+2026-10-28 02:55:10,402 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p3.json
+2026-10-28 02:55:10,402 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p2.json
+2026-10-28 02:55:10,402 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p9.json
+2026-10-28 02:55:10,402 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p8.json
+2026-10-28 02:55:10,402 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p5.json
+2026-10-28 02:55:10,402 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p1.json
+2026-10-28 02:55:10,402 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p7.json
+2026-10-28 02:55:10,403 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p4.json
+2026-10-28 02:55:10,403 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r1-p0.json
+2026-10-28 02:55:10,502 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p9.json
+2026-10-28 02:55:10,503 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p3.json
+2026-10-28 02:55:10,503 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p1.json
+2026-10-28 02:55:10,503 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p5.json
+2026-10-28 02:55:10,503 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p2.json
+2026-10-28 02:55:10,503 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p6.json
+2026-10-28 02:55:10,504 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p4.json
+2026-10-28 02:55:10,504 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p7.json
+2026-10-28 02:55:10,504 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p0.json
+2026-10-28 02:55:10,504 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r2-p8.json
+2026-10-28 02:55:10,587 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p2.json
+2026-10-28 02:55:10,587 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p4.json
+2026-10-28 02:55:10,588 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p3.json
+2026-10-28 02:55:10,588 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p0.json
+2026-10-28 02:55:10,588 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p7.json
+2026-10-28 02:55:10,588 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p5.json
+2026-10-28 02:55:10,588 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p9.json
+2026-10-28 02:55:10,588 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p8.json
+2026-10-28 02:55:10,588 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p1.json
+2026-10-28 02:55:10,589 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r3-p6.json
+2026-10-28 02:55:10,681 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p4.json
+2026-10-28 02:55:10,682 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p5.json
+2026-10-28 02:55:10,682 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p2.json
+2026-10-28 02:55:10,682 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p3.json
+2026-10-28 02:55:10,682 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p8.json
+2026-10-28 02:55:10,682 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p7.json
+2026-10-28 02:55:10,682 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p6.json
+2026-10-28 02:55:10,682 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p9.json
+2026-10-28 02:55:10,682 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p0.json
+2026-10-28 02:55:10,683 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r4-p1.json
+2026-10-28 02:55:13,828 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p9.json
+2026-10-28 02:55:13,829 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p4.json
+2026-10-28 02:55:13,829 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p1.json
+2026-10-28 02:55:13,829 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p6.json
+2026-10-28 02:55:13,829 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p8.json
+2026-10-28 02:55:13,829 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p2.json
+2026-10-28 02:55:13,829 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p7.json
+2026-10-28 02:55:13,829 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p5.json
+2026-10-28 02:55:13,829 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p3.json
+2026-10-28 02:55:13,830 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r5-p0.json
+2026-10-28 02:55:13,930 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p0.json
+2026-10-28 02:55:13,930 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p2.json
+2026-10-28 02:55:13,930 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p6.json
+2026-10-28 02:55:13,930 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p8.json
+2026-10-28 02:55:13,930 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p1.json
+2026-10-28 02:55:13,930 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p3.json
+2026-10-28 02:55:13,930 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p5.json
+2026-10-28 02:55:13,931 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p7.json
+2026-10-28 02:55:13,931 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p4.json
+2026-10-28 02:55:13,931 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r6-p9.json
+2026-10-28 02:55:14,007 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p8.json
+2026-10-28 02:55:14,007 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p6.json
+2026-10-28 02:55:14,007 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p4.json
+2026-10-28 02:55:14,007 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p1.json
+2026-10-28 02:55:14,008 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p7.json
+2026-10-28 02:55:14,008 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p3.json
+2026-10-28 02:55:14,008 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p2.json
+2026-10-28 02:55:14,008 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p9.json
+2026-10-28 02:55:14,008 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p5.json
+2026-10-28 02:55:14,008 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r7-p0.json
+2026-10-28 02:55:14,090 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p6.json
+2026-10-28 02:55:14,090 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p3.json
+2026-10-28 02:55:14,090 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p0.json
+2026-10-28 02:55:14,091 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p7.json
+2026-10-28 02:55:14,091 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p1.json
+2026-10-28 02:55:14,091 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p4.json
+2026-10-28 02:55:14,091 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p9.json
+2026-10-28 02:55:14,091 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p5.json
+2026-10-28 02:55:14,091 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p8.json
+2026-10-28 02:55:14,091 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r8-p2.json
+2026-10-28 02:55:14,171 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p6.json
+2026-10-28 02:55:14,172 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p5.json
+2026-10-28 02:55:14,172 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p9.json
+2026-10-28 02:55:14,172 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p7.json
+2026-10-28 02:55:14,172 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p0.json
+2026-10-28 02:55:14,172 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p2.json
+2026-10-28 02:55:14,172 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p8.json
+2026-10-28 02:55:14,172 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p4.json
+2026-10-28 02:55:14,173 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p3.json
+2026-10-28 02:55:14,173 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r9-p1.json
+2026-10-28 02:55:14,258 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p3.json
+2026-10-28 02:55:14,258 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p6.json
+2026-10-28 02:55:14,258 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p0.json
+2026-10-28 02:55:14,258 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p5.json
+2026-10-28 02:55:14,259 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p8.json
+2026-10-28 02:55:14,259 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p7.json
+2026-10-28 02:55:14,259 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p1.json
+2026-10-28 02:55:14,259 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p4.json
+2026-10-28 02:55:14,259 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p2.json
+2026-10-28 02:55:14,259 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r10-p9.json
+2026-10-28 02:55:14,329 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p1.json
+2026-10-28 02:55:14,330 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p9.json
+2026-10-28 02:55:14,330 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p7.json
+2026-10-28 02:55:14,330 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p8.json
+2026-10-28 02:55:14,330 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p3.json
+2026-10-28 02:55:14,330 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p6.json
+2026-10-28 02:55:14,330 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p4.json
+2026-10-28 02:55:14,330 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p0.json
+2026-10-28 02:55:14,331 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p5.json
+2026-10-28 02:55:14,331 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r11-p2.json
+2026-10-28 02:55:14,406 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p5.json
+2026-10-28 02:55:14,406 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p9.json
+2026-10-28 02:55:14,406 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p6.json
+2026-10-28 02:55:14,406 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p8.json
+2026-10-28 02:55:14,407 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p3.json
+2026-10-28 02:55:14,407 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p0.json
+2026-10-28 02:55:14,407 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p2.json
+2026-10-28 02:55:14,407 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p4.json
+2026-10-28 02:55:14,407 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p7.json
+2026-10-28 02:55:14,407 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r12-p1.json
+2026-10-28 02:55:14,488 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p3.json
+2026-10-28 02:55:14,488 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p6.json
+2026-10-28 02:55:14,489 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p9.json
+2026-10-28 02:55:14,489 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p5.json
+2026-10-28 02:55:14,489 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p4.json
+2026-10-28 02:55:14,489 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p0.json
+2026-10-28 02:55:14,489 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p1.json
+2026-10-28 02:55:14,489 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p7.json
+2026-10-28 02:55:14,489 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p2.json
+2026-10-28 02:55:14,489 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r13-p8.json
+2026-10-28 02:55:14,579 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p7.json
+2026-10-28 02:55:14,580 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p2.json
+2026-10-28 02:55:14,580 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p3.json
+2026-10-28 02:55:14,580 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p5.json
+2026-10-28 02:55:14,580 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p9.json
+2026-10-28 02:55:14,580 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p0.json
+2026-10-28 02:55:14,580 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p8.json
+2026-10-28 02:55:14,580 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p1.json
+2026-10-28 02:55:14,581 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p4.json
+2026-10-28 02:55:14,581 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r14-p6.json
+2026-10-28 02:55:14,656 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p5.json
+2026-10-28 02:55:14,656 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p8.json
+2026-10-28 02:55:14,656 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p9.json
+2026-10-28 02:55:14,657 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p0.json
+2026-10-28 02:55:14,657 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p2.json
+2026-10-28 02:55:14,657 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p4.json
+2026-10-28 02:55:14,657 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p7.json
+2026-10-28 02:55:14,657 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p1.json
+2026-10-28 02:55:14,657 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p6.json
+2026-10-28 02:55:14,657 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r15-p3.json
+2026-10-28 02:55:14,732 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p6.json
+2026-10-28 02:55:14,733 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p1.json
+2026-10-28 02:55:14,733 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p5.json
+2026-10-28 02:55:14,733 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p8.json
+2026-10-28 02:55:14,733 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p2.json
+2026-10-28 02:55:14,733 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p3.json
+2026-10-28 02:55:14,733 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p0.json
+2026-10-28 02:55:14,733 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p4.json
+2026-10-28 02:55:14,733 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p7.json
+2026-10-28 02:55:14,734 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r16-p9.json
+2026-10-28 02:55:14,816 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p9.json
+2026-10-28 02:55:14,816 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p4.json
+2026-10-28 02:55:14,816 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p7.json
+2026-10-28 02:55:14,816 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p3.json
+2026-10-28 02:55:14,816 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p1.json
+2026-10-28 02:55:14,816 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p6.json
+2026-10-28 02:55:14,816 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p0.json
+2026-10-28 02:55:14,817 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p8.json
+2026-10-28 02:55:14,817 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p5.json
+2026-10-28 02:55:14,817 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r17-p2.json
+2026-10-28 02:55:14,906 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p8.json
+2026-10-28 02:55:14,906 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p1.json
+2026-10-28 02:55:14,906 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p0.json
+2026-10-28 02:55:14,906 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p5.json
+2026-10-28 02:55:14,906 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p7.json
+2026-10-28 02:55:14,906 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p9.json
+2026-10-28 02:55:14,906 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p4.json
+2026-10-28 02:55:14,907 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p3.json
+2026-10-28 02:55:14,907 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p6.json
+2026-10-28 02:55:14,907 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r18-p2.json
+2026-10-28 02:55:14,984 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p1.json
+2026-10-28 02:55:14,984 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p7.json
+2026-10-28 02:55:14,984 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p6.json
+2026-10-28 02:55:14,984 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p5.json
+2026-10-28 02:55:14,984 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p9.json
+2026-10-28 02:55:14,984 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p3.json
+2026-10-28 02:55:14,985 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p2.json
+2026-10-28 02:55:14,985 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p4.json
+2026-10-28 02:55:14,985 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p8.json
+2026-10-28 02:55:14,985 INFO o.a.j.s.FileServer: Stored: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/r19-p0.json
+2026-10-28 02:55:15,014 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-2
+2026-10-28 02:55:15,014 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-2
+2026-10-28 02:55:15,024 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-4
+2026-10-28 02:55:15,024 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-4
+2026-10-28 02:55:15,038 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-6
+2026-10-28 02:55:15,039 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-6
+2026-10-28 02:55:15,049 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-10
+2026-10-28 02:55:15,049 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-10
+2026-10-28 02:55:15,049 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-3
+2026-10-28 02:55:15,049 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-5
+2026-10-28 02:55:15,049 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-3
+2026-10-28 02:55:15,049 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-5
+2026-10-28 02:55:15,049 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-7
+2026-10-28 02:55:15,050 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-7
+2026-10-28 02:55:15,050 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-1
+2026-10-28 02:55:15,050 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-1
+2026-10-28 02:55:15,050 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-8
+2026-10-28 02:55:15,050 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-8
+2026-10-28 02:55:15,050 INFO o.a.j.t.JMeterThread: Thread is done: C07 1-9
+2026-10-28 02:55:15,050 INFO o.a.j.t.JMeterThread: Thread finished: C07 1-9
+2026-10-28 02:55:15,051 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-10-28 02:55:15,055 INFO o.a.j.r.Summariser: summary +    619 in 00:00:10 =   60.7/s Avg:   122 Min:     0 Max:  5129 Err:     0 (0.00%) Active: 0 Started: 10 Finished: 10
+2026-10-28 02:55:15,056 INFO o.a.j.r.Summariser: summary =    620 in 00:00:11 =   55.6/s Avg:   122 Min:     0 Max:  5129 Err:     0 (0.00%)
+2026-10-28 02:55:15,056 INFO o.a.j.JMeter: Generating Dashboard
+2026-10-28 02:55:15,056 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2026-10-28 02:55:15,072 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2026-10-28 02:55:15,210 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2026-10-28 02:55:15,210 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2026-10-28 02:55:15,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2026-10-28 02:55:15,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2026-10-28 02:55:15,217 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2026-10-28 02:55:15,220 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2026-10-28 02:55:15,220 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2026-10-28 02:55:15,220 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2026-10-28 02:55:15,246 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2026-10-28 02:55:15,247 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2026-10-28 02:55:15,247 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2026-10-28 02:55:15,247 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2026-10-28 02:55:15,255 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2026-10-28 02:55:15,256 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 4340 samples
+2026-10-28 02:55:15,256 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2026-10-28 02:55:15,256 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2026-10-28 02:55:15,256 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2026-10-28 02:55:15,256 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2026-10-28 02:55:15,257 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2026-10-28 02:55:15,257 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2026-10-28 02:55:15,259 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2026-10-28 02:55:15,259 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2026-10-28 02:55:15,259 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2026-10-28 02:55:15,260 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2026-10-28 02:55:15,260 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 9300 samples
+2026-10-28 02:55:15,260 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 1860 samples
+2026-10-28 02:55:15,260 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 620 samples
+2026-10-28 02:55:15,260 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 620 samples produced in 162ms on channel 0
+2026-10-28 02:55:15,261 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2026-10-28 02:55:15,345 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2026-10-28 02:55:15,345 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2026-10-28 02:55:15,346 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2026-10-28 02:55:15,346 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2026-10-28 02:55:15,346 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/html/statistics.json
+2026-10-28 02:55:15,392 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2026-10-28 02:55:15,394 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/html
+2026-10-28 02:55:15,516 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/html, creating folder structure
+2026-10-28 02:55:15,517 INFO o.a.j.r.d.TemplateVisitor: Copying folder from '/home/studs/s407960/is-lab2-4101/tools/apache-jmeter-5.6.3/bin/report-template' to '/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/html', got message: /home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/html, found non empty folder with following content [/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C07/html/statistics.json], will be ignored
+2026-10-28 02:55:15,743 INFO o.a.j.JMeter: Dashboard generated

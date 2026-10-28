@@ -1,0 +1,115 @@
+{
+  "base": "http://127.0.0.1:40797/movie-lab/api",
+  "results": [
+    {
+      "case": "H05 unauthenticated",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "H05 missing csrf",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "H03 role escalation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "F10 missing file",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "F10 wrong part media",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "F10 empty file",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "F10 oversize",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "F10 entry rejections have no history",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "F01 valid HTTP multipart",
+      "passed": true,
+      "details": {
+        "id": "1",
+        "operationId": "1",
+        "userId": "2",
+        "user": "lab2_user_a",
+        "status": "SUCCESS",
+        "addedCount": 2,
+        "startedAt": "2026-10-28T00:17:16.135896Z",
+        "finishedAt": "2026-10-28T00:17:16.295415745Z",
+        "filename": "http-valid.json",
+        "errorCode": null,
+        "errorMessage": null
+      }
+    },
+    {
+      "case": "H03 other user detail",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "H02 administrator detail",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "H03 ignored userId parameter",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "U06 duplicate upload",
+      "passed": true,
+      "details": {
+        "error": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438 \u0440\u0435\u0436\u0438\u0441\u0441\u0451\u0440: \u0442\u0430\u043a\u0430\u044f \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+        "code": "DUPLICATE_MOVIE",
+        "recordNumber": 1,
+        "path": "movies[0].director",
+        "operationId": "2",
+        "status": "FAILED"
+      }
+    },
+    {
+      "case": "H01 failed count null",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "F10 accepted invalid JSON history",
+      "passed": true,
+      "details": {
+        "error": "\u0422\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 UTF-8 JSON \u0431\u0435\u0437 \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0445 \u0441\u0432\u043e\u0439\u0441\u0442\u0432",
+        "code": "INVALID_JSON",
+        "operationId": "3",
+        "status": "FAILED"
+      }
+    },
+    {
+      "case": "H02 admin total",
+      "passed": true,
+      "details": null
+    },
+    {
+      "case": "H05 independent sessions",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "passed": true
+}

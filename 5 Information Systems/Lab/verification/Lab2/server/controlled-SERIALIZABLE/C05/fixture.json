@@ -1,0 +1,4107 @@
+{
+  "scenario": "C05",
+  "threads": 10,
+  "rounds": [
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r0-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r1-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r2-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r3-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r4-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r5-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r6-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r7-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r8-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r9-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r10-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r11-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r12-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r13-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r14-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r15-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r16-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r17-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r18-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-same",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-same",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-same",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different2",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different2",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different3",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different3",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different4",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different4",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different5",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different5",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different6",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different6",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different7",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different7",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different8",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different8",
+            "genre": "COMEDY",
+            "director": "163"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different9",
+            "coordinates": "527",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-SERIALIZABLE-C05-79f7e2-r19-different9",
+            "genre": "COMEDY",
+            "director": "164"
+          }
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-controlled-SERIALIZABLE-C05-79f7e2"
+}

@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "status": 400,
+  "error": {
+    "error": "length: \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u0431\u043e\u043b\u044c\u0448\u0435 0",
+    "code": "INVALID_FIELD",
+    "recordNumber": 2,
+    "path": "movies[1].length",
+    "operationId": "8",
+    "status": "FAILED"
+  },
+  "before": {
+    "Movie": 4,
+    "Person": 2,
+    "Coordinates": 4,
+    "Location": 2
+  },
+  "after": {
+    "Movie": 4,
+    "Person": 2,
+    "Coordinates": 4,
+    "Location": 2
+  },
+  "revisionBefore": 8,
+  "revisionAfter": 8,
+  "history": {
+    "id": "8",
+    "operationId": "8",
+    "userId": "2",
+    "user": "lab2_user_a",
+    "status": "FAILED",
+    "addedCount": null,
+    "startedAt": "2026-10-28T11:02:29.712281Z",
+    "finishedAt": "2026-10-28T11:02:29.804395Z",
+    "filename": "invalid-last-field.json",
+    "errorCode": "INVALID_FIELD",
+    "errorMessage": "length: \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u0431\u043e\u043b\u044c\u0448\u0435 0"
+  }
+}

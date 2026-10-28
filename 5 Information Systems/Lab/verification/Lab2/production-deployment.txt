@@ -1,0 +1,35 @@
+Stop requested for PID 42493
+BEGIN
+ id 
+----
+  1
+(1 строка)
+
+ id 
+----
+(0 строк)
+
+UPDATE 0
+COMMIT
+Started PID 43850; log: /home/studs/s407960/is-lab2-4101/.runtime/payara.log
+BEGIN
+ id |   username   | role  
+----+--------------+-------
+  4 | lab2_admin_a | ADMIN
+(1 строка)
+
+UPDATE 1
+COMMIT
+BEGIN
+ id |   username   | role  
+----+--------------+-------
+  5 | lab2_admin_b | ADMIN
+(1 строка)
+
+UPDATE 1
+COMMIT
+Two ordinary users and two admins prepared; credentials excluded from evidence
+{"checks": 17, "passed": true}
+Production snapshot saved; roles/history/domain invariants pass
+{"passed": true, "lab1Unchanged": true, "warSha256": "cf386061ed67f25abac1f84cf13b61fdcb4a988dddbfe3363c81e670365d0576"}
+{"host": "helios.cs.ifmo.ru", "root": "/home/studs/s407960/is-lab2-4101", "pid": 43850, "http": "127.0.0.1:40797", "database": "pg:5432/studs", "schema": "s407960", "tablePrefix": "lab2_4101_", "persistenceUnit": "movies-helios", "isolation": "READ COMMITTED", "warSha256": "cf386061ed67f25abac1f84cf13b61fdcb4a988dddbfe3363c81e670365d0576", "sameAsFinalJMeterWAR": true}

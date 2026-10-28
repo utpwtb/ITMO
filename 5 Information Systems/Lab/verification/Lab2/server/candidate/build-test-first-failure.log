@@ -1,0 +1,750 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< ru.itmo:movie-lab >--------------------------
+[INFO] Building movie-lab 1.0.0
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ movie-lab ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ movie-lab ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ movie-lab ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 31 source files with javac [debug release 17] to target/classes
+[INFO] /home/studs/s407960/is-lab2-4101/src/main/java/ru/itmo/movie/service/ImportParser.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/studs/s407960/is-lab2-4101/src/main/java/ru/itmo/movie/service/ImportParser.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ movie-lab ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ movie-lab ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.5.2:test (default-test) @ movie-lab ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running ru.itmo.movie.BoxOfficeValidatorTest
+окт. 28, 2026 2:32:11 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 8.0.2.Final
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.402 s -- in ru.itmo.movie.BoxOfficeValidatorTest
+[INFO] Running ru.itmo.movie.MovieServiceTest
+[INFO] Running ru.itmo.movie.MovieServiceTest$Lab2
+[EL Warning]: 2026-10-28 02:33:00.2--UnitOfWork(1542074402)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@7db94b11)
+[EL Warning]: 2026-10-28 02:33:16.714--UnitOfWork(1312907964)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@21390938)
+[EL Warning]: 2026-10-28 02:33:18.172--UnitOfWork(144486215)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@5a090f62)
+[EL Warning]: 2026-10-28 02:33:19.634--UnitOfWork(1623148876)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@36ad229b)
+[EL Warning]: 2026-10-28 02:33:23.179--UnitOfWork(816440283)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@77cca767)
+LAB2_ACTUAL_BUSINESS_ISOLATION=read committed; METADATA=read committed; LOCK=AppState FOR UPDATE
+[EL Warning]: 2026-10-28 02:33:23.73--UnitOfWork(1770453310)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: canceling statement due to lock timeout
+  Где: while locking tuple (0,25) in relation "lab2_4101_test_app_state"
+Error Code: 0
+Call: SELECT ID, REVISION FROM lab2_4101_test_app_state WHERE (ID = ?) FOR UPDATE
+	bind => [1 parameter bound]
+Query: ReadObjectQuery(name="readAppState" referenceClass=AppState sql="SELECT ID, REVISION FROM lab2_4101_test_app_state WHERE (ID = ?) FOR UPDATE")
+LAB2_LOCK_TIMEOUT_MS=214 SQLSTATE=55P03
+[EL Warning]: 2026-10-28 02:33:25.639--UnitOfWork(1198513669)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@2506b881)
+[EL Warning]: 2026-10-28 02:33:35.275--UnitOfWork(2100817420)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@22cb3d59)
+[EL Warning]: 2026-10-28 02:33:38.744--UnitOfWork(565517913)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@530ee28b)
+[ERROR] Tests run: 138, Failures: 5, Errors: 3, Skipped: 0, Time elapsed: 40.25 s <<< FAILURE! -- in ru.itmo.movie.MovieServiceTest$Lab2
+[ERROR] ru.itmo.movie.MovieServiceTest$Lab2.C11_H06_deterministicNoPartialReadBeforeCommitAndRollback -- Time elapsed: 16.49 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at ru.itmo.movie.MovieServiceTest$Lab2.C11_H06_deterministicNoPartialReadBeforeCommitAndRollback(MovieServiceTest.java:761)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] ru.itmo.movie.MovieServiceTest$Lab2.F03_U06_lastDuplicateRollsBackAllNestedObjects -- Time elapsed: 1.451 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <ru.itmo.movie.service.Problem> but was: <jakarta.persistence.PersistenceException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at ru.itmo.movie.MovieServiceTest$Lab2.F03_U06_lastDuplicateRollsBackAllNestedObjects(MovieServiceTest.java:659)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: jakarta.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@21390938)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:967)
+	at ru.itmo.movie.service.ImportService.lambda$upload$0(ImportService.java:29)
+	at ru.itmo.movie.persistence.Database.once(Database.java:79)
+	at ru.itmo.movie.persistence.Database.transaction(Database.java:60)
+	at ru.itmo.movie.persistence.Database.metadata(Database.java:45)
+	at ru.itmo.movie.service.ImportService.upload(ImportService.java:26)
+	at ru.itmo.movie.MovieServiceTest$Lab2.lambda$F03_U06_lastDuplicateRollsBackAllNestedObjects$6(MovieServiceTest.java:659)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 7 more
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@21390938)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:343)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1805)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:917)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:981)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:642)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:569)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2048)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:311)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:280)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:266)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:436)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:209)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:514)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:86)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:97)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:326)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:61)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:109)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:86)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3031)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1841)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1823)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1773)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:248)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:147)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4338)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1521)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithPreBuiltChangeSet(UnitOfWorkImpl.java:1667)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.writeChanges(RepeatableWriteUnitOfWork.java:478)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:962)
+	... 14 more
+Caused by: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:909)
+	... 44 more
+
+[ERROR] ru.itmo.movie.MovieServiceTest$Lab2.F01_F07_exactIntegersPersonReuseAndSingleRevision -- Time elapsed: 1.455 s <<< ERROR!
+jakarta.persistence.PersistenceException: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@5a090f62)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:967)
+	at ru.itmo.movie.service.ImportService.lambda$upload$0(ImportService.java:29)
+	at ru.itmo.movie.persistence.Database.once(Database.java:79)
+	at ru.itmo.movie.persistence.Database.transaction(Database.java:60)
+	at ru.itmo.movie.persistence.Database.metadata(Database.java:45)
+	at ru.itmo.movie.service.ImportService.upload(ImportService.java:26)
+	at ru.itmo.movie.MovieServiceTest$Lab2.F01_F07_exactIntegersPersonReuseAndSingleRevision(MovieServiceTest.java:602)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@5a090f62)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:343)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1805)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:917)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:981)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:642)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:569)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2048)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:311)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:280)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:266)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:436)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:209)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:514)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:86)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:97)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:326)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:61)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:109)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:86)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3031)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1841)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1823)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1773)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:248)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:147)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4338)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1521)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithPreBuiltChangeSet(UnitOfWorkImpl.java:1667)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.writeChanges(RepeatableWriteUnitOfWork.java:478)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:962)
+	... 10 more
+Caused by: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:909)
+	... 40 more
+
+[ERROR] ru.itmo.movie.MovieServiceTest$Lab2.F10_syntaxUnknownGeneratedAndEncodingFailuresKeepHistory -- Time elapsed: 1.460 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <ru.itmo.movie.service.Problem> but was: <jakarta.persistence.PersistenceException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at ru.itmo.movie.MovieServiceTest$Lab2.F10_syntaxUnknownGeneratedAndEncodingFailuresKeepHistory(MovieServiceTest.java:701)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: jakarta.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@36ad229b)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:967)
+	at ru.itmo.movie.service.ImportService.lambda$upload$0(ImportService.java:29)
+	at ru.itmo.movie.persistence.Database.once(Database.java:79)
+	at ru.itmo.movie.persistence.Database.transaction(Database.java:60)
+	at ru.itmo.movie.persistence.Database.metadata(Database.java:45)
+	at ru.itmo.movie.service.ImportService.upload(ImportService.java:26)
+	at ru.itmo.movie.MovieServiceTest$Lab2.lambda$F10_syntaxUnknownGeneratedAndEncodingFailuresKeepHistory$10(MovieServiceTest.java:701)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 7 more
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@36ad229b)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:343)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1805)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:917)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:981)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:642)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:569)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2048)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:311)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:280)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:266)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:436)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:209)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:514)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:86)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:97)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:326)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:61)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:109)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:86)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3031)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1841)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1823)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1773)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:248)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:147)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4338)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1521)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithPreBuiltChangeSet(UnitOfWorkImpl.java:1667)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.writeChanges(RepeatableWriteUnitOfWork.java:478)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:962)
+	... 14 more
+Caused by: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:909)
+	... 44 more
+
+[ERROR] ru.itmo.movie.MovieServiceTest$Lab2.F08_failureAfterActualInsertFlush -- Time elapsed: 3.543 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <ru.itmo.movie.service.Problem> but was: <jakarta.persistence.PersistenceException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at ru.itmo.movie.MovieServiceTest$Lab2.F08_failureAfterActualInsertFlush(MovieServiceTest.java:667)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: jakarta.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@77cca767)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:967)
+	at ru.itmo.movie.service.ImportService.lambda$upload$0(ImportService.java:29)
+	at ru.itmo.movie.persistence.Database.once(Database.java:79)
+	at ru.itmo.movie.persistence.Database.transaction(Database.java:60)
+	at ru.itmo.movie.persistence.Database.metadata(Database.java:45)
+	at ru.itmo.movie.service.ImportService.upload(ImportService.java:26)
+	at ru.itmo.movie.MovieServiceTest$Lab2.lambda$F08_failureAfterActualInsertFlush$7(MovieServiceTest.java:667)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 7 more
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@77cca767)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:343)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1805)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:917)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:981)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:642)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:569)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2048)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:311)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:280)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:266)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:436)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:209)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:514)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:86)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:97)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:326)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:61)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:109)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:86)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3031)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1841)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1823)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1773)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:248)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:147)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4338)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1521)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithPreBuiltChangeSet(UnitOfWorkImpl.java:1667)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.writeChanges(RepeatableWriteUnitOfWork.java:478)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:962)
+	... 14 more
+Caused by: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:909)
+	... 44 more
+
+[ERROR] ru.itmo.movie.MovieServiceTest$Lab2.F09_actualDeferredCommitFailure -- Time elapsed: 1.483 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <ru.itmo.movie.service.Problem> but was: <jakarta.persistence.PersistenceException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at ru.itmo.movie.MovieServiceTest$Lab2.F09_actualDeferredCommitFailure(MovieServiceTest.java:677)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: jakarta.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@2506b881)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:967)
+	at ru.itmo.movie.service.ImportService.lambda$upload$0(ImportService.java:29)
+	at ru.itmo.movie.persistence.Database.once(Database.java:79)
+	at ru.itmo.movie.persistence.Database.transaction(Database.java:60)
+	at ru.itmo.movie.persistence.Database.metadata(Database.java:45)
+	at ru.itmo.movie.service.ImportService.upload(ImportService.java:26)
+	at ru.itmo.movie.MovieServiceTest$Lab2.lambda$F09_actualDeferredCommitFailure$8(MovieServiceTest.java:677)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 7 more
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@2506b881)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:343)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1805)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:917)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:981)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:642)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:569)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2048)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:311)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:280)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:266)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:436)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:209)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:514)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:86)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:97)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:326)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:61)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:109)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:86)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3031)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1841)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1823)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1773)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:248)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:147)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4338)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1521)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithPreBuiltChangeSet(UnitOfWorkImpl.java:1667)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.writeChanges(RepeatableWriteUnitOfWork.java:478)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:962)
+	... 14 more
+Caused by: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:909)
+	... 44 more
+
+[ERROR] ru.itmo.movie.MovieServiceTest$Lab2.H01_H02_H03_H04_historyPermissionsPaginationAndReopen -- Time elapsed: 9.610 s <<< ERROR!
+jakarta.persistence.PersistenceException: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@22cb3d59)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:967)
+	at ru.itmo.movie.service.ImportService.lambda$upload$0(ImportService.java:29)
+	at ru.itmo.movie.persistence.Database.once(Database.java:79)
+	at ru.itmo.movie.persistence.Database.transaction(Database.java:60)
+	at ru.itmo.movie.persistence.Database.metadata(Database.java:45)
+	at ru.itmo.movie.service.ImportService.upload(ImportService.java:26)
+	at ru.itmo.movie.MovieServiceTest$Lab2.H01_H02_H03_H04_historyPermissionsPaginationAndReopen(MovieServiceTest.java:730)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@22cb3d59)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:343)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1805)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:917)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:981)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:642)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:569)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2048)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:311)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:280)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:266)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:436)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:209)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:514)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:86)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:97)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:326)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:61)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:109)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:86)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3031)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1841)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1823)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1773)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:248)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:147)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4338)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1521)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithPreBuiltChangeSet(UnitOfWorkImpl.java:1667)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.writeChanges(RepeatableWriteUnitOfWork.java:478)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:962)
+	... 10 more
+Caused by: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:909)
+	... 40 more
+
+[ERROR] ru.itmo.movie.MovieServiceTest$Lab2.F07_personConflictAfterEarlierRowsAndExistingPersonImmutable -- Time elapsed: 3.467 s <<< ERROR!
+jakarta.persistence.PersistenceException: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@530ee28b)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:967)
+	at ru.itmo.movie.service.ImportService.lambda$upload$0(ImportService.java:29)
+	at ru.itmo.movie.persistence.Database.once(Database.java:79)
+	at ru.itmo.movie.persistence.Database.transaction(Database.java:60)
+	at ru.itmo.movie.persistence.Database.metadata(Database.java:45)
+	at ru.itmo.movie.service.ImportService.upload(ImportService.java:26)
+	at ru.itmo.movie.MovieServiceTest$Lab2.F07_personConflictAfterEarlierRowsAndExistingPersonImmutable(MovieServiceTest.java:686)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@530ee28b)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:343)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1805)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:917)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:981)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:642)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:569)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2048)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:311)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:280)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:266)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:436)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:209)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:514)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:86)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:97)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:326)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:61)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:109)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:86)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3031)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1841)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1823)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1773)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:248)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:147)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4338)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1521)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithPreBuiltChangeSet(UnitOfWorkImpl.java:1667)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.writeChanges(RepeatableWriteUnitOfWork.java:478)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:962)
+	... 10 more
+Caused by: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:909)
+	... 40 more
+
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 87.04 s -- in ru.itmo.movie.MovieServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   MovieServiceTest$Lab2.C11_H06_deterministicNoPartialReadBeforeCommitAndRollback:761 expected: <true> but was: <false>
+[ERROR]   MovieServiceTest$Lab2.F03_U06_lastDuplicateRollsBackAllNestedObjects:659 Unexpected exception type thrown, expected: <ru.itmo.movie.service.Problem> but was: <jakarta.persistence.PersistenceException>
+[ERROR]   MovieServiceTest$Lab2.F08_failureAfterActualInsertFlush:667 Unexpected exception type thrown, expected: <ru.itmo.movie.service.Problem> but was: <jakarta.persistence.PersistenceException>
+[ERROR]   MovieServiceTest$Lab2.F09_actualDeferredCommitFailure:677 Unexpected exception type thrown, expected: <ru.itmo.movie.service.Problem> but was: <jakarta.persistence.PersistenceException>
+[ERROR]   MovieServiceTest$Lab2.F10_syntaxUnknownGeneratedAndEncodingFailuresKeepHistory:701 Unexpected exception type thrown, expected: <ru.itmo.movie.service.Problem> but was: <jakarta.persistence.PersistenceException>
+[ERROR] Errors: 
+[ERROR]   MovieServiceTest$Lab2.F01_F07_exactIntegersPersonReuseAndSingleRevision:602 » Persistence Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@5a090f62)
+[ERROR]   MovieServiceTest$Lab2.F07_personConflictAfterEarlierRowsAndExistingPersonImmutable:686 » Persistence Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@530ee28b)
+[ERROR]   MovieServiceTest$Lab2.H01_H02_H03_H04_historyPermissionsPaginationAndReopen:730 » Persistence Exception [EclipseLink-4002] (Eclipse Persistence Services - 4.0.5.v202412231137-a96b873527f305f932543045c8679bb1de8d3a43): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: column "finished_at" is of type timestamp with time zone but expression is of type bytea
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 162
+Error Code: 0
+Call: INSERT INTO lab2_4101_test_import_operation (added_count, error_code, error_message, FILENAME, finished_at, started_at, STATUS, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Query: InsertObjectQuery(ru.itmo.movie.domain.ImportOperation@22cb3d59)
+[INFO] 
+[ERROR] Tests run: 139, Failures: 5, Errors: 3, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:37 min
+[INFO] Finished at: 2026-10-28T02:33:38+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.2:test (default-test) on project movie-lab: There are test failures.
+[ERROR] 
+[ERROR] See /home/studs/s407960/is-lab2-4101/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Traceback (most recent call last):
+  File "/home/studs/s407960/is-lab2-4101/scripts/helios.py", line 93, in <module>
+    run(['mvn', '-B', '-ntp', '-s', 'scripts/maven-settings.xml',
+  File "/home/studs/s407960/is-lab2-4101/scripts/helios.py", line 48, in run
+    return subprocess.run(args, cwd=ROOT, env=env, check=True, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['mvn', '-B', '-ntp', '-s', 'scripts/maven-settings.xml', '-DargLine=-Xmx384m -XX:MaxMetaspaceSize=256m -XX:ActiveProcessorCount=2', 'clean', 'verify']' returned non-zero exit status 1.

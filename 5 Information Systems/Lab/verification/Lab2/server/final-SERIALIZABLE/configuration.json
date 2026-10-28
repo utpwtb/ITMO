@@ -1,0 +1,11 @@
+{
+  "host": "helios.cs.ifmo.ru",
+  "directory": "/home/studs/s407960/is-lab2-4101",
+  "isolation": "SERIALIZABLE",
+  "lock": "AppState FOR UPDATE",
+  "rounds": 20,
+  "attempts": 3,
+  "http": "127.0.0.1:40797",
+  "warSha256": "cf386061ed67f25abac1f84cf13b61fdcb4a988dddbfe3363c81e670365d0576",
+  "baselineDumpSha256": "1de7624b8a85df0c46a58bc063a22814231e64e4168862642b543231afe9cbd5"
+}

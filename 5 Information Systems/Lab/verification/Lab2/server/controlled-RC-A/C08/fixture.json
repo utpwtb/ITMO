@@ -1,0 +1,747 @@
+{
+  "scenario": "C08",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r0-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r0-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r0-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r1-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r1-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r1-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r2-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r2-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r2-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r3-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r3-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r3-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r4-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r4-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r4-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r5-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r5-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r5-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r6-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r6-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r6-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r7-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r7-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r7-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r8-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r8-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r8-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r9-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r9-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r9-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r10-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r10-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r10-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r11-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r11-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r11-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r12-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r12-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r12-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r13-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r13-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r13-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r14-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r14-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r14-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r15-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r15-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r15-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r16-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r16-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r16-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r17-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r17-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r17-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r18-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r18-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r18-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-RC-A-C08-381523-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-controlled-RC-A-C08-381523-r19-shared",
+            "coordinates": "750",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-controlled-RC-A-C08-381523-r19-shared",
+            "genre": "COMEDY",
+            "director": null
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/controlled-RC-A/C08/r19-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-controlled-RC-A-C08-381523"
+}

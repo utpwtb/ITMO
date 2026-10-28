@@ -1,0 +1,22 @@
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec,polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\setmainfont[Path=fonts/,UprightFont=cmunrm.otf,BoldFont=cmunbx.otf,ItalicFont=cmunti.otf,BoldItalicFont=cmunbi.otf]{CMU Serif}
+\newfontfamily\cyrillicfonttt[Path=fonts/]{cmuntt.otf}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\usepackage{graphicx,longtable,booktabs,array,float,setspace,xurl,hyperref,pdflscape}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=black,urlcolor=blue,pdftitle={Лабораторная работа № 2. Импорт и транзакции},pdfauthor={Чэнь Хаолинь}}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.2\baselineskip}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\arraystretch}{1.15}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{document}
+\hypersetup{pageanchor=false}
+\input{titlepage.tex}
+\hypersetup{pageanchor=true}
+\tableofcontents\clearpage
+\input{body.tex}
+\end{document}

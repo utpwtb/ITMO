@@ -1,0 +1,507 @@
+{
+  "scenario": "C09",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r0-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r0-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r1-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r1-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r2-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r2-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r3-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r3-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r4-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r4-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r5-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r5-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r6-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r6-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r7-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r7-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r8-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r8-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r9-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r9-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r10-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r10-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r11-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r11-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r12-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r12-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r13-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r13-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r14-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r14-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r15-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r15-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r16-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r16-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r17-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r17-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r18-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r18-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C09-c58db7-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r19-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C09/r19-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-final-SERIALIZABLE-C09-c58db7"
+}

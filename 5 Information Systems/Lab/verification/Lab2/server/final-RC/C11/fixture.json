@@ -1,0 +1,1727 @@
+{
+  "scenario": "C11",
+  "threads": 10,
+  "rounds": [
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r0-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r0-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r1-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r1-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r2-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r2-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r3-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r3-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r4-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r4-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r5-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r5-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r6-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r6-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r7-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r7-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r8-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r8-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r9-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r9-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r10-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r10-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r11-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r11-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r12-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r12-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r13-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r13-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r14-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r14-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r15-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r15-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r16-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r16-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r17-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r17-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r18-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r18-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C11-d900ae-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C11/r19-p0.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        },
+        {
+          "method": "GET",
+          "path": "operations/prefix?value=lab2-final-RC-C11-d900ae-r19-",
+          "expected": [
+            200
+          ],
+          "atomicRead": true
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-final-RC-C11-d900ae"
+}

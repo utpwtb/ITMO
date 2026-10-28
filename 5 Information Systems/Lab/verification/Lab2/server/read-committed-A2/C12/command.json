@@ -1,0 +1,22 @@
+[
+  "/home/studs/s407960/is-lab2-4101/tools/apache-jmeter-5.6.3/bin/jmeter",
+  "-n",
+  "-t",
+  "jmeter/lab2-concurrency.jmx",
+  "-Jhost=127.0.0.1",
+  "-Jport=40797",
+  "-JbasePath=/movie-lab/api",
+  "-Jscenario=C12",
+  "-Jthreads=10",
+  "-Jrounds=20",
+  "-JfixtureFile=/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/fixture.json",
+  "-JcredentialsFile=/home/studs/s407960/is-lab2-4101/.runtime/lab2-users.json",
+  "-JresultFile=/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/responses.jsonl",
+  "-l",
+  "verification/Lab2/read-committed-A2/C12/results.jtl",
+  "-j",
+  "verification/Lab2/read-committed-A2/C12/jmeter.log",
+  "-e",
+  "-o",
+  "verification/Lab2/read-committed-A2/C12/html"
+]

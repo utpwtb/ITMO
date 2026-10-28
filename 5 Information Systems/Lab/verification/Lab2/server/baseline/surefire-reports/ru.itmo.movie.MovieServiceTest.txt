@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: ru.itmo.movie.MovieServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.694 s <<< FAILURE! -- in ru.itmo.movie.MovieServiceTest
+ru.itmo.movie.MovieServiceTest -- Time elapsed: 0.694 s <<< ERROR!
+jakarta.persistence.PersistenceException: No Persistence provider for EntityManager named movies-helios-test
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:86)
+	at ru.itmo.movie.persistence.Database.init(Database.java:26)
+	at ru.itmo.movie.MovieServiceTest.setup(MovieServiceTest.java:60)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

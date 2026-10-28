@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "reason": "The first readiness probe returned 200 for api/auth before Payara completed its second deployment pass; the subsequent static asset probe returned HTTP 503.",
+  "mavenPackagePassed": true,
+  "nonUiWarEntriesMatched": true,
+  "rollbackCompleted": true,
+  "rollbackPid": 64913,
+  "correction": "Readiness now checks all four static assets against the deployed WAR and retries transient startup responses. The failed attempt is retained separately."
+}

@@ -1,0 +1,57 @@
+                "Type": "war",
+                "Context Root": "/movie-lab"
+            }
+        ]
+    }
+}]]
+
+[2026-10-28T02:38:13.835+0300] [] [[1;92mINFO[0m] [] [[1;94mPayaraMicro[0m] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1793144293835] [levelValue: 800] [[
+  
+Payara Micro URLs:
+http://helios.cs.ifmo.ru:40797/movie-lab
+
+'movie-lab' REST Endpoints:
+GET	/movie-lab/api//movies
+GET	/movie-lab/api//operations/average
+POST	/movie-lab/api//operations/award
+DELETE	/movie-lab/api//operations/box-office
+GET	/movie-lab/api//operations/prefix
+POST	/movie-lab/api//operations/redistribute
+GET	/movie-lab/api//revision
+POST	/movie-lab/api//{kind:movies|people|coordinates|locations}
+DELETE	/movie-lab/api//{kind:movies|people|coordinates|locations}/{id}
+GET	/movie-lab/api//{kind:movies|people|coordinates|locations}/{id}
+PUT	/movie-lab/api//{kind:movies|people|coordinates|locations}/{id}
+GET	/movie-lab/api//{kind:people|coordinates|locations}
+GET	/movie-lab/api/application.wadl
+DELETE	/movie-lab/api/auth
+GET	/movie-lab/api/auth
+POST	/movie-lab/api/auth
+POST	/movie-lab/api/auth/register
+GET	/movie-lab/api/imports
+POST	/movie-lab/api/imports
+GET	/movie-lab/api/imports/{id}
+
+]]
+
+[2026-10-28T02:38:13.835+0300] [] [[1;92mINFO[0m] [] [[1;94mPayaraMicro[0m] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1793144293835] [levelValue: 800] Payara Micro 6.2025.1 #badassmicrofish (build 28) ready in 19 594 (ms)
+
+{"authenticated":false}BEGIN
+ id |   username   | role  
+----+--------------+-------
+  4 | lab2_admin_a | ADMIN
+(1 строка)
+
+UPDATE 1
+COMMIT
+BEGIN
+ id |   username   | role  
+----+--------------+-------
+  5 | lab2_admin_b | ADMIN
+(1 строка)
+
+UPDATE 1
+COMMIT
+Two ordinary users and two admins prepared; credentials excluded from evidence
+{"checks": 17, "passed": true}
+{"scenario": "C03", "threads": 10, "rounds": 2, "requests": 20, "commits": 2, "expectedConflicts": 18, "unexpected": 0, "averageMs": 101.75, "p95Ms": 160, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 16.987317323684692}

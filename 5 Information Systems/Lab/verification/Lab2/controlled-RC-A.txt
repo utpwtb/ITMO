@@ -1,0 +1,27 @@
+BEGIN
+ id 
+----
+  1
+(1 строка)
+
+ id 
+----
+(0 строк)
+
+UPDATE 0
+COMMIT
+Started PID 39377; log: /home/studs/s407960/is-lab2-4101/.runtime/payara.log
+200
+{"scenario": "C01", "threads": 2, "rounds": 20, "requests": 40, "commits": 20, "expectedConflicts": 20, "unexpected": 0, "averageMs": 33.35, "p95Ms": 57, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 15.018249034881592}
+{"scenario": "C02", "threads": 2, "rounds": 20, "requests": 40, "commits": 20, "expectedConflicts": 20, "unexpected": 0, "averageMs": 121.825, "p95Ms": 2037, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 14.943297863006592}
+{"scenario": "C02D", "threads": 2, "rounds": 20, "requests": 40, "commits": 20, "expectedConflicts": 20, "unexpected": 0, "averageMs": 118.575, "p95Ms": 2042, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 14.514259576797485}
+{"scenario": "C03", "threads": 10, "rounds": 20, "requests": 200, "commits": 20, "expectedConflicts": 180, "unexpected": 0, "averageMs": 139.21, "p95Ms": 74, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 18.114031553268433}
+{"scenario": "C04", "threads": 10, "rounds": 20, "requests": 200, "commits": 20, "expectedConflicts": 180, "unexpected": 0, "averageMs": 51.085, "p95Ms": 84, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 20.268427848815918}
+{"scenario": "C05", "threads": 10, "rounds": 20, "requests": 200, "commits": 200, "expectedConflicts": 0, "unexpected": 0, "averageMs": 221.155, "p95Ms": 3036, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 20.080835819244385}
+{"scenario": "C06", "threads": 2, "rounds": 20, "requests": 40, "commits": 20, "expectedConflicts": 20, "unexpected": 0, "averageMs": 22.55, "p95Ms": 29, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 14.610790967941284}
+{"scenario": "C07", "threads": 10, "rounds": 20, "requests": 200, "commits": 20, "expectedConflicts": 180, "unexpected": 0, "averageMs": 68.955, "p95Ms": 129, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 18.484987497329712}
+{"scenario": "C08", "threads": 2, "rounds": 20, "requests": 40, "commits": 20, "expectedConflicts": 20, "unexpected": 0, "averageMs": 136.95, "p95Ms": 2096, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 14.843522071838379}
+{"scenario": "C09", "threads": 2, "rounds": 20, "requests": 40, "commits": 20, "expectedConflicts": 20, "unexpected": 0, "averageMs": 35.975, "p95Ms": 59, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 14.765442848205566}
+{"scenario": "C10", "threads": 10, "rounds": 20, "requests": 200, "commits": 180, "expectedConflicts": 20, "unexpected": 0, "averageMs": 163.825, "p95Ms": 164, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 21.71109938621521}
+{"scenario": "C11", "threads": 10, "rounds": 20, "requests": 200, "commits": 20, "expectedConflicts": 0, "unexpected": 0, "averageMs": 7.195, "p95Ms": 28, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 18.10088062286377}
+{"scenario": "C12", "threads": 10, "rounds": 20, "requests": 200, "commits": 200, "expectedConflicts": 0, "unexpected": 0, "averageMs": 174.415, "p95Ms": 214, "duplicates": 0, "failedImportResidue": 0, "passed": true, "errors": [], "jmeterExit": 0, "jtlFailures": 0, "elapsedSeconds": 24.51313018798828}

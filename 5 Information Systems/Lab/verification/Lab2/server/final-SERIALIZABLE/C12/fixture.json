@@ -1,0 +1,2447 @@
+{
+  "scenario": "C12",
+  "threads": 10,
+  "rounds": [
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r0-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r0-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1420",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r0-edited1",
+            "version": 1
+          },
+          "read": "movies/1420",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1421?version=1",
+          "read": "movies/1421",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r0-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r0-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r0-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1422",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r0-edited6",
+            "version": 1
+          },
+          "read": "movies/1422",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1423?version=1",
+          "read": "movies/1423",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r0-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1419"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r1-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r1-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1425",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r1-edited1",
+            "version": 1
+          },
+          "read": "movies/1425",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1426?version=1",
+          "read": "movies/1426",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r1-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r1-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r1-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1427",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r1-edited6",
+            "version": 1
+          },
+          "read": "movies/1427",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1428?version=1",
+          "read": "movies/1428",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r1-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1424"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r2-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r2-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1430",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r2-edited1",
+            "version": 1
+          },
+          "read": "movies/1430",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1431?version=1",
+          "read": "movies/1431",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r2-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r2-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r2-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1432",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r2-edited6",
+            "version": 1
+          },
+          "read": "movies/1432",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1433?version=1",
+          "read": "movies/1433",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r2-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1429"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r3-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r3-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1435",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r3-edited1",
+            "version": 1
+          },
+          "read": "movies/1435",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1436?version=1",
+          "read": "movies/1436",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r3-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r3-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r3-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1437",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r3-edited6",
+            "version": 1
+          },
+          "read": "movies/1437",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1438?version=1",
+          "read": "movies/1438",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r3-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1434"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r4-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r4-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1440",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r4-edited1",
+            "version": 1
+          },
+          "read": "movies/1440",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1441?version=1",
+          "read": "movies/1441",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r4-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r4-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r4-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1442",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r4-edited6",
+            "version": 1
+          },
+          "read": "movies/1442",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1443?version=1",
+          "read": "movies/1443",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r4-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1439"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r5-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r5-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1445",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r5-edited1",
+            "version": 1
+          },
+          "read": "movies/1445",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1446?version=1",
+          "read": "movies/1446",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r5-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r5-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r5-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1447",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r5-edited6",
+            "version": 1
+          },
+          "read": "movies/1447",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1448?version=1",
+          "read": "movies/1448",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r5-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1444"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r6-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r6-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1450",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r6-edited1",
+            "version": 1
+          },
+          "read": "movies/1450",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1451?version=1",
+          "read": "movies/1451",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r6-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r6-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r6-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1452",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r6-edited6",
+            "version": 1
+          },
+          "read": "movies/1452",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1453?version=1",
+          "read": "movies/1453",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r6-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1449"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r7-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r7-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1455",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r7-edited1",
+            "version": 1
+          },
+          "read": "movies/1455",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1456?version=1",
+          "read": "movies/1456",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r7-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r7-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r7-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1457",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r7-edited6",
+            "version": 1
+          },
+          "read": "movies/1457",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1458?version=1",
+          "read": "movies/1458",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r7-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1454"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r8-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r8-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1460",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r8-edited1",
+            "version": 1
+          },
+          "read": "movies/1460",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1461?version=1",
+          "read": "movies/1461",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r8-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r8-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r8-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1462",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r8-edited6",
+            "version": 1
+          },
+          "read": "movies/1462",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1463?version=1",
+          "read": "movies/1463",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r8-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1459"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r9-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r9-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1465",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r9-edited1",
+            "version": 1
+          },
+          "read": "movies/1465",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1466?version=1",
+          "read": "movies/1466",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r9-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r9-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r9-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1467",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r9-edited6",
+            "version": 1
+          },
+          "read": "movies/1467",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1468?version=1",
+          "read": "movies/1468",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r9-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1464"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r10-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r10-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1470",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r10-edited1",
+            "version": 1
+          },
+          "read": "movies/1470",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1471?version=1",
+          "read": "movies/1471",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r10-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r10-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r10-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1472",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r10-edited6",
+            "version": 1
+          },
+          "read": "movies/1472",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1473?version=1",
+          "read": "movies/1473",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r10-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1469"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r11-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r11-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1475",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r11-edited1",
+            "version": 1
+          },
+          "read": "movies/1475",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1476?version=1",
+          "read": "movies/1476",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r11-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r11-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r11-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1477",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r11-edited6",
+            "version": 1
+          },
+          "read": "movies/1477",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1478?version=1",
+          "read": "movies/1478",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r11-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1474"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r12-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r12-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1480",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r12-edited1",
+            "version": 1
+          },
+          "read": "movies/1480",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1481?version=1",
+          "read": "movies/1481",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r12-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r12-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r12-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1482",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r12-edited6",
+            "version": 1
+          },
+          "read": "movies/1482",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1483?version=1",
+          "read": "movies/1483",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r12-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1479"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r13-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r13-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1485",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r13-edited1",
+            "version": 1
+          },
+          "read": "movies/1485",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1486?version=1",
+          "read": "movies/1486",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r13-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r13-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r13-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1487",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r13-edited6",
+            "version": 1
+          },
+          "read": "movies/1487",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1488?version=1",
+          "read": "movies/1488",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r13-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1484"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r14-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r14-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1490",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r14-edited1",
+            "version": 1
+          },
+          "read": "movies/1490",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1491?version=1",
+          "read": "movies/1491",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r14-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r14-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r14-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1492",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r14-edited6",
+            "version": 1
+          },
+          "read": "movies/1492",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1493?version=1",
+          "read": "movies/1493",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r14-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1489"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r15-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r15-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1495",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r15-edited1",
+            "version": 1
+          },
+          "read": "movies/1495",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1496?version=1",
+          "read": "movies/1496",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r15-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r15-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r15-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1497",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r15-edited6",
+            "version": 1
+          },
+          "read": "movies/1497",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1498?version=1",
+          "read": "movies/1498",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r15-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1494"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r16-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r16-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1500",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r16-edited1",
+            "version": 1
+          },
+          "read": "movies/1500",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1501?version=1",
+          "read": "movies/1501",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r16-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r16-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r16-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1502",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r16-edited6",
+            "version": 1
+          },
+          "read": "movies/1502",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1503?version=1",
+          "read": "movies/1503",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r16-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1499"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r17-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r17-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1505",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r17-edited1",
+            "version": 1
+          },
+          "read": "movies/1505",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1506?version=1",
+          "read": "movies/1506",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r17-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r17-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r17-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1507",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r17-edited6",
+            "version": 1
+          },
+          "read": "movies/1507",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1508?version=1",
+          "read": "movies/1508",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r17-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1504"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r18-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r18-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1510",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r18-edited1",
+            "version": 1
+          },
+          "read": "movies/1510",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1511?version=1",
+          "read": "movies/1511",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r18-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r18-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r18-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1512",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r18-edited6",
+            "version": 1
+          },
+          "read": "movies/1512",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1513?version=1",
+          "read": "movies/1513",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r18-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1509"
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C12-f388e8-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r19-create0",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r19-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1515",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r19-edited1",
+            "version": 1
+          },
+          "read": "movies/1515",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1516?version=1",
+          "read": "movies/1516",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r19-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-SERIALIZABLE-C12-f388e8-r19-create5",
+            "coordinates": "916",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r19-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1517",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C12-f388e8-r19-edited6",
+            "version": 1
+          },
+          "read": "movies/1517",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1518?version=1",
+          "read": "movies/1518",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-SERIALIZABLE/C12/r19-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "1514"
+    }
+  ],
+  "marker": "lab2-final-SERIALIZABLE-C12-f388e8"
+}

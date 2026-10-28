@@ -1,0 +1,17 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" version="6.0">
+    <servlet>
+        <servlet-name>ru.itmo.movie.web.ApiApplication</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param><param-name>jakarta.ws.rs.Application</param-name><param-value>ru.itmo.movie.web.ApiApplication</param-value></init-param>
+        <load-on-startup>1</load-on-startup>
+        <multipart-config><max-file-size>5242880</max-file-size><max-request-size>6291456</max-request-size><file-size-threshold>0</file-size-threshold></multipart-config>
+    </servlet>
+    <servlet-mapping><servlet-name>ru.itmo.movie.web.ApiApplication</servlet-name><url-pattern>/api/*</url-pattern></servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+</web-app>

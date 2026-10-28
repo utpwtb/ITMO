@@ -1,0 +1,16 @@
+digraph UML {
+graph [rankdir=TB,bgcolor="white",nodesep=0.4,ranksep=0.65,pad=0.2];
+node [shape=plain,fontname="Arial",fontsize=11];
+edge [fontname="Arial",fontsize=10,arrowsize=0.8];
+"web" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«package»<BR/>web</B></TD></TR><TR><TD ALIGN="LEFT">ApiApplication, AuthFilter, ErrorMapper<BR ALIGN="LEFT"/>AuthResource, MovieResource, ImportResource</TD></TR></TABLE>>];
+"service" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«package»<BR/>service</B></TD></TR><TR><TD ALIGN="LEFT">AuthService, MovieService, Problem<BR ALIGN="LEFT"/>ImportParser (ImportDocument)<BR ALIGN="LEFT"/>MovieUniquenessValidator (MovieKey)<BR ALIGN="LEFT"/>ImportService, ImportHistoryService</TD></TR></TABLE>>];
+"persistence" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«package»<BR/>persistence</B></TD></TR><TR><TD ALIGN="LEFT">Database: RESOURCE_LOCAL</TD></TR></TABLE>>];
+"domain" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«package»<BR/>domain</B></TD></TR><TR><TD ALIGN="LEFT">Movie, Person, Coordinates, Location<BR ALIGN="LEFT"/>AppState, AppUser, ImportOperation<BR ALIGN="LEFT"/>UserRole, ImportStatus, converters, enums</TD></TR></TABLE>>];
+"domain.validation" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«package»<BR/>domain.validation</B></TD></TR><TR><TD ALIGN="LEFT">ConsistentBoxOffice, BoxOfficeValidator</TD></TR></TABLE>>];
+"web" -> "service" [style=dashed,arrowhead=vee];
+"service" -> "persistence" [style=dashed,arrowhead=vee];
+"service" -> "domain" [style=dashed,arrowhead=vee];
+"service" -> "domain.validation" [style=dashed,arrowhead=vee];
+"persistence" -> "domain" [style=dashed,arrowhead=vee];
+"domain" -> "domain.validation" [style=dashed,arrowhead=vee];
+}

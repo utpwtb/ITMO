@@ -1,0 +1,707 @@
+{
+  "scenario": "C06",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r0-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1076",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r0-target",
+            "version": 1
+          },
+          "read": "movies/1076",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1077",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r0-target",
+            "version": 1
+          },
+          "read": "movies/1077",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r1-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1078",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r1-target",
+            "version": 1
+          },
+          "read": "movies/1078",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1079",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r1-target",
+            "version": 1
+          },
+          "read": "movies/1079",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r2-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1080",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r2-target",
+            "version": 1
+          },
+          "read": "movies/1080",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1081",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r2-target",
+            "version": 1
+          },
+          "read": "movies/1081",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r3-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1082",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r3-target",
+            "version": 1
+          },
+          "read": "movies/1082",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1083",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r3-target",
+            "version": 1
+          },
+          "read": "movies/1083",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r4-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1084",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r4-target",
+            "version": 1
+          },
+          "read": "movies/1084",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1085",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r4-target",
+            "version": 1
+          },
+          "read": "movies/1085",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r5-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1086",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r5-target",
+            "version": 1
+          },
+          "read": "movies/1086",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1087",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r5-target",
+            "version": 1
+          },
+          "read": "movies/1087",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r6-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1088",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r6-target",
+            "version": 1
+          },
+          "read": "movies/1088",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1089",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r6-target",
+            "version": 1
+          },
+          "read": "movies/1089",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r7-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1090",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r7-target",
+            "version": 1
+          },
+          "read": "movies/1090",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1091",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r7-target",
+            "version": 1
+          },
+          "read": "movies/1091",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r8-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1092",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r8-target",
+            "version": 1
+          },
+          "read": "movies/1092",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1093",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r8-target",
+            "version": 1
+          },
+          "read": "movies/1093",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r9-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1094",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r9-target",
+            "version": 1
+          },
+          "read": "movies/1094",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1095",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r9-target",
+            "version": 1
+          },
+          "read": "movies/1095",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r10-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1096",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r10-target",
+            "version": 1
+          },
+          "read": "movies/1096",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1097",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r10-target",
+            "version": 1
+          },
+          "read": "movies/1097",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r11-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1098",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r11-target",
+            "version": 1
+          },
+          "read": "movies/1098",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1099",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r11-target",
+            "version": 1
+          },
+          "read": "movies/1099",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r12-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1100",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r12-target",
+            "version": 1
+          },
+          "read": "movies/1100",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1101",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r12-target",
+            "version": 1
+          },
+          "read": "movies/1101",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r13-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1102",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r13-target",
+            "version": 1
+          },
+          "read": "movies/1102",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1103",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r13-target",
+            "version": 1
+          },
+          "read": "movies/1103",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r14-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1104",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r14-target",
+            "version": 1
+          },
+          "read": "movies/1104",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1105",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r14-target",
+            "version": 1
+          },
+          "read": "movies/1105",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r15-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1106",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r15-target",
+            "version": 1
+          },
+          "read": "movies/1106",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1107",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r15-target",
+            "version": 1
+          },
+          "read": "movies/1107",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r16-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1108",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r16-target",
+            "version": 1
+          },
+          "read": "movies/1108",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1109",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r16-target",
+            "version": 1
+          },
+          "read": "movies/1109",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r17-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1110",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r17-target",
+            "version": 1
+          },
+          "read": "movies/1110",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1111",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r17-target",
+            "version": 1
+          },
+          "read": "movies/1111",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r18-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1112",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r18-target",
+            "version": 1
+          },
+          "read": "movies/1112",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1113",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r18-target",
+            "version": 1
+          },
+          "read": "movies/1113",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C06-eb8287-r19-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/1114",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r19-target",
+            "version": 1
+          },
+          "read": "movies/1114",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1115",
+          "body": {
+            "name": "lab2-controlled-SERIALIZABLE-C06-eb8287-r19-target",
+            "version": 1
+          },
+          "read": "movies/1115",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-controlled-SERIALIZABLE-C06-eb8287"
+}

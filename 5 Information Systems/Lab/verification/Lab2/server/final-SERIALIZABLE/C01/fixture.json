@@ -1,0 +1,747 @@
+{
+  "scenario": "C01",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r0-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/967",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r0-winner0",
+            "version": 1
+          },
+          "read": "movies/967",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/967",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r0-winner1",
+            "version": 1
+          },
+          "read": "movies/967",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "967",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r1-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/968",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r1-winner0",
+            "version": 1
+          },
+          "read": "movies/968",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/968",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r1-winner1",
+            "version": 1
+          },
+          "read": "movies/968",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "968",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r2-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/969",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r2-winner0",
+            "version": 1
+          },
+          "read": "movies/969",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/969",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r2-winner1",
+            "version": 1
+          },
+          "read": "movies/969",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "969",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r3-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/970",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r3-winner0",
+            "version": 1
+          },
+          "read": "movies/970",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/970",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r3-winner1",
+            "version": 1
+          },
+          "read": "movies/970",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "970",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r4-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/971",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r4-winner0",
+            "version": 1
+          },
+          "read": "movies/971",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/971",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r4-winner1",
+            "version": 1
+          },
+          "read": "movies/971",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "971",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r5-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/972",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r5-winner0",
+            "version": 1
+          },
+          "read": "movies/972",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/972",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r5-winner1",
+            "version": 1
+          },
+          "read": "movies/972",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "972",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r6-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/973",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r6-winner0",
+            "version": 1
+          },
+          "read": "movies/973",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/973",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r6-winner1",
+            "version": 1
+          },
+          "read": "movies/973",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "973",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r7-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/974",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r7-winner0",
+            "version": 1
+          },
+          "read": "movies/974",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/974",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r7-winner1",
+            "version": 1
+          },
+          "read": "movies/974",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "974",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r8-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/975",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r8-winner0",
+            "version": 1
+          },
+          "read": "movies/975",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/975",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r8-winner1",
+            "version": 1
+          },
+          "read": "movies/975",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "975",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r9-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/976",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r9-winner0",
+            "version": 1
+          },
+          "read": "movies/976",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/976",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r9-winner1",
+            "version": 1
+          },
+          "read": "movies/976",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "976",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r10-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/977",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r10-winner0",
+            "version": 1
+          },
+          "read": "movies/977",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/977",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r10-winner1",
+            "version": 1
+          },
+          "read": "movies/977",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "977",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r11-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/978",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r11-winner0",
+            "version": 1
+          },
+          "read": "movies/978",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/978",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r11-winner1",
+            "version": 1
+          },
+          "read": "movies/978",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "978",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r12-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/979",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r12-winner0",
+            "version": 1
+          },
+          "read": "movies/979",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/979",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r12-winner1",
+            "version": 1
+          },
+          "read": "movies/979",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "979",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r13-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/980",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r13-winner0",
+            "version": 1
+          },
+          "read": "movies/980",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/980",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r13-winner1",
+            "version": 1
+          },
+          "read": "movies/980",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "980",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r14-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/981",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r14-winner0",
+            "version": 1
+          },
+          "read": "movies/981",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/981",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r14-winner1",
+            "version": 1
+          },
+          "read": "movies/981",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "981",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r15-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/982",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r15-winner0",
+            "version": 1
+          },
+          "read": "movies/982",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/982",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r15-winner1",
+            "version": 1
+          },
+          "read": "movies/982",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "982",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r16-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/983",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r16-winner0",
+            "version": 1
+          },
+          "read": "movies/983",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/983",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r16-winner1",
+            "version": 1
+          },
+          "read": "movies/983",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "983",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r17-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/984",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r17-winner0",
+            "version": 1
+          },
+          "read": "movies/984",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/984",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r17-winner1",
+            "version": 1
+          },
+          "read": "movies/984",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "984",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r18-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/985",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r18-winner0",
+            "version": 1
+          },
+          "read": "movies/985",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/985",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r18-winner1",
+            "version": 1
+          },
+          "read": "movies/985",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "985",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-final-SERIALIZABLE-C01-644b0c-r19-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/986",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r19-winner0",
+            "version": 1
+          },
+          "read": "movies/986",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/986",
+          "body": {
+            "tagline": "lab2-final-SERIALIZABLE-C01-644b0c-r19-winner1",
+            "version": 1
+          },
+          "read": "movies/986",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "986",
+      "targetVersion": 1
+    }
+  ],
+  "marker": "lab2-final-SERIALIZABLE-C01-644b0c"
+}

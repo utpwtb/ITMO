@@ -1,0 +1,39 @@
+{
+  "source": "read-only lab1_4101_ copy",
+  "target": "lab2_4101_test_upgrade_",
+  "before": {
+    "coordinates": "16",
+    "location": "13",
+    "person": "12",
+    "movie": "32",
+    "app_state": "1",
+    "app_user": "3"
+  },
+  "after": {
+    "coordinates": "16",
+    "location": "13",
+    "person": "12",
+    "movie": "32",
+    "app_state": "1",
+    "app_user": "3"
+  },
+  "fingerprintsBefore": {
+    "coordinates": "694de7a25613e598aaea88fa8967ca99",
+    "location": "e65423cfbd594b40df1949e55e4d8631",
+    "person": "f0f557b2d43d07359ce80e4e9f9417f2",
+    "movie": "37dea9daa331a00401b581b82edd8809",
+    "app_state": "62c87070efaf04dcb8b982aeec2b11a2",
+    "app_user": "250ebfabf2dc11cea1afc2e795078e23"
+  },
+  "fingerprintsAfter": {
+    "coordinates": "694de7a25613e598aaea88fa8967ca99",
+    "location": "e65423cfbd594b40df1949e55e4d8631",
+    "person": "f0f557b2d43d07359ce80e4e9f9417f2",
+    "movie": "37dea9daa331a00401b581b82edd8809",
+    "app_state": "62c87070efaf04dcb8b982aeec2b11a2",
+    "app_user": "250ebfabf2dc11cea1afc2e795078e23"
+  },
+  "migrationsApplied": 2,
+  "allExistingUsersDefaultUSER": true,
+  "passed": true
+}

@@ -1,0 +1,2807 @@
+{
+  "scenario": "C10",
+  "threads": 10,
+  "rounds": [
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r0-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r0-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r0-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1447",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r0-edited2",
+            "version": 1
+          },
+          "read": "movies/1447",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1448?version=1",
+          "read": "movies/1448",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r0-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r0-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1449",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r0-edited5",
+            "version": 1
+          },
+          "read": "movies/1449",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1450?version=1",
+          "read": "movies/1450",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r0-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r0-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1451",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r0-edited8",
+            "version": 1
+          },
+          "read": "movies/1451",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1452?version=1",
+          "read": "movies/1452",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r1-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r1-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r1-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1453",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r1-edited2",
+            "version": 1
+          },
+          "read": "movies/1453",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1454?version=1",
+          "read": "movies/1454",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r1-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r1-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1455",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r1-edited5",
+            "version": 1
+          },
+          "read": "movies/1455",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1456?version=1",
+          "read": "movies/1456",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r1-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r1-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1457",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r1-edited8",
+            "version": 1
+          },
+          "read": "movies/1457",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1458?version=1",
+          "read": "movies/1458",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r2-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r2-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r2-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1459",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r2-edited2",
+            "version": 1
+          },
+          "read": "movies/1459",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1460?version=1",
+          "read": "movies/1460",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r2-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r2-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1461",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r2-edited5",
+            "version": 1
+          },
+          "read": "movies/1461",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1462?version=1",
+          "read": "movies/1462",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r2-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r2-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1463",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r2-edited8",
+            "version": 1
+          },
+          "read": "movies/1463",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1464?version=1",
+          "read": "movies/1464",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r3-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r3-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r3-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1465",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r3-edited2",
+            "version": 1
+          },
+          "read": "movies/1465",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1466?version=1",
+          "read": "movies/1466",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r3-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r3-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1467",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r3-edited5",
+            "version": 1
+          },
+          "read": "movies/1467",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1468?version=1",
+          "read": "movies/1468",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r3-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r3-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1469",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r3-edited8",
+            "version": 1
+          },
+          "read": "movies/1469",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1470?version=1",
+          "read": "movies/1470",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r4-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r4-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r4-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1471",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r4-edited2",
+            "version": 1
+          },
+          "read": "movies/1471",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1472?version=1",
+          "read": "movies/1472",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r4-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r4-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1473",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r4-edited5",
+            "version": 1
+          },
+          "read": "movies/1473",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1474?version=1",
+          "read": "movies/1474",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r4-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r4-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1475",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r4-edited8",
+            "version": 1
+          },
+          "read": "movies/1475",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1476?version=1",
+          "read": "movies/1476",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r5-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r5-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r5-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1477",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r5-edited2",
+            "version": 1
+          },
+          "read": "movies/1477",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1478?version=1",
+          "read": "movies/1478",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r5-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r5-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1479",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r5-edited5",
+            "version": 1
+          },
+          "read": "movies/1479",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1480?version=1",
+          "read": "movies/1480",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r5-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r5-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1481",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r5-edited8",
+            "version": 1
+          },
+          "read": "movies/1481",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1482?version=1",
+          "read": "movies/1482",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r6-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r6-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r6-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1483",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r6-edited2",
+            "version": 1
+          },
+          "read": "movies/1483",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1484?version=1",
+          "read": "movies/1484",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r6-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r6-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1485",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r6-edited5",
+            "version": 1
+          },
+          "read": "movies/1485",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1486?version=1",
+          "read": "movies/1486",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r6-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r6-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1487",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r6-edited8",
+            "version": 1
+          },
+          "read": "movies/1487",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1488?version=1",
+          "read": "movies/1488",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r7-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r7-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r7-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1489",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r7-edited2",
+            "version": 1
+          },
+          "read": "movies/1489",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1490?version=1",
+          "read": "movies/1490",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r7-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r7-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1491",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r7-edited5",
+            "version": 1
+          },
+          "read": "movies/1491",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1492?version=1",
+          "read": "movies/1492",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r7-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r7-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1493",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r7-edited8",
+            "version": 1
+          },
+          "read": "movies/1493",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1494?version=1",
+          "read": "movies/1494",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r8-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r8-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r8-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1495",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r8-edited2",
+            "version": 1
+          },
+          "read": "movies/1495",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1496?version=1",
+          "read": "movies/1496",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r8-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r8-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1497",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r8-edited5",
+            "version": 1
+          },
+          "read": "movies/1497",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1498?version=1",
+          "read": "movies/1498",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r8-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r8-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1499",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r8-edited8",
+            "version": 1
+          },
+          "read": "movies/1499",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1500?version=1",
+          "read": "movies/1500",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r9-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r9-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r9-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1501",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r9-edited2",
+            "version": 1
+          },
+          "read": "movies/1501",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1502?version=1",
+          "read": "movies/1502",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r9-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r9-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1503",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r9-edited5",
+            "version": 1
+          },
+          "read": "movies/1503",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1504?version=1",
+          "read": "movies/1504",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r9-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r9-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1505",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r9-edited8",
+            "version": 1
+          },
+          "read": "movies/1505",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1506?version=1",
+          "read": "movies/1506",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r10-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r10-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r10-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1507",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r10-edited2",
+            "version": 1
+          },
+          "read": "movies/1507",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1508?version=1",
+          "read": "movies/1508",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r10-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r10-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1509",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r10-edited5",
+            "version": 1
+          },
+          "read": "movies/1509",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1510?version=1",
+          "read": "movies/1510",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r10-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r10-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1511",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r10-edited8",
+            "version": 1
+          },
+          "read": "movies/1511",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1512?version=1",
+          "read": "movies/1512",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r11-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r11-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r11-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1513",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r11-edited2",
+            "version": 1
+          },
+          "read": "movies/1513",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1514?version=1",
+          "read": "movies/1514",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r11-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r11-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1515",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r11-edited5",
+            "version": 1
+          },
+          "read": "movies/1515",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1516?version=1",
+          "read": "movies/1516",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r11-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r11-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1517",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r11-edited8",
+            "version": 1
+          },
+          "read": "movies/1517",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1518?version=1",
+          "read": "movies/1518",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r12-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r12-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r12-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1519",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r12-edited2",
+            "version": 1
+          },
+          "read": "movies/1519",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1520?version=1",
+          "read": "movies/1520",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r12-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r12-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1521",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r12-edited5",
+            "version": 1
+          },
+          "read": "movies/1521",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1522?version=1",
+          "read": "movies/1522",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r12-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r12-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1523",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r12-edited8",
+            "version": 1
+          },
+          "read": "movies/1523",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1524?version=1",
+          "read": "movies/1524",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r13-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r13-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r13-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1525",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r13-edited2",
+            "version": 1
+          },
+          "read": "movies/1525",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1526?version=1",
+          "read": "movies/1526",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r13-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r13-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1527",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r13-edited5",
+            "version": 1
+          },
+          "read": "movies/1527",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1528?version=1",
+          "read": "movies/1528",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r13-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r13-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1529",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r13-edited8",
+            "version": 1
+          },
+          "read": "movies/1529",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1530?version=1",
+          "read": "movies/1530",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r14-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r14-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r14-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1531",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r14-edited2",
+            "version": 1
+          },
+          "read": "movies/1531",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1532?version=1",
+          "read": "movies/1532",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r14-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r14-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1533",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r14-edited5",
+            "version": 1
+          },
+          "read": "movies/1533",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1534?version=1",
+          "read": "movies/1534",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r14-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r14-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1535",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r14-edited8",
+            "version": 1
+          },
+          "read": "movies/1535",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1536?version=1",
+          "read": "movies/1536",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r15-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r15-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r15-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1537",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r15-edited2",
+            "version": 1
+          },
+          "read": "movies/1537",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1538?version=1",
+          "read": "movies/1538",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r15-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r15-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1539",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r15-edited5",
+            "version": 1
+          },
+          "read": "movies/1539",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1540?version=1",
+          "read": "movies/1540",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r15-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r15-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1541",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r15-edited8",
+            "version": 1
+          },
+          "read": "movies/1541",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1542?version=1",
+          "read": "movies/1542",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r16-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r16-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r16-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1543",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r16-edited2",
+            "version": 1
+          },
+          "read": "movies/1543",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1544?version=1",
+          "read": "movies/1544",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r16-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r16-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1545",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r16-edited5",
+            "version": 1
+          },
+          "read": "movies/1545",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1546?version=1",
+          "read": "movies/1546",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r16-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r16-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1547",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r16-edited8",
+            "version": 1
+          },
+          "read": "movies/1547",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1548?version=1",
+          "read": "movies/1548",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r17-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r17-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r17-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1549",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r17-edited2",
+            "version": 1
+          },
+          "read": "movies/1549",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1550?version=1",
+          "read": "movies/1550",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r17-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r17-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1551",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r17-edited5",
+            "version": 1
+          },
+          "read": "movies/1551",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1552?version=1",
+          "read": "movies/1552",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r17-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r17-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1553",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r17-edited8",
+            "version": 1
+          },
+          "read": "movies/1553",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1554?version=1",
+          "read": "movies/1554",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r18-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r18-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r18-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1555",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r18-edited2",
+            "version": 1
+          },
+          "read": "movies/1555",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1556?version=1",
+          "read": "movies/1556",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r18-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r18-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1557",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r18-edited5",
+            "version": 1
+          },
+          "read": "movies/1557",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1558?version=1",
+          "read": "movies/1558",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r18-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r18-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1559",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r18-edited8",
+            "version": 1
+          },
+          "read": "movies/1559",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1560?version=1",
+          "read": "movies/1560",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-final-RC-C10-20d272-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/final-RC/C10/r19-p0.json",
+          "expected": [
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r19-create1",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r19-create1",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1561",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r19-edited2",
+            "version": 1
+          },
+          "read": "movies/1561",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1562?version=1",
+          "read": "movies/1562",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r19-create4",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r19-create4",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1563",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r19-edited5",
+            "version": 1
+          },
+          "read": "movies/1563",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1564?version=1",
+          "read": "movies/1564",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-final-RC-C10-20d272-r19-create7",
+            "coordinates": "872",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-final-RC-C10-20d272-r19-create7",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/1565",
+          "body": {
+            "tagline": "lab2-final-RC-C10-20d272-r19-edited8",
+            "version": 1
+          },
+          "read": "movies/1565",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/1566?version=1",
+          "read": "movies/1566",
+          "version": 1,
+          "expected": [
+            200
+          ]
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-final-RC-C10-20d272"
+}

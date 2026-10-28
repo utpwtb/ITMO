@@ -1,0 +1,112 @@
+{
+  "actors": [
+    {
+      "user": "lab2_user_a",
+      "userId": "2",
+      "role": "USER"
+    },
+    {
+      "user": "lab2_user_b",
+      "userId": "3",
+      "role": "USER"
+    },
+    {
+      "user": "lab2_admin_a",
+      "userId": "4",
+      "role": "ADMIN"
+    },
+    {
+      "user": "lab2_admin_b",
+      "userId": "5",
+      "role": "ADMIN"
+    }
+  ],
+  "history": [
+    {
+      "id": "3",
+      "operationId": "3",
+      "userId": "2",
+      "user": "lab2_user_a",
+      "status": "FAILED",
+      "addedCount": null,
+      "startedAt": "2026-10-28T00:17:16.414458Z",
+      "finishedAt": "2026-10-28T00:17:16.432155Z",
+      "filename": "invalid.json",
+      "errorCode": "INVALID_JSON",
+      "errorMessage": "\u0422\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 UTF-8 JSON \u0431\u0435\u0437 \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0445 \u0441\u0432\u043e\u0439\u0441\u0442\u0432"
+    },
+    {
+      "id": "2",
+      "operationId": "2",
+      "userId": "3",
+      "user": "lab2_user_b",
+      "status": "FAILED",
+      "addedCount": null,
+      "startedAt": "2026-10-28T00:17:16.341454Z",
+      "finishedAt": "2026-10-28T00:17:16.393424Z",
+      "filename": "duplicate.json",
+      "errorCode": "DUPLICATE_MOVIE",
+      "errorMessage": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438 \u0440\u0435\u0436\u0438\u0441\u0441\u0451\u0440: \u0442\u0430\u043a\u0430\u044f \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
+    },
+    {
+      "id": "1",
+      "operationId": "1",
+      "userId": "2",
+      "user": "lab2_user_a",
+      "status": "SUCCESS",
+      "addedCount": 2,
+      "startedAt": "2026-10-28T00:17:16.135896Z",
+      "finishedAt": "2026-10-28T00:17:16.295416Z",
+      "filename": "http-valid.json",
+      "errorCode": null,
+      "errorMessage": null
+    }
+  ],
+  "database": {
+    "movies": [
+      {
+        "id": 1,
+        "version": 1,
+        "name": "5e8a173cc9 one",
+        "coordinates_id": 1,
+        "creationdate": "2026-10-28",
+        "oscarscount": 1,
+        "budget": 9007199254740993,
+        "totalboxoffice": null,
+        "mpaarating": "PG",
+        "director_id": 1,
+        "screenwriter_id": null,
+        "operator_id": null,
+        "length": 120,
+        "goldenpalmcount": null,
+        "usaboxoffice": 1,
+        "tagline": "5e8a173cc9 one",
+        "genre": "COMEDY"
+      },
+      {
+        "id": 2,
+        "version": 1,
+        "name": "5e8a173cc9 two",
+        "coordinates_id": 2,
+        "creationdate": "2026-10-28",
+        "oscarscount": 1,
+        "budget": 9007199254740993,
+        "totalboxoffice": null,
+        "mpaarating": "PG",
+        "director_id": 1,
+        "screenwriter_id": null,
+        "operator_id": null,
+        "length": 120,
+        "goldenpalmcount": null,
+        "usaboxoffice": 1,
+        "tagline": "5e8a173cc9 two",
+        "genre": "COMEDY"
+      }
+    ],
+    "peopleCount": 1,
+    "coordinatesCount": 2,
+    "locationsCount": 1,
+    "duplicateKeys": 0,
+    "badHistoryCounts": 0
+  }
+}

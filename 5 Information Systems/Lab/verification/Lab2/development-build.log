@@ -1,0 +1,19 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< ru.itmo:movie-lab >--------------------------
+[INFO] Building movie-lab 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:44 min
+[INFO] Finished at: 2026-10-28T02:29:41+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project movie-lab: Could not resolve dependencies for project ru.itmo:movie-lab:war:1.0.0: Failed to collect dependencies at org.glassfish.expressly:expressly:jar:5.0.0 -> jakarta.el:jakarta.el-api:jar:5.0.0: Failed to read artifact descriptor for jakarta.el:jakarta.el-api:jar:5.0.0: The following artifacts could not be resolved: jakarta.el:jakarta.el-api:pom:5.0.0 (absent): Could not transfer artifact jakarta.el:jakarta.el-api:pom:5.0.0 from/to alimaven (http://maven.aliyun.com/nexus/content/groups/public/): C:\develop\apache-maven-3.9.4-bin\apache-maven-3.9.4\mvn_repo\jakarta\el\jakarta.el-api\5.0.0\jakarta.el-api-5.0.0.pom.7105271108330795826.tmp -> C:\develop\apache-maven-3.9.4-bin\apache-maven-3.9.4\mvn_repo\jakarta\el\jakarta.el-api\5.0.0\jakarta.el-api-5.0.0.pom -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException

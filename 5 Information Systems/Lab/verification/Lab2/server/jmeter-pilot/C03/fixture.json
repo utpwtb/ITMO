@@ -1,0 +1,457 @@
+{
+  "scenario": "C03",
+  "threads": 10,
+  "rounds": [
+    {
+      "prefix": "lab2-jmeter-pilot-C03-3cc93d-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r0-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-pilot-C03-3cc93d-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201,
+            409
+          ],
+          "body": {
+            "name": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "coordinates": "4",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-pilot-C03-3cc93d-r1-same",
+            "genre": "COMEDY",
+            "director": "2"
+          },
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-jmeter-pilot-C03-3cc93d"
+}

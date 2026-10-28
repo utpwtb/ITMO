@@ -1,0 +1,22 @@
+{
+  "scenario": "C12",
+  "threads": 10,
+  "rounds": 20,
+  "requests": 10,
+  "commits": 9,
+  "expectedConflicts": 0,
+  "unexpected": 1,
+  "averageMs": 239,
+  "p95Ms": 314,
+  "duplicates": 0,
+  "failedImportResidue": 0,
+  "passed": false,
+  "errors": [
+    "Missing target samples",
+    "Unexpected HTTP outcome",
+    "JMeter process/JTL setup or sampler failure"
+  ],
+  "jmeterExit": 0,
+  "jtlFailures": 1,
+  "elapsedSeconds": 34.096463680267334
+}

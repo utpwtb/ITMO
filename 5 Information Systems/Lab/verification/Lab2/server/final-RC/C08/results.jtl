@@ -1,0 +1,125 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1793145997998,2901,Load private credentials,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146000344,555,Load private credentials,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146000973,3413,Login,200,OK,C08 1-1,text,true,,331,283,2,2,http://127.0.0.1:40797/movie-lab/api/auth,1381,0,28
+1793146004443,94,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146000973,3772,Login,200,OK,C08 1-2,text,true,,331,283,2,2,http://127.0.0.1:40797/movie-lab/api/auth,3772,0,28
+1793146004747,2,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146004750,31,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146004750,31,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146004782,60,C08 import,409,Conflict,C08 1-2,text,true,,358,1208,2,2,http://127.0.0.1:40797/movie-lab/api/imports,60,0,0
+1793146004782,33,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,33,0,0
+1793146004917,3,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146004917,3,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146004921,0,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146004921,0,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146004922,20,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,20,0,0
+1793146004944,2,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146004922,41,C08 import,409,Conflict,C08 1-2,text,true,,358,1196,2,2,http://127.0.0.1:40797/movie-lab/api/imports,41,0,0
+1793146004964,2,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146004966,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146004966,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146004967,21,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,20,0,0
+1793146004990,2,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146004967,44,C08 import,409,Conflict,C08 1-2,text,true,,358,1199,2,2,http://127.0.0.1:40797/movie-lab/api/imports,44,0,0
+1793146005013,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005015,0,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005015,0,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005016,20,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,20,0,0
+1793146005038,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005016,43,C08 import,409,Conflict,C08 1-2,text,true,,358,1202,2,2,http://127.0.0.1:40797/movie-lab/api/imports,43,0,0
+1793146005061,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005062,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005062,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005064,29,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,29,0,0
+1793146005095,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005064,48,C08 import,409,Conflict,C08 1-2,text,true,,358,1211,2,2,http://127.0.0.1:40797/movie-lab/api/imports,48,0,0
+1793146005114,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005115,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005115,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005116,28,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,28,0,0
+1793146005146,2,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005116,55,C08 import,409,Conflict,C08 1-2,text,true,,358,1184,2,2,http://127.0.0.1:40797/movie-lab/api/imports,55,0,0
+1793146005173,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005174,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005174,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005175,21,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,21,0,0
+1793146005199,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005175,43,C08 import,409,Conflict,C08 1-2,text,true,,358,1184,2,2,http://127.0.0.1:40797/movie-lab/api/imports,43,0,0
+1793146005220,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005221,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005222,0,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005223,20,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,20,0,0
+1793146005245,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005223,43,C08 import,409,Conflict,C08 1-2,text,true,,358,1181,2,2,http://127.0.0.1:40797/movie-lab/api/imports,43,0,0
+1793146005267,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005268,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005268,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005269,22,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,22,0,0
+1793146005294,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005269,42,C08 import,409,Conflict,C08 1-2,text,true,,358,1190,2,2,http://127.0.0.1:40797/movie-lab/api/imports,42,0,0
+1793146005313,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005314,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005314,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005316,19,C08 target,201,Created,C08 1-1,text,true,,444,551,2,2,http://127.0.0.1:40797/movie-lab/api/movies,19,0,0
+1793146005337,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005316,42,C08 import,409,Conflict,C08 1-2,text,true,,358,1181,2,2,http://127.0.0.1:40797/movie-lab/api/imports,42,0,0
+1793146005360,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005361,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005361,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005362,23,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,23,0,0
+1793146005388,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005362,42,C08 import,409,Conflict,C08 1-2,text,true,,358,1192,2,2,http://127.0.0.1:40797/movie-lab/api/imports,42,0,0
+1793146005406,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005407,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005407,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005408,20,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,20,0,0
+1793146005430,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005408,42,C08 import,409,Conflict,C08 1-2,text,true,,358,1204,2,2,http://127.0.0.1:40797/movie-lab/api/imports,42,0,0
+1793146005452,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005453,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005453,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005454,20,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,20,0,0
+1793146005476,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005454,40,C08 import,409,Conflict,C08 1-2,text,true,,358,1216,2,2,http://127.0.0.1:40797/movie-lab/api/imports,40,0,0
+1793146005496,0,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005497,0,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005497,0,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005498,21,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,21,0,0
+1793146005521,0,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005498,40,C08 import,409,Conflict,C08 1-2,text,true,,358,1201,2,2,http://127.0.0.1:40797/movie-lab/api/imports,40,0,0
+1793146005540,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005541,0,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005541,0,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005542,18,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,18,0,0
+1793146005562,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005542,41,C08 import,409,Conflict,C08 1-2,text,true,,358,1186,2,2,http://127.0.0.1:40797/movie-lab/api/imports,41,0,0
+1793146005585,0,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005585,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005586,0,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005587,18,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,18,0,0
+1793146005606,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005587,41,C08 import,409,Conflict,C08 1-2,text,true,,358,1213,2,2,http://127.0.0.1:40797/movie-lab/api/imports,41,0,0
+1793146005629,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005630,0,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005630,0,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005631,22,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,22,0,0
+1793146005654,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005631,41,C08 import,409,Conflict,C08 1-2,text,true,,358,1192,2,2,http://127.0.0.1:40797/movie-lab/api/imports,40,0,0
+1793146005673,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005674,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005674,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005675,25,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,25,0,0
+1793146005702,0,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005675,46,C08 import,409,Conflict,C08 1-2,text,true,,358,1201,2,2,http://127.0.0.1:40797/movie-lab/api/imports,46,0,0
+1793146005723,1,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005724,0,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005724,0,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005725,19,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,19,0,0
+1793146005746,1,Prepare shared fixture,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005725,43,C08 import,409,Conflict,C08 1-2,text,true,,358,1213,2,2,http://127.0.0.1:40797/movie-lab/api/imports,43,0,0
+1793146005770,4,Prepare shared fixture,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005776,1,Bounded rendezvous,200,OK,C08 1-2,text,true,,0,0,2,2,null,0,0,0
+1793146005776,1,Bounded rendezvous,200,OK,C08 1-1,text,true,,0,0,2,2,null,0,0,0
+1793146005778,23,C08 target,201,Created,C08 1-1,text,true,,446,553,2,2,http://127.0.0.1:40797/movie-lab/api/movies,23,0,0
+1793146005778,44,C08 import,409,Conflict,C08 1-2,text,true,,358,1204,1,1,http://127.0.0.1:40797/movie-lab/api/imports,44,0,0

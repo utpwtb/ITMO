@@ -1,0 +1,64 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1793146481927,819,Load private credentials,200,OK,C12 1-10,text,true,,0,0,10,10,null,0,0,0
+1793146479801,2945,Load private credentials,200,OK,C12 1-1,text,true,,0,0,10,10,null,0,0,0
+1793146481927,819,Load private credentials,200,OK,C12 1-9,text,true,,0,0,10,10,null,0,0,0
+1793146479893,2853,Load private credentials,200,OK,C12 1-2,text,true,,0,0,10,10,null,0,0,0
+1793146481927,820,Load private credentials,200,OK,C12 1-7,text,true,,0,0,10,10,null,0,0,0
+1793146481927,819,Load private credentials,200,OK,C12 1-5,text,true,,0,0,10,10,null,0,0,0
+1793146481927,820,Load private credentials,200,OK,C12 1-4,text,true,,0,0,10,10,null,0,0,0
+1793146481927,820,Load private credentials,200,OK,C12 1-3,text,true,,0,0,10,10,null,0,0,0
+1793146481927,820,Load private credentials,200,OK,C12 1-8,text,true,,0,0,10,10,null,0,0,0
+1793146481927,820,Load private credentials,200,OK,C12 1-6,text,true,,0,0,10,10,null,0,0,0
+1793146482826,4781,Login,200,OK,C12 1-3,text,true,,333,284,10,10,http://127.0.0.1:40797/movie-lab/api/auth,4781,0,32
+1793146482826,4739,Login,200,OK,C12 1-9,text,true,,331,283,10,10,http://127.0.0.1:40797/movie-lab/api/auth,4717,0,32
+1793146482826,4743,Login,200,OK,C12 1-10,text,true,,331,283,10,10,http://127.0.0.1:40797/movie-lab/api/auth,4743,0,33
+1793146482826,4739,Login,200,OK,C12 1-7,text,true,,333,284,10,10,http://127.0.0.1:40797/movie-lab/api/auth,4736,0,33
+1793146482826,4810,Login,200,OK,C12 1-2,text,true,,331,283,10,10,http://127.0.0.1:40797/movie-lab/api/auth,4810,0,32
+1793146482826,4845,Login,200,OK,C12 1-5,text,true,,331,283,10,10,http://127.0.0.1:40797/movie-lab/api/auth,4845,0,32
+1793146487634,103,Prepare shared fixture,200,OK,C12 1-7,text,true,,0,0,10,10,null,0,0,0
+1793146487672,65,Prepare shared fixture,200,OK,C12 1-5,text,true,,0,0,10,10,null,0,0,0
+1793146487634,106,Prepare shared fixture,200,OK,C12 1-3,text,true,,0,0,10,10,null,0,0,0
+1793146487634,106,Prepare shared fixture,200,OK,C12 1-9,text,true,,0,0,10,10,null,0,0,0
+1793146487634,106,Prepare shared fixture,200,OK,C12 1-10,text,true,,0,0,10,10,null,0,0,0
+1793146487636,105,Prepare shared fixture,200,OK,C12 1-2,text,true,,0,0,10,10,null,0,0,0
+1793146482826,4931,Login,200,OK,C12 1-4,text,true,,333,284,10,10,http://127.0.0.1:40797/movie-lab/api/auth,4931,0,32
+1793146487758,2,Prepare shared fixture,200,OK,C12 1-4,text,true,,0,0,10,10,null,0,0,0
+1793146487741,2,Read same target version,200,OK,C12 1-2,text,true,,457,243,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1420,2,0,0
+1793146487740,3,Read same target version,200,OK,C12 1-3,text,true,,461,243,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1421,3,0,0
+1793146487738,4,Read same target version,200,OK,C12 1-7,text,true,,457,243,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1422,4,0,0
+1793146482826,4999,Login,200,OK,C12 1-1,text,true,,331,283,10,10,http://127.0.0.1:40797/movie-lab/api/auth,4999,0,32
+1793146487825,2,Prepare shared fixture,200,OK,C12 1-1,text,true,,0,0,10,10,null,0,0,0
+1793146482826,5253,Login,200,OK,C12 1-6,text,true,,331,283,10,10,http://127.0.0.1:40797/movie-lab/api/auth,5253,0,33
+1793146488080,3,Prepare shared fixture,200,OK,C12 1-6,text,true,,0,0,10,10,null,0,0,0
+1793146482826,5309,Login,200,OK,C12 1-8,text,true,,333,284,10,10,http://127.0.0.1:40797/movie-lab/api/auth,5309,0,32
+1793146488136,1,Prepare shared fixture,200,OK,C12 1-8,text,true,,0,0,10,10,null,0,0,0
+1793146488138,3,Read same target version,200,OK,C12 1-8,text,true,,461,243,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1423,3,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-5,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-10,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-1,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-9,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-8,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-4,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-2,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-3,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-6,text,true,,0,0,10,10,null,0,0,0
+1793146488142,33,Bounded rendezvous,200,OK,C12 1-7,text,true,,0,0,10,10,null,0,0,0
+1793146488176,44,C12 target,200,OK,C12 1-7,text,true,,459,366,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1422,44,0,0
+1793146488327,2,Prepare shared fixture,200,OK,C12 1-7,text,true,,0,0,10,10,null,0,0,0
+1793146488176,232,C12 import,201,Created,C12 1-4,text,true,,390,1633,10,10,http://127.0.0.1:40797/movie-lab/api/imports,232,0,0
+1793146488410,2,Prepare shared fixture,200,OK,C12 1-4,text,true,,0,0,10,10,null,0,0,0
+1793146488176,262,C12 target,201,Created,C12 1-1,text,true,,466,573,10,10,http://127.0.0.1:40797/movie-lab/api/movies,262,0,0
+1793146488440,1,Prepare shared fixture,200,OK,C12 1-1,text,true,,0,0,10,10,null,0,0,0
+1793146488176,266,C12 target,200,OK,C12 1-10,text,true,,148,321,10,10,http://127.0.0.1:40797/movie-lab/api/operations/award?length=10000&count=1,266,0,0
+1793146488176,266,C12 import,201,Created,C12 1-9,text,true,,389,1636,10,10,http://127.0.0.1:40797/movie-lab/api/imports,266,0,0
+1793146488329,113,Read same target version,200,OK,C12 1-7,text,true,,457,243,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1427,113,0,0
+1793146488176,266,C12 target,200,OK,C12 1-2,text,true,,459,366,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1420,266,0,0
+1793146488176,267,C12 target,200,OK,C12 1-5,text,true,,148,321,10,10,http://127.0.0.1:40797/movie-lab/api/operations/award?length=10000&count=1,267,0,0
+1793146488443,3,Prepare shared fixture,200,OK,C12 1-10,text,true,,0,0,10,10,null,0,0,0
+1793146488443,3,Prepare shared fixture,200,OK,C12 1-9,text,true,,0,0,10,10,null,0,0,0
+1793146488444,2,Prepare shared fixture,200,OK,C12 1-2,text,true,,0,0,10,10,null,0,0,0
+1793146488445,3,Prepare shared fixture,200,OK,C12 1-5,text,true,,0,0,10,10,null,0,0,0
+1793146488446,10,Read same target version,200,OK,C12 1-2,text,true,,457,243,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1425,9,0,0
+1793146488176,278,C12 target,503,Unexpected status/body: 503 DATABASE_TEMPORARY,C12 1-3,text,false,,345,307,10,10,http://127.0.0.1:40797/movie-lab/api/movies/1421?version=1,277,0,0
+1793146488176,303,C12 target,201,Created,C12 1-6,text,true,,466,573,9,9,http://127.0.0.1:40797/movie-lab/api/movies,303,0,0
+1793146488176,308,C12 target,503,Unexpected status/body: 503 DATABASE_TEMPORARY,C12 1-8,text,false,,345,307,8,8,http://127.0.0.1:40797/movie-lab/api/movies/1423?version=1,308,0,0

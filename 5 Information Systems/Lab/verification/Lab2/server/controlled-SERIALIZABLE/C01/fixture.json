@@ -1,0 +1,747 @@
+{
+  "scenario": "C01",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r0-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/967",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r0-winner0",
+            "version": 1
+          },
+          "read": "movies/967",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/967",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r0-winner1",
+            "version": 1
+          },
+          "read": "movies/967",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "967",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r1-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/968",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r1-winner0",
+            "version": 1
+          },
+          "read": "movies/968",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/968",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r1-winner1",
+            "version": 1
+          },
+          "read": "movies/968",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "968",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r2-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/969",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r2-winner0",
+            "version": 1
+          },
+          "read": "movies/969",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/969",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r2-winner1",
+            "version": 1
+          },
+          "read": "movies/969",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "969",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r3-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/970",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r3-winner0",
+            "version": 1
+          },
+          "read": "movies/970",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/970",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r3-winner1",
+            "version": 1
+          },
+          "read": "movies/970",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "970",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r4-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/971",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r4-winner0",
+            "version": 1
+          },
+          "read": "movies/971",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/971",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r4-winner1",
+            "version": 1
+          },
+          "read": "movies/971",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "971",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r5-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/972",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r5-winner0",
+            "version": 1
+          },
+          "read": "movies/972",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/972",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r5-winner1",
+            "version": 1
+          },
+          "read": "movies/972",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "972",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r6-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/973",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r6-winner0",
+            "version": 1
+          },
+          "read": "movies/973",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/973",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r6-winner1",
+            "version": 1
+          },
+          "read": "movies/973",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "973",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r7-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/974",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r7-winner0",
+            "version": 1
+          },
+          "read": "movies/974",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/974",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r7-winner1",
+            "version": 1
+          },
+          "read": "movies/974",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "974",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r8-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/975",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r8-winner0",
+            "version": 1
+          },
+          "read": "movies/975",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/975",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r8-winner1",
+            "version": 1
+          },
+          "read": "movies/975",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "975",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r9-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/976",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r9-winner0",
+            "version": 1
+          },
+          "read": "movies/976",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/976",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r9-winner1",
+            "version": 1
+          },
+          "read": "movies/976",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "976",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r10-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/977",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r10-winner0",
+            "version": 1
+          },
+          "read": "movies/977",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/977",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r10-winner1",
+            "version": 1
+          },
+          "read": "movies/977",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "977",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r11-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/978",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r11-winner0",
+            "version": 1
+          },
+          "read": "movies/978",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/978",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r11-winner1",
+            "version": 1
+          },
+          "read": "movies/978",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "978",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r12-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/979",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r12-winner0",
+            "version": 1
+          },
+          "read": "movies/979",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/979",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r12-winner1",
+            "version": 1
+          },
+          "read": "movies/979",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "979",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r13-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/980",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r13-winner0",
+            "version": 1
+          },
+          "read": "movies/980",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/980",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r13-winner1",
+            "version": 1
+          },
+          "read": "movies/980",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "980",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r14-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/981",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r14-winner0",
+            "version": 1
+          },
+          "read": "movies/981",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/981",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r14-winner1",
+            "version": 1
+          },
+          "read": "movies/981",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "981",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r15-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/982",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r15-winner0",
+            "version": 1
+          },
+          "read": "movies/982",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/982",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r15-winner1",
+            "version": 1
+          },
+          "read": "movies/982",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "982",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r16-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/983",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r16-winner0",
+            "version": 1
+          },
+          "read": "movies/983",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/983",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r16-winner1",
+            "version": 1
+          },
+          "read": "movies/983",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "983",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r17-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/984",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r17-winner0",
+            "version": 1
+          },
+          "read": "movies/984",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/984",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r17-winner1",
+            "version": 1
+          },
+          "read": "movies/984",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "984",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r18-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/985",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r18-winner0",
+            "version": 1
+          },
+          "read": "movies/985",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/985",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r18-winner1",
+            "version": 1
+          },
+          "read": "movies/985",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "985",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-controlled-SERIALIZABLE-C01-535147-r19-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/986",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r19-winner0",
+            "version": 1
+          },
+          "read": "movies/986",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/986",
+          "body": {
+            "tagline": "lab2-controlled-SERIALIZABLE-C01-535147-r19-winner1",
+            "version": 1
+          },
+          "read": "movies/986",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "VERSION_CONFLICT"
+        }
+      ],
+      "target": "986",
+      "targetVersion": 1
+    }
+  ],
+  "marker": "lab2-controlled-SERIALIZABLE-C01-535147"
+}

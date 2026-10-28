@@ -1,0 +1,557 @@
+{
+  "passed": true,
+  "previousWarSha256": "cf386061ed67f25abac1f84cf13b61fdcb4a988dddbfe3363c81e670365d0576",
+  "warSha256": "867545d9dbbf8d18e9d224e3b29b0c7387ab49458b9f8ed44d7421cbec3f87f4",
+  "serverMavenPackagePassed": true,
+  "testsRerun": false,
+  "changedWarEntries": [
+    "app.js",
+    "index.html",
+    "style.css",
+    "ui-text.js"
+  ],
+  "allOtherWarEntriesUnchanged": true,
+  "unchangedWarEntryHashes": {
+    "META-INF/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "META-INF/MANIFEST.MF": "6fdc029f1f896a80613ca69c6fcee284b836ba9601d654359a1077b050b7a900",
+    "WEB-INF/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/lib/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/META-INF/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/ru/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/ru/itmo/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/ru/itmo/movie/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/ru/itmo/movie/web/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/ru/itmo/movie/service/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/ru/itmo/movie/domain/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/ru/itmo/movie/domain/validation/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "WEB-INF/classes/ru/itmo/movie/persistence/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "examples/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation.js": "eee50a1888ebd57ddd2eb91ed35c07a802e9139b637bac2ef789a045efe46d5b",
+    "WEB-INF/beans.xml": "4f0116512efb29b4467f213756f44201ed064dc833c08a44e4387bf1ad8d3e83",
+    "WEB-INF/lib/checker-qual-3.48.3.jar": "443685b1b232803baaf803c15d6f5a425473c6f7b81c5f276dfcf93288e389a5",
+    "WEB-INF/lib/jaxb-core-4.0.5.jar": "f0eb412ed78e7bed8279a524a1b74fb9f27a449a577321ceffc4313bf876b8ab",
+    "WEB-INF/lib/jakarta.persistence-api-3.1.0.jar": "475389446d35c6f46c565728b756dc508c284644ea2690644e0d8e7e339d42fd",
+    "WEB-INF/lib/jackson-annotations-2.18.2.jar": "581bd61000ef7648943f781ca05689e56d03f6052748365a8e2b3a9b5d3fa32f",
+    "WEB-INF/lib/postgresql-42.7.5.jar": "69020b3bd20984543e817393f2e6c01a890ef2e37a77dd11d6d8508181d079ab",
+    "WEB-INF/lib/jakarta.xml.bind-api-4.0.2.jar": "0d6bcfe47763e85047acf7c398336dc84ff85ebcad0a7cb6f3b9d3e981245406",
+    "WEB-INF/lib/jackson-databind-2.18.2.jar": "4b364e6850dc89172fcf1d4dd26b8ff5488eda44ff4657e22dd265203dd5ab3c",
+    "WEB-INF/lib/angus-activation-2.0.2.jar": "6dd3bcffc22bce83b07376a0e2e094e4964a3195d4118fb43e380ef35436cc1e",
+    "WEB-INF/lib/jaxb-xjc-4.0.5.jar": "b5dd4d1819bd25f695826e389d48a59e6dd03fabb340017a6307084fd871795e",
+    "WEB-INF/lib/jackson-core-2.18.2.jar": "d8054ae7c0d1c2d2f55d28e46026ebe5892881f3fab5f439233184381c3b4a1f",
+    "WEB-INF/lib/eclipselink-4.0.5.jar": "753083822643b11e8c320a00853d8ae3ae25746d49c9621a86dd964fb6ff7344",
+    "WEB-INF/lib/jakarta.activation-api-2.1.0.jar": "56e8d994095fe49c28138c60291482f66f18d12ac2b720e938697dce6a3135c7",
+    "WEB-INF/classes/META-INF/orm-helios-test.xml": "e8ed39ddba58aba7e106c2f7c94c732de632a43fd8853bc4cc41322e894dc2cd",
+    "WEB-INF/classes/META-INF/orm-helios.xml": "df470abc499a8a674e2a588ff797b33d532b38153690891396193bcd30a94b56",
+    "WEB-INF/classes/META-INF/persistence.xml": "6ff99fb847398e451f4b6d0e0ffd16a249b6aef7e8b9cc976e1f177a7a2fad3c",
+    "WEB-INF/classes/ru/itmo/movie/web/AuthResource.class": "3517c5b19da993214fe910bc2aa9b302209e481872c456af13fd7a7730112db2",
+    "WEB-INF/classes/ru/itmo/movie/web/AuthFilter.class": "b615cf77e302abe00b0b04d446ce1110368e850e298622c770432a60da7276d3",
+    "WEB-INF/classes/ru/itmo/movie/web/ImportResource.class": "709b1cd3ff44bb83ab985beb35a2d94745eec2ae295ffe76001cc16819bfd2ff",
+    "WEB-INF/classes/ru/itmo/movie/web/ErrorMapper.class": "6b92912e5f6a3299edb49168f3e54922537b07c845eae7bb332c1cbaa4938b3c",
+    "WEB-INF/classes/ru/itmo/movie/web/ApiApplication.class": "9269402abc5577208bf92e046f74faf0b92db56fbd65a9894c1fa750cd522261",
+    "WEB-INF/classes/ru/itmo/movie/web/MovieResource.class": "efcd3e743eedcadd4a9ec1f0c9a7aec966a5366b4fcf47676597ca35b5bf6779",
+    "WEB-INF/classes/ru/itmo/movie/service/MovieService.class": "6e40b69c586cf191716c71ef9b9f958f5259ea3e0b18cb5ffabd04f3eaeb2342",
+    "WEB-INF/classes/ru/itmo/movie/service/MovieUniquenessValidator$MovieKey.class": "ea1a42c59f6819eaf76b695dc19c6e063c4592ea5ad4494a0cccc0cee70519dc",
+    "WEB-INF/classes/ru/itmo/movie/service/ImportHistoryService.class": "353b99c1cffafc502eb09d2b43be1ff8a053f97fe077346d3e5a63d22a27b1c7",
+    "WEB-INF/classes/ru/itmo/movie/service/Problem.class": "13c56ed2b16cd56e5e8347bcfc61d525bd40e375fd7302b05b16ad51ab9b4b5a",
+    "WEB-INF/classes/ru/itmo/movie/service/ImportParser.class": "d02c4a3359c2bb2255f0554aca727689f35538a536bc60b7cbd58606a775f329",
+    "WEB-INF/classes/ru/itmo/movie/service/AuthService.class": "ca078a751ba2e732378924062e1169738313affbbc91ed97e4bc9396b96f56a3",
+    "WEB-INF/classes/ru/itmo/movie/service/ImportService.class": "ef8cac28645da2dd566dc0366d9f877970ed68b5d5c8723e7b1870c4dcd4b24b",
+    "WEB-INF/classes/ru/itmo/movie/service/ImportParser$ImportDocument.class": "ea23d7835ba764b29a7ae8c5609bf25814c1f01240436c21c0d49f29cbef0ab5",
+    "WEB-INF/classes/ru/itmo/movie/service/MovieUniquenessValidator.class": "6ae5661b4d65d8e7dd090f79bda32692ceb3a9ef5ed2654904773a03af207e13",
+    "WEB-INF/classes/ru/itmo/movie/domain/LongJsonSerializer.class": "405da729cf0b0e01d79efead2df1e3b29dd066d9f873dbb8c87b8f625acb85ee",
+    "WEB-INF/classes/ru/itmo/movie/domain/Color.class": "261636d85b1684831a231df3ba9e16dec8660ab6ae386b481466d0b6e513d64a",
+    "WEB-INF/classes/ru/itmo/movie/domain/Person.class": "1791d7038aef56986f4cdfdbda9ed701c9fff049ce3b53b9403f9e9409b72ecc",
+    "WEB-INF/classes/ru/itmo/movie/domain/validation/ConsistentBoxOffice.class": "30814f922cd9cbac8e956cb1b9452cdb0d64edb70dcd3869625596786869126e",
+    "WEB-INF/classes/ru/itmo/movie/domain/validation/BoxOfficeValidator.class": "a913eddb2d08240d2b0502b9d170a5e39fa6fa41ff0304aa4a925a4133357d25",
+    "WEB-INF/classes/ru/itmo/movie/domain/ZonedTimeConverter.class": "7008437239c47e3715121ab866ea60f3972096ec16d89cdc3c9aa7deeffcc227",
+    "WEB-INF/classes/ru/itmo/movie/domain/AppState.class": "9f7c7cde4794b700e65fb8439d86d0d16d50a831fd9cbc93cae2e688c8ee19ee",
+    "WEB-INF/classes/ru/itmo/movie/domain/UserRole.class": "b7cb51581f71d4f5e19f6050dbc3481c2aa556fe4e772e1cb1ef4a63e430a616",
+    "WEB-INF/classes/ru/itmo/movie/domain/Coordinates.class": "794d3a138541f2fa67d9462fedc8c6a99496ebb964978fa3648b34657c6ea365",
+    "WEB-INF/classes/ru/itmo/movie/domain/MovieGenre.class": "cb97148a044ea235297dddf2d6515eabe06aecdd94e8c8eabb0efd8ce5a0d555",
+    "WEB-INF/classes/ru/itmo/movie/domain/Country.class": "646f8087a7eec01c5291ecf6345a85c8ade1bc5d63298aed5b1ca50aaff51e3d",
+    "WEB-INF/classes/ru/itmo/movie/domain/AppUser.class": "509cf39688381e73ae633f82c034a6a08f3257835d791e911c0c5fa7e910f3d7",
+    "WEB-INF/classes/ru/itmo/movie/domain/Movie.class": "0f37ce99aa51787e64ce8396a5029ccdd23bd9b9b3d7050b52906e6d1ec71aa3",
+    "WEB-INF/classes/ru/itmo/movie/domain/InstantTimestampConverter.class": "bba92994542404d4b0a979c15710f5142fea9686092762696f8cd05b89258047",
+    "WEB-INF/classes/ru/itmo/movie/domain/Location.class": "fe64193a65a541a774325f013c401672a1678879206027c2191e5e07762ee5dc",
+    "WEB-INF/classes/ru/itmo/movie/domain/ImportStatus.class": "2c63d773bbf8f4381ed5874d9d245ae5f772c8c5b203596795fd41f77fb3dd95",
+    "WEB-INF/classes/ru/itmo/movie/domain/ImportOperation.class": "16bed585764240d764090f2e05ef7b8de2a45b82440c55fa2e07576fa5e32a7c",
+    "WEB-INF/classes/ru/itmo/movie/domain/MpaaRating.class": "5c3ff361b6d54ec7cfc41ccd4b4815f23bf8cc9077c1c127f7f01b75d3b8e6ef",
+    "WEB-INF/classes/ru/itmo/movie/persistence/Database.class": "8b45ae9a3e9608a741643ead21af5f3376bb2e6327f7c0a243b6e6d4e7479fe6",
+    "WEB-INF/web.xml": "7646a48624287f6c25619052c3035cb5098916cdf28237dc87ec87ffe8ee7ba3",
+    "import-format.md": "e65042bfb482679b9916d308cef1624d4b8839897f7e00967c8af662ffbf9a38",
+    "examples/import-valid.json": "5e290a6c426a5eaf9f97a0add0fc059a168723747ca190ecd06b86d92c558a5b",
+    "META-INF/maven/ru.itmo/movie-lab/pom.xml": "72525ef82b4a9f85d96237834bb09b06ce7c097eebd37b1d9d6c7b7879275a87",
+    "META-INF/maven/ru.itmo/movie-lab/pom.properties": "4c747c127be9613bc4f093db598d03ba2f63cad3124139b3804ff454d5503f09"
+  },
+  "servedAssets": {
+    "app.js": "eb741c8618faa8875b11da6505bce8a421847e776e515ff974a029fc63a3a0bc",
+    "index.html": "3a3d1fb01d20cd53bbee9213183ded8ee8c9851047fcd741ed5ddea3b4f3fd63",
+    "style.css": "0b31665a986ec550faccabf474a21b0495ccb5f63ee4d492c83fafa046a782bc",
+    "ui-text.js": "6b54e7a560c21edd62b754dcbdef91f7110e6000a0d6d41aaef52d25a174b87b"
+  },
+  "domainSnapshotUnchanged": true,
+  "before": {
+    "revision": {
+      "revision": 8
+    },
+    "movies?size=50": {
+      "total": 4,
+      "size": 50,
+      "items": [
+        {
+          "budget": "9007199254740993",
+          "coordinates": {
+            "id": "1",
+            "version": 1,
+            "x": 1,
+            "y": -2
+          },
+          "creationDate": "2026-10-28",
+          "director": {
+            "birthday": "1980-01-01T00:00:00Z",
+            "id": "1",
+            "location": {
+              "id": "1",
+              "name": "Test location",
+              "version": 1,
+              "x": "9007199254740993",
+              "y": -1.5
+            },
+            "name": "Import director",
+            "passportID": "5e8a173cc9",
+            "version": 1
+          },
+          "genre": "COMEDY",
+          "id": "1",
+          "length": 120,
+          "mpaaRating": "PG",
+          "name": "5e8a173cc9 one",
+          "oscarsCount": 1,
+          "tagline": "5e8a173cc9 one",
+          "usaBoxOffice": 1,
+          "version": 1
+        },
+        {
+          "budget": "9007199254740993",
+          "coordinates": {
+            "id": "2",
+            "version": 1,
+            "x": 1,
+            "y": -2
+          },
+          "creationDate": "2026-10-28",
+          "director": {
+            "birthday": "1980-01-01T00:00:00Z",
+            "id": "1",
+            "location": {
+              "id": "1",
+              "name": "Test location",
+              "version": 1,
+              "x": "9007199254740993",
+              "y": -1.5
+            },
+            "name": "Import director",
+            "passportID": "5e8a173cc9",
+            "version": 1
+          },
+          "genre": "COMEDY",
+          "id": "2",
+          "length": 120,
+          "mpaaRating": "PG",
+          "name": "5e8a173cc9 two",
+          "oscarsCount": 1,
+          "tagline": "5e8a173cc9 two",
+          "usaBoxOffice": 1,
+          "version": 1
+        },
+        {
+          "budget": "1000000",
+          "coordinates": {
+            "id": "4",
+            "version": 1,
+            "x": 100,
+            "y": -20
+          },
+          "creationDate": "2026-10-28",
+          "director": {
+            "birthday": "1980-01-02T12:00:00+03:00",
+            "eyeColor": "BROWN",
+            "hairColor": "BLACK",
+            "height": 180.0,
+            "id": "2",
+            "location": {
+              "id": "2",
+              "name": "Example City",
+              "version": 1,
+              "x": "10",
+              "y": 20.5
+            },
+            "name": "Example Director",
+            "passportID": "LAB2-DEMO-DIRECTOR-001",
+            "version": 1,
+            "weight": 75.0
+          },
+          "genre": "COMEDY",
+          "goldenPalmCount": "1",
+          "id": "3",
+          "length": 120,
+          "mpaaRating": "PG_13",
+          "name": "Lab2 Example One",
+          "oscarsCount": 2,
+          "tagline": "Final remote concurrent winner",
+          "totalBoxOffice": 1500000.0,
+          "usaBoxOffice": 500000,
+          "version": 2
+        },
+        {
+          "budget": "2000000",
+          "coordinates": {
+            "id": "5",
+            "version": 1,
+            "x": 826,
+            "y": 0
+          },
+          "creationDate": "2026-10-28",
+          "director": {
+            "birthday": "1980-01-02T12:00:00+03:00",
+            "eyeColor": "BROWN",
+            "hairColor": "BLACK",
+            "height": 180.0,
+            "id": "2",
+            "location": {
+              "id": "2",
+              "name": "Example City",
+              "version": 1,
+              "x": "10",
+              "y": 20.5
+            },
+            "name": "Example Director",
+            "passportID": "LAB2-DEMO-DIRECTOR-001",
+            "version": 1,
+            "weight": 75.0
+          },
+          "genre": "WESTERN",
+          "id": "4",
+          "length": 95,
+          "mpaaRating": "PG",
+          "name": "Lab2 Example Two",
+          "oscarsCount": 1,
+          "tagline": "Second import example",
+          "usaBoxOffice": 700000,
+          "version": 1
+        }
+      ],
+      "page": 0
+    },
+    "people?size=50": [
+      {
+        "birthday": "1980-01-01T00:00:00Z",
+        "id": "1",
+        "location": {
+          "id": "1",
+          "name": "Test location",
+          "version": 1,
+          "x": "9007199254740993",
+          "y": -1.5
+        },
+        "name": "Import director",
+        "passportID": "5e8a173cc9",
+        "version": 1
+      },
+      {
+        "birthday": "1980-01-02T12:00:00+03:00",
+        "eyeColor": "BROWN",
+        "hairColor": "BLACK",
+        "height": 180.0,
+        "id": "2",
+        "location": {
+          "id": "2",
+          "name": "Example City",
+          "version": 1,
+          "x": "10",
+          "y": 20.5
+        },
+        "name": "Example Director",
+        "passportID": "LAB2-DEMO-DIRECTOR-001",
+        "version": 1,
+        "weight": 75.0
+      }
+    ],
+    "coordinates?size=50": [
+      {
+        "id": "1",
+        "version": 1,
+        "x": 1,
+        "y": -2
+      },
+      {
+        "id": "2",
+        "version": 1,
+        "x": 1,
+        "y": -2
+      },
+      {
+        "id": "4",
+        "version": 1,
+        "x": 100,
+        "y": -20
+      },
+      {
+        "id": "5",
+        "version": 1,
+        "x": 826,
+        "y": 0
+      }
+    ],
+    "locations?size=50": [
+      {
+        "id": "1",
+        "name": "Test location",
+        "version": 1,
+        "x": "9007199254740993",
+        "y": -1.5
+      },
+      {
+        "id": "2",
+        "name": "Example City",
+        "version": 1,
+        "x": "10",
+        "y": 20.5
+      }
+    ]
+  },
+  "after": {
+    "revision": {
+      "revision": 8
+    },
+    "movies?size=50": {
+      "items": [
+        {
+          "budget": "9007199254740993",
+          "coordinates": {
+            "id": "1",
+            "version": 1,
+            "x": 1,
+            "y": -2
+          },
+          "creationDate": "2026-10-28",
+          "director": {
+            "birthday": "1980-01-01T00:00:00Z",
+            "id": "1",
+            "location": {
+              "id": "1",
+              "name": "Test location",
+              "version": 1,
+              "x": "9007199254740993",
+              "y": -1.5
+            },
+            "name": "Import director",
+            "passportID": "5e8a173cc9",
+            "version": 1
+          },
+          "genre": "COMEDY",
+          "id": "1",
+          "length": 120,
+          "mpaaRating": "PG",
+          "name": "5e8a173cc9 one",
+          "oscarsCount": 1,
+          "tagline": "5e8a173cc9 one",
+          "usaBoxOffice": 1,
+          "version": 1
+        },
+        {
+          "budget": "9007199254740993",
+          "coordinates": {
+            "id": "2",
+            "version": 1,
+            "x": 1,
+            "y": -2
+          },
+          "creationDate": "2026-10-28",
+          "director": {
+            "birthday": "1980-01-01T00:00:00Z",
+            "id": "1",
+            "location": {
+              "id": "1",
+              "name": "Test location",
+              "version": 1,
+              "x": "9007199254740993",
+              "y": -1.5
+            },
+            "name": "Import director",
+            "passportID": "5e8a173cc9",
+            "version": 1
+          },
+          "genre": "COMEDY",
+          "id": "2",
+          "length": 120,
+          "mpaaRating": "PG",
+          "name": "5e8a173cc9 two",
+          "oscarsCount": 1,
+          "tagline": "5e8a173cc9 two",
+          "usaBoxOffice": 1,
+          "version": 1
+        },
+        {
+          "budget": "1000000",
+          "coordinates": {
+            "id": "4",
+            "version": 1,
+            "x": 100,
+            "y": -20
+          },
+          "creationDate": "2026-10-28",
+          "director": {
+            "birthday": "1980-01-02T12:00:00+03:00",
+            "eyeColor": "BROWN",
+            "hairColor": "BLACK",
+            "height": 180.0,
+            "id": "2",
+            "location": {
+              "id": "2",
+              "name": "Example City",
+              "version": 1,
+              "x": "10",
+              "y": 20.5
+            },
+            "name": "Example Director",
+            "passportID": "LAB2-DEMO-DIRECTOR-001",
+            "version": 1,
+            "weight": 75.0
+          },
+          "genre": "COMEDY",
+          "goldenPalmCount": "1",
+          "id": "3",
+          "length": 120,
+          "mpaaRating": "PG_13",
+          "name": "Lab2 Example One",
+          "oscarsCount": 2,
+          "tagline": "Final remote concurrent winner",
+          "totalBoxOffice": 1500000.0,
+          "usaBoxOffice": 500000,
+          "version": 2
+        },
+        {
+          "budget": "2000000",
+          "coordinates": {
+            "id": "5",
+            "version": 1,
+            "x": 826,
+            "y": 0
+          },
+          "creationDate": "2026-10-28",
+          "director": {
+            "birthday": "1980-01-02T12:00:00+03:00",
+            "eyeColor": "BROWN",
+            "hairColor": "BLACK",
+            "height": 180.0,
+            "id": "2",
+            "location": {
+              "id": "2",
+              "name": "Example City",
+              "version": 1,
+              "x": "10",
+              "y": 20.5
+            },
+            "name": "Example Director",
+            "passportID": "LAB2-DEMO-DIRECTOR-001",
+            "version": 1,
+            "weight": 75.0
+          },
+          "genre": "WESTERN",
+          "id": "4",
+          "length": 95,
+          "mpaaRating": "PG",
+          "name": "Lab2 Example Two",
+          "oscarsCount": 1,
+          "tagline": "Second import example",
+          "usaBoxOffice": 700000,
+          "version": 1
+        }
+      ],
+      "page": 0,
+      "total": 4,
+      "size": 50
+    },
+    "people?size=50": [
+      {
+        "birthday": "1980-01-01T00:00:00Z",
+        "id": "1",
+        "location": {
+          "id": "1",
+          "name": "Test location",
+          "version": 1,
+          "x": "9007199254740993",
+          "y": -1.5
+        },
+        "name": "Import director",
+        "passportID": "5e8a173cc9",
+        "version": 1
+      },
+      {
+        "birthday": "1980-01-02T12:00:00+03:00",
+        "eyeColor": "BROWN",
+        "hairColor": "BLACK",
+        "height": 180.0,
+        "id": "2",
+        "location": {
+          "id": "2",
+          "name": "Example City",
+          "version": 1,
+          "x": "10",
+          "y": 20.5
+        },
+        "name": "Example Director",
+        "passportID": "LAB2-DEMO-DIRECTOR-001",
+        "version": 1,
+        "weight": 75.0
+      }
+    ],
+    "coordinates?size=50": [
+      {
+        "id": "1",
+        "version": 1,
+        "x": 1,
+        "y": -2
+      },
+      {
+        "id": "2",
+        "version": 1,
+        "x": 1,
+        "y": -2
+      },
+      {
+        "id": "4",
+        "version": 1,
+        "x": 100,
+        "y": -20
+      },
+      {
+        "id": "5",
+        "version": 1,
+        "x": 826,
+        "y": 0
+      }
+    ],
+    "locations?size=50": [
+      {
+        "id": "1",
+        "name": "Test location",
+        "version": 1,
+        "x": "9007199254740993",
+        "y": -1.5
+      },
+      {
+        "id": "2",
+        "name": "Example City",
+        "version": 1,
+        "x": "10",
+        "y": 20.5
+      }
+    ]
+  },
+  "process": "Running PID 65452",
+  "isolation": "READ COMMITTED",
+  "note": "140 Java tests and 1640 JMeter targets belong to previousWarSha256. This UI revision preserves every other WAR entry byte for byte."
+}

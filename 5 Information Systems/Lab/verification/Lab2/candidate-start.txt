@@ -1,0 +1,92 @@
+Traceback (most recent call last):
+  File "/home/studs/s407960/is-lab2-4101/scripts/lab2-migration-check.py", line 29, in <module>
+    before=summary();hash_before=fingerprints()
+                                 ^^^^^^^^^^^^^^
+  File "/home/studs/s407960/is-lab2-4101/scripts/lab2-migration-check.py", line 20, in fingerprints
+    return {table:query("SELECT md5(coalesce(string_agg(md5(row_to_json(x)::text),'' ORDER BY id),'')) FROM (SELECT "+
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/studs/s407960/is-lab2-4101/scripts/lab2-migration-check.py", line 20, in <dictcomp>
+    return {table:query("SELECT md5(coalesce(string_agg(md5(row_to_json(x)::text),'' ORDER BY id),'')) FROM (SELECT "+
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/studs/s407960/is-lab2-4101/scripts/lab2-migration-check.py", line 15, in query
+    if result.returncode:raise RuntimeError(result.stderr)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: ERROR:  function row_to_json(integer) does not exist
+СТРОКА 1: SELECT md5(coalesce(string_agg(md5(row_to_json(x)::text),'' ...
+                                             ^
+ПОДСКАЗКА:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/studs/s407960/is-lab2-4101/scripts/lab2-migration-check.py", line 40, in <module>
+    if created:query('DROP TABLE '+','.join(prefix+t for t in ['import_operation','movie','person','coordinates','location','app_state','app_user'])+';')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/studs/s407960/is-lab2-4101/scripts/lab2-migration-check.py", line 15, in query
+    if result.returncode:raise RuntimeError(result.stderr)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: ERROR:  table "lab2_4101_test_upgrade_import_operation" does not exist
+
+BEGIN
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE TABLE
+INSERT 0 1
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+CREATE INDEX
+COMMIT
+BEGIN
+ id 
+----
+  1
+(1 строка)
+
+ id 
+----
+(0 строк)
+
+UPDATE 0
+COMMIT
+Started PID 37193; log: /home/studs/s407960/is-lab2-4101/.runtime/payara.log
+
+[2026-10-28T02:38:01.639+0300] [] [[1;92mINFO[0m] [] [[1;94mfish.payara.nucleus.hazelcast.HazelcastCore[0m] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1793144277650] [timeMillis: 1793144281639] [levelValue: 800] Hazelcast Instance Bound to JNDI at payara/Hazelcast
+
+[2026-10-28T02:38:01.640+0300] [] [[1;92mINFO[0m] [] [[1;94mfish.payara.nucleus.hazelcast.HazelcastCore[0m] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1793144277650] [timeMillis: 1793144281640] [levelValue: 800] JSR107 Caching Provider Bound to JNDI at payara/CachingProvider
+
+[2026-10-28T02:38:01.640+0300] [] [[1;92mINFO[0m] [] [[1;94mfish.payara.nucleus.hazelcast.HazelcastCore[0m] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1793144277650] [timeMillis: 1793144281640] [levelValue: 800] JSR107 Default Cache Manager Bound to JNDI at payara/CacheManager
+
+[2026-10-28T02:38:01.745+0300] [] [[1;92mINFO[0m] [NCLS-CORE-00101] [[1;94mjavax.enterprise.system.core[0m] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1793144277650] [timeMillis: 1793144281745] [levelValue: 800] Network Listener http-listener started in: 7ms - bound to [/127.0.0.1:40797]
+
+[2026-10-28T02:38:01.746+0300] [] [[1;92mINFO[0m] [NCLS-CORE-00058] [[1;94mjavax.enterprise.system.core[0m] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1793144277650] [timeMillis: 1793144281746] [levelValue: 800] Network listener https-listener on port 8443 disabled per domain.xml
+
+[2026-10-28T02:38:01.747+0300] [] [[1;92mINFO[0m] [NCLS-CORE-00087] [[1;94mjavax.enterprise.system.core[0m] [tid: _ThreadID=30 _ThreadName=RunLevelControllerThread-1793144277650] [timeMillis: 1793144281747] [levelValue: 800] Grizzly 4.0.0 started in: 3 683ms - bound to [http-listener:40797]
+
+[2026-10-28T02:38:01.789+0300] [] [[1;92mINFO[0m] [] [[1;94mio.opentelemetry.api.GlobalOpenTelemetry[0m] [tid: _ThreadID=29 _ThreadName=RunLevelControllerThread-1793144277647] [timeMillis: 1793144281789] [levelValue: 800] AutoConfiguredOpenTelemetrySdk found on classpath but automatic configuration is disabled. To enable, run your JVM with -Dotel.java.global-autoconfigure.enabled=true
+
+[2026-10-28T02:38:01.821+0300] [] [[1;92mINFO[0m] [] [[1;94mfish.payara.nucleus.cluster.PayaraCluster[0m] [tid: _ThreadID=83 _ThreadName=Executor-Service-1] [timeMillis: 1793144281821] [levelValue: 800] [[
+  Data Grid Status 
+Payara Data Grid State: DG Version: 5 DG Name: development DG Size: 1
+Instances: {
+ DataGrid: development Name: Magnanimous-Sablefish Lite: false This: true UUID: ed4479c8-c1b7-43ba-ba3d-49eef65770ec Address: /192.168.10.80:6902
+}]]
+
+[2026-10-28T02:38:01.822+0300] [] [[1;92mINFO[0m] [NCLS-CORE-00017] [[1;94mjavax.enterprise.system.core[0m] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1793144281822] [levelValue: 800] Payara Micro 6.2025.1 #badassmicrofish (28) startup time : Embedded (3 289ms), startup services(4 179ms), total(7 468ms)
+
+[2026-10-28T02:38:01.892+0300] [] [[1;92mINFO[0m] [NCLS-JMX-00006] [[1;94mjavax.enterprise.system.jmx[0m] [tid: _ThreadID=97 _ThreadName=Thread-10] [timeMillis: 1793144281892] [levelValue: 800] JMXStartupService has disabled JMXConnector system
+
+[2026-10-28T02:38:03.475+0300] [] [[1;92mINFO[0m] [] [[1;94mjavax.enterprise.system.core[0m] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1793144283475] [levelValue: 800] No deployment transformer implementation found.
+
+HTTP=404

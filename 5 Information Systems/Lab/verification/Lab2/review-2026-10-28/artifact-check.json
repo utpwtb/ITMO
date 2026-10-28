@@ -1,0 +1,151 @@
+{
+  "surefire": {
+    "tests": 140,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "jmeter": {
+    "scenes": [
+      {
+        "scene": "C01",
+        "targetRequests": 40,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C02",
+        "targetRequests": 40,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C02D",
+        "targetRequests": 40,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C03",
+        "targetRequests": 200,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C04",
+        "targetRequests": 200,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C05",
+        "targetRequests": 200,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C06",
+        "targetRequests": 40,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C07",
+        "targetRequests": 200,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C08",
+        "targetRequests": 40,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C09",
+        "targetRequests": 40,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C10",
+        "targetRequests": 200,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C11",
+        "targetRequests": 200,
+        "rounds": 20,
+        "failedSamplers": 0
+      },
+      {
+        "scene": "C12",
+        "targetRequests": 200,
+        "rounds": 20,
+        "failedSamplers": 0
+      }
+    ],
+    "targets": 1640,
+    "allSamplers": 5444,
+    "failedSamplers": 0,
+    "committedWrites": 780,
+    "expectedConflicts": 680,
+    "reads": 180
+  },
+  "sourceArchive": {
+    "files": 101,
+    "mismatches": []
+  },
+  "deliveryZip": {
+    "files": 187,
+    "mismatches": []
+  },
+  "warComparison": {
+    "testedSha256": "cf386061ed67f25abac1f84cf13b61fdcb4a988dddbfe3363c81e670365d0576",
+    "deployedSha256": "867545d9dbbf8d18e9d224e3b29b0c7387ab49458b9f8ed44d7421cbec3f87f4",
+    "added": [],
+    "removed": [],
+    "changed": [
+      "app.js",
+      "index.html",
+      "style.css",
+      "ui-text.js"
+    ],
+    "unchangedJavaClasses": 34
+  },
+  "baselineMainSourceDiff": {
+    "baseline": "verification/Lab2/baseline-source.tar.gz",
+    "modified": [
+      "src/main/webapp/app.js",
+      "src/main/webapp/index.html",
+      "src/main/webapp/style.css",
+      "src/main/webapp/ui-text.js",
+      "src/main/webapp/WEB-INF/web.xml",
+      "src/main/resources/META-INF/orm-helios.xml",
+      "src/main/resources/META-INF/persistence.xml",
+      "src/main/java/ru/itmo/movie/domain/AppUser.java",
+      "src/main/java/ru/itmo/movie/persistence/Database.java",
+      "src/main/java/ru/itmo/movie/service/AuthService.java",
+      "src/main/java/ru/itmo/movie/service/MovieService.java",
+      "src/main/java/ru/itmo/movie/service/Problem.java",
+      "src/main/java/ru/itmo/movie/web/ApiApplication.java",
+      "src/main/java/ru/itmo/movie/web/AuthResource.java",
+      "src/main/java/ru/itmo/movie/web/ErrorMapper.java"
+    ],
+    "added": [
+      "src/main/webapp/import-format.md",
+      "src/main/webapp/examples/import-valid.json",
+      "src/main/resources/META-INF/orm-helios-test.xml",
+      "src/main/java/ru/itmo/movie/domain/ImportOperation.java",
+      "src/main/java/ru/itmo/movie/domain/ImportStatus.java",
+      "src/main/java/ru/itmo/movie/domain/InstantTimestampConverter.java",
+      "src/main/java/ru/itmo/movie/domain/UserRole.java",
+      "src/main/java/ru/itmo/movie/service/ImportHistoryService.java",
+      "src/main/java/ru/itmo/movie/service/ImportParser.java",
+      "src/main/java/ru/itmo/movie/service/ImportService.java",
+      "src/main/java/ru/itmo/movie/service/MovieUniquenessValidator.java",
+      "src/main/java/ru/itmo/movie/web/ImportResource.java"
+    ]
+  }
+}

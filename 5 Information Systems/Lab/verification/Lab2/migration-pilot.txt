@@ -1,0 +1,31 @@
+NOTICE:  table "lab2_4101_test_upgrade_import_operation" does not exist, skipping
+DROP TABLE
+{"source": "read-only lab1_4101_ copy", "target": "lab2_4101_test_upgrade_", "before": {"coordinates": "16", "location": "13", "person": "12", "movie": "32", "app_state": "1", "app_user": "3"}, "after": {"coordinates": "16", "location": "13", "person": "12", "movie": "32", "app_state": "1", "app_user": "3"}, "fingerprintsBefore": {"coordinates": "694de7a25613e598aaea88fa8967ca99", "location": "e65423cfbd594b40df1949e55e4d8631", "person": "f0f557b2d43d07359ce80e4e9f9417f2", "movie": "37dea9daa331a00401b581b82edd8809", "app_state": "62c87070efaf04dcb8b982aeec2b11a2", "app_user": "250ebfabf2dc11cea1afc2e795078e23"}, "fingerprintsAfter": {"coordinates": "694de7a25613e598aaea88fa8967ca99", "location": "e65423cfbd594b40df1949e55e4d8631", "person": "f0f557b2d43d07359ce80e4e9f9417f2", "movie": "37dea9daa331a00401b581b82edd8809", "app_state": "62c87070efaf04dcb8b982aeec2b11a2", "app_user": "250ebfabf2dc11cea1afc2e795078e23"}, "migrationsApplied": 2, "allExistingUsersDefaultUSER": true, "passed": true}
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using jmeter/lab2-concurrency.jmx
+Starting standalone test @ 2026 Oct 28 02:39:22 MSK (1793144362990)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     16 in 00:00:08 =    1.9/s Avg:  1816 Min:    41 Max:  4281 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+summary +     64 in 00:00:00 =  129.0/s Avg:   820 Min:     1 Max:  7527 Err:     0 (0.00%) Active: 0 Started: 10 Finished: 10
+summary =     80 in 00:00:09 =    8.9/s Avg:  1019 Min:     1 Max:  7527 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 28 02:39:32 MSK (1793144372286)
+... end of run
+{
+  "scenario": "C03",
+  "threads": 10,
+  "rounds": 2,
+  "requests": 20,
+  "commits": 2,
+  "expectedConflicts": 18,
+  "unexpected": 0,
+  "averageMs": 101.75,
+  "p95Ms": 160,
+  "duplicates": 0,
+  "failedImportResidue": 0,
+  "passed": true,
+  "errors": [],
+  "jmeterExit": 0,
+  "jtlFailures": 0,
+  "elapsedSeconds": 16.987317323684692
+}

@@ -1,0 +1,10 @@
+{"scenario":"C12","round":0,"participant":6,"method":"PUT","path":"movies/1422","status":200,"code":null,"operationId":null,"elapsed":44,"passed":true}
+{"scenario":"C12","round":0,"participant":3,"method":"POST","path":"imports","status":201,"code":null,"operationId":"628","elapsed":232,"passed":true}
+{"scenario":"C12","round":0,"participant":0,"method":"POST","path":"movies","status":201,"code":null,"operationId":null,"elapsed":262,"passed":true}
+{"scenario":"C12","round":0,"participant":9,"method":"POST","path":"operations/award?length=10000&count=1","status":200,"code":null,"operationId":null,"elapsed":266,"passed":true}
+{"scenario":"C12","round":0,"participant":8,"method":"POST","path":"imports","status":201,"code":null,"operationId":"627","elapsed":266,"passed":true}
+{"scenario":"C12","round":0,"participant":1,"method":"PUT","path":"movies/1420","status":200,"code":null,"operationId":null,"elapsed":266,"passed":true}
+{"scenario":"C12","round":0,"participant":4,"method":"POST","path":"operations/award?length=10000&count=1","status":200,"code":null,"operationId":null,"elapsed":267,"passed":true}
+{"scenario":"C12","round":0,"participant":2,"method":"DELETE","path":"movies/1421?version=1","status":503,"code":"DATABASE_TEMPORARY","operationId":null,"elapsed":278,"passed":false}
+{"scenario":"C12","round":0,"participant":5,"method":"POST","path":"movies","status":201,"code":null,"operationId":null,"elapsed":303,"passed":true}
+{"scenario":"C12","round":0,"participant":7,"method":"DELETE","path":"movies/1423?version=1","status":503,"code":"DATABASE_TEMPORARY","operationId":null,"elapsed":308,"passed":false}

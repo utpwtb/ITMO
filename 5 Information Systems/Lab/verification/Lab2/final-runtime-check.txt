@@ -1,0 +1,50 @@
+среда, 28 октября 2026 г. 13:55:54 (MSK)
+44732  PID ELAPSED COMMAND
+48693   00:00 sshd-session: s407960@notty (sshd-session)
+48694   00:00 bash -c date; cat /home/studs/s407960/is-lab2-4101/.runtime/payara.pid; ps -ww -U s407960 -o pid,etime,command; tail -45 /home/studs/s407960/is-lab2-4101/.runtime/payara.log; ls -lt /home/studs/s407960/is-lab2-4101/hs_err* 2>/dev/null
+48697   00:00 ps -ww -U s407960 -o pid,etime,command
+                "Type": "war",
+                "Context Root": "/movie-lab"
+            }
+        ]
+    }
+}]]
+
+[2026-10-28T03:27:08.619+0300] [] [[1;92mINFO[0m] [] [[1;94mPayaraMicro[0m] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1793147228619] [levelValue: 800] [[
+  
+Payara Micro URLs:
+http://helios.cs.ifmo.ru:40797/movie-lab
+
+'movie-lab' REST Endpoints:
+GET	/movie-lab/api//movies
+GET	/movie-lab/api//operations/average
+POST	/movie-lab/api//operations/award
+DELETE	/movie-lab/api//operations/box-office
+GET	/movie-lab/api//operations/prefix
+POST	/movie-lab/api//operations/redistribute
+GET	/movie-lab/api//revision
+POST	/movie-lab/api//{kind:movies|people|coordinates|locations}
+DELETE	/movie-lab/api//{kind:movies|people|coordinates|locations}/{id}
+GET	/movie-lab/api//{kind:movies|people|coordinates|locations}/{id}
+PUT	/movie-lab/api//{kind:movies|people|coordinates|locations}/{id}
+GET	/movie-lab/api//{kind:people|coordinates|locations}
+GET	/movie-lab/api/application.wadl
+DELETE	/movie-lab/api/auth
+GET	/movie-lab/api/auth
+POST	/movie-lab/api/auth
+POST	/movie-lab/api/auth/register
+GET	/movie-lab/api/imports
+POST	/movie-lab/api/imports
+GET	/movie-lab/api/imports/{id}
+
+]]
+
+[2026-10-28T03:27:08.619+0300] [] [[1;92mINFO[0m] [] [[1;94mPayaraMicro[0m] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1793147228619] [levelValue: 800] Payara Micro 6.2025.1 #badassmicrofish (build 28) ready in 23 551 (ms)
+
+[2026-10-28T03:27:10.774+0300] [] [[1;93mWARNING[0m] [] [[1;94morg.eclipse.persistence.session./file:/home/studs/s407960/is-lab2-4101/.runtime/payara/applications/movie-lab/WEB-INF/classes/_movies-helios_url=jdbc:postgresql://pg:5432/studs?currentSchema=s407960_user=s407960.server[0m] [tid: _ThreadID=75 _ThreadName=http-thread-pool::http-listener(1)] [timeMillis: 1793147230774] [levelValue: 900] Problem while registering MBean: javax.management.RuntimeOperationsException
+
+[2026-10-28T03:27:10.776+0300] [] [[1;93mWARNING[0m] [] [[1;94morg.eclipse.persistence.session./file:/home/studs/s407960/is-lab2-4101/.runtime/payara/applications/movie-lab/WEB-INF/classes/_movies-helios_url=jdbc:postgresql://pg:5432/studs?currentSchema=s407960_user=s407960.server[0m] [tid: _ThreadID=75 _ThreadName=http-thread-pool::http-listener(1)] [timeMillis: 1793147230776] [levelValue: 900] Problem while registering MBean: javax.management.RuntimeOperationsException
+
+[2026-10-28T05:00:00.789+0300] [] [[1;93mWARNING[0m] [] [[1;94mcom.hazelcast.instance.impl.Node[0m] [tid: _ThreadID=34 _ThreadName=hz.ShutdownThread] [timeMillis: 1793152800789] [levelValue: 900] [192.168.10.80]:6902 [development] [5.3.6] Terminating forcefully...
+
+JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]

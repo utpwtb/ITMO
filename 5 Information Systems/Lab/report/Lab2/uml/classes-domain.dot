@@ -1,0 +1,13 @@
+digraph UML {
+graph [rankdir=LR,bgcolor="white",nodesep=0.4,ranksep=0.65,pad=0.2];
+node [shape=plain,fontname="Arial",fontsize=11];
+edge [fontname="Arial",fontsize=10,arrowsize=0.8];
+"Movie" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«entity»<BR/>Movie</B></TD></TR><TR><TD ALIGN="LEFT">+ id: Long<BR ALIGN="LEFT"/>+ version: long<BR ALIGN="LEFT"/>+ name: String<BR ALIGN="LEFT"/>+ coordinates: Coordinates<BR ALIGN="LEFT"/>+ creationDate: java.time.LocalDate<BR ALIGN="LEFT"/>+ oscarsCount: int<BR ALIGN="LEFT"/>+ budget: long<BR ALIGN="LEFT"/>+ totalBoxOffice: Double<BR ALIGN="LEFT"/>+ mpaaRating: MpaaRating<BR ALIGN="LEFT"/>+ director: Person<BR ALIGN="LEFT"/>+ screenwriter: Person<BR ALIGN="LEFT"/>+ operator: Person<BR ALIGN="LEFT"/>+ length: Integer<BR ALIGN="LEFT"/>+ goldenPalmCount: Long<BR ALIGN="LEFT"/>+ usaBoxOffice: int<BR ALIGN="LEFT"/>+ tagline: String<BR ALIGN="LEFT"/>+ genre: MovieGenre</TD></TR></TABLE>>];
+"Person" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«entity»<BR/>Person</B></TD></TR><TR><TD ALIGN="LEFT">+ id: Long<BR ALIGN="LEFT"/>+ version: long<BR ALIGN="LEFT"/>+ name: String<BR ALIGN="LEFT"/>+ eyeColor: Color<BR ALIGN="LEFT"/>+ hairColor: Color<BR ALIGN="LEFT"/>+ location: Location<BR ALIGN="LEFT"/>+ birthday: java.time.ZonedDateTime<BR ALIGN="LEFT"/>+ height: Float<BR ALIGN="LEFT"/>+ weight: Float<BR ALIGN="LEFT"/>+ passportID: String</TD></TR></TABLE>>];
+"Coordinates" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«entity»<BR/>Coordinates</B></TD></TR><TR><TD ALIGN="LEFT">+ id: Long<BR ALIGN="LEFT"/>+ version: long<BR ALIGN="LEFT"/>+ x: Integer<BR ALIGN="LEFT"/>+ y: Integer</TD></TR></TABLE>>];
+"Location" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«entity»<BR/>Location</B></TD></TR><TR><TD ALIGN="LEFT">+ id: Long<BR ALIGN="LEFT"/>+ version: long<BR ALIGN="LEFT"/>+ x: Long<BR ALIGN="LEFT"/>+ y: Double<BR ALIGN="LEFT"/>+ name: String</TD></TR></TABLE>>];
+"AppState" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD BGCOLOR="#e8edf1"><B>«entity»<BR/>AppState</B></TD></TR><TR><TD ALIGN="LEFT">+ id: Long<BR ALIGN="LEFT"/>+ revision: long</TD></TR></TABLE>>];
+Movie -> Coordinates [label="coordinates 1",arrowhead=vee];
+Movie -> Person [label="director / screenwriter / operator 0..1",arrowhead=vee];
+Person -> Location [label="location 0..1",arrowhead=vee];
+}

@@ -1,0 +1,21 @@
+FreeBSD helios.cs.ifmo.ru 14.5-STABLE FreeBSD 14.5-STABLE ec3ebfaf9fd3 amd64 amd64
+helios.cs.ifmo.ru
+uid=407960(s407960) gid=600(studs) groups=600(studs),12266(p3316),20000001(NT Authority\network)
+/home/studs/s407960
+Error occurred during initialization of VM
+Could not reserve enough space for 30932992KB object heap
+Error occurred during initialization of VM
+Could not reserve enough space for 30932992KB object heap
+Python 3.11.9
+psql (PostgreSQL) 18.3
+bash: строка 1: quota: command not found
+drwx------  8 s407960 studs 14 14 окт.  17:25 /home/studs/s407960/is-lab1-4101
+-rw-------  1 s407960 studs 30  2 сент.  2024 /home/studs/s407960/.pgpass
+ps: illegal argument: s407960
+
+usage: ps [--libxo] [-aCcdefHhjlmrSTuvwXxZ] [-O fmt | -o fmt]
+          [-G gid[,gid...]] [-J jid[,jid...]] [-M core] [-N system]
+          [-p pid[,pid...]] [-t tty[,tty...]] [-U user[,user...]]
+          [-D up | down | both]
+       ps [--libxo] -L
+sockstat: usage: sockstat [-46bCcfIiLlnqSsUuvw] [-j jid] [-p ports] [-P protocols]

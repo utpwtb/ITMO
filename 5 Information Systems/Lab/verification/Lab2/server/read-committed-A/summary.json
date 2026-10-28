@@ -1,0 +1,41 @@
+[
+  {
+    "scenario": "C01",
+    "threads": 2,
+    "rounds": 20,
+    "requests": 40,
+    "commits": 20,
+    "expectedConflicts": 20,
+    "unexpected": 0,
+    "averageMs": 20.2,
+    "p95Ms": 33,
+    "duplicates": 0,
+    "failedImportResidue": 0,
+    "passed": false,
+    "errors": [
+      "0: winner value/version",
+      "1: winner value/version",
+      "2: winner value/version",
+      "3: winner value/version",
+      "4: winner value/version",
+      "5: winner value/version",
+      "6: winner value/version",
+      "7: winner value/version",
+      "8: winner value/version",
+      "9: winner value/version",
+      "10: winner value/version",
+      "11: winner value/version",
+      "12: winner value/version",
+      "13: winner value/version",
+      "14: winner value/version",
+      "15: winner value/version",
+      "16: winner value/version",
+      "17: winner value/version",
+      "18: winner value/version",
+      "19: winner value/version"
+    ],
+    "jmeterExit": 0,
+    "jtlFailures": 0,
+    "elapsedSeconds": 13.638921737670898
+  }
+]

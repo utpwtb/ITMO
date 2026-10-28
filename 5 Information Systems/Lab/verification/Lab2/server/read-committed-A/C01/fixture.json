@@ -1,0 +1,687 @@
+{
+  "scenario": "C01",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r0-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/5",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r0-winner0",
+            "version": 1
+          },
+          "read": "movies/5",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/5",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r0-winner1",
+            "version": 1
+          },
+          "read": "movies/5",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "5"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r1-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/6",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r1-winner0",
+            "version": 1
+          },
+          "read": "movies/6",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/6",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r1-winner1",
+            "version": 1
+          },
+          "read": "movies/6",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "6"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r2-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/7",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r2-winner0",
+            "version": 1
+          },
+          "read": "movies/7",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/7",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r2-winner1",
+            "version": 1
+          },
+          "read": "movies/7",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "7"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r3-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/8",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r3-winner0",
+            "version": 1
+          },
+          "read": "movies/8",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/8",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r3-winner1",
+            "version": 1
+          },
+          "read": "movies/8",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "8"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r4-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/9",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r4-winner0",
+            "version": 1
+          },
+          "read": "movies/9",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/9",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r4-winner1",
+            "version": 1
+          },
+          "read": "movies/9",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "9"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r5-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/10",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r5-winner0",
+            "version": 1
+          },
+          "read": "movies/10",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/10",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r5-winner1",
+            "version": 1
+          },
+          "read": "movies/10",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "10"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r6-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/11",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r6-winner0",
+            "version": 1
+          },
+          "read": "movies/11",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/11",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r6-winner1",
+            "version": 1
+          },
+          "read": "movies/11",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "11"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r7-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/12",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r7-winner0",
+            "version": 1
+          },
+          "read": "movies/12",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/12",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r7-winner1",
+            "version": 1
+          },
+          "read": "movies/12",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "12"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r8-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/13",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r8-winner0",
+            "version": 1
+          },
+          "read": "movies/13",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/13",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r8-winner1",
+            "version": 1
+          },
+          "read": "movies/13",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "13"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r9-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/14",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r9-winner0",
+            "version": 1
+          },
+          "read": "movies/14",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/14",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r9-winner1",
+            "version": 1
+          },
+          "read": "movies/14",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "14"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r10-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/15",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r10-winner0",
+            "version": 1
+          },
+          "read": "movies/15",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/15",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r10-winner1",
+            "version": 1
+          },
+          "read": "movies/15",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "15"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r11-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/16",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r11-winner0",
+            "version": 1
+          },
+          "read": "movies/16",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/16",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r11-winner1",
+            "version": 1
+          },
+          "read": "movies/16",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "16"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r12-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/17",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r12-winner0",
+            "version": 1
+          },
+          "read": "movies/17",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/17",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r12-winner1",
+            "version": 1
+          },
+          "read": "movies/17",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "17"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r13-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/18",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r13-winner0",
+            "version": 1
+          },
+          "read": "movies/18",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/18",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r13-winner1",
+            "version": 1
+          },
+          "read": "movies/18",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "18"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r14-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/19",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r14-winner0",
+            "version": 1
+          },
+          "read": "movies/19",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/19",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r14-winner1",
+            "version": 1
+          },
+          "read": "movies/19",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "19"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r15-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/20",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r15-winner0",
+            "version": 1
+          },
+          "read": "movies/20",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/20",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r15-winner1",
+            "version": 1
+          },
+          "read": "movies/20",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "20"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r16-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/21",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r16-winner0",
+            "version": 1
+          },
+          "read": "movies/21",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/21",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r16-winner1",
+            "version": 1
+          },
+          "read": "movies/21",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "21"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r17-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/22",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r17-winner0",
+            "version": 1
+          },
+          "read": "movies/22",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/22",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r17-winner1",
+            "version": 1
+          },
+          "read": "movies/22",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "22"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r18-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/23",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r18-winner0",
+            "version": 1
+          },
+          "read": "movies/23",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/23",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r18-winner1",
+            "version": 1
+          },
+          "read": "movies/23",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "23"
+    },
+    {
+      "prefix": "lab2-read-committed-A-C01-0c5671-r19-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/24",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r19-winner0",
+            "version": 1
+          },
+          "read": "movies/24",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "PUT",
+          "path": "movies/24",
+          "body": {
+            "tagline": "lab2-read-committed-A-C01-0c5671-r19-winner1",
+            "version": 1
+          },
+          "read": "movies/24",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "24"
+    }
+  ],
+  "marker": "lab2-read-committed-A-C01-0c5671"
+}

@@ -1,0 +1,2567 @@
+{
+  "scenario": "C12",
+  "threads": 10,
+  "rounds": [
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r0-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r0-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/748",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r0-edited1",
+            "version": 1
+          },
+          "read": "movies/748",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/749?version=1",
+          "read": "movies/749",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r0-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r0-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r0-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/750",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r0-edited6",
+            "version": 1
+          },
+          "read": "movies/750",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/751?version=1",
+          "read": "movies/751",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r0-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "747"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r1-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r1-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/753",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r1-edited1",
+            "version": 1
+          },
+          "read": "movies/753",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/754?version=1",
+          "read": "movies/754",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r1-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r1-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r1-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/755",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r1-edited6",
+            "version": 1
+          },
+          "read": "movies/755",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/756?version=1",
+          "read": "movies/756",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r1-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "752"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r2-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r2-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/758",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r2-edited1",
+            "version": 1
+          },
+          "read": "movies/758",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/759?version=1",
+          "read": "movies/759",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r2-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r2-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r2-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/760",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r2-edited6",
+            "version": 1
+          },
+          "read": "movies/760",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/761?version=1",
+          "read": "movies/761",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r2-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "757"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r3-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r3-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/763",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r3-edited1",
+            "version": 1
+          },
+          "read": "movies/763",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/764?version=1",
+          "read": "movies/764",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r3-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r3-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r3-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/765",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r3-edited6",
+            "version": 1
+          },
+          "read": "movies/765",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/766?version=1",
+          "read": "movies/766",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r3-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "762"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r4-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r4-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/768",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r4-edited1",
+            "version": 1
+          },
+          "read": "movies/768",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/769?version=1",
+          "read": "movies/769",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r4-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r4-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r4-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/770",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r4-edited6",
+            "version": 1
+          },
+          "read": "movies/770",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/771?version=1",
+          "read": "movies/771",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r4-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "767"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r5-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r5-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/773",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r5-edited1",
+            "version": 1
+          },
+          "read": "movies/773",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/774?version=1",
+          "read": "movies/774",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r5-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r5-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r5-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/775",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r5-edited6",
+            "version": 1
+          },
+          "read": "movies/775",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/776?version=1",
+          "read": "movies/776",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r5-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "772"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r6-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r6-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/778",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r6-edited1",
+            "version": 1
+          },
+          "read": "movies/778",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/779?version=1",
+          "read": "movies/779",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r6-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r6-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r6-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/780",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r6-edited6",
+            "version": 1
+          },
+          "read": "movies/780",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/781?version=1",
+          "read": "movies/781",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r6-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "777"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r7-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r7-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/783",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r7-edited1",
+            "version": 1
+          },
+          "read": "movies/783",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/784?version=1",
+          "read": "movies/784",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r7-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r7-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r7-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/785",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r7-edited6",
+            "version": 1
+          },
+          "read": "movies/785",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/786?version=1",
+          "read": "movies/786",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r7-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "782"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r8-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r8-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/788",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r8-edited1",
+            "version": 1
+          },
+          "read": "movies/788",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/789?version=1",
+          "read": "movies/789",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r8-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r8-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r8-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/790",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r8-edited6",
+            "version": 1
+          },
+          "read": "movies/790",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/791?version=1",
+          "read": "movies/791",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r8-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "787"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r9-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r9-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/793",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r9-edited1",
+            "version": 1
+          },
+          "read": "movies/793",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/794?version=1",
+          "read": "movies/794",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r9-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r9-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r9-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/795",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r9-edited6",
+            "version": 1
+          },
+          "read": "movies/795",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/796?version=1",
+          "read": "movies/796",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r9-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "792"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r10-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r10-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/798",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r10-edited1",
+            "version": 1
+          },
+          "read": "movies/798",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/799?version=1",
+          "read": "movies/799",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r10-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r10-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r10-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/800",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r10-edited6",
+            "version": 1
+          },
+          "read": "movies/800",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/801?version=1",
+          "read": "movies/801",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r10-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "797"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r11-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r11-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/803",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r11-edited1",
+            "version": 1
+          },
+          "read": "movies/803",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/804?version=1",
+          "read": "movies/804",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r11-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r11-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r11-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/805",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r11-edited6",
+            "version": 1
+          },
+          "read": "movies/805",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/806?version=1",
+          "read": "movies/806",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r11-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "802"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r12-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r12-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/808",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r12-edited1",
+            "version": 1
+          },
+          "read": "movies/808",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/809?version=1",
+          "read": "movies/809",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r12-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r12-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r12-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/810",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r12-edited6",
+            "version": 1
+          },
+          "read": "movies/810",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/811?version=1",
+          "read": "movies/811",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r12-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "807"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r13-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r13-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/813",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r13-edited1",
+            "version": 1
+          },
+          "read": "movies/813",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/814?version=1",
+          "read": "movies/814",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r13-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r13-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r13-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/815",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r13-edited6",
+            "version": 1
+          },
+          "read": "movies/815",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/816?version=1",
+          "read": "movies/816",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r13-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "812"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r14-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r14-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/818",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r14-edited1",
+            "version": 1
+          },
+          "read": "movies/818",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/819?version=1",
+          "read": "movies/819",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r14-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r14-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r14-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/820",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r14-edited6",
+            "version": 1
+          },
+          "read": "movies/820",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/821?version=1",
+          "read": "movies/821",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r14-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "817"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r15-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r15-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/823",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r15-edited1",
+            "version": 1
+          },
+          "read": "movies/823",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/824?version=1",
+          "read": "movies/824",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r15-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r15-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r15-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/825",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r15-edited6",
+            "version": 1
+          },
+          "read": "movies/825",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/826?version=1",
+          "read": "movies/826",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r15-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "822"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r16-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r16-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/828",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r16-edited1",
+            "version": 1
+          },
+          "read": "movies/828",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/829?version=1",
+          "read": "movies/829",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r16-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r16-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r16-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/830",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r16-edited6",
+            "version": 1
+          },
+          "read": "movies/830",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/831?version=1",
+          "read": "movies/831",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r16-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "827"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r17-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r17-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/833",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r17-edited1",
+            "version": 1
+          },
+          "read": "movies/833",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/834?version=1",
+          "read": "movies/834",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r17-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r17-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r17-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/835",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r17-edited6",
+            "version": 1
+          },
+          "read": "movies/835",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/836?version=1",
+          "read": "movies/836",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r17-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "832"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r18-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r18-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/838",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r18-edited1",
+            "version": 1
+          },
+          "read": "movies/838",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/839?version=1",
+          "read": "movies/839",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r18-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r18-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r18-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/840",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r18-edited6",
+            "version": 1
+          },
+          "read": "movies/840",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/841?version=1",
+          "read": "movies/841",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r18-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "837"
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C12-618b14-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r19-create0",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r19-create0",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/843",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r19-edited1",
+            "version": 1
+          },
+          "read": "movies/843",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/844?version=1",
+          "read": "movies/844",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r19-p3.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "expected": [
+            201
+          ],
+          "body": {
+            "name": "lab2-read-committed-A2-C12-618b14-r19-create5",
+            "coordinates": "441",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-read-committed-A2-C12-618b14-r19-create5",
+            "genre": "COMEDY",
+            "director": null
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "movies/845",
+          "body": {
+            "tagline": "lab2-read-committed-A2-C12-618b14-r19-edited6",
+            "version": 1
+          },
+          "read": "movies/845",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/846?version=1",
+          "read": "movies/846",
+          "version": 1,
+          "expected": [
+            200,
+            404,
+            409
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/read-committed-A2/C12/r19-p8.json",
+          "expected": [
+            201
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "operations/award?length=10000&count=1",
+          "expected": [
+            200
+          ]
+        }
+      ],
+      "bonus": "842"
+    }
+  ],
+  "marker": "lab2-read-committed-A2-C12-618b14"
+}

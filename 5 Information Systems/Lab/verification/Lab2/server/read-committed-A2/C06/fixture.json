@@ -1,0 +1,707 @@
+{
+  "scenario": "C06",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r0-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/327",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r0-target",
+            "version": 1
+          },
+          "read": "movies/327",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/328",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r0-target",
+            "version": 1
+          },
+          "read": "movies/328",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r1-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/329",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r1-target",
+            "version": 1
+          },
+          "read": "movies/329",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/330",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r1-target",
+            "version": 1
+          },
+          "read": "movies/330",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r2-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/331",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r2-target",
+            "version": 1
+          },
+          "read": "movies/331",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/332",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r2-target",
+            "version": 1
+          },
+          "read": "movies/332",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r3-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/333",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r3-target",
+            "version": 1
+          },
+          "read": "movies/333",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/334",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r3-target",
+            "version": 1
+          },
+          "read": "movies/334",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r4-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/335",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r4-target",
+            "version": 1
+          },
+          "read": "movies/335",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/336",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r4-target",
+            "version": 1
+          },
+          "read": "movies/336",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r5-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/337",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r5-target",
+            "version": 1
+          },
+          "read": "movies/337",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/338",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r5-target",
+            "version": 1
+          },
+          "read": "movies/338",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r6-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/339",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r6-target",
+            "version": 1
+          },
+          "read": "movies/339",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/340",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r6-target",
+            "version": 1
+          },
+          "read": "movies/340",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r7-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/341",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r7-target",
+            "version": 1
+          },
+          "read": "movies/341",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/342",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r7-target",
+            "version": 1
+          },
+          "read": "movies/342",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r8-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/343",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r8-target",
+            "version": 1
+          },
+          "read": "movies/343",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/344",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r8-target",
+            "version": 1
+          },
+          "read": "movies/344",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r9-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/345",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r9-target",
+            "version": 1
+          },
+          "read": "movies/345",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/346",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r9-target",
+            "version": 1
+          },
+          "read": "movies/346",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r10-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/347",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r10-target",
+            "version": 1
+          },
+          "read": "movies/347",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/348",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r10-target",
+            "version": 1
+          },
+          "read": "movies/348",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r11-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/349",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r11-target",
+            "version": 1
+          },
+          "read": "movies/349",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/350",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r11-target",
+            "version": 1
+          },
+          "read": "movies/350",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r12-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/351",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r12-target",
+            "version": 1
+          },
+          "read": "movies/351",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/352",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r12-target",
+            "version": 1
+          },
+          "read": "movies/352",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r13-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/353",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r13-target",
+            "version": 1
+          },
+          "read": "movies/353",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/354",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r13-target",
+            "version": 1
+          },
+          "read": "movies/354",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r14-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/355",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r14-target",
+            "version": 1
+          },
+          "read": "movies/355",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/356",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r14-target",
+            "version": 1
+          },
+          "read": "movies/356",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r15-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/357",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r15-target",
+            "version": 1
+          },
+          "read": "movies/357",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/358",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r15-target",
+            "version": 1
+          },
+          "read": "movies/358",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r16-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/359",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r16-target",
+            "version": 1
+          },
+          "read": "movies/359",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/360",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r16-target",
+            "version": 1
+          },
+          "read": "movies/360",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r17-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/361",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r17-target",
+            "version": 1
+          },
+          "read": "movies/361",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/362",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r17-target",
+            "version": 1
+          },
+          "read": "movies/362",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r18-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/363",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r18-target",
+            "version": 1
+          },
+          "read": "movies/363",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/364",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r18-target",
+            "version": 1
+          },
+          "read": "movies/364",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-read-committed-A2-C06-173cb1-r19-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/365",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r19-target",
+            "version": 1
+          },
+          "read": "movies/365",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "PUT",
+          "path": "movies/366",
+          "body": {
+            "name": "lab2-read-committed-A2-C06-173cb1-r19-target",
+            "version": 1
+          },
+          "read": "movies/366",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-read-committed-A2-C06-173cb1"
+}

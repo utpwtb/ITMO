@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "importPage": {
+    "body": "ИТМО / ИНФОРМАЦИОННЫЕ СИСТЕМЫ\nКинотека\nВыйти · lab2_user_a\nФильмы\nЛюди\nКоординаты\nМеста\nИмпорт\nИстория импорта\nСпециальные операции\n\nИмпорт JSON\n\nUTF-8 JSON · до 5 MiB · 1–1000 фильмов. Вложенные объекты задаются в каждой записи.\n\nСкачать пример · Формат файла\n\nJSON-файл\nВыбрать файл\ninvalid-last-field.json\nЗагрузить\n\n#10 · INVALID_FIELD · movies[1].length · length: значение должно быть больше 0\n\nЛабораторная работа № 2",
+    "fileName": "invalid-last-field.json",
+    "historyRefreshAbsent": true,
+    "historyScopeAbsent": true,
+    "nativeFileHidden": true,
+    "uploadResult": "#10 · INVALID_FIELD · movies[1].length · length: значение должно быть больше 0"
+  },
+  "emptySelectionMessage": "Выберите JSON-файл",
+  "beforePoll": {
+    "at": "2026-10-28T11:36:23.957Z",
+    "rows": "10\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:35:53.802169Z\tlength: значение должно быть больше 0\n9\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:11:00.920202Z\tlength: значение должно быть больше 0\n8\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:02:29.712281Z\tlength: значение должно быть больше 0\n7\tFAILED\tlab2_user_a\t—\trestart-recovery-probe.json\t2026-10-28T00:21:34.183806Z\tПредыдущий экземпляр завершился до фиксации операции\n5\tFAILED\tlab2_user_a\t—\timport-valid.json\t2026-10-28T00:21:06.617018Z\tНазвание и режиссёр: такая комбинация уже существует\n4\tSUCCESS\tlab2_user_a\t2\timport-valid.json\t2026-10-28T00:20:36.202433Z\t—\n3\tFAILED\tlab2_user_a\t—\tinvalid.json\t2026-10-28T00:17:16.414458Z\tТребуется корректный UTF-8 JSON без повторных свойств\n1\tSUCCESS\tlab2_user_a\t2\thttp-valid.json\t2026-10-28T00:17:16.135896Z\t—",
+    "page": "1 / 1 · 8"
+  },
+  "afterPoll": {
+    "at": "2026-10-28T11:37:09.953Z",
+    "rows": "11\tFAILED\tlab2_user_a\t—\tui-auto-refresh.json\t2026-10-28T11:36:42.436146Z\tТребуется корректный UTF-8 JSON без повторных свойств\n10\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:35:53.802169Z\tlength: значение должно быть больше 0\n9\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:11:00.920202Z\tlength: значение должно быть больше 0\n8\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:02:29.712281Z\tlength: значение должно быть больше 0\n7\tFAILED\tlab2_user_a\t—\trestart-recovery-probe.json\t2026-10-28T00:21:34.183806Z\tПредыдущий экземпляр завершился до фиксации операции\n5\tFAILED\tlab2_user_a\t—\timport-valid.json\t2026-10-28T00:21:06.617018Z\tНазвание и режиссёр: такая комбинация уже существует\n4\tSUCCESS\tlab2_user_a\t2\timport-valid.json\t2026-10-28T00:20:36.202433Z\t—\n3\tFAILED\tlab2_user_a\t—\tinvalid.json\t2026-10-28T00:17:16.414458Z\tТребуется корректный UTF-8 JSON без повторных свойств\n1\tSUCCESS\tlab2_user_a\t2\thttp-valid.json\t2026-10-28T00:17:16.135896Z\t—",
+    "page": "1 / 1 · 9"
+  },
+  "trigger": {
+    "passed": true,
+    "operationId": "11",
+    "httpStatus": 400,
+    "code": "INVALID_JSON",
+    "revisionBefore": 8,
+    "revisionAfter": 8,
+    "username": "lab2_user_a"
+  },
+  "browserActionsBetweenPollSnapshots": 0,
+  "adminPagination": {
+    "page2": {
+      "info": "2 / 2 · 11",
+      "rows": "1\tSUCCESS\tlab2_user_a\t2\thttp-valid.json\t2026-10-28T00:17:16.135896Z\t—"
+    },
+    "page1": {
+      "info": "1 / 2 · 11",
+      "rows": "11\tFAILED\tlab2_user_a\t—\tui-auto-refresh.json\t2026-10-28T11:36:42.436146Z\tТребуется корректный UTF-8 JSON без повторных свойств\n10\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:35:53.802169Z\tlength: значение должно быть больше 0\n9\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:11:00.920202Z\tlength: значение должно быть больше 0\n8\tFAILED\tlab2_user_a\t—\tinvalid-last-field.json\t2026-10-28T11:02:29.712281Z\tlength: значение должно быть больше 0\n6\tFAILED\tlab2_admin_b\t—\thistory-poll-failure.json\t2026-10-28T00:22:09.026501Z\tТребуется корректный UTF-8 JSON без повторных свойств\n7\tFAILED\tlab2_user_a\t—\trestart-recovery-probe.json\t2026-10-28T00:21:34.183806Z\tПредыдущий экземпляр завершился до фиксации операции\n5\tFAILED\tlab2_user_a\t—\timport-valid.json\t2026-10-28T00:21:06.617018Z\tНазвание и режиссёр: такая комбинация уже существует\n4\tSUCCESS\tlab2_user_a\t2\timport-valid.json\t2026-10-28T00:20:36.202433Z\t—\n3\tFAILED\tlab2_user_a\t—\tinvalid.json\t2026-10-28T00:17:16.414458Z\tТребуется корректный UTF-8 JSON без повторных свойств\n2\tFAILED\tlab2_user_b\t—\tduplicate.json\t2026-10-28T00:17:16.341454Z\tНазвание и режиссёр: такая комбинация уже существует"
+    },
+    "passed": true
+  }
+}
