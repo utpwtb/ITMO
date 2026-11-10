@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- Три варианта каталога с общей навигацией. Параметр variant: A1, A2 или A3. -->
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Кинотека · Демонстрация интерфейса</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="refinement.css">
+    <script src="data.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <a class="skip" href="#main-content">Перейти к содержимому</a>
+    <div id="app"></div>
+    <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div class="switcher" aria-label="Варианты прототипа">
+        <button type="button" data-action="variant-prev" aria-label="Предыдущий вариант">←</button>
+        <span class="switcher-label"><small>ВАРИАНТ ДЕМО</small><strong id="variant-label" aria-live="polite"></strong></span>
+        <button type="button" data-action="variant-next" aria-label="Следующий вариант">→</button>
+    </div>
+</body>
+</html>

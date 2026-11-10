@@ -1,0 +1,4507 @@
+{
+  "scenario": "C02",
+  "threads": 10,
+  "rounds": [
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r0-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r0-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r1-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r1-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r2-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r2-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r3-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r3-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r4-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r4-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r5-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r5-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r6-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r6-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r7-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r7-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r8-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r8-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r9-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r9-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r10-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r10-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r11-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r11-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r12-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r12-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r13-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r13-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r14-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r14-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r15-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r15-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r16-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r16-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r17-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r17-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r18-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r18-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C02-6a6deb-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        },
+        {
+          "method": "POST",
+          "path": "movies",
+          "body": {
+            "name": "lab2-jmeter-C02-6a6deb-r19-same",
+            "coordinates": "1444",
+            "oscarsCount": 1,
+            "budget": "9007199254740993",
+            "totalBoxOffice": null,
+            "mpaaRating": "PG",
+            "length": 120,
+            "usaBoxOffice": 1,
+            "tagline": "lab2-jmeter-C02-6a6deb-r19-same",
+            "genre": "COMEDY",
+            "director": "393"
+          },
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE"
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-jmeter-C02-6a6deb"
+}

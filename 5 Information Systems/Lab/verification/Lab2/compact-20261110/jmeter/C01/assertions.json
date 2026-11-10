@@ -1,0 +1,26 @@
+{
+  "scenario": "C01",
+  "threads": 2,
+  "rounds": 20,
+  "completedRounds": 20,
+  "requests": 40,
+  "commits": 20,
+  "expectedConflicts": 20,
+  "unexpected": 0,
+  "duplicates": 0,
+  "averageMs": 22.35,
+  "p95Ms": 50,
+  "domainDelta": {
+    "movies": -11,
+    "coordinates": 0,
+    "people": 0,
+    "locations": 0
+  },
+  "passed": true,
+  "errors": [],
+  "editWins": 9,
+  "deleteWins": 11,
+  "jmeterExit": 0,
+  "jtlFailures": 0,
+  "elapsedSeconds": 14.673581600189209
+}

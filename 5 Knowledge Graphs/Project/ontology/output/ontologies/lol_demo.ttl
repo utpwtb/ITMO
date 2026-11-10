@@ -1,0 +1,961 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix lol: <https://example.org/lol-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+<https://example.org/lol-ontology> a owl:Ontology ;
+    rdfs:label "League of Legends: champions, abilities and effects"@en ;
+    dcterms:description "An OWL 2 DL ontology of champions, abilities and qualified effects. The demo contains Lux, Morgana and Karma. Effect conditions and source evidence are preserved. Data Dragon 16.20.1, ru_RU. Effect annotations reviewed by an assistant."@en ;
+    dcterms:title "League of Legends: champions, abilities and effects"@en ;
+    rdfs:comment "Учебная онтология. Качественная разметка эффектов проверена ассистентом только для Lux, Morgana, Karma. Условия сохранены текстом; вывод означает наличие способности при указанных условиях, а не результат любого применения. Отсутствие разметки не означает отсутствие механики. Числа из шаблонов tooltip не угадываются."@ru ;
+    owl:versionInfo "1.0 / Data Dragon 16.20.1 / ru_RU" .
+
+lol:Karma a owl:NamedIndividual,
+        lol:Champion ;
+    rdfs:label "Karma" ;
+    lol:baseArmor 28.0 ;
+    lol:baseAttackDamage 49.0 ;
+    lol:baseHP 630.0 ;
+    lol:baseMP 374.0 ;
+    lol:baseMoveSpeed 335.0 ;
+    lol:entityId "Karma"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasAbility lol:Karma_E,
+        lol:Karma_P,
+        lol:Karma_Q,
+        lol:Karma_R,
+        lol:Karma_W ;
+    lol:hasCategory lol:Category_Mage,
+        lol:Category_Support ;
+    lol:hasSource lol:Source_Karma ;
+    lol:name "Карма"^^xsd:string ;
+    lol:resourceType "Мана"^^xsd:string ;
+    lol:reviewStatus "effects_reviewed_by_assistant"^^xsd:string ;
+    lol:title "Просвещенная"^^xsd:string .
+
+lol:Lux a owl:NamedIndividual,
+        lol:Champion ;
+    rdfs:label "Lux" ;
+    lol:baseArmor 21.0 ;
+    lol:baseAttackDamage 54.0 ;
+    lol:baseHP 580.0 ;
+    lol:baseMP 440.0 ;
+    lol:baseMoveSpeed 330.0 ;
+    lol:entityId "Lux"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasAbility lol:Lux_E,
+        lol:Lux_P,
+        lol:Lux_Q,
+        lol:Lux_R,
+        lol:Lux_W ;
+    lol:hasCategory lol:Category_Mage,
+        lol:Category_Support ;
+    lol:hasSource lol:Source_Lux ;
+    lol:name "Люкс"^^xsd:string ;
+    lol:resourceType "Мана"^^xsd:string ;
+    lol:reviewStatus "effects_reviewed_by_assistant"^^xsd:string ;
+    lol:title "Леди сияния"^^xsd:string .
+
+lol:Morgana a owl:NamedIndividual,
+        lol:Champion ;
+    rdfs:label "Morgana" ;
+    lol:baseArmor 25.0 ;
+    lol:baseAttackDamage 56.0 ;
+    lol:baseHP 630.0 ;
+    lol:baseMP 340.0 ;
+    lol:baseMoveSpeed 335.0 ;
+    lol:entityId "Morgana"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasAbility lol:Morgana_E,
+        lol:Morgana_P,
+        lol:Morgana_Q,
+        lol:Morgana_R,
+        lol:Morgana_W ;
+    lol:hasCategory lol:Category_Mage,
+        lol:Category_Support ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:name "Моргана"^^xsd:string ;
+    lol:resourceType "Мана"^^xsd:string ;
+    lol:reviewStatus "effects_reviewed_by_assistant"^^xsd:string ;
+    lol:title "Падшая"^^xsd:string .
+
+lol:SupportControlMage a owl:Class ;
+    rdfs:label "SupportControlMage" ;
+    rdfs:comment "Маг, способный дать союзнику щит и ограничить передвижение врага. Умения могут быть разными."@ru ;
+    rdfs:subClassOf lol:Champion ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( lol:MageChampion lol:AllyShieldChampion lol:EnemyMovementControlChampion ) ] .
+
+lol:baseArmor a owl:DatatypeProperty ;
+    rdfs:label "baseArmor" ;
+    rdfs:domain lol:Champion ;
+    rdfs:range xsd:decimal .
+
+lol:baseAttackDamage a owl:DatatypeProperty ;
+    rdfs:label "baseAttackDamage" ;
+    rdfs:domain lol:Champion ;
+    rdfs:range xsd:decimal .
+
+lol:baseHP a owl:DatatypeProperty ;
+    rdfs:label "baseHP" ;
+    rdfs:domain lol:Champion ;
+    rdfs:range xsd:decimal .
+
+lol:baseMP a owl:DatatypeProperty ;
+    rdfs:label "baseMP" ;
+    rdfs:domain lol:Champion ;
+    rdfs:range xsd:decimal .
+
+lol:baseMoveSpeed a owl:DatatypeProperty ;
+    rdfs:label "baseMoveSpeed" ;
+    rdfs:domain lol:Champion ;
+    rdfs:range xsd:decimal .
+
+lol:canApplyMechanic a owl:ObjectProperty ;
+    rdfs:label "canApplyMechanic" ;
+    rdfs:comment "Выводится цепочкой hasAbility / hasEffect / hasMechanic; не хранит условия."@ru ;
+    rdfs:domain lol:Champion ;
+    rdfs:range lol:Mechanic ;
+    owl:propertyChainAxiom ( lol:hasAbility lol:hasEffect lol:hasMechanic ) .
+
+lol:conditionText a owl:DatatypeProperty ;
+    rdfs:label "conditionText" ;
+    rdfs:domain lol:AbilityEffect ;
+    rdfs:range xsd:string .
+
+lol:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:range xsd:string .
+
+lol:entityId a owl:DatatypeProperty ;
+    rdfs:label "entityId" ;
+    rdfs:range xsd:string .
+
+lol:evidenceField a owl:DatatypeProperty ;
+    rdfs:label "evidenceField" ;
+    rdfs:domain lol:AbilityEffect ;
+    rdfs:range xsd:string .
+
+lol:evidenceText a owl:DatatypeProperty ;
+    rdfs:label "evidenceText" ;
+    rdfs:domain lol:AbilityEffect ;
+    rdfs:range xsd:string .
+
+lol:gameVersion a owl:DatatypeProperty ;
+    rdfs:label "gameVersion" ;
+    rdfs:range xsd:string .
+
+lol:hasSource a owl:ObjectProperty ;
+    rdfs:label "hasSource" ;
+    rdfs:comment "Источник сведений об объекте."@ru ;
+    rdfs:range lol:SourceDocument .
+
+lol:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:range xsd:string .
+
+lol:resourceType a owl:DatatypeProperty ;
+    rdfs:label "resourceType" ;
+    rdfs:domain lol:Champion ;
+    rdfs:range xsd:string .
+
+lol:reviewStatus a owl:DatatypeProperty ;
+    rdfs:label "reviewStatus" ;
+    rdfs:range xsd:string .
+
+lol:slot a owl:DatatypeProperty ;
+    rdfs:label "slot" ;
+    rdfs:domain lol:Ability ;
+    rdfs:range xsd:string .
+
+lol:sourceURL a owl:DatatypeProperty ;
+    rdfs:label "sourceURL" ;
+    rdfs:domain lol:SourceDocument ;
+    rdfs:range xsd:anyURI .
+
+lol:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:domain lol:Champion ;
+    rdfs:range xsd:string .
+
+lol:tooltipText a owl:DatatypeProperty ;
+    rdfs:label "tooltipText" ;
+    rdfs:domain lol:Ability ;
+    rdfs:range xsd:string .
+
+lol:AllyShieldChampion a owl:Class ;
+    rdfs:label "AllyShieldChampion" ;
+    rdfs:comment "Чемпион с хотя бы одним эффектом щита для союзников."@ru ;
+    rdfs:subClassOf lol:Champion ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( lol:Champion [ a owl:Restriction ;
+                        owl:onProperty lol:hasAbility ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty lol:hasEffect ;
+                                owl:someValuesFrom [ a owl:Class ;
+                                        owl:intersectionOf ( lol:AbilityEffect [ a owl:Restriction ;
+                                                    owl:hasValue lol:Shield ;
+                                                    owl:onProperty lol:hasMechanic ] [ a owl:Restriction ;
+                                                    owl:hasValue lol:Ally ;
+                                                    owl:onProperty lol:hasTargetType ] ) ] ] ] ) ] .
+
+lol:EnemyMovementControlChampion a owl:Class ;
+    rdfs:label "EnemyMovementControlChampion" ;
+    rdfs:comment "Чемпион с хотя бы одним эффектом ограничения передвижения врага."@ru ;
+    rdfs:subClassOf lol:Champion ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( lol:Champion [ a owl:Restriction ;
+                        owl:onProperty lol:hasAbility ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty lol:hasEffect ;
+                                owl:someValuesFrom [ a owl:Class ;
+                                        owl:intersectionOf ( lol:AbilityEffect [ a owl:Restriction ;
+                                                    owl:onProperty lol:hasMechanic ;
+                                                    owl:someValuesFrom lol:MovementControlMechanic ] [ a owl:Restriction ;
+                                                    owl:hasValue lol:Enemy ;
+                                                    owl:onProperty lol:hasTargetType ] ) ] ] ] ) ] .
+
+lol:Karma_E a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Karma_E" ;
+    lol:description "Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения. Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов."^^xsd:string ;
+    lol:entityId "Karma:E"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Karma_E_MovementSpeedBoost_Ally,
+        lol:Karma_E_Shield_Ally ;
+    lol:hasSource lol:Source_Karma ;
+    lol:name "Воодушевление"^^xsd:string ;
+    lol:slot "E"^^xsd:string ;
+    lol:tooltipText "Карма накладывает на союзного чемпиона щит прочностью {{ totalshield }} на {{ shieldduration }} сек. и увеличивает его скорость передвижения на {{ movespeed*100 }}% на {{ movespeedduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Karma_E_MovementSpeedBoost_Ally a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_E_MovementSpeedBoost_Ally" ;
+    lol:conditionText "Союзник получает Воодушевление; усиление Мантрой распространяет эффект на ближайших союзников."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения. Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:MovementSpeedBoost ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:Ally ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_E_Shield_Ally a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_E_Shield_Ally" ;
+    lol:conditionText "Выбранный союзник; при усилении Мантрой эффект распространяется на ближайших союзных чемпионов."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения. Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Shield ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:Ally ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_P a owl:NamedIndividual,
+        lol:PassiveAbility ;
+    rdfs:label "Karma_P" ;
+    lol:description "Умения Кармы, наносящие урон, сокращают перезарядку Мантры."^^xsd:string ;
+    lol:entityId "Karma:P"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Karma_P_CooldownReduction_OwnAbility ;
+    lol:hasSource lol:Source_Karma ;
+    lol:name "Разгорающийся огонь"^^xsd:string ;
+    lol:slot "P"^^xsd:string .
+
+lol:Karma_P_CooldownReduction_OwnAbility a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_P_CooldownReduction_OwnAbility" ;
+    lol:conditionText "При нанесении урона умениями; сокращается перезарядка Мантры."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Умения Кармы, наносящие урон, сокращают перезарядку Мантры."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:CooldownReduction ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:OwnAbility ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_Q a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Karma_Q" ;
+    lol:description "Карма выпускает заряд духовной энергии, который взрывается при столкновении с противником, нанося урон. Эффект Мантры: Карма дополнительно увеличивает разрушительную силу Внутреннего пламени, создавая на земле энергетическую аномалию, наносящую урон по прошествии некоторого времени."^^xsd:string ;
+    lol:entityId "Karma:Q"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Karma_Q_Damage_Enemy,
+        lol:Karma_Q_Slow_Enemy ;
+    lol:hasSource lol:Source_Karma ;
+    lol:name "Внутреннее пламя"^^xsd:string ;
+    lol:slot "Q"^^xsd:string ;
+    lol:tooltipText "Карма выпускает сгусток энергии, нанося {{ totaldamage }} магического урона первой пораженной цели и окружающим врагам, а также замедляя их на {{ slowamount*-100 }}% на {{ slowduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Karma_Q_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_Q_Damage_Enemy" ;
+    lol:conditionText "Попадание сгустком энергии; урон получает первая цель и окружающие враги."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Карма выпускает сгусток энергии, нанося {{ totaldamage }} магического урона первой пораженной цели и окружающим врагам, а также замедляя их на {{ slowamount*-100 }}% на {{ slowduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_Q_Slow_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_Q_Slow_Enemy" ;
+    lol:conditionText "Попадание сгустком энергии; замедление целей, указанных в tooltip."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Карма выпускает сгусток энергии, нанося {{ totaldamage }} магического урона первой пораженной цели и окружающим врагам, а также замедляя их на {{ slowamount*-100 }}% на {{ slowduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Slow ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_R a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Karma_R" ;
+    lol:description "Карма усиливает свое следующее умение дополнительным эффектом. Мантра доступна на 1-м уровне и не требует очка умений."^^xsd:string ;
+    lol:entityId "Karma:R"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Karma_R_Empower_OwnAbility ;
+    lol:hasSource lol:Source_Karma ;
+    lol:name "Мантра"^^xsd:string ;
+    lol:slot "R"^^xsd:string ;
+    lol:tooltipText "Карма усиливает свое следующее умение, примененное в течение 8 сек. Внутреннее пламя : дополнительно наносит {{ rqimpactdamage }} магического урона и оставляет круг пламени, который замедляет врагов и наносит еще {{ rqfielddamage }} магического урона . Решимость : Карма восстанавливает {{ rwhealamount }} от недостающего здоровья во время образования и разрыва связи, а продолжительность обездвиживания увеличивается на {{ rwbonusroot }} сек. Воодушевление : прочность щита , накладываемого на цель, увеличивается на {{ rebonusshield }} . Кроме того, Карма накладывает на окружающих чемпионов щит прочностью {{ rebonusshieldarea }} и увеличивает их скорость передвижения на {{ removespeed*100 }}% .{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Karma_R_Empower_OwnAbility a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_R_Empower_OwnAbility" ;
+    lol:conditionText "Усиливает следующее умение Кармы, примененное в течение 8 секунд."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Карма усиливает свое следующее умение, примененное в течение 8 сек. Внутреннее пламя : дополнительно наносит {{ rqimpactdamage }} магического урона и оставляет круг пламени, который замедляет врагов и наносит еще {{ rqfielddamage }} магического урона . Решимость : Карма восстанавливает {{ rwhealamount }} от недостающего здоровья во время образования и разрыва связи, а продолжительность обездвиживания увеличивается на {{ rwbonusroot }} сек. Воодушевление : прочность щита , накладываемого на цель, увеличивается на {{ rebonusshield }} . Кроме того, Карма накладывает на окружающих чемпионов щит прочностью {{ rebonusshieldarea }} и увеличивает их скорость передвижения на {{ removespeed*100 }}% .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Empower ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:OwnAbility ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_W a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Karma_W" ;
+    lol:description "Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон. Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания."^^xsd:string ;
+    lol:entityId "Karma:W"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Karma_W_Damage_Enemy,
+        lol:Karma_W_Heal_Self,
+        lol:Karma_W_Reveal_Enemy,
+        lol:Karma_W_Root_Enemy ;
+    lol:hasSource lol:Source_Karma ;
+    lol:name "Решимость"^^xsd:string ;
+    lol:slot "W"^^xsd:string ;
+    lol:tooltipText "Карма создает связь между собой и чемпионом или лесным монстром, нанося цели {{ initialdamage }} магического урона и раскрывая ее на {{ tetherduration }} сек. Если связь не разрывается, цель снова получает {{ initialdamage }} магического урона и обездвиживается на {{ rootduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Karma_W_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_W_Damage_Enemy" ;
+    lol:conditionText "Выбранная вражеская цель связана с Кармой; повторный урон, если связь сохраняется."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Карма создает связь между собой и чемпионом или лесным монстром, нанося цели {{ initialdamage }} магического урона и раскрывая ее на {{ tetherduration }} сек. Если связь не разрывается, цель снова получает {{ initialdamage }} магического урона и обездвиживается на {{ rootduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_W_Heal_Self a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_W_Heal_Self" ;
+    lol:conditionText "Только усиление Мантрой; Карма восстанавливает собственное здоровье."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон. Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Heal ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:Self ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_W_Reveal_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_W_Reveal_Enemy" ;
+    lol:conditionText "На время связи раскрывается выбранная вражеская цель."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Карма создает связь между собой и чемпионом или лесным монстром, нанося цели {{ initialdamage }} магического урона и раскрывая ее на {{ tetherduration }} сек. Если связь не разрывается, цель снова получает {{ initialdamage }} магического урона и обездвиживается на {{ rootduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Reveal ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Karma_W_Root_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Karma_W_Root_Enemy" ;
+    lol:conditionText "Связь должна сохраниться до конца задержки; для усиленной версии длительность увеличивается."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон. Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Root ;
+    lol:hasSource lol:Source_Karma ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Lux_E a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Lux_E" ;
+    lol:description "Люкс создает в указанной области световую аномалию, замедляющую противников. Люкс может взорвать ее, нанеся урон всем находящимся в зоне поражения врагам."^^xsd:string ;
+    lol:entityId "Lux:E"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Lux_E_Damage_Enemy,
+        lol:Lux_E_Slow_Enemy ;
+    lol:hasSource lol:Source_Lux ;
+    lol:name "Светящаяся сингулярность"^^xsd:string ;
+    lol:slot "E"^^xsd:string ;
+    lol:tooltipText "Люкс создает световую аномалию, замедляющую на {{ slowpercent }}% и раскрывающую область под собой. Через {{ slowzoneduration }} сек. или при повт. применении этого умения аномалия взрывается, нанося {{ totaldamagett }} ед. маг. урона и замедляя еще на {{ slowlingerduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Lux_E_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Lux_E_Damage_Enemy" ;
+    lol:conditionText "Враг находится в зоне поражения при взрыве; взрыв по таймеру или повторному применению."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Люкс создает световую аномалию, замедляющую на {{ slowpercent }}% и раскрывающую область под собой. Через {{ slowzoneduration }} сек. или при повт. применении этого умения аномалия взрывается, нанося {{ totaldamagett }} ед. маг. урона и замедляя еще на {{ slowlingerduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Lux ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Lux_E_Slow_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Lux_E_Slow_Enemy" ;
+    lol:conditionText "Противник находится в области аномалии; tooltip также описывает краткое замедление после взрыва."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Люкс создает световую аномалию, замедляющую на {{ slowpercent }}% и раскрывающую область под собой. Через {{ slowzoneduration }} сек. или при повт. применении этого умения аномалия взрывается, нанося {{ totaldamagett }} ед. маг. урона и замедляя еще на {{ slowlingerduration }} сек.{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Slow ;
+    lol:hasSource lol:Source_Lux ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Lux_P a owl:NamedIndividual,
+        lol:PassiveAbility ;
+    rdfs:label "Lux_P" ;
+    lol:description "Используя атакующие умения, Люкс накладывает на врагов эффект Иллюминации на несколько секунд. Ее последующие автоатаки поджигают находящихся под действием эффекта врагов, нанося им дополнительный магический урон (тем больший, чем выше уровень Люкс), но снимают эффект."^^xsd:string ;
+    lol:entityId "Lux:P"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Lux_P_Damage_Enemy ;
+    lol:hasSource lol:Source_Lux ;
+    lol:name "Иллюминация"^^xsd:string ;
+    lol:slot "P"^^xsd:string .
+
+lol:Lux_P_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Lux_P_Damage_Enemy" ;
+    lol:conditionText "Враг отмечен Иллюминацией от атакующего умения; последующая автоатака расходует метку и наносит дополнительный урон."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Используя атакующие умения, Люкс накладывает на врагов эффект Иллюминации на несколько секунд. Ее последующие автоатаки поджигают находящихся под действием эффекта врагов, нанося им дополнительный магический урон (тем больший, чем выше уровень Люкс), но снимают эффект."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Lux ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Lux_Q a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Lux_Q" ;
+    lol:description "Люкс выпускает сферу света, которая наносит урон и обездвиживает до двух врагов."^^xsd:string ;
+    lol:entityId "Lux:Q"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Lux_Q_Damage_Enemy,
+        lol:Lux_Q_Root_Enemy ;
+    lol:hasSource lol:Source_Lux ;
+    lol:name "Сковывание света"^^xsd:string ;
+    lol:slot "Q"^^xsd:string ;
+    lol:tooltipText "Люкс выпускает сферу света, обездвиживающую первых 2 врагов на пути на {{ rootduration }} сек. и наносящую им по {{ totaldamagett }} ед. маг. урона .{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Lux_Q_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Lux_Q_Damage_Enemy" ;
+    lol:conditionText "Сфера должна попасть в цель; поражает первых двух врагов на пути."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Люкс выпускает сферу света, обездвиживающую первых 2 врагов на пути на {{ rootduration }} сек. и наносящую им по {{ totaldamagett }} ед. маг. урона .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Lux ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Lux_Q_Root_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Lux_Q_Root_Enemy" ;
+    lol:conditionText "Сфера должна попасть в цель; обездвиживаются первые два врага на пути."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Люкс выпускает сферу света, обездвиживающую первых 2 врагов на пути на {{ rootduration }} сек. и наносящую им по {{ totaldamagett }} ед. маг. урона .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Root ;
+    lol:hasSource lol:Source_Lux ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Lux_R a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Lux_R" ;
+    lol:description "Люкс накапливает энергию и выпускает мощный луч света, наносящий урон всем врагам на своем пути. Кроме того, луч поджигает врагов, на которых наложен эффект Иллюминации, после чего этот эффект обновляется."^^xsd:string ;
+    lol:entityId "Lux:R"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Lux_R_Damage_Enemy ;
+    lol:hasSource lol:Source_Lux ;
+    lol:name "Последняя искра"^^xsd:string ;
+    lol:slot "R"^^xsd:string ;
+    lol:tooltipText "Люкс выпускает мощный луч света, который наносит {{ totaldamage }} магического урона всем врагам на своем пути.{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Lux_R_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Lux_R_Damage_Enemy" ;
+    lol:conditionText "Враг находится на пути луча; дополнительные взаимодействия с Иллюминацией описаны в исходном тексте."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Люкс накапливает энергию и выпускает мощный луч света, наносящий урон всем врагам на своем пути. Кроме того, луч поджигает врагов, на которых наложен эффект Иллюминации, после чего этот эффект обновляется."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Lux ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Lux_W a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Lux_W" ;
+    lol:description "Люкс бросает свой жезл, который, касаясь союзных чемпионов, искривляет вокруг них лучи света, защищая от входящего урона."^^xsd:string ;
+    lol:entityId "Lux:W"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Lux_W_Shield_Ally ;
+    lol:hasSource lol:Source_Lux ;
+    lol:name "Призматический барьер"^^xsd:string ;
+    lol:slot "W"^^xsd:string ;
+    lol:tooltipText "Люкс бросает свой жезл, на {{ shieldduration }} сек. накладывая щит прочностью {{ totalshieldtt }} на союзников, которых он касается. Затем жезл возвращается, повторно накладывая щит на пути назад.{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Lux_W_Shield_Ally a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Lux_W_Shield_Ally" ;
+    lol:conditionText "Жезл должен коснуться союзника на пути вперед или обратно."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Люкс бросает свой жезл, на {{ shieldduration }} сек. накладывая щит прочностью {{ totalshieldtt }} на союзников, которых он касается. Затем жезл возвращается, повторно накладывая щит на пути назад.{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Shield ;
+    lol:hasSource lol:Source_Lux ;
+    lol:hasTargetType lol:Ally ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:MageChampion a owl:Class ;
+    rdfs:label "MageChampion" ;
+    rdfs:comment "Чемпион с категорией Mage; классифицируется ризонером."@ru ;
+    rdfs:subClassOf lol:Champion ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( lol:Champion [ a owl:Restriction ;
+                        owl:hasValue lol:Category_Mage ;
+                        owl:onProperty lol:hasCategory ] ) ] .
+
+lol:Morgana_E a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Morgana_E" ;
+    lol:description "Моргана защищает союзника защитным барьером из звездного огня, который поглощает магический урон и эффекты контроля, пока не будет уничтожен."^^xsd:string ;
+    lol:entityId "Morgana:E"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Morgana_E_ControlImmunity_Ally,
+        lol:Morgana_E_Shield_Ally ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:name "Черный щит"^^xsd:string ;
+    lol:slot "E"^^xsd:string ;
+    lol:tooltipText "Моргана накладывает на союзного чемпиона щит от магии прочностью {{ totalshieldstrength }} на {{ shieldduration }} сек. Этот щит блокирует нейтрализующие и обездвиживающие эффекты.{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Morgana_E_ControlImmunity_Ally a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_E_ControlImmunity_Ally" ;
+    lol:conditionText "Барьер блокирует описанные эффекты контроля, пока не будет уничтожен."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Моргана защищает союзника защитным барьером из звездного огня, который поглощает магический урон и эффекты контроля, пока не будет уничтожен."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:ControlImmunity ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Ally ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_E_Shield_Ally a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_E_Shield_Ally" ;
+    lol:conditionText "Щит на выбранном союзном чемпионе поглощает магический урон; это не универсальный щит от любого урона."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Моргана накладывает на союзного чемпиона щит от магии прочностью {{ totalshieldstrength }} на {{ shieldduration }} сек. Этот щит блокирует нейтрализующие и обездвиживающие эффекты.{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Shield ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Ally ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_P a owl:NamedIndividual,
+        lol:PassiveAbility ;
+    rdfs:label "Morgana_P" ;
+    lol:description "Моргана вытягивает душу из своих врагов, восстанавливая здоровье при нанесении урона чемпионам, большим миньонам, а также средним и большим лесным монстрам."^^xsd:string ;
+    lol:entityId "Morgana:P"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Morgana_P_Heal_Self ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:name "Вытягивание души"^^xsd:string ;
+    lol:slot "P"^^xsd:string .
+
+lol:Morgana_P_Heal_Self a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_P_Heal_Self" ;
+    lol:conditionText "Моргана наносит урон чемпионам, большим миньонам, средним или большим лесным монстрам."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Моргана вытягивает душу из своих врагов, восстанавливая здоровье при нанесении урона чемпионам, большим миньонам, а также средним и большим лесным монстрам."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Heal ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Self ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_Q a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Morgana_Q" ;
+    lol:description "Моргана сковывает врага темной магией и наносит магический урон, заставляя почувствовать ту боль, которую он причинил."^^xsd:string ;
+    lol:entityId "Morgana:Q"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Morgana_Q_Damage_Enemy,
+        lol:Morgana_Q_Root_Enemy ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:name "Темные узы"^^xsd:string ;
+    lol:slot "Q"^^xsd:string ;
+    lol:tooltipText "Моргана выпускает заряд звездного огня, который обездвиживает первого пораженного врага на {{ rootduration }} сек. и наносит {{ totaldamage }} магического урона .{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Morgana_Q_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_Q_Damage_Enemy" ;
+    lol:conditionText "Первый враг, в которого попал снаряд."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Моргана выпускает заряд звездного огня, который обездвиживает первого пораженного врага на {{ rootduration }} сек. и наносит {{ totaldamage }} магического урона .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_Q_Root_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_Q_Root_Enemy" ;
+    lol:conditionText "Первый враг, в которого попал снаряд."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Моргана выпускает заряд звездного огня, который обездвиживает первого пораженного врага на {{ rootduration }} сек. и наносит {{ totaldamage }} магического урона .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Root ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_R a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Morgana_R" ;
+    lol:description "Моргана высвобождает всю свою небесную мощь, расправляя крылья и взмывая над землей. Она выпускает цепи темной агонии во вражеских чемпионов поблизости и увеличивает свою скорость передвижения. Ее цепи замедляют и наносят начальный урон, а после задержки оглушают тех, кто не смог их разорвать."^^xsd:string ;
+    lol:entityId "Morgana:R"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Morgana_R_Damage_Enemy,
+        lol:Morgana_R_MovementSpeedBoost_Self,
+        lol:Morgana_R_Slow_Enemy,
+        lol:Morgana_R_Stun_Enemy ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:name "Оковы души"^^xsd:string ;
+    lol:slot "R"^^xsd:string ;
+    lol:tooltipText "Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Morgana_R_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_R_Damage_Enemy" ;
+    lol:conditionText "Связанные вражеские чемпионы поблизости; повторный урон после задержки, если цепи не разорваны."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_R_MovementSpeedBoost_Self a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_R_MovementSpeedBoost_Self" ;
+    lol:conditionText "Моргана увеличивает собственную скорость при применении R."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:MovementSpeedBoost ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Self ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_R_Slow_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_R_Slow_Enemy" ;
+    lol:conditionText "Вражеский чемпион связан цепью Моргани."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Slow ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_R_Stun_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_R_Stun_Enemy" ;
+    lol:conditionText "Цепь с вражеским чемпионом должна сохраниться до окончания задержки."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Stun ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_W a owl:NamedIndividual,
+        lol:ActiveAbility ;
+    rdfs:label "Morgana_W" ;
+    lol:description "Моргана создает проклятую тень в выбранной области, нанося урон всем, кто рискнул ступить в ее темный круг. Враги внутри получают периодический магический урон, размер которого зависит от их уровня здоровья."^^xsd:string ;
+    lol:entityId "Morgana:W"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasEffect lol:Morgana_W_CooldownReduction_OwnAbility,
+        lol:Morgana_W_Damage_Enemy ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:name "Измученная тень"^^xsd:string ;
+    lol:slot "W"^^xsd:string ;
+    lol:tooltipText "Моргана поджигает землю на {{ wduration }} сек., нанося {{ totalmindamage }} ед. магического урона в секунду. Урон увеличивается вплоть до {{ totalmaxdamage }} ед. в зависимости от недостающего здоровья целей. Перезарядка этого умения сокращается на {{ cdrefundpercent*100 }}% каждый раз, когда Моргану лечит Вытягивание души .{{ spellmodifierdescriptionappend }}"^^xsd:string .
+
+lol:Morgana_W_CooldownReduction_OwnAbility a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_W_CooldownReduction_OwnAbility" ;
+    lol:conditionText "Перезарядка W сокращается, когда Моргану лечит Вытягивание души."^^xsd:string ;
+    lol:evidenceField "tooltip_text"^^xsd:string ;
+    lol:evidenceText "Моргана поджигает землю на {{ wduration }} сек., нанося {{ totalmindamage }} ед. магического урона в секунду. Урон увеличивается вплоть до {{ totalmaxdamage }} ед. в зависимости от недостающего здоровья целей. Перезарядка этого умения сокращается на {{ cdrefundpercent*100 }}% каждый раз, когда Моргану лечит Вытягивание души .{{ spellmodifierdescriptionappend }}"^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:CooldownReduction ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:OwnAbility ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:Morgana_W_Damage_Enemy a owl:NamedIndividual,
+        lol:AbilityEffect ;
+    rdfs:label "Morgana_W_Damage_Enemy" ;
+    lol:conditionText "Враг находится в проклятой области; периодический магический урон зависит от недостающего здоровья цели."^^xsd:string ;
+    lol:evidenceField "description_text"^^xsd:string ;
+    lol:evidenceText "Моргана создает проклятую тень в выбранной области, нанося урон всем, кто рискнул ступить в ее темный круг. Враги внутри получают периодический магический урон, размер которого зависит от их уровня здоровья."^^xsd:string ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:hasMechanic lol:Damage ;
+    lol:hasSource lol:Source_Morgana ;
+    lol:hasTargetType lol:Enemy ;
+    lol:reviewStatus "reviewed_by_assistant"^^xsd:string .
+
+lol:effectOf a owl:ObjectProperty ;
+    rdfs:label "effectOf" ;
+    rdfs:comment "Эффект относится к умению; обратное hasEffect."@ru ;
+    rdfs:domain lol:AbilityEffect ;
+    rdfs:range lol:Ability .
+
+lol:hasCategory a owl:ObjectProperty ;
+    rdfs:label "hasCategory" ;
+    rdfs:comment "Категория чемпиона в Data Dragon."@ru ;
+    rdfs:domain lol:Champion ;
+    rdfs:range lol:ChampionCategory .
+
+lol:isAbilityOf a owl:ObjectProperty ;
+    rdfs:label "isAbilityOf" ;
+    rdfs:comment "Умение принадлежит чемпиону; обратное hasAbility."@ru ;
+    rdfs:domain lol:Ability ;
+    rdfs:range lol:Champion .
+
+lol:ControlImmunity a owl:NamedIndividual,
+        lol:Mechanic ;
+    rdfs:label "ControlImmunity" ;
+    lol:name "Защита от эффектов контроля"^^xsd:string .
+
+lol:Empower a owl:NamedIndividual,
+        lol:Mechanic ;
+    rdfs:label "Empower" ;
+    lol:name "Усиление умения"^^xsd:string .
+
+lol:Reveal a owl:NamedIndividual,
+        lol:Mechanic ;
+    rdfs:label "Reveal" ;
+    lol:name "Раскрытие цели"^^xsd:string .
+
+lol:Stun a owl:NamedIndividual,
+        lol:MovementControlMechanic ;
+    rdfs:label "Stun" ;
+    lol:name "Оглушение"^^xsd:string .
+
+lol:hasTargetType a owl:ObjectProperty ;
+    rdfs:label "hasTargetType" ;
+    rdfs:comment "Получатель конкретного эффекта."@ru ;
+    rdfs:domain lol:AbilityEffect ;
+    rdfs:range lol:TargetType .
+
+lol:CooldownReduction a owl:NamedIndividual,
+        lol:Mechanic ;
+    rdfs:label "CooldownReduction" ;
+    lol:name "Сокращение перезарядки"^^xsd:string .
+
+lol:Heal a owl:NamedIndividual,
+        lol:Mechanic ;
+    rdfs:label "Heal" ;
+    lol:name "Лечение"^^xsd:string .
+
+lol:MovementSpeedBoost a owl:NamedIndividual,
+        lol:Mechanic ;
+    rdfs:label "MovementSpeedBoost" ;
+    lol:name "Ускорение"^^xsd:string .
+
+lol:PassiveAbility a owl:Class ;
+    rdfs:label "PassiveAbility" ;
+    rdfs:comment "Пассивное умение, слот P."@ru ;
+    rdfs:subClassOf lol:Ability ;
+    owl:disjointWith lol:ActiveAbility .
+
+lol:hasAbility a owl:ObjectProperty ;
+    rdfs:label "hasAbility" ;
+    rdfs:comment "У чемпиона есть умение."@ru ;
+    rdfs:domain lol:Champion ;
+    rdfs:range lol:Ability ;
+    owl:inverseOf lol:isAbilityOf .
+
+lol:hasEffect a owl:ObjectProperty ;
+    rdfs:label "hasEffect" ;
+    rdfs:comment "Умение имеет конкретный эффект."@ru ;
+    rdfs:domain lol:Ability ;
+    rdfs:range lol:AbilityEffect ;
+    owl:inverseOf lol:effectOf .
+
+lol:hasMechanic a owl:ObjectProperty ;
+    rdfs:label "hasMechanic" ;
+    rdfs:comment "Механика конкретного эффекта."@ru ;
+    rdfs:domain lol:AbilityEffect ;
+    rdfs:range lol:Mechanic .
+
+lol:Category_Support a owl:NamedIndividual,
+        lol:ChampionCategory ;
+    rdfs:label "Category_Support" ;
+    lol:name "Support"^^xsd:string .
+
+lol:ChampionCategory a owl:Class ;
+    rdfs:label "ChampionCategory" ;
+    rdfs:comment "Категория Data Dragon (Mage, Support и т. п.), не позиция на карте."@ru .
+
+lol:MovementControlMechanic a owl:Class ;
+    rdfs:label "MovementControlMechanic" ;
+    rdfs:comment "Механика ограничения передвижения: Root, Slow или Stun."@ru ;
+    rdfs:subClassOf lol:Mechanic .
+
+lol:OwnAbility a owl:NamedIndividual,
+        lol:TargetType ;
+    rdfs:label "OwnAbility" ;
+    lol:name "Собственное умение"^^xsd:string .
+
+lol:Root a owl:NamedIndividual,
+        lol:MovementControlMechanic ;
+    rdfs:label "Root" ;
+    lol:name "Обездвиживание"^^xsd:string .
+
+lol:Self a owl:NamedIndividual,
+        lol:TargetType ;
+    rdfs:label "Self" ;
+    lol:name "Сам чемпион"^^xsd:string .
+
+lol:Slow a owl:NamedIndividual,
+        lol:MovementControlMechanic ;
+    rdfs:label "Slow" ;
+    lol:name "Замедление"^^xsd:string .
+
+lol:Category_Mage a owl:NamedIndividual,
+        lol:ChampionCategory ;
+    rdfs:label "Category_Mage" ;
+    lol:name "Mage"^^xsd:string .
+
+lol:Shield a owl:NamedIndividual,
+        lol:Mechanic ;
+    rdfs:label "Shield" ;
+    lol:name "Щит"^^xsd:string .
+
+lol:SourceDocument a owl:Class ;
+    rdfs:label "SourceDocument" ;
+    rdfs:comment "Документ, подтверждающий данные."@ru .
+
+lol:TargetType a owl:Class ;
+    rdfs:label "TargetType" ;
+    rdfs:comment "Тип получателя конкретного эффекта, не конкретный участник матча."@ru .
+
+lol:Ally a owl:NamedIndividual,
+        lol:TargetType ;
+    rdfs:label "Ally" ;
+    lol:name "Союзник"^^xsd:string .
+
+lol:Ability a owl:Class ;
+    rdfs:label "Ability" ;
+    rdfs:comment "Основное умение P/Q/W/E/R."@ru .
+
+lol:Damage a owl:NamedIndividual,
+        lol:Mechanic ;
+    rdfs:label "Damage" ;
+    lol:name "Урон"^^xsd:string .
+
+lol:Mechanic a owl:Class ;
+    rdfs:label "Mechanic" ;
+    rdfs:comment "Тип механики: щит, урон, обездвиживание и т. п."@ru .
+
+lol:ActiveAbility a owl:Class ;
+    rdfs:label "ActiveAbility" ;
+    rdfs:comment "Активное умение, слот Q/W/E/R."@ru ;
+    rdfs:subClassOf lol:Ability .
+
+lol:Source_Lux a owl:NamedIndividual,
+        lol:SourceDocument ;
+    rdfs:label "Source_Lux" ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:sourceURL "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Lux.json"^^xsd:anyURI .
+
+lol:Source_Karma a owl:NamedIndividual,
+        lol:SourceDocument ;
+    rdfs:label "Source_Karma" ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:sourceURL "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Karma.json"^^xsd:anyURI .
+
+lol:Source_Morgana a owl:NamedIndividual,
+        lol:SourceDocument ;
+    rdfs:label "Source_Morgana" ;
+    lol:gameVersion "16.20.1"^^xsd:string ;
+    lol:sourceURL "https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Morgana.json"^^xsd:anyURI .
+
+lol:Enemy a owl:NamedIndividual,
+        lol:TargetType ;
+    rdfs:label "Enemy" ;
+    lol:name "Противник"^^xsd:string .
+
+lol:Champion a owl:Class ;
+    rdfs:label "Champion" ;
+    rdfs:comment "Игровой чемпион."@ru .
+
+lol:AbilityEffect a owl:Class ;
+    rdfs:label "AbilityEffect" ;
+    rdfs:comment "Один эффект умения с собственной целью и условием."@ru .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( lol:Damage lol:Shield lol:Root lol:Slow lol:Stun lol:Heal lol:MovementSpeedBoost lol:Reveal lol:CooldownReduction lol:Empower lol:ControlImmunity ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( lol:Category_Mage lol:Category_Support ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( lol:Champion lol:ChampionCategory lol:Ability lol:AbilityEffect lol:Mechanic lol:TargetType lol:SourceDocument ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( lol:Ally lol:Enemy lol:Self lol:OwnAbility ) .
+

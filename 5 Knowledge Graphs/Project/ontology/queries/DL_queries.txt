@@ -1,0 +1,21 @@
+Open output/ontologies/lol_demo.owl in Protege. Choose HermiT, Reasoner > Start reasoner.
+In DL Query, enable Instances and enter one expression at a time.
+
+1. SupportControlMage
+   Expected instances: Karma, Lux, Morgana.
+
+2. MageChampion and AllyShieldChampion and EnemyMovementControlChampion
+   Expected instances: Karma, Lux, Morgana.
+
+3. isAbilityOf value Lux
+   Expected instances: Lux_P, Lux_Q, Lux_W, Lux_E, Lux_R.
+
+4. canApplyMechanic value Shield
+   Expected instances: Karma, Lux, Morgana.
+
+5. AbilityEffect and hasMechanic value Heal and hasTargetType value Self
+   Expected instances: Karma_W_Heal_Self, Morgana_P_Heal_Self.
+
+6. AbilityEffect and hasMechanic value Heal and hasTargetType value Ally
+   Expected proven instances: none in this annotated sample.
+   This is not a proof that no ally-healing ability exists in the game.

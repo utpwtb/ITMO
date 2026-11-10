@@ -666,48 +666,49 @@ LaTeX Info: Redefining \rmfamily on input line 1.
 LaTeX Info: Redefining \sffamily on input line 1.
 LaTeX Info: Redefining \ttfamily on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 3.
+(Font)              <10.95> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 3.
+(Font)              <6> on input line 4.
 )
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
  [1] (body.tex
-(assignment.tex [2
+(assignment.tex) (implementation.tex [2
 
-]) (implementation.tex [3] [4]
+] [3]
 File: uml/classes-domain.pdf Graphic file (type pdf)
 <use uml/classes-domain.pdf>
 File: uml/classes-history.pdf Graphic file (type pdf)
 <use uml/classes-history.pdf>
- [5] [6]
+ [4] [5]
 File: uml/classes-services.pdf Graphic file (type pdf)
 <use uml/classes-services.pdf>
- [7]
+ [6]
 File: uml/packages.pdf Graphic file (type pdf)
 <use uml/packages.pdf>
-) (results.tex
-Underfull \hbox (badness 1178) in paragraph at lines 2--3
-\TU/CMUSerif(1)/m/n/10.95 Экспериментальные таблицы имеют префикс \TU/cmuntt.ot
-f(0)/m/n/10.95 lab2_4101_test_\TU/CMUSerif(1)/m/n/10.95 ; исходные таблицы перв
-ой
+) (results.tex [7
+
+
+]
+(jmeter-results.tex
+Underfull \hbox (badness 1824) in paragraph at lines 20--22
+[]\TU/CMUSerif(1)/m/n/10.95 . В каждом раунде сохранились ровно два фильма из ф
+айла-
  []
 
-[8
+) [8
 
+]
+File: images/current-collections.png Graphic file (type bmp)
+<images/current-collections.png>
+File: images/current-details.png Graphic file (type bmp)
+<images/current-details.png>
+ [9
 
-] (jmeter-results.tex) (isolation-results.tex [9]) (browser-figures.tex
-File: images/final-import-success.png Graphic file (type bmp)
-<images/final-import-success.png>
-File: images/final-history-admin.png Graphic file (type bmp)
-<images/final-history-admin.png>
-File: images/final-stale-edit-conflict.png Graphic file (type bmp)
-<images/final-stale-edit-conflict.png>
-
-[10]) [11]) (conclusion.tex))
+]) (conclusion.tex))
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -758,12 +759,14 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [12] (main.aux
+ [10
+
+] (main.aux
 LaTeX Info: Redefining \rmfamily on input line 20.
 LaTeX Info: Redefining \sffamily on input line 20.
 LaTeX Info: Redefining \ttfamily on input line 20.
 )
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F29EACE0568AC540047822EEA759C85A;3676.
+(rerunfilecheck)             Checksum: 490CE11DB9FFC55E4A2E8895D276C399;2796.
  )
-Output written on main.xdv (13 pages, 207208 bytes).
+Output written on main.xdv (11 pages, 151532 bytes).

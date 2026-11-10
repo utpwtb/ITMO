@@ -1,0 +1,1003 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.4",
+  "counts": {
+    "PASS": 83,
+    "FAIL": 11,
+    "ERROR": 2,
+    "LIMIT": 4
+  },
+  "tests": [
+    {
+      "name": "CIE RGB rejects zero",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects NaN",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects positive infinity",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects negative infinity",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects empty",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects two components",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects four components",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects nested shape",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects nonnumeric",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB rejects all negative",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB D65 round trip",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          0.25261081129944557,
+          0.3104552518397449,
+          0.32699165948093534
+        ],
+        "max_error": 1.1102230246251565e-16,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB linear scaling 1e-200",
+      "status": "FAIL",
+      "category": "RGB",
+      "detail": "Finite nonzero RGB at scale 1e-200 rejected: RGB: требуются три конечных ненулевых координаты CIE RGB",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB linear scaling 1e-170",
+      "status": "FAIL",
+      "category": "RGB",
+      "detail": "Finite nonzero RGB at scale 1e-170 rejected: RGB: требуются три конечных ненулевых координаты CIE RGB",
+      "seconds": 0.0
+    },
+    {
+      "name": "CIE RGB linear scaling 1e-160",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          2.5261081129944558e-161,
+          3.1045525183974486e-161,
+          3.2699165948093534e-161
+        ],
+        "max_error": 7.896825413969131e-177,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB linear scaling 1e-12",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          2.5261081129944557e-13,
+          3.1045525183974486e-13,
+          3.269916594809353e-13
+        ],
+        "max_error": 5.048709793414476e-29,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB linear scaling 1e+12",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          252610811299.44556,
+          310455251839.7449,
+          326991659480.93536
+        ],
+        "max_error": 0.0001220703125,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB linear scaling 1e+150",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          2.5261081129944555e+149,
+          3.1045525183974487e+149,
+          3.2699165948093533e+149
+        ],
+        "max_error": 1.362822608054263e+134,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB linear scaling 1e+200",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          2.5261081129944557e+199,
+          3.1045525183974487e+199,
+          3.2699165948093532e+199
+        ],
+        "max_error": 1.274731182760241e+184,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB linear scaling 1e+300",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          2.5261081129944558e+299,
+          3.104552518397449e+299,
+          3.2699165948093537e+299
+        ],
+        "max_error": 1.487016908477783e+284,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB exact nonnegative basis 0",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          107.33812400777634,
+          46.0308081791659,
+          25.35784850324075
+        ],
+        "max_error": 0.0,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB exact nonnegative basis 1",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          60.77856357209391,
+          81.7011334476132,
+          7.758813904569564
+        ],
+        "max_error": 4.263256414560601e-14,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB exact nonnegative basis 2",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          -12.728761362534502,
+          11.383741246197108,
+          141.36355690660403
+        ],
+        "max_error": 7.105427357601002e-15,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB signed physically valid interior spectrum",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          -11.04759448673579,
+          12.661060662464893,
+          141.6947235306821
+        ],
+        "max_error": 5.684341886080802e-14,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB 250 seeded spectra in reconstruction span",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "samples": 250,
+        "worst_absolute_rgb_error": 3.183231456205249e-12
+      },
+      "seconds": 0.0153
+    },
+    {
+      "name": "CIE red primary",
+      "status": "LIMIT",
+      "category": "RGB",
+      "detail": "Выбранный базис XYZ даёт отрицательный или нулевой спектр для этого RGB"
+    },
+    {
+      "name": "CIE green primary",
+      "status": "LIMIT",
+      "category": "RGB",
+      "detail": "Выбранный базис XYZ даёт отрицательный или нулевой спектр для этого RGB"
+    },
+    {
+      "name": "CIE blue primary",
+      "status": "LIMIT",
+      "category": "RGB",
+      "detail": "Выбранный базис XYZ даёт отрицательный или нулевой спектр для этого RGB"
+    },
+    {
+      "name": "520 nm sampled spectrum",
+      "status": "LIMIT",
+      "category": "RGB",
+      "detail": "Выбранный базис XYZ даёт отрицательный или нулевой спектр для этого RGB"
+    },
+    {
+      "name": "CIE RGB 0-255-like [255,255,255] is an absolute color",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": {
+        "rgb": [
+          255.0,
+          255.0,
+          255.0
+        ],
+        "max_error": 2.842170943040401e-14,
+        "minimum": 0.0
+      },
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB API rejects booleans",
+      "status": "FAIL",
+      "category": "RGB API",
+      "detail": "Input was accepted",
+      "seconds": 0.0001
+    },
+    {
+      "name": "CIE RGB API rejects complex ndarray",
+      "status": "FAIL",
+      "category": "RGB API",
+      "detail": "Input was accepted",
+      "seconds": 0.0001
+    },
+    {
+      "name": "geometry rejects width below range",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects width above range",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects height below range",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects NaN geometry",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects negative radius",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects zero radius",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects resolution below",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects resolution above",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects fractional resolution",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects bool resolution",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects zero viewing vector",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "geometry rejects sphere outside field",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0005
+    },
+    {
+      "name": "geometry rejects observer inside sphere",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0002
+    },
+    {
+      "name": "geometry rejects sphere behind observer",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0003
+    },
+    {
+      "name": "geometry rejects no lights",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0001
+    },
+    {
+      "name": "light rejects intensity below",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0001
+    },
+    {
+      "name": "light rejects intensity above",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0001
+    },
+    {
+      "name": "light rejects zero axis",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0001
+    },
+    {
+      "name": "light rejects NaN position",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0001
+    },
+    {
+      "name": "light rejects inside sphere",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": "rejected",
+      "seconds": 0.0003
+    },
+    {
+      "name": "light accepts I0 boundary 0.01",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": null,
+      "seconds": 0.0011
+    },
+    {
+      "name": "light accepts I0 boundary 10000",
+      "status": "PASS",
+      "category": "geometry",
+      "detail": null,
+      "seconds": 0.0009
+    },
+    {
+      "name": "material rejects nonwhite in Lab4",
+      "status": "PASS",
+      "category": "scene",
+      "detail": "rejected",
+      "seconds": 0.0011
+    },
+    {
+      "name": "RGB count must match light count",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0012
+    },
+    {
+      "name": "second light invalid RGB is rejected",
+      "status": "PASS",
+      "category": "RGB",
+      "detail": "rejected",
+      "seconds": 0.0012
+    },
+    {
+      "name": "CIE RGB full rendering finite scale 1e-150",
+      "status": "PASS",
+      "category": "RGB rendering",
+      "detail": {
+        "nonfinite_arrays": [],
+        "nonfinite_metrics": [],
+        "warnings": [],
+        "shared_gain": 0.10822766472063662,
+        "displayed_max": 0
+      },
+      "seconds": 0.2149
+    },
+    {
+      "name": "CIE RGB full rendering finite scale 1e+100",
+      "status": "PASS",
+      "category": "RGB rendering",
+      "detail": {
+        "nonfinite_arrays": [],
+        "nonfinite_metrics": [],
+        "warnings": [],
+        "shared_gain": 1.082276647206368e-101,
+        "displayed_max": 255
+      },
+      "seconds": 0.2099
+    },
+    {
+      "name": "CIE RGB full rendering finite scale 1e+200",
+      "status": "FAIL",
+      "category": "RGB rendering",
+      "detail": "Finite RGB scale 1e+200 returned nonfinite results: arrays=[], metrics=['rgb_absolute_rmse']; warnings=['overflow encountered in dot', 'overflow encountered in square']",
+      "seconds": 0.2022
+    },
+    {
+      "name": "CIE RGB full rendering finite scale 1e+306",
+      "status": "FAIL",
+      "category": "RGB rendering",
+      "detail": "Finite RGB scale 1e+306 returned nonfinite results: arrays=['luminance1'], metrics=['rgb_absolute_rmse']; warnings=['overflow encountered in dot', 'overflow encountered in multiply', 'overflow encountered in reduce', 'overflow encountered in square']",
+      "seconds": 0.2115
+    },
+    {
+      "name": "CIE RGB full rendering finite scale 1e+308",
+      "status": "FAIL",
+      "category": "RGB rendering",
+      "detail": "Finite RGB scale 1e+308 returned nonfinite results: arrays=['xyz', 'rgb1', 'radiance', 'luminance1'], metrics=['rgb_absolute_rmse']; warnings=['invalid value encountered in cast', 'invalid value encountered in matmul', 'invalid value encountered in multiply', 'overflow encountered in dot', 'overflow encountered in matmul', 'overflow encountered in multiply', 'overflow encountered in square']",
+      "seconds": 0.2134
+    },
+    {
+      "name": "default metamer preserves RGB and display",
+      "status": "PASS",
+      "category": "rendering",
+      "detail": [
+        {
+          "rmse": 0.0014188447277799121,
+          "max_error": 0.002203480882226248,
+          "rgb_max_error": 1.1102230246251565e-16,
+          "integral": 0.6295556600023776
+        },
+        {
+          "rmse": 0.0014188447277799121,
+          "max_error": 0.002203480882226248,
+          "rgb_max_error": 1.1102230246251565e-16,
+          "integral": 0.6295556600023776
+        }
+      ],
+      "seconds": 0.0002
+    },
+    {
+      "name": "analytical Lambertian factor and mm to m",
+      "status": "PASS",
+      "category": "rendering",
+      "detail": {
+        "expected": 12.697125653868659,
+        "actual": 12.697125653868659
+      },
+      "seconds": 0.0004
+    },
+    {
+      "name": "spectral float64 units and three visible points",
+      "status": "PASS",
+      "category": "rendering",
+      "detail": null,
+      "seconds": 0.0053
+    },
+    {
+      "name": "controlled RGB comparison uses same input as reconstruction",
+      "status": "FAIL",
+      "category": "comparison design",
+      "detail": "image_2 still uses original-spectrum RGB after input edit; max point error=6.8776398",
+      "seconds": 0.0023
+    },
+    {
+      "name": "archived Lab3 images are byte-identical originals",
+      "status": "PASS",
+      "category": "comparison",
+      "detail": null,
+      "seconds": 0.0023
+    },
+    {
+      "name": "comparison uses original Lab3 PNGs at same resolution",
+      "status": "FAIL",
+      "category": "comparison",
+      "detail": "Recomputed image_1/2 differ from actual Lab3 PNGs: [{'image': 1, 'mae': 41.069550925925924, 'maximum': 136.0, 'lab3_channel_spread': 126, 'lab4_channel_spread': 1}, {'image': 2, 'mae': 41.069550925925924, 'maximum': 136.0, 'lab3_channel_spread': 126, 'lab4_channel_spread': 1}]",
+      "seconds": 0.1882
+    },
+    {
+      "name": "stored 600x600 images reproduce current implementation",
+      "status": "PASS",
+      "category": "files",
+      "detail": null,
+      "seconds": 0.0112
+    },
+    {
+      "name": "upper resolution 800x800 end-to-end",
+      "status": "PASS",
+      "category": "rendering",
+      "detail": {
+        "visible_pixels": 306476
+      },
+      "seconds": 1.6741
+    },
+    {
+      "name": "export PNG CSV JSON NPZ with round-trip",
+      "status": "PASS",
+      "category": "export",
+      "detail": {
+        "files": [
+          "image_A.png",
+          "image_1.png",
+          "image_2.png",
+          "absolute_data.npz",
+          "spectra_comparison.csv",
+          "spectra_comparison.png",
+          "three_points.csv",
+          "results.json"
+        ],
+        "shared_gain": 0.10822766472063662
+      },
+      "seconds": 0.6776
+    },
+    {
+      "name": "visualization API comparison_figure",
+      "status": "ERROR",
+      "category": "unused API",
+      "detail": "Traceback (most recent call last):\n  File \"C:\\develop\\NOTE_UTP\\StudyNote\\5 Computer Graphics Algorithms\\Lab\\Lab4\\review_tests\\audit_lab4.py\", line 51, in record\n    detail = func()\n             ^^^^^^\n  File \"C:\\develop\\NOTE_UTP\\StudyNote\\5 Computer Graphics Algorithms\\Lab\\Lab4\\review_tests\\audit_lab4.py\", line 324, in <lambda>\n    record(\"visualization API \" + name, lambda f=func: f(data).savefig(OUT / (f.__name__ + \".png\")), \"unused API\")\n                                                       ^^^^^^^\n  File \"C:\\develop\\NOTE_UTP\\StudyNote\\5 Computer Graphics Algorithms\\Lab\\Lab4\\lab4_spectrum\\visualization.py\", line 20, in comparison_figure\n    result, reference = data[\"result\"], data[\"reference\"]\n                                        ~~~~^^^^^^^^^^^^^\nKeyError: 'reference'\n",
+      "seconds": 0.0325
+    },
+    {
+      "name": "visualization API scene_figure",
+      "status": "ERROR",
+      "category": "unused API",
+      "detail": "Traceback (most recent call last):\n  File \"C:\\develop\\NOTE_UTP\\StudyNote\\5 Computer Graphics Algorithms\\Lab\\Lab4\\review_tests\\audit_lab4.py\", line 51, in record\n    detail = func()\n             ^^^^^^\n  File \"C:\\develop\\NOTE_UTP\\StudyNote\\5 Computer Graphics Algorithms\\Lab\\Lab4\\review_tests\\audit_lab4.py\", line 324, in <lambda>\n    record(\"visualization API \" + name, lambda f=func: f(data).savefig(OUT / (f.__name__ + \".png\")), \"unused API\")\n                                                       ^^^^^^^\n  File \"C:\\develop\\NOTE_UTP\\StudyNote\\5 Computer Graphics Algorithms\\Lab\\Lab4\\lab4_spectrum\\visualization.py\", line 100, in scene_figure\n    for row in data[\"geometry_rows\"]]\n               ~~~~^^^^^^^^^^^^^^^^^\nKeyError: 'geometry_rows'\n",
+      "seconds": 0.0283
+    },
+    {
+      "name": "GUI CIE R rejects ''",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE R rejects 'abc'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE R rejects 'nan'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0001
+    },
+    {
+      "name": "GUI CIE R rejects 'inf'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE R rejects '-inf'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE R rejects '1e10000'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE G rejects ''",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE G rejects 'abc'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE G rejects 'nan'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE G rejects 'inf'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE G rejects '-inf'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE G rejects '1e10000'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE B rejects ''",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE B rejects 'abc'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE B rejects 'nan'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE B rejects 'inf'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE B rejects '-inf'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI CIE B rejects '1e10000'",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": "rejected",
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI add/delete light",
+      "status": "PASS",
+      "category": "GUI",
+      "detail": null,
+      "seconds": 0.0009
+    },
+    {
+      "name": "GUI asynchronous calculation",
+      "status": "PASS",
+      "category": "GUI",
+      "detail": null,
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI 41 spectral rows",
+      "status": "PASS",
+      "category": "GUI",
+      "detail": null,
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI export result",
+      "status": "PASS",
+      "category": "GUI",
+      "detail": null,
+      "seconds": 0.5773
+    },
+    {
+      "name": "GUI includes actual Lab3 images",
+      "status": "FAIL",
+      "category": "GUI",
+      "detail": "Original Lab3 pixels absent; GUI image titles: ['image_A', 'image_1 (recomputed)', 'image_2 (recomputed)']",
+      "seconds": 0.0105
+    },
+    {
+      "name": "GUI computes edited CIE RGB",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": null,
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI computes physically valid negative CIE R",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": null,
+      "seconds": 0.0
+    },
+    {
+      "name": "GUI handles reconstruction rejection and restores controls",
+      "status": "PASS",
+      "category": "GUI RGB",
+      "detail": null,
+      "seconds": 0.0
+    },
+    {
+      "name": "existing delivery contains absolute_data.npz",
+      "status": "FAIL",
+      "category": "files",
+      "detail": "README claims NPZ, but results/absolute_data.npz is absent",
+      "seconds": 0.0002
+    },
+    {
+      "name": "production files unchanged",
+      "status": "PASS",
+      "category": "isolation",
+      "detail": null,
+      "seconds": 0.0416
+    }
+  ],
+  "details": {
+    "rgb_warnings": [
+      "overflow encountered in dot",
+      "overflow encountered in dot",
+      "Casting complex values to real discards the imaginary part"
+    ],
+    "render_scale_1e-150": {
+      "nonfinite_arrays": [],
+      "nonfinite_metrics": [],
+      "warnings": [],
+      "shared_gain": 0.10822766472063662,
+      "displayed_max": 0
+    },
+    "render_scale_1e+100": {
+      "nonfinite_arrays": [],
+      "nonfinite_metrics": [],
+      "warnings": [],
+      "shared_gain": 1.082276647206368e-101,
+      "displayed_max": 255
+    },
+    "render_scale_1e+200": {
+      "nonfinite_arrays": [],
+      "nonfinite_metrics": [
+        "rgb_absolute_rmse"
+      ],
+      "warnings": [
+        "overflow encountered in dot",
+        "overflow encountered in square"
+      ],
+      "shared_gain": 1.0822766472063677e-201,
+      "displayed_max": 255
+    },
+    "render_scale_1e+306": {
+      "nonfinite_arrays": [
+        "luminance1"
+      ],
+      "nonfinite_metrics": [
+        "rgb_absolute_rmse"
+      ],
+      "warnings": [
+        "overflow encountered in dot",
+        "overflow encountered in multiply",
+        "overflow encountered in reduce",
+        "overflow encountered in square"
+      ],
+      "shared_gain": 1.0822766472063667e-307,
+      "displayed_max": 255
+    },
+    "render_scale_1e+308": {
+      "nonfinite_arrays": [
+        "xyz",
+        "rgb1",
+        "radiance",
+        "luminance1"
+      ],
+      "nonfinite_metrics": [
+        "rgb_absolute_rmse"
+      ],
+      "warnings": [
+        "invalid value encountered in cast",
+        "invalid value encountered in matmul",
+        "invalid value encountered in multiply",
+        "overflow encountered in dot",
+        "overflow encountered in matmul",
+        "overflow encountered in multiply",
+        "overflow encountered in square"
+      ],
+      "shared_gain": 0,
+      "displayed_max": 0
+    },
+    "edited_rgb": {
+      "input_rgb": [
+        [
+          0.5052216225988911,
+          0.6209105036794897,
+          0.6539833189618707
+        ],
+        [
+          0.25261081129944557,
+          0.3104552518397449,
+          0.32699165948093534
+        ]
+      ],
+      "expected_direct_at_points": [
+        [
+          10.249512059702445,
+          12.596510938549876,
+          13.267464444738586
+        ],
+        [
+          10.988708456287382,
+          13.504973257641886,
+          14.224316034574585
+        ],
+        [
+          7.2243266262405905,
+          8.87859918023635,
+          9.351518013005576
+        ]
+      ],
+      "image2_original_at_points": [
+        [
+          7.0420808471076795,
+          8.654621596037197,
+          9.115610256542116
+        ],
+        [
+          5.675526517200675,
+          6.975144908315145,
+          7.346676196243922
+        ],
+        [
+          6.870192442407918,
+          8.44337308416674,
+          8.893109586799683
+        ]
+      ],
+      "max_absolute_change": 8.463372778991276,
+      "reconstruction_matches_edited_input_max_error": 3.552713678800501e-15,
+      "reported_comparison": {
+        "image_1": {
+          "rgb_absolute_rmse": 3.7436216615692732,
+          "monitor_mae": 30.268541710150977,
+          "monitor_max": 69
+        },
+        "image_2": {
+          "rgb_absolute_rmse": 3.743621661569273,
+          "monitor_mae": 30.268541710150977,
+          "monitor_max": 69
+        }
+      }
+    },
+    "original_comparison": [
+      {
+        "image": 1,
+        "mae": 41.069550925925924,
+        "maximum": 136.0,
+        "lab3_channel_spread": 126,
+        "lab4_channel_spread": 1
+      },
+      {
+        "image": 2,
+        "mae": 41.069550925925924,
+        "maximum": 136.0,
+        "lab3_channel_spread": 126,
+        "lab4_channel_spread": 1
+      }
+    ],
+    "gui_image_titles": [
+      "image_A",
+      "image_1 (recomputed)",
+      "image_2 (recomputed)"
+    ]
+  }
+}

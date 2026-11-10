@@ -1,0 +1,20 @@
+Source: C:\develop\NOTE_UTP\StudyNote\5 Knowledge Graphs\Project\ontology\output\lol_full.owl
+HermiT: 1.4.3.456.2018-09-25T15:28:07Z
+PASS OWL 2 DL profile []
+PASS Ontology is consistent
+PASS No unsatisfiable named classes
+PASS Inferred SupportControlMage = [Karma, Lux, Morgana]
+PASS Target class is not pre-asserted for Lux
+PASS Inverse ownership: Lux_Q isAbilityOf Lux
+PASS Property chain: Lux canApplyMechanic Shield
+PASS Inverse ownership: Morgana_Q isAbilityOf Morgana
+PASS Property chain: Morgana canApplyMechanic Shield
+PASS Inverse ownership: Karma_Q isAbilityOf Karma
+PASS Property chain: Karma canApplyMechanic Shield
+PASS Self-heal is not inferred as ally healing
+PASS Self speed boost stays separate from ally effects
+PASS Unannotated Aatrox is not returned as a proven match (open world)
+Asserted axioms: 13698
+Materialized axioms: 16825
+PASS Mutation: replacing Lux's ally shield with self shield removes Lux from results
+PASS Mutation: Champion/Ability disjointness catches mis-typed Lux

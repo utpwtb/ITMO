@@ -1,0 +1,4 @@
+PREFIX lol: <https://example.org/lol-ontology#>
+SELECT ?champion ?name
+WHERE { ?champion a lol:SupportControlMage ; lol:name ?name }
+ORDER BY ?champion

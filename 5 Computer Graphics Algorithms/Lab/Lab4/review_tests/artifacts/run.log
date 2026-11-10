@@ -1,0 +1,97 @@
+PASS: CIE RGB rejects zero
+PASS: CIE RGB rejects NaN
+PASS: CIE RGB rejects positive infinity
+PASS: CIE RGB rejects negative infinity
+PASS: CIE RGB rejects empty
+PASS: CIE RGB rejects two components
+PASS: CIE RGB rejects four components
+PASS: CIE RGB rejects nested shape
+PASS: CIE RGB rejects nonnumeric
+PASS: CIE RGB rejects all negative
+PASS: CIE RGB D65 round trip
+FAIL: CIE RGB linear scaling 1e-200
+FAIL: CIE RGB linear scaling 1e-170
+PASS: CIE RGB linear scaling 1e-160
+PASS: CIE RGB linear scaling 1e-12
+PASS: CIE RGB linear scaling 1e+12
+PASS: CIE RGB linear scaling 1e+150
+PASS: CIE RGB linear scaling 1e+200
+PASS: CIE RGB linear scaling 1e+300
+PASS: CIE RGB exact nonnegative basis 0
+PASS: CIE RGB exact nonnegative basis 1
+PASS: CIE RGB exact nonnegative basis 2
+PASS: CIE RGB signed physically valid interior spectrum
+PASS: CIE RGB 250 seeded spectra in reconstruction span
+PASS: CIE RGB 0-255-like [255,255,255] is an absolute color
+FAIL: CIE RGB API rejects booleans
+FAIL: CIE RGB API rejects complex ndarray
+PASS: geometry rejects width below range
+PASS: geometry rejects width above range
+PASS: geometry rejects height below range
+PASS: geometry rejects NaN geometry
+PASS: geometry rejects negative radius
+PASS: geometry rejects zero radius
+PASS: geometry rejects resolution below
+PASS: geometry rejects resolution above
+PASS: geometry rejects fractional resolution
+PASS: geometry rejects bool resolution
+PASS: geometry rejects zero viewing vector
+PASS: geometry rejects sphere outside field
+PASS: geometry rejects observer inside sphere
+PASS: geometry rejects sphere behind observer
+PASS: geometry rejects no lights
+PASS: light rejects intensity below
+PASS: light rejects intensity above
+PASS: light rejects zero axis
+PASS: light rejects NaN position
+PASS: light rejects inside sphere
+PASS: light accepts I0 boundary 0.01
+PASS: light accepts I0 boundary 10000
+PASS: material rejects nonwhite in Lab4
+PASS: RGB count must match light count
+PASS: second light invalid RGB is rejected
+PASS: CIE RGB full rendering finite scale 1e-150
+PASS: CIE RGB full rendering finite scale 1e+100
+FAIL: CIE RGB full rendering finite scale 1e+200
+FAIL: CIE RGB full rendering finite scale 1e+306
+FAIL: CIE RGB full rendering finite scale 1e+308
+PASS: default metamer preserves RGB and display
+PASS: analytical Lambertian factor and mm to m
+PASS: spectral float64 units and three visible points
+FAIL: controlled RGB comparison uses same input as reconstruction
+PASS: archived Lab3 images are byte-identical originals
+FAIL: comparison uses original Lab3 PNGs at same resolution
+PASS: stored 600x600 images reproduce current implementation
+PASS: upper resolution 800x800 end-to-end
+PASS: export PNG CSV JSON NPZ with round-trip
+ERROR: visualization API comparison_figure
+ERROR: visualization API scene_figure
+PASS: GUI CIE R rejects ''
+PASS: GUI CIE R rejects 'abc'
+PASS: GUI CIE R rejects 'nan'
+PASS: GUI CIE R rejects 'inf'
+PASS: GUI CIE R rejects '-inf'
+PASS: GUI CIE R rejects '1e10000'
+PASS: GUI CIE G rejects ''
+PASS: GUI CIE G rejects 'abc'
+PASS: GUI CIE G rejects 'nan'
+PASS: GUI CIE G rejects 'inf'
+PASS: GUI CIE G rejects '-inf'
+PASS: GUI CIE G rejects '1e10000'
+PASS: GUI CIE B rejects ''
+PASS: GUI CIE B rejects 'abc'
+PASS: GUI CIE B rejects 'nan'
+PASS: GUI CIE B rejects 'inf'
+PASS: GUI CIE B rejects '-inf'
+PASS: GUI CIE B rejects '1e10000'
+PASS: GUI add/delete light
+PASS: GUI asynchronous calculation
+PASS: GUI 41 spectral rows
+PASS: GUI export result
+FAIL: GUI includes actual Lab3 images
+PASS: GUI computes edited CIE RGB
+PASS: GUI computes physically valid negative CIE R
+PASS: GUI handles reconstruction rejection and restores controls
+FAIL: existing delivery contains absolute_data.npz
+PASS: production files unchanged
+{"PASS": 83, "FAIL": 11, "ERROR": 2, "LIMIT": 4}

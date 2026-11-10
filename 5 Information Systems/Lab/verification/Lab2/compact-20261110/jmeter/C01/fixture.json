@@ -1,0 +1,627 @@
+{
+  "scenario": "C01",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r0-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2492",
+          "read": "movies/2492",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r0-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2492?version=1",
+          "read": "movies/2492",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2492",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r1-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2493",
+          "read": "movies/2493",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r1-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2493?version=1",
+          "read": "movies/2493",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2493",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r2-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2494",
+          "read": "movies/2494",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r2-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2494?version=1",
+          "read": "movies/2494",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2494",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r3-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2495",
+          "read": "movies/2495",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r3-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2495?version=1",
+          "read": "movies/2495",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2495",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r4-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2496",
+          "read": "movies/2496",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r4-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2496?version=1",
+          "read": "movies/2496",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2496",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r5-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2497",
+          "read": "movies/2497",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r5-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2497?version=1",
+          "read": "movies/2497",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2497",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r6-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2498",
+          "read": "movies/2498",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r6-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2498?version=1",
+          "read": "movies/2498",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2498",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r7-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2499",
+          "read": "movies/2499",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r7-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2499?version=1",
+          "read": "movies/2499",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2499",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r8-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2500",
+          "read": "movies/2500",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r8-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2500?version=1",
+          "read": "movies/2500",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2500",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r9-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2501",
+          "read": "movies/2501",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r9-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2501?version=1",
+          "read": "movies/2501",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2501",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r10-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2502",
+          "read": "movies/2502",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r10-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2502?version=1",
+          "read": "movies/2502",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2502",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r11-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2503",
+          "read": "movies/2503",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r11-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2503?version=1",
+          "read": "movies/2503",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2503",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r12-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2504",
+          "read": "movies/2504",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r12-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2504?version=1",
+          "read": "movies/2504",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2504",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r13-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2505",
+          "read": "movies/2505",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r13-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2505?version=1",
+          "read": "movies/2505",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2505",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r14-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2506",
+          "read": "movies/2506",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r14-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2506?version=1",
+          "read": "movies/2506",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2506",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r15-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2507",
+          "read": "movies/2507",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r15-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2507?version=1",
+          "read": "movies/2507",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2507",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r16-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2508",
+          "read": "movies/2508",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r16-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2508?version=1",
+          "read": "movies/2508",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2508",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r17-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2509",
+          "read": "movies/2509",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r17-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2509?version=1",
+          "read": "movies/2509",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2509",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r18-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2510",
+          "read": "movies/2510",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r18-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2510?version=1",
+          "read": "movies/2510",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2510",
+      "targetVersion": 1
+    },
+    {
+      "prefix": "lab2-jmeter-C01-02a724-r19-",
+      "actions": [
+        {
+          "method": "PUT",
+          "path": "movies/2511",
+          "read": "movies/2511",
+          "version": 1,
+          "body": {
+            "tagline": "lab2-jmeter-C01-02a724-r19-updated",
+            "version": 1
+          },
+          "expected": [
+            200,
+            404
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "movies/2511?version=1",
+          "read": "movies/2511",
+          "version": 1,
+          "expected": [
+            200,
+            409
+          ]
+        }
+      ],
+      "target": "2511",
+      "targetVersion": 1
+    }
+  ],
+  "marker": "lab2-jmeter-C01-02a724"
+}

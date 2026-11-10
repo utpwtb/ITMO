@@ -1,0 +1,268 @@
+{
+  "@context": "https://ontodia.org/context/v1.json",
+  "@type": "Diagram",
+  "layoutData": {
+    "@type": "Layout",
+    "elements": [
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Morgana",
+        "iri": "https://example.org/lol-ontology#Morgana",
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Morgana_Q",
+        "iri": "https://example.org/lol-ontology#Morgana_Q",
+        "position": {
+          "x": 280,
+          "y": 100
+        }
+      },
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Morgana_E",
+        "iri": "https://example.org/lol-ontology#Morgana_E",
+        "position": {
+          "x": 280,
+          "y": 500
+        }
+      },
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Morgana_Q_Root_Enemy",
+        "iri": "https://example.org/lol-ontology#Morgana_Q_Root_Enemy",
+        "position": {
+          "x": 580,
+          "y": 100
+        }
+      },
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Morgana_E_Shield_Ally",
+        "iri": "https://example.org/lol-ontology#Morgana_E_Shield_Ally",
+        "position": {
+          "x": 580,
+          "y": 500
+        }
+      },
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Root",
+        "iri": "https://example.org/lol-ontology#Root",
+        "position": {
+          "x": 1010,
+          "y": 0
+        }
+      },
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Enemy",
+        "iri": "https://example.org/lol-ontology#Enemy",
+        "position": {
+          "x": 1010,
+          "y": 200
+        }
+      },
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Shield",
+        "iri": "https://example.org/lol-ontology#Shield",
+        "position": {
+          "x": 1010,
+          "y": 400
+        }
+      },
+      {
+        "@type": "Element",
+        "@id": "urn:reactodia:e:Ally",
+        "iri": "https://example.org/lol-ontology#Ally",
+        "position": {
+          "x": 1010,
+          "y": 600
+        }
+      }
+    ],
+    "links": [
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:0",
+        "property": "https://example.org/lol-ontology#hasAbility",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Morgana_Q"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana",
+        "targetIri": "https://example.org/lol-ontology#Morgana_Q",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:1",
+        "property": "https://example.org/lol-ontology#hasAbility",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Morgana_E"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana",
+        "targetIri": "https://example.org/lol-ontology#Morgana_E",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:2",
+        "property": "https://example.org/lol-ontology#isAbilityOf",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_Q"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Morgana"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_Q",
+        "targetIri": "https://example.org/lol-ontology#Morgana",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:3",
+        "property": "https://example.org/lol-ontology#isAbilityOf",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_E"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Morgana"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_E",
+        "targetIri": "https://example.org/lol-ontology#Morgana",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:4",
+        "property": "https://example.org/lol-ontology#hasEffect",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_Q"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Morgana_Q_Root_Enemy"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_Q",
+        "targetIri": "https://example.org/lol-ontology#Morgana_Q_Root_Enemy",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:5",
+        "property": "https://example.org/lol-ontology#hasEffect",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_E"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Morgana_E_Shield_Ally"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_E",
+        "targetIri": "https://example.org/lol-ontology#Morgana_E_Shield_Ally",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:6",
+        "property": "https://example.org/lol-ontology#effectOf",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_Q_Root_Enemy"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Morgana_Q"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_Q_Root_Enemy",
+        "targetIri": "https://example.org/lol-ontology#Morgana_Q",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:7",
+        "property": "https://example.org/lol-ontology#effectOf",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_E_Shield_Ally"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Morgana_E"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_E_Shield_Ally",
+        "targetIri": "https://example.org/lol-ontology#Morgana_E",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:8",
+        "property": "https://example.org/lol-ontology#hasMechanic",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_Q_Root_Enemy"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Root"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_Q_Root_Enemy",
+        "targetIri": "https://example.org/lol-ontology#Root",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:9",
+        "property": "https://example.org/lol-ontology#hasTargetType",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_Q_Root_Enemy"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Enemy"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_Q_Root_Enemy",
+        "targetIri": "https://example.org/lol-ontology#Enemy",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:10",
+        "property": "https://example.org/lol-ontology#hasMechanic",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_E_Shield_Ally"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Shield"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_E_Shield_Ally",
+        "targetIri": "https://example.org/lol-ontology#Shield",
+        "vertices": []
+      },
+      {
+        "@type": "Link",
+        "@id": "urn:reactodia:l:11",
+        "property": "https://example.org/lol-ontology#hasTargetType",
+        "source": {
+          "@id": "urn:reactodia:e:Morgana_E_Shield_Ally"
+        },
+        "target": {
+          "@id": "urn:reactodia:e:Ally"
+        },
+        "sourceIri": "https://example.org/lol-ontology#Morgana_E_Shield_Ally",
+        "targetIri": "https://example.org/lol-ontology#Ally",
+        "vertices": []
+      }
+    ]
+  },
+  "linkTypeOptions": [
+    {
+      "@type": "LinkTypeOptions",
+      "property": "https://example.org/lol-ontology#canApplyMechanic",
+      "visible": false,
+      "showLabel": true
+    }
+  ]
+}

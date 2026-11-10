@@ -1,0 +1,19 @@
+{
+  "host": "helios.cs.ifmo.ru",
+  "directory": "/home/studs/s407960/is-lab2-4101",
+  "time": "2026-11-10T15:56:22.851879+03:00",
+  "pid": 60635,
+  "http": "127.0.0.1:40797",
+  "persistenceUnit": "movies-helios-test",
+  "tablePrefix": "lab2_4101_test_",
+  "isolation": "READ COMMITTED",
+  "warSha256": "95cb5fe595aab5ccebd5cdef2917a7e2930d17cc91f0203947645710c341404e",
+  "scenarios": [
+    "C01",
+    "C02",
+    "C03"
+  ],
+  "rounds": 20,
+  "runnerSha256": "c60dfc71d8e54d00732504c7ee8daa7ecf6d1f026393d2022afe163e356d587b",
+  "jmxSha256": "60c4953e617e1d8e1b1db5b881206d9cd6cbba980f15290d5756de1f89b9245e"
+}

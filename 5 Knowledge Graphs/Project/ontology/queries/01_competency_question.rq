@@ -1,0 +1,18 @@
+PREFIX lol: <https://example.org/lol-ontology#>
+SELECT DISTINCT ?champion ?name ?shieldAbility ?shieldCondition
+                ?controlAbility ?controlMechanic ?controlCondition
+WHERE {
+  ?champion a lol:Champion ; lol:name ?name ;
+            lol:hasCategory lol:Category_Mage ;
+            lol:hasAbility ?shieldAbility, ?controlAbility .
+  ?shieldAbility lol:hasEffect ?shieldEffect .
+  ?shieldEffect lol:hasMechanic lol:Shield ;
+                lol:hasTargetType lol:Ally ;
+                lol:conditionText ?shieldCondition .
+  ?controlAbility lol:hasEffect ?controlEffect .
+  ?controlEffect lol:hasMechanic ?controlMechanic ;
+                 lol:hasTargetType lol:Enemy ;
+                 lol:conditionText ?controlCondition .
+  ?controlMechanic a lol:MovementControlMechanic .
+}
+ORDER BY ?champion ?shieldAbility ?controlAbility ?controlMechanic

@@ -8,7 +8,7 @@
 - `database/schema.sql` — новая БД; `database/migrations/003_lab2_roles_imports.sql` — повторяемое обновление ЛР1 без потери данных.
 - `docs/import-format.md`, `src/main/webapp/examples/import-valid.json`, `src/test/resources/import/` — контракт и примеры.
 - `jmeter/README.md`, `jmeter/lab2-concurrency.jmx` — серверные конкурентные сценарии.
-- `../verification/Lab2/ACCEPTANCE.md`, `isolation-analysis.md` — реальные результаты и ограничения.
+- `../verification/Lab2/ACCEPTANCE.md` — три актуальных сценария JMeter и результаты функциональной проверки на Helios.
 - `../report/Lab2/` — русский отчёт, PDF, редактируемые UML DOT и изображения.
 - `docs/lab1-readme-historical.md` — сохранённый прежний README; его результаты относятся к ЛР1.
 
@@ -58,10 +58,10 @@ ssh -N -L 18083:127.0.0.1:40797 -o ExitOnForwardFailure=yes -p 2222 s407960@heli
 ```powershell
 python scripts/lab2-remote.py exec 'cd ~/is-lab2-4101; python3.11 scripts/helios.py status'
 python scripts/lab2-remote.py tunnel 18083 40797
-python scripts/pack-lab2.py ../verification/Lab2/source-final.tar.gz
+python scripts/pack-lab2.py ../verification/Lab2/source-current.tar.gz
 ```
 
-После SFTP-распаковки проверить source-manifest.json, построить WAR на сервере и записать `sha256 target/movie-lab.war`. Продуктивное развёртывание использует тот же WAR, который прошёл проверку.
+После SFTP-распаковки проверьте `source-manifest.json`, соберите WAR и запишите `sha256 target/movie-lab.war`. Для версии от 9 ноября серверный WAR собран заменой трёх веб-ресурсов в предыдущем пакете. Его хеш и результат проверки опубликованных ресурсов приведены в `../verification/Lab2/DEPLOYMENT.md`.
 
 ## Импорт и транзакции
 

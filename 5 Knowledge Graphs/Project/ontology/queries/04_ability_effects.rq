@@ -1,0 +1,9 @@
+PREFIX lol: <https://example.org/lol-ontology#>
+SELECT ?champion ?ability ?mechanic ?target ?condition ?evidence
+WHERE {
+  ?champion lol:hasAbility ?ability .
+  ?ability lol:hasEffect ?effect .
+  ?effect lol:hasMechanic ?mechanic ; lol:hasTargetType ?target ;
+          lol:conditionText ?condition ; lol:evidenceText ?evidence .
+}
+ORDER BY ?champion ?ability ?mechanic ?target

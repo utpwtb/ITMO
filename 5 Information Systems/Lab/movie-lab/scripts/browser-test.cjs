@@ -6,6 +6,8 @@ const base=process.env.MOVIE_BASE_URL||'http://127.0.0.1:18081/movie-lab/';
 const out=process.env.MOVIE_TEST_OUTPUT||path.resolve(__dirname,'../../verification');fs.mkdirSync(out,{recursive:true});
 const results=[];
 function check(name,condition){results.push({name,passed:!!condition});if(!condition)throw Error(name);console.log('PASS '+name);}
+const movieRow=(page,id)=>page.locator(`.movie-row[data-id="${id}"]`);
+const movieTitle=(page,id,name)=>movieRow(page,id).locator('.film-link').getByText(name,{exact:true});
 (async()=>{
  const client=await request.newContext({baseURL:base});let browser,coordinate;
  try{
@@ -23,16 +25,28 @@ function check(name,condition){results.push({name,passed:!!condition});if(!condi
   await login(a);await login(b);
   const name='Проверка UI '+Date.now();await a.locator('#create').click();await a.locator('#editor').waitFor({state:'visible'});
   const form=a.locator('#edit-form');await form.locator('[name=name]').fill(name);await form.locator('[name=coordinates]').selectOption(String(coordinate.id));await form.locator('[name=oscarsCount]').fill('5');await form.locator('[name=budget]').fill('9223372036854775807');await form.locator('[name=mpaaRating]').selectOption('PG_13');await form.locator('[name=length]').fill('121');await form.locator('[name=usaBoxOffice]').fill('100');await form.locator('[name=tagline]').fill('Проверка %_');await form.locator('[name=genre]').selectOption('HORROR');await a.locator('#save').click();await a.locator('#editor').waitFor({state:'hidden'});
-  await b.getByRole('cell',{name,exact:true}).waitFor({state:'visible',timeout:12000});check('Second authenticated browser receives create automatically',true);
   const movies=await (await client.get('api/movies?filter=name&value='+encodeURIComponent(name))).json();const movie=movies.items[0];check('Full int64 budget survives browser/API round trip',movie.budget==='9223372036854775807');
-  await a.getByRole('row').filter({has:a.getByRole('cell',{name,exact:true})}).getByRole('button',{name:'Открыть',exact:true}).click();await a.locator('#details').waitFor({state:'visible'});check('Details display related coordinates',(await a.locator('#detail-content').innerText()).includes('826'));await a.screenshot({path:path.join(out,'ui-details.png'),fullPage:true});await a.locator('[data-close=details]').click();
-  await b.getByRole('row').filter({has:b.getByRole('cell',{name,exact:true})}).getByRole('button',{name:'Изменить',exact:true}).click();
+  await movieTitle(b,movie.id,name).waitFor({state:'visible',timeout:12000});check('Second authenticated browser receives create automatically',true);
+  const other=await client.post('api/movies',{headers,data:{name:name+' · вторая запись',coordinates:coordinate.id,oscarsCount:1,budget:'1',mpaaRating:'PG_13',length:90,usaBoxOffice:1,tagline:'Проверка выбора строки',genre:'COMEDY'}});
+  check('Create another movie to verify switching rows',other.ok());
+  const otherMovie=await other.json();
+  await movieRow(a,otherMovie.id).locator('.film-link').click({timeout:12000});
+  const inspector=a.locator('#movie-inspector');
+  await inspector.getByRole('heading',{name:otherMovie.name,exact:true}).waitFor();
+  await movieRow(a,movie.id).locator('td:has(.film-link)').click({position:{x:4,y:4}});
+  await inspector.getByRole('heading',{name,exact:true}).waitFor();
+  check('Clicking outside the title selects the movie row',await movieRow(a,movie.id).locator('.film-link').getAttribute('aria-pressed')==='true');
+  check('Inline details display related coordinates',(await inspector.innerText()).includes('826'));
+  await a.screenshot({path:path.join(out,'ui-details.png'),fullPage:true});
+  await b.locator('#full-columns').click();
+  await movieRow(b,movie.id).getByRole('button',{name:'Изменить',exact:true}).click();
   const update=await client.put('api/movies/'+movie.id,{headers,data:{version:movie.version,name:name+' изменён'}});check('HTTP update succeeds',update.ok());
   await b.locator('#edit-form [name=name]').fill(name+' устаревший');await b.locator('#save').click();await b.locator('#edit-error').getByText('Объект изменён другим пользователем.',{exact:false}).waitFor({state:'visible'});check('Stale browser edit rejected without losing form input',await b.locator('#editor').isVisible());await b.locator('[data-close=editor]').click();
-  await b.getByRole('cell',{name:name+' изменён',exact:true}).waitFor({state:'visible',timeout:12000});check('Second browser receives update automatically',true);
+  await movieTitle(b,movie.id,name+' изменён').waitFor({state:'visible',timeout:12000});check('Second browser receives update automatically',true);
+  await inspector.getByRole('heading',{name:name+' изменён',exact:true}).waitFor({timeout:12000});check('Selected movie details refresh automatically',true);
   await a.screenshot({path:path.join(out,'ui-table.png'),fullPage:true});
   await a.locator('[data-view=operations]').click();await a.locator('[data-operation=average] button').click();await a.locator('#operation-result').getByText('Среднее:',{exact:false}).waitFor();check('Special operations interface works',true);await a.screenshot({path:path.join(out,'ui-operations.png'),fullPage:true});
-  const current=await (await client.get('api/movies/'+movie.id)).json();check('Delete movie succeeds',(await client.delete('api/movies/'+movie.id+'?version='+current.version,{headers})).ok());await b.getByRole('cell',{name:name+' изменён',exact:true}).waitFor({state:'hidden',timeout:12000});check('Second browser receives delete automatically',true);
+  const current=await (await client.get('api/movies/'+movie.id)).json();check('Delete movie succeeds',(await client.delete('api/movies/'+movie.id+'?version='+current.version,{headers})).ok());await movieRow(b,movie.id).waitFor({state:'hidden',timeout:12000});check('Second browser receives delete automatically',true);
   check('No browser JavaScript errors',errors.length===0);
   await client.delete('api/coordinates/'+coordinate.id+'?version='+coordinate.version,{headers});coordinate=null;
   await contextA.close();await contextB.close();

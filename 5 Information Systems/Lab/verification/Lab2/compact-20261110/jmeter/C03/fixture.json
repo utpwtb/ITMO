@@ -1,0 +1,547 @@
+{
+  "scenario": "C03",
+  "threads": 2,
+  "rounds": [
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r0-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r0-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r0-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r1-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r1-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r1-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r2-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r2-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r2-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r3-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r3-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r3-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r4-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r4-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r4-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r5-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r5-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r5-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r6-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r6-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r6-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r7-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r7-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r7-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r8-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r8-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r8-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r9-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r9-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r9-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r10-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r10-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r10-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r11-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r11-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r11-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r12-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r12-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r12-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r13-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r13-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r13-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r14-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r14-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r14-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r15-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r15-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r15-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r16-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r16-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r16-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r17-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r17-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r17-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r18-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r18-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r18-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    },
+    {
+      "prefix": "lab2-jmeter-C03-1acf4c-r19-",
+      "actions": [
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r19-p0.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        },
+        {
+          "method": "POST",
+          "path": "imports",
+          "file": "/home/studs/s407960/is-lab2-4101/verification/Lab2/compact-20261110/jmeter/C03/r19-p1.json",
+          "expected": [
+            201,
+            409
+          ],
+          "code": "DUPLICATE_MOVIE",
+          "errorPath": "movies[1].director"
+        }
+      ]
+    }
+  ],
+  "marker": "lab2-jmeter-C03-1acf4c"
+}

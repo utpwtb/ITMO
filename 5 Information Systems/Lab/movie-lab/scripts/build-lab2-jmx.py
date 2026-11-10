@@ -34,10 +34,10 @@ def http(tree,name,path,method,body=None,file=None):
     headers(h,json=body is not None)
     return x,h
 root=E.Element('jmeterTestPlan',{'version':'1.2','properties':'5.0','jmeter':'5.6.3'})
-tree=E.SubElement(root,'hashTree'); plan,pt=element(tree,'TestPlan','Lab2 concurrent authenticated users','TestPlanGui')
+tree=E.SubElement(root,'hashTree'); plan,pt=element(tree,'TestPlan','Lab2 concurrency: C01, C02, C03','TestPlanGui')
 prop(plan,'TestPlan.serialize_threadgroups','true','boolProp')
 args=E.SubElement(plan,'elementProp',{'name':'TestPlan.user_defined_variables','elementType':'Arguments'});E.SubElement(args,'collectionProp',{'name':'Arguments.arguments'})
-group,gt=element(pt,'ThreadGroup','${__P(scenario,C03)}','ThreadGroupGui')
+group,gt=element(pt,'ThreadGroup','${__P(scenario,C02)}','ThreadGroupGui')
 prop(group,'ThreadGroup.on_sample_error','stoptest')
 controller=E.SubElement(group,'elementProp',{'name':'ThreadGroup.main_controller','elementType':'LoopController','guiclass':'LoopControlPanel','testclass':'LoopController','enabled':'true'})
 prop(controller,'LoopController.continue_forever','false','boolProp');prop(controller,'LoopController.loops','1')
@@ -51,7 +51,7 @@ def condition(tree,name,expression):
     x,h=element(tree,'IfController',name,'IfControllerPanel');prop(x,'IfController.condition',expression);prop(x,'IfController.useExpression','true','boolProp');return h
 rd=condition(lt,'Read initial version','${hasRead}');x,h=http(rd,'Read same target version','${readPath}','GET');groovy(h,'Check initial version','read.groovy','JSR223PostProcessor')
 x,h=groovy(lt,'Bounded rendezvous','barrier.groovy');timer,th=element(h,'SyncTimer','Synchronizing Timer','TestBeanGUI');prop(timer,'groupSize','${__P(threads,2)}');prop(timer,'timeoutInMs','20000','longProp')
-crud=condition(lt,'CRUD or special operation','${isCrud}');x,h=http(crud,'${__P(scenario)} target','${targetPath}','${targetMethod}','${targetBody}');groovy(h,'Business status and raw result','record.groovy','JSR223PostProcessor')
+crud=condition(lt,'Create, edit or delete','${isCrud}');x,h=http(crud,'${__P(scenario)} target','${targetPath}','${targetMethod}','${targetBody}');groovy(h,'Business status and raw result','record.groovy','JSR223PostProcessor')
 upload=condition(lt,'Multipart import','${isUpload}');x,h=http(upload,'${__P(scenario)} import','imports','POST',file='${uploadFile}');groovy(h,'Business status and raw result','record.groovy','JSR223PostProcessor')
 E.indent(root,space='  ')
 (ROOT/'jmeter/lab2-concurrency.jmx').write_bytes(E.tostring(root,encoding='utf-8',xml_declaration=True))

@@ -1,0 +1,2257 @@
+{
+  "_comment": "Created with OWL2VOWL (version 0.3.7), http://vowl.visualdataweb.org [Additional Information added by WebVOWL Exporter Version: 1.1.7]",
+  "header": {
+    "languages": [
+      "undefined",
+      "en",
+      "ru"
+    ],
+    "baseIris": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+      "http://www.w3.org/2000/01/rdf-schema",
+      "https://example.org/lol-ontology",
+      "http://www.w3.org/2001/XMLSchema"
+    ],
+    "prefixList": {
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "lol": "https://example.org/lol-ontology#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "xml": "http://www.w3.org/XML/1998/namespace",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "title": {
+      "en": "League of Legends: champions, abilities and effects"
+    },
+    "iri": "https://example.org/lol-ontology",
+    "version": "1.0 / Data Dragon 16.20.1 / ru_RU",
+    "description": {
+      "en": "An OWL 2 DL ontology of champions, abilities and qualified effects. The demo contains Lux, Morgana and Karma. Effect conditions and source evidence are preserved. Data Dragon 16.20.1, ru_RU. Effect annotations reviewed by an assistant."
+    },
+    "labels": {
+      "en": "League of Legends: champions, abilities and effects"
+    },
+    "comments": {
+      "ru": "Учебная онтология. Качественная разметка эффектов проверена ассистентом только для Lux, Morgana, Karma. Условия сохранены текстом; вывод означает наличие способности при указанных условиях, а не результат любого применения. Отсутствие разметки не означает отсутствие механики. Числа из шаблонов tooltip не угадываются."
+    },
+    "other": {
+      "versionInfo": [
+        {
+          "identifier": "versionInfo",
+          "language": "undefined",
+          "value": "1.0 / Data Dragon 16.20.1 / ru_RU",
+          "type": "label"
+        }
+      ],
+      "title": [
+        {
+          "identifier": "title",
+          "language": "en",
+          "value": "League of Legends: champions, abilities and effects",
+          "type": "label"
+        }
+      ]
+    }
+  },
+  "namespace": [],
+  "settings": {
+    "global": {
+      "zoom": "0.26",
+      "translation": [
+        253.33,
+        319.74
+      ],
+      "paused": false
+    },
+    "gravity": {
+      "classDistance": 200,
+      "datatypeDistance": 120
+    },
+    "filter": {
+      "checkBox": [
+        {
+          "id": "datatypeFilterCheckbox",
+          "checked": true
+        },
+        {
+          "id": "objectPropertyFilterCheckbox",
+          "checked": false
+        },
+        {
+          "id": "subclassFilterCheckbox",
+          "checked": false
+        },
+        {
+          "id": "disjointFilterCheckbox",
+          "checked": true
+        },
+        {
+          "id": "setoperatorFilterCheckbox",
+          "checked": false
+        }
+      ],
+      "degreeSliderValue": "0"
+    },
+    "modes": {
+      "checkBox": [
+        {
+          "id": "pickandpinModuleCheckbox",
+          "checked": false
+        },
+        {
+          "id": "nodescalingModuleCheckbox",
+          "checked": true
+        },
+        {
+          "id": "compactnotationModuleCheckbox",
+          "checked": false
+        },
+        {
+          "id": "colorexternalsModuleCheckbox",
+          "checked": true
+        }
+      ],
+      "colorSwitchState": false
+    }
+  },
+  "class": [
+    {
+      "id": "2",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "7",
+      "type": "owl:Class"
+    },
+    {
+      "id": "11",
+      "type": "owl:intersectionOf"
+    },
+    {
+      "id": "12",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "13",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "14",
+      "type": "owl:Class"
+    },
+    {
+      "id": "15",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "16",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "17",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "23",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "30",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "31",
+      "type": "owl:intersectionOf"
+    },
+    {
+      "id": "20",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "4",
+      "type": "owl:Class"
+    },
+    {
+      "id": "40",
+      "type": "owl:intersectionOf"
+    },
+    {
+      "id": "41",
+      "type": "owl:intersectionOf"
+    },
+    {
+      "id": "6",
+      "type": "owl:Class"
+    },
+    {
+      "id": "19",
+      "type": "owl:Class"
+    },
+    {
+      "id": "1",
+      "type": "owl:Class"
+    },
+    {
+      "id": "27",
+      "type": "owl:Class"
+    },
+    {
+      "id": "35",
+      "type": "owl:Class"
+    },
+    {
+      "id": "81",
+      "type": "owl:Thing"
+    },
+    {
+      "id": "9",
+      "type": "owl:Thing"
+    },
+    {
+      "id": "72",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "29",
+      "type": "owl:Class"
+    },
+    {
+      "id": "22",
+      "type": "owl:Class"
+    },
+    {
+      "id": "63",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "25",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "58",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "43",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "38",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "10",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "84",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "47",
+      "type": "rdfs:Datatype"
+    }
+  ],
+  "classAttribute": [
+    {
+      "id": "2",
+      "iri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "decimal"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "7",
+      "iri": "https://example.org/lol-ontology#PassiveAbility",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "PassiveAbility",
+        "undefined": "PassiveAbility"
+      },
+      "comment": {
+        "ru": "Пассивное умение, слот P."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#Karma_P",
+          "labels": {
+            "IRI-based": "Karma_P",
+            "undefined": "Karma_P"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_P",
+          "labels": {
+            "IRI-based": "Lux_P",
+            "undefined": "Lux_P"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_P",
+          "labels": {
+            "IRI-based": "Morgana_P",
+            "undefined": "Morgana_P"
+          }
+        }
+      ],
+      "pos": [
+        541.26,
+        -125.75
+      ]
+    },
+    {
+      "id": "11",
+      "iri": "https://example.org/lol-ontology#AllyShieldChampion",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "AllyShieldChampion",
+        "undefined": "AllyShieldChampion"
+      },
+      "attributes": [
+        "intersection"
+      ],
+      "comment": {
+        "ru": "Чемпион с хотя бы одним эффектом щита для союзников."
+      },
+      "pos": [
+        465.39,
+        492.56
+      ]
+    },
+    {
+      "id": "12",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "13",
+      "iri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "decimal"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "14",
+      "iri": "https://example.org/lol-ontology#MovementControlMechanic",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "MovementControlMechanic",
+        "undefined": "MovementControlMechanic"
+      },
+      "comment": {
+        "ru": "Механика ограничения передвижения: Root, Slow или Stun."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#Stun",
+          "labels": {
+            "IRI-based": "Stun",
+            "undefined": "Stun"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Slow",
+          "labels": {
+            "IRI-based": "Slow",
+            "undefined": "Slow"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Root",
+          "labels": {
+            "IRI-based": "Root",
+            "undefined": "Root"
+          }
+        }
+      ],
+      "pos": [
+        -413.02,
+        546.87
+      ]
+    },
+    {
+      "id": "15",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "16",
+      "iri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "decimal"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "17",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "23",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "30",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "31",
+      "iri": "https://example.org/lol-ontology#EnemyMovementControlChampion",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "EnemyMovementControlChampion",
+        "undefined": "EnemyMovementControlChampion"
+      },
+      "attributes": [
+        "intersection"
+      ],
+      "comment": {
+        "ru": "Чемпион с хотя бы одним эффектом ограничения передвижения врага."
+      },
+      "pos": [
+        555.39,
+        1011.65
+      ]
+    },
+    {
+      "id": "20",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "4",
+      "iri": "https://example.org/lol-ontology#Ability",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "Ability",
+        "undefined": "Ability"
+      },
+      "comment": {
+        "ru": "Основное умение P/Q/W/E/R."
+      },
+      "pos": [
+        450.57,
+        244.21
+      ]
+    },
+    {
+      "id": "40",
+      "iri": "https://example.org/lol-ontology#SupportControlMage",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "SupportControlMage",
+        "undefined": "SupportControlMage"
+      },
+      "attributes": [
+        "intersection"
+      ],
+      "comment": {
+        "ru": "Маг, способный дать союзнику щит и ограничить передвижение врага. Умения могут быть разными."
+      },
+      "pos": [
+        719.32,
+        733.32
+      ]
+    },
+    {
+      "id": "41",
+      "iri": "https://example.org/lol-ontology#MageChampion",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "MageChampion",
+        "undefined": "MageChampion"
+      },
+      "attributes": [
+        "intersection"
+      ],
+      "comment": {
+        "ru": "Чемпион с категорией Mage; классифицируется ризонером."
+      },
+      "pos": [
+        424.65,
+        1027.89
+      ]
+    },
+    {
+      "id": "6",
+      "iri": "https://example.org/lol-ontology#Mechanic",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "Mechanic",
+        "undefined": "Mechanic"
+      },
+      "comment": {
+        "ru": "Тип механики: щит, урон, обездвиживание и т. п."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#Empower",
+          "labels": {
+            "IRI-based": "Empower",
+            "undefined": "Empower"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Shield",
+          "labels": {
+            "IRI-based": "Shield",
+            "undefined": "Shield"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Damage",
+          "labels": {
+            "IRI-based": "Damage",
+            "undefined": "Damage"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#CooldownReduction",
+          "labels": {
+            "IRI-based": "CooldownReduction",
+            "undefined": "CooldownReduction"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#MovementSpeedBoost",
+          "labels": {
+            "IRI-based": "MovementSpeedBoost",
+            "undefined": "MovementSpeedBoost"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Reveal",
+          "labels": {
+            "IRI-based": "Reveal",
+            "undefined": "Reveal"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#ControlImmunity",
+          "labels": {
+            "IRI-based": "ControlImmunity",
+            "undefined": "ControlImmunity"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Heal",
+          "labels": {
+            "IRI-based": "Heal",
+            "undefined": "Heal"
+          }
+        }
+      ],
+      "pos": [
+        -42.46,
+        427.13
+      ]
+    },
+    {
+      "id": "19",
+      "iri": "https://example.org/lol-ontology#AbilityEffect",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "AbilityEffect",
+        "undefined": "AbilityEffect"
+      },
+      "comment": {
+        "ru": "Один эффект умения с собственной целью и условием."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#Karma_E_Shield_Ally",
+          "labels": {
+            "IRI-based": "Karma_E_Shield_Ally",
+            "undefined": "Karma_E_Shield_Ally"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_P_Heal_Self",
+          "labels": {
+            "IRI-based": "Morgana_P_Heal_Self",
+            "undefined": "Morgana_P_Heal_Self"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_R_Empower_OwnAbility",
+          "labels": {
+            "IRI-based": "Karma_R_Empower_OwnAbility",
+            "undefined": "Karma_R_Empower_OwnAbility"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_R_Stun_Enemy",
+          "labels": {
+            "IRI-based": "Morgana_R_Stun_Enemy",
+            "undefined": "Morgana_R_Stun_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_W_Root_Enemy",
+          "labels": {
+            "IRI-based": "Karma_W_Root_Enemy",
+            "undefined": "Karma_W_Root_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_W_Reveal_Enemy",
+          "labels": {
+            "IRI-based": "Karma_W_Reveal_Enemy",
+            "undefined": "Karma_W_Reveal_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_Q_Root_Enemy",
+          "labels": {
+            "IRI-based": "Morgana_Q_Root_Enemy",
+            "undefined": "Morgana_Q_Root_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_P_CooldownReduction_OwnAbility",
+          "labels": {
+            "IRI-based": "Karma_P_CooldownReduction_OwnAbility",
+            "undefined": "Karma_P_CooldownReduction_OwnAbility"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_E_Slow_Enemy",
+          "labels": {
+            "IRI-based": "Lux_E_Slow_Enemy",
+            "undefined": "Lux_E_Slow_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_E_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Lux_E_Damage_Enemy",
+            "undefined": "Lux_E_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_E_MovementSpeedBoost_Ally",
+          "labels": {
+            "IRI-based": "Karma_E_MovementSpeedBoost_Ally",
+            "undefined": "Karma_E_MovementSpeedBoost_Ally"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_W_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Karma_W_Damage_Enemy",
+            "undefined": "Karma_W_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_E_ControlImmunity_Ally",
+          "labels": {
+            "IRI-based": "Morgana_E_ControlImmunity_Ally",
+            "undefined": "Morgana_E_ControlImmunity_Ally"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_W_Shield_Ally",
+          "labels": {
+            "IRI-based": "Lux_W_Shield_Ally",
+            "undefined": "Lux_W_Shield_Ally"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_Q_Slow_Enemy",
+          "labels": {
+            "IRI-based": "Karma_Q_Slow_Enemy",
+            "undefined": "Karma_Q_Slow_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_R_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Morgana_R_Damage_Enemy",
+            "undefined": "Morgana_R_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_E_Shield_Ally",
+          "labels": {
+            "IRI-based": "Morgana_E_Shield_Ally",
+            "undefined": "Morgana_E_Shield_Ally"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_Q_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Morgana_Q_Damage_Enemy",
+            "undefined": "Morgana_Q_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_Q_Root_Enemy",
+          "labels": {
+            "IRI-based": "Lux_Q_Root_Enemy",
+            "undefined": "Lux_Q_Root_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_Q_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Karma_Q_Damage_Enemy",
+            "undefined": "Karma_Q_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_W_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Morgana_W_Damage_Enemy",
+            "undefined": "Morgana_W_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_W_Heal_Self",
+          "labels": {
+            "IRI-based": "Karma_W_Heal_Self",
+            "undefined": "Karma_W_Heal_Self"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_W_CooldownReduction_OwnAbility",
+          "labels": {
+            "IRI-based": "Morgana_W_CooldownReduction_OwnAbility",
+            "undefined": "Morgana_W_CooldownReduction_OwnAbility"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_R_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Lux_R_Damage_Enemy",
+            "undefined": "Lux_R_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_R_Slow_Enemy",
+          "labels": {
+            "IRI-based": "Morgana_R_Slow_Enemy",
+            "undefined": "Morgana_R_Slow_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_Q_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Lux_Q_Damage_Enemy",
+            "undefined": "Lux_Q_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_P_Damage_Enemy",
+          "labels": {
+            "IRI-based": "Lux_P_Damage_Enemy",
+            "undefined": "Lux_P_Damage_Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_R_MovementSpeedBoost_Self",
+          "labels": {
+            "IRI-based": "Morgana_R_MovementSpeedBoost_Self",
+            "undefined": "Morgana_R_MovementSpeedBoost_Self"
+          }
+        }
+      ],
+      "pos": [
+        108.44,
+        33.49
+      ]
+    },
+    {
+      "id": "1",
+      "iri": "https://example.org/lol-ontology#Champion",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "Champion",
+        "undefined": "Champion"
+      },
+      "comment": {
+        "ru": "Игровой чемпион."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#Lux",
+          "labels": {
+            "IRI-based": "Lux",
+            "undefined": "Lux"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma",
+          "labels": {
+            "IRI-based": "Karma",
+            "undefined": "Karma"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana",
+          "labels": {
+            "IRI-based": "Morgana",
+            "undefined": "Morgana"
+          }
+        }
+      ],
+      "pos": [
+        306.98,
+        699.2
+      ]
+    },
+    {
+      "id": "27",
+      "iri": "https://example.org/lol-ontology#ActiveAbility",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "ActiveAbility",
+        "undefined": "ActiveAbility"
+      },
+      "comment": {
+        "ru": "Активное умение, слот Q/W/E/R."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#Karma_R",
+          "labels": {
+            "IRI-based": "Karma_R",
+            "undefined": "Karma_R"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_W",
+          "labels": {
+            "IRI-based": "Lux_W",
+            "undefined": "Lux_W"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_Q",
+          "labels": {
+            "IRI-based": "Karma_Q",
+            "undefined": "Karma_Q"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_W",
+          "labels": {
+            "IRI-based": "Morgana_W",
+            "undefined": "Morgana_W"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_E",
+          "labels": {
+            "IRI-based": "Morgana_E",
+            "undefined": "Morgana_E"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_Q",
+          "labels": {
+            "IRI-based": "Lux_Q",
+            "undefined": "Lux_Q"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_R",
+          "labels": {
+            "IRI-based": "Lux_R",
+            "undefined": "Lux_R"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_R",
+          "labels": {
+            "IRI-based": "Morgana_R",
+            "undefined": "Morgana_R"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_E",
+          "labels": {
+            "IRI-based": "Karma_E",
+            "undefined": "Karma_E"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Lux_E",
+          "labels": {
+            "IRI-based": "Lux_E",
+            "undefined": "Lux_E"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Morgana_Q",
+          "labels": {
+            "IRI-based": "Morgana_Q",
+            "undefined": "Morgana_Q"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Karma_W",
+          "labels": {
+            "IRI-based": "Karma_W",
+            "undefined": "Karma_W"
+          }
+        }
+      ],
+      "pos": [
+        793.38,
+        57.09
+      ]
+    },
+    {
+      "id": "35",
+      "iri": "https://example.org/lol-ontology#ChampionCategory",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "ChampionCategory",
+        "undefined": "ChampionCategory"
+      },
+      "comment": {
+        "ru": "Категория Data Dragon (Mage, Support и т. п.), не позиция на карте."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#Category_Mage",
+          "labels": {
+            "IRI-based": "Category_Mage",
+            "undefined": "Category_Mage"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Category_Support",
+          "labels": {
+            "IRI-based": "Category_Support",
+            "undefined": "Category_Support"
+          }
+        }
+      ],
+      "pos": [
+        8.39,
+        967.9
+      ]
+    },
+    {
+      "id": "81",
+      "iri": "http://www.w3.org/2002/07/owl#Thing",
+      "baseIri": "http://owl2vowl.de",
+      "label": {
+        "undefined": "Thing"
+      },
+      "pos": [
+        -396.79,
+        -127.26
+      ]
+    },
+    {
+      "id": "9",
+      "iri": "http://www.w3.org/2002/07/owl#Thing",
+      "baseIri": "http://owl2vowl.de",
+      "label": {
+        "undefined": "Thing"
+      },
+      "pos": [
+        -435.39,
+        1027.83
+      ]
+    },
+    {
+      "id": "72",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "29",
+      "iri": "https://example.org/lol-ontology#SourceDocument",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "SourceDocument",
+        "undefined": "SourceDocument"
+      },
+      "comment": {
+        "ru": "Документ, подтверждающий данные."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#Source_Morgana",
+          "labels": {
+            "IRI-based": "Source_Morgana",
+            "undefined": "Source_Morgana"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Source_Lux",
+          "labels": {
+            "IRI-based": "Source_Lux",
+            "undefined": "Source_Lux"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Source_Karma",
+          "labels": {
+            "IRI-based": "Source_Karma",
+            "undefined": "Source_Karma"
+          }
+        }
+      ],
+      "pos": [
+        -556.9,
+        168.87
+      ]
+    },
+    {
+      "id": "22",
+      "iri": "https://example.org/lol-ontology#TargetType",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "TargetType",
+        "undefined": "TargetType"
+      },
+      "comment": {
+        "ru": "Тип получателя конкретного эффекта, не конкретный участник матча."
+      },
+      "individuals": [
+        {
+          "iri": "https://example.org/lol-ontology#OwnAbility",
+          "labels": {
+            "IRI-based": "OwnAbility",
+            "undefined": "OwnAbility"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Self",
+          "labels": {
+            "IRI-based": "Self",
+            "undefined": "Self"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Enemy",
+          "labels": {
+            "IRI-based": "Enemy",
+            "undefined": "Enemy"
+          }
+        },
+        {
+          "iri": "https://example.org/lol-ontology#Ally",
+          "labels": {
+            "IRI-based": "Ally",
+            "undefined": "Ally"
+          }
+        }
+      ],
+      "pos": [
+        64.74,
+        -356.83
+      ]
+    },
+    {
+      "id": "63",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "25",
+      "iri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "decimal"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "58",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "43",
+      "iri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "anyURI"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "38",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "10",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "84",
+      "iri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "decimal"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    },
+    {
+      "id": "47",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "label": {
+        "IRI-based": "string"
+      },
+      "attributes": [
+        "datatype"
+      ]
+    }
+  ],
+  "property": [
+    {
+      "id": "0",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "3",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "5",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "8",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "18",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "21",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "24",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "26",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "28",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "32",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "33",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "34",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "36",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "37",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "39",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "42",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "44",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "45",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "46",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "48",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "49",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "50",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "51",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "52",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "53",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "54",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "55",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "56",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "57",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "59",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "60",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "61",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "62",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "64",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "65",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "66",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "67",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "68",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "69",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "70",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "71",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "73",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "74",
+      "type": "rdfs:subClassOf"
+    },
+    {
+      "id": "75",
+      "type": "rdfs:subClassOf"
+    },
+    {
+      "id": "76",
+      "type": "rdfs:subClassOf"
+    },
+    {
+      "id": "77",
+      "type": "rdfs:subClassOf"
+    },
+    {
+      "id": "78",
+      "type": "rdfs:subClassOf"
+    },
+    {
+      "id": "79",
+      "type": "rdfs:subClassOf"
+    },
+    {
+      "id": "80",
+      "type": "rdfs:subClassOf"
+    },
+    {
+      "id": "82",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "83",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "85",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "86",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "87",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "88",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "89",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "GENERATED-INTERSECTION-11-1-0",
+      "type": "setOperatorProperty"
+    },
+    {
+      "id": "GENERATED-INTERSECTION-31-1-0",
+      "type": "setOperatorProperty"
+    },
+    {
+      "id": "GENERATED-INTERSECTION-40-11-0",
+      "type": "setOperatorProperty"
+    },
+    {
+      "id": "GENERATED-INTERSECTION-40-41-1",
+      "type": "setOperatorProperty"
+    },
+    {
+      "id": "GENERATED-INTERSECTION-40-31-2",
+      "type": "setOperatorProperty"
+    },
+    {
+      "id": "GENERATED-INTERSECTION-41-1-0",
+      "type": "setOperatorProperty"
+    }
+  ],
+  "propertyAttribute": [
+    {
+      "id": "0",
+      "iri": "https://example.org/lol-ontology#baseMoveSpeed",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "baseMoveSpeed",
+        "undefined": "baseMoveSpeed"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "1",
+      "range": "2"
+    },
+    {
+      "id": "3",
+      "iri": "https://example.org/lol-ontology#isAbilityOf",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "isAbilityOf",
+        "undefined": "isAbilityOf"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "Умение принадлежит чемпиону; обратное hasAbility."
+      },
+      "domain": "4",
+      "range": "1",
+      "inverse": "82",
+      "pos": [
+        381.2,
+        464.03
+      ]
+    },
+    {
+      "id": "5",
+      "iri": "https://example.org/lol-ontology#canApplyMechanic",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "canApplyMechanic",
+        "undefined": "canApplyMechanic"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "Выводится цепочкой hasAbility / hasEffect / hasMechanic; не хранит условия."
+      },
+      "domain": "1",
+      "range": "6",
+      "pos": [
+        134.82,
+        565.16
+      ]
+    },
+    {
+      "id": "8",
+      "iri": "https://example.org/lol-ontology#gameVersion",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "gameVersion",
+        "undefined": "gameVersion"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "9",
+      "range": "10"
+    },
+    {
+      "id": "18",
+      "iri": "https://example.org/lol-ontology#conditionText",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "conditionText",
+        "undefined": "conditionText"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "19",
+      "range": "20"
+    },
+    {
+      "id": "21",
+      "iri": "https://example.org/lol-ontology#hasTargetType",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "hasTargetType",
+        "undefined": "hasTargetType"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "Получатель конкретного эффекта."
+      },
+      "domain": "19",
+      "range": "22",
+      "pos": [
+        85.81,
+        -168.66
+      ]
+    },
+    {
+      "id": "24",
+      "iri": "https://example.org/lol-ontology#baseMP",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "baseMP",
+        "undefined": "baseMP"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "1",
+      "range": "25"
+    },
+    {
+      "id": "26",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "27",
+      "range": "7"
+    },
+    {
+      "id": "28",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "29",
+      "range": "22"
+    },
+    {
+      "id": "32",
+      "iri": "https://example.org/lol-ontology#reviewStatus",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "reviewStatus",
+        "undefined": "reviewStatus"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "9",
+      "range": "30"
+    },
+    {
+      "id": "33",
+      "iri": "https://example.org/lol-ontology#hasMechanic",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "hasMechanic",
+        "undefined": "hasMechanic"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "Механика конкретного эффекта."
+      },
+      "domain": "19",
+      "range": "6",
+      "pos": [
+        31.31,
+        234.68
+      ]
+    },
+    {
+      "id": "34",
+      "iri": "https://example.org/lol-ontology#hasCategory",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "hasCategory",
+        "undefined": "hasCategory"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "Категория чемпиона в Data Dragon."
+      },
+      "domain": "1",
+      "range": "35",
+      "pos": [
+        156.83,
+        834.32
+      ]
+    },
+    {
+      "id": "36",
+      "iri": "https://example.org/lol-ontology#baseArmor",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "baseArmor",
+        "undefined": "baseArmor"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "1",
+      "range": "16"
+    },
+    {
+      "id": "37",
+      "iri": "https://example.org/lol-ontology#evidenceField",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "evidenceField",
+        "undefined": "evidenceField"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "19",
+      "range": "38"
+    },
+    {
+      "id": "39",
+      "iri": "https://example.org/lol-ontology#effectOf",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "effectOf",
+        "undefined": "effectOf"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "Эффект относится к умению; обратное hasEffect."
+      },
+      "domain": "19",
+      "range": "4",
+      "inverse": "88",
+      "pos": [
+        293.1,
+        147.23
+      ]
+    },
+    {
+      "id": "42",
+      "iri": "https://example.org/lol-ontology#sourceURL",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "sourceURL",
+        "undefined": "sourceURL"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "29",
+      "range": "43"
+    },
+    {
+      "id": "44",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "29",
+      "range": "6"
+    },
+    {
+      "id": "45",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "35",
+      "range": "22"
+    },
+    {
+      "id": "46",
+      "iri": "https://example.org/lol-ontology#entityId",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "entityId",
+        "undefined": "entityId"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "9",
+      "range": "47"
+    },
+    {
+      "id": "48",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "22",
+      "range": "6"
+    },
+    {
+      "id": "49",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "22",
+      "range": "1"
+    },
+    {
+      "id": "50",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "29",
+      "range": "1"
+    },
+    {
+      "id": "51",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "35",
+      "range": "29"
+    },
+    {
+      "id": "52",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "35",
+      "range": "6"
+    },
+    {
+      "id": "53",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "19",
+      "range": "22"
+    },
+    {
+      "id": "54",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "6",
+      "range": "1"
+    },
+    {
+      "id": "55",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "35",
+      "range": "1"
+    },
+    {
+      "id": "56",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "4",
+      "range": "35"
+    },
+    {
+      "id": "57",
+      "iri": "https://example.org/lol-ontology#description",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "description",
+        "undefined": "description"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "9",
+      "range": "58"
+    },
+    {
+      "id": "59",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "4",
+      "range": "6"
+    },
+    {
+      "id": "60",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "4",
+      "range": "29"
+    },
+    {
+      "id": "61",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "4",
+      "range": "22"
+    },
+    {
+      "id": "62",
+      "iri": "https://example.org/lol-ontology#title",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "title",
+        "undefined": "title"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "1",
+      "range": "63"
+    },
+    {
+      "id": "64",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "19",
+      "range": "1"
+    },
+    {
+      "id": "65",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "35",
+      "range": "19"
+    },
+    {
+      "id": "66",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "19",
+      "range": "6"
+    },
+    {
+      "id": "67",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "19",
+      "range": "29"
+    },
+    {
+      "id": "68",
+      "iri": "https://example.org/lol-ontology#resourceType",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "resourceType",
+        "undefined": "resourceType"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "1",
+      "range": "12"
+    },
+    {
+      "id": "69",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "4",
+      "range": "19"
+    },
+    {
+      "id": "70",
+      "label": "Disjoint With",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "4",
+      "range": "1"
+    },
+    {
+      "id": "71",
+      "iri": "https://example.org/lol-ontology#slot",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "slot",
+        "undefined": "slot"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "4",
+      "range": "72"
+    },
+    {
+      "id": "73",
+      "iri": "https://example.org/lol-ontology#name",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "name",
+        "undefined": "name"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "9",
+      "range": "23"
+    },
+    {
+      "id": "74",
+      "label": "Subclass of",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "40",
+      "range": "1",
+      "pos": [
+        521.17,
+        716.92
+      ]
+    },
+    {
+      "id": "75",
+      "label": "Subclass of",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "41",
+      "range": "1",
+      "pos": [
+        316.38,
+        893.4
+      ]
+    },
+    {
+      "id": "76",
+      "label": "Subclass of",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "31",
+      "range": "1",
+      "pos": [
+        412.23,
+        881.57
+      ]
+    },
+    {
+      "id": "77",
+      "label": "Subclass of",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "7",
+      "range": "4",
+      "pos": [
+        494,
+        67.04
+      ]
+    },
+    {
+      "id": "78",
+      "label": "Subclass of",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "27",
+      "range": "4",
+      "pos": [
+        610.78,
+        156.77
+      ]
+    },
+    {
+      "id": "79",
+      "label": "Subclass of",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "11",
+      "range": "1",
+      "pos": [
+        300.81,
+        501
+      ]
+    },
+    {
+      "id": "80",
+      "label": "Subclass of",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "domain": "14",
+      "range": "6",
+      "pos": [
+        -230.83,
+        487.99
+      ]
+    },
+    {
+      "id": "82",
+      "iri": "https://example.org/lol-ontology#hasAbility",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "hasAbility",
+        "undefined": "hasAbility"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "У чемпиона есть умение."
+      },
+      "domain": "1",
+      "range": "4",
+      "inverse": "3"
+    },
+    {
+      "id": "83",
+      "iri": "https://example.org/lol-ontology#baseAttackDamage",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "baseAttackDamage",
+        "undefined": "baseAttackDamage"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "1",
+      "range": "84"
+    },
+    {
+      "id": "85",
+      "iri": "https://example.org/lol-ontology#tooltipText",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "tooltipText",
+        "undefined": "tooltipText"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "4",
+      "range": "15"
+    },
+    {
+      "id": "86",
+      "iri": "https://example.org/lol-ontology#evidenceText",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "evidenceText",
+        "undefined": "evidenceText"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "19",
+      "range": "17"
+    },
+    {
+      "id": "87",
+      "iri": "https://example.org/lol-ontology#baseHP",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "baseHP",
+        "undefined": "baseHP"
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "1",
+      "range": "13"
+    },
+    {
+      "id": "88",
+      "iri": "https://example.org/lol-ontology#hasEffect",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "hasEffect",
+        "undefined": "hasEffect"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "Умение имеет конкретный эффект."
+      },
+      "domain": "4",
+      "range": "19",
+      "inverse": "39"
+    },
+    {
+      "id": "89",
+      "iri": "https://example.org/lol-ontology#hasSource",
+      "baseIri": "https://example.org/lol-ontology",
+      "label": {
+        "IRI-based": "hasSource",
+        "undefined": "hasSource"
+      },
+      "attributes": [
+        "object"
+      ],
+      "comment": {
+        "ru": "Источник сведений об объекте."
+      },
+      "domain": "81",
+      "range": "29",
+      "pos": [
+        -468.26,
+        4.93
+      ]
+    },
+    {
+      "id": "GENERATED-INTERSECTION-11-1-0",
+      "domain": "11",
+      "range": "1",
+      "pos": [
+        266.05,
+        521.61
+      ]
+    },
+    {
+      "id": "GENERATED-INTERSECTION-31-1-0",
+      "domain": "31",
+      "range": "1",
+      "pos": [
+        466.18,
+        835.06
+      ]
+    },
+    {
+      "id": "GENERATED-INTERSECTION-40-11-0",
+      "domain": "40",
+      "range": "11",
+      "pos": [
+        592.36,
+        612.94
+      ]
+    },
+    {
+      "id": "GENERATED-INTERSECTION-40-41-1",
+      "domain": "40",
+      "range": "41",
+      "pos": [
+        571.99,
+        880.6
+      ]
+    },
+    {
+      "id": "GENERATED-INTERSECTION-40-31-2",
+      "domain": "40",
+      "range": "31",
+      "pos": [
+        637.36,
+        872.48
+      ]
+    },
+    {
+      "id": "GENERATED-INTERSECTION-41-1-0",
+      "domain": "41",
+      "range": "1",
+      "pos": [
+        267.81,
+        910.47
+      ]
+    }
+  ]
+}

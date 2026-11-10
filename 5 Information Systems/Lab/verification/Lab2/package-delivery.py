@@ -1,81 +1,112 @@
-"""Assemble requested source/report/raw evidence; validate every included source and result first."""
+"""Package the current Lab 2 sources, Russian report and compact Helios evidence."""
+
 import hashlib
 import json
 from pathlib import Path
 import tarfile
-import xml.etree.ElementTree as ET
 import zipfile
+
 from pypdf import PdfReader
 
-HERE=Path(__file__).resolve().parent
-ROOT=HERE.parents[1]
-app=ROOT/'movie-lab'
-source=json.loads((app/'source-manifest.json').read_text())
-for name,expected in source.items():assert hashlib.sha256((app/name).read_bytes()).hexdigest()==expected,name
-with tarfile.open(HERE/'source-final.tar.gz') as tar:
-    for entry in tar:
-        assert not any(part in ('.runtime','target','credentials','__pycache__') for part in Path(entry.name).parts),entry.name
-rc=json.loads((HERE/'server/final-RC/summary.json').read_text())
-assert len(rc)==13 and all(x['passed'] and x['completedRounds']==20 for x in rc)
-assert sum(x['requests'] for x in rc)==1640 and sum(x['unexpected'] for x in rc)==0
-stats=[ET.parse(p).getroot() for p in (HERE/'server/final/surefire-reports').glob('TEST-*.xml')]
-assert sum(int(x.attrib['tests']) for x in stats)==140
-assert all(int(x.attrib.get(k,'0'))==0 for x in stats for k in ('failures','errors','skipped'))
-assert json.loads((HERE/'server/production/restart-result.json').read_text())['passed']
-assert json.loads((HERE/'resume/runtime.json').read_text())['passed']
-assert json.loads((HERE/'resume/last-row-check.json').read_text())['passed']
-assert json.loads((HERE/'download-integrity.json').read_text())['allMatched']
-ui=json.loads((HERE/'ui-review/deployment.json').read_text(encoding='utf-8'))
-assert ui['passed'] and ui['allOtherWarEntriesUnchanged'] and ui['domainSnapshotUnchanged']
-assert json.loads((HERE/'browser/final-ui-checks.json').read_text(encoding='utf-8'))['passed']
-assert hashlib.sha256((HERE/'ui-review/movie-lab.war').read_bytes()).hexdigest()==ui['warSha256']
-with zipfile.ZipFile(HERE/'server/final/movie-lab.war') as old, zipfile.ZipFile(HERE/'ui-review/movie-lab.war') as new:
-    assert set(old.namelist())==set(new.namelist())
-    assert sorted(n for n in old.namelist() if old.read(n)!=new.read(n))==ui['changedWarEntries']
-pdf=ROOT/'report/Lab2/report.pdf'
-reader=PdfReader(pdf)
-assert len(reader.pages)==13 and 'Заключение' in reader.pages[-1].extract_text()
-for name,expected in json.loads((ROOT/'report/Lab2/uml/source-hashes.json').read_text()).items():
-    assert hashlib.sha256((app/name).read_bytes()).hexdigest()==expected,name
 
-# Test secrets are checked in plain text artifacts without disclosing them.
-test_passwords=[x['password'].encode() for x in json.loads((app/'.runtime/lab2-users.json').read_text())]
-text_extensions={'.py','.java','.js','.groovy','.jmx','.md','.tex','.json','.jsonl','.xml','.txt','.log','.csv','.jtl','.sql','.html','.properties'}
-scan=set(app/name for name in source)
-scan.update(p for p in HERE.rglob('*') if p.is_file() and p.suffix.lower() in text_extensions)
-leaks=[]
-for path in scan:
-    content=path.read_bytes()
-    if any(secret in content for secret in test_passwords):leaks.append(str(path.relative_to(ROOT)))
-    if path.suffix=='.xml' and b'<property name="MOVIE_DB_PASSWORD"' in content:leaks.append(str(path.relative_to(ROOT)))
-assert not leaks,leaks
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+APP = ROOT / 'movie-lab'
+RUN = HERE / 'compact-20261110'
+REPORT = ROOT / 'report/Lab2'
 
-paths=set(app/name for name in source);paths.add(app/'source-manifest.json')
-for path in (ROOT/'report/Lab2').rglob('*'):
-    if path.is_file() and path.suffix.lower() in {'.tex','.pdf','.png','.svg','.dot','.json','.md','.txt','.otf'} and path.name!='main.pdf':paths.add(path)
-paths.add(ROOT/'defense/Lab2/README.md')
-names=['ACCEPTANCE.md','DEPLOYMENT.md','baseline.md','helios-environment.md','isolation-analysis.md','progress.md','progress-history.md',
-       'source-final.tar.gz','lab2-server-evidence.tar.gz','unpack-evidence.py','download-integrity.json','source-final-verification.txt',
-       'report-final-compile.log','recovery-language.sql','recovery-language.txt','resume-start.txt','resume-check.txt','last-row-check.txt']
-paths.update(HERE/name for name in names)
-paths.update(p for p in (HERE/'resume').rglob('*') if p.is_file())
-paths.update(p for p in (HERE/'browser').glob('final-*') if p.is_file())
-paths.update(p for p in (HERE/'ui-review').rglob('*') if p.is_file())
-paths.add(Path(__file__).resolve())
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read_json(path):
+    return json.loads(path.read_text(encoding='utf-8'))
+
+
+source = read_json(APP / 'source-manifest.json')
+for name, expected in source.items():
+    assert digest(APP / name) == expected, name
+source_archive = HERE / 'source-current.tar.gz'
+with tarfile.open(source_archive) as tar:
+    assert set(tar.getnames()) == set(source) | {'source-manifest.json'}
+    for name, expected in source.items():
+        assert hashlib.sha256(tar.extractfile(name).read()).hexdigest() == expected, name
+    assert tar.extractfile('source-manifest.json').read() == (APP / 'source-manifest.json').read_bytes()
+
+config = read_json(RUN / 'configuration.json')
+cases = read_json(RUN / 'jmeter/summary.json')
+assert [item['scenario'] for item in cases] == config['scenarios'] == ['C01', 'C02', 'C03']
+assert config['persistenceUnit'] == 'movies-helios-test' and config['isolation'] == 'READ COMMITTED'
+assert config['runnerSha256'] == source['scripts/lab2-jmeter.py']
+assert config['jmxSha256'] == source['jmeter/lab2-concurrency.jmx']
+for case, requests, conflicts in zip(cases, (40, 200, 40), (20, 180, 20)):
+    assert case['passed'] and case['completedRounds'] == case['rounds'] == 20
+    assert case['requests'] == requests and case['expectedConflicts'] == conflicts and case['commits'] == 20
+    assert case['unexpected'] == case['duplicates'] == case['jtlFailures'] == 0
+    assert read_json(RUN / 'jmeter' / case['scenario'] / 'assertions.json') == case
+assert cases[2]['lateDuplicateConflicts'] == 20 and cases[2]['failedImportResidue'] == 0
+functional = read_json(RUN / 'functional/http-functional.json')
+assert functional['passed'] and len(functional['results']) == 17
+assert all(check['passed'] for check in functional['results'])
+last_row = read_json(RUN / 'functional/invalid-last-field.json')
+assert last_row['passed'] and last_row['before'] == last_row['after']
+assert last_row['revisionBefore'] == last_row['revisionAfter']
+
+pdf = REPORT / 'report.pdf'
+pages = [page.extract_text() for page in PdfReader(pdf).pages]
+text = '\n'.join(pages)
+assert all(item in text for item in ('C01', 'C02', 'C03', '280', '18 функциональных'))
+assert all(item not in text for item in ('Требования к отчёту', 'Вопросы к защите', 'SERIALIZABLE', '1640'))
+assert 'Заключение' in pages[-1]
+for name, expected in read_json(REPORT / 'uml/source-hashes.json').items():
+    assert digest(APP / name) == expected, name
+
+paths = {APP / name for name in source}
+paths.update((APP / 'source-manifest.json', APP / 'target/movie-lab.war',
+              source_archive, HERE / 'ACCEPTANCE.md', HERE / 'DEPLOYMENT.md', Path(__file__).resolve()))
+paths.update(path for path in RUN.rglob('*') if path.is_file())
+paths.update(path for path in (ROOT / 'defense/Lab2').glob('*.md') if path.is_file())
+report_types = {'.tex', '.pdf', '.png', '.svg', '.dot', '.json', '.md', '.txt', '.otf'}
+paths.update(path for path in REPORT.rglob('*') if path.is_file()
+             and path.suffix.lower() in report_types and path.name != 'main.pdf')
+assert all(path.is_file() and path.resolve().is_relative_to(ROOT.resolve())
+           and '.runtime' not in path.relative_to(ROOT).parts for path in paths)
+
+test_users = APP / '.runtime/lab2-users.json'
+secrets = [user['password'].encode() for user in read_json(test_users)] if test_users.is_file() else []
+text_types = {'.py', '.java', '.js', '.groovy', '.jmx', '.md', '.tex', '.json', '.jsonl',
+              '.xml', '.txt', '.log', '.csv', '.jtl', '.sql', '.html', '.properties'}
+scanned = 0
 for path in paths:
-    assert path.is_file(),path
-    assert path.resolve().is_relative_to(ROOT.resolve())
-    assert '.runtime' not in path.relative_to(ROOT).parts
-manifest={str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}
-manifest_path=HERE/'delivery-manifest.json'
-manifest_path.write_text(json.dumps(manifest,indent=2),encoding='utf-8')
-with zipfile.ZipFile(HERE/'lab2-delivery.zip','w',compression=zipfile.ZIP_DEFLATED,compresslevel=4) as z:
-    for path in sorted(paths):z.write(path,str(path.relative_to(ROOT)))
-    z.write(manifest_path,str(manifest_path.relative_to(ROOT)))
-result={'passed':True,'javaTests':140,'jmeterTargetRequests':1640,'jmeterScenarios':13,'jmeterUnexpectedFailures':0,
-        'fullTestsWarSha256':ui['previousWarSha256'],'currentUiWarSha256':ui['warSha256'],'uiRevisionFullTestsRerun':False,
-        'pdfPages':len(reader.pages),'sourceFiles':len(source),'textArtifactsScanned':len(scan),'testCredentialLeaks':0,
-        'bundleFiles':len(paths)+1,'bundleSha256':hashlib.sha256((HERE/'lab2-delivery.zip').read_bytes()).hexdigest(),
-        'reportSha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),
-        'sourceArchiveSha256':hashlib.sha256((HERE/'source-final.tar.gz').read_bytes()).hexdigest()}
-(HERE/'delivery-checks.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))
+    if path.suffix.lower() in text_types:
+        content = path.read_bytes()
+        assert not any(secret in content for secret in secrets), str(path.relative_to(ROOT))
+        if path.suffix.lower() == '.xml':
+            assert b'<property name="MOVIE_DB_PASSWORD"' not in content, str(path.relative_to(ROOT))
+        scanned += 1
+
+manifest = {path.relative_to(ROOT).as_posix(): digest(path) for path in sorted(paths)}
+manifest_path = HERE / 'delivery-manifest.json'
+manifest_path.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
+bundle = HERE / 'lab2-delivery.zip'
+candidate = bundle.with_suffix('.zip.tmp')
+with zipfile.ZipFile(candidate, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=4) as archive:
+    for name in manifest:
+        archive.write(ROOT / name, name)
+    archive.write(manifest_path, manifest_path.relative_to(ROOT).as_posix())
+with zipfile.ZipFile(candidate) as archive:
+    assert set(archive.namelist()) == set(manifest) | {manifest_path.relative_to(ROOT).as_posix()}
+    for name, expected in manifest.items():
+        assert hashlib.sha256(archive.read(name)).hexdigest() == expected, name
+candidate.replace(bundle)
+result = {
+    'passed': True, 'serverRun': RUN.name, 'jmeterScenarios': ['C01', 'C02', 'C03'],
+    'jmeterTargetRequests': 280, 'jmeterCommits': 60, 'jmeterExpectedConflicts': 220,
+    'jmeterUnexpectedFailures': 0, 'functionalChecks': 18, 'pdfPages': len(pages),
+    'serverTestWarSha256': config['warSha256'], 'sourceFiles': len(source),
+    'textArtifactsScanned': scanned, 'testCredentialLeaks': 0, 'bundleFiles': len(paths) + 1,
+    'bundleSha256': digest(bundle), 'reportSha256': digest(pdf), 'sourceArchiveSha256': digest(source_archive),
+}
+(HERE / 'delivery-checks.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+print(json.dumps(result))

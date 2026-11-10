@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#PassiveAbility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>PassiveAbility</rdfs:label>
+    <rdfs:comment xml:lang="ru">Пассивное умение, слот P.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Ability"/>
+    <owl:disjointWith rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9ae8dbf9b845423d9961cb5a469c4db2">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#MageChampion"/>
+    <rdf:rest rdf:nodeID="N945a53d402c64970a0fc1c9842aafc32"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#baseHP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>baseHP</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#hasEffect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasEffect</rdfs:label>
+    <rdfs:comment xml:lang="ru">Умение имеет конкретный эффект.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Ability"/>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <owl:inverseOf rdf:resource="https://example.org/lol-ontology#effectOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#effectOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>effectOf</rdfs:label>
+    <rdfs:comment xml:lang="ru">Эффект относится к умению; обратное hasEffect.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#Ability"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#canApplyMechanic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>canApplyMechanic</rdfs:label>
+    <rdfs:comment xml:lang="ru">Выводится цепочкой hasAbility / hasEffect / hasMechanic; не хранит условия.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+    <owl:propertyChainAxiom rdf:nodeID="N446c1872f188488ba3a46ee37bc4dc5a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#baseAttackDamage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>baseAttackDamage</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#SourceDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SourceDocument</rdfs:label>
+    <rdfs:comment xml:lang="ru">Документ, подтверждающий данные.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#gameVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>gameVersion</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neee61edf61c04ef391dfa290104eeae7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasEffect"/>
+    <owl:someValuesFrom rdf:nodeID="N06b340280a0e45ac822dec0c47efd485"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#isAbilityOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>isAbilityOf</rdfs:label>
+    <rdfs:comment xml:lang="ru">Умение принадлежит чемпиону; обратное hasAbility.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Ability"/>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#Champion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N06b340280a0e45ac822dec0c47efd485">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nfd8f81ef2af7459fa541e31295140181"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#MovementControlMechanic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>MovementControlMechanic</rdfs:label>
+    <rdfs:comment xml:lang="ru">Механика ограничения передвижения: Root, Slow или Stun.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N25299795c38a465b800c491fbde101e9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasAbility"/>
+    <owl:someValuesFrom rdf:nodeID="N85f0f5dd09da4a428d5291b71e76680a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N909f0b87188647689dd1cf4eba7a4666">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasCategory"/>
+    <owl:hasValue rdf:resource="https://example.org/lol-ontology#Category_Mage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#MageChampion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>MageChampion</rdfs:label>
+    <rdfs:comment xml:lang="ru">Чемпион с категорией Mage; классифицируется ризонером.</rdfs:comment>
+    <owl:equivalentClass rdf:nodeID="Nc7fe5a3881c14eb393fe3ece013e399c"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Champion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#hasCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasCategory</rdfs:label>
+    <rdfs:comment xml:lang="ru">Категория чемпиона в Data Dragon.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#ChampionCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#reviewStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>reviewStatus</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#evidenceField">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>evidenceField</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#TargetType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>TargetType</rdfs:label>
+    <rdfs:comment xml:lang="ru">Тип получателя конкретного эффекта, не конкретный участник матча.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#baseMoveSpeed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>baseMoveSpeed</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5a4e817a17ee4ec9b21e1d49a0eb29f5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N210eb3facc8146d799f40f7c7d546520"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N441416509bb0425f93c5d04e829f2ea7">
+    <rdf:first rdf:nodeID="Nfc75e385286e444eb2fea3935bf953b7"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#baseArmor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>baseArmor</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionInfo>1.0 / Data Dragon 16.20.1 / ru_RU</owl:versionInfo>
+    <rdfs:label xml:lang="en">League of Legends: champions, abilities and effects</rdfs:label>
+    <dcterms:title xml:lang="en">League of Legends: champions, abilities and effects</dcterms:title>
+    <dcterms:description xml:lang="en">An OWL 2 DL ontology of champions, abilities and qualified effects. The demo contains Lux, Morgana and Karma. Effect conditions and source evidence are preserved. Data Dragon 16.20.1, ru_RU. Effect annotations reviewed by an assistant.</dcterms:description>
+    <rdfs:comment xml:lang="ru">Учебная онтология. Качественная разметка эффектов проверена ассистентом только для Lux, Morgana, Karma. Условия сохранены текстом; вывод означает наличие способности при указанных условиях, а не результат любого применения. Отсутствие разметки не означает отсутствие механики. Числа из шаблонов tooltip не угадываются.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#hasMechanic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasMechanic</rdfs:label>
+    <rdfs:comment xml:lang="ru">Механика конкретного эффекта.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfd8f81ef2af7459fa541e31295140181">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdf:rest rdf:nodeID="Neac86cd5675f4d90a75e644f5ee66330"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfc75e385286e444eb2fea3935bf953b7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasTargetType"/>
+    <owl:hasValue rdf:resource="https://example.org/lol-ontology#Ally"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#AbilityEffect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>AbilityEffect</rdfs:label>
+    <rdfs:comment xml:lang="ru">Один эффект умения с собственной целью и условием.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#ChampionCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>ChampionCategory</rdfs:label>
+    <rdfs:comment xml:lang="ru">Категория Data Dragon (Mage, Support и т. п.), не позиция на карте.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc454e3d288fc4f9b9e718e1b11a7cb39">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdf:rest rdf:nodeID="Na59fb32744034a9eb6360ea59d164920"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#Ability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Ability</rdfs:label>
+    <rdfs:comment xml:lang="ru">Основное умение P/Q/W/E/R.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neac86cd5675f4d90a75e644f5ee66330">
+    <rdf:first rdf:nodeID="N0526c5bc53e74f8f80b862e706e9be55"/>
+    <rdf:rest rdf:nodeID="N03ef952389764a3fbd0aa342ee3d6bf6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#resourceType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>resourceType</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#baseMP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>baseMP</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N945a53d402c64970a0fc1c9842aafc32">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#AllyShieldChampion"/>
+    <rdf:rest rdf:nodeID="N5d6f964ef7454feba844624d9bf66923"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#hasSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasSource</rdfs:label>
+    <rdfs:comment xml:lang="ru">Источник сведений об объекте.</rdfs:comment>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#SourceDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na1148c2664ec4b37961c69af468c8faa">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#hasMechanic"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N906431a1083d488eb23e70e8ad181bde">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N87f76caeb8eb4296b4a2e5acaa5bd59f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#AllyShieldChampion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>AllyShieldChampion</rdfs:label>
+    <rdfs:comment xml:lang="ru">Чемпион с хотя бы одним эффектом щита для союзников.</rdfs:comment>
+    <owl:equivalentClass rdf:nodeID="N7452bfb383da49d588fa73400c6b34f0"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Champion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5d6f964ef7454feba844624d9bf66923">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#EnemyMovementControlChampion"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#SupportControlMage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SupportControlMage</rdfs:label>
+    <rdfs:comment xml:lang="ru">Маг, способный дать союзнику щит и ограничить передвижение врага. Умения могут быть разными.</rdfs:comment>
+    <owl:equivalentClass rdf:nodeID="N28e78cb2720747fea7c85975eac07e82"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Champion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne76a9cb14e2a42629bd76c6b820ac053">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdf:rest rdf:nodeID="N430d21290a5d40659b7de4a84e9c63c8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#evidenceText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>evidenceText</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#hasTargetType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasTargetType</rdfs:label>
+    <rdfs:comment xml:lang="ru">Получатель конкретного эффекта.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#TargetType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#entityId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>entityId</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N87f76caeb8eb4296b4a2e5acaa5bd59f">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdf:rest rdf:nodeID="N45e412ef98234ef581e06069102485b0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#slot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>slot</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Ability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4173ed9db3a945b389949ffb3b52ede8">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#SourceDocument"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncf18fe96e6ef4d538959b0492ac0e73e">
+    <rdf:first rdf:nodeID="N909f0b87188647689dd1cf4eba7a4666"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N33991822d68a45198540f29e26e28f0e">
+    <rdf:first rdf:nodeID="N25299795c38a465b800c491fbde101e9"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N82a7bfaa7b5a48d8bae9f8c0e4e538b5">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdf:rest rdf:nodeID="N33991822d68a45198540f29e26e28f0e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#ActiveAbility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>ActiveAbility</rdfs:label>
+    <rdfs:comment xml:lang="ru">Активное умение, слот Q/W/E/R.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Ability"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9edaad86c60440bb9d18ace53298a632">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasAbility"/>
+    <owl:someValuesFrom rdf:nodeID="Neee61edf61c04ef391dfa290104eeae7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#sourceURL">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>sourceURL</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#SourceDocument"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#EnemyMovementControlChampion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>EnemyMovementControlChampion</rdfs:label>
+    <rdfs:comment xml:lang="ru">Чемпион с хотя бы одним эффектом ограничения передвижения врага.</rdfs:comment>
+    <owl:equivalentClass rdf:nodeID="N906431a1083d488eb23e70e8ad181bde"/>
+    <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Champion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N28e78cb2720747fea7c85975eac07e82">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N9ae8dbf9b845423d9961cb5a469c4db2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfefe7a18ad504ba5930ce24680fe2ae3">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#hasEffect"/>
+    <rdf:rest rdf:nodeID="Na1148c2664ec4b37961c69af468c8faa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9e5f4b56416849e5ba0f91a6f4ef7926">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasTargetType"/>
+    <owl:hasValue rdf:resource="https://example.org/lol-ontology#Enemy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N44dc73b1db4e421ea1fa05fcc8c89b60">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdf:rest rdf:nodeID="Ncf18fe96e6ef4d538959b0492ac0e73e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c67f6c0b2574533b250d2255e99cea5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasMechanic"/>
+    <owl:hasValue rdf:resource="https://example.org/lol-ontology#Shield"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7452bfb383da49d588fa73400c6b34f0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N82a7bfaa7b5a48d8bae9f8c0e4e538b5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#tooltipText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>tooltipText</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Ability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N446c1872f188488ba3a46ee37bc4dc5a">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#hasAbility"/>
+    <rdf:rest rdf:nodeID="Nfefe7a18ad504ba5930ce24680fe2ae3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>description</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N85f0f5dd09da4a428d5291b71e76680a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasEffect"/>
+    <owl:someValuesFrom rdf:nodeID="N9255802a273744538f1a14ceb033c0bc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#hasAbility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasAbility</rdfs:label>
+    <rdfs:comment xml:lang="ru">У чемпиона есть умение.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="https://example.org/lol-ontology#Ability"/>
+    <owl:inverseOf rdf:resource="https://example.org/lol-ontology#isAbilityOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc7fe5a3881c14eb393fe3ece013e399c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N44dc73b1db4e421ea1fa05fcc8c89b60"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9255802a273744538f1a14ceb033c0bc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nc454e3d288fc4f9b9e718e1b11a7cb39"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd28bdcaaae8a40df9a35303e83d4c881">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#TargetType"/>
+    <rdf:rest rdf:nodeID="N4173ed9db3a945b389949ffb3b52ede8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#Mechanic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Mechanic</rdfs:label>
+    <rdfs:comment xml:lang="ru">Тип механики: щит, урон, обездвиживание и т. п.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0526c5bc53e74f8f80b862e706e9be55">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasMechanic"/>
+    <owl:someValuesFrom rdf:resource="https://example.org/lol-ontology#MovementControlMechanic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>title</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na59fb32744034a9eb6360ea59d164920">
+    <rdf:first rdf:nodeID="N6c67f6c0b2574533b250d2255e99cea5"/>
+    <rdf:rest rdf:nodeID="N441416509bb0425f93c5d04e829f2ea7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N03ef952389764a3fbd0aa342ee3d6bf6">
+    <rdf:first rdf:nodeID="N9e5f4b56416849e5ba0f91a6f4ef7926"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#conditionText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>conditionText</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N430d21290a5d40659b7de4a84e9c63c8">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+    <rdf:rest rdf:nodeID="Nd28bdcaaae8a40df9a35303e83d4c881"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne39595449f3840749274dee0eb6a1e9d">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#Ability"/>
+    <rdf:rest rdf:nodeID="Ne76a9cb14e2a42629bd76c6b820ac053"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N210eb3facc8146d799f40f7c7d546520">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#Champion"/>
+    <rdf:rest rdf:nodeID="N0c36ca67a5244aa9a1b8f3996fae2e33"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0c36ca67a5244aa9a1b8f3996fae2e33">
+    <rdf:first rdf:resource="https://example.org/lol-ontology#ChampionCategory"/>
+    <rdf:rest rdf:nodeID="Ne39595449f3840749274dee0eb6a1e9d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/lol-ontology#Champion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Champion</rdfs:label>
+    <rdfs:comment xml:lang="ru">Игровой чемпион.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N45e412ef98234ef581e06069102485b0">
+    <rdf:first rdf:nodeID="N9edaad86c60440bb9d18ace53298a632"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+</rdf:RDF>

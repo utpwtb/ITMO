@@ -1,0 +1,1816 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://example.org/lol-ontology/inferred/demo#"
+     xml:base="https://example.org/lol-ontology/inferred/demo"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:lol-ontology="https://example.org/lol-ontology#">
+    <owl:Ontology rdf:about="https://example.org/lol-ontology/inferred/demo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://example.org/lol-ontology#canApplyMechanic -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#canApplyMechanic">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://example.org/lol-ontology#hasAbility"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#hasEffect"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#hasMechanic"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="ru">Выводится цепочкой hasAbility / hasEffect / hasMechanic; не хранит условия.</rdfs:comment>
+        <rdfs:label>canApplyMechanic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#effectOf -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#effectOf">
+        <owl:inverseOf rdf:resource="https://example.org/lol-ontology#hasEffect"/>
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdfs:comment xml:lang="ru">Эффект относится к умению; обратное hasEffect.</rdfs:comment>
+        <rdfs:label>effectOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#hasAbility -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#hasAbility">
+        <owl:inverseOf rdf:resource="https://example.org/lol-ontology#isAbilityOf"/>
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdfs:comment xml:lang="ru">У чемпиона есть умение.</rdfs:comment>
+        <rdfs:label>hasAbility</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#hasCategory -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#hasCategory">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#ChampionCategory"/>
+        <rdfs:comment xml:lang="ru">Категория чемпиона в Data Dragon.</rdfs:comment>
+        <rdfs:label>hasCategory</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#hasEffect -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#hasEffect">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <rdfs:comment xml:lang="ru">Умение имеет конкретный эффект.</rdfs:comment>
+        <rdfs:label>hasEffect</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#hasMechanic -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#hasMechanic">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <rdfs:comment xml:lang="ru">Механика конкретного эффекта.</rdfs:comment>
+        <rdfs:label>hasMechanic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#hasSource -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#hasSource">
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#SourceDocument"/>
+        <rdfs:comment xml:lang="ru">Источник сведений об объекте.</rdfs:comment>
+        <rdfs:label>hasSource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#hasTargetType -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#hasTargetType">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#TargetType"/>
+        <rdfs:comment xml:lang="ru">Получатель конкретного эффекта.</rdfs:comment>
+        <rdfs:label>hasTargetType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#isAbilityOf -->
+
+    <owl:ObjectProperty rdf:about="https://example.org/lol-ontology#isAbilityOf">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdfs:range rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:comment xml:lang="ru">Умение принадлежит чемпиону; обратное hasAbility.</rdfs:comment>
+        <rdfs:label>isAbilityOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://example.org/lol-ontology#baseArmor -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#baseArmor">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>baseArmor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#baseAttackDamage -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#baseAttackDamage">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>baseAttackDamage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#baseHP -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#baseHP">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>baseHP</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#baseMP -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#baseMP">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>baseMP</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#baseMoveSpeed -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#baseMoveSpeed">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>baseMoveSpeed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#conditionText -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#conditionText">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>conditionText</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#description -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#description">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#entityId -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#entityId">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>entityId</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#evidenceField -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#evidenceField">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>evidenceField</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#evidenceText -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#evidenceText">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>evidenceText</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#gameVersion -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#gameVersion">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>gameVersion</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#name -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#name">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#resourceType -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#resourceType">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>resourceType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#reviewStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#reviewStatus">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>reviewStatus</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#slot -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#slot">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>slot</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#sourceURL -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#sourceURL">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#SourceDocument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>sourceURL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#title -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#title">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/lol-ontology#tooltipText -->
+
+    <owl:DatatypeProperty rdf:about="https://example.org/lol-ontology#tooltipText">
+        <rdfs:domain rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>tooltipText</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://example.org/lol-ontology#Ability -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#Ability">
+        <rdfs:comment xml:lang="ru">Основное умение P/Q/W/E/R.</rdfs:comment>
+        <rdfs:label>Ability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#AbilityEffect -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#AbilityEffect">
+        <rdfs:comment xml:lang="ru">Один эффект умения с собственной целью и условием.</rdfs:comment>
+        <rdfs:label>AbilityEffect</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#ActiveAbility -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#ActiveAbility">
+        <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <owl:disjointWith rdf:resource="https://example.org/lol-ontology#PassiveAbility"/>
+        <rdfs:comment xml:lang="ru">Активное умение, слот Q/W/E/R.</rdfs:comment>
+        <rdfs:label>ActiveAbility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#AllyShieldChampion -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#AllyShieldChampion">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/lol-ontology#Champion"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasAbility"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasEffect"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="https://example.org/lol-ontology#AbilityEffect"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasMechanic"/>
+                                                <owl:hasValue rdf:resource="https://example.org/lol-ontology#Shield"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasTargetType"/>
+                                                <owl:hasValue rdf:resource="https://example.org/lol-ontology#Ally"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:comment xml:lang="ru">Чемпион с хотя бы одним эффектом щита для союзников.</rdfs:comment>
+        <rdfs:label>AllyShieldChampion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#Champion -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#Champion">
+        <rdfs:comment xml:lang="ru">Игровой чемпион.</rdfs:comment>
+        <rdfs:label>Champion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#ChampionCategory -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#ChampionCategory">
+        <rdfs:comment xml:lang="ru">Категория Data Dragon (Mage, Support и т. п.), не позиция на карте.</rdfs:comment>
+        <rdfs:label>ChampionCategory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#EnemyMovementControlChampion -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#EnemyMovementControlChampion">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/lol-ontology#Champion"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasAbility"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasEffect"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="https://example.org/lol-ontology#AbilityEffect"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasMechanic"/>
+                                                <owl:someValuesFrom rdf:resource="https://example.org/lol-ontology#MovementControlMechanic"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasTargetType"/>
+                                                <owl:hasValue rdf:resource="https://example.org/lol-ontology#Enemy"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:comment xml:lang="ru">Чемпион с хотя бы одним эффектом ограничения передвижения врага.</rdfs:comment>
+        <rdfs:label>EnemyMovementControlChampion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#MageChampion -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#MageChampion">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/lol-ontology#Champion"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://example.org/lol-ontology#hasCategory"/>
+                        <owl:hasValue rdf:resource="https://example.org/lol-ontology#Category_Mage"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:comment xml:lang="ru">Чемпион с категорией Mage; классифицируется ризонером.</rdfs:comment>
+        <rdfs:label>MageChampion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#Mechanic -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#Mechanic">
+        <rdfs:comment xml:lang="ru">Тип механики: щит, урон, обездвиживание и т. п.</rdfs:comment>
+        <rdfs:label>Mechanic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#MovementControlMechanic -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#MovementControlMechanic">
+        <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <rdfs:comment xml:lang="ru">Механика ограничения передвижения: Root, Slow или Stun.</rdfs:comment>
+        <rdfs:label>MovementControlMechanic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#PassiveAbility -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#PassiveAbility">
+        <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdfs:comment xml:lang="ru">Пассивное умение, слот P.</rdfs:comment>
+        <rdfs:label>PassiveAbility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#SourceDocument -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#SourceDocument">
+        <rdfs:comment xml:lang="ru">Документ, подтверждающий данные.</rdfs:comment>
+        <rdfs:label>SourceDocument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#SupportControlMage -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#SupportControlMage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/lol-ontology#AllyShieldChampion"/>
+                    <rdf:Description rdf:about="https://example.org/lol-ontology#EnemyMovementControlChampion"/>
+                    <rdf:Description rdf:about="https://example.org/lol-ontology#MageChampion"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdfs:comment xml:lang="ru">Маг, способный дать союзнику щит и ограничить передвижение врага. Умения могут быть разными.</rdfs:comment>
+        <rdfs:label>SupportControlMage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/lol-ontology#TargetType -->
+
+    <owl:Class rdf:about="https://example.org/lol-ontology#TargetType">
+        <rdfs:comment xml:lang="ru">Тип получателя конкретного эффекта, не конкретный участник матча.</rdfs:comment>
+        <rdfs:label>TargetType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://example.org/lol-ontology#Ally -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Ally">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#TargetType"/>
+        <lol-ontology:name>Союзник</lol-ontology:name>
+        <rdfs:label>Ally</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Category_Mage -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Category_Mage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ChampionCategory"/>
+        <owl:differentFrom rdf:resource="https://example.org/lol-ontology#Category_Support"/>
+        <lol-ontology:name>Mage</lol-ontology:name>
+        <rdfs:label>Category_Mage</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Category_Support -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Category_Support">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ChampionCategory"/>
+        <lol-ontology:name>Support</lol-ontology:name>
+        <rdfs:label>Category_Support</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#ControlImmunity -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#ControlImmunity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <lol-ontology:name>Защита от эффектов контроля</lol-ontology:name>
+        <rdfs:label>ControlImmunity</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#CooldownReduction -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#CooldownReduction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <lol-ontology:name>Сокращение перезарядки</lol-ontology:name>
+        <rdfs:label>CooldownReduction</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Damage -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Damage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <lol-ontology:name>Урон</lol-ontology:name>
+        <rdfs:label>Damage</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Empower -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Empower">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <lol-ontology:name>Усиление умения</lol-ontology:name>
+        <rdfs:label>Empower</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#TargetType"/>
+        <lol-ontology:name>Противник</lol-ontology:name>
+        <rdfs:label>Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Heal -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Heal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <lol-ontology:name>Лечение</lol-ontology:name>
+        <rdfs:label>Heal</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AllyShieldChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#EnemyMovementControlChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#MageChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#SupportControlMage"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#CooldownReduction"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Empower"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Heal"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#MovementSpeedBoost"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Reveal"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Root"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Shield"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Slow"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Karma_E"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Karma_P"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Karma_Q"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Karma_R"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Karma_W"/>
+        <lol-ontology:hasCategory rdf:resource="https://example.org/lol-ontology#Category_Mage"/>
+        <lol-ontology:hasCategory rdf:resource="https://example.org/lol-ontology#Category_Support"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:baseArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">28.0</lol-ontology:baseArmor>
+        <lol-ontology:baseAttackDamage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.0</lol-ontology:baseAttackDamage>
+        <lol-ontology:baseHP rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">630.0</lol-ontology:baseHP>
+        <lol-ontology:baseMP rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">374.0</lol-ontology:baseMP>
+        <lol-ontology:baseMoveSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">335.0</lol-ontology:baseMoveSpeed>
+        <lol-ontology:entityId>Karma</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Карма</lol-ontology:name>
+        <lol-ontology:resourceType>Мана</lol-ontology:resourceType>
+        <lol-ontology:reviewStatus>effects_reviewed_by_assistant</lol-ontology:reviewStatus>
+        <lol-ontology:title>Просвещенная</lol-ontology:title>
+        <rdfs:label>Karma</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_E -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_E">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_E_MovementSpeedBoost_Ally"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_E_Shield_Ally"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Karma"/>
+        <lol-ontology:description>Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения. Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов.</lol-ontology:description>
+        <lol-ontology:entityId>Karma:E</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Воодушевление</lol-ontology:name>
+        <lol-ontology:slot>E</lol-ontology:slot>
+        <lol-ontology:tooltipText>Карма накладывает на союзного чемпиона щит прочностью {{ totalshield }} на {{ shieldduration }} сек. и увеличивает его скорость передвижения на {{ movespeed*100 }}% на {{ movespeedduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Karma_E</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_E_MovementSpeedBoost_Ally -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_E_MovementSpeedBoost_Ally">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_E"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#MovementSpeedBoost"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Ally"/>
+        <lol-ontology:conditionText>Союзник получает Воодушевление; усиление Мантрой распространяет эффект на ближайших союзников.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения. Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_E_MovementSpeedBoost_Ally</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_E_Shield_Ally -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_E_Shield_Ally">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_E"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Shield"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Ally"/>
+        <lol-ontology:conditionText>Выбранный союзник; при усилении Мантрой эффект распространяется на ближайших союзных чемпионов.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма защищает союзника щитом, поглощающим урон и увеличивающим его скорость передвижения. Эффект Мантры: щит излучает энергию, которая увеличивает его прочность и накладывает Воодушевление на ближайших союзных чемпионов.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_E_Shield_Ally</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_P -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_P">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#PassiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_P_CooldownReduction_OwnAbility"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Karma"/>
+        <lol-ontology:description>Умения Кармы, наносящие урон, сокращают перезарядку Мантры.</lol-ontology:description>
+        <lol-ontology:entityId>Karma:P</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Разгорающийся огонь</lol-ontology:name>
+        <lol-ontology:slot>P</lol-ontology:slot>
+        <rdfs:label>Karma_P</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_P_CooldownReduction_OwnAbility -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_P_CooldownReduction_OwnAbility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_P"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#CooldownReduction"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#OwnAbility"/>
+        <lol-ontology:conditionText>При нанесении урона умениями; сокращается перезарядка Мантры.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Умения Кармы, наносящие урон, сокращают перезарядку Мантры.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_P_CooldownReduction_OwnAbility</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_Q -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_Q">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_Q_Damage_Enemy"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_Q_Slow_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Karma"/>
+        <lol-ontology:description>Карма выпускает заряд духовной энергии, который взрывается при столкновении с противником, нанося урон. Эффект Мантры: Карма дополнительно увеличивает разрушительную силу Внутреннего пламени, создавая на земле энергетическую аномалию, наносящую урон по прошествии некоторого времени.</lol-ontology:description>
+        <lol-ontology:entityId>Karma:Q</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Внутреннее пламя</lol-ontology:name>
+        <lol-ontology:slot>Q</lol-ontology:slot>
+        <lol-ontology:tooltipText>Карма выпускает сгусток энергии, нанося {{ totaldamage }} магического урона первой пораженной цели и окружающим врагам, а также замедляя их на {{ slowamount*-100 }}% на {{ slowduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Karma_Q</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_Q_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_Q_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_Q"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Попадание сгустком энергии; урон получает первая цель и окружающие враги.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма выпускает сгусток энергии, нанося {{ totaldamage }} магического урона первой пораженной цели и окружающим врагам, а также замедляя их на {{ slowamount*-100 }}% на {{ slowduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_Q_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_Q_Slow_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_Q_Slow_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_Q"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Slow"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Попадание сгустком энергии; замедление целей, указанных в tooltip.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма выпускает сгусток энергии, нанося {{ totaldamage }} магического урона первой пораженной цели и окружающим врагам, а также замедляя их на {{ slowamount*-100 }}% на {{ slowduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_Q_Slow_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_R -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_R">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_R_Empower_OwnAbility"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Karma"/>
+        <lol-ontology:description>Карма усиливает свое следующее умение дополнительным эффектом. Мантра доступна на 1-м уровне и не требует очка умений.</lol-ontology:description>
+        <lol-ontology:entityId>Karma:R</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Мантра</lol-ontology:name>
+        <lol-ontology:slot>R</lol-ontology:slot>
+        <lol-ontology:tooltipText>Карма усиливает свое следующее умение, примененное в течение 8 сек. Внутреннее пламя : дополнительно наносит {{ rqimpactdamage }} магического урона и оставляет круг пламени, который замедляет врагов и наносит еще {{ rqfielddamage }} магического урона . Решимость : Карма восстанавливает {{ rwhealamount }} от недостающего здоровья во время образования и разрыва связи, а продолжительность обездвиживания увеличивается на {{ rwbonusroot }} сек. Воодушевление : прочность щита , накладываемого на цель, увеличивается на {{ rebonusshield }} . Кроме того, Карма накладывает на окружающих чемпионов щит прочностью {{ rebonusshieldarea }} и увеличивает их скорость передвижения на {{ removespeed*100 }}% .{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Karma_R</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_R_Empower_OwnAbility -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_R_Empower_OwnAbility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_R"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Empower"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#OwnAbility"/>
+        <lol-ontology:conditionText>Усиливает следующее умение Кармы, примененное в течение 8 секунд.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма усиливает свое следующее умение, примененное в течение 8 сек. Внутреннее пламя : дополнительно наносит {{ rqimpactdamage }} магического урона и оставляет круг пламени, который замедляет врагов и наносит еще {{ rqfielddamage }} магического урона . Решимость : Карма восстанавливает {{ rwhealamount }} от недостающего здоровья во время образования и разрыва связи, а продолжительность обездвиживания увеличивается на {{ rwbonusroot }} сек. Воодушевление : прочность щита , накладываемого на цель, увеличивается на {{ rebonusshield }} . Кроме того, Карма накладывает на окружающих чемпионов щит прочностью {{ rebonusshieldarea }} и увеличивает их скорость передвижения на {{ removespeed*100 }}% .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_R_Empower_OwnAbility</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_W -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_W">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_W_Damage_Enemy"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_W_Heal_Self"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_W_Reveal_Enemy"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Karma_W_Root_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Karma"/>
+        <lol-ontology:description>Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон. Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания.</lol-ontology:description>
+        <lol-ontology:entityId>Karma:W</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Решимость</lol-ontology:name>
+        <lol-ontology:slot>W</lol-ontology:slot>
+        <lol-ontology:tooltipText>Карма создает связь между собой и чемпионом или лесным монстром, нанося цели {{ initialdamage }} магического урона и раскрывая ее на {{ tetherduration }} сек. Если связь не разрывается, цель снова получает {{ initialdamage }} магического урона и обездвиживается на {{ rootduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Karma_W</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_W_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_W_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_W"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Выбранная вражеская цель связана с Кармой; повторный урон, если связь сохраняется.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма создает связь между собой и чемпионом или лесным монстром, нанося цели {{ initialdamage }} магического урона и раскрывая ее на {{ tetherduration }} сек. Если связь не разрывается, цель снова получает {{ initialdamage }} магического урона и обездвиживается на {{ rootduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_W_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_W_Heal_Self -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_W_Heal_Self">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_W"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Heal"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Self"/>
+        <lol-ontology:conditionText>Только усиление Мантрой; Карма восстанавливает собственное здоровье.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон. Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_W_Heal_Self</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_W_Reveal_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_W_Reveal_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_W"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Reveal"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>На время связи раскрывается выбранная вражеская цель.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма создает связь между собой и чемпионом или лесным монстром, нанося цели {{ initialdamage }} магического урона и раскрывая ее на {{ tetherduration }} сек. Если связь не разрывается, цель снова получает {{ initialdamage }} магического урона и обездвиживается на {{ rootduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_W_Reveal_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Karma_W_Root_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Karma_W_Root_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Karma_W"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Root"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Karma"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Связь должна сохраниться до конца задержки; для усиленной версии длительность увеличивается.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Карма создает связь с выбранным вражеским чемпионом, делая его видимым и нанося ему урон. Если связь не прерывается, враг обездвиживается и вновь получает урон. Эффект Мантры: Карма усиливает связь с врагом, восстанавливая себе здоровье и увеличивая продолжительность обездвиживания.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Karma_W_Root_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AllyShieldChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#EnemyMovementControlChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#MageChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#SupportControlMage"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Root"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Shield"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Slow"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Lux_E"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Lux_P"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Lux_Q"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Lux_R"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Lux_W"/>
+        <lol-ontology:hasCategory rdf:resource="https://example.org/lol-ontology#Category_Mage"/>
+        <lol-ontology:hasCategory rdf:resource="https://example.org/lol-ontology#Category_Support"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:baseArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21.0</lol-ontology:baseArmor>
+        <lol-ontology:baseAttackDamage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">54.0</lol-ontology:baseAttackDamage>
+        <lol-ontology:baseHP rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">580.0</lol-ontology:baseHP>
+        <lol-ontology:baseMP rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">440.0</lol-ontology:baseMP>
+        <lol-ontology:baseMoveSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">330.0</lol-ontology:baseMoveSpeed>
+        <lol-ontology:entityId>Lux</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Люкс</lol-ontology:name>
+        <lol-ontology:resourceType>Мана</lol-ontology:resourceType>
+        <lol-ontology:reviewStatus>effects_reviewed_by_assistant</lol-ontology:reviewStatus>
+        <lol-ontology:title>Леди сияния</lol-ontology:title>
+        <rdfs:label>Lux</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_E -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_E">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Lux_E_Damage_Enemy"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Lux_E_Slow_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Lux"/>
+        <lol-ontology:description>Люкс создает в указанной области световую аномалию, замедляющую противников. Люкс может взорвать ее, нанеся урон всем находящимся в зоне поражения врагам.</lol-ontology:description>
+        <lol-ontology:entityId>Lux:E</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Светящаяся сингулярность</lol-ontology:name>
+        <lol-ontology:slot>E</lol-ontology:slot>
+        <lol-ontology:tooltipText>Люкс создает световую аномалию, замедляющую на {{ slowpercent }}% и раскрывающую область под собой. Через {{ slowzoneduration }} сек. или при повт. применении этого умения аномалия взрывается, нанося {{ totaldamagett }} ед. маг. урона и замедляя еще на {{ slowlingerduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Lux_E</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_E_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_E_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Lux_E"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Враг находится в зоне поражения при взрыве; взрыв по таймеру или повторному применению.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Люкс создает световую аномалию, замедляющую на {{ slowpercent }}% и раскрывающую область под собой. Через {{ slowzoneduration }} сек. или при повт. применении этого умения аномалия взрывается, нанося {{ totaldamagett }} ед. маг. урона и замедляя еще на {{ slowlingerduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Lux_E_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_E_Slow_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_E_Slow_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Lux_E"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Slow"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Противник находится в области аномалии; tooltip также описывает краткое замедление после взрыва.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Люкс создает световую аномалию, замедляющую на {{ slowpercent }}% и раскрывающую область под собой. Через {{ slowzoneduration }} сек. или при повт. применении этого умения аномалия взрывается, нанося {{ totaldamagett }} ед. маг. урона и замедляя еще на {{ slowlingerduration }} сек.{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Lux_E_Slow_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_P -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_P">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#PassiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Lux_P_Damage_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Lux"/>
+        <lol-ontology:description>Используя атакующие умения, Люкс накладывает на врагов эффект Иллюминации на несколько секунд. Ее последующие автоатаки поджигают находящихся под действием эффекта врагов, нанося им дополнительный магический урон (тем больший, чем выше уровень Люкс), но снимают эффект.</lol-ontology:description>
+        <lol-ontology:entityId>Lux:P</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Иллюминация</lol-ontology:name>
+        <lol-ontology:slot>P</lol-ontology:slot>
+        <rdfs:label>Lux_P</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_P_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_P_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Lux_P"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Враг отмечен Иллюминацией от атакующего умения; последующая автоатака расходует метку и наносит дополнительный урон.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Используя атакующие умения, Люкс накладывает на врагов эффект Иллюминации на несколько секунд. Ее последующие автоатаки поджигают находящихся под действием эффекта врагов, нанося им дополнительный магический урон (тем больший, чем выше уровень Люкс), но снимают эффект.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Lux_P_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_Q -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_Q">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Lux_Q_Damage_Enemy"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Lux_Q_Root_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Lux"/>
+        <lol-ontology:description>Люкс выпускает сферу света, которая наносит урон и обездвиживает до двух врагов.</lol-ontology:description>
+        <lol-ontology:entityId>Lux:Q</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Сковывание света</lol-ontology:name>
+        <lol-ontology:slot>Q</lol-ontology:slot>
+        <lol-ontology:tooltipText>Люкс выпускает сферу света, обездвиживающую первых 2 врагов на пути на {{ rootduration }} сек. и наносящую им по {{ totaldamagett }} ед. маг. урона .{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Lux_Q</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_Q_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_Q_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Lux_Q"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Сфера должна попасть в цель; поражает первых двух врагов на пути.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Люкс выпускает сферу света, обездвиживающую первых 2 врагов на пути на {{ rootduration }} сек. и наносящую им по {{ totaldamagett }} ед. маг. урона .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Lux_Q_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_Q_Root_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_Q_Root_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Lux_Q"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Root"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Сфера должна попасть в цель; обездвиживаются первые два врага на пути.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Люкс выпускает сферу света, обездвиживающую первых 2 врагов на пути на {{ rootduration }} сек. и наносящую им по {{ totaldamagett }} ед. маг. урона .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Lux_Q_Root_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_R -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_R">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Lux_R_Damage_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Lux"/>
+        <lol-ontology:description>Люкс накапливает энергию и выпускает мощный луч света, наносящий урон всем врагам на своем пути. Кроме того, луч поджигает врагов, на которых наложен эффект Иллюминации, после чего этот эффект обновляется.</lol-ontology:description>
+        <lol-ontology:entityId>Lux:R</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Последняя искра</lol-ontology:name>
+        <lol-ontology:slot>R</lol-ontology:slot>
+        <lol-ontology:tooltipText>Люкс выпускает мощный луч света, который наносит {{ totaldamage }} магического урона всем врагам на своем пути.{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Lux_R</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_R_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_R_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Lux_R"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Враг находится на пути луча; дополнительные взаимодействия с Иллюминацией описаны в исходном тексте.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Люкс накапливает энергию и выпускает мощный луч света, наносящий урон всем врагам на своем пути. Кроме того, луч поджигает врагов, на которых наложен эффект Иллюминации, после чего этот эффект обновляется.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Lux_R_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_W -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_W">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Lux_W_Shield_Ally"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Lux"/>
+        <lol-ontology:description>Люкс бросает свой жезл, который, касаясь союзных чемпионов, искривляет вокруг них лучи света, защищая от входящего урона.</lol-ontology:description>
+        <lol-ontology:entityId>Lux:W</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Призматический барьер</lol-ontology:name>
+        <lol-ontology:slot>W</lol-ontology:slot>
+        <lol-ontology:tooltipText>Люкс бросает свой жезл, на {{ shieldduration }} сек. накладывая щит прочностью {{ totalshieldtt }} на союзников, которых он касается. Затем жезл возвращается, повторно накладывая щит на пути назад.{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Lux_W</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Lux_W_Shield_Ally -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Lux_W_Shield_Ally">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Lux_W"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Shield"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Lux"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Ally"/>
+        <lol-ontology:conditionText>Жезл должен коснуться союзника на пути вперед или обратно.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Люкс бросает свой жезл, на {{ shieldduration }} сек. накладывая щит прочностью {{ totalshieldtt }} на союзников, которых он касается. Затем жезл возвращается, повторно накладывая щит на пути назад.{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Lux_W_Shield_Ally</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AllyShieldChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Champion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#EnemyMovementControlChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#MageChampion"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#SupportControlMage"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#ControlImmunity"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#CooldownReduction"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Heal"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#MovementSpeedBoost"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Root"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Shield"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Slow"/>
+        <lol-ontology:canApplyMechanic rdf:resource="https://example.org/lol-ontology#Stun"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Morgana_E"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Morgana_P"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Morgana_Q"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Morgana_R"/>
+        <lol-ontology:hasAbility rdf:resource="https://example.org/lol-ontology#Morgana_W"/>
+        <lol-ontology:hasCategory rdf:resource="https://example.org/lol-ontology#Category_Mage"/>
+        <lol-ontology:hasCategory rdf:resource="https://example.org/lol-ontology#Category_Support"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:baseArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.0</lol-ontology:baseArmor>
+        <lol-ontology:baseAttackDamage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.0</lol-ontology:baseAttackDamage>
+        <lol-ontology:baseHP rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">630.0</lol-ontology:baseHP>
+        <lol-ontology:baseMP rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">340.0</lol-ontology:baseMP>
+        <lol-ontology:baseMoveSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">335.0</lol-ontology:baseMoveSpeed>
+        <lol-ontology:entityId>Morgana</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Моргана</lol-ontology:name>
+        <lol-ontology:resourceType>Мана</lol-ontology:resourceType>
+        <lol-ontology:reviewStatus>effects_reviewed_by_assistant</lol-ontology:reviewStatus>
+        <lol-ontology:title>Падшая</lol-ontology:title>
+        <rdfs:label>Morgana</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_E -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_E">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_E_ControlImmunity_Ally"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_E_Shield_Ally"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Morgana"/>
+        <lol-ontology:description>Моргана защищает союзника защитным барьером из звездного огня, который поглощает магический урон и эффекты контроля, пока не будет уничтожен.</lol-ontology:description>
+        <lol-ontology:entityId>Morgana:E</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Черный щит</lol-ontology:name>
+        <lol-ontology:slot>E</lol-ontology:slot>
+        <lol-ontology:tooltipText>Моргана накладывает на союзного чемпиона щит от магии прочностью {{ totalshieldstrength }} на {{ shieldduration }} сек. Этот щит блокирует нейтрализующие и обездвиживающие эффекты.{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Morgana_E</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_E_ControlImmunity_Ally -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_E_ControlImmunity_Ally">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_E"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#ControlImmunity"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Ally"/>
+        <lol-ontology:conditionText>Барьер блокирует описанные эффекты контроля, пока не будет уничтожен.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана защищает союзника защитным барьером из звездного огня, который поглощает магический урон и эффекты контроля, пока не будет уничтожен.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_E_ControlImmunity_Ally</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_E_Shield_Ally -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_E_Shield_Ally">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_E"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Shield"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Ally"/>
+        <lol-ontology:conditionText>Щит на выбранном союзном чемпионе поглощает магический урон; это не универсальный щит от любого урона.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана накладывает на союзного чемпиона щит от магии прочностью {{ totalshieldstrength }} на {{ shieldduration }} сек. Этот щит блокирует нейтрализующие и обездвиживающие эффекты.{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_E_Shield_Ally</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_P -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_P">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#PassiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_P_Heal_Self"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Morgana"/>
+        <lol-ontology:description>Моргана вытягивает душу из своих врагов, восстанавливая здоровье при нанесении урона чемпионам, большим миньонам, а также средним и большим лесным монстрам.</lol-ontology:description>
+        <lol-ontology:entityId>Morgana:P</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Вытягивание души</lol-ontology:name>
+        <lol-ontology:slot>P</lol-ontology:slot>
+        <rdfs:label>Morgana_P</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_P_Heal_Self -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_P_Heal_Self">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_P"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Heal"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Self"/>
+        <lol-ontology:conditionText>Моргана наносит урон чемпионам, большим миньонам, средним или большим лесным монстрам.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана вытягивает душу из своих врагов, восстанавливая здоровье при нанесении урона чемпионам, большим миньонам, а также средним и большим лесным монстрам.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_P_Heal_Self</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_Q -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_Q">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_Q_Damage_Enemy"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_Q_Root_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Morgana"/>
+        <lol-ontology:description>Моргана сковывает врага темной магией и наносит магический урон, заставляя почувствовать ту боль, которую он причинил.</lol-ontology:description>
+        <lol-ontology:entityId>Morgana:Q</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Темные узы</lol-ontology:name>
+        <lol-ontology:slot>Q</lol-ontology:slot>
+        <lol-ontology:tooltipText>Моргана выпускает заряд звездного огня, который обездвиживает первого пораженного врага на {{ rootduration }} сек. и наносит {{ totaldamage }} магического урона .{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Morgana_Q</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_Q_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_Q_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_Q"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Первый враг, в которого попал снаряд.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана выпускает заряд звездного огня, который обездвиживает первого пораженного врага на {{ rootduration }} сек. и наносит {{ totaldamage }} магического урона .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_Q_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_Q_Root_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_Q_Root_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_Q"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Root"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Первый враг, в которого попал снаряд.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана выпускает заряд звездного огня, который обездвиживает первого пораженного врага на {{ rootduration }} сек. и наносит {{ totaldamage }} магического урона .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_Q_Root_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_R -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_R">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_R_Damage_Enemy"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_R_MovementSpeedBoost_Self"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_R_Slow_Enemy"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_R_Stun_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Morgana"/>
+        <lol-ontology:description>Моргана высвобождает всю свою небесную мощь, расправляя крылья и взмывая над землей. Она выпускает цепи темной агонии во вражеских чемпионов поблизости и увеличивает свою скорость передвижения. Ее цепи замедляют и наносят начальный урон, а после задержки оглушают тех, кто не смог их разорвать.</lol-ontology:description>
+        <lol-ontology:entityId>Morgana:R</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Оковы души</lol-ontology:name>
+        <lol-ontology:slot>R</lol-ontology:slot>
+        <lol-ontology:tooltipText>Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Morgana_R</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_R_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_R_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_R"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Связанные вражеские чемпионы поблизости; повторный урон после задержки, если цепи не разорваны.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_R_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_R_MovementSpeedBoost_Self -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_R_MovementSpeedBoost_Self">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_R"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#MovementSpeedBoost"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Self"/>
+        <lol-ontology:conditionText>Моргана увеличивает собственную скорость при применении R.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_R_MovementSpeedBoost_Self</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_R_Slow_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_R_Slow_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_R"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Slow"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Вражеский чемпион связан цепью Моргани.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_R_Slow_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_R_Stun_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_R_Stun_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_R"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Stun"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Цепь с вражеским чемпионом должна сохраниться до окончания задержки.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана приковывает себя цепями к окружающим вражеским чемпионам, нанося {{ totaldamage }} магического урона и замедляя их на {{ slowpercent }}%. Через {{ chainduration }} сек. враги, которые не смогли разорвать цепи, дополнительно получают {{ totaldamage }} магического урона и оглушаются на {{ stunduration }} сек. При применении этого умения Моргана увеличивает свою скорость передвижения на {{ hastepercent }}% .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_R_Stun_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_W -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_W">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Ability"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#ActiveAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_W_CooldownReduction_OwnAbility"/>
+        <lol-ontology:hasEffect rdf:resource="https://example.org/lol-ontology#Morgana_W_Damage_Enemy"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:isAbilityOf rdf:resource="https://example.org/lol-ontology#Morgana"/>
+        <lol-ontology:description>Моргана создает проклятую тень в выбранной области, нанося урон всем, кто рискнул ступить в ее темный круг. Враги внутри получают периодический магический урон, размер которого зависит от их уровня здоровья.</lol-ontology:description>
+        <lol-ontology:entityId>Morgana:W</lol-ontology:entityId>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:name>Измученная тень</lol-ontology:name>
+        <lol-ontology:slot>W</lol-ontology:slot>
+        <lol-ontology:tooltipText>Моргана поджигает землю на {{ wduration }} сек., нанося {{ totalmindamage }} ед. магического урона в секунду. Урон увеличивается вплоть до {{ totalmaxdamage }} ед. в зависимости от недостающего здоровья целей. Перезарядка этого умения сокращается на {{ cdrefundpercent*100 }}% каждый раз, когда Моргану лечит Вытягивание души .{{ spellmodifierdescriptionappend }}</lol-ontology:tooltipText>
+        <rdfs:label>Morgana_W</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_W_CooldownReduction_OwnAbility -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_W_CooldownReduction_OwnAbility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_W"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#CooldownReduction"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#OwnAbility"/>
+        <lol-ontology:conditionText>Перезарядка W сокращается, когда Моргану лечит Вытягивание души.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>tooltip_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана поджигает землю на {{ wduration }} сек., нанося {{ totalmindamage }} ед. магического урона в секунду. Урон увеличивается вплоть до {{ totalmaxdamage }} ед. в зависимости от недостающего здоровья целей. Перезарядка этого умения сокращается на {{ cdrefundpercent*100 }}% каждый раз, когда Моргану лечит Вытягивание души .{{ spellmodifierdescriptionappend }}</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_W_CooldownReduction_OwnAbility</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Morgana_W_Damage_Enemy -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Morgana_W_Damage_Enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#AbilityEffect"/>
+        <lol-ontology:effectOf rdf:resource="https://example.org/lol-ontology#Morgana_W"/>
+        <lol-ontology:hasMechanic rdf:resource="https://example.org/lol-ontology#Damage"/>
+        <lol-ontology:hasSource rdf:resource="https://example.org/lol-ontology#Source_Morgana"/>
+        <lol-ontology:hasTargetType rdf:resource="https://example.org/lol-ontology#Enemy"/>
+        <lol-ontology:conditionText>Враг находится в проклятой области; периодический магический урон зависит от недостающего здоровья цели.</lol-ontology:conditionText>
+        <lol-ontology:evidenceField>description_text</lol-ontology:evidenceField>
+        <lol-ontology:evidenceText>Моргана создает проклятую тень в выбранной области, нанося урон всем, кто рискнул ступить в ее темный круг. Враги внутри получают периодический магический урон, размер которого зависит от их уровня здоровья.</lol-ontology:evidenceText>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:reviewStatus>reviewed_by_assistant</lol-ontology:reviewStatus>
+        <rdfs:label>Morgana_W_Damage_Enemy</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#MovementSpeedBoost -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#MovementSpeedBoost">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <lol-ontology:name>Ускорение</lol-ontology:name>
+        <rdfs:label>MovementSpeedBoost</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#OwnAbility -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#OwnAbility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#TargetType"/>
+        <lol-ontology:name>Собственное умение</lol-ontology:name>
+        <rdfs:label>OwnAbility</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Reveal -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Reveal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <lol-ontology:name>Раскрытие цели</lol-ontology:name>
+        <rdfs:label>Reveal</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Root -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Root">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#MovementControlMechanic"/>
+        <lol-ontology:name>Обездвиживание</lol-ontology:name>
+        <rdfs:label>Root</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Self -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Self">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#TargetType"/>
+        <lol-ontology:name>Сам чемпион</lol-ontology:name>
+        <rdfs:label>Self</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Shield -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Shield">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <lol-ontology:name>Щит</lol-ontology:name>
+        <rdfs:label>Shield</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Slow -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Slow">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#MovementControlMechanic"/>
+        <lol-ontology:name>Замедление</lol-ontology:name>
+        <rdfs:label>Slow</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Source_Karma -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Source_Karma">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#SourceDocument"/>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:sourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Karma.json</lol-ontology:sourceURL>
+        <rdfs:label>Source_Karma</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Source_Lux -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Source_Lux">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#SourceDocument"/>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:sourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Lux.json</lol-ontology:sourceURL>
+        <rdfs:label>Source_Lux</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Source_Morgana -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Source_Morgana">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#SourceDocument"/>
+        <lol-ontology:gameVersion>16.20.1</lol-ontology:gameVersion>
+        <lol-ontology:sourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ddragon.leagueoflegends.com/cdn/16.20.1/data/ru_RU/champion/Morgana.json</lol-ontology:sourceURL>
+        <rdfs:label>Source_Morgana</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- https://example.org/lol-ontology#Stun -->
+
+    <owl:Thing rdf:about="https://example.org/lol-ontology#Stun">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#Mechanic"/>
+        <rdf:type rdf:resource="https://example.org/lol-ontology#MovementControlMechanic"/>
+        <lol-ontology:name>Оглушение</lol-ontology:name>
+        <rdfs:label>Stun</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Ability"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#AbilityEffect"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Champion"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#ChampionCategory"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Mechanic"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#SourceDocument"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#TargetType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Ally"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Enemy"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#OwnAbility"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Self"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://example.org/lol-ontology#ControlImmunity"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#CooldownReduction"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Damage"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Empower"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Heal"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#MovementSpeedBoost"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Reveal"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Root"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Shield"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Slow"/>
+            <rdf:Description rdf:about="https://example.org/lol-ontology#Stun"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

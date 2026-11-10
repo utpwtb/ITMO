@@ -1,18 +1,23 @@
 {
   "passed": true,
-  "javaTests": 140,
-  "jmeterTargetRequests": 1640,
-  "jmeterScenarios": 13,
+  "serverRun": "compact-20261110",
+  "jmeterScenarios": [
+    "C01",
+    "C02",
+    "C03"
+  ],
+  "jmeterTargetRequests": 280,
+  "jmeterCommits": 60,
+  "jmeterExpectedConflicts": 220,
   "jmeterUnexpectedFailures": 0,
-  "fullTestsWarSha256": "cf386061ed67f25abac1f84cf13b61fdcb4a988dddbfe3363c81e670365d0576",
-  "currentUiWarSha256": "867545d9dbbf8d18e9d224e3b29b0c7387ab49458b9f8ed44d7421cbec3f87f4",
-  "uiRevisionFullTestsRerun": false,
-  "pdfPages": 13,
+  "functionalChecks": 18,
+  "pdfPages": 11,
+  "serverTestWarSha256": "95cb5fe595aab5ccebd5cdef2917a7e2930d17cc91f0203947645710c341404e",
   "sourceFiles": 100,
-  "textArtifactsScanned": 7218,
+  "textArtifactsScanned": 393,
   "testCredentialLeaks": 0,
-  "bundleFiles": 187,
-  "bundleSha256": "9c420952a32d40d541fa4d141a626025b666f1002245984940723636af25a3ab",
-  "reportSha256": "794516d1ecc995aa4755bf43c80fec88a331815e69ad3c0ae74a1c798ad88832",
-  "sourceArchiveSha256": "a0bb4bf89cee5b140a6febed4c1771f48c4134eddf6e6919e3e752e1c6e032e8"
+  "bundleFiles": 596,
+  "bundleSha256": "2023aa833ddcb93bf5a0196adbba68f4fb7090df21cd858e546042e3f31fc0d5",
+  "reportSha256": "3280fbcd1694b33d891edcf2618ddee3cb792e101f98757ff0bd63749ce4bd43",
+  "sourceArchiveSha256": "8ee0ad15aba7cc4a7d77d5d00a2b5d58b37c76f4f1f76fbc2d881d13588f15d9"
 }

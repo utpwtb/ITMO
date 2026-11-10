@@ -1,0 +1,13 @@
+Date: 2026-11-03 (Europe/Moscow)
+Requested URL: https://ontodia.org/
+Browser: Codex in-app browser
+Observed result: Browser Use cannot open https://ontodia.org in tab 2.
+Browser reported: net::ERR_CONNECTION_CLOSED
+
+The browser generated a local data: error document. Capturing that document
+was rejected by the browser URL policy, so no screenshot of it is included.
+No registration or upload to the original Ontodia service is claimed.
+
+Alternative actually used: https://reactodia.github.io/playground/rdf-explorer
+The Turtle dataset and Lux diagram were loaded successfully; see
+03_reactodia_lux.png and the exported diagram files.

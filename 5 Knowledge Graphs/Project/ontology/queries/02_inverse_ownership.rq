@@ -1,0 +1,4 @@
+PREFIX lol: <https://example.org/lol-ontology#>
+SELECT ?ability ?champion
+WHERE { ?ability lol:isAbilityOf ?champion }
+ORDER BY ?champion ?ability

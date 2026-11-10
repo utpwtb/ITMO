@@ -1,82 +1,113 @@
-# Лабораторная работа № 2 — управление фильмами
+# 实验二 · 电影管理系统
 
-Развитие приложения ЛР1: JSON-импорт, история USER/ADMIN и уникальность `(точное название, Person.id режиссёра либо null)` только в бизнес-логике. Прежние CRUD, каскадные удаления, версии, синхронизация и пять специальных операций сохранены. Итоговый интерфейс только на русском; номер варианта из шапки и заголовка браузера убран по указанию пользователя.
+本项目在实验一的电影管理系统上增加了 JSON 批量导入、按角色查看导入历史，以及仅在业务层执行的“电影名称＋导演”唯一校验。以下步骤适用于已部署的 Helios 实验二。
 
-## Исходники и документы
+## 1. 从 Windows 登录 Helios
 
-- `src/main/java/ru/itmo/movie/{domain,persistence,service,web}` — Jakarta EE 10, CDI, EclipseLink, RESOURCE_LOCAL, Java 17 target.
-- `database/schema.sql` — новая БД; `database/migrations/003_lab2_roles_imports.sql` — повторяемое обновление ЛР1 без потери данных.
-- `docs/import-format.md`, `src/main/webapp/examples/import-valid.json`, `src/test/resources/import/` — контракт и примеры.
-- `jmeter/README.md`, `jmeter/lab2-concurrency.jmx` — серверные конкурентные сценарии.
-- `../verification/Lab2/ACCEPTANCE.md`, `isolation-analysis.md` — реальные результаты и ограничения.
-- `../report/Lab2/` — русский отчёт, PDF, редактируемые UML DOT и изображения.
-- `docs/lab1-readme-historical.md` — сохранённый прежний README; его результаты относятся к ЛР1.
+在 **Windows PowerShell** 运行下列命令，按 SSH 的提示输入登录凭据。
 
-## Helios: построение и запуск
+```powershell
+ssh -p 2222 s407960@helios.cs.ifmo.ru
+```
 
-Проверенная среда: FreeBSD 14.5, OpenJDK 21.0.4, Maven 3.8.4, PostgreSQL 18.3, Python 3.11.9, Payara Micro 6.2025.1, JMeter 5.6.3. Проект: `/home/studs/s407960/is-lab2-4101`, HTTP только `127.0.0.1:40797`, база `pg:5432/studs`, schema `s407960`. Продуктивные таблицы: `lab2_4101_`; тестовые: `lab2_4101_test_`. Ресурсы `lab1_4101_` не затрагиваются.
-
-`scripts/helios.py` читает пароль БД из существующего `~/.pgpass` с правами 0600; секреты не передаются аргументами. Java использует ограниченный heap: стандартный запуск java/mvn на Helios пытается выделить недопустимо большой объём памяти.
+登录后，在 **Helios 终端** 检查实验二目录和进程。SSH 登录默认进入家目录，项目的 `scripts/helios.py` 在 `is-lab2-4101` 目录内。
 
 ```sh
-cd ~/is-lab2-4101
-# test: только при остановленном кандидате и свободных тестовых таблицах
-python3.11 scripts/helios.py test
-# Новая продуктивная установка; отказывает при существующих таблицах
-python3.11 scripts/helios.py init
-# Обновление существующей БД с сохранением строк
-python3.11 scripts/helios.py migrate
-python3.11 scripts/helios.py start
+cd /home/studs/s407960/is-lab2-4101 && python3.11 scripts/helios.py status
+```
+
+若显示 `Running PID ...`，先检查 HTTP 是否就绪。若显示 `Not running`，检查启动所需文件。
+
+```sh
+ls -lh target/movie-lab.war .runtime/payara-micro-6.2025.1.jar
+```
+
+## 2. WAR 缺失时先重新打包
+
+这次日志中，`helios.py test` 执行的 Maven `clean` 已删除 `target/`，随后 JUnit 因 `lab2_4101_test_coordinates` 已存在而退出。这一轮构建没有生成新的 WAR。正式表已存在，所以 `init` 返回 `lab2_4101_coordinates already exists`。已有正式部署的恢复路径是**打包 → 启动 → 验证 HTTP → 建隧道**。
+
+如果 WAR 缺失或需要重新构建，先确认本项目的 Payara 进程已停止，再在 **Helios 项目目录** 执行下列命令。这里用 `-DskipTests` 将恢复运行与测试表问题分开。
+
+```sh
+cd /home/studs/s407960/is-lab2-4101 &&
+env -u _JAVA_OPTIONS JAVA_HOME=/usr/local/openjdk21 PATH="/usr/local/openjdk21/bin:$PATH" \
+  MAVEN_OPTS='-Xmx384m -XX:MaxMetaspaceSize=256m -XX:ActiveProcessorCount=2' \
+  mvn -B -ntp -s scripts/maven-settings.xml -DskipTests package &&
+test -s target/movie-lab.war && ls -lh target/movie-lab.war
+```
+
+确认 Maven 显示 `BUILD SUCCESS`，且列出了非空的 `target/movie-lab.war`。`-DskipTests package` 的结果是部署包，完整测试另见第 5 节。
+
+## 3. 启动并确认服务器端 HTTP 就绪
+
+在 **Helios 项目目录** 执行。两个文件检查通过后，才会启动 Payara。
+
+```sh
+test -s target/movie-lab.war &&
+test -s .runtime/payara-micro-6.2025.1.jar &&
+MOVIE_TARGET=production MOVIE_HTTP_PORT=40797 MOVIE_ISOLATION='READ COMMITTED' python3.11 scripts/helios.py start
+```
+
+`Started PID ...` 只说明启动脚本创建了 Java 子进程。Payara 完成部署后再检查首页和认证接口，两个请求都应返回 `200`。
+
+```sh
 python3.11 scripts/helios.py status
-python3.11 scripts/helios.py stop
+python3.11 -c 'from urllib.request import urlopen; base="http://127.0.0.1:40797/movie-lab/"; print("Page:", urlopen(base, timeout=8).status); print("Auth API:", urlopen(base+"api/auth", timeout=8).status)'
 ```
 
-`test` выполняет Maven clean verify на настоящем PostgreSQL и после завершения удаляет только созданные тестовые таблицы. Для Web/JMeter используются `init-test` и `start-test`; интеграционные тесты и кандидат не работают одновременно на этих таблицах. Частный backup/restore описан в `jmeter/README.md`.
-
-WAR: `target/movie-lab.war`; runtime: `.runtime/`; PID: `.runtime/payara.pid`; журнал: `.runtime/payara.log`. Остановка проверяет, что PID соответствует этому Java-процессу. Перед повторным запуском дождаться завершения процесса. Recovery RUNNING рассчитан на один экземпляр: после завершения предыдущего процесса скрипт ждёт AppState lock и помечает прерванные операции FAILED. Recovery при нескольких активных экземплярах не заявляется.
-
-Чтобы назначить ADMIN, сначала зарегистрировать обычный аккаунт, затем выполнить на сервере:
+若启动期间暂时返回 `503`，等部署完成后再检查。若进程很快退出、反复启动得到不同 PID，或 HTTP 持续失败，查看日志末尾。
 
 ```sh
-MOVIE_ADMIN_USER=exact_registered_name python3.11 scripts/helios.py admin
-# Для тестового кандидата
-MOVIE_TARGET=test MOVIE_ADMIN_USER=exact_registered_name python3.11 scripts/helios.py admin
+tail -n 80 .runtime/payara.log
 ```
 
-Регистрация отвергает параметр role. Роль читается из доверенной записи БД, а не из запроса. Назначение роли не меняет пароль.
+| 现象 | 检查或处理 |
+| --- | --- |
+| `can't open file '/home/studs/s407960/scripts/helios.py'` | 当前位于家目录。先 `cd /home/studs/s407960/is-lab2-4101`。 |
+| 日志提示 WAR 不存在 | 按第 2 节打包。测试的 `clean` 会先删除旧 `target/`。 |
+| Payara JAR 不存在 | 检查 `.runtime/payara-micro-6.2025.1.jar`。启动脚本依赖 Maven 构件 `fish.payara.extras:payara-micro:6.2025.1` 的 JAR，需放在该路径。 |
+| `This deployment is already running` | 用 `status` 和上面的 HTTP 检查验证现有进程。 |
+| `Address already in use` | 用 `sockstat -4 -l -p 40797` 查看占用。确认进程归属后再处理。 |
+| `.pgpass` 或数据库认证错误 | 检查 Helios 的 `~/.pgpass` 权限为 `0600`，存在匹配 `pg:5432:studs:s407960` 的条目。对外分享日志时隐去凭据。 |
+| 正式表 `lab2_4101_coordinates already exists` | `init` 仅用于空库。已部署实例按第 3 节启动。 |
 
-## SSH-туннель
+需要明确停止或重启时，在 Helios 项目目录单独执行 `python3.11 scripts/helios.py stop`，确认 `status` 显示 `Not running` 后再启动。
+
+## 4. 从 Windows 打开网页
+
+服务器端 HTTP 正常后，在**另一个 Windows PowerShell 窗口**建立 SSH 隧道。
 
 ```powershell
 ssh -N -L 18083:127.0.0.1:40797 -o ExitOnForwardFailure=yes -p 2222 s407960@helios.cs.ifmo.ru
 ```
 
-Открыть `http://127.0.0.1:18083/movie-lab/`. Для независимых Cookie-контекстов использовать отдельный профиль либо `localhost:18083`. Эти URL обращаются к Helios, а не к локальному приложению.
+隧道连接后窗口通常会安静等待。保持窗口打开，再用浏览器访问 [http://127.0.0.1:18083/movie-lab/](http://127.0.0.1:18083/movie-lab/)。`40797` 是 Helios 上的服务端口，`18083` 是 Windows 上的隧道入口。若 Windows 的 `18083` 已被占用，可把命令和浏览器地址中的 `18083` 同时改成空闲端口。此窗口中的 `Ctrl+C` 会关闭隧道。
 
-`scripts/lab2-remote.py` — локальный Windows-транспорт Paramiko с обязательным существующим known_hosts. Зашифрованный PSCredential читается из `C:/Users/CHL/AppData/Local/MovieLab/credentials/helios-s407960-lab2.clixml` в памяти и передаётся только SSH-аутентификации. Использовать обычный Python, например встроенный Python Codex; Microsoft Store Python может не видеть файл из-за перенаправления AppData. `.runtime`, credential-файл и пароли в архив/отчёт не входят.
+网页使用独立的应用账号，可通过俄语页面的 `Зарегистрироваться` 注册。需要授予管理员权限时，在 Helios 项目目录对已注册的用户执行 `MOVIE_ADMIN_USER=实际用户名 python3.11 scripts/helios.py admin`。
 
-```powershell
-python scripts/lab2-remote.py exec 'cd ~/is-lab2-4101; python3.11 scripts/helios.py status'
-python scripts/lab2-remote.py tunnel 18083 40797
-python scripts/pack-lab2.py ../verification/Lab2/source-final.tar.gz
+## 5. 初始化、迁移和测试是独立操作
+
+| 命令 | 适用场景 |
+| --- | --- |
+| `python3.11 scripts/helios.py init` | 仅在首次部署、正式表尚未建立时创建正式表。 |
+| `python3.11 scripts/helios.py migrate` | 需要将已有实验二表升级到当前结构时，应用 `database/migrations/` 中的迁移。 |
+| `python3.11 scripts/helios.py test` | 可选的 PostgreSQL 集成测试。先停实验二应用并确认 `lab2_4101_test_` 测试表不存在。这条命令会清理 `target/`，测试失败后可按第 2 节恢复部署包。 |
+| `python3.11 scripts/helios.py init-test`、`start-test` | 单独准备和启动 Web/JMeter 测试实例。测试实例与正式实例共用实验二启动脚本的 PID 文件和默认 HTTP 端口。 |
+
+JUnit 会自己创建测试表。出现 `lab2_4101_test_coordinates already exists` 时，说明测试库已存在，可能是先前 Web/JMeter 留下的。可先用下列只读查询确认，保留已有数据，按 [JMeter 说明](jmeter/README.md) 决定是否需要备份和整理测试环境。要先恢复网页，直接按第 2、3 节操作。
+
+```sh
+psql -X -h pg -p 5432 -U s407960 -d studs -w -c \
+  "SELECT tablename FROM pg_tables WHERE schemaname = 's407960' AND starts_with(tablename, 'lab2_4101_test_') ORDER BY tablename;"
 ```
 
-После SFTP-распаковки проверить source-manifest.json, построить WAR на сервере и записать `sha256 target/movie-lab.war`. Продуктивное развёртывание использует тот же WAR, который прошёл проверку.
+Helios 使用 `pg:5432/studs`，schema 为 `s407960`。实验二正式表使用 `lab2_4101_` 前缀，集成测试和 JMeter 使用 `lab2_4101_test_`，实验一使用 `lab1_4101_`。JUnit 与 Web/JMeter 按顺序使用测试表。
 
-## Импорт и транзакции
+## 6. 源码和交付位置
 
-`POST api/imports`: multipart file, application/json, Session Cookie и X-CSRF-Token. `GET api/imports?page=0&size=10` и `GET api/imports/{id}` фильтруют владельца на сервере; ADMIN видит всё. До разбора принятого файла сохраняется RUNNING; данные и SUCCESS коммитятся вместе; FAILED сохраняется отдельно после отката. История не увеличивает movie revision.
+- `src/main/java/ru/itmo/movie/` 放 Java 后端，`src/main/webapp/` 放俄语网页。导入时整批数据在同一事务内写入，历史权限由后端校验。电影唯一键比较原样名称和导演 `Person.id`，两部同名且均无导演的电影也会冲突。
+- [导入契约](docs/import-format-ru.md)和 [JSON 样例](src/main/webapp/examples/import-valid.json)可用于网页演示。
+- [JMeter 运行说明](jmeter/README.md)覆盖三个验收场景。新结果和复现入口见 [验收索引](../verification/Lab2/ACCEPTANCE.md)和 [Helios 部署记录](../verification/Lab2/DEPLOYMENT.md)。
+- [俄语实验报告](../report/Lab2/report.pdf)及 LaTeX 源码在 `../report/Lab2/`，UML 图在 `../report/Lab2/uml/`。
+- 本地开发可在 Windows 项目目录执行 `./scripts/start-local.ps1`，使用独立的本地数据库，默认网页端口为 `18081`。连接 Helios 时使用第 4 节的 `18083` 隧道入口。
 
-Long принимается точно из целого JSON или десятичной строки. Person определяется паспортом; несовпадение полных данных запрещено. Название не обрезается и не нормализуется; два одинаковых названия с null-режиссёром конфликтуют. Новый ключ не реализован через ограничения или триггеры PostgreSQL.
-
-`MOVIE_ISOLATION` по умолчанию READ COMMITTED, AppState row lock и клиентская версия защищают записи. `MOVIE_LOCK_TIMEOUT_MS=10000` задаётся через SET LOCAL lock_timeout. Для сравнения доступен SERIALIZABLE с тремя повторами подтверждённого SQLSTATE 40001. Неопределённый commit не повторяется вслепую: требуется проверить operationId в истории.
-
-## Локальная разработка
-
-Она не заменяет серверную приёмку. Windows, Java 17+, Maven, PostgreSQL 17: `./scripts/start-local.ps1`. Собственный кластер `.runtime/pgdata`, базы `movie_lab`/`movie_lab_test`, PostgreSQL loopback 55441, HTTP 18081. Скрипт применяет все миграции; не направлять его на чужой кластер.
-
-Исходная учебная учётная запись student/student сохранена. MOVIE_USER/MOVIE_PASSWORD задают только первоначальный bootstrap и не сбрасывают существующий пароль. Новые пользователи регистрируются в Web. Пароли PBKDF2-HMAC-SHA256, 600000 итераций со случайной солью; Cookie HttpOnly, CSRF для изменений.
-
-## Отчёт
-
-Открыть `../report/Lab2` в редакторе LaTeX или выполнить XeLaTeX/LuaLaTeX над main.tex. Шрифты включены в fonts/. Автономная сборка проверена Tectonic: `tectonic --keep-logs --keep-intermediates main.tex`. UML обновляются командой `python scripts/lab2-uml.py` при установленном Graphviz. Финальный PDF проверяется визуально после компиляции.

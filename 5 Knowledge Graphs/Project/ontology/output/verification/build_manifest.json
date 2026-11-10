@@ -1,0 +1,44 @@
+{
+  "demo": {
+    "classes": 14,
+    "object_properties": 9,
+    "data_properties": 18,
+    "champions": 3,
+    "abilities": 15,
+    "annotated_champions": [
+      "Karma",
+      "Lux",
+      "Morgana"
+    ],
+    "effect_assertions": 28,
+    "individuals": 66,
+    "triples": 939
+  },
+  "full": {
+    "classes": 14,
+    "object_properties": 9,
+    "data_properties": 18,
+    "champions": 173,
+    "abilities": 865,
+    "annotated_champions": [
+      "Karma",
+      "Lux",
+      "Morgana"
+    ],
+    "effect_assertions": 28,
+    "individuals": 1260,
+    "triples": 13839
+  },
+  "source": {
+    "version": "16.20.1",
+    "locale": "ru_RU",
+    "snapshot": "C:\\develop\\NOTE_UTP\\StudyNote\\5 Knowledge Graphs\\Project\\data\\16.20.1\\ru_RU\\all",
+    "hashes": {
+      "champions.json": "91ebef7878c773a1771dfea2b7e68525c26b2a7ddc3314ae8553622816e11646",
+      "abilities.json": "d9f1d6eec5455524264909b896ede2c8b238d5466dbe8c342c4ad61c1d0cafcb",
+      "manifest.json": "c111e79d0f894cc0a50c713f84ddd38520200633c94acafb2c58405f62d74e04"
+    },
+    "annotations_sha256": "c1b9f2da57ae4150a1c31658ae59c5d67a698deef80f1a356d7b7bab1fc93041",
+    "annotation_scope": "Qualitative effects for 3 champions; reviewed by assistant, not independently approved by a human."
+  }
+}
