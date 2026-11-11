@@ -3,10 +3,12 @@ package ru.itmo.movie.service;
 import jakarta.persistence.EntityManager;
 import ru.itmo.movie.domain.Movie;
 
-/** Called only while the AppState write lock is held. No database UNIQUE rule. */
+/**
+ * Called only while the AppState write lock is held. No database UNIQUE rule.
+ */
 public final class MovieUniquenessValidator {
-    private MovieUniquenessValidator() {}
-    public record MovieKey(String name, Long directorIdOrNull) {}
+    private MovieUniquenessValidator() {
+    }
 
     public static void check(EntityManager em, Movie movie) {
         MovieKey key = new MovieKey(movie.name, movie.director == null ? null : movie.director.id);
@@ -16,6 +18,10 @@ public final class MovieUniquenessValidator {
         // Java String.equals preserves exact comparison even under nondeterministic DB collation.
         boolean duplicate = query.getResultStream().anyMatch(m -> !java.util.Objects.equals(m.id, movie.id)
                 && key.equals(new MovieKey(m.name, m.director == null ? null : m.director.id)));
-        if (duplicate) throw new Problem(409, "DUPLICATE_MOVIE", "Название и режиссёр: такая комбинация уже существует");
+        if (duplicate)
+            throw new Problem(409, "DUPLICATE_MOVIE", "Название и режиссёр: такая комбинация уже существует");
+    }
+
+    public record MovieKey(String name, Long directorIdOrNull) {
     }
 }

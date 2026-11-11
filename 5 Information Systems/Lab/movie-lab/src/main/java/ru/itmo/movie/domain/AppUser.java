@@ -2,7 +2,9 @@ package ru.itmo.movie.domain;
 
 import jakarta.persistence.*;
 
-/** Credentials are never returned by the REST API. */
+/**
+ * Credentials are never returned by the REST API.
+ */
 @Entity
 @Table(name = "app_user")
 public class AppUser {

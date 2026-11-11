@@ -3,10 +3,12 @@ const $ = id => document.getElementById(id);
 const {format: t, render: bind} = UiText;
 document.querySelectorAll('[data-icon]').forEach(control => addIcon(control, control.dataset.icon));
 document.querySelectorAll('form').forEach(Validation.attach);
+
 function showError(element, error) {
     const raw = error.raw || error.message || String(error);
     bind(element, () => raw);
 }
+
 const enums = {
     genres: ['WESTERN', 'COMEDY', 'TRAGEDY', 'HORROR'],
     rating: ['G', 'PG', 'PG_13', 'R', 'NC_17'],
@@ -20,7 +22,12 @@ const schemas = {
     locations: [['x', 'X', 'long', true], ['y', 'Y', 'number', true], ['name', 'Название', 'text', true]]
 };
 const titles = {movies: 'Фильмы', people: 'Люди', coordinates: 'Координаты', locations: 'Места'};
-const createLabels = {movies: 'Добавить фильм', people: 'Добавить человека', coordinates: 'Добавить координаты', locations: 'Добавить место'};
+const createLabels = {
+    movies: 'Добавить фильм',
+    people: 'Добавить человека',
+    coordinates: 'Добавить координаты',
+    locations: 'Добавить место'
+};
 const genreLabels = {WESTERN: 'Вестерн', COMEDY: 'Комедия', TRAGEDY: 'Трагедия', HORROR: 'Ужасы'};
 const movieFields = [['actions', 'Действия'], ['name', 'Фильм'], ['genre', 'Жанр'], ['id', 'ID'], ['creationDate', 'Дата создания'],
     ...schemas.movies.filter(([key]) => key !== 'name' && key !== 'genre')];
@@ -65,12 +72,16 @@ function updateFilterChoices() {
     for (const value of values) option(choices, value, () => format(value, field));
     $('filter-value').placeholder = values.length ? values.join(', ') : 'Полное совпадение';
 }
+
 $('filter-column').onchange = updateFilterChoices;
 
 async function api(path, method = 'GET', body) {
     const r = await fetch('api/' + path, {
         method,
-        headers: body instanceof FormData ? {'X-CSRF-Token': state.csrf} : {'Content-Type': 'application/json', 'X-CSRF-Token': state.csrf},
+        headers: body instanceof FormData ? {'X-CSRF-Token': state.csrf} : {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': state.csrf
+        },
         body: body instanceof FormData ? body : body === undefined ? undefined : JSON.stringify(body)
     });
     const text = await r.text();
@@ -256,13 +267,21 @@ async function refresh() {
         const items = await api(kind);
         const lastPage = Math.max(0, Math.ceil(items.length / size) - 1);
         const currentPage = Math.min(page, lastPage);
-        data = {items: items.slice(currentPage * size, (currentPage + 1) * size), total: items.length, page: currentPage};
+        data = {
+            items: items.slice(currentPage * size, (currentPage + 1) * size),
+            total: items.length,
+            page: currentPage
+        };
     }
     if (request !== collectionRequest || kind !== state.kind || $('workspace').hidden) return;
     state.page = data.page;
     state.total = data.total;
     renderCollection(kind, data.items);
-    bind($('page-info'), 'Страница {page} из {pages} · Объектов: {total}', {page: state.page + 1, pages: Math.max(1, Math.ceil(state.total / state.size)), total: state.total});
+    bind($('page-info'), 'Страница {page} из {pages} · Объектов: {total}', {
+        page: state.page + 1,
+        pages: Math.max(1, Math.ceil(state.total / state.size)),
+        total: state.total
+    });
     $('previous').disabled = state.page === 0;
     $('next').disabled = (state.page + 1) * state.size >= state.total;
 }
@@ -353,7 +372,7 @@ function setFullColumns(show) {
 async function navigate(kind) {
     state.kind = kind;
     state.page = 0;
-    $('collection').hidden = ['operations','import','history'].includes(kind);
+    $('collection').hidden = ['operations', 'import', 'history'].includes(kind);
     $('import-page').hidden = kind !== 'import';
     $('history-page').hidden = kind !== 'history';
     $('operations').hidden = kind !== 'operations';
@@ -463,7 +482,10 @@ async function edit(kind, id) {
 
 $('edit-form').onsubmit = async e => {
     e.preventDefault();
-    if (!Validation.form(e.target)) { bind($('edit-error'), 'Проверьте поля с красными подсказками.'); return; }
+    if (!Validation.form(e.target)) {
+        bind($('edit-error'), 'Проверьте поля с красными подсказками.');
+        return;
+    }
     const {kind, id, version} = state.editing;
     const data = {};
     for (const [key, , type, required] of schemas[kind]) {
@@ -586,7 +608,10 @@ async function details(kind, id, updating = false) {
 
 function remove(kind, row) {
     state.deleting = {kind, row};
-    bind($('delete-message'), () => t('Удалить {kind} #{id}? При удалении координат или человека удаляются связанные фильмы; при удалении места — связанные люди и их фильмы. Независимые справочники при удалении фильма сохраняются.', {kind: t(titles[kind]), id: row.id}));
+    bind($('delete-message'), () => t('Удалить {kind} #{id}? При удалении координат или человека удаляются связанные фильмы; при удалении места — связанные люди и их фильмы. Независимые справочники при удалении фильма сохраняются.', {
+        kind: t(titles[kind]),
+        id: row.id
+    }));
     bind($('delete-error'), '');
     $('delete-dialog').showModal();
 }
@@ -612,7 +637,13 @@ document.querySelectorAll('[data-operation]').forEach(form => form.onsubmit = as
     const method = op === 'box-office' ? 'DELETE' : ['average', 'prefix'].includes(op) ? 'GET' : 'POST';
     const submit = form.querySelector('button');
     submit.disabled = true;
-    const operationTitles = {'box-office': 'Удалить по сборам в США', average: 'Средние сборы в США', prefix: 'Найти по началу слогана', redistribute: 'Перераспределить «Оскары»', award: 'Дополнительные награды'};
+    const operationTitles = {
+        'box-office': 'Удалить по сборам в США',
+        average: 'Средние сборы в США',
+        prefix: 'Найти по началу слогана',
+        redistribute: 'Перераспределить «Оскары»',
+        award: 'Дополнительные награды'
+    };
     bind($('result-title'), operationTitles[op]);
     $('operation-result').replaceChildren();
     try {
@@ -624,7 +655,10 @@ document.querySelectorAll('[data-operation]').forEach(form => form.onsubmit = as
             result.forEach(row => {
                 const d = document.createElement('details'), s = document.createElement('summary');
                 s.textContent = format(row);
-                d.append(s, renderObject(row), iconButton('edit', 'Изменить', () => { $('result-dialog').close(); edit('movies', row.id); }));
+                d.append(s, renderObject(row), iconButton('edit', 'Изменить', () => {
+                    $('result-dialog').close();
+                    edit('movies', row.id);
+                }));
                 $('operation-result').append(d);
             });
         } else {
@@ -633,18 +667,29 @@ document.querySelectorAll('[data-operation]').forEach(form => form.onsubmit = as
                 bind(p, () => t('Среднее: {value}', {value: result.average ?? t('нет данных')}));
                 $('operation-result').append(p);
             } else {
-                const labels = {deleted:'Удалено фильмов', updated:'Обновлено фильмов', transferred:'Передано наград', recipients:'Получателей', each:'Каждому', remainder:'Остаток'};
+                const labels = {
+                    deleted: 'Удалено фильмов',
+                    updated: 'Обновлено фильмов',
+                    transferred: 'Передано наград',
+                    recipients: 'Получателей',
+                    each: 'Каждому',
+                    remainder: 'Остаток'
+                };
                 const dl = document.createElement('dl');
                 for (const [key, value] of Object.entries(result)) {
                     const term = document.createElement('dt'), valueNode = document.createElement('dd');
-                    bind(term, labels[key] || key); valueNode.textContent = String(value); dl.append(term, valueNode);
+                    bind(term, labels[key] || key);
+                    valueNode.textContent = String(value);
+                    dl.append(term, valueNode);
                 }
                 $('operation-result').append(dl);
             }
         }
         notice('Операция выполнена');
     } catch (error) {
-        const p = document.createElement('p'); p.className = 'error'; showError(p, error);
+        const p = document.createElement('p');
+        p.className = 'error';
+        showError(p, error);
         $('operation-result').append(p);
     } finally {
         submit.disabled = false;
@@ -687,6 +732,7 @@ setInterval(async () => {
 })();
 
 const importStatuses = {SUCCESS: ['Успешно', 'success'], FAILED: ['Ошибка', 'failure'], RUNNING: ['Выполняется', '']};
+
 async function refreshHistory() {
     const request = ++historyRequest;
     const page = historyPage;
@@ -712,8 +758,15 @@ async function refreshHistory() {
     $('history-prev').disabled = page === 0;
     $('history-next').disabled = (page + 1) * 10 >= data.total;
 }
-$('history-prev').onclick = () => { historyPage--; refreshHistory().catch(e => notice(e.message, true)); };
-$('history-next').onclick = () => { historyPage++; refreshHistory().catch(e => notice(e.message, true)); };
+
+$('history-prev').onclick = () => {
+    historyPage--;
+    refreshHistory().catch(e => notice(e.message, true));
+};
+$('history-next').onclick = () => {
+    historyPage++;
+    refreshHistory().catch(e => notice(e.message, true));
+};
 $('import-choose').onclick = () => $('import-file').click();
 $('import-file').onchange = () => {
     $('import-filename').textContent = $('import-file').files[0]?.name || 'Файл не выбран';
@@ -740,19 +793,32 @@ $('dropzone').ondrop = event => {
 $('import-form').onsubmit = async event => {
     event.preventDefault();
     const file = $('import-file').files[0];
-    if (!file) { bind($('import-result'), 'Выберите JSON-файл'); return; }
-    if (file.size > 5242880) { bind($('import-result'), 'Файл превышает 5 MiB'); return; }
-    const form = new FormData(); form.append('file', file, file.name);
+    if (!file) {
+        bind($('import-result'), 'Выберите JSON-файл');
+        return;
+    }
+    if (file.size > 5242880) {
+        bind($('import-result'), 'Файл превышает 5 MiB');
+        return;
+    }
+    const form = new FormData();
+    form.append('file', file, file.name);
     $('import-result').className = '';
-    $('import-submit').disabled = true; bind($('import-result'), 'Импорт выполняется…');
+    $('import-submit').disabled = true;
+    bind($('import-result'), 'Импорт выполняется…');
     try {
         const result = await api('imports', 'POST', form);
-        bind($('import-result'), 'Операция {id}: добавлено {count}', {id: result.operationId, count: result.addedCount});
+        bind($('import-result'), 'Операция {id}: добавлено {count}', {
+            id: result.operationId,
+            count: result.addedCount
+        });
         await refresh();
     } catch (error) {
         const data = error.data || {};
         const message = [data.operationId ? '#' + data.operationId : '', data.code, data.path, data.error || error.message].filter(Boolean).join(' · ');
         $('import-result').textContent = message;
         $('import-result').className = 'error';
-    } finally { $('import-submit').disabled = false; }
+    } finally {
+        $('import-submit').disabled = false;
+    }
 };

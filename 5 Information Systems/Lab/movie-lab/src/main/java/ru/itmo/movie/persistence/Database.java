@@ -21,6 +21,12 @@ public class Database {
         return System.getProperty(key, System.getenv().getOrDefault(key, fallback));
     }
 
+    public static String sqlState(Throwable error) {
+        for (Throwable t = error; t != null; t = t.getCause())
+            if (t instanceof java.sql.SQLException s) return s.getSQLState();
+        return null;
+    }
+
     @PostConstruct
     public void init() {
         factory = Persistence.createEntityManagerFactory(config("MOVIE_PERSISTENCE_UNIT", "movies"), Map.of(
@@ -40,15 +46,11 @@ public class Database {
         return transaction(work, true);
     }
 
-    /** History/account metadata commits independently, without changing the movie revision. */
+    /**
+     * History/account metadata commits independently, without changing the movie revision.
+     */
     public <T> T metadata(Function<EntityManager, T> work) {
         return transaction(work, false);
-    }
-
-    public static String sqlState(Throwable error) {
-        for (Throwable t = error; t != null; t = t.getCause())
-            if (t instanceof java.sql.SQLException s) return s.getSQLState();
-        return null;
     }
 
     private <T> T transaction(Function<EntityManager, T> work, boolean domain) {
@@ -57,8 +59,9 @@ public class Database {
             throw new IllegalArgumentException("Unsupported isolation");
         int attempts = Integer.parseInt(config("MOVIE_TX_ATTEMPTS", "3"));
         for (int attempt = 1; ; attempt++) {
-            try { return once(work, domain, isolation); }
-            catch (RuntimeException error) {
+            try {
+                return once(work, domain, isolation);
+            } catch (RuntimeException error) {
                 if (!"40001".equals(sqlState(error)) || attempt >= attempts) throw error;
                 java.util.logging.Logger.getLogger(Database.class.getName()).info("Rolled-back serialization failure; retry=" + attempt);
             }
@@ -83,7 +86,11 @@ public class Database {
                 return result;
             } catch (RuntimeException e) {
                 if (tx.isActive()) {
-                    try { tx.rollback(); } catch (RuntimeException rollback) { e.addSuppressed(rollback); }
+                    try {
+                        tx.rollback();
+                    } catch (RuntimeException rollback) {
+                        e.addSuppressed(rollback);
+                    }
                 }
                 throw e;
             }

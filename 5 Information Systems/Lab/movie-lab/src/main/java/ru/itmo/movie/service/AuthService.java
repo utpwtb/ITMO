@@ -22,14 +22,11 @@ public class AuthService {
     @Inject
     Database db;
 
-    public AuthService() {}
+    public AuthService() {
+    }
 
     public AuthService(Database db) {
         this.db = db;
-    }
-
-    public AppUser identity(String username) {
-        return db.read(em -> ImportHistoryService.account(em,username));
     }
 
     private static AppUser find(EntityManager em, String username) {
@@ -66,7 +63,13 @@ public class AuthService {
         return user;
     }
 
-    /** Seed once; restarting or changing environment variables never resets an existing password. */
+    public AppUser identity(String username) {
+        return db.read(em -> ImportHistoryService.account(em, username));
+    }
+
+    /**
+     * Seed once; restarting or changing environment variables never resets an existing password.
+     */
     @PostConstruct
     public void seedDefaultAccount() {
         String name = username(Database.config("MOVIE_USER", "student"));

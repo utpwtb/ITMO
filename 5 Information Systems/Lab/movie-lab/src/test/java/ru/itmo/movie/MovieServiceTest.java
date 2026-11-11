@@ -67,7 +67,8 @@ class MovieServiceTest {
         if (connection != null) {
             try (Statement s = connection.createStatement()) {
                 if (created) {
-                    if (sharedSchema) s.execute(sql("DROP TABLE import_operation,movie,person,coordinates,location,app_state,app_user"));
+                    if (sharedSchema)
+                        s.execute(sql("DROP TABLE import_operation,movie,person,coordinates,location,app_state,app_user"));
                     else s.execute("DROP SCHEMA " + schema + " CASCADE");
                 }
             } finally {
@@ -586,218 +587,485 @@ class MovieServiceTest {
     @Nested
     class Lab2 {
         final com.fasterxml.jackson.databind.ObjectMapper json = new com.fasterxml.jackson.databind.ObjectMapper();
-        byte[] fixture() throws Exception { return Files.readAllBytes(Path.of("src/test/resources/import/import-valid.json")); }
-        com.fasterxml.jackson.databind.node.ObjectNode document() throws Exception { return (com.fasterxml.jackson.databind.node.ObjectNode)json.readTree(fixture()); }
-        byte[] bytes(Object value) throws Exception { return json.writeValueAsBytes(value); }
-        ImportService importer() { return new ImportService(db,service); }
-        ImportHistoryService history() { return new ImportHistoryService(db); }
-        long count(Class<?> type) { return db.read(em -> em.createQuery("SELECT COUNT(x) FROM "+type.getSimpleName()+" x",Long.class).getSingleResult()); }
-        List<Long> domains() { return List.of(count(Movie.class),count(Person.class),count(Coordinates.class),count(Location.class)); }
-        void user(String name) { new AuthService(db).register(name,"Integration password 2026"); }
-        void users() { user("ordinary_a"); user("ordinary_b"); user("admin_a"); user("admin_b"); db.metadata(em -> { for(String n:List.of("admin_a","admin_b")) ImportHistoryService.account(em,n).role=UserRole.ADMIN; return null; }); }
 
-        @Test void F01_F07_exactIntegersPersonReuseAndSingleRevision() throws Exception {
-            user("ordinary_a"); long revision=service.revision();
-            var doc=document(); ((com.fasterxml.jackson.databind.node.ObjectNode)doc.path("movies").get(0)).put("budget",9007199254740993L);
-            var result=importer().upload("ordinary_a","example.json",bytes(doc));
-            assertEquals("SUCCESS",result.get("status")); assertEquals(2,result.get("addedCount"));
-            assertEquals(List.of(2L,1L,2L,1L),domains()); assertEquals(revision+1,service.revision());
-            assertEquals(9007199254740993L,((Movie)service.all("movies").get(0)).budget);
-            assertEquals(1,history().list("ordinary_a",0,10).get("total") instanceof Long n ? n.intValue() : -1);
+        byte[] fixture() throws Exception {
+            return Files.readAllBytes(Path.of("src/test/resources/import/import-valid.json"));
         }
 
-        @TestFactory java.util.stream.Stream<DynamicTest> F02_F04_F06_strictFieldMatrix() throws Exception {
-            List<DynamicTest> cases=new ArrayList<>();
-            var base=document();
-            Map<String,List<String>> required=Map.of("",List.of("name","coordinates","oscarsCount","budget","mpaaRating","length","usaBoxOffice","tagline"),"coordinates",List.of("x","y"),"director",List.of("name","birthday","passportID"),"director.location",List.of("x","y","name"));
-            for(var entry:required.entrySet()) for(String key:entry.getValue()) for(boolean missing:List.of(false,true)) {
-                String group=entry.getKey();
-                cases.add(DynamicTest.dynamicTest("required "+group+"."+key+" missing="+missing,()->{
-                    var doc=base.deepCopy(); var node=(com.fasterxml.jackson.databind.node.ObjectNode)doc.path("movies").get(0);
-                    for(String part:group.split("\\.")) if(!part.isEmpty()) node=(com.fasterxml.jackson.databind.node.ObjectNode)node.get(part);
-                    if(missing) node.remove(key); else node.putNull(key);
-                    Problem p=assertThrows(Problem.class,()->new ImportParser().parse(bytes(doc)));
-                    assertEquals(400,p.status); assertEquals(1,p.recordNumber); assertNotNull(p.path);
-                }));
+        com.fasterxml.jackson.databind.node.ObjectNode document() throws Exception {
+            return (com.fasterxml.jackson.databind.node.ObjectNode) json.readTree(fixture());
+        }
+
+        byte[] bytes(Object value) throws Exception {
+            return json.writeValueAsBytes(value);
+        }
+
+        ImportService importer() {
+            return new ImportService(db, service);
+        }
+
+        ImportHistoryService history() {
+            return new ImportHistoryService(db);
+        }
+
+        long count(Class<?> type) {
+            return db.read(em -> em.createQuery("SELECT COUNT(x) FROM " + type.getSimpleName() + " x", Long.class).getSingleResult());
+        }
+
+        List<Long> domains() {
+            return List.of(count(Movie.class), count(Person.class), count(Coordinates.class), count(Location.class));
+        }
+
+        void user(String name) {
+            new AuthService(db).register(name, "Integration password 2026");
+        }
+
+        void users() {
+            user("ordinary_a");
+            user("ordinary_b");
+            user("admin_a");
+            user("admin_b");
+            db.metadata(em -> {
+                for (String n : List.of("admin_a", "admin_b"))
+                    ImportHistoryService.account(em, n).role = UserRole.ADMIN;
+                return null;
+            });
+        }
+
+        @Test
+        void locationKeyRejectsDuplicateCreatesAndEdits() {
+            var key = Map.<String, Object>of("name", "Central square", "x", 10, "y", -0.0);
+            Location first = (Location) service.save("locations", null, key);
+            Problem duplicate = assertThrows(Problem.class, () -> service.save("locations", null,
+                    Map.of("name", "Central square", "x", 10, "y", 0.0)));
+            assertEquals(409, duplicate.status);
+            assertEquals("DUPLICATE_LOCATION", duplicate.code);
+
+            Location elsewhere = (Location) service.save("locations", null,
+                    Map.of("name", "Central square", "x", 11, "y", 0.0));
+            service.save("locations", null, Map.of("name", "Market square", "x", 10, "y", 0.0));
+            assertEquals(first.id, ((Location) service.save("locations", first.id,
+                    Map.of("version", first.version, "name", "Central square"))).id);
+            Problem edit = assertThrows(Problem.class, () -> service.save("locations", elsewhere.id,
+                    Map.of("version", elsewhere.version, "x", 10)));
+            assertEquals("DUPLICATE_LOCATION", edit.code);
+            assertEquals(11L, ((Location) service.get("locations", elsewhere.id)).x);
+            assertEquals(3, count(Location.class));
+        }
+
+        @Test
+        void concurrentLocationCreatesCommitExactlyOne() throws Exception {
+            var key = Map.<String, Object>of("name", "Central square", "x", 10, "y", 2.5);
+            ExecutorService workers = Executors.newFixedThreadPool(2);
+            CyclicBarrier start = new CyclicBarrier(2);
+            Callable<Integer> create = () -> {
+                start.await(10, TimeUnit.SECONDS);
+                try {
+                    service.save("locations", null, key);
+                    return 201;
+                } catch (Problem e) {
+                    assertEquals("DUPLICATE_LOCATION", e.code);
+                    return e.status;
+                }
+            };
+            try {
+                var first = workers.submit(create);
+                var second = workers.submit(create);
+                assertEquals(List.of(201, 409), java.util.stream.Stream.of(
+                        first.get(20, TimeUnit.SECONDS), second.get(20, TimeUnit.SECONDS)).sorted().toList());
+                assertEquals(1, count(Location.class));
+            } finally {
+                workers.shutdownNow();
             }
-            Map<String,List<String>> invalid=new LinkedHashMap<>();
-            for(String key:List.of("oscarsCount","budget","totalBoxOffice","length","goldenPalmCount","usaBoxOffice","director.height","director.weight")) invalid.put(key,List.of("0","-1"));
-            invalid.put("coordinates.x",List.of("827","2147483648","1.1","true","\"1\""));
-            invalid.put("coordinates.y",List.of("2147483648","1.2","false"));
-            invalid.put("budget",List.of("0","-1","9223372036854775808","\"9223372036854775808\"","1.1","true","\"1.0\""));
-            invalid.put("goldenPalmCount",List.of("0","-1","9223372036854775808","1.1"));
-            invalid.put("length",List.of("0","-1","2147483648","1.0"));
-            invalid.put("mpaaRating",List.of("\"BAD\"","1")); invalid.put("genre",List.of("\"BAD\""));
-            invalid.put("director.eyeColor",List.of("\"BAD\"")); invalid.put("director.hairColor",List.of("\"BAD\""));
-            invalid.put("director.birthday",List.of("\"2000-01-01T00:00\"","\"invalid\""));
-            invalid.put("director.height",List.of("0","-1","1e100","1e-100")); invalid.put("director.weight",List.of("0","-1","1e100","1e-100"));
-            invalid.put("director.location.x",List.of("9223372036854775808","1.1")); invalid.put("director.location.y",List.of("1e999","\"Infinity\""));
-            invalid.put("totalBoxOffice",List.of("0","-1","1e999","\"NaN\"","100"));
-            for(var entry:invalid.entrySet()) for(String value:entry.getValue()) {
-                String path=entry.getKey(); cases.add(DynamicTest.dynamicTest("invalid "+path+"="+value,()->{
-                    var doc=base.deepCopy(); var node=(com.fasterxml.jackson.databind.node.ObjectNode)doc.path("movies").get(0); String[] parts=path.split("\\.");
-                    for(int i=0;i<parts.length-1;i++) node=(com.fasterxml.jackson.databind.node.ObjectNode)node.get(parts[i]);
-                    node.set(parts[parts.length-1],json.readTree(value));
-                    assertEquals(400,assertThrows(Problem.class,()->new ImportParser().parse(bytes(doc))).status);
-                }));
+        }
+
+        @Test
+        void importsShareLocationsWithinAndAcrossBatches() throws Exception {
+            user("ordinary_a");
+            var doc = document();
+            var rows = (com.fasterxml.jackson.databind.node.ArrayNode) doc.get("movies");
+            for (int batch = 0; batch < 2; batch++) {
+                for (int i = 0; i < rows.size(); i++) {
+                    var row = (com.fasterxml.jackson.databind.node.ObjectNode) rows.get(i);
+                    row.put("name", "Location reuse " + batch + "-" + i);
+                    ((com.fasterxml.jackson.databind.node.ObjectNode) row.get("director"))
+                            .put("passportID", "location-reuse-" + batch + "-" + i);
+                }
+                var result = importer().upload("ordinary_a", "locations-" + batch + ".json", bytes(doc));
+                assertEquals(2, result.get("addedCount"));
+                assertEquals(1, count(Location.class));
             }
+            assertEquals(List.of(4L, 4L, 4L, 1L), domains());
+            Long locationId = ((Location) service.all("locations").get(0)).id;
+            for (Object row : service.all("people"))
+                assertEquals(locationId, ((Person) row).location.id);
+        }
+
+        @Test
+        void F01_F07_exactIntegersPersonReuseAndSingleRevision() throws Exception {
+            user("ordinary_a");
+            long revision = service.revision();
+            var doc = document();
+            ((com.fasterxml.jackson.databind.node.ObjectNode) doc.path("movies").get(0)).put("budget", 9007199254740993L);
+            var result = importer().upload("ordinary_a", "example.json", bytes(doc));
+            assertEquals("SUCCESS", result.get("status"));
+            assertEquals(2, result.get("addedCount"));
+            assertEquals(List.of(2L, 1L, 2L, 1L), domains());
+            assertEquals(revision + 1, service.revision());
+            assertEquals(9007199254740993L, ((Movie) service.all("movies").get(0)).budget);
+            assertEquals(1, history().list("ordinary_a", 0, 10).get("total") instanceof Long n ? n.intValue() : -1);
+        }
+
+        @TestFactory
+        java.util.stream.Stream<DynamicTest> F02_F04_F06_strictFieldMatrix() throws Exception {
+            List<DynamicTest> cases = new ArrayList<>();
+            var base = document();
+            Map<String, List<String>> required = Map.of("", List.of("name", "coordinates", "oscarsCount", "budget", "mpaaRating", "length", "usaBoxOffice", "tagline"), "coordinates", List.of("x", "y"), "director", List.of("name", "birthday", "passportID"), "director.location", List.of("x", "y", "name"));
+            for (var entry : required.entrySet())
+                for (String key : entry.getValue())
+                    for (boolean missing : List.of(false, true)) {
+                        String group = entry.getKey();
+                        cases.add(DynamicTest.dynamicTest("required " + group + "." + key + " missing=" + missing, () -> {
+                            var doc = base.deepCopy();
+                            var node = (com.fasterxml.jackson.databind.node.ObjectNode) doc.path("movies").get(0);
+                            for (String part : group.split("\\."))
+                                if (!part.isEmpty())
+                                    node = (com.fasterxml.jackson.databind.node.ObjectNode) node.get(part);
+                            if (missing) node.remove(key);
+                            else node.putNull(key);
+                            Problem p = assertThrows(Problem.class, () -> new ImportParser().parse(bytes(doc)));
+                            assertEquals(400, p.status);
+                            assertEquals(1, p.recordNumber);
+                            assertNotNull(p.path);
+                        }));
+                    }
+            Map<String, List<String>> invalid = new LinkedHashMap<>();
+            for (String key : List.of("oscarsCount", "budget", "totalBoxOffice", "length", "goldenPalmCount", "usaBoxOffice", "director.height", "director.weight"))
+                invalid.put(key, List.of("0", "-1"));
+            invalid.put("coordinates.x", List.of("827", "2147483648", "1.1", "true", "\"1\""));
+            invalid.put("coordinates.y", List.of("2147483648", "1.2", "false"));
+            invalid.put("budget", List.of("0", "-1", "9223372036854775808", "\"9223372036854775808\"", "1.1", "true", "\"1.0\""));
+            invalid.put("goldenPalmCount", List.of("0", "-1", "9223372036854775808", "1.1"));
+            invalid.put("length", List.of("0", "-1", "2147483648", "1.0"));
+            invalid.put("mpaaRating", List.of("\"BAD\"", "1"));
+            invalid.put("genre", List.of("\"BAD\""));
+            invalid.put("director.eyeColor", List.of("\"BAD\""));
+            invalid.put("director.hairColor", List.of("\"BAD\""));
+            invalid.put("director.birthday", List.of("\"2000-01-01T00:00\"", "\"invalid\""));
+            invalid.put("director.height", List.of("0", "-1", "1e100", "1e-100"));
+            invalid.put("director.weight", List.of("0", "-1", "1e100", "1e-100"));
+            invalid.put("director.location.x", List.of("9223372036854775808", "1.1"));
+            invalid.put("director.location.y", List.of("1e999", "\"Infinity\""));
+            invalid.put("totalBoxOffice", List.of("0", "-1", "1e999", "\"NaN\"", "100"));
+            for (var entry : invalid.entrySet())
+                for (String value : entry.getValue()) {
+                    String path = entry.getKey();
+                    cases.add(DynamicTest.dynamicTest("invalid " + path + "=" + value, () -> {
+                        var doc = base.deepCopy();
+                        var node = (com.fasterxml.jackson.databind.node.ObjectNode) doc.path("movies").get(0);
+                        String[] parts = path.split("\\.");
+                        for (int i = 0; i < parts.length - 1; i++)
+                            node = (com.fasterxml.jackson.databind.node.ObjectNode) node.get(parts[i]);
+                        node.set(parts[parts.length - 1], json.readTree(value));
+                        assertEquals(400, assertThrows(Problem.class, () -> new ImportParser().parse(bytes(doc))).status);
+                    }));
+                }
             return cases.stream();
         }
 
-        @Test void F04_F05_F06_validBoundaries() throws Exception {
-            var doc=document(); var m=(com.fasterxml.jackson.databind.node.ObjectNode)doc.path("movies").get(0);
-            m.put("budget","9223372036854775807"); m.put("goldenPalmCount",9223372036854775807L);
-            m.put("usaBoxOffice",1); m.put("totalBoxOffice",1); m.put("oscarsCount",1); m.put("length",1); m.put("tagline","");
-            ((com.fasterxml.jackson.databind.node.ObjectNode)m.get("coordinates")).put("x",826).put("y",Integer.MIN_VALUE);
-            ((com.fasterxml.jackson.databind.node.ObjectNode)m.path("director").path("location")).put("x",Long.MIN_VALUE).put("y",-2).put("name","");
-            assertEquals(Long.MAX_VALUE,new ImportParser().parse(bytes(doc)).movies().get(0).budget);
-            m.putNull("totalBoxOffice"); assertEquals(2,new ImportParser().parse(bytes(doc)).movies().size());
+        @Test
+        void F04_F05_F06_validBoundaries() throws Exception {
+            var doc = document();
+            var m = (com.fasterxml.jackson.databind.node.ObjectNode) doc.path("movies").get(0);
+            m.put("budget", "9223372036854775807");
+            m.put("goldenPalmCount", 9223372036854775807L);
+            m.put("usaBoxOffice", 1);
+            m.put("totalBoxOffice", 1);
+            m.put("oscarsCount", 1);
+            m.put("length", 1);
+            m.put("tagline", "");
+            ((com.fasterxml.jackson.databind.node.ObjectNode) m.get("coordinates")).put("x", 826).put("y", Integer.MIN_VALUE);
+            ((com.fasterxml.jackson.databind.node.ObjectNode) m.path("director").path("location")).put("x", Long.MIN_VALUE).put("y", -2).put("name", "");
+            assertEquals(Long.MAX_VALUE, new ImportParser().parse(bytes(doc)).movies().get(0).budget);
+            m.putNull("totalBoxOffice");
+            assertEquals(2, new ImportParser().parse(bytes(doc)).movies().size());
         }
 
-        @Test void F03_U06_lastDuplicateRollsBackAllNestedObjects() throws Exception {
-            user("ordinary_a"); var doc=document(); var rows=(com.fasterxml.jackson.databind.node.ArrayNode)doc.get("movies"); rows.add(rows.get(0).deepCopy());
-            long revision=service.revision(); Problem p=assertThrows(Problem.class,()->importer().upload("ordinary_a","duplicate.json",bytes(doc)));
-            assertEquals("DUPLICATE_MOVIE",p.code); assertEquals(3,p.recordNumber); assertEquals(List.of(0L,0L,0L,0L),domains());
-            assertEquals(revision,service.revision()); assertEquals("FAILED",history().get("ordinary_a",p.operationId).get("status"));
-        }
-
-        @Test void F08_failureAfterActualInsertFlush() throws Exception {
+        @Test
+        void F03_U06_lastDuplicateRollsBackAllNestedObjects() throws Exception {
             user("ordinary_a");
-            MovieService injected=new MovieService(db) { @Override public Movie saveImported(jakarta.persistence.EntityManager em,Movie m) { super.saveImported(em,m); assertNotNull(m.id); throw new IllegalStateException("test: after actual first flush"); } };
-            Problem p=assertThrows(Problem.class,()->new ImportService(db,injected).upload("ordinary_a","flush.json",fixture()));
-            assertEquals(500,p.status); assertEquals(List.of(0L,0L,0L,0L),domains()); assertEquals("FAILED",history().get("ordinary_a",p.operationId).get("status"));
+            var doc = document();
+            var rows = (com.fasterxml.jackson.databind.node.ArrayNode) doc.get("movies");
+            rows.add(rows.get(0).deepCopy());
+            long revision = service.revision();
+            Problem p = assertThrows(Problem.class, () -> importer().upload("ordinary_a", "duplicate.json", bytes(doc)));
+            assertEquals("DUPLICATE_MOVIE", p.code);
+            assertEquals(3, p.recordNumber);
+            assertEquals(List.of(0L, 0L, 0L, 0L), domains());
+            assertEquals(revision, service.revision());
+            assertEquals("FAILED", history().get("ordinary_a", p.operationId).get("status"));
         }
 
-        @Test void F09_actualDeferredCommitFailure() throws Exception {
+        @Test
+        void F08_failureAfterActualInsertFlush() throws Exception {
             user("ordinary_a");
-            try(Statement s=connection.createStatement()) {
+            MovieService injected = new MovieService(db) {
+                @Override
+                public Movie saveImported(jakarta.persistence.EntityManager em, Movie m) {
+                    super.saveImported(em, m);
+                    assertNotNull(m.id);
+                    throw new IllegalStateException("test: after actual first flush");
+                }
+            };
+            Problem p = assertThrows(Problem.class, () -> new ImportService(db, injected).upload("ordinary_a", "flush.json", fixture()));
+            assertEquals(500, p.status);
+            assertEquals(List.of(0L, 0L, 0L, 0L), domains());
+            assertEquals("FAILED", history().get("ordinary_a", p.operationId).get("status"));
+        }
+
+        @Test
+        void F09_actualDeferredCommitFailure() throws Exception {
+            user("ordinary_a");
+            try (Statement s = connection.createStatement()) {
                 s.execute("CREATE FUNCTION lab2_test_commit_failure() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN RAISE EXCEPTION 'test deferred commit' USING ERRCODE='23514'; END $$");
                 s.execute(sql("CREATE CONSTRAINT TRIGGER lab2_test_commit_failure AFTER INSERT ON movie DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION lab2_test_commit_failure()"));
                 try {
-                    Problem p=assertThrows(Problem.class,()->importer().upload("ordinary_a","commit.json",fixture()));
-                    assertEquals(500,p.status); assertEquals(List.of(0L,0L,0L,0L),domains()); assertEquals("FAILED",history().get("ordinary_a",p.operationId).get("status"));
+                    Problem p = assertThrows(Problem.class, () -> importer().upload("ordinary_a", "commit.json", fixture()));
+                    assertEquals(500, p.status);
+                    assertEquals(List.of(0L, 0L, 0L, 0L), domains());
+                    assertEquals("FAILED", history().get("ordinary_a", p.operationId).get("status"));
                 } finally {
-                    s.execute(sql("DROP TRIGGER lab2_test_commit_failure ON movie")); s.execute("DROP FUNCTION lab2_test_commit_failure()");
+                    s.execute(sql("DROP TRIGGER lab2_test_commit_failure ON movie"));
+                    s.execute("DROP FUNCTION lab2_test_commit_failure()");
                 }
             }
         }
 
-        @Test void F07_personConflictAfterEarlierRowsAndExistingPersonImmutable() throws Exception {
-            user("ordinary_a"); importer().upload("ordinary_a","first.json",fixture());
-            var doc=document(); var rows=doc.path("movies");
-            ((com.fasterxml.jackson.databind.node.ObjectNode)rows.get(0)).put("name","Unique 1");
-            ((com.fasterxml.jackson.databind.node.ObjectNode)rows.get(1)).put("name","Unique 2");
-            ((com.fasterxml.jackson.databind.node.ObjectNode)rows.get(1).get("director")).put("name","Changed");
-            Problem p=assertThrows(Problem.class,()->importer().upload("ordinary_a","conflict.json",bytes(doc)));
-            assertEquals("PERSON_DATA_CONFLICT",p.code); assertEquals(List.of(2L,1L,2L,1L),domains());
-            assertEquals("Example Director",((Person)service.all("people").get(0)).name);
-            ((com.fasterxml.jackson.databind.node.ObjectNode)rows.get(1).get("director")).put("name","Example Director");
-            importer().upload("ordinary_a","reuse.json",bytes(doc)); assertEquals(List.of(4L,1L,4L,1L),domains());
-        }
-
-        @Test void F07_personAcrossRolesNullOmissionAndTimezoneIdentity() throws Exception {
-            user("ordinary_a"); var doc=document();
-            var first=(com.fasterxml.jackson.databind.node.ObjectNode)doc.path("movies").get(0);
-            var second=(com.fasterxml.jackson.databind.node.ObjectNode)doc.path("movies").get(1);
-            first.set("screenwriter",first.get("director").deepCopy()); first.set("operator",first.get("director").deepCopy());
-            ((com.fasterxml.jackson.databind.node.ObjectNode)second.get("director")).put("birthday","1980-01-02T12:00+03:00");
-            importer().upload("ordinary_a","roles.json",bytes(doc)); assertEquals(1,count(Person.class));
-            Movie stored=(Movie)service.all("movies").get(0);assertEquals(stored.director.id,stored.screenwriter.id);assertEquals(stored.director.id,stored.operator.id);
-            first.put("name","Timezone identity"); second.put("name","Timezone identity two");
-            ((com.fasterxml.jackson.databind.node.ObjectNode)first.get("director")).put("birthday","1980-01-02T12:00+03:00[Europe/Moscow]");
-            assertEquals("PERSON_DATA_CONFLICT",assertThrows(Problem.class,()->importer().upload("ordinary_a","zone.json",bytes(doc))).code);
-            assertEquals(2,count(Movie.class));
-        }
-
-        @Test void F10_syntaxUnknownGeneratedAndEncodingFailuresKeepHistory() throws Exception {
+        @Test
+        void F07_personConflictAfterEarlierRowsAndExistingPersonImmutable() throws Exception {
             user("ordinary_a");
-            for(String text:List.of("[]","{}","{\"formatVersion\":1,\"movies\":[]}","{\"formatVersion\":1,\"formatVersion\":1,\"movies\":[]}","{} {}","{bad", "{\"formatVersion\":1,}")) {
-                Problem p=assertThrows(Problem.class,()->importer().upload("ordinary_a","bad.json",text.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
-                assertEquals(400,p.status); assertEquals("FAILED",history().get("ordinary_a",p.operationId).get("status"));
-            }
-            assertEquals(400,assertThrows(Problem.class,()->new ImportParser().parse(new byte[]{(byte)0xff})).status);
-            for(String key:List.of("id","version","creationDate","directorId","userId","unknown")) {
-                var doc=document(); ((com.fasterxml.jackson.databind.node.ObjectNode)doc.path("movies").get(0)).put(key,1);
-                assertThrows(Problem.class,()->new ImportParser().parse(bytes(doc)));
-            }
-            assertThrows(Problem.class,()->new ImportParser().parse(new byte[ImportParser.maxBytes()+1]));
-            byte[] bom=new byte[fixture().length+3]; bom[0]=(byte)0xef; bom[1]=(byte)0xbb; bom[2]=(byte)0xbf; System.arraycopy(fixture(),0,bom,3,fixture().length);
-            assertEquals(2,new ImportParser().parse(bom).movies().size()); assertEquals(List.of(0L,0L,0L,0L),domains());
+            importer().upload("ordinary_a", "first.json", fixture());
+            var doc = document();
+            var rows = doc.path("movies");
+            ((com.fasterxml.jackson.databind.node.ObjectNode) rows.get(0)).put("name", "Unique 1");
+            ((com.fasterxml.jackson.databind.node.ObjectNode) rows.get(1)).put("name", "Unique 2");
+            ((com.fasterxml.jackson.databind.node.ObjectNode) rows.get(1).get("director")).put("name", "Changed");
+            Problem p = assertThrows(Problem.class, () -> importer().upload("ordinary_a", "conflict.json", bytes(doc)));
+            assertEquals("PERSON_DATA_CONFLICT", p.code);
+            assertEquals(List.of(2L, 1L, 2L, 1L), domains());
+            assertEquals("Example Director", ((Person) service.all("people").get(0)).name);
+            ((com.fasterxml.jackson.databind.node.ObjectNode) rows.get(1).get("director")).put("name", "Example Director");
+            importer().upload("ordinary_a", "reuse.json", bytes(doc));
+            assertEquals(List.of(4L, 1L, 4L, 1L), domains());
         }
 
-        @Test void U01_U02_U03_U04_U05_U07_identityNullPartialAndExactNames() {
-            Coordinates c=coord(); Person p=person(null);
-            Movie a=(Movie)service.save("movies",null,data(c.id,"A",1,null));
-            assertEquals("DUPLICATE_MOVIE",assertThrows(Problem.class,()->service.save("movies",null,data(c.id,"A",1,null))).code);
-            var directed=data(c.id,"A",1,null); directed.put("director",p.id); Movie b=(Movie)service.save("movies",null,directed);
-            assertEquals(409,assertThrows(Problem.class,()->service.save("movies",b.id,new HashMap<>(Map.of("version",b.version)){{put("director",null);}})).status);
-            Movie self=(Movie)service.save("movies",a.id,Map.of("name","A","version",a.version)); assertNotNull(self);
-            for(String name:List.of("a"," A","A ","A|")) service.save("movies",null,data(c.id,name,1,null));
-            Person second=(Person)service.save("people",null,Map.of("name",p.name,"birthday",p.birthday.toString(),"passportID","different-passport"));
-            directed.put("director",second.id); service.save("movies",null,directed);
-            service.save("people",p.id,Map.of("version",p.version,"name","Renamed","passportID","new-passport"));
-            directed.put("director",p.id); assertEquals(409,assertThrows(Problem.class,()->service.save("movies",null,directed)).status);
-            assertEquals(7,count(Movie.class));
-        }
-
-        @Test void H01_H02_H03_H04_historyPermissionsPaginationAndReopen() throws Exception {
-            users(); var a=importer().upload("ordinary_a","a.json",fixture());
-            assertThrows(Problem.class,()->importer().upload("ordinary_b","bad.json",fixture()));
-            long id=Long.parseLong(a.get("operationId").toString());
-            assertEquals(1L,history().list("ordinary_a",0,10).get("total")); assertEquals(1L,history().list("ordinary_b",0,10).get("total"));
-            assertEquals(2L,history().list("admin_a",0,1).get("total")); assertEquals(1,((List<?>)history().list("admin_b",0,1).get("items")).size());
-            assertEquals(404,assertThrows(Problem.class,()->history().get("ordinary_b",id)).status);
-            Database reopened=new Database(); reopened.init();
-            try { assertEquals("SUCCESS",new ImportHistoryService(reopened).get("admin_a",id).get("status")); assertEquals(UserRole.ADMIN,new AuthService(reopened).identity("admin_a").role); }
-            finally { reopened.close(); }
-        }
-
-        @Test void C03_C04_concurrentCreatesOneCommit() throws Exception {
-            Coordinates c=coord(); Person p=person(null);
-            for(boolean director:List.of(false,true)) {
-                var data=data(c.id,"race-"+director,1,null); if(director)data.put("director",p.id);
-                ExecutorService executor=Executors.newFixedThreadPool(4); CyclicBarrier barrier=new CyclicBarrier(4);
-                List<Callable<Integer>> calls=new ArrayList<>();
-                for(int i=0;i<4;i++)calls.add(()->{barrier.await(10,TimeUnit.SECONDS);try{service.save("movies",null,data);return 201;}catch(Problem e){assertEquals("DUPLICATE_MOVIE",e.code);return e.status;}});
-                try { var results=executor.invokeAll(calls); List<Integer> statuses=new ArrayList<>();for(var f:results)statuses.add(f.get(20,TimeUnit.SECONDS));Collections.sort(statuses);assertEquals(List.of(201,409,409,409),statuses); }
-                finally{executor.shutdownNow();}
-            }
-        }
-
-        @Test void C11_H06_deterministicNoPartialReadBeforeCommitAndRollback() throws Exception {
+        @Test
+        void F07_personAcrossRolesNullOmissionAndTimezoneIdentity() throws Exception {
             user("ordinary_a");
-            for(boolean rollback:List.of(true,false)) {
-                long before=count(Movie.class); CountDownLatch flushed=new CountDownLatch(1),release=new CountDownLatch(1);
-                MovieService paused=new MovieService(db){@Override public Movie saveImported(jakarta.persistence.EntityManager em,Movie m){super.saveImported(em,m);flushed.countDown();try{assertTrue(release.await(15,TimeUnit.SECONDS));}catch(InterruptedException e){throw new RuntimeException(e);}if(rollback)throw new IllegalStateException("test rollback after pause");return m;}};
-                ExecutorService executor=Executors.newSingleThreadExecutor();
-                Future<?> f=executor.submit(()->new ImportService(db,paused).upload("ordinary_a","pause.json",uncheckedFixture()));
+            var doc = document();
+            var first = (com.fasterxml.jackson.databind.node.ObjectNode) doc.path("movies").get(0);
+            var second = (com.fasterxml.jackson.databind.node.ObjectNode) doc.path("movies").get(1);
+            first.set("screenwriter", first.get("director").deepCopy());
+            first.set("operator", first.get("director").deepCopy());
+            ((com.fasterxml.jackson.databind.node.ObjectNode) second.get("director")).put("birthday", "1980-01-02T12:00+03:00");
+            importer().upload("ordinary_a", "roles.json", bytes(doc));
+            assertEquals(1, count(Person.class));
+            Movie stored = (Movie) service.all("movies").get(0);
+            assertEquals(stored.director.id, stored.screenwriter.id);
+            assertEquals(stored.director.id, stored.operator.id);
+            first.put("name", "Timezone identity");
+            second.put("name", "Timezone identity two");
+            ((com.fasterxml.jackson.databind.node.ObjectNode) first.get("director")).put("birthday", "1980-01-02T12:00+03:00[Europe/Moscow]");
+            assertEquals("PERSON_DATA_CONFLICT", assertThrows(Problem.class, () -> importer().upload("ordinary_a", "zone.json", bytes(doc))).code);
+            assertEquals(2, count(Movie.class));
+        }
+
+        @Test
+        void F10_syntaxUnknownGeneratedAndEncodingFailuresKeepHistory() throws Exception {
+            user("ordinary_a");
+            for (String text : List.of("[]", "{}", "{\"formatVersion\":1,\"movies\":[]}", "{\"formatVersion\":1,\"formatVersion\":1,\"movies\":[]}", "{} {}", "{bad", "{\"formatVersion\":1,}")) {
+                Problem p = assertThrows(Problem.class, () -> importer().upload("ordinary_a", "bad.json", text.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+                assertEquals(400, p.status);
+                assertEquals("FAILED", history().get("ordinary_a", p.operationId).get("status"));
+            }
+            assertEquals(400, assertThrows(Problem.class, () -> new ImportParser().parse(new byte[]{(byte) 0xff})).status);
+            for (String key : List.of("id", "version", "creationDate", "directorId", "userId", "unknown")) {
+                var doc = document();
+                ((com.fasterxml.jackson.databind.node.ObjectNode) doc.path("movies").get(0)).put(key, 1);
+                assertThrows(Problem.class, () -> new ImportParser().parse(bytes(doc)));
+            }
+            assertThrows(Problem.class, () -> new ImportParser().parse(new byte[ImportParser.maxBytes() + 1]));
+            byte[] bom = new byte[fixture().length + 3];
+            bom[0] = (byte) 0xef;
+            bom[1] = (byte) 0xbb;
+            bom[2] = (byte) 0xbf;
+            System.arraycopy(fixture(), 0, bom, 3, fixture().length);
+            assertEquals(2, new ImportParser().parse(bom).movies().size());
+            assertEquals(List.of(0L, 0L, 0L, 0L), domains());
+        }
+
+        @Test
+        void U01_U02_U03_U04_U05_U07_identityNullPartialAndExactNames() {
+            Coordinates c = coord();
+            Person p = person(null);
+            Movie a = (Movie) service.save("movies", null, data(c.id, "A", 1, null));
+            assertEquals("DUPLICATE_MOVIE", assertThrows(Problem.class, () -> service.save("movies", null, data(c.id, "A", 1, null))).code);
+            var directed = data(c.id, "A", 1, null);
+            directed.put("director", p.id);
+            Movie b = (Movie) service.save("movies", null, directed);
+            assertEquals(409, assertThrows(Problem.class, () -> service.save("movies", b.id, new HashMap<>(Map.of("version", b.version)) {{
+                put("director", null);
+            }})).status);
+            Movie self = (Movie) service.save("movies", a.id, Map.of("name", "A", "version", a.version));
+            assertNotNull(self);
+            for (String name : List.of("a", " A", "A ", "A|")) service.save("movies", null, data(c.id, name, 1, null));
+            Person second = (Person) service.save("people", null, Map.of("name", p.name, "birthday", p.birthday.toString(), "passportID", "different-passport"));
+            directed.put("director", second.id);
+            service.save("movies", null, directed);
+            service.save("people", p.id, Map.of("version", p.version, "name", "Renamed", "passportID", "new-passport"));
+            directed.put("director", p.id);
+            assertEquals(409, assertThrows(Problem.class, () -> service.save("movies", null, directed)).status);
+            assertEquals(7, count(Movie.class));
+        }
+
+        @Test
+        void H01_H02_H03_H04_historyPermissionsPaginationAndReopen() throws Exception {
+            users();
+            var a = importer().upload("ordinary_a", "a.json", fixture());
+            assertThrows(Problem.class, () -> importer().upload("ordinary_b", "bad.json", fixture()));
+            long id = Long.parseLong(a.get("operationId").toString());
+            assertEquals(1L, history().list("ordinary_a", 0, 10).get("total"));
+            assertEquals(1L, history().list("ordinary_b", 0, 10).get("total"));
+            assertEquals(2L, history().list("admin_a", 0, 1).get("total"));
+            assertEquals(1, ((List<?>) history().list("admin_b", 0, 1).get("items")).size());
+            assertEquals(404, assertThrows(Problem.class, () -> history().get("ordinary_b", id)).status);
+            Database reopened = new Database();
+            reopened.init();
+            try {
+                assertEquals("SUCCESS", new ImportHistoryService(reopened).get("admin_a", id).get("status"));
+                assertEquals(UserRole.ADMIN, new AuthService(reopened).identity("admin_a").role);
+            } finally {
+                reopened.close();
+            }
+        }
+
+        @Test
+        void C03_C04_concurrentCreatesOneCommit() throws Exception {
+            Coordinates c = coord();
+            Person p = person(null);
+            for (boolean director : List.of(false, true)) {
+                var data = data(c.id, "race-" + director, 1, null);
+                if (director) data.put("director", p.id);
+                ExecutorService executor = Executors.newFixedThreadPool(4);
+                CyclicBarrier barrier = new CyclicBarrier(4);
+                List<Callable<Integer>> calls = new ArrayList<>();
+                for (int i = 0; i < 4; i++)
+                    calls.add(() -> {
+                        barrier.await(10, TimeUnit.SECONDS);
+                        try {
+                            service.save("movies", null, data);
+                            return 201;
+                        } catch (Problem e) {
+                            assertEquals("DUPLICATE_MOVIE", e.code);
+                            return e.status;
+                        }
+                    });
                 try {
-                    assertTrue(flushed.await(15,TimeUnit.SECONDS)); assertEquals(before,count(Movie.class));
-                    var latest=(Map<?,?>)((List<?>)history().list("ordinary_a",0,10).get("items")).get(0);assertEquals("RUNNING",latest.get("status"));assertNull(latest.get("addedCount"));
-                    release.countDown(); if(rollback)assertThrows(ExecutionException.class,()->f.get(20,TimeUnit.SECONDS));else f.get(20,TimeUnit.SECONDS);
-                    assertEquals(before+(rollback?0:2),count(Movie.class));
-                }finally{release.countDown();executor.shutdownNow();}
+                    var results = executor.invokeAll(calls);
+                    List<Integer> statuses = new ArrayList<>();
+                    for (var f : results) statuses.add(f.get(20, TimeUnit.SECONDS));
+                    Collections.sort(statuses);
+                    assertEquals(List.of(201, 409, 409, 409), statuses);
+                } finally {
+                    executor.shutdownNow();
+                }
             }
         }
-        byte[] uncheckedFixture(){try{return fixture();}catch(Exception e){throw new RuntimeException(e);}}
 
-        @Test void isolationAndRealLockTimeout() throws Exception {
-            String expected=Database.config("MOVIE_ISOLATION","READ COMMITTED").toLowerCase();
-            assertEquals(expected,db.write(em->em.createNativeQuery("SHOW transaction_isolation").getSingleResult().toString()));
-            assertEquals("read committed",db.metadata(em->em.createNativeQuery("SHOW transaction_isolation").getSingleResult().toString()));
-            System.out.println("LAB2_ACTUAL_BUSINESS_ISOLATION="+expected+"; METADATA=read committed; LOCK=AppState FOR UPDATE");
-            connection.setAutoCommit(false);try(Statement s=connection.createStatement()){
-                s.execute(sql("SELECT id FROM app_state WHERE id=1 FOR UPDATE")); System.setProperty("MOVIE_LOCK_TIMEOUT_MS","200");
-                long start=System.nanoTime(); RuntimeException error=assertThrows(RuntimeException.class,()->coord());
-                assertEquals("55P03",Database.sqlState(error)); long elapsed=TimeUnit.NANOSECONDS.toMillis(System.nanoTime()-start); assertTrue(elapsed>=150 && elapsed<5000);
-                System.out.println("LAB2_LOCK_TIMEOUT_MS="+elapsed+" SQLSTATE=55P03");
-            }finally{System.clearProperty("MOVIE_LOCK_TIMEOUT_MS");connection.rollback();connection.setAutoCommit(true);}
+        @Test
+        void C11_H06_deterministicNoPartialReadBeforeCommitAndRollback() throws Exception {
+            user("ordinary_a");
+            for (boolean rollback : List.of(true, false)) {
+                long before = count(Movie.class);
+                CountDownLatch flushed = new CountDownLatch(1), release = new CountDownLatch(1);
+                MovieService paused = new MovieService(db) {
+                    @Override
+                    public Movie saveImported(jakarta.persistence.EntityManager em, Movie m) {
+                        super.saveImported(em, m);
+                        flushed.countDown();
+                        try {
+                            assertTrue(release.await(15, TimeUnit.SECONDS));
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                        if (rollback) throw new IllegalStateException("test rollback after pause");
+                        return m;
+                    }
+                };
+                ExecutorService executor = Executors.newSingleThreadExecutor();
+                Future<?> f = executor.submit(() -> new ImportService(db, paused).upload("ordinary_a", "pause.json", uncheckedFixture()));
+                try {
+                    assertTrue(flushed.await(15, TimeUnit.SECONDS));
+                    assertEquals(before, count(Movie.class));
+                    var latest = (Map<?, ?>) ((List<?>) history().list("ordinary_a", 0, 10).get("items")).get(0);
+                    assertEquals("RUNNING", latest.get("status"));
+                    assertNull(latest.get("addedCount"));
+                    release.countDown();
+                    if (rollback) assertThrows(ExecutionException.class, () -> f.get(20, TimeUnit.SECONDS));
+                    else f.get(20, TimeUnit.SECONDS);
+                    assertEquals(before + (rollback ? 0 : 2), count(Movie.class));
+                } finally {
+                    release.countDown();
+                    executor.shutdownNow();
+                }
+            }
         }
 
-        @Test void U08_databaseHasNoMovieCombinationUniqueOrTrigger() throws Exception {
-            try(Statement s=connection.createStatement();ResultSet rs=s.executeQuery(sql("SELECT count(*) FROM pg_constraint WHERE conrelid='movie'::regclass AND contype='u'"))) {rs.next();assertEquals(0,rs.getInt(1));}
-            try(Statement s=connection.createStatement();ResultSet rs=s.executeQuery(sql("SELECT count(*) FROM pg_trigger WHERE tgrelid='movie'::regclass AND NOT tgisinternal"))) {rs.next();assertEquals(0,rs.getInt(1));}
-            try(Statement s=connection.createStatement();ResultSet rs=s.executeQuery(sql("SELECT count(*) FROM pg_index WHERE indrelid='movie'::regclass AND indisunique AND NOT indisprimary"))) {rs.next();assertEquals(0,rs.getInt(1));}
+        byte[] uncheckedFixture() {
+            try {
+                return fixture();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        @Test
+        void isolationAndRealLockTimeout() throws Exception {
+            String expected = Database.config("MOVIE_ISOLATION", "READ COMMITTED").toLowerCase();
+            assertEquals(expected, db.write(em -> em.createNativeQuery("SHOW transaction_isolation").getSingleResult().toString()));
+            assertEquals("read committed", db.metadata(em -> em.createNativeQuery("SHOW transaction_isolation").getSingleResult().toString()));
+            System.out.println("LAB2_ACTUAL_BUSINESS_ISOLATION=" + expected + "; METADATA=read committed; LOCK=AppState FOR UPDATE");
+            connection.setAutoCommit(false);
+            try (Statement s = connection.createStatement()) {
+                s.execute(sql("SELECT id FROM app_state WHERE id=1 FOR UPDATE"));
+                System.setProperty("MOVIE_LOCK_TIMEOUT_MS", "200");
+                long start = System.nanoTime();
+                RuntimeException error = assertThrows(RuntimeException.class, () -> coord());
+                assertEquals("55P03", Database.sqlState(error));
+                long elapsed = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start);
+                assertTrue(elapsed >= 150 && elapsed < 5000);
+                System.out.println("LAB2_LOCK_TIMEOUT_MS=" + elapsed + " SQLSTATE=55P03");
+            } finally {
+                System.clearProperty("MOVIE_LOCK_TIMEOUT_MS");
+                connection.rollback();
+                connection.setAutoCommit(true);
+            }
+        }
+
+        @Test
+        void U08_databaseHasNoMovieCombinationUniqueOrTrigger() throws Exception {
+            try (Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(sql("SELECT count(*) FROM pg_constraint WHERE conrelid='movie'::regclass AND contype='u'"))) {
+                rs.next();
+                assertEquals(0, rs.getInt(1));
+            }
+            try (Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(sql("SELECT count(*) FROM pg_trigger WHERE tgrelid='movie'::regclass AND NOT tgisinternal"))) {
+                rs.next();
+                assertEquals(0, rs.getInt(1));
+            }
+            try (Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(sql("SELECT count(*) FROM pg_index WHERE indrelid='movie'::regclass AND indisunique AND NOT indisprimary"))) {
+                rs.next();
+                assertEquals(0, rs.getInt(1));
+            }
         }
     }
 }

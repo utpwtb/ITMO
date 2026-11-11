@@ -1,0 +1,38 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\usepackage{fontspec,polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{cmunrm.otf}[Path=fonts/,Ligatures=TeX,BoldFont=cmunbx.otf,ItalicFont=cmunti.otf,BoldItalicFont=cmunbi.otf]
+\setmonofont{cmuntt.otf}[Path=fonts/]
+\usepackage{amsmath,amssymb,booktabs,graphicx,fancyvrb,setspace}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{pdftitle={Деревья решений},pdfauthor={Чэнь Хаолинь}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{5pt}
+\setlength{\textfloatsep}{12pt}
+\setlength{\intextsep}{10pt}
+\renewcommand{\arraystretch}{1.13}
+\graphicspath{{../results/}}
+\newcommand{\codefont}{\fontsize{8.5pt}{8.7pt}\selectfont}
+
+\newcommand{\experimentfigure}[3]{%
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=#1\linewidth]{#2}
+    \caption{#3}
+    \end{figure}%
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\input{title}
+\hypersetup{pageanchor=true}
+\setstretch{0.95}
+\tableofcontents
+\newpage
+\setstretch{1}
+\input{content}
+\end{document}

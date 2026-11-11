@@ -24,7 +24,7 @@ public class ErrorMapper implements ExceptionMapper<Exception> {
             var p = ru.itmo.movie.service.ImportService.databaseProblem(e);
             status = p.status;
             message = p.getMessage();
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE,"Database request failed",e);
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "Database request failed", e);
             return Response.status(status).type(MediaType.APPLICATION_JSON).entity(p.body()).build();
         } else if (e instanceof IllegalArgumentException) {
             status = 400;

@@ -5,6 +5,10 @@
 \subsection{Сценарии JMeter}
 \input{jmeter-results.tex}
 
+\clearpage
+\subsection{Сравнение уровней изоляции в C02}
+\input{isolation-results.tex}
+
 \subsection{Функциональная проверка}
 Пройдены 17 HTTP-проверок. Они охватывают вход и независимость сеансов, CSRF, ограничения multipart-загрузки, синтаксис JSON и запрет назначения роли при регистрации. Обычный пользователь получил 404 при запросе чужой операции, администратор смог открыть ту же запись. Успешный импорт двух фильмов отразился в истории со счётчиком 2. Для отклонённого импорта сохранён статус FAILED с пустым счётчиком.
 
@@ -24,4 +28,4 @@
 
 \clearpage
 \section{Исходный код и воспроизведение}
-Каталог \path{movie-lab/} содержит код, миграции, JSON-примеры и план JMeter. Доступен \href{../../verification/Lab2/source-current.tar.gz}{архив исходников}. Команды запуска приведены в \path{movie-lab/jmeter/README.md}. Отчёты JTL и HTML, ответы HTTP и снимки PostgreSQL сохранены в \path{verification/Lab2/compact-20261110/}.
+Каталог \path{movie-lab/} содержит код, миграции, JSON-примеры и план JMeter. Доступен \href{../../verification/Lab2/source-current.tar.gz}{архив исходников}. Основные отчёты JMeter и снимки PostgreSQL сохранены в \path{verification/Lab2/compact-20261110/}. Сравнение C02 запускается скриптом \path{verification/Lab2/run-isolation-c02.py}. Его результаты, HTTP-ответы и журналы находятся в \path{verification/Lab2/isolation-c02-20261110-221041/}.

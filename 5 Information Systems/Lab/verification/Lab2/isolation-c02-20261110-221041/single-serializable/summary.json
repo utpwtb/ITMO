@@ -1,0 +1,46 @@
+[
+  {
+    "scenario": "C02",
+    "threads": 10,
+    "rounds": 20,
+    "completedRounds": 20,
+    "requests": 200,
+    "commits": 20,
+    "expectedConflicts": 89,
+    "unexpected": 91,
+    "duplicates": 0,
+    "averageMs": 437.29,
+    "p95Ms": 3320,
+    "domainDelta": {
+      "movies": 20,
+      "coordinates": 0,
+      "people": 0,
+      "locations": 0
+    },
+    "passed": false,
+    "errors": [
+      "Unexpected HTTP outcome",
+      "0: expected exactly one winner, got Counter({503: 8, 201: 1, 409: 1})",
+      "1: expected exactly one winner, got Counter({409: 8, 201: 1, 503: 1})",
+      "2: expected exactly one winner, got Counter({503: 8, 201: 1, 409: 1})",
+      "3: expected exactly one winner, got Counter({409: 8, 503: 1, 201: 1})",
+      "4: expected exactly one winner, got Counter({503: 8, 409: 1, 201: 1})",
+      "5: expected exactly one winner, got Counter({409: 7, 503: 2, 201: 1})",
+      "6: expected exactly one winner, got Counter({503: 8, 409: 1, 201: 1})",
+      "7: expected exactly one winner, got Counter({409: 8, 201: 1, 503: 1})",
+      "8: expected exactly one winner, got Counter({503: 8, 409: 1, 201: 1})",
+      "9: expected exactly one winner, got Counter({409: 8, 503: 1, 201: 1})",
+      "10: expected exactly one winner, got Counter({503: 8, 201: 1, 409: 1})",
+      "11: expected exactly one winner, got Counter({409: 8, 503: 1, 201: 1})",
+      "12: expected exactly one winner, got Counter({503: 8, 409: 1, 201: 1})",
+      "13: expected exactly one winner, got Counter({409: 8, 201: 1, 503: 1})",
+      "14: expected exactly one winner, got Counter({503: 9, 201: 1})",
+      "16: expected exactly one winner, got Counter({503: 9, 201: 1})",
+      "18: expected exactly one winner, got Counter({503: 9, 201: 1})",
+      "JMeter process/JTL setup or sampler failure"
+    ],
+    "jmeterExit": 0,
+    "jtlFailures": 91,
+    "elapsedSeconds": 25.31941294670105
+  }
+]

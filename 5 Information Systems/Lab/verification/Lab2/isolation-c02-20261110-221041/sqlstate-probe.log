@@ -1,0 +1,13 @@
+Separate PostgreSQL probe after JMeter. Session A updates the existing row without changing the revision value. Session B tries to lock the row in SERIALIZABLE.
+BEGIN
+BEGIN
+UPDATE 1
+ERROR:  40001: could not serialize access due to concurrent update
+ПОЛОЖЕНИЕ:  ExecLockRows, nodeLockRows.c:228
+ pg_sleep 
+----------
+ 
+(1 строка)
+
+COMMIT
+Session B psql exit: 1

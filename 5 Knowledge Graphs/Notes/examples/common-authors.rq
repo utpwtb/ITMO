@@ -1,8 +1,0 @@
-PREFIX lib: <https://example.org/kg-course/library/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?author ?name WHERE {
-  lib:Work001 lib:authoredBy ?author .
-  lib:Work002 lib:authoredBy ?author .
-  ?author rdfs:label ?name .
-}
-ORDER BY ?author

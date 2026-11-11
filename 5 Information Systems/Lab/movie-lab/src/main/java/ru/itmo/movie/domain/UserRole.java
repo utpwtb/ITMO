@@ -1,3 +1,3 @@
 package ru.itmo.movie.domain;
 
-public enum UserRole { USER, ADMIN }
+public enum UserRole {USER, ADMIN}

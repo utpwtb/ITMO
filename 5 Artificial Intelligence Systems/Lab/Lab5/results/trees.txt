@@ -1,0 +1,131 @@
+Объектов: 145. Признаков до отбора: 31. Пропусков: 0.
+Seed разбиения: 42. Seed отбора признаков: 43.
+Все данные: 145 объектов, класс 0 — 67, класс 1 — 78
+Обучение: 116 объектов, класс 0 — 54, класс 1 — 62
+Тест: 29 объектов, класс 0 — 13, класс 1 — 16
+Признаки: Sex, Additional work, Accomodation type in Cyprus, Preparation to midterm exams 1, Taking notes in classes
+
+Энтропия
+Глубина: 5. Листьев: 32.
+Корень -> Sex [Δ=0.04546, n=116, p1=0.5345]
+  1 -> Taking notes in classes [Δ=0.06670, n=45, p1=0.3778]
+    1 -> лист [n=3, p1=0.0000]
+    2 -> Additional work [Δ=0.08170, n=18, p1=0.5000]
+      1 -> Accomodation type in Cyprus [Δ=0.07278, n=9, p1=0.6667]
+        1 -> лист [n=5, p1=0.6000]
+        2 -> лист [n=1, p1=1.0000]
+        3 -> лист [n=3, p1=0.6667]
+      2 -> Accomodation type in Cyprus [Δ=0.16775, n=9, p1=0.3333]
+        1 -> лист [n=3, p1=0.3333]
+        2 -> лист [n=2, p1=0.0000]
+        3 -> лист [n=4, p1=0.5000]
+    3 -> Additional work [Δ=0.13955, n=24, p1=0.3333]
+      1 -> Accomodation type in Cyprus [Δ=0.19351, n=10, p1=0.1000]
+        1 -> Preparation to midterm exams 1 [Δ=0.25163, n=3, p1=0.3333]
+          1 -> лист [n=2, p1=0.5000]
+          2 -> лист [n=1, p1=0.0000]
+        2 -> лист [n=2, p1=0.0000]
+        3 -> лист [n=5, p1=0.0000]
+      2 -> Preparation to midterm exams 1 [Δ=0.25698, n=14, p1=0.5000]
+        1 -> Accomodation type in Cyprus [Δ=0.15884, n=11, p1=0.3636]
+          1 -> лист [n=6, p1=0.1667]
+          2 -> лист [n=3, p1=0.6667]
+          3 -> лист [n=2, p1=0.5000]
+        2 -> лист [n=3, p1=1.0000]
+  2 -> Preparation to midterm exams 1 [Δ=0.05207, n=71, p1=0.6338]
+    1 -> Additional work [Δ=0.03978, n=56, p1=0.6429]
+      1 -> Accomodation type in Cyprus [Δ=0.04076, n=17, p1=0.4706]
+        1 -> Taking notes in classes [Δ=0.13793, n=8, p1=0.5000]
+          2 -> лист [n=1, p1=1.0000]
+          3 -> лист [n=7, p1=0.4286]
+        2 -> лист [n=6, p1=0.3333]
+        3 -> лист [n=3, p1=0.6667]
+      2 -> Taking notes in classes [Δ=0.07504, n=39, p1=0.7179]
+        1 -> лист [n=1, p1=0.0000]
+        2 -> Accomodation type in Cyprus [Δ=0.16397, n=13, p1=0.6154]
+          1 -> лист [n=5, p1=0.4000]
+          2 -> лист [n=6, p1=0.6667]
+          3 -> лист [n=2, p1=1.0000]
+        3 -> Accomodation type in Cyprus [Δ=0.03154, n=25, p1=0.8000]
+          1 -> лист [n=11, p1=0.8182]
+          2 -> лист [n=12, p1=0.7500]
+          3 -> лист [n=2, p1=1.0000]
+    2 -> Accomodation type in Cyprus [Δ=0.29990, n=11, p1=0.4545]
+      1 -> Additional work [Δ=0.09236, n=8, p1=0.3750]
+        1 -> лист [n=1, p1=0.0000]
+        2 -> Taking notes in classes [Δ=0.02024, n=7, p1=0.4286]
+          2 -> лист [n=3, p1=0.3333]
+          3 -> лист [n=4, p1=0.5000]
+      2 -> лист [n=2, p1=1.0000]
+      4 -> лист [n=1, p1=0.0000]
+    3 -> лист [n=4, p1=1.0000]
+Суммы выигрышей
+  Accomodation type in Cyprus: 1.129037
+  Preparation to midterm exams 1: 0.560679
+  Additional work: 0.353387
+  Taking notes in classes: 0.299913
+  Sex: 0.045465
+Остановок во внутренних узлах на тесте: 0
+
+Джини
+Глубина: 5. Листьев: 32.
+Корень -> Sex [Δ=0.03113, n=116, p1=0.5345]
+  1 -> Taking notes in classes [Δ=0.03309, n=45, p1=0.3778]
+    1 -> лист [n=3, p1=0.0000]
+    2 -> Additional work [Δ=0.05556, n=18, p1=0.5000]
+      1 -> Accomodation type in Cyprus [Δ=0.02963, n=9, p1=0.6667]
+        1 -> лист [n=5, p1=0.6000]
+        2 -> лист [n=1, p1=1.0000]
+        3 -> лист [n=3, p1=0.6667]
+      2 -> Accomodation type in Cyprus [Δ=0.07407, n=9, p1=0.3333]
+        1 -> лист [n=3, p1=0.3333]
+        2 -> лист [n=2, p1=0.0000]
+        3 -> лист [n=4, p1=0.5000]
+    3 -> Additional work [Δ=0.07778, n=24, p1=0.3333]
+      1 -> Accomodation type in Cyprus [Δ=0.04667, n=10, p1=0.1000]
+        1 -> Preparation to midterm exams 1 [Δ=0.11111, n=3, p1=0.3333]
+          1 -> лист [n=2, p1=0.5000]
+          2 -> лист [n=1, p1=0.0000]
+        2 -> лист [n=2, p1=0.0000]
+        3 -> лист [n=5, p1=0.0000]
+      2 -> Preparation to midterm exams 1 [Δ=0.13636, n=14, p1=0.5000]
+        1 -> Accomodation type in Cyprus [Δ=0.09917, n=11, p1=0.3636]
+          1 -> лист [n=6, p1=0.1667]
+          2 -> лист [n=3, p1=0.6667]
+          3 -> лист [n=2, p1=0.5000]
+        2 -> лист [n=3, p1=1.0000]
+  2 -> Accomodation type in Cyprus [Δ=0.02908, n=71, p1=0.6338]
+    1 -> Taking notes in classes [Δ=0.03319, n=34, p1=0.5588]
+      1 -> лист [n=1, p1=0.0000]
+      2 -> Preparation to midterm exams 1 [Δ=0.08678, n=11, p1=0.4545]
+        1 -> Additional work [Δ=0.10000, n=6, p1=0.5000]
+          1 -> лист [n=1, p1=1.0000]
+          2 -> лист [n=5, p1=0.4000]
+        2 -> Additional work [Δ=0.04167, n=4, p1=0.2500]
+          1 -> лист [n=1, p1=0.0000]
+          2 -> лист [n=3, p1=0.3333]
+        3 -> лист [n=1, p1=1.0000]
+      3 -> Additional work [Δ=0.04030, n=22, p1=0.6364]
+        1 -> лист [n=7, p1=0.4286]
+        2 -> Preparation to midterm exams 1 [Δ=0.03960, n=15, p1=0.7333]
+          1 -> лист [n=11, p1=0.8182]
+          2 -> лист [n=4, p1=0.5000]
+    2 -> Preparation to midterm exams 1 [Δ=0.04013, n=29, p1=0.6897]
+      1 -> Additional work [Δ=0.05671, n=24, p1=0.6250]
+        1 -> лист [n=6, p1=0.3333]
+        2 -> Taking notes in classes [Δ=0.00309, n=18, p1=0.7222]
+          2 -> лист [n=6, p1=0.6667]
+          3 -> лист [n=12, p1=0.7500]
+      2 -> лист [n=2, p1=1.0000]
+      3 -> лист [n=3, p1=1.0000]
+    3 -> Additional work [Δ=0.05442, n=7, p1=0.8571]
+      1 -> лист [n=3, p1=0.6667]
+      2 -> лист [n=4, p1=1.0000]
+    4 -> лист [n=1, p1=0.0000]
+Суммы выигрышей
+  Additional work: 0.426434
+  Preparation to midterm exams 1: 0.413978
+  Accomodation type in Cyprus: 0.278628
+  Taking notes in classes: 0.069359
+  Sex: 0.031128
+Остановок во внутренних узлах на тесте: 1

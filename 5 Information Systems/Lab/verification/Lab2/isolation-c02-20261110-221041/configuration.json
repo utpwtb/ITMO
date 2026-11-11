@@ -1,0 +1,34 @@
+{
+  "host": "helios.cs.ifmo.ru",
+  "warSha256": "967bc50408afad2a5a245f36a73afcad5e46ccf599547362d4d3d3c8bbaa46a0",
+  "jmxSha256": "b409801a79ee400e69733607aa5bf771ad495568519c91467e203251ffd577a2",
+  "runnerSha256": "fc104c1c2cfdec1c2bdb5d2cd2d48927b4ba0dca37c7bc0729e0eda56bba03d2",
+  "jmxOnSampleError": "continue",
+  "baselineRowFingerprint": {
+    "movie": [
+      2528,
+      "ebe84176d16284f3210f7b77f8874a49"
+    ],
+    "coordinates": [
+      880,
+      "2528c627b9e7bf5294bbcdeaa9e60851"
+    ],
+    "person": [
+      522,
+      "e7f340e56ff3876b4e387424abba07c9"
+    ],
+    "location": [
+      431,
+      "f53e67c3d395577a8d816b2f31cca105"
+    ],
+    "import_operation": [
+      1265,
+      "885aa766796829cfc4d009d7211ea93c"
+    ],
+    "app_user": [
+      7,
+      "7a483ed836bceaeb9b3c682f3cd908d5"
+    ]
+  },
+  "lock": "AppState PESSIMISTIC_WRITE"
+}

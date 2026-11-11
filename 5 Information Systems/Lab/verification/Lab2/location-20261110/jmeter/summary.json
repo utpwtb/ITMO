@@ -1,0 +1,78 @@
+[
+  {
+    "scenario": "C01",
+    "threads": 2,
+    "rounds": 20,
+    "completedRounds": 20,
+    "requests": 40,
+    "commits": 20,
+    "expectedConflicts": 20,
+    "unexpected": 0,
+    "duplicates": 0,
+    "averageMs": 132.725,
+    "p95Ms": 2081,
+    "domainDelta": {
+      "movies": -12,
+      "coordinates": 0,
+      "people": 0,
+      "locations": 0
+    },
+    "passed": true,
+    "errors": [],
+    "editWins": 8,
+    "deleteWins": 12,
+    "jmeterExit": 0,
+    "jtlFailures": 0,
+    "elapsedSeconds": 13.644309759140015
+  },
+  {
+    "scenario": "C02",
+    "threads": 10,
+    "rounds": 20,
+    "completedRounds": 20,
+    "requests": 200,
+    "commits": 20,
+    "expectedConflicts": 180,
+    "unexpected": 0,
+    "duplicates": 0,
+    "averageMs": 172.07,
+    "p95Ms": 77,
+    "domainDelta": {
+      "movies": 20,
+      "coordinates": 0,
+      "people": 0,
+      "locations": 0
+    },
+    "passed": true,
+    "errors": [],
+    "jmeterExit": 0,
+    "jtlFailures": 0,
+    "elapsedSeconds": 18.4208824634552
+  },
+  {
+    "scenario": "C03",
+    "threads": 2,
+    "rounds": 20,
+    "completedRounds": 20,
+    "requests": 40,
+    "commits": 20,
+    "expectedConflicts": 20,
+    "unexpected": 0,
+    "duplicates": 0,
+    "averageMs": 160.825,
+    "p95Ms": 2080,
+    "domainDelta": {
+      "movies": 40,
+      "coordinates": 40,
+      "people": 40,
+      "locations": 40
+    },
+    "passed": true,
+    "errors": [],
+    "lateDuplicateConflicts": 20,
+    "failedImportResidue": 0,
+    "jmeterExit": 0,
+    "jtlFailures": 0,
+    "elapsedSeconds": 15.0598623752594
+  }
+]

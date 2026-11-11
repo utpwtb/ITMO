@@ -1,5 +1,3 @@
-"""Run the three Lab 2 races on Helios and verify HTTP outcomes and PostgreSQL state."""
-
 import collections
 import csv
 import json
@@ -80,9 +78,12 @@ def prepare(api, scenario, threads, rounds, out):
             meta['actions'] = [action] * threads
         else:
             for i in range(threads):
-                names = [f'{prefix}unique{i}', prefix + 'shared']
-                document = {'formatVersion': 1,
-                            'movies': [import_movie(name, prefix + 'passport') for name in names]}
+                unique = f'{prefix}unique{i}'
+                first = import_movie(unique, unique + '-passport')
+                first['director']['location']['name'] = unique + '-location'
+                second = import_movie(prefix + 'shared', prefix + 'passport')
+                second['director']['location']['name'] = prefix + 'shared-location'
+                document = {'formatVersion': 1, 'movies': [first, second]}
                 file = out / f'r{r}-p{i}.json'
                 file.write_text(json.dumps(document), encoding='utf-8')
                 meta['actions'].append({
@@ -170,7 +171,8 @@ def verify(api, fixture, records, before, after):
         expected_delta = {'movies': rounds, 'coordinates': 0, 'people': 0, 'locations': 0}
     else:
         imports = winners['import']
-        expected_delta = {'movies': 2 * imports, 'coordinates': 2 * imports, 'people': imports, 'locations': imports}
+        expected_delta = {'movies': 2 * imports, 'coordinates': 2 * imports,
+                          'people': 2 * imports, 'locations': 2 * imports}
     check(domain_delta == expected_delta, f'Unexpected domain delta or failed import residue: {domain_delta}')
     values = sorted(row['elapsed'] for row in records)
     result = {

@@ -18,14 +18,22 @@ public class Problem extends RuntimeException {
         this.code = code;
     }
 
-    public Problem at(int record, String field) { recordNumber = record; path = field; return this; }
+    public Problem at(int record, String field) {
+        recordNumber = record;
+        path = field;
+        return this;
+    }
 
     public java.util.Map<String, Object> body() {
         var data = new java.util.LinkedHashMap<String, Object>();
-        data.put("error", getMessage()); data.put("code", code);
+        data.put("error", getMessage());
+        data.put("code", code);
         if (recordNumber != null) data.put("recordNumber", recordNumber);
         if (path != null) data.put("path", path);
-        if (operationId != null) { data.put("operationId", operationId.toString()); data.put("status", operationStatus); }
+        if (operationId != null) {
+            data.put("operationId", operationId.toString());
+            data.put("status", operationStatus);
+        }
         return data;
     }
 }

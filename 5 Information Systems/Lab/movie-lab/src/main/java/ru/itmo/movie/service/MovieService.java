@@ -52,6 +52,16 @@ public class MovieService {
         };
     }
 
+    public static void validate(Object entity) {
+        var violations = VF.getValidator().validate(entity);
+        if (!violations.isEmpty()) {
+            var first = violations.stream().sorted(java.util.Comparator.comparing(v -> v.getPropertyPath().toString())).findFirst().orElseThrow();
+            Problem error = new Problem(400, "INVALID_FIELD", violations.stream().map(v -> v.getPropertyPath() + ": " + validationMessage(v)).sorted().collect(Collectors.joining("; ")));
+            error.path = first.getPropertyPath().toString();
+            throw error;
+        }
+    }
+
     private Class<?> type(String kind) {
         Class<?> t = TYPES.get(kind);
         if (t == null) throw new Problem(404, "Неизвестный раздел");
@@ -106,87 +116,80 @@ public class MovieService {
 
     public Object saveInTransaction(EntityManager em, String kind, Long id, Map<String, Object> input) {
         Class<?> t = type(kind);
-            Object entity;
-            try {
-                entity = id == null ? t.getDeclaredConstructor().newInstance() : required(em, t, id);
-                if (id != null) {
-                    // expected 是浏览器打开表单时保存的版本；entity 的版本来自本次事务读取的当前记录。
-                    // 比较在后端进行，不要求浏览器把编辑快照更新到最新版本；否则旧输入可能绕过过期检查。
-                    // @Version 检查后端读取实体之后的并发冲突，这里额外识别用户长时间编辑造成的旧表单。
-                    Object expected = input.get("version");
-                    if (expected == null || Long.parseLong(expected.toString()) != t.getField("version").getLong(entity))
-                        throw new Problem(409, "Объект изменён другим пользователем. Откройте форму заново.");
-                }
-                for (String key : input.keySet()) {
-                    if (key.equals("version") && id != null) continue;
-                    if (key.equals("id") || key.equals("version") || key.equals("creationDate"))
-                        throw new Problem(400, "Поле " + key + " формируется автоматически");
-                    Field field;
-                    try {
-                        field = t.getField(key);
-                    } catch (NoSuchFieldException e) {
-                        throw new Problem(400, "Неизвестное поле: " + key);
-                    }
-                    Object raw = input.get(key);
-                    Class<?> ft = field.getType();
-                    Object v = null;
-                    if (raw != null) {
-                        String s = raw.toString();
-                        try {
-                            if (ft == String.class) {
-                                if (!(raw instanceof String)) throw new IllegalArgumentException();
-                                v = raw;
-                            } else if (ft == Integer.class || ft == int.class) v = Integer.valueOf(s);
-                            else if (ft == Long.class || ft == long.class) v = Long.valueOf(s);
-                            else if (ft == Double.class) {
-                                double n = Double.parseDouble(s);
-                                if (!Double.isFinite(n)) throw new IllegalArgumentException();
-                                v = n;
-                            } else if (ft == Float.class) {
-                                float n = Float.parseFloat(s);
-                                if (!Float.isFinite(n)) throw new IllegalArgumentException();
-                                v = n;
-                            } else if (ft == ZonedDateTime.class) v = ZonedDateTime.parse(s);
-                            else if (ft.isEnum()) {
-                                v = Enum.valueOf(ft.asSubclass(Enum.class), s);
-                            } else v = required(em, ft, Long.parseLong(s));
-                        } catch (IllegalArgumentException | java.time.DateTimeException e) {
-                            throw new Problem(400, "Некорректное поле " + key + ": проверьте формат и диапазон");
-                        }
-                    }
-                    if (v == null && ft.isPrimitive()) throw new Problem(400, "Поле " + key + " обязательно");
-                    field.set(entity, v);
-                }
-                // Creation date is assigned by PostgreSQL; set a temporary value for Bean Validation.
-                if (entity instanceof Movie m && id == null) m.creationDate = java.time.LocalDate.now();
-                validate(entity);
-                if (entity instanceof Movie m) MovieUniquenessValidator.check(em, m);
-                if (entity instanceof Person p) {
-                    var query = em.createQuery("SELECT COUNT(p) FROM Person p WHERE p.passportID=:p" + (id == null ? "" : " AND p.id<>:id"), Long.class).setParameter("p", p.passportID);
-                    if (id != null) query.setParameter("id", id);
-                    Long duplicates = query.getSingleResult();
-                    if (duplicates > 0) throw new Problem(409, "passportID: паспорт уже существует");
-                }
-                if (id == null) em.persist(entity);
-                em.flush();
-                em.refresh(entity);
-                return entity;
-            } catch (ReflectiveOperationException e) {
-                throw new IllegalStateException(e);
+        Object entity;
+        try {
+            entity = id == null ? t.getDeclaredConstructor().newInstance() : required(em, t, id);
+            if (id != null) {
+                // expected 是浏览器打开表单时保存的版本；entity 的版本来自本次事务读取的当前记录。
+                // 比较在后端进行，不要求浏览器把编辑快照更新到最新版本；否则旧输入可能绕过过期检查。
+                // @Version 检查后端读取实体之后的并发冲突，这里额外识别用户长时间编辑造成的旧表单。
+                Object expected = input.get("version");
+                if (expected == null || Long.parseLong(expected.toString()) != t.getField("version").getLong(entity))
+                    throw new Problem(409, "Объект изменён другим пользователем. Откройте форму заново.");
             }
-    }
-
-    public static void validate(Object entity) {
-        var violations = VF.getValidator().validate(entity);
-        if (!violations.isEmpty()) {
-            var first = violations.stream().sorted(java.util.Comparator.comparing(v -> v.getPropertyPath().toString())).findFirst().orElseThrow();
-            Problem error = new Problem(400, "INVALID_FIELD", violations.stream().map(v -> v.getPropertyPath() + ": " + validationMessage(v)).sorted().collect(Collectors.joining("; ")));
-            error.path = first.getPropertyPath().toString();
-            throw error;
+            for (String key : input.keySet()) {
+                if (key.equals("version") && id != null) continue;
+                if (key.equals("id") || key.equals("version") || key.equals("creationDate"))
+                    throw new Problem(400, "Поле " + key + " формируется автоматически");
+                Field field;
+                try {
+                    field = t.getField(key);
+                } catch (NoSuchFieldException e) {
+                    throw new Problem(400, "Неизвестное поле: " + key);
+                }
+                Object raw = input.get(key);
+                Class<?> ft = field.getType();
+                Object v = null;
+                if (raw != null) {
+                    String s = raw.toString();
+                    try {
+                        if (ft == String.class) {
+                            if (!(raw instanceof String)) throw new IllegalArgumentException();
+                            v = raw;
+                        } else if (ft == Integer.class || ft == int.class) v = Integer.valueOf(s);
+                        else if (ft == Long.class || ft == long.class) v = Long.valueOf(s);
+                        else if (ft == Double.class) {
+                            double n = Double.parseDouble(s);
+                            if (!Double.isFinite(n)) throw new IllegalArgumentException();
+                            v = n;
+                        } else if (ft == Float.class) {
+                            float n = Float.parseFloat(s);
+                            if (!Float.isFinite(n)) throw new IllegalArgumentException();
+                            v = n;
+                        } else if (ft == ZonedDateTime.class) v = ZonedDateTime.parse(s);
+                        else if (ft.isEnum()) {
+                            v = Enum.valueOf(ft.asSubclass(Enum.class), s);
+                        } else v = required(em, ft, Long.parseLong(s));
+                    } catch (IllegalArgumentException | java.time.DateTimeException e) {
+                        throw new Problem(400, "Некорректное поле " + key + ": проверьте формат и диапазон");
+                    }
+                }
+                if (v == null && ft.isPrimitive()) throw new Problem(400, "Поле " + key + " обязательно");
+                field.set(entity, v);
+            }
+            // Creation date is assigned by PostgreSQL; set a temporary value for Bean Validation.
+            if (entity instanceof Movie m && id == null) m.creationDate = java.time.LocalDate.now();
+            validate(entity);
+            if (entity instanceof Movie m) MovieUniquenessValidator.check(em, m);
+            if (entity instanceof Location l) LocationUniquenessValidator.check(em, l);
+            if (entity instanceof Person p) {
+                var query = em.createQuery("SELECT COUNT(p) FROM Person p WHERE p.passportID=:p" + (id == null ? "" : " AND p.id<>:id"), Long.class).setParameter("p", p.passportID);
+                if (id != null) query.setParameter("id", id);
+                Long duplicates = query.getSingleResult();
+                if (duplicates > 0) throw new Problem(409, "passportID: паспорт уже существует");
+            }
+            if (id == null) em.persist(entity);
+            em.flush();
+            em.refresh(entity);
+            return entity;
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException(e);
         }
     }
 
-    /** Reuses the exact same validation and uniqueness rule as CRUD; never commits. */
+    /**
+     * Reuses the exact same validation and uniqueness rule as CRUD; never commits.
+     */
     public Movie saveImported(EntityManager em, Movie movie) {
         validate(movie);
         MovieUniquenessValidator.check(em, movie);

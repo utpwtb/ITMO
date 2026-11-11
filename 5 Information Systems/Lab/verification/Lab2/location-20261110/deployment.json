@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "host": "helios.cs.ifmo.ru",
+  "process": "Running PID 15236",
+  "previousWarSha256": "95cb5fe595aab5ccebd5cdef2917a7e2930d17cc91f0203947645710c341404e",
+  "warSha256": "967bc50408afad2a5a245f36a73afcad5e46ccf599547362d4d3d3c8bbaa46a0",
+  "serverTests": "[INFO] Tests run: 143, Failures: 0, Errors: 0, Skipped: 0",
+  "serverPackagePassed": true,
+  "jmeter": [
+    {
+      "scenario": "C01",
+      "requests": 40,
+      "commits": 20,
+      "expectedConflicts": 20,
+      "unexpected": 0,
+      "passed": true
+    },
+    {
+      "scenario": "C02",
+      "requests": 200,
+      "commits": 20,
+      "expectedConflicts": 180,
+      "unexpected": 0,
+      "passed": true
+    },
+    {
+      "scenario": "C03",
+      "requests": 40,
+      "commits": 20,
+      "expectedConflicts": 20,
+      "unexpected": 0,
+      "passed": true
+    }
+  ],
+  "productionCountsBefore": {
+    "movies": 6,
+    "people": 3,
+    "locations": 3,
+    "coordinates": 8,
+    "users": 7,
+    "history": 5,
+    "duplicateLocationGroups": 1
+  },
+  "productionCountsAfter": {
+    "movies": 6,
+    "people": 3,
+    "locations": 3,
+    "coordinates": 8,
+    "users": 7,
+    "history": 5,
+    "duplicateLocationGroups": 1
+  },
+  "productionCountsUnchanged": true,
+  "isolation": "READ COMMITTED",
+  "integrationTablePrefix": "lab2_loc_261110_"
+}

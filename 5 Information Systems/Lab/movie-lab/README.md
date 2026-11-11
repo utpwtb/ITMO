@@ -105,7 +105,7 @@ Helios 使用 `pg:5432/studs`，schema 为 `s407960`。实验二正式表使用 
 
 ## 6. 源码和交付位置
 
-- `src/main/java/ru/itmo/movie/` 放 Java 后端，`src/main/webapp/` 放俄语网页。导入时整批数据在同一事务内写入，历史权限由后端校验。电影唯一键比较原样名称和导演 `Person.id`，两部同名且均无导演的电影也会冲突。
+- `src/main/java/ru/itmo/movie/` 放 Java 后端，`src/main/webapp/` 放俄语网页。导入时整批数据在同一事务内写入，历史权限由后端校验。电影唯一键比较原样名称和导演 `Person.id`，两部同名且均无导演的电影也会冲突。地点唯一键比较原样名称与数值坐标 `x`、`y`。手动新增或编辑撞重返回 `409 DUPLICATE_LOCATION`，导入时复用匹配地点。两个组合键都在业务层检查。
 - [导入契约](docs/import-format-ru.md)和 [JSON 样例](src/main/webapp/examples/import-valid.json)可用于网页演示。
 - [JMeter 运行说明](jmeter/README.md)覆盖三个验收场景。新结果和复现入口见 [验收索引](../verification/Lab2/ACCEPTANCE.md)和 [Helios 部署记录](../verification/Lab2/DEPLOYMENT.md)。
 - [俄语实验报告](../report/Lab2/report.pdf)及 LaTeX 源码在 `../report/Lab2/`，UML 图在 `../report/Lab2/uml/`。

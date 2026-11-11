@@ -2,46 +2,52 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="light" name="color-scheme">
     <title>Кинотека · Информационные системы</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
     <script defer src="ui-text.js"></script>
     <script defer src="validation.js"></script>
     <script defer src="app.js"></script>
 </head>
 <body>
 <template id="delete-icon">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+         stroke-width="1.75" viewBox="0 0 24 24" width="18">
         <path d="M4 7h16M9 7V4h6v3m3 0-1 13H7L6 7m4 4v5m4-5v5"/>
     </svg>
 </template>
 <template id="edit-icon">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+         stroke-width="1.75" viewBox="0 0 24 24" width="18">
         <path d="m14 6 4 4M5 15 16 4a2.8 2.8 0 0 1 4 4L9 19l-5 1 1-5Z"/>
     </svg>
 </template>
 <template id="close-icon">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true">
+    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"
+         viewBox="0 0 24 24" width="18">
         <path d="m6 6 12 12M18 6 6 18"/>
     </svg>
 </template>
 <template id="history-icon">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+         stroke-width="1.65" viewBox="0 0 24 24" width="18">
         <path d="M3 11a9 9 0 1 1 2.7 6.5M3 4v7h7m2-4v5l3 2"/>
     </svg>
 </template>
 <template id="upload-icon">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+         stroke-width="1.65" viewBox="0 0 24 24" width="18">
         <path d="M12 16V3m-5 5 5-5 5 5M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/>
     </svg>
 </template>
-<main id="auth-shell" class="auth-shell">
-    <section id="login" class="auth-card" aria-labelledby="auth-heading">
+<main class="auth-shell" id="auth-shell">
+    <section aria-labelledby="auth-heading" class="auth-card" id="login">
         <div class="auth-brand">
             <span class="brand-mark">
-                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <svg aria-hidden="true" fill="none" height="21" stroke="currentColor" stroke-width="1.65" viewBox="0 0 24 24"
+                     width="21">
+                    <rect height="18" rx="2" width="18" x="3" y="3"/>
                     <path d="M7 3v18M17 3v18M3 8h4m-4 8h4m10-8h4m-4 8h4M7 12h10"/>
                 </svg>
             </span>
@@ -59,14 +65,17 @@
         </form>
         <form hidden id="register-form">
             <label>Имя пользователя
-                <input autocomplete="username" maxlength="64" minlength="3" name="username" required aria-describedby="username-hint">
+                <input aria-describedby="username-hint" autocomplete="username" maxlength="64" minlength="3" name="username"
+                       required>
             </label>
             <p class="field-hint" id="username-hint">От 3 до 64 букв, цифр или символов _ . -</p>
             <label>Пароль
-                <input autocomplete="new-password" maxlength="128" minlength="8" name="password" required type="password" aria-describedby="password-hint">
+                <input aria-describedby="password-hint" autocomplete="new-password" maxlength="128" minlength="8" name="password"
+                       required type="password">
             </label>
             <p class="field-hint" id="password-hint">От 8 до 128 символов</p>
-            <label>Повторите пароль<input autocomplete="new-password" name="confirmation" required type="password"></label>
+            <label>Повторите пароль<input autocomplete="new-password" name="confirmation" required
+                                          type="password"></label>
             <div class="toolbar">
                 <button type="submit">Создать аккаунт</button>
                 <button class="secondary" id="show-login" type="button">Вернуться ко входу</button>
@@ -79,54 +88,60 @@
     <aside class="sidebar">
         <div class="brand">
             <span class="brand-mark">
-                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <svg aria-hidden="true" fill="none" height="21" stroke="currentColor" stroke-width="1.65" viewBox="0 0 24 24"
+                     width="21">
+                    <rect height="18" rx="2" width="18" x="3" y="3"/>
                     <path d="M7 3v18M17 3v18M3 8h4m-4 8h4m10-8h4m-4 8h4M7 12h10"/>
                 </svg>
             </span>
             <strong>Кинотека</strong>
         </div>
         <nav aria-label="Главное меню">
-            <div class="nav-group" role="group" aria-labelledby="nav-collection">
+            <div aria-labelledby="nav-collection" class="nav-group" role="group">
                 <p class="nav-label" id="nav-collection">Коллекция</p>
-                <button class="nav-item" type="button" data-view="movies" aria-current="page">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <button aria-current="page" class="nav-item" data-view="movies" type="button">
+                    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="1.65"
+                         viewBox="0 0 24 24" width="18">
+                        <rect height="18" rx="2" width="18" x="3" y="3"/>
                         <path d="M7 3v18M17 3v18M3 8h4m-4 8h4m10-8h4m-4 8h4M7 12h10"/>
                     </svg>
                     <span>Фильмы</span>
                 </button>
-                <button class="nav-item" type="button" data-view="people">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" aria-hidden="true">
+                <button class="nav-item" data-view="people" type="button">
+                    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                         stroke-width="1.65" viewBox="0 0 24 24" width="18">
                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m20 0v-2a4 4 0 0 0-3-4M16 3a4 4 0 0 1 0 8"/>
                         <circle cx="9" cy="7" r="4"/>
                     </svg>
                     <span>Люди</span>
                 </button>
-                <button class="nav-item" type="button" data-view="coordinates">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" aria-hidden="true">
+                <button class="nav-item" data-view="coordinates" type="button">
+                    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                         stroke-width="1.65" viewBox="0 0 24 24" width="18">
                         <path d="M3 8h18M3 16h18M8 3v18m8-18v18"/>
                     </svg>
                     <span>Координаты</span>
                 </button>
-                <button class="nav-item" type="button" data-view="locations">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round" aria-hidden="true">
+                <button class="nav-item" data-view="locations" type="button">
+                    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linejoin="round"
+                         stroke-width="1.65" viewBox="0 0 24 24" width="18">
                         <path d="M20 10c0 5-8 11-8 11s-8-6-8-11a8 8 0 1 1 16 0Z"/>
                         <circle cx="12" cy="10" r="2.5"/>
                     </svg>
                     <span>Места</span>
                 </button>
             </div>
-            <div class="nav-group" role="group" aria-labelledby="nav-tools">
+            <div aria-labelledby="nav-tools" class="nav-group" role="group">
                 <p class="nav-label" id="nav-tools">Инструменты</p>
-                <button class="nav-item" type="button" data-view="import" data-icon="upload">
+                <button class="nav-item" data-icon="upload" data-view="import" type="button">
                     <span>Импорт JSON</span>
                 </button>
-                <button class="nav-item" type="button" data-view="history" data-icon="history">
+                <button class="nav-item" data-icon="history" data-view="history" type="button">
                     <span>История импорта</span>
                 </button>
-                <button class="nav-item" type="button" data-view="operations">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" aria-hidden="true">
+                <button class="nav-item" data-view="operations" type="button">
+                    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                         stroke-width="1.65" viewBox="0 0 24 24" width="18">
                         <path d="M5 4v16M12 4v16m7-16v16M2 9h6m1 7h6m1-9h6"/>
                     </svg>
                     <span>Спецоперации</span>
@@ -138,47 +153,56 @@
     <div class="workspace">
         <header class="topbar">
             <div class="crumb">Рабочая область</div>
-            <div id="session" class="session"></div>
+            <div class="session" id="session"></div>
         </header>
         <main id="main-content" tabindex="-1">
             <p id="notice" role="status"></p>
-            <section id="collection" data-kind="movies" aria-labelledby="heading">
+            <section aria-labelledby="heading" data-kind="movies" id="collection">
                 <div class="page-heading">
                     <h1 id="heading">Фильмы</h1>
-                    <button type="button" id="create">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" aria-hidden="true">
+                    <button id="create" type="button">
+                        <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                             stroke-width="1.65" viewBox="0 0 24 24" width="18">
                             <path d="M12 5v14M5 12h14"/>
                         </svg>
                         <span id="create-label">Добавить фильм</span>
                     </button>
                 </div>
                 <div class="catalog-panel">
-                    <form class="filters" id="filter-form" aria-label="Фильтр и сортировка фильмов">
+                    <form aria-label="Фильтр и сортировка фильмов" class="filters" id="filter-form">
                         <label class="filter-field">Колонка<select id="filter-column"></select></label>
-                        <label class="filter-field">Точное значение<input id="filter-value" type="search" list="filter-choices" placeholder="Полное совпадение"></label>
+                        <label class="filter-field">Точное значение<input id="filter-value" list="filter-choices"
+                                                                          placeholder="Полное совпадение"
+                                                                          type="search"></label>
                         <datalist id="filter-choices"></datalist>
                         <label class="filter-toggle"><input id="filter-enabled" type="checkbox"> Включить фильтр</label>
                         <label class="filter-field">Сортировка<select id="sort-column"></select></label>
                         <label class="filter-toggle"><input id="sort-desc" type="checkbox"> По убыванию</label>
-                        <button type="submit" class="secondary" id="filter-submit">Применить</button>
+                        <button class="secondary" id="filter-submit" type="submit">Применить</button>
                     </form>
                     <div id="collection-layout">
                         <div class="desk-records">
                             <div class="desk-list-head" id="movie-list-heading">
                                 <h2>Список фильмов</h2>
-                                <button type="button" id="full-columns" class="secondary" aria-pressed="false" aria-controls="object-table">Все столбцы</button>
+                                <button aria-controls="object-table" aria-pressed="false" class="secondary" id="full-columns"
+                                        type="button">Все столбцы
+                                </button>
                             </div>
-                            <div class="table-wrap" tabindex="0" role="region" aria-labelledby="heading">
-                                <table id="object-table" aria-labelledby="heading">
+                            <div aria-labelledby="heading" class="table-wrap" role="region" tabindex="0">
+                                <table aria-labelledby="heading" id="object-table">
                                     <thead id="columns"></thead>
                                     <tbody id="rows"></tbody>
                                 </table>
                             </div>
                             <div class="panel-foot" id="pagination">
-                                <span id="page-info" aria-live="polite"></span>
+                                <span aria-live="polite" id="page-info"></span>
                                 <div class="pagination-actions">
-                                    <button class="secondary" id="previous" type="button" aria-label="Предыдущая страница" title="Предыдущая страница">‹</button>
-                                    <button class="secondary" id="next" type="button" aria-label="Следующая страница" title="Следующая страница">›</button>
+                                    <button aria-label="Предыдущая страница" class="secondary" id="previous"
+                                            title="Предыдущая страница" type="button">‹
+                                    </button>
+                                    <button aria-label="Следующая страница" class="secondary" id="next" title="Следующая страница"
+                                            type="button">›
+                                    </button>
                                     <label>На странице
                                         <select id="page-size">
                                             <option>10</option>
@@ -189,67 +213,78 @@
                                 </div>
                             </div>
                         </div>
-                        <article id="movie-inspector" class="desk-detail" aria-labelledby="inspector-title" hidden></article>
+                        <article aria-labelledby="inspector-title" class="desk-detail" hidden
+                                 id="movie-inspector"></article>
                     </div>
                 </div>
             </section>
-            <section hidden id="import-page" aria-labelledby="import-heading">
+            <section aria-labelledby="import-heading" hidden id="import-page">
                 <div class="page-heading">
-                    <div><h1 id="import-heading">Импорт JSON</h1><p>Добавьте несколько фильмов из одного файла.</p></div>
-                    <button type="button" class="secondary icon-button" id="import-history-link" data-icon="history" aria-label="История импорта" title="История импорта"></button>
+                    <div><h1 id="import-heading">Импорт JSON</h1>
+                        <p>Добавьте несколько фильмов из одного файла.</p></div>
+                    <button aria-label="История импорта" class="secondary icon-button" data-icon="history" id="import-history-link"
+                            title="История импорта" type="button"></button>
                 </div>
                 <div class="utility-layout">
-                    <form id="import-form" class="surface" aria-labelledby="import-file-heading">
+                    <form aria-labelledby="import-file-heading" class="surface" id="import-form">
                         <h2 id="import-file-heading">Файл с фильмами</h2>
-                        <div class="dropzone file-picker" id="dropzone" role="group" aria-labelledby="import-file-label">
+                        <div aria-labelledby="import-file-label" class="dropzone file-picker" id="dropzone"
+                             role="group">
                             <span class="upload-mark">
-                                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <svg aria-hidden="true" fill="none" height="23" stroke="currentColor" stroke-linecap="round"
+                                     stroke-linejoin="round" stroke-width="1.65" viewBox="0 0 24 24"
+                                     width="23">
                                     <path d="M12 16V3m-5 5 5-5 5 5M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/>
                                 </svg>
                             </span>
                             <strong id="import-file-label">JSON-файл</strong>
-                            <span id="import-filename" aria-live="polite">Файл не выбран</span>
-                            <button id="import-choose" type="button" class="secondary" aria-describedby="import-filename">Выбрать файл</button>
-                            <input hidden id="import-file" name="file" type="file" accept=".json,application/json">
+                            <span aria-live="polite" id="import-filename">Файл не выбран</span>
+                            <button aria-describedby="import-filename" class="secondary" id="import-choose"
+                                    type="button">Выбрать файл
+                            </button>
+                            <input accept=".json,application/json" hidden id="import-file" name="file" type="file">
                         </div>
                         <div class="import-actions">
-                            <button type="submit" id="import-submit" data-i18n="Загрузить">Загрузить</button>
+                            <button data-i18n="Загрузить" id="import-submit" type="submit">Загрузить</button>
                         </div>
                         <p id="import-result" role="status"></p>
                     </form>
-                    <aside class="surface guide" aria-labelledby="import-guide-heading">
+                    <aside aria-labelledby="import-guide-heading" class="surface guide">
                         <h2 id="import-guide-heading">Как проходит импорт</h2>
-                        <p data-i18n="importHelp">UTF-8 JSON · до 5 MiB · 1–1000 фильмов. Вложенные объекты задаются в каждой записи.</p>
+                        <p data-i18n="importHelp">UTF-8 JSON · до 5 MiB · 1–1000 фильмов. Вложенные объекты задаются в
+                            каждой записи.</p>
                         <ol>
                             <li>Выберите файл и загрузите его.</li>
                             <li>Проверьте результат. Ошибка в одной записи отменяет весь импорт.</li>
                             <li>Откройте историю, чтобы увидеть статус операции.</li>
                         </ol>
                         <div class="toolbar">
-                            <a href="examples/import-valid.json" download data-i18n="Скачать пример">Скачать пример</a>
-                            <a href="import-format.md" data-i18n="Формат файла">Формат файла</a>
+                            <a data-i18n="Скачать пример" download href="examples/import-valid.json">Скачать пример</a>
+                            <a data-i18n="Формат файла" href="import-format.md">Формат файла</a>
                         </div>
                     </aside>
                 </div>
             </section>
-            <section hidden id="history-page" aria-labelledby="history-heading">
+            <section aria-labelledby="history-heading" hidden id="history-page">
                 <div class="page-heading">
-                    <div><h1 id="history-heading">История импорта</h1><p>Результаты загрузок и причины ошибок.</p></div>
-                    <button type="button" class="icon-button" id="new-import-link" data-icon="upload" aria-label="Новый импорт" title="Новый импорт"></button>
+                    <div><h1 id="history-heading">История импорта</h1>
+                        <p>Результаты загрузок и причины ошибок.</p></div>
+                    <button aria-label="Новый импорт" class="icon-button" data-icon="upload" id="new-import-link"
+                            title="Новый импорт" type="button"></button>
                 </div>
                 <div class="catalog-panel">
-                    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="history-heading">
-                        <table class="history-table" aria-labelledby="history-heading">
+                    <div aria-labelledby="history-heading" class="table-wrap" role="region" tabindex="0">
+                        <table aria-labelledby="history-heading" class="history-table">
                             <thead>
-                                <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col" data-i18n="Статус">Статус</th>
-                                    <th scope="col" data-i18n="Пользователь">Пользователь</th>
-                                    <th scope="col" data-i18n="Добавлено">Добавлено</th>
-                                    <th scope="col" data-i18n="Файл">Файл</th>
-                                    <th scope="col" data-i18n="Начало">Начало</th>
-                                    <th scope="col" data-i18n="Причина">Причина</th>
-                                </tr>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th data-i18n="Статус" scope="col">Статус</th>
+                                <th data-i18n="Пользователь" scope="col">Пользователь</th>
+                                <th data-i18n="Добавлено" scope="col">Добавлено</th>
+                                <th data-i18n="Файл" scope="col">Файл</th>
+                                <th data-i18n="Начало" scope="col">Начало</th>
+                                <th data-i18n="Причина" scope="col">Причина</th>
+                            </tr>
                             </thead>
                             <tbody id="history-rows"></tbody>
                         </table>
@@ -257,63 +292,71 @@
                     <div class="panel-foot">
                         <span id="history-info"></span>
                         <div class="pagination-actions">
-                            <button class="secondary" id="history-prev" type="button" aria-label="Предыдущая страница истории">‹</button>
-                            <button class="secondary" id="history-next" type="button" aria-label="Следующая страница истории">›</button>
+                            <button aria-label="Предыдущая страница истории" class="secondary" id="history-prev"
+                                    type="button">‹
+                            </button>
+                            <button aria-label="Следующая страница истории" class="secondary" id="history-next"
+                                    type="button">›
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section hidden id="operations" aria-labelledby="operations-heading">
+            <section aria-labelledby="operations-heading" hidden id="operations">
                 <div class="page-heading"><h1 id="operations-heading">Специальные операции</h1></div>
                 <div class="operation-grid">
                     <form class="surface" data-operation="box-office">
                         <h2>Удалить по сборам в США</h2>
                         <label>Сборы в США<input max="2147483647" min="1" name="value" required step="1" type="number"></label>
-                        <button type="submit" class="icon-button delete-button" data-icon="delete" aria-label="Удалить совпадения" title="Удалить совпадения"></button>
+                        <button aria-label="Удалить совпадения" class="icon-button delete-button" data-icon="delete"
+                                title="Удалить совпадения" type="submit"></button>
                     </form>
                     <form class="surface" data-operation="average">
                         <h2>Средние сборы в США</h2>
                         <p>Для всей коллекции. Пустая коллекция: нет данных.</p>
-                        <button type="submit" class="secondary">Рассчитать</button>
+                        <button class="secondary" type="submit">Рассчитать</button>
                     </form>
                     <form class="surface" data-operation="prefix">
                         <h2>Найти по началу слогана</h2>
                         <label>Буквальный префикс<input name="value"></label>
-                        <button type="submit" class="secondary">Найти</button>
+                        <button class="secondary" type="submit">Найти</button>
                     </form>
                     <form class="surface" data-operation="redistribute">
                         <h2>Перераспределить «Оскары»</h2>
                         <p>Каждый фильм-источник сохраняет 1 награду. Остаток распределяется по возрастанию ID.</p>
                         <label>Из жанра<select class="genres" name="from" required></select></label>
                         <label>В жанр<select class="genres" name="to" required></select></label>
-                        <button type="submit" class="secondary">Перераспределить</button>
+                        <button class="secondary" type="submit">Перераспределить</button>
                     </form>
                     <form class="surface" data-operation="award">
                         <h2>Дополнительные награды</h2>
-                        <label>Продолжительность строго больше<input max="2147483647" min="0" name="length" required type="number"></label>
+                        <label>Продолжительность строго больше<input max="2147483647" min="0" name="length" required
+                                                                     type="number"></label>
                         <label>Число наград<input max="2147483647" min="1" name="count" required type="number"></label>
-                        <button type="submit" class="secondary">Наградить</button>
+                        <button class="secondary" type="submit">Наградить</button>
                     </form>
                 </div>
             </section>
         </main>
     </div>
 </div>
-<dialog id="result-dialog" aria-labelledby="result-title">
+<dialog aria-labelledby="result-title" id="result-dialog">
     <div class="dialog-head">
         <h2 id="result-title">Результат</h2>
-        <button type="button" class="secondary icon-button" data-close="result-dialog" data-icon="close" aria-label="Закрыть" title="Закрыть"></button>
+        <button aria-label="Закрыть" class="secondary icon-button" data-close="result-dialog" data-icon="close"
+                title="Закрыть" type="button"></button>
     </div>
     <div class="dialog-body">
         <p class="field-hint">Результат на момент выполнения операции.</p>
-        <div id="operation-result" aria-live="polite"></div>
+        <div aria-live="polite" id="operation-result"></div>
     </div>
 </dialog>
-<dialog id="editor" aria-labelledby="edit-title">
+<dialog aria-labelledby="edit-title" id="editor">
     <form id="edit-form">
         <div class="dialog-head">
             <h2 id="edit-title"></h2>
-            <button type="button" class="secondary icon-button" data-close="editor" data-icon="close" aria-label="Закрыть" title="Закрыть"></button>
+            <button aria-label="Закрыть" class="secondary icon-button" data-close="editor" data-icon="close"
+                    title="Закрыть" type="button"></button>
         </div>
         <div class="dialog-body editor-body">
             <p class="field-hint" id="edit-note"></p>
@@ -321,33 +364,38 @@
             <p class="error" id="edit-error" role="alert"></p>
         </div>
         <div class="dialog-actions">
-            <button type="submit" id="save">Сохранить</button>
+            <button id="save" type="submit">Сохранить</button>
         </div>
     </form>
 </dialog>
-<dialog id="details" aria-labelledby="detail-title">
+<dialog aria-labelledby="detail-title" id="details">
     <div class="dialog-head">
         <h2 id="detail-title">Информация об объекте</h2>
-        <button type="button" class="secondary icon-button" data-close="details" data-icon="close" aria-label="Закрыть" title="Закрыть"></button>
+        <button aria-label="Закрыть" class="secondary icon-button" data-close="details" data-icon="close" title="Закрыть"
+                type="button"></button>
     </div>
-    <div class="dialog-body" id="detail-content" tabindex="0" role="region" aria-label="Данные объекта"></div>
+    <div aria-label="Данные объекта" class="dialog-body" id="detail-content" role="region" tabindex="0"></div>
     <div class="dialog-actions">
-        <button type="button" class="icon-button" id="detail-edit" data-icon="edit" aria-label="Изменить" title="Изменить"></button>
-        <button type="button" class="icon-button delete-button" id="detail-delete" data-icon="delete" aria-label="Удалить" title="Удалить" hidden></button>
+        <button aria-label="Изменить" class="icon-button" data-icon="edit" id="detail-edit" title="Изменить"
+                type="button"></button>
+        <button aria-label="Удалить" class="icon-button delete-button" data-icon="delete" hidden
+                id="detail-delete" title="Удалить" type="button"></button>
     </div>
 </dialog>
-<dialog id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-message">
+<dialog aria-describedby="delete-message" aria-labelledby="delete-title" id="delete-dialog">
     <div class="dialog-head">
         <h2 id="delete-title">Подтверждение удаления</h2>
-        <button type="button" class="secondary icon-button" data-close="delete-dialog" data-icon="close" aria-label="Закрыть" title="Закрыть"></button>
+        <button aria-label="Закрыть" class="secondary icon-button" data-close="delete-dialog" data-icon="close"
+                title="Закрыть" type="button"></button>
     </div>
     <div class="dialog-body">
         <p id="delete-message"></p>
         <p class="error" id="delete-error" role="alert"></p>
     </div>
     <div class="dialog-actions">
-        <button class="secondary" data-close="delete-dialog" type="button" autofocus>Отмена</button>
-        <button type="button" class="icon-button delete-button" id="delete-confirm" data-icon="delete" aria-label="Подтвердить удаление" title="Подтвердить удаление"></button>
+        <button autofocus class="secondary" data-close="delete-dialog" type="button">Отмена</button>
+        <button aria-label="Подтвердить удаление" class="icon-button delete-button" data-icon="delete" id="delete-confirm"
+                title="Подтвердить удаление" type="button"></button>
     </div>
 </dialog>
 </body>

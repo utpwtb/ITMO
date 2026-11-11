@@ -1,0 +1,22 @@
+[
+  "/tmp/s407960-isolation-c02-20261110-221041-zojtsbav/tools/apache-jmeter-5.6.3/bin/jmeter",
+  "-n",
+  "-t",
+  "jmeter/lab2-concurrency.jmx",
+  "-Jhost=127.0.0.1",
+  "-Jport=40801",
+  "-JbasePath=/movie-lab/api",
+  "-Jscenario=C02",
+  "-Jthreads=10",
+  "-Jrounds=20",
+  "-JfixtureFile=/home/studs/s407960/is-lab2-4101/verification/Lab2/isolation-c02-20261110-221041/single-serializable/C02/fixture.json",
+  "-JcredentialsFile=/tmp/s407960-isolation-c02-20261110-221041-zojtsbav/.runtime/lab2-users.json",
+  "-JresultFile=/home/studs/s407960/is-lab2-4101/verification/Lab2/isolation-c02-20261110-221041/single-serializable/C02/responses.jsonl",
+  "-l",
+  "/home/studs/s407960/is-lab2-4101/verification/Lab2/isolation-c02-20261110-221041/single-serializable/C02/results.jtl",
+  "-j",
+  "/home/studs/s407960/is-lab2-4101/verification/Lab2/isolation-c02-20261110-221041/single-serializable/C02/jmeter.log",
+  "-e",
+  "-o",
+  "/home/studs/s407960/is-lab2-4101/verification/Lab2/isolation-c02-20261110-221041/single-serializable/C02/html"
+]

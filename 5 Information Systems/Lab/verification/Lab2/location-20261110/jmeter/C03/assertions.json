@@ -1,0 +1,26 @@
+{
+  "scenario": "C03",
+  "threads": 2,
+  "rounds": 20,
+  "completedRounds": 20,
+  "requests": 40,
+  "commits": 20,
+  "expectedConflicts": 20,
+  "unexpected": 0,
+  "duplicates": 0,
+  "averageMs": 160.825,
+  "p95Ms": 2080,
+  "domainDelta": {
+    "movies": 40,
+    "coordinates": 40,
+    "people": 40,
+    "locations": 40
+  },
+  "passed": true,
+  "errors": [],
+  "lateDuplicateConflicts": 20,
+  "failedImportResidue": 0,
+  "jmeterExit": 0,
+  "jtlFailures": 0,
+  "elapsedSeconds": 15.0598623752594
+}

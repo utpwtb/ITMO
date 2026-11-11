@@ -1,0 +1,24 @@
+{
+  "group": "default-read-committed",
+  "isolation": "READ COMMITTED",
+  "attempts": 3,
+  "runnerExit": 0,
+  "statusCounts": {
+    "409": 180,
+    "201": 20
+  },
+  "retryLogEntries": 0,
+  "concurrentUpdateLogMentions": 0,
+  "passed": true,
+  "duplicates": 0,
+  "moviesAdded": 20,
+  "cleanup": [
+    "BEGIN",
+    "1",
+    "DELETE 20",
+    "DELETE 1",
+    "DELETE 1",
+    "COMMIT"
+  ],
+  "baselineRestored": true
+}

@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.*;
 import jakarta.servlet.http.*;
 
 import java.util.*;
+
 import ru.itmo.movie.service.AuthService;
 
 @Path("auth")
@@ -22,9 +23,9 @@ public class AuthResource {
     @GET
     public Map<String, Object> status() {
         HttpSession s = request.getSession(false);
-        if (s == null || s.getAttribute("user") == null) return Map.of("authenticated",false);
-        var actor = auth.identity((String)s.getAttribute("user"));
-        return Map.of("authenticated",true,"user",actor.username,"userId",actor.id.toString(),"role",actor.role.name(),"csrf",Objects.toString(s.getAttribute("csrf"),""));
+        if (s == null || s.getAttribute("user") == null) return Map.of("authenticated", false);
+        var actor = auth.identity((String) s.getAttribute("user"));
+        return Map.of("authenticated", true, "user", actor.username, "userId", actor.id.toString(), "role", actor.role.name(), "csrf", Objects.toString(s.getAttribute("csrf"), ""));
     }
 
     @POST
@@ -37,7 +38,8 @@ public class AuthResource {
     @Path("register")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response register(Map<String, String> data) {
-        if (data != null && data.containsKey("role")) throw new ru.itmo.movie.service.Problem(400,"ROLE_FORBIDDEN","Роль назначается администратором сервера");
+        if (data != null && data.containsKey("role"))
+            throw new ru.itmo.movie.service.Problem(400, "ROLE_FORBIDDEN", "Роль назначается администратором сервера");
         String user = auth.register(data == null ? null : data.get("username"), data == null ? null : data.get("password"));
         return Response.status(Response.Status.CREATED).entity(session(user)).build();
     }
